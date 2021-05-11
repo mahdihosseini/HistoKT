@@ -1,5 +1,7 @@
 # Repository specific 
-.adas-
+.adas-checkpoint
+.adas-data
+.adas-output
 *checkpoint*
 *xlsx*
 
