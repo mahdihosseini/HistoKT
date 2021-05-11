@@ -1,6 +1,7 @@
 # Repository specific 
 .adas-
-
+*checkpoint*
+*xlsx*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -12,6 +13,18 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+
+# Stock Python things
+/venv
+*.egg-info
+/.eggs
+__pycache__
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
 build/
 develop-eggs/
 dist/
@@ -140,3 +153,40 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# C extensions
+*.so
+
+# Tools: MyPy, flake8, coverage, etc.
+/.*_cache
+/.coverage
+
+# IDE files never belong in a repo. Not unless the repo is tied to an IDE
+# (generally a bad idea). It's also diff noise.
+.idea
+.vscode
+
+# stdlib cProfile dumps
+*.pstats
+
+# Pickle files should never be committed.
+# They may break when library and Python versions change.
+*.pickle
+
+# We really don't care about Notebook checkpoints. Use git.
+.ipynb_checkpoints
+
+# Ctags
+# Would do /tags, but am going to assume people will accidentally generate some
+# in subdirs. Would rather not have them added by accident because nobody
+# checks git diff --cached before committing, rather than pointing them out
+# when they won't look.
+# -- Alex
+tags
+
+# NEVER TO BE COMMITTED TO REPO. May contain secrets, like embedded
+# username:password@ in DATABASE_URL.
+/.env
