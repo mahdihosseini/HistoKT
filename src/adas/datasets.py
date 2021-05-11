@@ -1,20 +1,21 @@
 from contextlib import contextmanager
 from pathlib import Path
 
+import numpy as np
+import pandas as pd
 import warnings
 import tempfile
 import shutil
 import os
-from PIL import Image
 
 import pandas as pd
 import numpy as np
 import torch
 from torchvision.datasets.utils import check_integrity,\
     extract_archive, verify_str_arg, download_and_extract_archive
-from torchvision.datasets.folder import ImageFolder
+from torchvision.datasets.folder import ImageFolder, default_loader
 from torch.utils.data import Dataset
-
+from ADP_scripts.classes.classesADP import classesADP
 
 class MHIST(ImageFolder):
     """`TinyImageNet
@@ -243,6 +244,85 @@ class ImageNet(ImageFolder):
     def extra_repr(self):
         return "Split: {split}".format(**self.__dict__)
 
+class ADP_dataset(torch.utils.data.Dataset):
+    db_name = 'ADP V1.0 Release'
+    ROI = 'img_res_1um_bicubic'
+    csv_file = 'ADP_EncodedLabels_Release1_Flat.csv'
+    
+    def __init__(self, hierarNum, transform, root, split = 'train', loader = default_loader): 
+        '''
+        Dataset for ADP data
+        '''
+        
+        self.root = root
+        self.split = verify_str_arg(split, "split", ("train", "valid", "test"))
+        self.transform = transform
+        self.loader = loader
+
+        # getting paths:
+        csv_file_path = os.path.join(self.root, self.db_name, self.csv_file)
+
+        ADP_data = pd.read_csv(filepath_or_buffer=csv_file_path, header=0) # reads data and returns a pd.dataframe
+        # rows are integers starting from 0, columns are strings: e.g. "Patch Names", "E", ...
+
+        split_folder = os.path.join(self.root, self.db_name, 'splits')
+
+        if self.split == "train":
+            train_inds = np.load(os.path.join(split_folder, 'train.npy'))
+            out_df = ADP_data.loc[train_inds, :]
+
+        elif self.split == "valid":
+            valid_inds = np.load(os.path.join(split_folder, 'valid.npy'))
+            out_df = ADP_data.loc[valid_inds, :]
+
+        elif self.split == "test":
+            test_inds = np.load(os.path.join(split_folder, 'test.npy'))
+            out_df = ADP_data.loc[test_inds, :]
+
+        self.full_image_paths = [os.path.join(self.root, self.db_name, self.ROI, image_name) for image_name in out_df['Patch Names']]
+        self.class_labels = out_df[classesADP[hierarNum]['classesNames']].to_numpy(dtype=np.float32)
+
+    def __getitem__(self, idx) -> torch.Tensor:
+        
+        path = self.full_image_paths[idx]
+        label = self.class_labels[idx]
+
+        sample = self.loader(path) # Loading image
+        if self.transform is not None: # PyTorch implementation
+            sample = self.transform(sample)
+
+        return sample, torch.tensor(label)
+
+    def __len__(self) -> int:
+        return(len(self.full_image_paths))
+
+    def get_mean_std(self, num_iterations=1) -> torch.Tensor:
+        '''
+        Iterates through each image in the dataset, and
+        calculates the mean and std in RGB space for each
+        and then averages them all together
+
+        Returns: 
+            mean: 1D Tensor of length 3
+            std: 1D Tensor of length 3
+        
+        Inputs:
+            num_iterations: Number of times to iterate through the dataset
+        '''
+        means = np.zeros((3,))
+        stds = np.zeros((3,))
+
+        for idx in range(len(self)):
+            path = self.full_image_paths[idx]
+            sample = default_loader(path)
+            sample_np = np.array(sample)
+            means += sample_np.mean(axis=(0,1))
+            stds += sample_np.std(axis=(0,1))
+
+        means /= len(self)
+        stds /= len(self)
+        
+        return means, stds
 
 def load_meta_file(root, file=None):
 
@@ -388,3 +468,4 @@ def parse_val_archive(root, file=None, wnids=None, folder="val"):
     for wnid, img_file in zip(wnids, images):
         shutil.move(img_file, os.path.join(
             val_root, wnid, os.path.basename(img_file)))
+

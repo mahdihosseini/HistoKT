@@ -23,6 +23,7 @@ SOFTWARE.
 """
 from argparse import Namespace as APNamespace, _SubParsersAction, \
     ArgumentParser
+from ADP_scripts.thresholded_metrics import Thresholded_Metrics
 from typing import Tuple, Dict, Any, List
 from datetime import datetime
 from pathlib import Path
@@ -35,6 +36,7 @@ import sys
 import torch.backends.cudnn as cudnn
 import torch.multiprocessing as mp
 import torch.distributed as dist
+import torch.nn as nn
 from sklearn import metrics
 import pandas as pd
 import numpy as np
@@ -48,6 +50,7 @@ if 'adas.' in mod_name:
         OneCycleLR
     from .optim import get_optimizer_scheduler
     from .optim.sam import SAMVec, SAM
+    from .image_transforms import get_transforms
     from .early_stop import EarlyStop
     from .optim.adasls import AdaSLS
     from .models import get_network
@@ -63,6 +66,7 @@ else:
         OneCycleLR
     from optim import get_optimizer_scheduler
     from optim.sam import SAMVec, SAM
+    from image_transforms import get_transforms
     from early_stop import EarlyStop
     from optim.adasls import AdaSLS
     from models import get_network
@@ -91,8 +95,8 @@ def args(sub_parser: _SubParsersAction):
     # sub_parser.set_defaults(very_verbose=False)
     sub_parser.add_argument(
         '--config', dest='config',
-        default='config.yaml', type=str,
-        help="Set configuration file path: Default = 'config.yaml'")
+        default='configAdas.yaml', type=str,
+        help="Set configuration file path: Default = 'configAdas.yaml'")
     sub_parser.add_argument(
         '--data', dest='data',
         default='.adas-data', type=str,
@@ -224,7 +228,7 @@ class TrainingAgent:
 
     def load_config(self, config_path: Path, data_path: Path) -> None:
         with config_path.open() as f:
-            self.config = config = parse_config(yaml.load(f))
+            self.config = config = parse_config(yaml.load(f, yaml.FullLoader))
         if self.device == 'cpu':
             warnings.warn("Using CPU will be slow")
         elif self.dist:
@@ -234,17 +238,41 @@ class TrainingAgent:
                 config['num_workers'] = int(
                     (config['num_workers'] + self.ngpus_per_node - 1) /
                     self.ngpus_per_node)
+        self.mini_batch_size = config['mini_batch_size']
+        self.level = config['level']
+        self.train_transform, self.test_transform = get_transforms(
+            dataset = config['dataset'],
+            degrees = config['degree_of_rotation'],
+            gaussian_blur = config['gaussian_blur'],
+            kernel_size = config['kernel_size'],
+            variance = config['variance'],
+            vertical_flipping = config['vertical_flipping'],
+            horizontal_flipping = config['horizontal_flipping'],
+            horizontal_shift = config['horizontal_shift'],
+            vertical_shift = config['vertical_shift'],
+            color_kwargs = config['color_kwargs'],
+            cutout=config['cutout'],
+            n_holes=config['n_holes'],
+            length=config['cutout_length'])
         self.train_loader, self.train_sampler,\
             self.test_loader, self.num_classes = get_data(
                 name=config['dataset'], root=data_path,
                 mini_batch_size=config['mini_batch_size'],
                 num_workers=config['num_workers'],
-                cutout=config['cutout'],
-                n_holes=config['n_holes'],
-                length=config['cutout_length'],
-                dist=self.dist)
-        self.criterion = torch.nn.CrossEntropyLoss().cuda(self.gpu) if \
-            config['loss'] == 'cross_entropy' else None
+                transform_train = self.train_transform,
+                transform_test = self.test_transform,
+                dist=self.dist, level = self.level)
+        if config['loss'] == 'cross_entropy':
+            self.criterion = torch.nn.CrossEntropyLoss().cuda(self.gpu)          
+        elif config['loss'] == 'MultiLabelSoftMarginLoss':
+            self.dataset_size = len(self.train_loader.dataset)
+            train_class_counts = np.sum(self.train_loader.dataset.class_labels, axis=0)
+            weightsBCE = self.dataset_size / train_class_counts
+            weightsBCE = torch.as_tensor(weightsBCE, dtype=torch.float32).to(self.gpu)
+            self.criterion = torch.nn.MultiLabelSoftMarginLoss(weight = weightsBCE).cuda(self.gpu)
+        else:
+            self.criterion = None
+
         if np.less(float(config['early_stop_threshold']), 0):
             print("Adas: Notice: early stop will not be used as it was " +
                   f"set to {config['early_stop_threshold']}, " +
@@ -382,10 +410,10 @@ class TrainingAgent:
                 "E Time: {:.3f}s | ".format(end_time - start_time) +
                 "~Time Left: {:.3f}s | ".format(
                     (total_time - start_time) * (epochs[-1] - epoch)),
-                "Train Loss: {:.4f}% | Train Acc. {:.4f}% | ".format(
+                "Train Loss: {:.4f} | Train Acc. {:.4f}% | ".format(
                     train_loss,
                     train_acc1 * 100) +
-                "Test Loss: {:.4f}% | Test Acc. {:.4f}%".format(
+                "Test Loss: {:.4f} | Test Acc. {:.4f}%".format(
                     test_loss,
                     test_acc1 * 100))
             df = pd.DataFrame(data=self.performance_statistics)
@@ -425,7 +453,7 @@ class TrainingAgent:
         top5 = AverageMeter()
         # correct = 0
         # total = 0
-
+        
         """train CNN architecture"""
         tgts = list()
         preds = list()
@@ -463,6 +491,7 @@ class TrainingAgent:
                     self.optimizer.second_step(zero_grad=True)
             else:
                 outputs = self.network(inputs)
+                outputs = outputs.to(self.gpu)
                 loss = self.criterion(outputs, targets)
                 loss.backward()
                 # if isinstance(self.scheduler, Adas):
@@ -472,27 +501,41 @@ class TrainingAgent:
                     self.optimizer.step(loss=loss)
                 else:
                     self.optimizer.step()
-
-            train_loss += loss.item()
             # _, predicted = outputs.max(1)
             # total += targets.size(0)
             # correct += predicted.eq(targets).sum().item()
-            if self.num_classes == 2:
-                tgts.extend(targets.tolist())
-                preds.extend(outputs[:, 1].tolist())
-            acc1, acc5 = accuracy(
-                outputs, targets, (1, min(self.num_classes, 5)),
-                aoc=self.num_classes == 2)
-            top1.update(acc1[0], inputs.size(0))
-            top5.update(acc5[0], inputs.size(0))
+            if self.config['dataset'] == 'ADP-Release1':
+                m = nn.Sigmoid()
+                preds = (m(outputs) > 0.5).int()
+                acc1, acc5 = accuracyADP(preds, targets)
+                train_loss += loss.item() * inputs.size(0)
+                top1.update(acc1.double(), inputs.size(0))
+                top5.update(acc5.double(), inputs.size(0))
+            else:
+                train_loss += loss.item()
+                if self.num_classes == 2:
+                    tgts.extend(targets.tolist())
+                    preds.extend(outputs[:, 1].tolist())
+                acc1, acc5 = accuracy(
+                    outputs, targets, (1, min(self.num_classes, 5)),
+                    aoc=self.num_classes == 2)
+                top1.update(acc1[0], inputs.size(0))
+                top5.update(acc5[0], inputs.size(0))
             if isinstance(self.scheduler, OneCycleLR):
                 self.scheduler.step()
-        self.performance_statistics[f'train_acc1_epoch_{epoch}'] = \
-            top1.avg.cpu().item() / 100.
-        self.performance_statistics[f'train_acc5_epoch_{epoch}'] = \
-            top5.avg.cpu().item() / 100.
-        self.performance_statistics[f'train_loss_epoch_{epoch}'] = \
-            train_loss / (batch_idx + 1)
+        if self.config['dataset'] == 'ADP-Release1':
+            with torch.no_grad():
+                train_loss = train_loss / len(self.train_loader.dataset)
+                train_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.train_loader.dataset) * self.num_classes))
+                train_acc5 = (top5.sum_accuracy.cpu().item() / len(self.train_loader.dataset)) 
+        else:
+            train_loss = train_loss / (batch_idx + 1)
+            train_acc1 = (top1.avg.cpu().item() / 100.)
+            train_acc5 = (top1.avg.cpu().item() / 100.) 
+            
+        self.performance_statistics[f'train_acc1_epoch_{epoch}'] = train_acc1
+        self.performance_statistics[f'train_acc5_epoch_{epoch}'] = train_acc5
+        self.performance_statistics[f'train_loss_epoch_{epoch}'] = train_loss
 
         io_metrics = self.metrics.evaluate(epoch)
         self.performance_statistics[f'in_S_epoch_{epoch}'] = \
@@ -547,7 +590,7 @@ class TrainingAgent:
             #         GLOBALS.CONFIG['optim_method'] == 'SPS':
             if isinstance(self.optimizer, SLS) or isinstance(
                     self.optimizer, SPS) or isinstance(self.optimizer, AdaSLS):
-                self.performance_statistics[f'aearning_rate_epoch_{epoch}'] = \
+                self.performance_statistics[f'learning_rate_epoch_{epoch}'] = \
                     self.optimizer.state['step_size']
             # elif isinstance(self.optimizer, Adas):
             #     lr_vec = self.optimizer.param_groups[0]['lr']
@@ -569,12 +612,14 @@ class TrainingAgent:
                 self.performance_statistics[
                     f'learning_rate_epoch_{epoch}'] = \
                     self.optimizer.param_groups[0]['lr']
-        return train_loss / (batch_idx + 1), (top1.avg.cpu().item() / 100.,
-                                              top5.avg.cpu().item() / 100.)
+        return train_loss, (train_acc1, train_acc5)
 
     def validate(self, epoch: int):
         self.network.eval()
         test_loss = 0
+        if self.config['dataset'] == 'ADP-Release1':
+            predALL_test = torch.zeros(len(self.test_loader.dataset), self.num_classes)
+            labelsALL_test = torch.zeros(len(self.test_loader.dataset), self.num_classes)
         # correct = 0
         # total = 0
         top1 = AverageMeter()
@@ -585,25 +630,43 @@ class TrainingAgent:
             for batch_idx, (inputs, targets) in enumerate(self.test_loader):
                 # inputs, targets = \
                 #     inputs.to(self.device), targets.to(self.device)
+                
                 if self.gpu is not None:
                     inputs = inputs.cuda(self.gpu, non_blocking=True)
                 if self.device == 'cuda':
                     targets = targets.cuda(self.gpu, non_blocking=True)
                 outputs = self.network(inputs)
+                if self.config['dataset'] == 'ADP-Release1':
+                    #Get the size of the current batch
+                    sizeCurrentBatch = targets.size(0)
+                    
+                    indStart = batch_idx * self.mini_batch_size
+                    indEnd = indStart + sizeCurrentBatch
+                    m = nn.Sigmoid()
+                    preds = (m(outputs) > 0.5).int()
+                    predALL_test[indStart:indEnd, :] = preds
+                    labelsALL_test[indStart:indEnd, :] = targets
                 if self.num_classes == 2:
                     tgts.extend(targets.tolist())
                     preds.extend(outputs[:, 1].tolist())
                 loss = self.criterion(outputs, targets)
-                test_loss += loss.item()
+
+
                 # _, predicted = outputs.max(1)
                 # total += targets.size(0)
                 # correct += predicted.eq(targets).sum().item()
-                acc1, acc5 = accuracy(outputs, targets, topk=(
+                if self.config['dataset'] == 'ADP-Release1':
+                    acc1, acc5 = accuracyADP(preds, targets)
+                    test_loss += loss.item() * inputs.size(0)
+                    top1.update(acc1.double(), inputs.size(0))
+                    top5.update(acc5.double(), inputs.size(0))
+                else:
+                    acc1, acc5 = accuracy(outputs, targets, topk=(
                     1, min(self.num_classes, 5)),
                     aoc=self.num_classes == 2)
-                top1.update(acc1[0], inputs.size(0))
-                top5.update(acc5[0], inputs.size(0))
-
+                    top1.update(acc1[0], inputs.size(0))
+                    top5.update(acc5[0], inputs.size(0))
+                
         if self.num_classes == 2:
             fpr, tpr, thresholds = metrics.roc_curve(
                 tgts, preds, pos_label=1)
@@ -624,14 +687,21 @@ class TrainingAgent:
         #             self.metrics.historical_metrics
         #     torch.save(state, str(self.checkpoint_path / 'ckpt.pth'))
         #     self.best_acc = acc
-        self.performance_statistics[f'test_acc1_epoch_{epoch}'] = (
-            top1.avg.cpu().item() / 100.)
-        self.performance_statistics[f'test_acc5_epoch_{epoch}'] = (
-            top5.avg.cpu().item() / 100.)
-        self.performance_statistics[f'test_loss_epoch_{epoch}'] = test_loss / (
-            batch_idx + 1)
-        return test_loss / (batch_idx + 1), (top1.avg.cpu().item() / 100,
-                                             top5.avg.cpu().item() / 100)
+        if self.config['dataset'] == 'ADP-Release1':
+            with torch.no_grad():
+                test_loss = test_loss / len(self.test_loader.dataset)
+                test_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.test_loader.dataset) * self.num_classes))
+                test_acc5 = (top5.sum_accuracy.cpu().item() / len(self.test_loader.dataset)) 
+                thresholded_metrics = Thresholded_Metrics(labelsALL_test, predALL_test, self.level, self.config['network'], epoch)
+        else:
+            test_loss = test_loss / (batch_idx + 1)
+            test_acc1 = (top1.avg.cpu().item() / 100.)
+            test_acc5 = (top1.avg.cpu().item() / 100.) 
+
+        self.performance_statistics[f'test_acc1_epoch_{epoch}'] = test_acc1
+        self.performance_statistics[f'test_acc5_epoch_{epoch}'] = test_acc5
+        self.performance_statistics[f'test_loss_epoch_{epoch}'] = test_loss 
+        return test_loss, (test_acc1, test_acc5)
 
 
 class AverageMeter:
@@ -642,16 +712,30 @@ class AverageMeter:
 
     def reset(self):
         self.val = 0
+        self.sum_accuracy = 0
         self.avg = 0
         self.sum = 0
         self.count = 0
 
     def update(self, val, n=1):
         self.val = val
+        self.sum_accuracy += val
         self.sum += val * n
         self.count += n
         self.avg = self.sum / self.count
 
+def accuracyADP(preds, targets):
+    acc5 = 0
+    targets_all = targets.data.int()
+    acc1  = torch.sum(preds == targets_all)
+    preds_cpu = preds.cpu()
+    targets_all_cpu = targets_all.cpu()
+    for i, pred_sample in enumerate(preds_cpu):
+        labelv = targets_all_cpu[i]
+        numerator = torch.sum(np.bitwise_and(pred_sample, labelv))
+        denominator = torch.sum(np.bitwise_or(pred_sample, labelv))
+        acc5 += (numerator.double()/denominator.double())
+    return acc1, acc5
 
 def accuracy(outputs, targets, topk=(1,), aoc: bool = False):
     if aoc and False:
@@ -753,6 +837,7 @@ def main_worker(gpu: int, ngpus_per_node: int, args: APNamespace):
 
 
 if __name__ == "__main__":
+    torch.cuda.empty_cache()
     parser = ArgumentParser(description=__doc__)
     args(parser)
     args = parser.parse_args()

@@ -89,7 +89,7 @@ def smart_string_to_int(
 def parse_config(
     config: Dict[str, Union[str, float, int]]) -> Dict[
         str, Union[str, float, int]]:
-    valid_dataset = ['CIFAR10', 'CIFAR100', 'ImageNet', 'TinyImageNet', 'MHIST']
+    valid_dataset = ['CIFAR10', 'CIFAR100', 'ImageNet', 'TinyImageNet', 'ADP-Release1', 'MHIST']
     if config['dataset'] not in valid_dataset:
         raise ValueError(
             f"config.yaml: unknown dataset {config['dataset']}. " +
@@ -165,8 +165,12 @@ def parse_config(
     config['num_workers'] = smart_string_to_int(
         config['num_workers'],
         e='config.yaml: num_works must be an int')
-    if config['loss'] != 'cross_entropy':
-        raise ValueError('config.yaml: loss must be cross_entropy')
+    valid_losses = ['cross_entropy', 'MultiLabelSoftMarginLoss']
+    if (config['loss'] not in valid_losses):
+        raise ValueError(f'config.yaml: invalid loss type, must be one of {valid_losses}')
+    # TODO change this to binarycrossentropy
+    #if (config['dataset'] == 'ADP-Release1' and config['loss'] != 'MultiLabelSoftMarginLoss'):
+    #    raise ValueError('config.yaml: loss must be MultiLabelSoftMarginLoss for ADP Dataset')
     for k, v in config['optimizer_kwargs'].items():
         if isinstance(v, list):
             for i, val in enumerate(v):
