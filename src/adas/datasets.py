@@ -8,8 +8,6 @@ import tempfile
 import shutil
 import os
 
-import pandas as pd
-import numpy as np
 import torch
 from torchvision.datasets.utils import check_integrity,\
     extract_archive, verify_str_arg, download_and_extract_archive
