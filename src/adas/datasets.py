@@ -322,37 +322,6 @@ class ADP_dataset(Dataset):
     def __len__(self) -> int:
         return(len(self.full_image_paths))
 
-    def get_mean_std(self, num_iterations=1) -> torch.Tensor:
-        '''
-        Iterates through each image in the dataset, and
-        calculates the mean and std in RGB space for each
-        and then averages them all together
-
-        NEED TO CHECK IF AVERAGING STD.DEVs is ok
-
-        Returns: 
-            mean: 1D Tensor of length 3
-            std: 1D Tensor of length 3
-        
-        Inputs:
-            num_iterations: Number of times to iterate through the dataset
-        '''
-        means = np.zeros((3,))
-        stds = np.zeros((3,))
-
-        for i in range(num_iterations):
-            for idx in range(len(self)):
-                path = self.full_image_paths[idx]
-                sample = default_loader(path)
-                sample_np = np.array(sample)
-                means += sample_np.mean(axis=(0,1))
-                stds += sample_np.std(axis=(0,1))
-
-        means /= len(self) * num_iterations
-        stds /= len(self) * num_iterations
-        
-        return means, stds
-
 def load_meta_file(root, file=None):
 
     if file is None:
