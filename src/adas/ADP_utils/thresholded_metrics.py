@@ -3,7 +3,7 @@ import torch
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from .classes.classesADP import classesADP
+from .classesADP import classesADP
 from sklearn.metrics import roc_curve
 from sklearn.metrics import auc
 
@@ -15,12 +15,7 @@ class Thresholded_Metrics:
         self.predictions = predictions.numpy()
         
         #class names
-        if level == 'L1':
-            self.class_names = classesADP[0]['classesNames']
-        elif level == 'L2':
-            self.class_names = classesADP[1]['classesNames']
-        elif level == 'L3':
-            self.class_names = classesADP[2]['classesNames']
+        self.class_names = classesADP[level]['classesNames']
         #path
         cur_path = os.path.abspath(os.path.curdir)
         self.eval_dir = os.path.join(cur_path, 'eval')

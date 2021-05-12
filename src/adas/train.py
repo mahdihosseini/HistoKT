@@ -23,7 +23,6 @@ SOFTWARE.
 """
 from argparse import Namespace as APNamespace, _SubParsersAction, \
     ArgumentParser
-from ADP_scripts.thresholded_metrics import Thresholded_Metrics
 from typing import Tuple, Dict, Any, List
 from datetime import datetime
 from pathlib import Path
@@ -61,6 +60,7 @@ if 'adas.' in mod_name:
     from .optim.sps import SPS
     from .data import get_data
     from .optim.adas import Adas
+    from .ADP_utils.thresholded_metrics import Thresholded_Metrics
 else:
     from optim.lr_scheduler import CosineAnnealingWarmRestarts, StepLR, \
         OneCycleLR
@@ -77,6 +77,7 @@ else:
     from optim.sps import SPS
     from data import get_data
     from optim.adas import Adas
+    from ADP_utils.thresholded_metrics import Thresholded_Metrics
 
 
 def args(sub_parser: _SubParsersAction):

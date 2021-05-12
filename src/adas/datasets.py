@@ -7,13 +7,20 @@ import warnings
 import tempfile
 import shutil
 import os
+import sys
 
 import torch
 from torchvision.datasets.utils import check_integrity,\
     extract_archive, verify_str_arg, download_and_extract_archive
 from torchvision.datasets.folder import ImageFolder, default_loader
 from torch.utils.data import Dataset
-from ADP_scripts.classes.classesADP import classesADP
+
+mod_name = vars(sys.modules[__name__])['__name__']
+
+if 'adas.' in mod_name:
+    from .ADP_utils.classesADP import classesADP
+else:
+    from ADP_utils.classesADP import classesADP
 
 class MHIST(ImageFolder):
     """`TinyImageNet
@@ -242,14 +249,35 @@ class ImageNet(ImageFolder):
     def extra_repr(self):
         return "Split: {split}".format(**self.__dict__)
 
-class ADP_dataset(torch.utils.data.Dataset):
+class ADP_dataset(Dataset):
     db_name = 'ADP V1.0 Release'
     ROI = 'img_res_1um_bicubic'
     csv_file = 'ADP_EncodedLabels_Release1_Flat.csv'
     
-    def __init__(self, hierarNum, transform, root, split = 'train', loader = default_loader): 
+    def __init__(self, 
+                level, 
+                transform, 
+                root, 
+                split = 'train', 
+                loader = default_loader): 
         '''
-        Dataset for ADP data
+        Args:
+            level (str): a string corresponding to a dict
+                defined in "ADP_scripts\classes\classesADP.py"
+                defines the hierarchy to be trained on
+            transform (callable, optional): A function/transform that  takes in an
+                PIL image
+                and returns a transformed version. E.g, ``transforms.RandomCrop``
+            root (string): Root directory of the ImageNet Dataset.
+            split (string, optional): The dataset split, supports ``train``, 
+                ``valid``, or ``test``.
+            loader (callable, optional): A function to load an image given its
+                path. Defaults to default_loader defined in torchvision
+
+        Attributes:
+            self.full_image_paths (list) : a list of image paths
+            self.class_labels (np.ndarray) : a numpy array of class labels 
+                (num_samples, num_classes)
         '''
         
         self.root = root
@@ -278,7 +306,7 @@ class ADP_dataset(torch.utils.data.Dataset):
             out_df = ADP_data.loc[test_inds, :]
 
         self.full_image_paths = [os.path.join(self.root, self.db_name, self.ROI, image_name) for image_name in out_df['Patch Names']]
-        self.class_labels = out_df[classesADP[hierarNum]['classesNames']].to_numpy(dtype=np.float32)
+        self.class_labels = out_df[classesADP[level]['classesNames']].to_numpy(dtype=np.float32)
 
     def __getitem__(self, idx) -> torch.Tensor:
         
@@ -300,6 +328,8 @@ class ADP_dataset(torch.utils.data.Dataset):
         calculates the mean and std in RGB space for each
         and then averages them all together
 
+        NEED TO CHECK IF AVERAGING STD.DEVs is ok
+
         Returns: 
             mean: 1D Tensor of length 3
             std: 1D Tensor of length 3
@@ -310,15 +340,16 @@ class ADP_dataset(torch.utils.data.Dataset):
         means = np.zeros((3,))
         stds = np.zeros((3,))
 
-        for idx in range(len(self)):
-            path = self.full_image_paths[idx]
-            sample = default_loader(path)
-            sample_np = np.array(sample)
-            means += sample_np.mean(axis=(0,1))
-            stds += sample_np.std(axis=(0,1))
+        for i in range(num_iterations):
+            for idx in range(len(self)):
+                path = self.full_image_paths[idx]
+                sample = default_loader(path)
+                sample_np = np.array(sample)
+                means += sample_np.mean(axis=(0,1))
+                stds += sample_np.std(axis=(0,1))
 
-        means /= len(self)
-        stds /= len(self)
+        means /= len(self) * num_iterations
+        stds /= len(self) * num_iterations
         
         return means, stds
 

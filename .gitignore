@@ -4,6 +4,8 @@
 .adas-output
 *checkpoint*
 *xlsx*
+eval/
+random_stuff/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -32,11 +32,11 @@ mod_name = vars(sys.modules[__name__])['__name__']
 
 if 'adas.' in mod_name:
     from .datasets import ImageNet, TinyImageNet, ADP_dataset, MHIST
-    from .ADP_scripts.classes.classesADP import classesADP
+    from .ADP_utils.classesADP import classesADP
     from .image_transforms.custom_augmentations import Cutout
 else:
     from datasets import ImageNet, TinyImageNet, ADP_dataset, MHIST
-    from ADP_scripts.classes.classesADP import classesADP
+    from ADP_utils.classesADP import classesADP
     from image_transforms.custom_augmentations import Cutout
 
 # from .folder2lmdb import ImageFolderLMDB
@@ -86,42 +86,6 @@ def get_data(
         testset = MHIST(
             root=str(root), split='test',
             transform=transform_test)
-        test_loader = torch.utils.data.DataLoader(
-            testset, batch_size=mini_batch_size, shuffle=False,
-            num_workers=num_workers, pin_memory=True)
-    elif name == 'CIFAR10':
-        num_classes = 10
-        transform_train = transforms.Compose([
-            transforms.RandomCrop(32, padding=4),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            transforms.Normalize((0.4914, 0.4822, 0.4465),
-                                 (0.2023, 0.1994, 0.2010)),
-        ])
-        if cutout:
-            transform_train.transforms.append(
-                Cutout(n_holes=n_holes, length=length))
-
-        transform_test = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize((0.4914, 0.4822, 0.4465),
-                                 (0.2023, 0.1994, 0.2010)),
-        ])
-        trainset = torchvision.datasets.CIFAR10(
-            root=str(root), train=True, download=True,
-            transform=transform_train)
-        train_sampler = \
-            torch.utils.data.distributed.DistributedSampler(
-                trainset) if dist else None
-        train_loader = torch.utils.data.DataLoader(
-            trainset, batch_size=mini_batch_size,
-            shuffle=(train_sampler is None),
-            num_workers=num_workers, pin_memory=True,
-            sampler=train_sampler)
-
-        testset = torchvision.datasets.CIFAR10(
-            root=str(root), train=False,
-            download=True, transform=transform_test)
         test_loader = torch.utils.data.DataLoader(
             testset, batch_size=mini_batch_size, shuffle=False,
             num_workers=num_workers, pin_memory=True)
@@ -226,17 +190,10 @@ def get_data(
             num_workers=num_workers, pin_memory=True)
     
     elif name == 'ADP-Release1':       
-        if level == 'L1':
-            hierarNum = 0
-            num_classes = classesADP[hierarNum]['numClasses']
-        elif level == 'L2':
-            hierarNum = 1
-            num_classes = classesADP[hierarNum]['numClasses']
-        elif level == 'L3':
-            hierarNum = 2
-            num_classes = classesADP[hierarNum]['numClasses']
         
-        train_set = ADP_dataset(hierarNum, transform = transform_train, root = str(root), 
+        num_classes = classesADP[level]['numClasses']
+        
+        train_set = ADP_dataset(level, transform = transform_train, root = str(root), 
                         split = 'train')
 
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_set) if dist else None
@@ -246,7 +203,7 @@ def get_data(
                                             num_workers = num_workers,
                                             sampler = train_sampler)
 
-        test_set = ADP_dataset(hierarNum,  transform = transform_test, root = str(root), 
+        test_set = ADP_dataset(level,  transform = transform_test, root = str(root), 
                         split = 'valid') # USING VALIDATION DATA
 
         test_loader = torch.utils.data.DataLoader(test_set, batch_size = mini_batch_size, 
