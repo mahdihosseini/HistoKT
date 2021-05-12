@@ -1,8 +1,8 @@
 import PIL
 
 import torchvision.transforms as transforms
-from image_transforms.custom_augmentations import YCbCr, HSV, ColorDistortion,\
-                                                  Normalize, RGBJitter, Cutout
+from .custom_augmentations import YCbCr, HSV, ColorDistortion,\
+                                                RGBJitter, Cutout
 
 def get_transforms(
             dataset: str,
@@ -18,8 +18,8 @@ def get_transforms(
             cutout: bool,
             n_holes: int,
             length: int):
-    train_transform = None
-    test_transform = None
+    transform_train = None
+    transform_test = None
     
     color_processed_kwargs = {
         k: v for k, v in color_kwargs.items() if v is not None}
@@ -33,30 +33,30 @@ def get_transforms(
     if dataset == 'ADP-Release1':
         if color_processed_kwargs['augmentation'] == 'Color-Distortion':
             ColorAugmentation = ColorDistortion(color_processed_kwargs['distortion'])     
-            train_transform = transforms.Compose([
+            transform_train = transforms.Compose([
                 transforms.RandomHorizontalFlip(p = horizontal_flipping),
                 transforms.RandomVerticalFlip(p = vertical_flipping),
                 transforms.RandomAffine(degrees = degrees, translate = (horizontal_shift, vertical_shift)),
                 ColorAugmentation,
                 transforms.ToTensor(),
                 transforms.Normalize(
-                    mean = [0.75740063, 0.75740063, 0.75740063],
-                    std = [0.21195677, 0.21195677, 0.21195677])
+                    mean = [0.81233799, 0.64032477, 0.81902153],
+                    std = [0.18129702, 0.25731668, 0.16800649])
                 ])
 
             if gaussian_blur: # insert gaussian blur before normalization
-                train_transform.transforms.insert(-1, 
+                transform_train.transforms.insert(-1, 
                     transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
             if cutout:
-                train_transform.transforms.append(
+                transform_train.transforms.append(
                     Cutout(n_holes=n_holes, length=length))
     
-            test_transform = transforms.Compose([
+            transform_test = transforms.Compose([
                 transforms.ToTensor(),
                 transforms.Normalize(
-                    mean = [0.75740063, 0.75740063, 0.75740063],
-                    std = [0.21195677, 0.21195677, 0.21195677]),
+                    mean = [0.81233799, 0.64032477, 0.81902153],
+                    std = [0.18129702, 0.25731668, 0.16800649]),
                 ])
         else:
             if color_processed_kwargs['augmentation'] == 'YCbCr':
@@ -68,7 +68,7 @@ def get_transforms(
             else:
                 ColorAugmentation = None
 
-            train_transform = transforms.Compose([
+            transform_train = transforms.Compose([
                 transforms.RandomHorizontalFlip(p = horizontal_flipping),
                 transforms.RandomVerticalFlip(p = vertical_flipping),
                 transforms.RandomAffine(degrees = degrees, translate = (horizontal_shift, vertical_shift)),
@@ -76,25 +76,53 @@ def get_transforms(
                 ])
             
             if ColorAugmentation:
-                train_transform.transforms.insert(-1, ColorAugmentation)
+                transform_train.transforms.insert(-1, ColorAugmentation)
             else:
-                train_transform.transforms.insert(-1, Normalize()) # since the colour aug normalizes
+                transform_train.transforms.insert(-1, 
+                    transforms.Normalize(
+                        mean = [0.81233799, 0.64032477, 0.81902153],
+                        std = [0.18129702, 0.25731668, 0.16800649])) # since the colour aug normalizes
             
             if gaussian_blur: # TODO this should ideally be before normalization but after colour aug
-                train_transform.transforms.append(
+                transform_train.transforms.append(
                     transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
             if cutout:
-                train_transform.transforms.append(
+                transform_train.transforms.append(
                     Cutout(n_holes=n_holes, length=length))
             
-            test_transform = transforms.Compose([
-                Normalize(),
+            transform_test = transforms.Compose([
+                transforms.Normalize(
+                    mean = [0.81233799, 0.64032477, 0.81902153],
+                    std = [0.18129702, 0.25731668, 0.16800649]),
                 transforms.ToTensor(),
                 ])
-     
+    elif dataset == 'MHIST':
+        transform_train = transforms.Compose([
+            transforms.RandomCrop(224, padding=4),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean=[x / 255.0 for x in [188.14, 165.39, 192.69]], std=[
+                    x / 255.0 for x in [50.30, 62.13, 43.42]]),
+        ])
+
+        if gaussian_blur: #insert before norm
+                transform_train.transforms.insert(-1,
+                    transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
+
+        if cutout:
+            transform_train.transforms.append(
+                Cutout(n_holes=n_holes, length=length))
+
+        transform_test = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean=[x / 255.0 for x in [188.14, 165.39, 192.69]], std=[
+                    x / 255.0 for x in [50.30, 62.13, 43.42]]),
+        ])
     elif dataset == 'CIFAR100':
-        train_transform = transforms.Compose([
+        transform_train = transforms.Compose([
             transforms.RandomCrop(32, padding=4),
             transforms.RandomHorizontalFlip(p = horizontal_flipping),
             transforms.ToTensor(),
@@ -104,14 +132,14 @@ def get_transforms(
         ])
 
         if gaussian_blur: #insert before norm
-                train_transform.transforms.insert(-1,
+                transform_train.transforms.insert(-1,
                     transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
         if cutout:
-            train_transform.transforms.append(
+            transform_train.transforms.append(
                 Cutout(n_holes=n_holes, length=length))
 
-        test_transform = transforms.Compose([
+        transform_test = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(
                 mean=[x / 255.0 for x in [125.3, 123.0, 113.9]], std=[
@@ -119,7 +147,7 @@ def get_transforms(
         ])
         
     elif dataset == 'CIFAR10':
-        train_transform = transforms.Compose([
+        transform_train = transforms.Compose([
             transforms.RandomCrop(32, padding=4),
             transforms.RandomHorizontalFlip(p = horizontal_flipping),
             transforms.ToTensor(),
@@ -128,21 +156,21 @@ def get_transforms(
         ])
             
         if gaussian_blur:
-            train_transform.transforms.insert(-1, 
+            transform_train.transforms.insert(-1, 
                 transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
         if cutout:
-            train_transform.transforms.append(
+            transform_train.transforms.append(
                 Cutout(n_holes=n_holes, length=length))
 
-        test_transform = transforms.Compose([
+        transform_test = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.4914, 0.4822, 0.4465),
                                  (0.2023, 0.1994, 0.2010)),
         ])
         
     elif dataset == 'ImageNet':
-        train_transform = transforms.Compose([
+        transform_train = transforms.Compose([
             transforms.RandomResizedCrop(224),
             transforms.RandomHorizontalFlip(p = horizontal_flipping),
             transforms.ToTensor(),
@@ -151,14 +179,14 @@ def get_transforms(
         ])
 
         if gaussian_blur:
-            train_transform.transforms.insert(-1, 
+            transform_train.transforms.insert(-1, 
                 transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
         if cutout:
-            train_transform.transforms.append(
+            transform_train.transforms.append(
                 Cutout(n_holes=n_holes, length=length))
 
-        test_transform = transforms.Compose([
+        transform_test = transforms.Compose([
             transforms.Resize(224),
             transforms.CenterCrop(256),
             transforms.ToTensor(),
@@ -167,7 +195,7 @@ def get_transforms(
         ])
         
     elif dataset == 'TinyImageNet':
-        train_transform = transforms.Compose([
+        transform_train = transforms.Compose([
             transforms.RandomResizedCrop(64),
             transforms.RandomHorizontalFlip(p = horizontal_flipping),
             transforms.ToTensor(),
@@ -176,18 +204,18 @@ def get_transforms(
         ])
 
         if gaussian_blur:
-            train_transform.transforms.insert(-1, 
+            transform_train.transforms.insert(-1, 
                 transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
         if cutout:
-            train_transform.transforms.append(
+            transform_train.transforms.append(
                 Cutout(n_holes=n_holes, length=length))
 
-        test_transform = transforms.Compose([
+        transform_test = transforms.Compose([
             transforms.Resize(64),
             transforms.CenterCrop(64),
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[
                                  0.229, 0.224, 0.225]),
         ])            
-    return (train_transform, test_transform) 
+    return (transform_train, transform_test) 

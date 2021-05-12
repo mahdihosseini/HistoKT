@@ -49,7 +49,7 @@ class YCbCr:
         inv_A = np.linalg.inv(A)
         image_perturbed = (image_perturbed_ycbcr - b) @ inv_A.T
         image_perturbed = np.rint(np.clip(image_perturbed, 0, 255)).astype('uint8')
-        image_perturbed = (image_perturbed - 193.09203) / (56.450138 + 1e-7)
+        # image_perturbed = (image_perturbed - 193.09203) / (56.450138 + 1e-7)
         image = image_perturbed.astype(image_dtype)        
         return Image.fromarray(image)
 
@@ -88,7 +88,7 @@ class HSV:
         image_rgb = hsv2rgb(image_perturbed_HSV)
         image_rgb = image_rgb*255.0
         image_perturbed = np.rint(np.clip(image_rgb, 0, 255)).astype('uint8')
-        image_perturbed = (image_perturbed - 193.09203) / (56.450138 + 1e-7) 
+        # image_perturbed = (image_perturbed - 193.09203) / (56.450138 + 1e-7) 
         image = image_perturbed.astype(image_dtype)
         return Image.fromarray(image)
     
@@ -139,16 +139,16 @@ class RGBJitter:
         image_distorted = img_norm + delta
         image_distorted = (image_distorted + mean)*255.0
         image_distorted = np.rint(np.clip(image_distorted, 0, 255)).astype('uint8')
-        image_distorted = (image_distorted - 193.09203) / (56.450138 + 1e-7)
+        # image_distorted = (image_distorted - 193.09203) / (56.450138 + 1e-7)
         return image_distorted
        
-class Normalize:  
-    def __call__(self, image): 
-        image_array = np.asarray(image)
-        image_dtype = image_array.dtype
-        image_perturbed = (image_array - 193.09203) / (56.450138 + 1e-7) 
-        image = image_perturbed.astype(image_dtype) 
-        return Image.fromarray(image)
+# class Normalize:  
+#     def __call__(self, image): 
+#         image_array = np.asarray(image)
+#         image_dtype = image_array.dtype
+#         image_perturbed = (image_array - 193.09203) / (56.450138 + 1e-7) 
+#         image = image_perturbed.astype(image_dtype) 
+#         return Image.fromarray(image)
 
 class Cutout(object):
     """Randomly mask out one or more patches from an image.

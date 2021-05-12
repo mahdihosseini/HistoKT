@@ -33,11 +33,9 @@ mod_name = vars(sys.modules[__name__])['__name__']
 if 'adas.' in mod_name:
     from .datasets import ImageNet, TinyImageNet, ADP_dataset, MHIST
     from .ADP_utils.classesADP import classesADP
-    from .image_transforms.custom_augmentations import Cutout
 else:
     from datasets import ImageNet, TinyImageNet, ADP_dataset, MHIST
     from ADP_utils.classesADP import classesADP
-    from image_transforms.custom_augmentations import Cutout
 
 # from .folder2lmdb import ImageFolderLMDB
 
@@ -45,33 +43,12 @@ def get_data(
         name: str, root: Path,
         mini_batch_size: int,
         num_workers: int,
-        transform_train, 
-        transform_test,
-        level, 
-        cutout: bool = False,
-        n_holes: int = -1,
-        length: int = -1,
+        transform_train: transforms, 
+        transform_test: transforms,
+        level: str = "L3", 
         dist: bool = False) -> None:
     if name == 'MHIST':
         num_classes = 2
-        transform_train = transforms.Compose([
-            transforms.RandomCrop(224, padding=4),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=[x / 255.0 for x in [188.14, 165.39, 192.69]], std=[
-                    x / 255.0 for x in [50.30, 62.13, 43.42]]),
-        ])
-        if cutout:
-            transform_train.transforms.append(
-                Cutout(n_holes=n_holes, length=length))
-
-        transform_test = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=[x / 255.0 for x in [188.14, 165.39, 192.69]], std=[
-                    x / 255.0 for x in [50.30, 62.13, 43.42]]),
-        ])
         trainset = MHIST(
             root=str(root), split='train',
             transform=transform_train)
