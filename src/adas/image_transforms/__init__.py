@@ -23,14 +23,14 @@ def get_transforms(
     
     color_processed_kwargs = {
         k: v for k, v in color_kwargs.items() if v is not None}
-    
-    if 'augmentation' not in color_processed_kwargs.keys() or \
-            'distortion' not in color_processed_kwargs.keys():
-        raise ValueError(
-            "'augmentation' and 'distortion' need to be specified for"
-            " color augmentation in config.yaml::**kwargs")
             
     if dataset == 'ADP-Release1':
+        if 'augmentation' not in color_processed_kwargs.keys() or \
+            'distortion' not in color_processed_kwargs.keys():
+            raise ValueError(
+                "'augmentation' and 'distortion' need to be specified for"
+                " color augmentation in config.yaml::**kwargs")
+                
         if color_processed_kwargs['augmentation'] == 'Color-Distortion':
             ColorAugmentation = ColorDistortion(color_processed_kwargs['distortion'])     
             transform_train = transforms.Compose([
@@ -73,18 +73,16 @@ def get_transforms(
                 transforms.RandomVerticalFlip(p = vertical_flipping),
                 transforms.RandomAffine(degrees = degrees, translate = (horizontal_shift, vertical_shift)),
                 transforms.ToTensor(),
+                transforms.Normalize(
+                    mean = [0.81233799, 0.64032477, 0.81902153],
+                    std = [0.18129702, 0.25731668, 0.16800649])
                 ])
             
             if ColorAugmentation:
-                transform_train.transforms.insert(-1, ColorAugmentation)
-            else:
-                transform_train.transforms.insert(-1, 
-                    transforms.Normalize(
-                        mean = [0.81233799, 0.64032477, 0.81902153],
-                        std = [0.18129702, 0.25731668, 0.16800649])) # since the colour aug normalizes
+                transform_train.transforms.insert(-2, ColorAugmentation)
             
             if gaussian_blur: # TODO this should ideally be before normalization but after colour aug
-                transform_train.transforms.append(
+                transform_train.transforms.insert(-3,
                     transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
             if cutout:
@@ -92,10 +90,10 @@ def get_transforms(
                     Cutout(n_holes=n_holes, length=length))
             
             transform_test = transforms.Compose([
+                transforms.ToTensor(),
                 transforms.Normalize(
                     mean = [0.81233799, 0.64032477, 0.81902153],
                     std = [0.18129702, 0.25731668, 0.16800649]),
-                transforms.ToTensor(),
                 ])
     elif dataset == 'MHIST':
         transform_train = transforms.Compose([
