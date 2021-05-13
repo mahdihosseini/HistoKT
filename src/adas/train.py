@@ -60,7 +60,7 @@ if 'adas.' in mod_name:
     from .optim.sps import SPS
     from .data import get_data
     from .optim.adas import Adas
-    from .ADP_utils.thresholded_metrics import Thresholded_Metrics
+    # from .ADP_utils.thresholded_metrics import Thresholded_Metrics
 else:
     from optim.lr_scheduler import CosineAnnealingWarmRestarts, StepLR, \
         OneCycleLR
@@ -77,7 +77,7 @@ else:
     from optim.sps import SPS
     from data import get_data
     from optim.adas import Adas
-    from ADP_utils.thresholded_metrics import Thresholded_Metrics
+    # from ADP_utils.thresholded_metrics import Thresholded_Metrics
 
 
 def args(sub_parser: _SubParsersAction):
@@ -509,7 +509,7 @@ class TrainingAgent:
                 m = nn.Sigmoid()
                 preds = (m(outputs) > 0.5).int()
                 acc1, acc5 = accuracyADP(preds, targets)
-                train_loss += loss.item() * inputs.size(0)
+                train_loss += loss.item()
                 top1.update(acc1.double(), inputs.size(0))
                 top5.update(acc5.double(), inputs.size(0))
             else:
@@ -526,11 +526,11 @@ class TrainingAgent:
                 self.scheduler.step()
         if self.config['dataset'] == 'ADP-Release1':
             with torch.no_grad():
-                train_loss = train_loss / len(self.train_loader.dataset)
+                train_loss = train_loss / len(self.train_loader)
                 train_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.train_loader.dataset) * self.num_classes))
                 train_acc5 = (top5.sum_accuracy.cpu().item() / len(self.train_loader.dataset)) 
         else:
-            train_loss = train_loss / (batch_idx + 1)
+            train_loss = train_loss / len(self.train_loader)
             train_acc1 = (top1.avg.cpu().item() / 100.)
             train_acc5 = (top1.avg.cpu().item() / 100.) 
             
@@ -658,14 +658,14 @@ class TrainingAgent:
                 # correct += predicted.eq(targets).sum().item()
                 if self.config['dataset'] == 'ADP-Release1':
                     acc1, acc5 = accuracyADP(preds, targets)
-                    test_loss += loss.item() * inputs.size(0)
+                    test_loss += loss.item()
                     top1.update(acc1.double(), inputs.size(0))
                     top5.update(acc5.double(), inputs.size(0))
                 else:
                     acc1, acc5 = accuracy(outputs, targets, topk=(
                     1, min(self.num_classes, 5)),
                     aoc=self.num_classes == 2)
-                    test_loss += loss.item() * inputs.size(0)
+                    test_loss += loss.item()
                     top1.update(acc1[0], inputs.size(0))
                     top5.update(acc5[0], inputs.size(0))
                 
@@ -691,12 +691,12 @@ class TrainingAgent:
         #     self.best_acc = acc
         if self.config['dataset'] == 'ADP-Release1':
             with torch.no_grad():
-                test_loss = test_loss / len(self.test_loader.dataset)
+                test_loss = test_loss / len(self.test_loader)
                 test_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.test_loader.dataset) * self.num_classes))
                 test_acc5 = (top5.sum_accuracy.cpu().item() / len(self.test_loader.dataset)) 
-                thresholded_metrics = Thresholded_Metrics(labelsALL_test, predALL_test, self.level, self.config['network'], epoch)
+                # thresholded_metrics = Thresholded_Metrics(labelsALL_test, predALL_test, self.level, self.config['network'], epoch)
         else:
-            test_loss = test_loss / (batch_idx + 1)
+            test_loss = test_loss / len(self.test_loader)
             test_acc1 = (top1.avg.cpu().item() / 100.)
             test_acc5 = (top1.avg.cpu().item() / 100.) 
 
