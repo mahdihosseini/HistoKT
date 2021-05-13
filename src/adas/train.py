@@ -665,6 +665,7 @@ class TrainingAgent:
                     acc1, acc5 = accuracy(outputs, targets, topk=(
                     1, min(self.num_classes, 5)),
                     aoc=self.num_classes == 2)
+                    test_loss += loss.item() * inputs.size(0)
                     top1.update(acc1[0], inputs.size(0))
                     top5.update(acc5[0], inputs.size(0))
                 
