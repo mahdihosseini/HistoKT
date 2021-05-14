@@ -170,21 +170,32 @@ def get_data(
         
         num_classes = classesADP[level]['numClasses']
         
-        train_set = ADP_dataset(level, transform = transform_train, root = str(root), 
+        train_set = ADP_dataset(level, 
+                        transform = transform_train, 
+                        root = str(root), 
                         split = 'train')
 
-        train_sampler = torch.utils.data.distributed.DistributedSampler(train_set) if dist else None
+        train_sampler = torch.utils.data.distributed.DistributedSampler(
+                            train_set) if dist else None
 
-        train_loader = torch.utils.data.DataLoader(train_set, batch_size = mini_batch_size,
-                                            shuffle=(train_sampler is None), pin_memory = True,
-                                            num_workers = num_workers,
-                                            sampler = train_sampler)
+        train_loader = torch.utils.data.DataLoader(
+                            train_set, 
+                            batch_size = mini_batch_size,
+                            shuffle=(train_sampler is None), 
+                            pin_memory = True,
+                            num_workers = num_workers,
+                            sampler = train_sampler)
 
-        test_set = ADP_dataset(level,  transform = transform_test, root = str(root), 
+        test_set = ADP_dataset(level, 
+                        transform = transform_test, 
+                        root = str(root), 
                         split = 'valid') # USING VALIDATION DATA
 
-        test_loader = torch.utils.data.DataLoader(test_set, batch_size = mini_batch_size, 
-                                                    pin_memory = True, shuffle = False,
-                                                    num_workers = num_workers)
+        test_loader = torch.utils.data.DataLoader(
+                        test_set, 
+                        batch_size = mini_batch_size, 
+                        pin_memory = True, 
+                        shuffle = False,
+                        num_workers = num_workers)
 
     return train_loader, train_sampler, test_loader, num_classes
