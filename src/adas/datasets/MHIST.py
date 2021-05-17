@@ -1,4 +1,6 @@
+from os import path
 from pathlib import Path
+import traceback
 
 import pandas as pd
 import os
@@ -7,11 +9,13 @@ from torchvision.datasets.folder import ImageFolder
 from torchvision.datasets.utils import verify_str_arg
 
 class MHIST(ImageFolder):
-    """`TinyImageNet
+    """`MHIST
     Args:
-        root (string): Root directory of the ImageNet Dataset.
+        root (string): Root directory of the MHIST Dataset.
+            all files downloaded should be placed in a folder called
+            MHIST
         split (string, optional): The dataset split, supports ``train``, or
-            ``val``.
+            ``test``.
         transform (callable, optional): A function/transform that  takes in an
             PIL image
             and returns a transformed version. E.g, ``transforms.RandomCrop``
@@ -24,22 +28,28 @@ class MHIST(ImageFolder):
      Attributes:
         classes (list): List of the class name tuples.
         class_to_idx (dict): Dict with items (class_name, class_index).
-        wnids (list): List of the WordNet IDs.
-        wnid_to_idx (dict): Dict with items (wordnet_id, class_index).
-        imgs (list): List of (image path, class_index) tuples
         targets (list): The class_index value for each image in the dataset
+        split_folder (os.path): a path to the split folders
     """
 
     def __init__(self, root, split='train', **kwargs):
         root = self.root = os.path.expanduser(root)
         self.split = verify_str_arg(split, "split", ("train", "test"))
-        self.root = root
-        root = Path(root)
+        self.root = os.path.join(root, "MHIST")
+        root = Path(self.root)
         self.classes = ['SSA', 'HP']
         self.class_to_idx = {cls: idx
                              for idx, cls in enumerate(self.classes)}
-
-        data = pd.read_csv(str(root / 'annotations.csv'))
+        
+        try:
+            data = pd.read_csv(str(root / 'annotations.csv'))
+        except FileNotFoundError as err:
+            traceback.print_exc()
+            print("-"*60)
+            print("MHIST dataset files must be placed in a folder")
+            print("called 'MHIST' in the data directory")
+            print("-"*60)
+            raise err
         _len = len(data['Image Name'])
         self.images = list()
         self.targets = list()
@@ -52,8 +62,4 @@ class MHIST(ImageFolder):
                 if data['Partition'][i] == split:
                     (root / 'images' / data['Image Name'][i]).rename(
                         root / split / data['Majority Vote Label'][i] / data['Image Name'][i])
-        super(MHIST, self).__init__(self.split_folder, **kwargs)
-
-    @ property
-    def split_folder(self):
-        return os.path.join(self.root, self.split)
+        super(MHIST, self).__init__(str(root / split), **kwargs)

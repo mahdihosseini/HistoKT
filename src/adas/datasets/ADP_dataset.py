@@ -74,6 +74,11 @@ class ADP_dataset(Dataset):
         self.full_image_paths = [os.path.join(self.root, self.db_name, self.ROI, image_name) for image_name in out_df['Patch Names']]
         self.class_labels = out_df[classesADP[level]['classesNames']].to_numpy(dtype=np.float32)
 
+        # defined for compatibility with pytorch ImageFolder
+        self.samples = [(self.full_image_paths[i], self.class_labels[i]) for i in range(len(self))]
+        self.class_to_idx = {cls: idx for idx, cls in enumerate(out_df[classesADP[level]['classesNames']].columns)}
+        
+
     def __getitem__(self, idx) -> torch.Tensor:
         
         path = self.full_image_paths[idx]
