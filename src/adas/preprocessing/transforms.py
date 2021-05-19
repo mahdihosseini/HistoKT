@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from torch.utils import data
 from torch.utils.data import dataset
+from torchvision.datasets.folder import default_loader
 
 
 def scale_up(image, scale=1):
@@ -37,6 +38,10 @@ class ProcessImages:
         """
 
         self.dataset = dataset
+        try:
+            self.dataset.transforms = None
+        except:
+            raise
         self.target_folder = target_folder
 
         # checking if dataset has all necessary attributes
@@ -53,16 +58,34 @@ class ProcessImages:
             print("samples: a list of tuples (image_path, class)")
             raise err
 
-    def scale_up(self, image, scale=1) -> np.array:
+    def process(self, target_dim = (272, 272)):
+        # processes images and saves
+        # them to the target folder
+        
+        for i in range(len(self.dataset)):
+            image_path, _ = dataset[i]
+            image = default_loader(image_path)
+            rescaled_img = self.scale_img(image)
+
+            if rescaled_img.shape[0] > target_dim[0] and \
+                rescaled_img.shape[1] > target_dim[1]:
+                pass
+                # handle larger image cropping here
+
+            else:
+                out_img = self.reflection_wrap(rescaled_img,
+                                dim=target_dim)
+            
+            # save out_img with the same file structure as the dataset in 
+            # different folder
+
+    @staticmethod
+    def scale_img(image, scale=1) -> np.array:
         # scales up or down an image
         return rescale(image, scale, clip=True, multichannel=True)
     
-    def process(self):
-        # processes images and saves
-        # them to the target folder
-        pass
-    
-    def reflection_wrap(self, image, dim=(272, 272)):
+    @staticmethod
+    def reflection_wrap(image, dim = (272, 272)) -> np.array:
         image = np.array(image)
 
         resized_img = np.zeros(dim + (3,))
@@ -96,7 +119,7 @@ class ProcessImages:
             # and negative indicies, e.g. -6 = 5 
 
         resized_img[:, :width, :] = height_resized_img
-        
+
         for i in range(width_factor):
             # wraps in the width direction
             direction = 1 if i % 2 else -1
