@@ -23,6 +23,7 @@ SOFTWARE.
 """
 from pathlib import Path
 import sys
+from typing import Any, Optional, Union
 
 import torchvision
 import torch
@@ -31,13 +32,12 @@ from torchvision import transforms
 mod_name = vars(sys.modules[__name__])['__name__']
 
 if 'adas.' in mod_name:
-    from .datasets import ImageNet, TinyImageNet, ADP_dataset, MHIST
-    from .ADP_utils.classesADP import classesADP
+    from .datasets import ImageNet, TinyImageNet, ADPDataset, MHIST
 else:
-    from datasets import ImageNet, TinyImageNet, ADP_dataset, MHIST
-    from ADP_utils.classesADP import classesADP
+    from datasets import ImageNet, TinyImageNet, ADPDataset, MHIST
 
 # from .folder2lmdb import ImageFolderLMDB
+
 
 def get_data(
         name: str, root: Path,
@@ -46,7 +46,8 @@ def get_data(
         transform_train: transforms, 
         transform_test: transforms,
         level: str = "L3", 
-        dist: bool = False) -> None:
+        dist: bool = False) -> \
+        [Any, Optional[Any], Any, Union[int, Any]]:
     if name == 'MHIST':
         num_classes = 2
         trainset = MHIST(
@@ -168,12 +169,12 @@ def get_data(
     
     elif name == 'ADP-Release1':       
         
-        num_classes = classesADP[level]['numClasses']
+        num_classes = ADPDataset.ADP_classes[level]['numClasses']
         
-        train_set = ADP_dataset(level, 
-                        transform = transform_train, 
-                        root = str(root), 
-                        split = 'train')
+        train_set = ADPDataset(level,
+                               transform = transform_train,
+                               root = str(root),
+                               split = 'train')
 
         train_sampler = torch.utils.data.distributed.DistributedSampler(
                             train_set) if dist else None
@@ -186,10 +187,10 @@ def get_data(
                             num_workers = num_workers,
                             sampler = train_sampler)
 
-        test_set = ADP_dataset(level, 
-                        transform = transform_test, 
-                        root = str(root), 
-                        split = 'valid') # USING VALIDATION DATA
+        test_set = ADPDataset(level,
+                              transform = transform_test,
+                              root = str(root),
+                              split = 'valid') # USING VALIDATION DATA
 
         test_loader = torch.utils.data.DataLoader(
                         test_set, 

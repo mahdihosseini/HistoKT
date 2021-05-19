@@ -60,7 +60,6 @@ if 'adas.' in mod_name:
     from .optim.sps import SPS
     from .data import get_data
     from .optim.adas import Adas
-    # from .ADP_utils.thresholded_metrics import Thresholded_Metrics
 else:
     from optim.lr_scheduler import CosineAnnealingWarmRestarts, StepLR, \
         OneCycleLR
@@ -77,7 +76,6 @@ else:
     from optim.sps import SPS
     from data import get_data
     from optim.adas import Adas
-    # from ADP_utils.thresholded_metrics import Thresholded_Metrics
 
 
 def args(sub_parser: _SubParsersAction):
