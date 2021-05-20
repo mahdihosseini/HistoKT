@@ -51,9 +51,9 @@ scheduler_kwargs:
 
 ###### Suggested Default ######
 p: 1 # options: 1, 2.
-n_trials: 1 #increase to more to see more results
+n_trials: 3 #increase to more to see more results
 num_workers: 6
-max_epochs: 150
+max_epochs: 200
 mini_batch_size: 32 # might need to change to a lower num for ADP
 loss: 'MultiLabelSoftMarginLoss' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop
