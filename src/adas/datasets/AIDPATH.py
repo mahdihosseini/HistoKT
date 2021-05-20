@@ -1,26 +1,17 @@
 """
-AJ-Lymph dataset
-Retrieved from: http://www.andrewjanowczyk.com/use-case-7-lymphoma-sub-type-classification/
-
-CITATION:
-Janowczyk A, Madabhushi A. Deep learning for digital pathology image analysis:
-A comprehensive tutorial with selected use cases. J Pathol Inform. 2016 Jul 26;7:29.
-doi: 10.4103/2153-3539.186902. PMID: 27563488; PMCID: PMC4977982.
+Dataset of segmented glomeruli
+Retrieved from:
+Bueno, Gloria; Gonzalez-Lopez, Lucia; García-Rojo, Marcial ; Laurinavicius, Arvydas (2020), “Data for glomeruli characterization in histopathological images”, Mendeley Data, V3, doi: 10.17632/k7nvtgn2x6.3
 """
 
-from os import path
-from pathlib import Path
-import traceback
-
-import pandas as pd
 import os
 
 from torchvision.datasets.folder import ImageFolder
 from torchvision.datasets.utils import verify_str_arg
 
 
-class AJLymph(ImageFolder):
-    """`AJLymph
+class AIDPATH(ImageFolder):
+    """`AIDPATH
     Args:
         root (string): Root directory of the AJ-Lymph Dataset.
             all files downloaded should be placed in a folder
@@ -43,10 +34,10 @@ class AJLymph(ImageFolder):
         split_folder (os.path): a path to the split folders
     """
 
-    train_folder = "AJ-Lymph"
+    db_folder = "AIDPATH_kidney/DATASET_B_DIB"
 
     def __init__(self, root, split="train", **kwargs):
         root = self.root = os.path.expanduser(root)
         self.split = verify_str_arg(split, "split", ("train", "test"))
 
-        super(AJLymph, self).__init__(str(os.path.join(root, self.train_folder)), **kwargs)
+        super(AIDPATH, self).__init__(str(os.path.join(root, self.db_folder)), **kwargs)
