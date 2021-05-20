@@ -75,9 +75,9 @@ class ADPDataset(Dataset):
 
     def __init__(self,
                  level,
-                 transform,
                  root,
                  split='train',
+                 transform=None,
                  loader=default_loader) -> None:
         """
         Args:
@@ -97,6 +97,8 @@ class ADPDataset(Dataset):
             self.full_image_paths (list) : a list of image paths
             self.class_labels (np.ndarray) : a numpy array of class labels
                 (num_samples, num_classes)
+            self.samples (list): a list of (image_path, label)
+            cls.ADP_classes: a dictionary of classes for various hierarchies
         """
 
         self.root = root
