@@ -7,14 +7,15 @@ from scipy.stats import circmean
 from scipy.stats import circstd
 from skimage.color import hsv2rgb, rgb2hsv
 
-class YCbCr:   
+
+class YCbCr:
     def __init__(self, distortion):
         self.distortion = distortion
-    
-    def __call__(self, image):     
+
+    def __call__(self, image):
         image_array = np.asarray(image)
         image_dtype = image_array.dtype
-        
+
         A = np.array([[65.481, 128.553, 24.966], [-37.797, -74.203, 112.0], [112.0, -93.786, -18.214]])
         A = A / 255.
         b = np.array([16, 128, 128])
@@ -50,17 +51,18 @@ class YCbCr:
         image_perturbed = (image_perturbed_ycbcr - b) @ inv_A.T
         image_perturbed = np.rint(np.clip(image_perturbed, 0, 255)).astype('uint8')
         # image_perturbed = (image_perturbed - 193.09203) / (56.450138 + 1e-7)
-        image = image_perturbed.astype(image_dtype)        
+        image = image_perturbed.astype(image_dtype)
         return Image.fromarray(image)
+
 
 class HSV:
     def __init__(self, distortion):
         self.distortion = distortion
-    
-    def __call__(self, image):     
+
+    def __call__(self, image):
         image_array = np.asarray(image)
         image_dtype = image_array.dtype
-        
+
         HSV_image = rgb2hsv(image_array)
         H = HSV_image[:, :, 0]
         H_rad = H * [2 * math.pi] - math.pi
@@ -70,78 +72,81 @@ class HSV:
         std_H_rad = circstd(H_rad)
         mean_S = np.mean(S, axis=(0, 1))
         std_S = np.std(S, axis=(0, 1))
-        
+
         H_rad_centered = np.angle(np.exp(1j * (H_rad - mean_H_rad)))
         H_rad_centered_augmented = H_rad_centered + np.random.normal(loc=0, scale=(self.distortion * std_H_rad))
         H_rad_augmented = np.angle(np.exp(1j * (H_rad_centered_augmented + mean_H_rad)))
         H_augmented = np.divide(H_rad_augmented + math.pi, 2 * math.pi)
-        
+
         S_centered = S - mean_S
         S_centered_augmented = S_centered + np.random.normal(loc=0, scale=(self.distortion * std_S))
         S_augmented = S_centered_augmented + mean_S
-        
+
         image_perturbed_HSV = np.empty(image_array.shape)
         image_perturbed_HSV[:, :, 0] = H_augmented
         image_perturbed_HSV[:, :, 1] = S_augmented
         image_perturbed_HSV[:, :, 2] = V
-        
+
         image_rgb = hsv2rgb(image_perturbed_HSV)
-        image_rgb = image_rgb*255.0
+        image_rgb = image_rgb * 255.0
         image_perturbed = np.rint(np.clip(image_rgb, 0, 255)).astype('uint8')
         # image_perturbed = (image_perturbed - 193.09203) / (56.450138 + 1e-7) 
         image = image_perturbed.astype(image_dtype)
         return Image.fromarray(image)
-    
-class ColorDistortion:    
+
+
+class ColorDistortion:
     def __init__(self, distortion):
         self.distortion = distortion
-        
+
     def __call__(self, image):
-        color_jitter = transforms.ColorJitter(0.8*self.distortion, 0.8*self.distortion, 
-                                              0.8*self.distortion, 0.2*self.distortion)
+        color_jitter = transforms.ColorJitter(0.8 * self.distortion, 0.8 * self.distortion,
+                                              0.8 * self.distortion, 0.2 * self.distortion)
         rnd_color_jitter = transforms.RandomApply([color_jitter], p=1.0)
         rnd_gray = transforms.RandomGrayscale(p=0.2)
         color_distort = transforms.Compose([
             rnd_color_jitter,
-            #rnd_gray
-            ])
+            # rnd_gray
+        ])
         transformed_image = color_distort(image)
         return transformed_image
-    
+
+
 class RGBJitter:
     def __init__(self, distortion):
         self.distortion = distortion
-        
-    def __call__(self, image):       
+
+    def __call__(self, image):
         image_array = np.asarray(image)
         image_dtype = image_array.dtype
         image_shifted = self.pca_augmentation(image_array)
         image = image_shifted.astype(image_dtype)
         return Image.fromarray(image)
-    
+
     def pca_augmentation(self, image):
-        #Normalization
-        img_array = image/255.0
-        mean = np.mean(img_array, axis=(0,1))
+        # Normalization
+        img_array = image / 255.0
+        mean = np.mean(img_array, axis=(0, 1))
         img_norm = (img_array - mean)
-        #Covariance matrix 
-        img_rs = img_norm.reshape(img_norm.shape[0]*img_norm.shape[1], img_norm.shape[2])
+        # Covariance matrix
+        img_rs = img_norm.reshape(img_norm.shape[0] * img_norm.shape[1], img_norm.shape[2])
         cov_matrix = np.cov(img_rs, rowvar=False)
-        #Principal Components
+        # Principal Components
         eig_values, eig_vectors = np.linalg.eig(cov_matrix)
-        #Sorting the eigen_vectors in the order of their eigen_values (highest to lowest)
-        indices = np.flipud(eig_values.argsort()) #indices of the sorted eig_values in decreasing order
-        eig_values = sorted(eig_values, reverse=True) #eig_values sorted in descending order
+        # Sorting the eigen_vectors in the order of their eigen_values (highest to lowest)
+        indices = np.flipud(eig_values.argsort())  # indices of the sorted eig_values in decreasing order
+        eig_values = sorted(eig_values, reverse=True)  # eig_values sorted in descending order
         eig_vectors = eig_vectors[:, indices]
         alphas = np.random.normal(0, self.distortion, 3)
-        delta = np.dot(eig_vectors, (alphas*eig_values))
-        
+        delta = np.dot(eig_vectors, (alphas * eig_values))
+
         image_distorted = img_norm + delta
-        image_distorted = (image_distorted + mean)*255.0
+        image_distorted = (image_distorted + mean) * 255.0
         image_distorted = np.rint(np.clip(image_distorted, 0, 255)).astype('uint8')
         # image_distorted = (image_distorted - 193.09203) / (56.450138 + 1e-7)
         return image_distorted
-       
+
+
 # class Normalize:  
 #     def __call__(self, image): 
 #         image_array = np.asarray(image)
@@ -149,6 +154,7 @@ class RGBJitter:
 #         image_perturbed = (image_array - 193.09203) / (56.450138 + 1e-7) 
 #         image = image_perturbed.astype(image_dtype) 
 #         return Image.fromarray(image)
+
 
 class Cutout(object):
     """Randomly mask out one or more patches from an image.
