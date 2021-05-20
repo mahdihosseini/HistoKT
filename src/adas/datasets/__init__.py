@@ -8,9 +8,11 @@ if 'adas.' in mod_name:
     from .ImageNet import ImageNet
     from .TinyImageNet import TinyImageNet
     from .BACH import BACH
+    from .Osteosarcoma import OSDataset
 else:
     from datasets.ADPDataset import ADPDataset
     from datasets.MHIST import MHIST
     from datasets.ImageNet import ImageNet
     from datasets.TinyImageNet import TinyImageNet
     from datasets.BACH import BACH
+    from datasets.Osteosarcoma import OSDataset
