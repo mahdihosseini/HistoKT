@@ -1,5 +1,6 @@
 from skimage.transform import resize, rescale
-from skimage.io import imsave
+from skimage import io
+from skimage.exposure import is_low_contrast
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,6 +10,8 @@ from torchvision.datasets.folder import default_loader
 import torch
 import os
 from pathlib import Path
+import random
+import pickle
 
 
 def print_imgs(dataset):
@@ -26,7 +29,7 @@ def print_imgs(dataset):
 
 class ProcessImages:
 
-    def __init__(self, dataset, target_folder) -> None:
+    def __init__(self, dataset, target_folder, split_dict={"train": 100},) -> None:
         """
         A class to process a dataset and save the resultant images 
         to a given folder
@@ -39,12 +42,9 @@ class ProcessImages:
         """
 
         self.dataset = dataset
-        try:
-            self.dataset.transforms = None
-        except:
-            raise
+        self.dataset.transforms = None
         self.target_folder = target_folder
-
+        self.split_dict = split_dict
         # checking if dataset has all necessary attributes
         try:
             if self.dataset.root and \
@@ -59,12 +59,23 @@ class ProcessImages:
             print("samples: a list of tuples (image_path, class)")
             raise err
 
-    def process(self, scale=1, target_dim=(272, 272), percent_overlap=0.25) -> None:
+    def process(self,
+                scale=1,
+                target_dim=(272, 272),
+                percent_overlap=0.5,
+                intensity_threshold=0.8,
+                occurrence_threshold=0.975,
+                show_imgs=False,
+                low_contrast=True,
+                lower_percentile=5,
+                upper_percentile=99) -> None:
         # processes images and saves
         # them to the target folder
 
+        new_samples = []
+
         for i in range(len(self.dataset)):
-            image_path, _ = self.dataset.samples[i]
+            image_path, label = self.dataset.samples[i]
             image = default_loader(image_path)
             image = np.array(image)
             rescaled_img = self.scale_img(image, scale)
@@ -75,26 +86,42 @@ class ProcessImages:
                 out_images = self.crop(rescaled_img, target_dim, percent_overlap)
 
             else:
+
                 out_img = self.reflection_wrap(rescaled_img,
                                                dim=target_dim)
 
                 out_images = self.crop(out_img, target_dim, percent_overlap)
 
+            # remove images containing too much background
+            filtered_images = self.remove_background(out_images,
+                                                     intensity_threshold,
+                                                     occurrence_threshold,
+                                                     low_contrast,
+                                                     lower_percentile,
+                                                     upper_percentile)
+
             # save out_img with the same file structure as the dataset in 
             # different folder
 
-            root = self.dataset.root
             image_path = Path(image_path)
-            image_path = image_path.relative_to(root)
+            image_path = image_path.relative_to(self.dataset.root)
             image_path = Path(os.path.join(self.target_folder, image_path))
 
-            for j, image2save in enumerate(out_images):
-                # TODO add checking for background images
+            for j, image2save in enumerate(filtered_images):
+                if type(image2save) is tuple:
+                    print(image_path.stem + f"-{j}" + ".png" + " is a background image because", image2save[1])
+                    if show_imgs:
+                        io.imshow(image2save[0])
+                        io.show()
+                    continue
                 filename = image_path.stem + f"-{j}" + ".png"
                 save_path = str(image_path).replace(image_path.name, filename)
                 save_path = Path(save_path)
+                new_samples.append((str(save_path.relative_to(self.target_folder)), label))
                 save_path.parent.mkdir(parents=True, exist_ok=True)
-                imsave(str(save_path), image2save)
+                io.imsave(str(save_path), image2save)
+        self.split_and_save_samples(new_samples)
+        self.save_class_to_idx()
         return
 
     @staticmethod
@@ -172,3 +199,77 @@ class ProcessImages:
         patches = patches.reshape(-1, image.shape[-1], *dim).permute(0, 2, 3, 1).numpy().astype(np.uint8)
 
         return [patches[i] for i in range(patches.shape[0])]
+
+    @staticmethod
+    def remove_background(img_list,
+                          intensity_threshold=0.5,
+                          occurrence_threshold=0.975,
+                          low_contrast=False,
+                          lower_percentile=5,
+                          upper_percentile=99) -> [np.array]:
+        out_list = []
+        rgb_threshold = intensity_threshold * 255 * 3
+        for img in img_list:
+            image_size = img.shape[0] * img.shape[1]
+            squeezed_img = np.sum(img, axis=-1)
+            masked_img = np.where(squeezed_img > rgb_threshold, 1, 0)
+            if low_contrast:
+                if is_low_contrast(img, lower_percentile, upper_percentile):
+                    out_list.append((img, "low_c"))
+                    continue
+            else:
+                if np.sum(masked_img) >= occurrence_threshold * image_size:
+                    out_list.append((img, "bright"))
+                    continue
+            out_list.append(img)
+
+        return out_list
+
+    def split_and_save_samples(self, samples) -> None:
+        """
+        splits samples into folds specified by self.split_dict
+        saves splits in the target folder as {split_name}.pickle
+        Args:
+            samples: list
+                list of (path, label) to be saved
+
+        Returns:
+            None
+        """
+        random.shuffle(samples)
+        dataset_length = len(samples)
+
+        cumulative_percentage = 0
+        for split_name, percentage in self.split_dict.items():
+            start_index = int(cumulative_percentage * dataset_length)
+            end_index = int((cumulative_percentage + percentage) * dataset_length)
+            end_index = end_index if end_index < dataset_length else dataset_length
+            split_samples = samples[start_index:end_index]
+
+            # saving split samples:
+            with open(os.path.join(self.target_folder, split_name + ".pickle"), "wb") as f:
+                pickle.dump(split_samples, f)
+            cumulative_percentage += percentage
+
+    def save_class_to_idx(self):
+        with open(os.path.join(self.target_folder, "class_to_idx.pickle"), "wb") as f:
+            pickle.dump(self.dataset.class_to_idx, f)
+
+
+class ProcessDatasets:
+
+    def __init__(self, dataset_list):
+        """
+
+        Args:
+            dataset_list: [(torch.utils.data.Dataset, "target_folder")]
+                list of constructed datasets
+        """
+        self.dataset_list = dataset_list
+
+    def process(self):
+        for dataset, target_folder in self.dataset_list:
+            image_processor = ProcessImages(dataset, target_folder=target_folder)
+
+            image_processor.process()
+
