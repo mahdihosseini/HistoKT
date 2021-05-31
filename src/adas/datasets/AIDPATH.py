@@ -1,7 +1,8 @@
 """
 Dataset of segmented glomeruli
 Retrieved from:
-Bueno, Gloria; Gonzalez-Lopez, Lucia; García-Rojo, Marcial ; Laurinavicius, Arvydas (2020), “Data for glomeruli characterization in histopathological images”, Mendeley Data, V3, doi: 10.17632/k7nvtgn2x6.3
+Bueno, Gloria; Gonzalez-Lopez, Lucia; García-Rojo, Marcial ; Laurinavicius, Arvydas (2020),
+“Data for glomeruli characterization in histopathological images”, Mendeley Data, V3, doi: 10.17632/k7nvtgn2x6.3
 """
 
 import os
@@ -13,11 +14,8 @@ from torchvision.datasets.utils import verify_str_arg
 class AIDPATH(ImageFolder):
     """`AIDPATH
     Args:
-        root (string): Root directory of the AJ-Lymph Dataset.
-            all files downloaded should be placed in a folder
-            called "AJ-Lymph" and placed in the data folder
-        split (string, optional): The dataset split, supports ``train``, or
-            ``test``.
+        root (string): Root directory of the AIDPATH Dataset.
+        split (string, optional): The dataset split, supports ``train``.
         transform (callable, optional): A function/transform that  takes in an
             PIL image
             and returns a transformed version. E.g, ``transforms.RandomCrop``
@@ -38,6 +36,6 @@ class AIDPATH(ImageFolder):
 
     def __init__(self, root, split="train", **kwargs):
         root = self.root = os.path.expanduser(root)
-        self.split = verify_str_arg(split, "split", ("train", "test"))
+        self.split = verify_str_arg(split, "split", ("train",))
 
         super(AIDPATH, self).__init__(str(os.path.join(root, self.db_folder)), **kwargs)

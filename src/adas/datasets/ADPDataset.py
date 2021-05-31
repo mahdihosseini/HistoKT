@@ -87,7 +87,7 @@ class ADPDataset(Dataset):
             transform (callable, optional): A function/transform that  takes in an
                 PIL image
                 and returns a transformed version. E.g, ``transforms.RandomCrop``
-            root (string): Root directory of the ImageNet Dataset.
+            root (string): Root directory containing the ADP Dataset.
             split (string, optional): The dataset split, supports ``train``,
                 ``valid``, or ``test``.
             loader (callable, optional): A function to load an image given its
