@@ -23,6 +23,7 @@ SOFTWARE.
 """
 from pathlib import Path
 import sys
+import os
 from typing import Any, Optional, Union
 
 import torchvision
@@ -32,9 +33,9 @@ from torchvision import transforms
 mod_name = vars(sys.modules[__name__])['__name__']
 
 if 'adas.' in mod_name:
-    from .datasets import ImageNet, TinyImageNet, ADPDataset, MHIST
+    from .datasets import ImageNet, TinyImageNet, ADPDataset, MHIST, TransformedDataset
 else:
-    from datasets import ImageNet, TinyImageNet, ADPDataset, MHIST
+    from datasets import ImageNet, TinyImageNet, ADPDataset, MHIST, TransformedDataset
 
 # from .folder2lmdb import ImageFolderLMDB
 
@@ -173,31 +174,71 @@ def get_data(
         num_classes = ADPDataset.ADP_classes[level]['numClasses']
         
         train_set = ADPDataset(level,
-                               transform = transform_train,
-                               root = str(root),
-                               split = 'train')
+                               transform=transform_train,
+                               root=str(root),
+                               split='train')
 
         train_sampler = torch.utils.data.distributed.DistributedSampler(
                             train_set) if dist else None
 
         train_loader = torch.utils.data.DataLoader(
                             train_set, 
-                            batch_size = mini_batch_size,
+                            batch_size=mini_batch_size,
                             shuffle=(train_sampler is None), 
-                            pin_memory = True,
-                            num_workers = num_workers,
-                            sampler = train_sampler)
+                            pin_memory=True,
+                            num_workers=num_workers,
+                            sampler=train_sampler)
 
         test_set = ADPDataset(level,
-                              transform = transform_test,
-                              root = str(root),
+                              transform=transform_test,
+                              root=str(root),
                               split = 'valid') # USING VALIDATION DATA
 
         test_loader = torch.utils.data.DataLoader(
                         test_set, 
-                        batch_size = mini_batch_size, 
-                        pin_memory = True, 
-                        shuffle = False,
-                        num_workers = num_workers)
+                        batch_size=mini_batch_size,
+                        pin_memory=True,
+                        shuffle=False,
+                        num_workers=num_workers)
+    elif name in ["AIDPATH_transformed",
+                  "AJ-Lymph_transformed",
+                  "BACH_transformed",
+                  "CRC_transformed",
+                  "Glas_transformed",
+                  "MHIST_transformed",
+                  "OSDataset_transformed",
+                  "PCam_transformed"]:
+        # Uses validation data as "test" set
+
+        train_set = TransformedDataset(transform=transform_train,
+                                       root=os.path.join(root, name),
+                                       split='train')
+
+        train_sampler = torch.utils.data.distributed.DistributedSampler(
+            train_set) if dist else None
+
+        train_loader = torch.utils.data.DataLoader(
+            train_set,
+            batch_size=mini_batch_size,
+            shuffle=(train_sampler is None),
+            pin_memory=True,
+            num_workers=num_workers,
+            sampler=train_sampler)
+
+        test_set = TransformedDataset(transform=transform_train,
+                                      root=os.path.join(root, name),
+                                      split='valid')  # USING VALIDATION DATA
+
+        test_loader = torch.utils.data.DataLoader(
+            test_set,
+            batch_size=mini_batch_size,
+            pin_memory=True,
+            shuffle=False,
+            num_workers=num_workers)
+
+        num_classes = len(train_set.class_to_idx)
+
+    else:
+        raise ValueError(f"Dataset: {name} not in datasets. Please check spelling")
 
     return train_loader, train_sampler, test_loader, num_classes
