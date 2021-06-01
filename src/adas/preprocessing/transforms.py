@@ -1,11 +1,9 @@
-from skimage.transform import resize, rescale
+from skimage.transform import rescale
 from skimage import io
 from skimage.exposure import is_low_contrast
 
 import matplotlib.pyplot as plt
 import numpy as np
-from torch.utils import data
-from torch.utils.data import dataset
 from torchvision.datasets.folder import default_loader
 import torch
 import os
@@ -29,7 +27,7 @@ def print_imgs(dataset):
 
 class ProcessImages:
 
-    def __init__(self, dataset, target_folder, split_dict={"train": 100},) -> None:
+    def __init__(self, dataset, target_folder, split_dict={"train": 100}) -> None:
         """
         A class to process a dataset and save the resultant images 
         to a given folder
@@ -45,6 +43,9 @@ class ProcessImages:
         self.dataset.transforms = None
         self.target_folder = target_folder
         self.split_dict = split_dict
+
+        if sum(list(zip(*self.split_dict.items()))[1]) != 100:
+            print(f"PERCENTAGE DOES NOT ADD UP TO 100 IN THE {self.split_dict}")
         # checking if dataset has all necessary attributes
         try:
             if self.dataset.root and \
@@ -204,7 +205,7 @@ class ProcessImages:
     def remove_background(img_list,
                           intensity_threshold=0.5,
                           occurrence_threshold=0.975,
-                          low_contrast=False,
+                          low_contrast=True,
                           lower_percentile=5,
                           upper_percentile=99) -> [np.array]:
         out_list = []
@@ -214,7 +215,9 @@ class ProcessImages:
             squeezed_img = np.sum(img, axis=-1)
             masked_img = np.where(squeezed_img > rgb_threshold, 1, 0)
             if low_contrast:
-                if is_low_contrast(img, lower_percentile, upper_percentile):
+                if is_low_contrast(img,
+                                   lower_percentile=lower_percentile,
+                                   upper_percentile=upper_percentile):
                     out_list.append((img, "low_c"))
                     continue
             else:
@@ -222,7 +225,6 @@ class ProcessImages:
                     out_list.append((img, "bright"))
                     continue
             out_list.append(img)
-
         return out_list
 
     def split_and_save_samples(self, samples) -> None:
@@ -241,8 +243,8 @@ class ProcessImages:
 
         cumulative_percentage = 0
         for split_name, percentage in self.split_dict.items():
-            start_index = int(cumulative_percentage * dataset_length)
-            end_index = int((cumulative_percentage + percentage) * dataset_length)
+            start_index = int(cumulative_percentage / 100 * dataset_length)
+            end_index = int((cumulative_percentage + percentage) / 100 * dataset_length)
             end_index = end_index if end_index < dataset_length else dataset_length
             split_samples = samples[start_index:end_index]
 
@@ -254,22 +256,3 @@ class ProcessImages:
     def save_class_to_idx(self):
         with open(os.path.join(self.target_folder, "class_to_idx.pickle"), "wb") as f:
             pickle.dump(self.dataset.class_to_idx, f)
-
-
-class ProcessDatasets:
-
-    def __init__(self, dataset_list):
-        """
-
-        Args:
-            dataset_list: [(torch.utils.data.Dataset, "target_folder")]
-                list of constructed datasets
-        """
-        self.dataset_list = dataset_list
-
-    def process(self):
-        for dataset, target_folder in self.dataset_list:
-            image_processor = ProcessImages(dataset, target_folder=target_folder)
-
-            image_processor.process()
-

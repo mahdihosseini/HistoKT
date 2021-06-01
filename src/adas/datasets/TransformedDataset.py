@@ -31,6 +31,7 @@ class TransformedDataset(Dataset):
 
         # getting samples from preprocessed pickle file
         self.samples = pickle.load(open(os.path.join(self.root, self.split+".pickle"), "rb"))
+        self.samples = [(os.path.join(self.root, path), label) for path, label in self.samples]
         self.class_to_idx = pickle.load(open(os.path.join(self.root, "class_to_idx.pickle"), "rb"))
 
     def __getitem__(self, idx) -> [Any, torch.Tensor]:

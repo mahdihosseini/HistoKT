@@ -46,7 +46,8 @@ def get_data(
         transform_train: transforms, 
         transform_test: transforms,
         level: str = "L3", 
-        dist: bool = False) -> \
+        dist: bool = False,
+        transformed_datasets: bool = False) -> \
         [Any, Optional[Any], Any, Union[int, Any]]:
     if name == 'MHIST':
         num_classes = 2
@@ -168,7 +169,7 @@ def get_data(
             num_workers=num_workers, pin_memory=True)
     
     elif name == 'ADP-Release1':       
-        
+        # Uses validation data as test set
         num_classes = ADPDataset.ADP_classes[level]['numClasses']
         
         train_set = ADPDataset(level,

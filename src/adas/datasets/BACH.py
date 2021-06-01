@@ -50,10 +50,8 @@ class BACH(ImageFolder):
     Args:
         root (string): Root directory of the BACH Dataset.
             all files downloaded: "ICIAR2018_BACH_Challenge" and
-            "ICIAR2018_BACH_Challenge_TestDataset"
             should be placed in the data folder
-        split (string, optional): The dataset split, supports ``train``, or
-            ``test``.
+        split (string, optional): The dataset split, supports ``train``
         transform (callable, optional): A function/transform that  takes in an
             PIL image
             and returns a transformed version. E.g, ``transforms.RandomCrop``
@@ -71,15 +69,12 @@ class BACH(ImageFolder):
     """
 
     train_folder = "ICIAR2018_BACH_Challenge"
-    test_folder = "ICIAR2018_BACH_Challenge_TestDataset"
 
     def __init__(self, root, split="train", **kwargs):
         root = self.root = os.path.expanduser(root)
-        self.split = verify_str_arg(split, "split", ("train", "test"))
+        self.split = verify_str_arg(split, "split", ("train",))
         if split == "train":
             self.root = os.path.join(root, self.train_folder, "Photos")
-        if split == "test":
-            self.root = os.path.join(root, self.test_folder, "Photos")
         root = Path(self.root)
 
         super(BACH, self).__init__(str(root), **kwargs)

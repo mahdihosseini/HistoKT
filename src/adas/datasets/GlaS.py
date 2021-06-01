@@ -13,7 +13,7 @@ class GlaS(Dataset):
     """
     Dataset definition for GlaS
     """
-
+    db_folder = "warwick_qu_dataset_released_2016_07_08"
     db_name = 'Warwick QU Dataset (Released 2016_07_08)'
     csv_file = 'Grade.csv'
 
@@ -42,7 +42,7 @@ class GlaS(Dataset):
         self.loader = loader
 
         # get the csv file path
-        csv_file_path = os.path.join(self.root, self.db_name, self.csv_file)
+        csv_file_path = os.path.join(self.root, self.db_folder, self.db_name, self.csv_file)
 
         # read the csv file
         GlaS_data = pd.read_csv(csv_file_path)
@@ -57,14 +57,13 @@ class GlaS(Dataset):
             out_df = GlaS_data.iloc[60:80, :]
 
         # get the image paths
-        self.full_image_paths = [os.path.join(self.root, self.db_name, image_name + ".bmp")
-                                 for image_name in out_df["name"]]
+        self.full_image_paths = {image_name: os.path.join(self.root, self.db_folder, self.db_name, image_name + ".bmp")
+                                 for image_name in out_df["name"]}
 
         self.class_to_idx = {class_name: idx for idx, class_name in enumerate(self.classes)}
 
         self.samples = [(self.full_image_paths[image_name], self.class_to_idx[class_name])
                         for image_name, class_name in zip(out_df["name"], out_df[" grade (GlaS)"])]
-
 
     def __getitem__(self, item) -> [Any, torch.Tensor]:
 
@@ -75,7 +74,6 @@ class GlaS(Dataset):
             sample = self.transform(sample)
 
         return sample, torch.tensor(label)
-
 
     def __len__(self) -> int:
         return len(self.samples)

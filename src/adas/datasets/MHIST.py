@@ -8,6 +8,7 @@ import os
 from torchvision.datasets.folder import ImageFolder
 from torchvision.datasets.utils import verify_str_arg
 
+
 class MHIST(ImageFolder):
     """`MHIST
     Args:
