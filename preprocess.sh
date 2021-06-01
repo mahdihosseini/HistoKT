@@ -14,4 +14,4 @@
 #SBATCH --time=8:0:0
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/preprocess_datasets.py
+python src/adas/process_datasets.py
