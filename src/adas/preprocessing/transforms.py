@@ -133,9 +133,8 @@ class ProcessImages:
     @staticmethod
     def reflection_wrap(image, dim=(272, 272)) -> np.array:
         image = np.array(image)
-
-        resized_img = np.zeros(dim + (3,))
         height, width, channel = image.shape
+        resized_img = np.zeros(shape=(max(dim[0], height), max(dim[1], width), 3))
         height_factor = dim[0] // (height - 1)
         width_factor = dim[1] // (width - 1)
 
