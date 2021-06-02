@@ -1,5 +1,5 @@
 ###### Application Specific ######
-dataset: 'ADP-Release1' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+dataset: 'AIDPATH_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # AIDPATH_transformed
 # AJ-Lymph_transformed
 # BACH_transformed
@@ -15,9 +15,10 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 # SqueezeNet_1_1, VGG11, VGG11_BN, VGG13, VGG13_BN, VGG16, VGG16_BN, VGG19, VGG19_BN,
 # EfficientNetB4
 # ResNet101CIFAR, ResNet50CIFAR, ResNet34CIFAR, ResNet18CIFAR, ResNeXtCIFAR, EfficientNetB0CIFAR, VGG16CIFAR, DenseNet121CIFAR
-optimizer: 'SGD' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta 
-scheduler: 'StepLR' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
-level : 'L3' #L1, L2, L3
+optimizer: 'Adas' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
+scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
+# ADP level
+level : 'L3' #L1, L2, L3, L3Only
 
 ###### Augmentation Methods ######
 # ADP ONLY
@@ -36,7 +37,7 @@ horizontal_shift: 0.1 #HorizontalTranslation
 vertical_shift: 0.1 #VerticalTranslation
 
 # ALL Datasets
-gaussian_blur: False # controling the use of Gblur
+gaussian_blur: False # controlling the use of Gblur
 kernel_size: 9 #kernel size for the Gaussian Blur filter
 variance: 0.1 #variance of the Gaussian Blur Filter
 cutout: False # might change
@@ -44,24 +45,22 @@ n_holes: 1
 cutout_length: 16
 
 ###### Suggested Tune ######
-init_lr: 0.1
+init_lr: 0.03
 early_stop_threshold: -1 # set to -1 if you wish not to use early stop, or equally, set to a high value. Set to -1 if not using AdaS
 optimizer_kwargs:
   momentum: 0.9
   weight_decay: 5e-4
-  # beta: 0.98
-  # linear: False
-  # gamma: 0.5
-  # step_size: 25
-scheduler_kwargs: 
+  beta: 0.98
+  linear: False
   gamma: 0.5
   step_size: 25
+scheduler_kwargs: {}
 
 ###### Suggested Default ######
 p: 1 # options: 1, 2.
 n_trials: 3 #increase to more to see more results
-num_workers: 4
-max_epochs: 250
+num_workers: 0
+max_epochs: 10
 mini_batch_size: 32 # might need to change to a lower num for ADP
-loss: 'MultiLabelSoftMarginLoss' # options: cross_entropy, MultiLabelSoftMarginLoss
+loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop

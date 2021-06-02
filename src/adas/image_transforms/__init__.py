@@ -217,4 +217,83 @@ def get_transforms(
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[
                 0.229, 0.224, 0.225]),
         ])
-    return (transform_train, transform_test)
+    elif dataset in ["AIDPATH_transformed",
+                     "AJ-Lymph_transformed",
+                     "BACH_transformed",
+                     "CRC_transformed",
+                     "GlaS_transformed",
+                     "MHIST_transformed",
+                     "OSDataset_transformed",
+                     "PCam_transformed"]:
+        # TODO implement mean and std normalization
+        if 'augmentation' not in color_processed_kwargs.keys() or \
+                'distortion' not in color_processed_kwargs.keys():
+            raise ValueError(
+                "'augmentation' and 'distortion' need to be specified for"
+                " color augmentation in config.yaml::**kwargs")
+
+        if color_processed_kwargs['augmentation'] == 'Color-Distortion':
+            ColorAugmentation = ColorDistortion(color_processed_kwargs['distortion'])
+            transform_train = transforms.Compose([
+                transforms.RandomHorizontalFlip(p=horizontal_flipping),
+                transforms.RandomVerticalFlip(p=vertical_flipping),
+                transforms.RandomAffine(degrees=degrees, translate=(horizontal_shift, vertical_shift)),
+                ColorAugmentation,
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=[0.81233799, 0.64032477, 0.81902153],
+                    std=[0.18129702, 0.25731668, 0.16800649])
+            ])
+
+            if gaussian_blur:  # insert gaussian blur before normalization
+                transform_train.transforms.insert(-1,
+                                                  transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
+
+            if cutout:
+                transform_train.transforms.append(
+                    Cutout(n_holes=n_holes, length=length))
+
+            transform_test = transforms.Compose([
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=[0.81233799, 0.64032477, 0.81902153],
+                    std=[0.18129702, 0.25731668, 0.16800649]),
+            ])
+        else:
+            if color_processed_kwargs['augmentation'] == 'YCbCr':
+                ColorAugmentation = YCbCr(distortion=color_processed_kwargs['distortion'])
+            elif color_processed_kwargs['augmentation'] == 'RGB-Jitter':
+                ColorAugmentation = RGBJitter(distortion=color_processed_kwargs['distortion'])
+            elif color_processed_kwargs['augmentation'] == 'HSV':
+                ColorAugmentation = HSV(distortion=color_processed_kwargs['distortion'])
+            else:
+                ColorAugmentation = None
+
+            transform_train = transforms.Compose([
+                transforms.RandomHorizontalFlip(p=horizontal_flipping),
+                transforms.RandomVerticalFlip(p=vertical_flipping),
+                transforms.RandomAffine(degrees=degrees, translate=(horizontal_shift, vertical_shift)),
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=[0.81233799, 0.64032477, 0.81902153],
+                    std=[0.18129702, 0.25731668, 0.16800649])
+            ])
+
+            if ColorAugmentation:
+                transform_train.transforms.insert(-2, ColorAugmentation)
+
+            if gaussian_blur:  # TODO this should ideally be before normalization but after colour aug
+                transform_train.transforms.insert(-3,
+                                                  transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
+
+            if cutout:
+                transform_train.transforms.append(
+                    Cutout(n_holes=n_holes, length=length))
+
+            transform_test = transforms.Compose([
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=[0.81233799, 0.64032477, 0.81902153],
+                    std=[0.18129702, 0.25731668, 0.16800649]),
+            ])
+    return transform_train, transform_test

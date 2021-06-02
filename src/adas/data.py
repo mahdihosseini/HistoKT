@@ -204,12 +204,11 @@ def get_data(
                   "AJ-Lymph_transformed",
                   "BACH_transformed",
                   "CRC_transformed",
-                  "Glas_transformed",
+                  "GlaS_transformed",
                   "MHIST_transformed",
                   "OSDataset_transformed",
                   "PCam_transformed"]:
         # Uses validation data as "test" set
-
         train_set = TransformedDataset(transform=transform_train,
                                        root=os.path.join(root, name),
                                        split='train')

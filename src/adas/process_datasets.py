@@ -40,15 +40,15 @@ def main(root):
                      {"test": 100},
                      pixel_res["CRC"]),
                     (GlaS(root, split="train", transform=None),
-                     "Glas_transformed",
+                     "GlaS_transformed",
                      {"train": 100},
                      pixel_res["GlaS"]),
                     (GlaS(root, split="valid", transform=None),
-                     "Glas_transformed",
+                     "GlaS_transformed",
                      {"valid": 100},
                      pixel_res["GlaS"]),
                     (GlaS(root, split="test", transform=None),
-                     "Glas_transformed",
+                     "GlaS_transformed",
                      {"test": 100},
                      pixel_res["GlaS"]),
                     (MHIST(root, split="train", transform=None),
@@ -102,5 +102,6 @@ def main(root):
 
 
 if __name__ == "__main__":
-    root_dir = ".adas-data"
+    #root_dir = ".adas-data"
+    root_dir = "~/scratch/HistoKTdata"
     main(root_dir)
