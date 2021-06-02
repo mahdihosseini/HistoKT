@@ -6,9 +6,8 @@
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
-#SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=32000
 #SBATCH --account=def-plato
 #SBATCH --time=8:0:0
