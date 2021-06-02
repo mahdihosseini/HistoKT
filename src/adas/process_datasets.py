@@ -1,4 +1,4 @@
-import os.path
+import os
 
 from preprocessing.transforms import ProcessImages
 from datasets import AIDPATH, AJLymph, BACH, CRC, GlaS, MHIST, OSDataset, PCam
@@ -103,5 +103,6 @@ def main(root):
 
 if __name__ == "__main__":
     #root_dir = ".adas-data"
-    root_dir = "~/scratch/HistoKTdata"
+    home = os.environ.get("HOME")
+    root_dir = f"{home}/scratch/HistoKTdata"
     main(root_dir)
