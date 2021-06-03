@@ -61,11 +61,12 @@ class PCam(Dataset):
             self.create_splits(path_to_images, path_to_labels)
             self.samples = pickle.load(open(os.path.join(self.root, self.split, self.split + ".pickle"), "rb"))
 
+        self.samples = [(os.path.join(self.root, sample[0]), sample[1]) for sample in self.samples]
+
     def __getitem__(self, idx) -> [Any, torch.Tensor]:
 
-        path, label = self.samples[idx]
+        sample, label = self.samples[idx]
 
-        sample = self.loader(os.path.join(self.root, path))
         if self.transform is not None:
             sample = self.transform(sample)
 
