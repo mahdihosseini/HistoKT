@@ -6,12 +6,13 @@
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
+#SBATCH --gres=gpu:v100l:1
+#SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6
-#SBATCH --mem=32000M
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=32000
 #SBATCH --account=def-plato
-#SBATCH --time=18:0:0
+#SBATCH --time=0:10:0
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-### python src/adas/process_datasets.py
-python src/adas/get_norm.py
+python src/adas/train.py --config src/adas/configSGD.yaml --output .SGD-output/ADP --checkpoint .SGD-checkpoint/ADP
