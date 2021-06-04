@@ -25,5 +25,6 @@ def main(root):
 
 
 if __name__ == "__main__":
-    root_dir = "~/scratch/HistoKTdata"
+    home = os.environ.get("HOME")
+    root_dir = f"{home}/scratch/HistoKTdata"
     print(main(root_dir))
