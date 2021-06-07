@@ -10,9 +10,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem-per-cpu=32000
+#SBATCH --mem=32G
 #SBATCH --account=def-plato
-#SBATCH --time=24:0:0
+#SBATCH --time=8:00:00
+#SBATCH --output=%x-%j.out
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config src/adas/configSGD.yaml --output .SGD-output/ADP --checkpoint .SGD-checkpoint/ADP
+python src/adas/train.py --config src/adas/HistoKTconfigs/ADP-configAdas.yaml --output .Adas-output/ADP --checkpoint .Adas-checkpoint/ADP --data /home/zhan8425/scratch/HistoKTdata

@@ -285,6 +285,7 @@ class TrainingAgent:
             patience=int(config['early_stop_patience']),
             threshold=float(config['early_stop_threshold']))
         cudnn.benchmark = True
+        self.start_trial = config["start_trial"]
         if self.resume is not None:
             if self.gpu is None:
                 self.checkpoint = torch.load(str(self.resume))
@@ -439,9 +440,11 @@ class TrainingAgent:
                     torch.save(data, str(self.checkpoint_path / filename))
                 if np.greater(test_acc1, self.best_acc1):
                     self.best_acc1 = test_acc1
+                    filename = f'best_trial_{trial}.pth.tar'
                     torch.save(
-                        data, str(self.checkpoint_path / 'best.pth.tar'))
-        torch.save(data, str(self.checkpoint_path / 'last.pth.tar'))
+                        data, str(self.checkpoint_path / filename))
+        filename = f'last_trial_{trial}.pth.tar'
+        torch.save(data, str(self.checkpoint_path / filename))
 
     def epoch_iteration(self, trial: int, epoch: int):
         # logging.info(f"Adas: Train: Epoch: {epoch}")

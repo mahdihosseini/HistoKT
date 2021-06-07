@@ -2,7 +2,7 @@ import PIL
 
 import torchvision.transforms as transforms
 from .custom_augmentations import YCbCr, HSV, ColorDistortion, \
-    RGBJitter, Cutout
+    RGBJitter, Cutout, transformed_norm_weights
 
 
 def get_transforms(
@@ -225,7 +225,7 @@ def get_transforms(
                      "MHIST_transformed",
                      "OSDataset_transformed",
                      "PCam_transformed"]:
-        # TODO implement mean and std normalization
+
         if 'augmentation' not in color_processed_kwargs.keys() or \
                 'distortion' not in color_processed_kwargs.keys():
             raise ValueError(
@@ -241,8 +241,8 @@ def get_transforms(
                 ColorAugmentation,
                 transforms.ToTensor(),
                 transforms.Normalize(
-                    mean=[0.81233799, 0.64032477, 0.81902153],
-                    std=[0.18129702, 0.25731668, 0.16800649])
+                    mean=transformed_norm_weights[dataset]["mean"],
+                    std=transformed_norm_weights[dataset]["std"])
             ])
 
             if gaussian_blur:  # insert gaussian blur before normalization
@@ -256,8 +256,8 @@ def get_transforms(
             transform_test = transforms.Compose([
                 transforms.ToTensor(),
                 transforms.Normalize(
-                    mean=[0.81233799, 0.64032477, 0.81902153],
-                    std=[0.18129702, 0.25731668, 0.16800649]),
+                    mean=transformed_norm_weights[dataset]["mean"],
+                    std=transformed_norm_weights[dataset]["std"])
             ])
         else:
             if color_processed_kwargs['augmentation'] == 'YCbCr':
@@ -275,14 +275,14 @@ def get_transforms(
                 transforms.RandomAffine(degrees=degrees, translate=(horizontal_shift, vertical_shift)),
                 transforms.ToTensor(),
                 transforms.Normalize(
-                    mean=[0.81233799, 0.64032477, 0.81902153],
-                    std=[0.18129702, 0.25731668, 0.16800649])
+                    mean=transformed_norm_weights[dataset]["mean"],
+                    std=transformed_norm_weights[dataset]["std"])
             ])
 
             if ColorAugmentation:
                 transform_train.transforms.insert(-2, ColorAugmentation)
 
-            if gaussian_blur:  # TODO this should ideally be before normalization but after colour aug
+            if gaussian_blur:
                 transform_train.transforms.insert(-3,
                                                   transforms.GaussianBlur(kernel_size=kernel_size, sigma=variance))
 
@@ -293,7 +293,7 @@ def get_transforms(
             transform_test = transforms.Compose([
                 transforms.ToTensor(),
                 transforms.Normalize(
-                    mean=[0.81233799, 0.64032477, 0.81902153],
-                    std=[0.18129702, 0.25731668, 0.16800649]),
+                    mean=transformed_norm_weights[dataset]["mean"],
+                    std=transformed_norm_weights[dataset]["std"])
             ])
     return transform_train, transform_test

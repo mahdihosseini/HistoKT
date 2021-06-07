@@ -1,10 +1,11 @@
 ###### Application Specific ######
 dataset: 'AIDPATH_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+# To use these datasets, please transform them using process_datasets.py
 # AIDPATH_transformed
 # AJ-Lymph_transformed
 # BACH_transformed
 # CRC_transformed
-# Glas_transformed
+# GlaS_transformed
 # MHIST_transformed
 # OSDataset_transformed
 # PCam_transformed
@@ -18,7 +19,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 optimizer: 'Adas' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
 scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
-level : 'L3' #L1, L2, L3, L3Only
+level : 'L3Only' #L1, L2, L3, L3Only
 
 ###### Augmentation Methods ######
 # ADP ONLY
@@ -59,8 +60,8 @@ scheduler_kwargs: {}
 ###### Suggested Default ######
 p: 1 # options: 1, 2.
 n_trials: 3 #increase to more to see more results
-num_workers: 0
-max_epochs: 10
+num_workers: 4
+max_epochs: 250
 mini_batch_size: 32 # might need to change to a lower num for ADP
 loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop
