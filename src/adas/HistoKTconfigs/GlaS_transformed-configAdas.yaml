@@ -1,5 +1,5 @@
 ###### Application Specific ######
-dataset: 'ADP-Release1' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+dataset: 'GlaS_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # To use these datasets, please transform them using process_datasets.py
 # AIDPATH_transformed
 # AJ-Lymph_transformed
@@ -60,9 +60,9 @@ scheduler_kwargs: {}
 ###### Suggested Default ######
 p: 1 # options: 1, 2.
 start_trial: 0 # trial to start at, indexing from zero, default 0
-n_trials: 1 # increase to more to rerun epochs
+n_trials: 1 #increase to more to see more results
 num_workers: 4
 max_epochs: 250
 mini_batch_size: 32 # might need to change to a lower num for ADP
-loss: 'MultiLabelSoftMarginLoss' # options: cross_entropy, MultiLabelSoftMarginLoss
+loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop
