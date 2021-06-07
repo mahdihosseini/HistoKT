@@ -97,7 +97,7 @@ def parse_config(
                      "AJ-Lymph_transformed",
                      "BACH_transformed",
                      "CRC_transformed",
-                     "Glas_transformed",
+                     "GlaS_transformed",
                      "MHIST_transformed",
                      "OSDataset_transformed",
                      "PCam_transformed"]
