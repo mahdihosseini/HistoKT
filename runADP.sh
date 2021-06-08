@@ -20,9 +20,9 @@
 echo "transferring data"
 echo ""
 mkdir $SLURM_TMPDIR/data
-tar xf /home/zhan8425/scratch/HistoKTdata/ADP\ V1.0\ Release.tar -C $SLURM_TMPDIR/data
+tar xf /home/zhan8425/scratch/HistoKTdata/ADP\ V1.0\ Release.tar -C $SLURM_TMPDIR/ADP\ V1.0\ Release
 echo "Finished transferring"
 echo ""
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config src/adas/HistoKTconfigs/ADP-configAdas.yaml --output .Adas-output/ADP --checkpoint .Adas-checkpoint/ADP --data $SLURM_TMPDIR/data
+python src/adas/train.py --config src/adas/HistoKTconfigs/ADP-configAdas.yaml --output .Adas-output/ADP --checkpoint .Adas-checkpoint/ADP --data $SLURM_TMPDIR
