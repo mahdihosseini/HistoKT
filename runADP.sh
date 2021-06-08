@@ -9,11 +9,20 @@
 #SBATCH --gres=gpu:v100l:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=32G
+#SBATCH --cpus-per-task=6
+#SBATCH --mem=32000M
 #SBATCH --account=def-plato
-#SBATCH --time=8:00:00
+#SBATCH --time=18:00:00
 #SBATCH --output=%x-%j.out
 
+# prepare data
+
+echo "transferring data"
+echo ""
+mkdir $SLURM_TMPDIR/data
+tar xf /home/zhan8425/scratch/HistoKTdata/ADP\ V1.0\ Release.tar -C $SLURM_TMPDIR/data
+echo "Finished transferring"
+echo ""
+
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config src/adas/HistoKTconfigs/ADP-configAdas.yaml --output .Adas-output/ADP --checkpoint .Adas-checkpoint/ADP --data /home/zhan8425/scratch/HistoKTdata
+python src/adas/train.py --config src/adas/HistoKTconfigs/ADP-configAdas.yaml --output .Adas-output/ADP --checkpoint .Adas-checkpoint/ADP --data $SLURM_TMPDIR/data
