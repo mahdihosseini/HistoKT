@@ -352,7 +352,7 @@ class TrainingAgent:
             lr_output_path = self.output_path / f'lr-{learning_rate}'
             lr_output_path.mkdir(exist_ok=True, parents=True)
             for trial in range(self.start_trial,
-                               self.config['n_trials']):
+                               self.config['n_trials'] + self.start_trial):
                 self.reset(learning_rate)
                 if trial == self.start_trial and self.resume is not None:
                     print("Resuming Network/Optimizer")
