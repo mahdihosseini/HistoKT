@@ -19,6 +19,7 @@
 
 echo "transferring data"
 echo ""
+mkdir $SLURM_TMPDIR/data
 tar xf /home/zhan8425/scratch/HistoKTdata/GlaS_transformed.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
