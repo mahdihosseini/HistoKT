@@ -9,11 +9,19 @@
 #SBATCH --gres=gpu:v100l:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=32G
+#SBATCH --cpus-per-task=6
+#SBATCH --mem=32000M
 #SBATCH --account=def-plato
 #SBATCH --time=8:00:00
 #SBATCH --output=%x-%j.out
 
+# prepare data
+
+echo "transferring data"
+echo ""
+tar xf /home/zhan8425/scratch/HistoKTdata/AJ-Lymph_transformed.tar -C $SLURM_TMPDIR
+echo "Finished transferring"
+echo ""
+
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config src/adas/HistoKTconfigs/AJ-Lymph_transformed-configAdas.yaml --output .Adas-output/AJ-Lymph_transformed --checkpoint .Adas-checkpoint/AJ-Lymph_transformed --data /home/zhan8425/scratch/HistoKTdata
+python src/adas/train.py --config src/adas/HistoKTconfigs/AJ-Lymph_transformed-configAdas.yaml --output .Adas-output/AJ-Lymph_transformed --checkpoint .Adas-checkpoint/AJ-Lymph_transformed --data $SLURM_TMPDIR
