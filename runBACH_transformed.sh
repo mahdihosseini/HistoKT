@@ -19,7 +19,7 @@
 
 echo "transferring data"
 echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata2/BACH_transformed.tar -C $SLURM_TMPDIR
+tar xf /home/zhan8425/scratch/HistoKTdata/BACH_transformed.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
 
