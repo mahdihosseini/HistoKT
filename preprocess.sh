@@ -7,11 +7,11 @@
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6
-#SBATCH --mem=32000M
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16000M
 #SBATCH --account=def-plato
-#SBATCH --time=18:0:0
+#SBATCH --time=2:0:0
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-### python src/adas/process_datasets.py
-python src/adas/get_norm.py
+python src/adas/process_datasets.py
+### python src/adas/get_norm.py
