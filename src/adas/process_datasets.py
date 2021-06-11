@@ -112,5 +112,5 @@ def main(root):
 if __name__ == "__main__":
     #root_dir = ".adas-data"
     home = os.environ.get("HOME")
-    root_dir = f"{home}/scratch/HistoKTdata"
+    root_dir = f"{home}/scratch/HistoKTdata2"
     main(root_dir)
