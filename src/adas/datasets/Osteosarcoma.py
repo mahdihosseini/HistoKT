@@ -69,8 +69,7 @@ class OSDataset(Dataset):
                 PIL image
                 and returns a transformed version. E.g, ``transforms.RandomCrop``
             root (string): Root directory of the ImageNet Dataset.
-            split (string, optional): The dataset split, supports ``train``,
-                ``valid``, or ``test``.
+            split (string, optional): The dataset split, supports ``train``.
             loader (callable, optional): A function to load an image given its
                 path. Defaults to default_loader defined in torchvision
 
@@ -81,7 +80,7 @@ class OSDataset(Dataset):
         """
 
         self.root = root
-        self.split = verify_str_arg(split, "split", ("train", "valid", "test"))
+        self.split = verify_str_arg(split, "split", ("train",))
         self.transform = transform
         self.loader = loader
 
