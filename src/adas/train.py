@@ -214,6 +214,7 @@ class TrainingAgent:
         self.data_path = data_path
         self.output_path = output_path
         self.checkpoint_path = checkpoint_path
+        self.start_time = datetime.now()
 
         self.load_config(config_path, data_path)
         print("Adas: Experiment Configuration")
@@ -372,7 +373,7 @@ class TrainingAgent:
                 else:
                     epochs = range(0, self.config['max_epochs'])
                     self.output_filename = "results_" +\
-                        f"date={datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}_" +\
+                        f"date={self.start_time.strftime('%Y-%m-%d-%H-%M-%S')}_" +\
                         f"trial={trial}_" +\
                         f"{self.config['network']}_" +\
                         f"{self.config['dataset']}_" +\
@@ -436,14 +437,14 @@ class TrainingAgent:
                         'output_filename': Path(self.output_filename).name,
                         'historical_metrics': self.metrics.historical_metrics}
                 if epoch % self.save_freq == 0:
-                    filename = f'trial_{trial}_epoch_{epoch}.pth.tar'
+                    filename = f"trial_{trial}_epoch_{epoch}_date_{self.start_time.strftime('%Y-%m-%d-%H-%M-%S')}.pth.tar"
                     torch.save(data, str(self.checkpoint_path / filename))
                 if np.greater(test_acc1, self.best_acc1):
                     self.best_acc1 = test_acc1
-                    filename = f'best_trial_{trial}.pth.tar'
+                    filename = f"best_trial_{trial}_date_{self.start_time.strftime('%Y-%m-%d-%H-%M-%S')}.pth.tar"
                     torch.save(
                         data, str(self.checkpoint_path / filename))
-        filename = f'last_trial_{trial}.pth.tar'
+        filename = f"last_trial_{trial}_date_{self.start_time.strftime('%Y-%m-%d-%H-%M-%S')}.pth.tar"
         torch.save(data, str(self.checkpoint_path / filename))
 
     def epoch_iteration(self, trial: int, epoch: int):
