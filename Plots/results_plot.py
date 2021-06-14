@@ -26,8 +26,8 @@ def plot_result(result_name, path_to_file):
         plt.xlabel("epoch")
         if result_name.split("_")[0] == "test":
             result_name = "val_" + result_name.split("_")[1]
-            plt.ylabel(result_name)
-            plt.title(title+" "+trial)
+        plt.ylabel(result_name)
+        plt.title(title+" "+trial)
         if result_name.split("_")[1] == "loss":
             plt.yscale("log")
             
