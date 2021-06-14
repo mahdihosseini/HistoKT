@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=32000M
 #SBATCH --account=def-plato
-#SBATCH --time=8:00:00
+#SBATCH --time=:00:00
 #SBATCH --output=%x-%j.out
 
 # prepare data

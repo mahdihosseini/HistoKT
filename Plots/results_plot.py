@@ -15,10 +15,10 @@ def plot_result(result_name, path_to_file):
                 results.append(data[col].tolist()[0])
     if len(results) == count + 1:
         title = path_to_file.split("/")[-3]
-        dir = os.path.dirname(path_to_file)
+        directory = os.path.dirname(path_to_file)
         file_name = path_to_file.split("/")[-1]
         trial = file_name.split("_")[2]
-        plots_dir = os.path.join(dir, "plots_"+trial)
+        plots_dir = os.path.join(directory, "plots_"+trial)
         if not os.path.exists(plots_dir):
             os.makedirs(plots_dir)
         x = range(0, len(results))
@@ -26,8 +26,8 @@ def plot_result(result_name, path_to_file):
         plt.xlabel("epoch")
         if result_name.split("_")[0] == "test":
             result_name = "val_" + result_name.split("_")[1]
-        plt.ylabel(result_name)
-        plt.title(title+" "+trial)
+            plt.ylabel(result_name)
+            plt.title(title+" "+trial)
         if result_name.split("_")[1] == "loss":
             plt.yscale("log")
             

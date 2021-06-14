@@ -19,7 +19,7 @@
 
 echo "transferring data"
 echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/PCam_transformed.tar -C $SLURM_TMPDIR
+tar -zxf /home/zhan8425/scratch/HistoKTdata/PCam_transformed.tar.gz -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
 
