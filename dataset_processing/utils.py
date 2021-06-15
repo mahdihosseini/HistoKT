@@ -5,6 +5,7 @@ import os
 import tarfile
 import random
 import tempfile
+import numpy as np
 
 
 def get_mean_and_std(dataset: torch.utils.data.dataset,
@@ -67,7 +68,10 @@ def archive_subdataset(root,
     random.shuffle(samples)
 
     for filename, label in samples:
-        class_to_files[label].append(filename)
+        if label is np.ndarray:
+            class_to_files[label.item()].append(filename)
+        else:
+            class_to_files[label].append(filename)
 
     for num_per_class, tar_name in zip(num_per_class_list, archive_names):
         try:

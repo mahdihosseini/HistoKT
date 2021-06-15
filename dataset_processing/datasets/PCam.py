@@ -88,7 +88,7 @@ class PCam(Dataset):
 
                 for i in range(images.shape[0]):
                     save_path = Path(self.root, self.split, f"{self.split}-{i}.png")
-                    samples.append((str(save_path.relative_to(self.root)), labels[i][0][0]))
+                    samples.append((str(save_path.relative_to(self.root)), labels[i][0][0].item()))
                     save_path.parent.mkdir(parents=True, exist_ok=True)
                     io.imsave(str(save_path), images[i])
 
