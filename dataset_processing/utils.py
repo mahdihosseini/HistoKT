@@ -80,7 +80,7 @@ def archive_subdataset(dataset: torch.utils.data.dataset,
     files_to_tar = [path for path, label in new_samples]
 
     # tarring files
-    with tarfile.open(tar_name+".tar", "a") as tar:
+    with tarfile.open(os.path.join(os.path.dirname(dataset.root), tar_name+".tar"), "a") as tar:
         archive_name = os.path.basename(dataset.root)
         for fn in files_to_tar:
             tar.add(os.path.join(dataset.root, fn), arcname=os.path.join(archive_name, fn))
@@ -88,7 +88,8 @@ def archive_subdataset(dataset: torch.utils.data.dataset,
         # adding pickles
         with open(os.path.join(tempfile.gettempdir(), f"{dataset.split}.pickle"), "wb") as file:
             pickle.dump(new_samples, file)
-        tar.add(os.path.join(tempfile.gettempdir(), f"{dataset.split}.pickle"), arcname=os.path.join(archive_name, f"{dataset.split}.pickle"))
+        tar.add(os.path.join(tempfile.gettempdir(), f"{dataset.split}.pickle"),
+                arcname=os.path.join(archive_name, f"{dataset.split}.pickle"))
 
         # adding class_to_idx pickle
         tar.add(os.path.join(dataset.root, "class_to_idx.pickle"),

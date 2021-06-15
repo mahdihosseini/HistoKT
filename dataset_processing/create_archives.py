@@ -17,5 +17,5 @@ def main(root):
 
 
 if __name__ == "__main__":
-    root_dir = "C:/Users/ryanr/Desktop/Summer_Research/HistoKT/.adas-data"
+    root_dir = "/home/zhan8425/scratch/HistoKTdata"
     main(root_dir)
