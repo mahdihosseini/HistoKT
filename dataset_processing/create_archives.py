@@ -4,8 +4,7 @@ from datasets import TransformedDataset
 
 
 def main(root):
-    for dataset_name in ["CRC_transformed",
-                         "PCam_transformed"]:
+    for dataset_name in ["AIDPATH_transformed"]:
         split = "train"
         for num in [100, 200, 300, 500, 1000]:
             dataset = TransformedDataset(os.path.join(root, dataset_name), split=split)
