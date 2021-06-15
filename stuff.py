@@ -3,16 +3,11 @@ import os.path
 
 def main(root):
 
-    for dataset in ["AIDPATH_transformed",
-                  "AJ-Lymph_transformed",
-                  "BACH_transformed",
-                  "CRC_transformed",
-                  "GlaS_transformed",
-                  "MHIST_transformed",
-                  "OSDataset_transformed",
-                  "PCam_transformed"]:
-        with open(os.path.join(root, f"run{dataset}.sh"), "w") as write_file:
-            data = f"""#!/bin/bash
+    for dataset in ["CRC_transformed",
+                    "PCam_transformed"]:
+        for num in [100, 200, 300, 500, 1000]:
+            with open(os.path.join(root, f"run{dataset}_{num}_per_class.sh"), "w") as write_file:
+                data = f"""#!/bin/bash
 
 ### GPU OPTIONS:
 ### CEDAR: v100l, p100
@@ -26,7 +21,7 @@ def main(root):
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=32000M
 #SBATCH --account=def-plato
-#SBATCH --time=8:00:00
+#SBATCH --time=3:00:00
 #SBATCH --output=%x-%j.out
 
 # prepare data
@@ -34,15 +29,15 @@ def main(root):
 echo "transferring data"
 date
 echo ""
-tar -zxf /home/zhan8425/scratch/HistoKTdata/{dataset}.tar -C $SLURM_TMPDIR
+tar -xf /home/zhan8425/scratch/HistoKTdata/{dataset}_{num}_per_class.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 date
 echo ""
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config HistoKTconfigs/{dataset}-configAdas.yaml --output .Adas-output/{dataset} --checkpoint .Adas-checkpoint/{dataset} --data $SLURM_TMPDIR"""
+python src/adas/train.py --config HistoKTconfigs/{dataset}-configAdas.yaml --output .Adas-output/{dataset}/{num}_per_class --checkpoint .Adas-checkpoint/{dataset}/{num}_per_class --data $SLURM_TMPDIR"""
 
-            write_file.write(data)
+                write_file.write(data)
 
 
 if __name__ == "__main__":
