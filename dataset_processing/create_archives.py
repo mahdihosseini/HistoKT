@@ -4,7 +4,8 @@ from datasets import TransformedDataset
 
 
 def main(root):
-    for dataset_name in ["AIDPATH_transformed"]:
+    for dataset_name in ["CRC_transformed",
+                         "PCam_transformed"]:
         num_per_class_list = [100, 200, 300, 500, 1000]
         archive_names = [os.path.join(root, dataset_name + f"_{num_per_class}_per_class")
                          for num_per_class in num_per_class_list]
