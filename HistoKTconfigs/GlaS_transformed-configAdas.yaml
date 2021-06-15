@@ -1,6 +1,6 @@
 ###### Application Specific ######
-dataset: 'MHIST_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
-# To use these datasets, please transform them using process_datasets.py
+dataset: 'GlaS_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+# To use these datasets, please transform them using standardize_datasets.py
 # AIDPATH_transformed
 # AJ-Lymph_transformed
 # BACH_transformed

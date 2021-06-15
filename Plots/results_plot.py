@@ -77,6 +77,6 @@ def plot_results_for_dir(result_name_list, path_to_dir):
                 plot_result(result_name, os.path.join(path_to_dir, file))
     plt.close()
     
-#path_to_dir = "/Users/JZ/Downloads/HistoKT/BACH_transformed/lr-0.03"
-#result_name_list = ["train_acc1", "train_loss", "test_acc1", "test_loss"]
-#plot_results_for_dir(result_name_list, path_to_dir)
+path_to_dir = "C:/Users/ryanr/Desktop/Summer_Research/HistoKT/.adas-data/results"
+result_name_list = ["train_acc1", "train_loss", "test_acc1", "test_loss"]
+plot_results_for_dir(result_name_list, path_to_dir)

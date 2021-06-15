@@ -1,6 +1,6 @@
 ###### Application Specific ######
-dataset: 'CRC_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
-# To use these datasets, please transform them using process_datasets.py
+dataset: 'AIDPATH_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+# To use these datasets, please transform them using standardize_datasets.py
 # AIDPATH_transformed
 # AJ-Lymph_transformed
 # BACH_transformed

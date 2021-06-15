@@ -32,13 +32,15 @@ def main(root):
 # prepare data
 
 echo "transferring data"
+date
 echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/{dataset}.tar -C $SLURM_TMPDIR
+tar -zxf /home/zhan8425/scratch/HistoKTdata/{dataset}.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
+date
 echo ""
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config src/adas/HistoKTconfigs/{dataset}-configAdas.yaml --output .Adas-output/{dataset} --checkpoint .Adas-checkpoint/{dataset} --data $SLURM_TMPDIR"""
+python src/adas/train.py --config HistoKTconfigs/{dataset}-configAdas.yaml --output .Adas-output/{dataset} --checkpoint .Adas-checkpoint/{dataset} --data $SLURM_TMPDIR"""
 
             write_file.write(data)
 
