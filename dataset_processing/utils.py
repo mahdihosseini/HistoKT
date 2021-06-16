@@ -68,7 +68,7 @@ def archive_subdataset(root,
     random.shuffle(samples)
 
     for filename, label in samples:
-        if label is not int:
+        if not isinstance(label, int):
             class_to_files[label.item()].append(filename)
         else:
             class_to_files[label].append(filename)
