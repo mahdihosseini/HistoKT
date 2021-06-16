@@ -6,6 +6,7 @@
 *xlsx*
 eval/
 random_stuff/
+checkpoints/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
