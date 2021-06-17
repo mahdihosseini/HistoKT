@@ -370,6 +370,16 @@ class ThresholdedMetrics:
         df.to_excel(sess_xlsx_path)
 
     
+def convert_checkpoint_to_model_only(path_to_checkpoint, path_to_destination):
+    data = torch.load(path_to_checkpoint, map_location=torch.device("cpu"))
+    new_checkpoint = {"model": data["state_dict_network"], "config": None, "optimizer": None, "epoch": None}
+    torch.save(new_checkpoint, path_to_destination)
+
+
+if __name__ == "__main__":
+    checkpoint_path = "C:\\Users\\ryanr\\Desktop\\Summer_Research\\MCL\\Trained_models\\Normal\\best.pth.tar"
+    convert_checkpoint_to_model_only(checkpoint_path,
+    path_to_destination="C:\\Users\\ryanr\\Desktop\\Summer_Research\\MCL\\Trained_models\\Normal\\best_transformed.pth")
 
 
 
