@@ -25,11 +25,11 @@ def test_results(path_to_pth, test_dataloader):
     # eg. path_to_pth = "/HistoKT/.Adas-checkpoint/MHIST_transformed/best_trial.pth"
 
     results = dict()
-    num_classes=len(test_dataloader.dataset.class_to_idx.items())
+    num_classes = len(test_dataloader.dataset.class_to_idx.items())
 
     model = resnet18(num_classes=num_classes)
-    ### for cpu only machine ###
-    cp = torch.load(path_to_pth, map_location=torch.device('cpu'))
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # setting default device
+    cp = torch.load(path_to_pth, map_location=device)
     model.load_state_dict(cp['state_dict_network'])
     model.eval()
 
@@ -44,14 +44,14 @@ def test_results(path_to_pth, test_dataloader):
     with torch.no_grad():
         for i, (X, y) in enumerate(test_dataloader):
             pred = model(X)
-            test_loss += loss_fn(pred, y).item()
-            correct += (pred.argmax(1) == y).type(torch.float).sum().item()
+            test_loss += loss_fn(pred, y).detach().cpu().item()
+            correct += (pred.argmax(1) == y).type(torch.float).sum().detach().cpu().item()
 
-            tgts.extend(y.tolist())  # int eg. 0, 1
-            pred_label.extend(pred.argmax(1).tolist())
+            tgts.extend(y.detach().cpu().tolist())  # int eg. 0, 1
+            pred_label.extend(pred.argmax(1).detach().cpu().tolist())
 
             if num_classes == 2:
-                preds.extend(pred[:, 1].tolist())
+                preds.extend(pred[:, 1].detach().cpu().tolist())
                 #preds.extend(softmax(pred, axis=1)[:, 1].tolist())  # float eg. 0.49
                 #preds.extend(expit(pred[:, 1]).tolist())
         if num_classes == 2:
@@ -73,20 +73,21 @@ def test_results(path_to_pth, test_dataloader):
 
     test_loss /= i+1
     results["loss"] = test_loss
-    correct /= size
-    results["acc1"] = correct
+    results["acc1"] = correct / size
     df = pd.DataFrame(data=results, index=[0])
     print(df)
 
     # save test results datesetname_weightname
-    dataset_name = path_to_pth.split('/')[-2]
-    cp_name = path_to_pth.split('/')[-1].split('.')[0]
+    dataset_name = os.path.basename(os.path.dirname(path_to_pth))
+    # TODO should pass in a dataset name into the function instead of calculating from path
+    cp_name = os.path.splitext(os.path.basename(path_to_pth))[0]  # refactored so it uses os.path
     output_filename = "test_results_" + dataset_name + "_" + cp_name + ".xlsx".replace(' ', '-')
     cp_dir = os.path.dirname(path_to_pth)
     df.to_excel(os.path.join(cp_dir, output_filename))
     return
 
-def test_main(path_to_root, path_to_checkpoint):
+
+def test_main(path_to_root, path_to_checkpoint, dataset_name):
     # eg. path_to_root = "/HistoKT/.adas-data/MHIST_transformed"
     # eg. path_to_checkpoint = "/HistoKT/.Adas-checkpoint/MHIST_transformed" which contains files like best_trial_0_date_2021-06-14-22-23-51.pth
 
@@ -100,21 +101,27 @@ def test_main(path_to_root, path_to_checkpoint):
     dataset = TransformedDataset(root=path_to_root, split="test", transform=transform_test)
     ### just for fast testing ###
     #dataset.samples = dataset.samples[0:50]
-
+    # TODO perhaps bump up the batch size to 32 or 64 on compute canada
     test_dataloader = DataLoader(dataset, batch_size=8, shuffle=False)
+    # TODO some light file path checking for best_{stuff}.pth
     for file in os.listdir(path_to_checkpoint):
         if ".pth" in file:
             path_to_pth = os.path.join(path_to_checkpoint, file)
             test_results(path_to_pth, test_dataloader)
     return
 
-# checkpoint = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/testing/checkpoints"
-# root = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/.adas-data"
-# dataset_name = "MHIST_transformed"
-#
-#
-# path_to_root = os.path.join(root, dataset_name)
-# path_to_checkpoint = os.path.join(checkpoint, dataset_name)
-# test_main(path_to_root, path_to_checkpoint)
+
+if __name__ == "__main__":
+    # checkpoint = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/testing/checkpoints"
+    # root = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/.adas-data"
+    # dataset_name = "MHIST_transformed"
+    #
+    #
+    # path_to_root = os.path.join(root, dataset_name)
+    # path_to_checkpoint = os.path.join(checkpoint, dataset_name)
+    # TODO honestly you should probably just pass the root and then append the dataset name to the root in the main
+    #   function
+    # test_main(path_to_root, path_to_checkpoint, dataset_name)
+    pass
 
 
