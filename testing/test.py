@@ -6,6 +6,7 @@ from datasets import TransformedDataset
 from resnet import resnet18
 from torch.utils.data import DataLoader
 from sklearn import metrics
+from scipy.special import softmax, expit
 
 # defined in image_transformed/custom_augmentations.py
 transformed_norm_weights = {
@@ -45,12 +46,14 @@ def test_results(path_to_pth, test_dataloader):
             pred = model(X)
             test_loss += loss_fn(pred, y).item()
             correct += (pred.argmax(1) == y).type(torch.float).sum().item()
-            #print(pred[0], y[0], pred.argmax(1))
+
+            tgts.extend(y.tolist())  # int eg. 0, 1
+            pred_label.extend(pred.argmax(1).tolist())
 
             if num_classes == 2:
-                tgts.extend(y.tolist())  # int eg. 0, 1
-                preds.extend(pred[:, 1].tolist())  # float eg. 0.49
-                pred_label.extend(pred.argmax(1).tolist())
+                preds.extend(pred[:, 1].tolist())
+                #preds.extend(softmax(pred, axis=1)[:, 1].tolist())  # float eg. 0.49
+                #preds.extend(expit(pred[:, 1]).tolist())
         if num_classes == 2:
             fpr, tpr, thresholds = metrics.roc_curve(
                 tgts, preds, pos_label=1)
@@ -61,10 +64,12 @@ def test_results(path_to_pth, test_dataloader):
         #results["spearmanr_corr"] = spearmanr_corr
         #print("spearmanr_corr: ", spearmanr_corr)  # spearmanr_corr:  SpearmanrResult(correlation=0.6003393380606222, pvalue=4.055666004490729e-06)
 
-        CK_linear = metrics.cohen_kappa_score(tgts, pred_label, weights= "linear")
+        CK_linear = metrics.cohen_kappa_score(tgts, pred_label, weights = "linear")
         results["CK_linear"] = CK_linear
-        CK_quadratic = metrics.cohen_kappa_score(tgts, pred_label, weights= "quadratic")
+        CK_quadratic = metrics.cohen_kappa_score(tgts, pred_label, weights = "quadratic")
         results["CK_quadratic"] = CK_quadratic
+        f1 = metrics.f1_score(tgts, pred_label)
+        results["f1_score"] = f1
 
     test_loss /= i+1
     results["loss"] = test_loss
@@ -94,7 +99,7 @@ def test_main(path_to_root, path_to_checkpoint):
 
     dataset = TransformedDataset(root=path_to_root, split="test", transform=transform_test)
     ### just for fast testing ###
-    dataset.samples = dataset.samples[0:50]
+    #dataset.samples = dataset.samples[0:50]
 
     test_dataloader = DataLoader(dataset, batch_size=8, shuffle=False)
     for file in os.listdir(path_to_checkpoint):
