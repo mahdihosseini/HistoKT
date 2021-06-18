@@ -102,7 +102,7 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list):
         ### just for fast testing ###
         #dataset.samples = dataset.samples[0:50]
         # TODO perhaps bump up the batch size to 32 or 64 on compute canada
-        test_dataloader = DataLoader(dataset, batch_size=8, shuffle=False)
+        test_dataloader = DataLoader(dataset, batch_size=32, shuffle=False)
         path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
             if ".pth" in file and "best_" in file:
@@ -112,9 +112,9 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list):
 
 
 if __name__ == "__main__":
-    checkpoint = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/testing/checkpoints"
-    root = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/.adas-data"
-    dataset_name_list = ["MHIST_transformed"]
+    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
+    root = "/scratch/zhan8425/HistoKTdata"
+    dataset_name_list = ["AIDPATH_transformed", "AJ-Lymph_transformed", "BACH_transformed", "GlaS_transformed", "OSDataset_transformed"]
 
     test_main(root, checkpoint, dataset_name_list)
     pass
