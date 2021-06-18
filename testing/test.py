@@ -31,6 +31,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # setting default device
     cp = torch.load(path_to_pth, map_location=device)
     model.load_state_dict(cp['state_dict_network'])
+    model.to(device)  # moving model to compute device
     model.eval()
 
     loss_fn = torch.nn.CrossEntropyLoss()
@@ -43,6 +44,10 @@ def test_results(path_to_pth, test_dataloader, dataset_name):
 
     with torch.no_grad():
         for i, (X, y) in enumerate(test_dataloader):
+
+            X = X.to(device, non_blocking=True)
+            y = y.to(device, non_blocking=True)
+
             pred = model(X)
             test_loss += loss_fn(pred, y).detach().cpu().item()
             correct += (pred.argmax(1) == y).type(torch.float).sum().detach().cpu().item()
