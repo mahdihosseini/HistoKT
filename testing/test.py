@@ -1,4 +1,5 @@
 import os
+import sys
 import torch
 import pandas as pd
 import torchvision.transforms as transforms
@@ -21,7 +22,7 @@ transformed_norm_weights = {
     'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]}}
 
 
-def test_results(path_to_pth, test_dataloader, dataset_name):
+def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=None):
     # eg. path_to_pth = "/HistoKT/.Adas-checkpoint/MHIST_transformed/best_trial.pth"
 
     results = dict()
@@ -57,7 +58,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name):
 
             if num_classes == 2:
                 preds.extend(pred[:, 1].detach().cpu().tolist())
-                #preds.extend(softmax(pred, axis=1)[:, 1].tolist())  # float eg. 0.49
+                #preds.extend(softmax(pred, axis=1)[:, 1].tolist()) 
                 #preds.extend(expit(pred[:, 1]).tolist())
         if num_classes == 2:
             fpr, tpr, thresholds = metrics.roc_curve(
@@ -85,12 +86,15 @@ def test_results(path_to_pth, test_dataloader, dataset_name):
     # save test results datesetname_weightname
     cp_name = os.path.splitext(os.path.basename(path_to_pth))[0]
     output_filename = "test_results_" + dataset_name + "_" + cp_name + ".xlsx".replace(' ', '-')
-    cp_dir = os.path.dirname(path_to_pth)
-    df.to_excel(os.path.join(cp_dir, output_filename))
+    if path_to_out_data is not None:
+        df.to_excel(os.path.join(path_to_out_data, output_filename))
+    else:
+        cp_dir = os.path.dirname(path_to_pth)
+        df.to_excel(os.path.join(cp_dir, output_filename))
     return
 
 
-def test_main(path_to_root, path_to_checkpoint, dataset_name_list):
+def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_output=None):
     # eg. path_to_root = "/HistoKT/.adas-data"
     # eg. path_to_checkpoint = "/HistoKT/.Adas-checkpoint"
     # /MHIST_transformed" which contains files like best_trial_0_date_2021-06-14-22-23-51.pth
@@ -106,22 +110,31 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list):
         dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
         ### just for fast testing ###
         #dataset.samples = dataset.samples[0:50]
-        # TODO perhaps bump up the batch size to 32 or 64 on compute canada
-        test_dataloader = DataLoader(dataset, batch_size=32, shuffle=False)
+        # TODO perhaps bump up the batch size to 32 or 64, and num_workers = 4 on compute canada
+        test_dataloader = DataLoader(dataset, batch_size=32, shuffle=False, num_workers=4)
         path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
             if ".pth" in file and "best_" in file:
                 path_to_pth = os.path.join(path_to_dataset_cp, file)
-                test_results(path_to_pth, test_dataloader, dataset_name)
+                if path_to_output is not None:
+                    path_to_out_data = os.path.join(path_to_output, dataset_name)
+                    if not os.path.isdir(path_to_out_data):
+                        os.makedirs(path_to_out_data)
+                    test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
+                else:
+                    test_results(path_to_pth, test_dataloader, dataset_name)
     return
 
 
 if __name__ == "__main__":
     checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
-    root = "/scratch/zhan8425/HistoKTdata"
-    dataset_name_list = ["AIDPATH_transformed", "AJ-Lymph_transformed", "BACH_transformed", "GlaS_transformed", "OSDataset_transformed"]
+    #root = "/scratch/zhan8425/HistoKTdata"
+    root = sys.argv[1]
+    output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
-    test_main(root, checkpoint, dataset_name_list)
+    dataset_name_list = ["AIDPATH_transformed", "AJ-Lymph_transformed", "BACH_transformed", "GlaS_transformed", "OSDataset_transformed"]
+    # "MHIST_transformed"
+    test_main(root, checkpoint, dataset_name_list, output)
     pass
 
 
