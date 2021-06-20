@@ -74,7 +74,10 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
         results["CK_linear"] = CK_linear
         CK_quadratic = metrics.cohen_kappa_score(tgts, pred_label, weights = "quadratic")
         results["CK_quadratic"] = CK_quadratic
-        f1 = metrics.f1_score(tgts, pred_label)
+        if num_classes == 2:
+            f1 = metrics.f1_score(tgts, pred_label)
+        else:
+            f1 = metrics.f1_score(tgts, pred_label, average='macro')
         results["f1_score"] = f1
 
     test_loss /= i+1
@@ -132,8 +135,8 @@ if __name__ == "__main__":
     root = sys.argv[1]
     output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
-    dataset_name_list = ["AIDPATH_transformed", "AJ-Lymph_transformed", "BACH_transformed", "GlaS_transformed", "OSDataset_transformed"]
-    # "MHIST_transformed"
+    dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed"]
+    # "MHIST_transformed","AIDPATH_transformed"
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 
