@@ -26,4 +26,4 @@ date
 echo ""
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config src/adas/HistoKTconfigs/BACH_transformed-configAdas.yaml --output .Adas-output/BACH_transformed --checkpoint .Adas-checkpoint/BACH_transformed --data $SLURM_TMPDIR
+python src/adas/train.py --config HistoKTconfigs/BACH_transformed-configAdas.yaml --output .Adas-output/BACH_transformed --checkpoint .Adas-checkpoint/BACH_transformed --data $SLURM_TMPDIR
