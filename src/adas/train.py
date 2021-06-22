@@ -60,6 +60,7 @@ if 'adas.' in mod_name:
     from .optim.sps import SPS
     from .data import get_data
     from .optim.adas import Adas
+    from .loader import get_model
 else:
     from optim.lr_scheduler import CosineAnnealingWarmRestarts, StepLR, \
         OneCycleLR
@@ -76,6 +77,7 @@ else:
     from optim.sps import SPS
     from data import get_data
     from optim.adas import Adas
+    from loader import get_model
 
 
 def args(sub_parser: _SubParsersAction):
@@ -112,6 +114,14 @@ def args(sub_parser: _SubParsersAction):
         '--resume', dest='resume',
         default=None, type=str,
         help="Set checkpoint resume path: Default = None")
+    sub_parser.add_argument(
+        '--pretrained_model', dest='pretrained_model',
+        default=None, type=str,
+        help="Set checkpoint pretrained model path: Default = None")
+    sub_parser.add_argument(
+        '--freeze_encoder', dest='freeze_encoder',
+        default=True, type=bool,
+        help="Set if to freeze encoder for post training: Default = True")
     # sub_parser.add_argument(
     #     '-r', '--resume', action='store_true',
     #     dest='resume',
@@ -186,6 +196,8 @@ class TrainingAgent:
             data_path: Path,
             checkpoint_path: Path,
             resume: Path = None,
+            pretrained_model: Path = None,
+            freeze_encoder: bool = True,
             save_freq: int = 25,
             gpu: int = None,
             ngpus_per_node: int = 0,
@@ -205,6 +217,8 @@ class TrainingAgent:
         self.start_trial = 0
         self.device = device
         self.resume = resume
+        self.pretrained_model = pretrained_model
+        self.freeze_encoder = freeze_encoder
         self.dist_url = dist_url
         self.save_freq = save_freq
         self.world_size = world_size
@@ -303,8 +317,14 @@ class TrainingAgent:
 
     def reset(self, learning_rate: float) -> None:
         self.performance_statistics = dict()
-        self.network = get_network(name=self.config['network'],
-                                   num_classes=self.num_classes)
+        if self.pretrained_model is not None:
+            self.network = get_model(name=self.config["network"],
+                                     path=self.pretrained_model,
+                                     num_classes=self.num_classes,
+                                     freeze_encoder=self.freeze_encoder)
+        else:
+            self.network = get_network(name=self.config['network'],
+                                       num_classes=self.num_classes)
         self.metrics = Metrics(list(self.network.parameters()),
                                p=self.config['p'])
         # TODO add other parallelisms
