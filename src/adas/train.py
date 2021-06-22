@@ -446,6 +446,8 @@ class TrainingAgent:
                         data, str(self.checkpoint_path / filename))
         filename = f"last_trial_{trial}_date_{self.start_time.strftime('%Y-%m-%d-%H-%M-%S')}.pth.tar"
         torch.save(data, str(self.checkpoint_path / filename))
+        # resetting best acc for each trial
+        self.best_acc1 = 0
 
     def epoch_iteration(self, trial: int, epoch: int):
         # logging.info(f"Adas: Train: Epoch: {epoch}")
