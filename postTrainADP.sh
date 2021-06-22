@@ -22,9 +22,19 @@ source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
 echo "transferring data"
 date
 echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/CRC_transformed_500_per_class.tar.tar -C $SLURM_TMPDIR
+tar xf /home/zhan8425/scratch/HistoKTdata/PCam_transformed_500_per_class.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/CRC_transformed-configAdas.yaml --output ADP_post_trained/CRC_transformed_500_per_class.tar/output --checkpoint ADP_post_trained/CRC_transformed_500_per_class.tar/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/PCam_transformed-configAdas.yaml --output ADP_post_trained/PCam_transformed_500_per_class/output --checkpoint ADP_post_trained/PCam_transformed_500_per_class/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+
+echo "transferring data"
+date
+echo ""
+tar xf /home/zhan8425/scratch/HistoKTdata/CRC_transformed_500_per_class.tar -C $SLURM_TMPDIR
+echo "Finished transferring"
+date
+echo ""
+
+python src/adas/train.py --config PostTrainingConfigs/CRC_transformed-configAdas.yaml --output ADP_post_trained/CRC_transformed_500_per_class/output --checkpoint ADP_post_trained/CRC_transformed_500_per_class/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar

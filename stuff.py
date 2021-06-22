@@ -7,11 +7,12 @@ def main(root):
     with open(os.path.join(root, f"postTrainADP.sh"), "w") as write_file:
 
         for dataset in [
+                  "PCam_transformed",
                   "CRC_transformed"]:
             if dataset == "PCam_transformed":
-                dataset_file = "PCam_transformed_500_per_class.tar"
+                dataset_file = "PCam_transformed_500_per_class"
             elif dataset == "CRC_transformed":
-                dataset_file = "CRC_transformed_500_per_class.tar"
+                dataset_file = "CRC_transformed_500_per_class"
             else:
                 dataset_file = dataset
             info_list.append(f"""echo "transferring data"
