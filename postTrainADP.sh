@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=32000M
 #SBATCH --account=def-plato
-#SBATCH --time=3:00:00
+#SBATCH --time=24:00:00
 #SBATCH --output=%x-%j.out
 
 # prepare data
@@ -22,19 +22,9 @@ source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
 echo "transferring data"
 date
 echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/OSDataset_transformed.tar -C $SLURM_TMPDIR
+tar xf /home/zhan8425/scratch/HistoKTdata/CRC_transformed_500_per_class.tar.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/OSDataset_transformed-configAdas.yaml --output ADP_post_trained/OSDataset_transformed/output --checkpoint ADP_post_trained/OSDataset_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
-
-echo "transferring data"
-date
-echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/PCam_transformed_500_per_class.tar.tar -C $SLURM_TMPDIR
-echo "Finished transferring"
-date
-echo ""
-
-python src/adas/train.py --config PostTrainingConfigs/PCam_transformed-configAdas.yaml --output ADP_post_trained/PCam_transformed_500_per_class.tar/output --checkpoint ADP_post_trained/PCam_transformed_500_per_class.tar/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/CRC_transformed-configAdas.yaml --output ADP_post_trained/CRC_transformed_500_per_class.tar/output --checkpoint ADP_post_trained/CRC_transformed_500_per_class.tar/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
