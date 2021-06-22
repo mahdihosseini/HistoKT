@@ -6,14 +6,9 @@ def main(root):
     info_list = []
     with open(os.path.join(root, f"postTrainADP.sh"), "w") as write_file:
 
-        for dataset in ["AIDPATH_transformed",
-                  "AJ-Lymph_transformed",
-                  "BACH_transformed",
-                  "CRC_transformed_",
-                  "GlaS_transformed",
-                  "MHIST_transformed",
+        for dataset in [
                   "OSDataset_transformed",
-                  "PCam_transformed_500_per_class"]:
+                  "PCam_transformed"]:
             if dataset == "PCam_transformed":
                 dataset_file = "PCam_transformed_500_per_class.tar"
             elif dataset == "CRC_transformed":
