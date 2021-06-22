@@ -6,6 +6,7 @@
 *xlsx*
 eval/
 random_stuff/
+ADP_post_trained
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
