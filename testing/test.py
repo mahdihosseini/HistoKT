@@ -49,6 +49,10 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             X = X.to(device, non_blocking=True)
             y = y.to(device, non_blocking=True)
 
+            y = y.type(torch.LongTensor)
+            y = y.flatten()
+            y = y.to(device, non_blocking=True)
+            
             pred = model(X)
             test_loss += loss_fn(pred, y).detach().cpu().item()
             correct += (pred.argmax(1) == y).type(torch.float).sum().detach().cpu().item()
@@ -77,7 +81,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
         if num_classes == 2:
             f1 = metrics.f1_score(tgts, pred_label)
         else:
-            f1 = metrics.f1_score(tgts, pred_label, average='macro')
+            f1 = metrics.f1_score(tgts, pred_label, average='micro')
         results["f1_score"] = f1
 
     test_loss /= i+1
@@ -117,15 +121,30 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
         test_dataloader = DataLoader(dataset, batch_size=32, shuffle=False, num_workers=4)
         path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
-            if ".pth" in file and "best_" in file:
-                path_to_pth = os.path.join(path_to_dataset_cp, file)
-                if path_to_output is not None:
-                    path_to_out_data = os.path.join(path_to_output, dataset_name)
-                    if not os.path.isdir(path_to_out_data):
-                        os.makedirs(path_to_out_data)
-                    test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
-                else:
-                    test_results(path_to_pth, test_dataloader, dataset_name)
+            print("file/dir: ", file)
+            if "per_class" in file:
+                temp = os.path.join(path_to_dataset_cp, file)
+                print(temp)
+                for file2 in os.listdir(temp):                
+                    if ".pth" in file2 and "best_" in file2:
+                        path_to_pth = os.path.join(temp, file2)
+                        if path_to_output is not None:
+                            path_to_out_data = os.path.join(path_to_output, dataset_name)
+                            if not os.path.isdir(path_to_out_data):
+                                os.makedirs(path_to_out_data)
+                            test_results(path_to_pth, test_dataloader, dataset_name+'_'+file, path_to_out_data)
+                        else:
+                            test_results(path_to_pth, test_dataloader, dataset_name+'_'+file)
+            else:
+                if ".pth" in file and "best_" in file:
+                    path_to_pth = os.path.join(path_to_dataset_cp, file)
+                    if path_to_output is not None:
+                        path_to_out_data = os.path.join(path_to_output, dataset_name)
+                        if not os.path.isdir(path_to_out_data):
+                            os.makedirs(path_to_out_data)
+                        test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
+                    else:
+                        test_results(path_to_pth, test_dataloader, dataset_name)
     return
 
 
@@ -135,8 +154,8 @@ if __name__ == "__main__":
     root = sys.argv[1]
     output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
-    dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed"]
-    # "MHIST_transformed","AIDPATH_transformed"
+    #dataset_name_list = ["CRC_transformed","PCam_transformed"]
+    dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 
