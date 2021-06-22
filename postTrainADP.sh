@@ -27,7 +27,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/AIDPATH_transformed-configAdas.yaml --output ADP_post_trained/AIDPATH_transformed/output --checkpoint .Adas-checkpoint/AIDPATH_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/AIDPATH_transformed-configAdas.yaml --output ADP_post_trained/AIDPATH_transformed/output --checkpoint ADP_post_trained/AIDPATH_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -37,7 +37,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/AJ-Lymph_transformed-configAdas.yaml --output ADP_post_trained/AJ-Lymph_transformed/output --checkpoint .Adas-checkpoint/AJ-Lymph_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/AJ-Lymph_transformed-configAdas.yaml --output ADP_post_trained/AJ-Lymph_transformed/output --checkpoint ADP_post_trained/AJ-Lymph_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -47,7 +47,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/BACH_transformed-configAdas.yaml --output ADP_post_trained/BACH_transformed/output --checkpoint .Adas-checkpoint/BACH_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/BACH_transformed-configAdas.yaml --output ADP_post_trained/BACH_transformed/output --checkpoint ADP_post_trained/BACH_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -57,7 +57,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/CRC_transformed_-configAdas.yaml --output ADP_post_trained/CRC_transformed_/output --checkpoint .Adas-checkpoint/CRC_transformed_/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/CRC_transformed_-configAdas.yaml --output ADP_post_trained/CRC_transformed_/output --checkpoint ADP_post_trained/CRC_transformed_/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -67,7 +67,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/GlaS_transformed-configAdas.yaml --output ADP_post_trained/GlaS_transformed/output --checkpoint .Adas-checkpoint/GlaS_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/GlaS_transformed-configAdas.yaml --output ADP_post_trained/GlaS_transformed/output --checkpoint ADP_post_trained/GlaS_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -77,7 +77,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/MHIST_transformed-configAdas.yaml --output ADP_post_trained/MHIST_transformed/output --checkpoint .Adas-checkpoint/MHIST_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/MHIST_transformed-configAdas.yaml --output ADP_post_trained/MHIST_transformed/output --checkpoint ADP_post_trained/MHIST_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -87,7 +87,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/OSDataset_transformed-configAdas.yaml --output ADP_post_trained/OSDataset_transformed/output --checkpoint .Adas-checkpoint/OSDataset_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/OSDataset_transformed-configAdas.yaml --output ADP_post_trained/OSDataset_transformed/output --checkpoint ADP_post_trained/OSDataset_transformed/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
 
 echo "transferring data"
 date
@@ -97,4 +97,4 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/PCam_transformed_500_per_class-configAdas.yaml --output ADP_post_trained/PCam_transformed_500_per_class/output --checkpoint .Adas-checkpoint/PCam_transformed_500_per_class/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+python src/adas/train.py --config PostTrainingConfigs/PCam_transformed_500_per_class-configAdas.yaml --output ADP_post_trained/PCam_transformed_500_per_class/output --checkpoint ADP_post_trained/PCam_transformed_500_per_class/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar

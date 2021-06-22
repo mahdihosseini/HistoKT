@@ -28,7 +28,7 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/{dataset}-configAdas.yaml --output ADP_post_trained/{dataset_file}/output --checkpoint .Adas-checkpoint/{dataset_file}/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar""")
+python src/adas/train.py --config PostTrainingConfigs/{dataset}-configAdas.yaml --output ADP_post_trained/{dataset_file}/output --checkpoint ADP_post_trained/{dataset_file}/checkpoint --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar""")
 
         latter_bit = "\n\n".join(info_list)
         data = f"""#!/bin/bash
