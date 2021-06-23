@@ -1,0 +1,13 @@
+Dataset information
+Dataset AIDPATH
+    Number of datapoints: 2340
+    Root location: /home/zhan8425/scratch/HistoKTdata/AIDPATH_kidney/DATASET_B_DIB
+target folder: AIDPATH_transformed, Split: {'train': 40, 'valid': 10, 'test': 50}, Pixel Res: 0.5
+Dataset information
+Dataset BACH
+    Number of datapoints: 400
+    Root location: /home/zhan8425/scratch/HistoKTdata/ICIAR2018_BACH_Challenge/Photos
+target folder: BACH_transformed, Split: {'train': 40, 'valid': 10, 'test': 50}, Pixel Res: 0.42
+n026-2.png is a background image because low_c
+n026-4.png is a background image because low_c
+n026-5.png is a background image because low_c
