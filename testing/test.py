@@ -1,13 +1,19 @@
 import os
 import sys
 import torch
+import torch.nn as nn
 import pandas as pd
 import torchvision.transforms as transforms
 from datasets import TransformedDataset
+from datasets import ADPDataset
 from resnet import resnet18
 from torch.utils.data import DataLoader
 from sklearn import metrics
 from scipy.special import softmax, expit
+
+# batch size 32 or 64, and num_workers 4 on compute canada
+mini_batch_size = 32
+num_workers = 4
 
 # defined in image_transformed/custom_augmentations.py
 transformed_norm_weights = {
@@ -27,6 +33,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
 
     results = dict()
     num_classes = len(test_dataloader.dataset.class_to_idx.items())
+    print("num_classes L3Only, should be 22: ", num_classes)
 
     model = resnet18(num_classes=num_classes)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # setting default device
@@ -43,27 +50,39 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
     preds = list()
     pred_label = list()
 
+    if dataset_name == 'ADP-Release1':
+        predALL_test = torch.zeros(size, num_classes)
+        labelsALL_test = torch.zeros(size, num_classes)
+
+    top1 = AverageMeter()
     with torch.no_grad():
         for i, (X, y) in enumerate(test_dataloader):
 
             X = X.to(device, non_blocking=True)
             y = y.to(device, non_blocking=True)
 
-            y = y.type(torch.LongTensor)
-            y = y.flatten()
-            y = y.to(device, non_blocking=True)
+            if dataset_name == "PCam_transformed":
+                y = y.type(torch.LongTensor)
+                y = y.flatten()
+                y = y.to(device, non_blocking=True)
             
             pred = model(X)
+
+            if dataset_name == 'ADP-Release1':
+                m = nn.Sigmoid()
+                pred_temp = (m(pred) > 0.5).int()
+                targets_all = y.data.int()
+                correct += torch.sum(pred_temp == targets_all).double().detach().cpu().item()
+            else:
+                correct += (pred.argmax(1) == y).type(torch.float).sum().detach().cpu().item()
+
             test_loss += loss_fn(pred, y).detach().cpu().item()
-            correct += (pred.argmax(1) == y).type(torch.float).sum().detach().cpu().item()
 
             tgts.extend(y.detach().cpu().tolist())  # int eg. 0, 1
             pred_label.extend(pred.argmax(1).detach().cpu().tolist())
 
             if num_classes == 2:
                 preds.extend(pred[:, 1].detach().cpu().tolist())
-                #preds.extend(softmax(pred, axis=1)[:, 1].tolist()) 
-                #preds.extend(expit(pred[:, 1]).tolist())
         if num_classes == 2:
             fpr, tpr, thresholds = metrics.roc_curve(
                 tgts, preds, pos_label=1)
@@ -84,9 +103,16 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             f1 = metrics.f1_score(tgts, pred_label, average='micro')
         results["f1_score"] = f1
 
-    test_loss /= i+1
+    if dataset_name == 'ADP-Release1':
+        test_loss /= size
+        test_acc1 = (correct / (size * num_classes))
+    else:
+        test_loss /= i+1
+        test_acc1 = correct / size
+    print("size = ", size, ", i+1 = ", i+1)
+
     results["loss"] = test_loss
-    results["acc1"] = correct / size
+    results["acc1"] = test_acc1
     df = pd.DataFrame(data=results, index=[0])
     #print(df)
 
@@ -113,13 +139,19 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
                 mean=transformed_norm_weights[dataset_name]["mean"],
                 std=transformed_norm_weights[dataset_name]["std"])
         ])
-
-        dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
+        if dataset_name == 'ADP-Release1':
+            dataset = ADPDataset("L3Only", root=os.path.join(path_to_root, "ADP V1.0 Release"), split='test', transform=transform_test)
+        else:
+            dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
         ### just for fast testing ###
         #dataset.samples = dataset.samples[0:50]
-        # TODO perhaps bump up the batch size to 32 or 64, and num_workers = 4 on compute canada
-        test_dataloader = DataLoader(dataset, batch_size=32, shuffle=False, num_workers=4)
-        path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
+        test_dataloader = DataLoader(dataset, batch_size=mini_batch_size, shuffle=False, num_workers=num_workers)
+        print("load test data successfully")
+
+        if dataset_name == 'ADP-Release1':
+            path_to_dataset_cp = os.path.join(path_to_checkpoint, "ADP")
+        else:
+            path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
             print("file/dir: ", file)
             if "per_class" in file:
@@ -155,7 +187,8 @@ if __name__ == "__main__":
     output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
     #dataset_name_list = ["CRC_transformed","PCam_transformed"]
-    dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
+    #dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
+    dataset_name_list = ["ADP V1.0 Release"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 
