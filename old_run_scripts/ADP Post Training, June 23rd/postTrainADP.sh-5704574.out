@@ -1,0 +1,788 @@
+transferring data
+Mon Jun 21 22:05:45 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:05:46 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/AIDPATH_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/AIDPATH_transformed/output
+    checkpoint          : ADP_post_trained/AIDPATH_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/AIDPATH_transformed/output does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              AIDPATH_transformed 
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           30                  
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.7008353772443056
+Valid AUC: 0.9231557377049181
+Adas on AIDPATH_transformed: T 1/1 | E 1/30 Ended | E Time: 8.113s | ~Time Left: 235.273s |  Train Loss: 1.1072 | Train Acc. 63.1410% | Test Loss: 1.4554 | Test Acc. 80.3419%
+Train AUC: 0.8640924806913215
+Valid AUC: 0.8151346604215456
+Adas on AIDPATH_transformed: T 1/1 | E 2/30 Ended | E Time: 6.457s | ~Time Left: 180.793s |  Train Loss: 0.6098 | Train Acc. 78.8462% | Test Loss: 0.6238 | Test Acc. 71.3675%
+Train AUC: 0.9328683721333862
+Valid AUC: 0.9212529274004684
+Adas on AIDPATH_transformed: T 1/1 | E 3/30 Ended | E Time: 6.437s | ~Time Left: 173.810s |  Train Loss: 0.3266 | Train Acc. 86.4316% | Test Loss: 0.5181 | Test Acc. 86.3248%
+Train AUC: 0.918115673942533
+Valid AUC: 0.9506733021077284
+Adas on AIDPATH_transformed: T 1/1 | E 4/30 Ended | E Time: 6.458s | ~Time Left: 167.921s |  Train Loss: 0.4318 | Train Acc. 85.1496% | Test Loss: 0.5372 | Test Acc. 85.0427%
+Train AUC: 0.8894095723544484
+Valid AUC: 0.9363290398126464
+Adas on AIDPATH_transformed: T 1/1 | E 5/30 Ended | E Time: 6.589s | ~Time Left: 164.724s |  Train Loss: 0.4944 | Train Acc. 79.5940% | Test Loss: 1.1837 | Test Acc. 87.1795%
+Train AUC: 0.9511379674161767
+Valid AUC: 0.9279859484777517
+Adas on AIDPATH_transformed: T 1/1 | E 6/30 Ended | E Time: 7.120s | ~Time Left: 170.883s |  Train Loss: 0.2911 | Train Acc. 88.5684% | Test Loss: 0.6996 | Test Acc. 86.3248%
+Train AUC: 0.9610035488688837
+Valid AUC: 0.9855093676814988
+Adas on AIDPATH_transformed: T 1/1 | E 7/30 Ended | E Time: 6.443s | ~Time Left: 148.179s |  Train Loss: 0.2502 | Train Acc. 90.1709% | Test Loss: 0.2225 | Test Acc. 93.5897%
+Train AUC: 0.9717323686987024
+Valid AUC: 0.9736533957845434
+Adas on AIDPATH_transformed: T 1/1 | E 8/30 Ended | E Time: 6.439s | ~Time Left: 141.658s |  Train Loss: 0.2187 | Train Acc. 91.4530% | Test Loss: 0.2132 | Test Acc. 92.7350%
+Train AUC: 0.9814152541985813
+Valid AUC: 0.9772394613583137
+Adas on AIDPATH_transformed: T 1/1 | E 9/30 Ended | E Time: 6.443s | ~Time Left: 135.308s |  Train Loss: 0.1734 | Train Acc. 94.0171% | Test Loss: 0.2204 | Test Acc. 92.7350%
+Train AUC: 0.9871199353256327
+Valid AUC: 0.9934865339578455
+Adas on AIDPATH_transformed: T 1/1 | E 10/30 Ended | E Time: 6.414s | ~Time Left: 128.270s |  Train Loss: 0.1627 | Train Acc. 95.0855% | Test Loss: 0.1219 | Test Acc. 95.7265%
+Train AUC: 0.9612227840122772
+Valid AUC: 0.9569672131147541
+Adas on AIDPATH_transformed: T 1/1 | E 11/30 Ended | E Time: 6.499s | ~Time Left: 123.485s |  Train Loss: 0.2844 | Train Acc. 90.2778% | Test Loss: 0.2963 | Test Acc. 90.5983%
+Train AUC: 0.9734725476493882
+Valid AUC: 0.9877781030444965
+Adas on AIDPATH_transformed: T 1/1 | E 12/30 Ended | E Time: 6.566s | ~Time Left: 118.192s |  Train Loss: 0.2224 | Train Acc. 92.8419% | Test Loss: 0.1782 | Test Acc. 94.4445%
+Train AUC: 0.9684210045536965
+Valid AUC: 0.6070696721311476
+Adas on AIDPATH_transformed: T 1/1 | E 13/30 Ended | E Time: 6.496s | ~Time Left: 110.437s |  Train Loss: 0.2995 | Train Acc. 91.5598% | Test Loss: 1.4214 | Test Acc. 57.6923%
+Train AUC: 0.8909944597452304
+Valid AUC: 0.9571135831381733
+Adas on AIDPATH_transformed: T 1/1 | E 14/30 Ended | E Time: 6.435s | ~Time Left: 102.955s |  Train Loss: 0.5379 | Train Acc. 82.2650% | Test Loss: 0.4070 | Test Acc. 82.9060%
+Train AUC: 0.9665986124242382
+Valid AUC: 0.972043325526932
+Adas on AIDPATH_transformed: T 1/1 | E 15/30 Ended | E Time: 6.424s | ~Time Left: 96.357s |  Train Loss: 0.2405 | Train Acc. 90.9188% | Test Loss: 0.2453 | Test Acc. 93.1624%
+Train AUC: 0.9707503779522524
+Valid AUC: 0.9884367681498829
+Adas on AIDPATH_transformed: T 1/1 | E 16/30 Ended | E Time: 6.642s | ~Time Left: 92.993s |  Train Loss: 0.2313 | Train Acc. 91.4530% | Test Loss: 0.1637 | Test Acc. 94.0171%
+Train AUC: 0.9628031040042386
+Valid AUC: 0.9723360655737706
+Adas on AIDPATH_transformed: T 1/1 | E 17/30 Ended | E Time: 6.443s | ~Time Left: 83.765s |  Train Loss: 0.3259 | Train Acc. 90.7051% | Test Loss: 0.2470 | Test Acc. 93.1624%
+Train AUC: 0.9770077143366082
+Valid AUC: 0.9859484777517565
+Adas on AIDPATH_transformed: T 1/1 | E 18/30 Ended | E Time: 6.503s | ~Time Left: 78.032s |  Train Loss: 0.1930 | Train Acc. 92.4145% | Test Loss: 0.3029 | Test Acc. 92.3077%
+Train AUC: 0.9836761166148267
+Valid AUC: 0.9875585480093676
+Adas on AIDPATH_transformed: T 1/1 | E 19/30 Ended | E Time: 6.462s | ~Time Left: 71.087s |  Train Loss: 0.1671 | Train Acc. 93.5897% | Test Loss: 0.1454 | Test Acc. 96.1539%
+Train AUC: 0.9885723681506146
+Valid AUC: 0.9945843091334894
+Adas on AIDPATH_transformed: T 1/1 | E 20/30 Ended | E Time: 6.449s | ~Time Left: 64.488s |  Train Loss: 0.1342 | Train Acc. 94.9786% | Test Loss: 0.1263 | Test Acc. 96.5812%
+Train AUC: 0.989759891843996
+Valid AUC: 0.9887295081967213
+Adas on AIDPATH_transformed: T 1/1 | E 21/30 Ended | E Time: 6.476s | ~Time Left: 58.285s |  Train Loss: 0.1273 | Train Acc. 94.7650% | Test Loss: 0.1828 | Test Acc. 92.7350%
+Train AUC: 0.9886226095376422
+Valid AUC: 0.9897540983606558
+Adas on AIDPATH_transformed: T 1/1 | E 22/30 Ended | E Time: 6.537s | ~Time Left: 52.298s |  Train Loss: 0.1313 | Train Acc. 95.8333% | Test Loss: 0.2029 | Test Acc. 92.7350%
+Train AUC: 0.9877548037617098
+Valid AUC: 0.9810450819672132
+Adas on AIDPATH_transformed: T 1/1 | E 23/30 Ended | E Time: 6.423s | ~Time Left: 44.961s |  Train Loss: 0.1383 | Train Acc. 95.6197% | Test Loss: 0.1995 | Test Acc. 93.1624%
+Train AUC: 0.9887961706928288
+Valid AUC: 0.9896077283372366
+Adas on AIDPATH_transformed: T 1/1 | E 24/30 Ended | E Time: 6.513s | ~Time Left: 39.078s |  Train Loss: 0.1370 | Train Acc. 95.1923% | Test Loss: 0.1545 | Test Acc. 94.0171%
+Train AUC: 0.9878781235298686
+Valid AUC: 0.9948770491803278
+Adas on AIDPATH_transformed: T 1/1 | E 25/30 Ended | E Time: 6.577s | ~Time Left: 32.884s |  Train Loss: 0.1526 | Train Acc. 93.9103% | Test Loss: 0.1161 | Test Acc. 96.5812%
+Train AUC: 0.9895726284923474
+Valid AUC: 0.9903395784543325
+Adas on AIDPATH_transformed: T 1/1 | E 26/30 Ended | E Time: 6.362s | ~Time Left: 25.448s |  Train Loss: 0.1291 | Train Acc. 95.7265% | Test Loss: 0.1658 | Test Acc. 94.8718%
+Train AUC: 0.9880425498874136
+Valid AUC: 0.9741656908665106
+Adas on AIDPATH_transformed: T 1/1 | E 27/30 Ended | E Time: 6.472s | ~Time Left: 19.416s |  Train Loss: 0.1387 | Train Acc. 94.4445% | Test Loss: 0.3562 | Test Acc. 89.3162%
+Train AUC: 0.9923404721776901
+Valid AUC: 0.9862412177985949
+Adas on AIDPATH_transformed: T 1/1 | E 28/30 Ended | E Time: 6.568s | ~Time Left: 13.137s |  Train Loss: 0.1115 | Train Acc. 95.9402% | Test Loss: 0.1482 | Test Acc. 94.8718%
+Train AUC: 0.9920801304449104
+Valid AUC: 0.9904127634660422
+Adas on AIDPATH_transformed: T 1/1 | E 29/30 Ended | E Time: 6.457s | ~Time Left: 6.457s |  Train Loss: 0.1066 | Train Acc. 96.2607% | Test Loss: 0.1230 | Test Acc. 96.5812%
+Train AUC: 0.9921075348378344
+Valid AUC: 0.979581381733021
+Adas on AIDPATH_transformed: T 1/1 | E 30/30 Ended | E Time: 6.398s | ~Time Left: 0.000s |  Train Loss: 0.1068 | Train Acc. 96.4744% | Test Loss: 0.2225 | Test Acc. 91.0256%
+transferring data
+Mon Jun 21 22:10:51 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:10:57 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/AJ-Lymph_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/AJ-Lymph_transformed/output
+    checkpoint          : ADP_post_trained/AJ-Lymph_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/AJ-Lymph_transformed/output does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              AJ-Lymph_transformed
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           30                  
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Adas on AJ-Lymph_transformed: T 1/1 | E 1/30 Ended | E Time: 5.661s | ~Time Left: 164.177s |  Train Loss: 2.1761 | Train Acc. 37.4582% | Test Loss: 133.4809 | Test Acc. 29.7297%
+Adas on AJ-Lymph_transformed: T 1/1 | E 2/30 Ended | E Time: 3.576s | ~Time Left: 100.137s |  Train Loss: 3.0142 | Train Acc. 33.7793% | Test Loss: 1545.0127 | Test Acc. 29.7297%
+Adas on AJ-Lymph_transformed: T 1/1 | E 3/30 Ended | E Time: 3.680s | ~Time Left: 99.363s |  Train Loss: 2.4063 | Train Acc. 44.1472% | Test Loss: 1.7935 | Test Acc. 37.8378%
+Adas on AJ-Lymph_transformed: T 1/1 | E 4/30 Ended | E Time: 3.633s | ~Time Left: 94.470s |  Train Loss: 1.6283 | Train Acc. 40.8027% | Test Loss: 1.1014 | Test Acc. 51.3514%
+Adas on AJ-Lymph_transformed: T 1/1 | E 5/30 Ended | E Time: 3.666s | ~Time Left: 91.659s |  Train Loss: 1.5566 | Train Acc. 40.8027% | Test Loss: 11.8058 | Test Acc. 56.7568%
+Adas on AJ-Lymph_transformed: T 1/1 | E 6/30 Ended | E Time: 3.606s | ~Time Left: 86.538s |  Train Loss: 1.2965 | Train Acc. 40.1338% | Test Loss: 1.2991 | Test Acc. 43.2432%
+Adas on AJ-Lymph_transformed: T 1/1 | E 7/30 Ended | E Time: 3.684s | ~Time Left: 84.739s |  Train Loss: 1.3868 | Train Acc. 39.1304% | Test Loss: 0.9222 | Test Acc. 54.0541%
+Adas on AJ-Lymph_transformed: T 1/1 | E 8/30 Ended | E Time: 3.653s | ~Time Left: 80.377s |  Train Loss: 1.1930 | Train Acc. 43.1438% | Test Loss: 1.3656 | Test Acc. 51.3514%
+Adas on AJ-Lymph_transformed: T 1/1 | E 9/30 Ended | E Time: 3.635s | ~Time Left: 76.344s |  Train Loss: 1.5011 | Train Acc. 43.4783% | Test Loss: 0.7380 | Test Acc. 56.7568%
+Adas on AJ-Lymph_transformed: T 1/1 | E 10/30 Ended | E Time: 3.660s | ~Time Left: 73.201s |  Train Loss: 1.4381 | Train Acc. 46.4883% | Test Loss: 2.6576 | Test Acc. 29.7297%
+Adas on AJ-Lymph_transformed: T 1/1 | E 11/30 Ended | E Time: 4.881s | ~Time Left: 92.732s |  Train Loss: 1.3365 | Train Acc. 44.4816% | Test Loss: 0.9421 | Test Acc. 48.6487%
+Adas on AJ-Lymph_transformed: T 1/1 | E 12/30 Ended | E Time: 3.655s | ~Time Left: 65.789s |  Train Loss: 1.1685 | Train Acc. 50.8361% | Test Loss: 1.0209 | Test Acc. 51.3514%
+Adas on AJ-Lymph_transformed: T 1/1 | E 13/30 Ended | E Time: 3.704s | ~Time Left: 62.969s |  Train Loss: 1.1673 | Train Acc. 36.4548% | Test Loss: 0.7503 | Test Acc. 54.0541%
+Adas on AJ-Lymph_transformed: T 1/1 | E 14/30 Ended | E Time: 3.621s | ~Time Left: 57.943s |  Train Loss: 0.9805 | Train Acc. 53.1773% | Test Loss: 0.8269 | Test Acc. 51.3514%
+Adas on AJ-Lymph_transformed: T 1/1 | E 15/30 Ended | E Time: 3.668s | ~Time Left: 55.019s |  Train Loss: 1.0072 | Train Acc. 51.1706% | Test Loss: 0.8324 | Test Acc. 48.6487%
+Adas on AJ-Lymph_transformed: T 1/1 | E 16/30 Ended | E Time: 3.736s | ~Time Left: 52.306s |  Train Loss: 0.9963 | Train Acc. 53.1773% | Test Loss: 0.7512 | Test Acc. 48.6487%
+Adas on AJ-Lymph_transformed: T 1/1 | E 17/30 Ended | E Time: 3.670s | ~Time Left: 47.714s |  Train Loss: 1.0713 | Train Acc. 46.8227% | Test Loss: 0.8099 | Test Acc. 56.7568%
+Adas on AJ-Lymph_transformed: T 1/1 | E 18/30 Ended | E Time: 3.747s | ~Time Left: 44.961s |  Train Loss: 1.0622 | Train Acc. 52.5084% | Test Loss: 0.7234 | Test Acc. 56.7568%
+Adas on AJ-Lymph_transformed: T 1/1 | E 19/30 Ended | E Time: 3.656s | ~Time Left: 40.217s |  Train Loss: 0.9495 | Train Acc. 51.5050% | Test Loss: 0.6685 | Test Acc. 62.1622%
+Adas on AJ-Lymph_transformed: T 1/1 | E 20/30 Ended | E Time: 3.671s | ~Time Left: 36.706s |  Train Loss: 0.9194 | Train Acc. 58.5284% | Test Loss: 0.6184 | Test Acc. 64.8649%
+Adas on AJ-Lymph_transformed: T 1/1 | E 21/30 Ended | E Time: 3.674s | ~Time Left: 33.067s |  Train Loss: 0.9935 | Train Acc. 50.5017% | Test Loss: 0.8825 | Test Acc. 59.4595%
+Adas on AJ-Lymph_transformed: T 1/1 | E 22/30 Ended | E Time: 3.671s | ~Time Left: 29.367s |  Train Loss: 0.9385 | Train Acc. 48.8294% | Test Loss: 0.7346 | Test Acc. 54.0541%
+Adas on AJ-Lymph_transformed: T 1/1 | E 23/30 Ended | E Time: 3.796s | ~Time Left: 26.569s |  Train Loss: 0.9945 | Train Acc. 53.8462% | Test Loss: 0.8548 | Test Acc. 54.0541%
+Adas on AJ-Lymph_transformed: T 1/1 | E 24/30 Ended | E Time: 3.662s | ~Time Left: 21.973s |  Train Loss: 0.9537 | Train Acc. 54.1806% | Test Loss: 0.7213 | Test Acc. 72.9730%
+Adas on AJ-Lymph_transformed: T 1/1 | E 25/30 Ended | E Time: 3.663s | ~Time Left: 18.316s |  Train Loss: 0.9588 | Train Acc. 52.5084% | Test Loss: 0.7523 | Test Acc. 64.8649%
+Adas on AJ-Lymph_transformed: T 1/1 | E 26/30 Ended | E Time: 3.774s | ~Time Left: 15.097s |  Train Loss: 0.8887 | Train Acc. 56.1873% | Test Loss: 0.8009 | Test Acc. 67.5676%
+Adas on AJ-Lymph_transformed: T 1/1 | E 27/30 Ended | E Time: 3.660s | ~Time Left: 10.980s |  Train Loss: 0.9660 | Train Acc. 58.5284% | Test Loss: 1.1344 | Test Acc. 62.1622%
+Adas on AJ-Lymph_transformed: T 1/1 | E 28/30 Ended | E Time: 3.802s | ~Time Left: 7.605s |  Train Loss: 0.9424 | Train Acc. 54.8495% | Test Loss: 0.7289 | Test Acc. 64.8649%
+Adas on AJ-Lymph_transformed: T 1/1 | E 29/30 Ended | E Time: 3.701s | ~Time Left: 3.701s |  Train Loss: 0.9625 | Train Acc. 56.1873% | Test Loss: 0.6830 | Test Acc. 67.5676%
+Adas on AJ-Lymph_transformed: T 1/1 | E 30/30 Ended | E Time: 3.652s | ~Time Left: 0.000s |  Train Loss: 0.8864 | Train Acc. 55.8528% | Test Loss: 0.5820 | Test Acc. 72.9730%
+transferring data
+Mon Jun 21 22:14:13 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:14:14 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/BACH_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/BACH_transformed/output
+    checkpoint          : ADP_post_trained/BACH_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/BACH_transformed/output does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              BACH_transformed    
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           30                  
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Adas on BACH_transformed: T 1/1 | E 1/30 Ended | E Time: 9.156s | ~Time Left: 265.538s |  Train Loss: 2.1091 | Train Acc. 26.9311% | Test Loss: 2.9264 | Test Acc. 26.6667%
+Adas on BACH_transformed: T 1/1 | E 2/30 Ended | E Time: 6.826s | ~Time Left: 191.133s |  Train Loss: 1.5936 | Train Acc. 33.1942% | Test Loss: 1.3616 | Test Acc. 37.5000%
+Adas on BACH_transformed: T 1/1 | E 3/30 Ended | E Time: 6.754s | ~Time Left: 182.349s |  Train Loss: 1.3499 | Train Acc. 35.4906% | Test Loss: 1.2605 | Test Acc. 43.7500%
+Adas on BACH_transformed: T 1/1 | E 4/30 Ended | E Time: 6.712s | ~Time Left: 174.507s |  Train Loss: 1.3818 | Train Acc. 34.8643% | Test Loss: 1.4156 | Test Acc. 27.9167%
+Adas on BACH_transformed: T 1/1 | E 5/30 Ended | E Time: 6.862s | ~Time Left: 171.553s |  Train Loss: 1.3322 | Train Acc. 37.1608% | Test Loss: 1.3373 | Test Acc. 35.4167%
+Adas on BACH_transformed: T 1/1 | E 6/30 Ended | E Time: 6.807s | ~Time Left: 163.375s |  Train Loss: 1.3176 | Train Acc. 36.2213% | Test Loss: 1.4627 | Test Acc. 34.1667%
+Adas on BACH_transformed: T 1/1 | E 7/30 Ended | E Time: 7.019s | ~Time Left: 161.430s |  Train Loss: 1.3073 | Train Acc. 40.6054% | Test Loss: 1.3780 | Test Acc. 29.1667%
+Adas on BACH_transformed: T 1/1 | E 8/30 Ended | E Time: 6.777s | ~Time Left: 149.096s |  Train Loss: 1.2995 | Train Acc. 37.6827% | Test Loss: 1.3127 | Test Acc. 44.1667%
+Adas on BACH_transformed: T 1/1 | E 9/30 Ended | E Time: 6.868s | ~Time Left: 144.226s |  Train Loss: 1.2729 | Train Acc. 40.1879% | Test Loss: 1.2942 | Test Acc. 40.4167%
+Adas on BACH_transformed: T 1/1 | E 10/30 Ended | E Time: 6.805s | ~Time Left: 136.097s |  Train Loss: 1.2870 | Train Acc. 39.1441% | Test Loss: 1.2599 | Test Acc. 39.5833%
+Adas on BACH_transformed: T 1/1 | E 11/30 Ended | E Time: 6.884s | ~Time Left: 130.804s |  Train Loss: 1.2816 | Train Acc. 40.9186% | Test Loss: 1.2878 | Test Acc. 40.4167%
+Adas on BACH_transformed: T 1/1 | E 12/30 Ended | E Time: 7.527s | ~Time Left: 135.485s |  Train Loss: 1.2603 | Train Acc. 40.0835% | Test Loss: 1.2974 | Test Acc. 42.5000%
+Adas on BACH_transformed: T 1/1 | E 13/30 Ended | E Time: 6.874s | ~Time Left: 116.865s |  Train Loss: 1.2476 | Train Acc. 44.6764% | Test Loss: 1.5809 | Test Acc. 28.7500%
+Adas on BACH_transformed: T 1/1 | E 14/30 Ended | E Time: 7.085s | ~Time Left: 113.359s |  Train Loss: 1.2848 | Train Acc. 37.6827% | Test Loss: 1.3136 | Test Acc. 36.2500%
+Adas on BACH_transformed: T 1/1 | E 15/30 Ended | E Time: 6.836s | ~Time Left: 102.539s |  Train Loss: 1.2394 | Train Acc. 43.0063% | Test Loss: 1.2280 | Test Acc. 47.0833%
+Adas on BACH_transformed: T 1/1 | E 16/30 Ended | E Time: 6.924s | ~Time Left: 96.940s |  Train Loss: 1.2348 | Train Acc. 41.5449% | Test Loss: 1.2092 | Test Acc. 47.5000%
+Adas on BACH_transformed: T 1/1 | E 17/30 Ended | E Time: 6.753s | ~Time Left: 87.789s |  Train Loss: 1.2388 | Train Acc. 42.1712% | Test Loss: 1.2464 | Test Acc. 41.2500%
+Adas on BACH_transformed: T 1/1 | E 18/30 Ended | E Time: 6.768s | ~Time Left: 81.212s |  Train Loss: 1.2296 | Train Acc. 41.8580% | Test Loss: 1.2256 | Test Acc. 40.4167%
+Adas on BACH_transformed: T 1/1 | E 19/30 Ended | E Time: 6.896s | ~Time Left: 75.861s |  Train Loss: 1.2006 | Train Acc. 46.1378% | Test Loss: 1.2280 | Test Acc. 44.5833%
+Adas on BACH_transformed: T 1/1 | E 20/30 Ended | E Time: 7.545s | ~Time Left: 75.450s |  Train Loss: 1.2218 | Train Acc. 41.6493% | Test Loss: 1.2259 | Test Acc. 43.7500%
+Adas on BACH_transformed: T 1/1 | E 21/30 Ended | E Time: 6.746s | ~Time Left: 60.717s |  Train Loss: 1.2008 | Train Acc. 46.3466% | Test Loss: 1.2187 | Test Acc. 39.1667%
+Adas on BACH_transformed: T 1/1 | E 22/30 Ended | E Time: 6.879s | ~Time Left: 55.030s |  Train Loss: 1.2020 | Train Acc. 46.2422% | Test Loss: 1.1423 | Test Acc. 49.5833%
+Adas on BACH_transformed: T 1/1 | E 23/30 Ended | E Time: 6.759s | ~Time Left: 47.312s |  Train Loss: 1.1829 | Train Acc. 47.2860% | Test Loss: 1.2034 | Test Acc. 44.5833%
+Adas on BACH_transformed: T 1/1 | E 24/30 Ended | E Time: 6.821s | ~Time Left: 40.926s |  Train Loss: 1.2032 | Train Acc. 45.6159% | Test Loss: 1.1663 | Test Acc. 45.0000%
+Adas on BACH_transformed: T 1/1 | E 25/30 Ended | E Time: 6.879s | ~Time Left: 34.393s |  Train Loss: 1.1741 | Train Acc. 47.3904% | Test Loss: 1.1768 | Test Acc. 50.8333%
+Adas on BACH_transformed: T 1/1 | E 26/30 Ended | E Time: 6.912s | ~Time Left: 27.647s |  Train Loss: 1.1983 | Train Acc. 44.9896% | Test Loss: 1.2208 | Test Acc. 48.7500%
+Adas on BACH_transformed: T 1/1 | E 27/30 Ended | E Time: 6.945s | ~Time Left: 20.835s |  Train Loss: 1.1777 | Train Acc. 47.0772% | Test Loss: 1.1998 | Test Acc. 46.6667%
+Adas on BACH_transformed: T 1/1 | E 28/30 Ended | E Time: 6.809s | ~Time Left: 13.617s |  Train Loss: 1.1770 | Train Acc. 47.8079% | Test Loss: 1.2733 | Test Acc. 41.6667%
+Adas on BACH_transformed: T 1/1 | E 29/30 Ended | E Time: 6.805s | ~Time Left: 6.805s |  Train Loss: 1.1984 | Train Acc. 45.9290% | Test Loss: 1.1662 | Test Acc. 49.1667%
+Adas on BACH_transformed: T 1/1 | E 30/30 Ended | E Time: 6.814s | ~Time Left: 0.000s |  Train Loss: 1.1665 | Train Acc. 48.5386% | Test Loss: 1.1537 | Test Acc. 49.5833%
+transferring data
+Mon Jun 21 22:18:59 PDT 2021
+
+tar: /home/zhan8425/scratch/HistoKTdata/CRC_transformed_.tar: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+Finished transferring
+Mon Jun 21 22:18:59 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/CRC_transformed_-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/CRC_transformed_/output
+    checkpoint          : ADP_post_trained/CRC_transformed_/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Traceback (most recent call last):
+  File "src/adas/train.py", line 870, in <module>
+    main(args)
+  File "src/adas/train.py", line 825, in main
+    args.resume = setup_dirs(args)
+  File "src/adas/train.py", line 799, in setup_dirs
+    raise ValueError(f"Adas: Config path {config_path} does not exist")
+ValueError: Adas: Config path PostTrainingConfigs/CRC_transformed_-configAdas.yaml does not exist
+transferring data
+Mon Jun 21 22:19:54 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:20:00 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/GlaS_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/GlaS_transformed/output
+    checkpoint          : ADP_post_trained/GlaS_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/GlaS_transformed/output does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              GlaS_transformed    
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           30                  
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.45177587262706675
+Valid AUC: 0.36837029893924783
+Adas on GlaS_transformed: T 1/1 | E 1/30 Ended | E Time: 3.806s | ~Time Left: 110.360s |  Train Loss: 1.2530 | Train Acc. 46.6258% | Test Loss: 30.0341 | Test Acc. 45.5357%
+Train AUC: 0.516840171463564
+Valid AUC: 0.47990999678559954
+Adas on GlaS_transformed: T 1/1 | E 2/30 Ended | E Time: 3.203s | ~Time Left: 89.679s |  Train Loss: 5.0480 | Train Acc. 55.2147% | Test Loss: 426.9599 | Test Acc. 54.4643%
+Train AUC: 0.5272504592774035
+Valid AUC: 0.3770491803278689
+Adas on GlaS_transformed: T 1/1 | E 3/30 Ended | E Time: 3.169s | ~Time Left: 85.575s |  Train Loss: 3.8336 | Train Acc. 49.0798% | Test Loss: 283.4347 | Test Acc. 45.5357%
+Train AUC: 0.45192896509491737
+Valid AUC: 0.4451944712311154
+Adas on GlaS_transformed: T 1/1 | E 4/30 Ended | E Time: 3.240s | ~Time Left: 84.250s |  Train Loss: 1.9910 | Train Acc. 50.9202% | Test Loss: 79.1506 | Test Acc. 45.5357%
+Train AUC: 0.541334966319657
+Valid AUC: 0.5242687238829958
+Adas on GlaS_transformed: T 1/1 | E 5/30 Ended | E Time: 3.145s | ~Time Left: 78.620s |  Train Loss: 0.9326 | Train Acc. 54.6012% | Test Loss: 3.7865 | Test Acc. 54.4643%
+Train AUC: 0.5506736068585426
+Valid AUC: 0.6049501767920283
+Adas on GlaS_transformed: T 1/1 | E 6/30 Ended | E Time: 3.222s | ~Time Left: 77.329s |  Train Loss: 1.0667 | Train Acc. 48.4663% | Test Loss: 67.9963 | Test Acc. 51.7857%
+Train AUC: 0.558940600122474
+Valid AUC: 0.3821922211507554
+Adas on GlaS_transformed: T 1/1 | E 7/30 Ended | E Time: 3.240s | ~Time Left: 74.530s |  Train Loss: 1.5065 | Train Acc. 50.3067% | Test Loss: 15.4276 | Test Acc. 54.4643%
+Train AUC: 0.4413655848132272
+Valid AUC: 0.44101575056252007
+Adas on GlaS_transformed: T 1/1 | E 8/30 Ended | E Time: 3.311s | ~Time Left: 72.833s |  Train Loss: 2.5764 | Train Acc. 43.5583% | Test Loss: 38.7378 | Test Acc. 45.5357%
+Train AUC: 0.5656766687078997
+Valid AUC: 0.6303439408550305
+Adas on GlaS_transformed: T 1/1 | E 9/30 Ended | E Time: 3.175s | ~Time Left: 66.668s |  Train Loss: 2.4507 | Train Acc. 56.4417% | Test Loss: 68.6558 | Test Acc. 54.4643%
+Train AUC: 0.5514390691977955
+Valid AUC: 0.5641272902603665
+Adas on GlaS_transformed: T 1/1 | E 10/30 Ended | E Time: 3.775s | ~Time Left: 75.496s |  Train Loss: 2.3324 | Train Acc. 52.1472% | Test Loss: 2.0599 | Test Acc. 54.4643%
+Train AUC: 0.5624617268830374
+Valid AUC: 0.430729668916747
+Adas on GlaS_transformed: T 1/1 | E 11/30 Ended | E Time: 3.152s | ~Time Left: 59.895s |  Train Loss: 0.8694 | Train Acc. 59.5092% | Test Loss: 3.1313 | Test Acc. 45.5357%
+Train AUC: 0.5503674219228414
+Valid AUC: 0.5403407264545163
+Adas on GlaS_transformed: T 1/1 | E 12/30 Ended | E Time: 3.201s | ~Time Left: 57.614s |  Train Loss: 0.8404 | Train Acc. 49.0798% | Test Loss: 3.1497 | Test Acc. 49.1071%
+Train AUC: 0.5407225964482547
+Valid AUC: 0.40919318547090966
+Adas on GlaS_transformed: T 1/1 | E 13/30 Ended | E Time: 3.457s | ~Time Left: 58.769s |  Train Loss: 0.8906 | Train Acc. 57.0552% | Test Loss: 14.4511 | Test Acc. 50.0000%
+Train AUC: 0.5410287813839559
+Valid AUC: 0.423657987785278
+Adas on GlaS_transformed: T 1/1 | E 14/30 Ended | E Time: 3.247s | ~Time Left: 51.958s |  Train Loss: 1.2756 | Train Acc. 53.3742% | Test Loss: 8.4132 | Test Acc. 40.1786%
+Train AUC: 0.5026025719534599
+Valid AUC: 0.5380906460945034
+Adas on GlaS_transformed: T 1/1 | E 15/30 Ended | E Time: 3.182s | ~Time Left: 47.724s |  Train Loss: 0.9247 | Train Acc. 54.6012% | Test Loss: 5.6255 | Test Acc. 49.1071%
+Train AUC: 0.4975505205143907
+Valid AUC: 0.6039858566377371
+Adas on GlaS_transformed: T 1/1 | E 16/30 Ended | E Time: 3.147s | ~Time Left: 44.060s |  Train Loss: 1.1968 | Train Acc. 48.4663% | Test Loss: 1.3361 | Test Acc. 54.4643%
+Train AUC: 0.5330679730557257
+Valid AUC: 0.5576984892317582
+Adas on GlaS_transformed: T 1/1 | E 17/30 Ended | E Time: 3.153s | ~Time Left: 40.987s |  Train Loss: 0.9995 | Train Acc. 50.9202% | Test Loss: 4.1704 | Test Acc. 45.5357%
+Train AUC: 0.4892835272504593
+Valid AUC: 0.5981999357119897
+Adas on GlaS_transformed: T 1/1 | E 18/30 Ended | E Time: 3.266s | ~Time Left: 39.188s |  Train Loss: 0.9259 | Train Acc. 55.8282% | Test Loss: 0.8403 | Test Acc. 58.9286%
+Train AUC: 0.4487140232700551
+Valid AUC: 0.5692703310832529
+Adas on GlaS_transformed: T 1/1 | E 19/30 Ended | E Time: 3.167s | ~Time Left: 34.837s |  Train Loss: 1.1544 | Train Acc. 46.6258% | Test Loss: 0.7212 | Test Acc. 48.2143%
+Train AUC: 0.5716472749540723
+Valid AUC: 0.6943105110896818
+Adas on GlaS_transformed: T 1/1 | E 20/30 Ended | E Time: 3.209s | ~Time Left: 32.088s |  Train Loss: 1.3033 | Train Acc. 57.0552% | Test Loss: 1.4865 | Test Acc. 45.5357%
+Train AUC: 0.5015309246785058
+Valid AUC: 0.6100932176149149
+Adas on GlaS_transformed: T 1/1 | E 21/30 Ended | E Time: 3.144s | ~Time Left: 28.294s |  Train Loss: 0.7884 | Train Acc. 58.2822% | Test Loss: 0.6708 | Test Acc. 55.3571%
+Train AUC: 0.4804041641151256
+Valid AUC: 0.5557698489231758
+Adas on GlaS_transformed: T 1/1 | E 22/30 Ended | E Time: 3.154s | ~Time Left: 25.235s |  Train Loss: 0.8756 | Train Acc. 46.6258% | Test Loss: 0.6788 | Test Acc. 58.0357%
+Train AUC: 0.6318126148193509
+Valid AUC: 0.6560591449694633
+Adas on GlaS_transformed: T 1/1 | E 23/30 Ended | E Time: 3.184s | ~Time Left: 22.285s |  Train Loss: 0.7168 | Train Acc. 57.6687% | Test Loss: 0.7139 | Test Acc. 45.5357%
+Train AUC: 0.6962645437844459
+Valid AUC: 0.6885245901639344
+Adas on GlaS_transformed: T 1/1 | E 24/30 Ended | E Time: 3.169s | ~Time Left: 19.011s |  Train Loss: 0.6103 | Train Acc. 60.1227% | Test Loss: 0.6719 | Test Acc. 57.1429%
+Train AUC: 0.6680955296999387
+Valid AUC: 0.6869173899067824
+Adas on GlaS_transformed: T 1/1 | E 25/30 Ended | E Time: 3.176s | ~Time Left: 15.879s |  Train Loss: 0.6490 | Train Acc. 58.8957% | Test Loss: 0.6867 | Test Acc. 48.2143%
+Train AUC: 0.6440600122473974
+Valid AUC: 0.6898103503696559
+Adas on GlaS_transformed: T 1/1 | E 26/30 Ended | E Time: 3.220s | ~Time Left: 12.878s |  Train Loss: 0.7693 | Train Acc. 58.8957% | Test Loss: 0.8364 | Test Acc. 45.5357%
+Train AUC: 0.5620024494794856
+Valid AUC: 0.47926711668273864
+Adas on GlaS_transformed: T 1/1 | E 27/30 Ended | E Time: 3.201s | ~Time Left: 9.602s |  Train Loss: 0.7046 | Train Acc. 57.0552% | Test Loss: 0.6764 | Test Acc. 54.4643%
+Train AUC: 0.5154623392529087
+Valid AUC: 0.7078109932497588
+Adas on GlaS_transformed: T 1/1 | E 28/30 Ended | E Time: 3.209s | ~Time Left: 6.417s |  Train Loss: 0.6495 | Train Acc. 58.2822% | Test Loss: 0.7005 | Test Acc. 48.2143%
+Train AUC: 0.7507654623392528
+Valid AUC: 0.682738669238187
+Adas on GlaS_transformed: T 1/1 | E 29/30 Ended | E Time: 3.549s | ~Time Left: 3.549s |  Train Loss: 0.6113 | Train Acc. 66.8712% | Test Loss: 0.7181 | Test Acc. 65.1786%
+Train AUC: 0.7039191671769749
+Valid AUC: 0.7062037929926069
+Adas on GlaS_transformed: T 1/1 | E 30/30 Ended | E Time: 3.208s | ~Time Left: 0.000s |  Train Loss: 0.7345 | Train Acc. 61.3497% | Test Loss: 0.7239 | Test Acc. 68.7500%
+transferring data
+Mon Jun 21 22:22:19 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:22:21 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/MHIST_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/MHIST_transformed/output
+    checkpoint          : ADP_post_trained/MHIST_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/MHIST_transformed/output does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              MHIST_transformed   
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           30                  
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.49240770982396087
+Valid AUC: 0.49449992763062667
+Adas on MHIST_transformed: T 1/1 | E 1/30 Ended | E Time: 10.804s | ~Time Left: 313.321s |  Train Loss: 1.0214 | Train Acc. 61.8391% | Test Loss: 0.7815 | Test Acc. 67.5862%
+Train AUC: 0.49059484518724483
+Valid AUC: 0.5475708013701934
+Adas on MHIST_transformed: T 1/1 | E 2/30 Ended | E Time: 10.159s | ~Time Left: 284.446s |  Train Loss: 0.7865 | Train Acc. 64.4253% | Test Loss: 0.6311 | Test Acc. 67.3563%
+Train AUC: 0.5321828426829089
+Valid AUC: 0.5485839725961307
+Adas on MHIST_transformed: T 1/1 | E 3/30 Ended | E Time: 10.239s | ~Time Left: 276.458s |  Train Loss: 0.6403 | Train Acc. 68.4483% | Test Loss: 0.6316 | Test Acc. 67.5862%
+Train AUC: 0.5279359334618194
+Valid AUC: 0.5723211270323733
+Adas on MHIST_transformed: T 1/1 | E 4/30 Ended | E Time: 10.567s | ~Time Left: 274.740s |  Train Loss: 0.6430 | Train Acc. 67.1839% | Test Loss: 0.6536 | Test Acc. 67.5862%
+Train AUC: 0.5751227239067642
+Valid AUC: 0.6180585709461089
+Adas on MHIST_transformed: T 1/1 | E 5/30 Ended | E Time: 10.227s | ~Time Left: 255.671s |  Train Loss: 0.5941 | Train Acc. 71.3218% | Test Loss: 0.6035 | Test Acc. 70.8046%
+Train AUC: 0.6243724856515607
+Valid AUC: 0.6029333719303325
+Adas on MHIST_transformed: T 1/1 | E 6/30 Ended | E Time: 10.151s | ~Time Left: 243.623s |  Train Loss: 0.5821 | Train Acc. 70.7471% | Test Loss: 0.7198 | Test Acc. 68.2759%
+Train AUC: 0.5788318220679081
+Valid AUC: 0.6149949341438703
+Adas on MHIST_transformed: T 1/1 | E 7/30 Ended | E Time: 10.110s | ~Time Left: 232.537s |  Train Loss: 0.5952 | Train Acc. 70.5747% | Test Loss: 0.6226 | Test Acc. 66.8966%
+Train AUC: 0.6058547844750785
+Valid AUC: 0.6898007429922324
+Adas on MHIST_transformed: T 1/1 | E 8/30 Ended | E Time: 10.152s | ~Time Left: 223.337s |  Train Loss: 0.5866 | Train Acc. 71.5517% | Test Loss: 0.5895 | Test Acc. 67.8161%
+Train AUC: 0.6450888369059354
+Valid AUC: 0.6736864958749457
+Adas on MHIST_transformed: T 1/1 | E 9/30 Ended | E Time: 10.507s | ~Time Left: 220.638s |  Train Loss: 0.5683 | Train Acc. 70.8621% | Test Loss: 0.5999 | Test Acc. 67.5862%
+Train AUC: 0.6467872736575565
+Valid AUC: 0.6529164857432335
+Adas on MHIST_transformed: T 1/1 | E 10/30 Ended | E Time: 10.247s | ~Time Left: 204.948s |  Train Loss: 0.5641 | Train Acc. 71.4943% | Test Loss: 0.6035 | Test Acc. 67.5862%
+Train AUC: 0.6674513150216023
+Valid AUC: 0.7126212187002461
+Adas on MHIST_transformed: T 1/1 | E 11/30 Ended | E Time: 10.092s | ~Time Left: 191.755s |  Train Loss: 0.5599 | Train Acc. 70.9195% | Test Loss: 0.5669 | Test Acc. 68.5057%
+Train AUC: 0.6599726353886217
+Valid AUC: 0.649249770830318
+Adas on MHIST_transformed: T 1/1 | E 12/30 Ended | E Time: 10.219s | ~Time Left: 183.949s |  Train Loss: 0.5635 | Train Acc. 70.6897% | Test Loss: 0.6097 | Test Acc. 63.6782%
+Train AUC: 0.6649813073876277
+Valid AUC: 0.6891011723838472
+Adas on MHIST_transformed: T 1/1 | E 13/30 Ended | E Time: 10.249s | ~Time Left: 174.240s |  Train Loss: 0.5630 | Train Acc. 71.8391% | Test Loss: 0.5788 | Test Acc. 68.2759%
+Train AUC: 0.6547694359849544
+Valid AUC: 0.7238625946832635
+Adas on MHIST_transformed: T 1/1 | E 14/30 Ended | E Time: 10.087s | ~Time Left: 161.400s |  Train Loss: 0.5662 | Train Acc. 71.6667% | Test Loss: 0.5680 | Test Acc. 67.3563%
+Train AUC: 0.6678812369327441
+Valid AUC: 0.7375645293578424
+Adas on MHIST_transformed: T 1/1 | E 15/30 Ended | E Time: 10.175s | ~Time Left: 152.621s |  Train Loss: 0.5619 | Train Acc. 71.2069% | Test Loss: 0.5568 | Test Acc. 70.3448%
+Train AUC: 0.6678550819875796
+Valid AUC: 0.6783181357649442
+Adas on MHIST_transformed: T 1/1 | E 16/30 Ended | E Time: 10.198s | ~Time Left: 142.774s |  Train Loss: 0.5537 | Train Acc. 71.8966% | Test Loss: 0.6307 | Test Acc. 66.8966%
+Train AUC: 0.6685563614548033
+Valid AUC: 0.7486852897187244
+Adas on MHIST_transformed: T 1/1 | E 17/30 Ended | E Time: 10.304s | ~Time Left: 133.958s |  Train Loss: 0.5595 | Train Acc. 70.8046% | Test Loss: 0.5423 | Test Acc. 71.7241%
+Train AUC: 0.6572835800888942
+Valid AUC: 0.7458628841607564
+Adas on MHIST_transformed: T 1/1 | E 18/30 Ended | E Time: 10.185s | ~Time Left: 122.217s |  Train Loss: 0.5601 | Train Acc. 72.0115% | Test Loss: 0.5529 | Test Acc. 69.4253%
+Train AUC: 0.6611201836077151
+Valid AUC: 0.704298740772905
+Adas on MHIST_transformed: T 1/1 | E 19/30 Ended | E Time: 10.344s | ~Time Left: 113.785s |  Train Loss: 0.5595 | Train Acc. 71.2069% | Test Loss: 0.5870 | Test Acc. 67.3563%
+Train AUC: 0.7010734970305964
+Valid AUC: 0.7012833502195204
+Adas on MHIST_transformed: T 1/1 | E 20/30 Ended | E Time: 10.338s | ~Time Left: 103.385s |  Train Loss: 0.5413 | Train Acc. 72.0690% | Test Loss: 0.7613 | Test Acc. 67.5862%
+Train AUC: 0.651379101218003
+Valid AUC: 0.7328846432189896
+Adas on MHIST_transformed: T 1/1 | E 21/30 Ended | E Time: 10.454s | ~Time Left: 94.090s |  Train Loss: 0.5635 | Train Acc. 71.2644% | Test Loss: 0.5697 | Test Acc. 67.3563%
+Train AUC: 0.7053171368835401
+Valid AUC: 0.7429439861050804
+Adas on MHIST_transformed: T 1/1 | E 22/30 Ended | E Time: 10.149s | ~Time Left: 81.193s |  Train Loss: 0.5407 | Train Acc. 71.6092% | Test Loss: 0.6010 | Test Acc. 67.5862%
+Train AUC: 0.7068749908049021
+Valid AUC: 0.680489216963381
+Adas on MHIST_transformed: T 1/1 | E 23/30 Ended | E Time: 10.315s | ~Time Left: 72.203s |  Train Loss: 0.5342 | Train Acc. 72.0115% | Test Loss: 0.6516 | Test Acc. 67.5862%
+Train AUC: 0.7136164279210578
+Valid AUC: 0.7365031118830511
+Adas on MHIST_transformed: T 1/1 | E 24/30 Ended | E Time: 10.201s | ~Time Left: 61.207s |  Train Loss: 0.5302 | Train Acc. 72.2989% | Test Loss: 0.5608 | Test Acc. 68.5057%
+Train AUC: 0.6864708642084287
+Valid AUC: 0.7018623052057702
+Adas on MHIST_transformed: T 1/1 | E 25/30 Ended | E Time: 10.340s | ~Time Left: 51.699s |  Train Loss: 0.5500 | Train Acc. 71.3218% | Test Loss: 0.5839 | Test Acc. 67.5862%
+Train AUC: 0.7152707282027139
+Valid AUC: 0.7317267332464902
+Adas on MHIST_transformed: T 1/1 | E 26/30 Ended | E Time: 10.128s | ~Time Left: 40.510s |  Train Loss: 0.5301 | Train Acc. 72.4713% | Test Loss: 0.5696 | Test Acc. 67.5862%
+Train AUC: 0.7241732176630882
+Valid AUC: 0.7745694022289765
+Adas on MHIST_transformed: T 1/1 | E 27/30 Ended | E Time: 10.153s | ~Time Left: 30.460s |  Train Loss: 0.5209 | Train Acc. 72.2989% | Test Loss: 0.5410 | Test Acc. 72.1839%
+Train AUC: 0.7127271597854641
+Valid AUC: 0.7440536498287259
+Adas on MHIST_transformed: T 1/1 | E 28/30 Ended | E Time: 10.173s | ~Time Left: 20.346s |  Train Loss: 0.5365 | Train Acc. 72.0690% | Test Loss: 0.5556 | Test Acc. 68.2759%
+Train AUC: 0.744446569533739
+Valid AUC: 0.7641482124764799
+Adas on MHIST_transformed: T 1/1 | E 29/30 Ended | E Time: 10.143s | ~Time Left: 10.143s |  Train Loss: 0.5086 | Train Acc. 72.0690% | Test Loss: 0.5530 | Test Acc. 68.9655%
+Train AUC: 0.7305337733902857
+Valid AUC: 0.8075457133207893
+Adas on MHIST_transformed: T 1/1 | E 30/30 Ended | E Time: 10.515s | ~Time Left: 0.000s |  Train Loss: 0.5203 | Train Acc. 72.3563% | Test Loss: 0.5012 | Test Acc. 73.3333%
+transferring data
+Mon Jun 21 22:28:22 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:28:25 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/OSDataset_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/OSDataset_transformed/output
+    checkpoint          : ADP_post_trained/OSDataset_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/OSDataset_transformed/output does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              OSDataset_transformed
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           30                  
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Adas on OSDataset_transformed: T 1/1 | E 1/30 Ended | E Time: 57.761s | ~Time Left: 1675.082s |  Train Loss: 1.0821 | Train Acc. 61.4274% | Test Loss: 0.8793 | Test Acc. 68.0581%
+Adas on OSDataset_transformed: T 1/1 | E 2/30 Ended | E Time: 54.903s | ~Time Left: 1537.292s |  Train Loss: 0.7712 | Train Acc. 70.8853% | Test Loss: 0.7716 | Test Acc. 70.0544%
+Adas on OSDataset_transformed: T 1/1 | E 3/30 Ended | E Time: 54.653s | ~Time Left: 1475.627s |  Train Loss: 0.7188 | Train Acc. 72.9266% | Test Loss: 0.6976 | Test Acc. 73.7447%
+Adas on OSDataset_transformed: T 1/1 | E 4/30 Ended | E Time: 55.320s | ~Time Left: 1438.321s |  Train Loss: 0.6846 | Train Acc. 74.6050% | Test Loss: 0.7155 | Test Acc. 73.7447%
+Adas on OSDataset_transformed: T 1/1 | E 5/30 Ended | E Time: 55.172s | ~Time Left: 1379.298s |  Train Loss: 0.6726 | Train Acc. 75.0359% | Test Loss: 0.6588 | Test Acc. 75.0151%
+Adas on OSDataset_transformed: T 1/1 | E 6/30 Ended | E Time: 54.791s | ~Time Left: 1314.977s |  Train Loss: 0.6414 | Train Acc. 76.1473% | Test Loss: 0.6683 | Test Acc. 75.3781%
+Adas on OSDataset_transformed: T 1/1 | E 7/30 Ended | E Time: 54.915s | ~Time Left: 1263.046s |  Train Loss: 0.6097 | Train Acc. 77.4628% | Test Loss: 0.6219 | Test Acc. 77.0115%
+Adas on OSDataset_transformed: T 1/1 | E 8/30 Ended | E Time: 54.936s | ~Time Left: 1208.602s |  Train Loss: 0.5973 | Train Acc. 78.3851% | Test Loss: 0.6162 | Test Acc. 77.6769%
+Adas on OSDataset_transformed: T 1/1 | E 9/30 Ended | E Time: 55.030s | ~Time Left: 1155.633s |  Train Loss: 0.5743 | Train Acc. 79.5645% | Test Loss: 0.5936 | Test Acc. 78.9474%
+Adas on OSDataset_transformed: T 1/1 | E 10/30 Ended | E Time: 54.532s | ~Time Left: 1090.644s |  Train Loss: 0.5700 | Train Acc. 79.2546% | Test Loss: 0.5926 | Test Acc. 77.3140%
+Adas on OSDataset_transformed: T 1/1 | E 11/30 Ended | E Time: 54.639s | ~Time Left: 1038.132s |  Train Loss: 0.5660 | Train Acc. 79.4889% | Test Loss: 0.5488 | Test Acc. 79.7943%
+Adas on OSDataset_transformed: T 1/1 | E 12/30 Ended | E Time: 54.536s | ~Time Left: 981.654s |  Train Loss: 0.5475 | Train Acc. 80.0257% | Test Loss: 0.5317 | Test Acc. 80.9437%
+Adas on OSDataset_transformed: T 1/1 | E 13/30 Ended | E Time: 55.194s | ~Time Left: 938.301s |  Train Loss: 0.5411 | Train Acc. 80.4491% | Test Loss: 0.6367 | Test Acc. 76.9510%
+Adas on OSDataset_transformed: T 1/1 | E 14/30 Ended | E Time: 54.924s | ~Time Left: 878.780s |  Train Loss: 0.5361 | Train Acc. 80.6986% | Test Loss: 0.6693 | Test Acc. 75.6806%
+Adas on OSDataset_transformed: T 1/1 | E 15/30 Ended | E Time: 54.236s | ~Time Left: 813.546s |  Train Loss: 0.5252 | Train Acc. 80.8347% | Test Loss: 0.5734 | Test Acc. 78.4634%
+Adas on OSDataset_transformed: T 1/1 | E 16/30 Ended | E Time: 55.388s | ~Time Left: 775.438s |  Train Loss: 0.5244 | Train Acc. 81.0766% | Test Loss: 0.5169 | Test Acc. 80.7018%
+Adas on OSDataset_transformed: T 1/1 | E 17/30 Ended | E Time: 54.674s | ~Time Left: 710.766s |  Train Loss: 0.5180 | Train Acc. 81.6512% | Test Loss: 0.5546 | Test Acc. 80.7622%
+Adas on OSDataset_transformed: T 1/1 | E 18/30 Ended | E Time: 54.834s | ~Time Left: 658.010s |  Train Loss: 0.5131 | Train Acc. 81.4697% | Test Loss: 0.7584 | Test Acc. 76.8300%
+Adas on OSDataset_transformed: T 1/1 | E 19/30 Ended | E Time: 55.062s | ~Time Left: 605.677s |  Train Loss: 0.5172 | Train Acc. 81.3639% | Test Loss: 0.5536 | Test Acc. 80.0363%
+Adas on OSDataset_transformed: T 1/1 | E 20/30 Ended | E Time: 54.736s | ~Time Left: 547.361s |  Train Loss: 0.5064 | Train Acc. 81.8855% | Test Loss: 0.7480 | Test Acc. 71.6273%
+Adas on OSDataset_transformed: T 1/1 | E 21/30 Ended | E Time: 55.326s | ~Time Left: 497.936s |  Train Loss: 0.5114 | Train Acc. 81.6890% | Test Loss: 0.7184 | Test Acc. 75.3176%
+Adas on OSDataset_transformed: T 1/1 | E 22/30 Ended | E Time: 55.001s | ~Time Left: 440.006s |  Train Loss: 0.5106 | Train Acc. 81.6285% | Test Loss: 0.6280 | Test Acc. 78.3424%
+Adas on OSDataset_transformed: T 1/1 | E 23/30 Ended | E Time: 55.231s | ~Time Left: 386.614s |  Train Loss: 0.4950 | Train Acc. 81.9763% | Test Loss: 0.6549 | Test Acc. 76.7695%
+Adas on OSDataset_transformed: T 1/1 | E 24/30 Ended | E Time: 54.528s | ~Time Left: 327.165s |  Train Loss: 0.4979 | Train Acc. 81.9460% | Test Loss: 0.6833 | Test Acc. 75.1966%
+Adas on OSDataset_transformed: T 1/1 | E 25/30 Ended | E Time: 55.257s | ~Time Left: 276.285s |  Train Loss: 0.4903 | Train Acc. 82.1275% | Test Loss: 0.5348 | Test Acc. 79.9758%
+Adas on OSDataset_transformed: T 1/1 | E 26/30 Ended | E Time: 54.925s | ~Time Left: 219.701s |  Train Loss: 0.4887 | Train Acc. 82.5660% | Test Loss: 0.5802 | Test Acc. 77.5560%
+Adas on OSDataset_transformed: T 1/1 | E 27/30 Ended | E Time: 55.132s | ~Time Left: 165.395s |  Train Loss: 0.4897 | Train Acc. 82.4601% | Test Loss: 0.6722 | Test Acc. 76.6485%
+Adas on OSDataset_transformed: T 1/1 | E 28/30 Ended | E Time: 54.578s | ~Time Left: 109.156s |  Train Loss: 0.4797 | Train Acc. 82.5886% | Test Loss: 0.5925 | Test Acc. 77.7374%
+Adas on OSDataset_transformed: T 1/1 | E 29/30 Ended | E Time: 54.935s | ~Time Left: 54.935s |  Train Loss: 0.4756 | Train Acc. 83.2540% | Test Loss: 0.5944 | Test Acc. 78.2819%
+Adas on OSDataset_transformed: T 1/1 | E 30/30 Ended | E Time: 54.569s | ~Time Left: 0.000s |  Train Loss: 0.4790 | Train Acc. 82.7928% | Test Loss: 0.7435 | Test Acc. 74.7126%
+transferring data
+Mon Jun 21 22:57:44 PDT 2021
+
+Finished transferring
+Mon Jun 21 22:57:44 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/PCam_transformed_500_per_class-configAdas.yaml
+    data                : /localscratch/zhan8425.5704574.0        
+    output              : ADP_post_trained/PCam_transformed_500_per_class/output
+    checkpoint          : ADP_post_trained/PCam_transformed_500_per_class/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Traceback (most recent call last):
+  File "src/adas/train.py", line 870, in <module>
+    main(args)
+  File "src/adas/train.py", line 825, in main
+    args.resume = setup_dirs(args)
+  File "src/adas/train.py", line 799, in setup_dirs
+    raise ValueError(f"Adas: Config path {config_path} does not exist")
+ValueError: Adas: Config path PostTrainingConfigs/PCam_transformed_500_per_class-configAdas.yaml does not exist

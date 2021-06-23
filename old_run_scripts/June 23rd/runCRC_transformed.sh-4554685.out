@@ -1,0 +1,38 @@
+transferring data
+
+Finished transferring
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : src/adas/HistoKTconfigs/CRC_transformed-configAdas.yaml
+    data                : /localscratch/zhan8425.4554685.0        
+    output              : .Adas-output/CRC_transformed            
+    checkpoint          : .Adas-checkpoint/CRC_transformed        
+    resume              : None                                    
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir .Adas-output/CRC_transformed does not exist, building
+Traceback (most recent call last):
+  File "src/adas/train.py", line 847, in <module>
+    main(args)
+  File "src/adas/train.py", line 810, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 822, in main_worker
+    training_agent = TrainingAgent(
+  File "src/adas/train.py", line 218, in __init__
+    self.load_config(config_path, data_path)
+  File "src/adas/train.py", line 257, in load_config
+    self.test_loader, self.num_classes = get_data(
+  File "/project/6060173/zhan8425/HistoKT/src/adas/data.py", line 212, in get_data
+    train_set = TransformedDataset(transform=transform_train,
+  File "/project/6060173/zhan8425/HistoKT/src/adas/datasets/TransformedDataset.py", line 33, in __init__
+    self.samples = pickle.load(open(os.path.join(self.root, self.split+".pickle"), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/localscratch/zhan8425.4554685.0/CRC_transformed/train.pickle'

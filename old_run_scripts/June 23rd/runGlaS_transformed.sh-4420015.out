@@ -1,0 +1,32 @@
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : src/adas/HistoKTconfigs/GlaS_transformed-configAdas.yaml
+    data                : /home/zhan8425/scratch/HistoKTdata      
+    output              : .Adas-output/GlaS_transformed           
+    checkpoint          : .Adas-checkpoint/GlaS_transformed       
+    resume              : None                                    
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir .Adas-output/GlaS_transformed does not exist, building
+Traceback (most recent call last):
+  File "src/adas/train.py", line 847, in <module>
+    main(args)
+  File "src/adas/train.py", line 810, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 822, in main_worker
+    training_agent = TrainingAgent(
+  File "src/adas/train.py", line 218, in __init__
+    self.load_config(config_path, data_path)
+  File "src/adas/train.py", line 230, in load_config
+    self.config = config = parse_config(yaml.load(f, yaml.FullLoader))
+  File "/project/6060173/zhan8425/HistoKT/src/adas/utils.py", line 105, in parse_config
+    raise ValueError(
+ValueError: config.yaml: unknown dataset GlaS_transformed. Must be one of ['CIFAR10', 'CIFAR100', 'ImageNet', 'TinyImageNet', 'ADP-Release1', 'MHIST', 'AIDPATH_transformed', 'AJ-Lymph_transformed', 'BACH_transformed', 'CRC_transformed', 'Glas_transformed', 'MHIST_transformed', 'OSDataset_transformed', 'PCam_transformed']
