@@ -322,6 +322,7 @@ class TrainingAgent:
                                      path=self.pretrained_model,
                                      num_classes=self.num_classes,
                                      freeze_encoder=self.freeze_encoder)
+            print(self.network)
         else:
             self.network = get_network(name=self.config['network'],
                                        num_classes=self.num_classes)
