@@ -3,6 +3,7 @@ import sys
 import torch
 import torch.nn as nn
 import pandas as pd
+import numpy as np
 import torchvision.transforms as transforms
 from datasets import TransformedDataset
 from datasets import ADPDataset
@@ -41,8 +42,15 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
     model.load_state_dict(cp['state_dict_network'])
     model.to(device)  # moving model to compute device
     model.eval()
-
-    loss_fn = torch.nn.CrossEntropyLoss()
+    
+    if dataset_name == "ADP":
+        dataset_size = len(test_dataloader.dataset)
+        test_class_counts = np.sum(test_dataloader.dataset.class_labels, axis=0)
+        weightsBCE = dataset_size / test_class_counts
+        weightsBCE = torch.as_tensor(weightsBCE, dtype=torch.float32).to(device)
+        loss_fn = torch.nn.MultiLabelSoftMarginLoss(weight = weightsBCE).cuda(device)
+    else:
+        loss_fn = torch.nn.CrossEntropyLoss()
 
     size = len(test_dataloader.dataset)
     test_loss, correct = 0, 0
@@ -50,11 +58,6 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
     preds = list()
     pred_label = list()
 
-    if dataset_name == 'ADP-Release1':
-        predALL_test = torch.zeros(size, num_classes)
-        labelsALL_test = torch.zeros(size, num_classes)
-
-    top1 = AverageMeter()
     with torch.no_grad():
         for i, (X, y) in enumerate(test_dataloader):
 
@@ -65,45 +68,68 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
                 y = y.type(torch.LongTensor)
                 y = y.flatten()
                 y = y.to(device, non_blocking=True)
-            
+            if dataset_name == "ADP":
+                y = y.type(torch.LongTensor)
+                y = y.to(device, non_blocking=True)
             pred = model(X)
 
-            if dataset_name == 'ADP-Release1':
+            if dataset_name == 'ADP':
                 m = nn.Sigmoid()
                 pred_temp = (m(pred) > 0.5).int()
                 targets_all = y.data.int()
                 correct += torch.sum(pred_temp == targets_all).double().detach().cpu().item()
+
+                pred_label.extend(pred_temp.detach().cpu().tolist())
+
             else:
                 correct += (pred.argmax(1) == y).type(torch.float).sum().detach().cpu().item()
+                
+                if num_classes == 2:
+                    pred_label.extend(pred.argmax(1).detach().cpu().tolist())
+                else:
+                    pred_label.extend(pred.argmax(1).detach().cpu().tolist())  #????
 
             test_loss += loss_fn(pred, y).detach().cpu().item()
 
             tgts.extend(y.detach().cpu().tolist())  # int eg. 0, 1
-            pred_label.extend(pred.argmax(1).detach().cpu().tolist())
+            #pred_label.extend(pred.argmax(1).detach().cpu().tolist())
+            if i == 0 :
+                print(tgts[:5])
+                print(pred_label[:5])
 
             if num_classes == 2:
                 preds.extend(pred[:, 1].detach().cpu().tolist())
+                #pred_label.extend(pred.argmax(1).detach().cpu().tolist())
         if num_classes == 2:
             fpr, tpr, thresholds = metrics.roc_curve(
                 tgts, preds, pos_label=1)
             auc = metrics.auc(fpr, tpr)
             results["auc"] = auc
-
+        
         #spearmanr_corr = stats.spearmanr(tgts, preds)
         #results["spearmanr_corr"] = spearmanr_corr
         #print("spearmanr_corr: ", spearmanr_corr)  # spearmanr_corr:  SpearmanrResult(correlation=0.6003393380606222, pvalue=4.055666004490729e-06)
 
-        CK_linear = metrics.cohen_kappa_score(tgts, pred_label, weights = "linear")
+        try:
+            CK_linear = metrics.cohen_kappa_score(tgts, pred_label, weights = "linear")
+        except ValueError:
+            CK_linear = 0
+            print("value error for CK_linear")
         results["CK_linear"] = CK_linear
-        CK_quadratic = metrics.cohen_kappa_score(tgts, pred_label, weights = "quadratic")
+        try:
+            CK_quadratic = metrics.cohen_kappa_score(tgts, pred_label, weights = "quadratic")
+        except ValueError:
+            CK_quadratic = 0
+            print("value error for CK_quadratic")
         results["CK_quadratic"] = CK_quadratic
+
         if num_classes == 2:
             f1 = metrics.f1_score(tgts, pred_label)
         else:
             f1 = metrics.f1_score(tgts, pred_label, average='micro')
         results["f1_score"] = f1
 
-    if dataset_name == 'ADP-Release1':
+    if dataset_name == 'ADP':
         test_loss /= size
         test_acc1 = (correct / (size * num_classes))
     else:
@@ -137,10 +163,10 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
             transforms.ToTensor(),
             transforms.Normalize(
                 mean=transformed_norm_weights[dataset_name]["mean"],
-                std=transformed_norm_weights[dataset_name]["std"])
-        ])
-        if dataset_name == 'ADP-Release1':
-            dataset = ADPDataset("L3Only", root=os.path.join(path_to_root, "ADP V1.0 Release"), split='test', transform=transform_test)
+                std=transformed_norm_weights[dataset_name]["std"])])
+
+        if dataset_name == 'ADP':
+            dataset = ADPDataset("L3Only", root=path_to_root, split='test', transform=transform_test)
         else:
             dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
         ### just for fast testing ###
@@ -148,10 +174,7 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
         test_dataloader = DataLoader(dataset, batch_size=mini_batch_size, shuffle=False, num_workers=num_workers)
         print("load test data successfully")
 
-        if dataset_name == 'ADP-Release1':
-            path_to_dataset_cp = os.path.join(path_to_checkpoint, "ADP")
-        else:
-            path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
+        path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
             print("file/dir: ", file)
             if "per_class" in file:
@@ -182,13 +205,13 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
 
 if __name__ == "__main__":
     checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
-    #root = "/scratch/zhan8425/HistoKTdata"
-    root = sys.argv[1]
+    root = "/scratch/zhan8425/HistoKTdata"
+    #root = sys.argv[1]
     output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
     #dataset_name_list = ["CRC_transformed","PCam_transformed"]
     #dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
-    dataset_name_list = ["ADP V1.0 Release"]
+    dataset_name_list = ["ADP"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 
