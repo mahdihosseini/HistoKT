@@ -111,8 +111,8 @@ echo ""
             for freeze_encoder in freeze_encoders:
                 run_part = f"""python src/adas/train.py \
 --config PostTrainingConfigs/MHIST_testing/AdamP/lr-{learning_rate}-config-{optimizer}.yaml \
---output ADP_post_trained/MHIST_transformed/{optimizer}/output \
---checkpoint ADP_post_trained/MHIST_transformed/{optimizer}/checkpoint/lr-{learning_rate} \
+--output ADP_post_trained/MHIST_transformed/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
+--checkpoint ADP_post_trained/MHIST_transformed/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data $SLURM_TMPDIR \
 --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar \
 --freeze_encoder {freeze_encoder}

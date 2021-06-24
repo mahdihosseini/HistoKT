@@ -31,6 +31,7 @@ from typing import Dict, Union, List
 import pstats
 import sys
 import torch
+import argparse
 
 
 def get_is_module():
@@ -375,6 +376,16 @@ def convert_checkpoint_to_model_only(path_to_checkpoint, path_to_destination):
     new_checkpoint = {"model": data["state_dict_network"], "config": None, "optimizer": None, "epoch": None}
     torch.save(new_checkpoint, path_to_destination)
 
+
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
 
 if __name__ == "__main__":
     checkpoint_path = "C:\\Users\\ryanr\\Desktop\\Summer_Research\\MCL\\Trained_models\\Normal\\best.pth.tar"

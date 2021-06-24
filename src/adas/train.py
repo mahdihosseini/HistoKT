@@ -53,7 +53,7 @@ if 'adas.' in mod_name:
     from .early_stop import EarlyStop
     from .optim.adasls import AdaSLS
     from .models import get_network
-    from .utils import parse_config
+    from .utils import parse_config, str2bool
     from .metrics import Metrics
     from .models.vgg import VGG
     from .optim.sls import SLS
@@ -70,7 +70,7 @@ else:
     from early_stop import EarlyStop
     from optim.adasls import AdaSLS
     from models import get_network
-    from utils import parse_config
+    from utils import parse_config, str2bool
     from metrics import Metrics
     from models.vgg import VGG
     from optim.sls import SLS
@@ -120,7 +120,7 @@ def args(sub_parser: _SubParsersAction):
         help="Set checkpoint pretrained model path: Default = None")
     sub_parser.add_argument(
         '--freeze_encoder', dest='freeze_encoder',
-        default=True, type=bool,
+        type=str2bool, default=True,
         help="Set if to freeze encoder for post training: Default = True")
     # sub_parser.add_argument(
     #     '-r', '--resume', action='store_true',
