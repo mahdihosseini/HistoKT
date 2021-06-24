@@ -147,7 +147,6 @@ def plot_results_for_dir(result_name_list, path_to_dir):
                 plot_result(result_name, os.path.join(path_to_dir, file))
     plt.close()
 
-
 if __name__ == "__main__":
     path_to_dir = "C:/Users/ryanr/Desktop/Summer_Research/HistoKT/.adas-data/results/CRC_transformed"
     save_place = "C:/Users/ryanr/Desktop/Summer_Research/HistoKT/.adas-data/results/CRC_plots"

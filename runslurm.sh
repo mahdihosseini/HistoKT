@@ -1,10 +1,7 @@
 #!/bin/bash
 
-for DATASET in CRC_transformed PCam_transformed
+for NUM in 0.0005 0.001 0.002 0.005 0.01 0.02 0.05
 do
-  for NUM in 100 200 300 500 1000
-  do
-    sbatch run${DATASET}_${NUM}_per_class.sh
-    sleep 2
-  done
+  sbatch runMHIST_transformed-AdamP-lr-${NUM}.sh
+  sleep 2
 done
