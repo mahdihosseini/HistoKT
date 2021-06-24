@@ -92,7 +92,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
 #SBATCH --account=def-plato
-#SBATCH --time=2:00:00
+#SBATCH --time=5:00:00
 #SBATCH --output=%x-%j.out
 
 # prepare data
