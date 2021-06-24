@@ -34,7 +34,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
 
     results = dict()
     num_classes = len(test_dataloader.dataset.class_to_idx.items())
-    print("num_classes L3Only, should be 22: ", num_classes)
+    #print("num_classes L3Only, should be 22: ", num_classes)
 
     model = resnet18(num_classes=num_classes)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # setting default device
@@ -92,14 +92,12 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             test_loss += loss_fn(pred, y).detach().cpu().item()
 
             tgts.extend(y.detach().cpu().tolist())  # int eg. 0, 1
-            #pred_label.extend(pred.argmax(1).detach().cpu().tolist())
             if i == 0 :
                 print(tgts[:5])
                 print(pred_label[:5])
 
             if num_classes == 2:
                 preds.extend(pred[:, 1].detach().cpu().tolist())
-                #pred_label.extend(pred.argmax(1).detach().cpu().tolist())
         if num_classes == 2:
             fpr, tpr, thresholds = metrics.roc_curve(
                 tgts, preds, pos_label=1)
@@ -112,16 +110,14 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
 
         try:
             CK_linear = metrics.cohen_kappa_score(tgts, pred_label, weights = "linear")
+            results["CK_linear"] = CK_linear
         except ValueError:
-            CK_linear = 0
             print("value error for CK_linear")
-        results["CK_linear"] = CK_linear
         try:
             CK_quadratic = metrics.cohen_kappa_score(tgts, pred_label, weights = "quadratic")
+            results["CK_quadratic"] = CK_quadratic
         except ValueError:
-            CK_quadratic = 0
             print("value error for CK_quadratic")
-        results["CK_quadratic"] = CK_quadratic
 
         if num_classes == 2:
             f1 = metrics.f1_score(tgts, pred_label)
