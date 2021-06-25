@@ -1,3 +1,5 @@
+simclr
 torch
 torchvision
 PyYAML
+tensorboard
