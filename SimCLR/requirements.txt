@@ -1,4 +1,3 @@
-simclr
 torch
 torchvision
 PyYAML
