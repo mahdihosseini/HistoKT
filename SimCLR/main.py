@@ -159,7 +159,14 @@ def main(gpu, args):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="SimCLR")
-    config = yaml_config_hook("./config/config.yaml")
+    parser.add_argument(
+        '--config', dest='config',
+        default = "./config/config.yaml", type=str,
+        help="Configuration file file path: Default ='./config/config.yaml'")
+
+
+    args = parser.parse_args()
+    config = yaml_config_hook(args.config)
     for k, v in config.items():
         parser.add_argument(f"--{k}", default=v, type=type(v))
 
