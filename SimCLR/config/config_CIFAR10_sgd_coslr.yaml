@@ -12,7 +12,7 @@ batch_size: 128
 image_size: 224
 start_epoch: 0
 epochs: 100
-dataset: "ADP-Release1" # STL10, CIFAR10, ADP-Release1
+dataset: "CIFAR10" # STL10, CIFAR10, ADP-Release1
 pretrain: True
 
 # model options
@@ -27,7 +27,7 @@ temperature: 0.5 # see appendix B.7.: Optimal temperature under different batch 
 momentum: 0.9
 
 # reload options
-model_path: "save" # set to the directory containing `checkpoint_##.tar`
+model_path: "save_cifar_sgd_coslr" # set to the directory containing `checkpoint_##.tar`
 epoch_num: 0 # set to checkpoint number
 reload: False
 

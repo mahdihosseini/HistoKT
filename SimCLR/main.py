@@ -1,4 +1,5 @@
 import os
+import sys
 import numpy as np
 import torch
 import torchvision
@@ -22,6 +23,10 @@ from simclr.modules.sync_batchnorm import convert_model
 from model import load_optimizer, save_model
 from utils import yaml_config_hook
 
+# Dataset
+print(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"src/adas/datasets"))
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"src/adas/datasets"))
+from ADPDataset import ADPDataset
 
 def train(args, train_loader, model, criterion, optimizer, writer):
     loss_epoch = 0
@@ -76,8 +81,13 @@ def main(gpu, args):
             download=True,
             transform=TransformsSimCLR(size=args.image_size),
         )
-    elif args.dataset == "ADP":
-        train_dataset = None
+    elif args.dataset == "ADP-Release1":
+        train_dataset = ADPDataset(
+            level="L3",
+            root=args.dataset_dir,
+            split='train',
+            transform=TransformsSimCLR(size=args.image_size)
+        )
     else:
         raise NotImplementedError
 
