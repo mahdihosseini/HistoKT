@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for NUM in 0.0002 0.0001 0.00005
+for NUM in 0.05 0.03 0.01 0.005 0.003
 do
-  sbatch runMHIST_transformed-AdamP-lr-${NUM}.sh
+  sbatch runMHIST_transformed-Adas-lr-${NUM}.sh
   sleep 2
 done
