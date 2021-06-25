@@ -9,7 +9,7 @@ workers: 8
 # train options
 seed: 42 # sacred handles automatic seeding when passed in the config
 batch_size: 128
-image_size: 224
+image_size: 272
 start_epoch: 0
 epochs: 100
 dataset: "ADP-Release1" # STL10, CIFAR10, ADP-Release1
