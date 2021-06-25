@@ -27,7 +27,7 @@ def load_optimizer(args, model):
         )
     elif args.optimizer == "SGD" and args.scheduler == "stepLR":
         optimizer = torch.optim.SGD(model.parameters(),lr=0.1,momentum=args.momentum,weight_decay=args.weight_decay)
-        scheduler = torch.optim.lr_scheduler.stepLR(
+        scheduler = torch.optim.lr_scheduler.StepLR(
             optimizer, step_size=20, gamma=0.5
         )
     elif args.optimizer == "SGD" and args.scheduler == "cosLR":
