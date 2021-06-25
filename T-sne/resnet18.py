@@ -204,10 +204,10 @@ class ResNet(nn.Module):
         return self._forward_impl(x)
 
 
-def _resnet(path_to_pth, block, layers, pretrained, progress, **kwargs):
+def _resnet(path_to_pth, block, layers, pretrained, progress, device, **kwargs):
     model = ResNet(block, layers, **kwargs)
     if pretrained:
-        cp = torch.load(path_to_pth, progress=progress, map_location=device)
+        cp = torch.load(path_to_pth, map_location=device)
         model.load_state_dict(cp['state_dict_network'])
         # state_dict = load_state_dict_from_url(model_urls[arch],
         #                                       progress=progress)
@@ -215,7 +215,7 @@ def _resnet(path_to_pth, block, layers, pretrained, progress, **kwargs):
     return model
 
 
-def resnet18(path_to_pth, pretrained=False, progress=True, **kwargs):
+def resnet18(path_to_pth, pretrained=False, progress=True, device="cpu", **kwargs):
     r"""ResNet-18 model from
     `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
 
@@ -223,5 +223,5 @@ def resnet18(path_to_pth, pretrained=False, progress=True, **kwargs):
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr
     """
-    return _resnet(path_to_pth, BasicBlock, [2, 2, 2, 2], pretrained, progress,
+    return _resnet(path_to_pth, BasicBlock, [2, 2, 2, 2], pretrained, progress, device,
                    **kwargs)
