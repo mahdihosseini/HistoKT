@@ -12,21 +12,23 @@ batch_size: 128
 image_size: 224
 start_epoch: 0
 epochs: 100
-dataset: "CIFAR10" # STL10
-pretrain: True 
+dataset: "CIFAR10" # STL10, ADP
+pretrain: True
 
 # model options
 resnet: "resnet18"
 projection_dim: 64 # "[...] to project the representation to a 128-dimensional latent space"
 
 # loss options
-optimizer: "Adam" # or LARS (experimental)
-weight_decay: 1.0e-6 # "optimized using LARS [...] and weight decay of 10−6"
+optimizer: "SGD" # "SGD", "Adam" or LARS (experimental)
+scheduler: "cosLR" # "cosLR or stepLR"
+weight_decay: 0.0005 # 1.0e-6 "optimized using LARS [...] and weight decay of 10−6"
 temperature: 0.5 # see appendix B.7.: Optimal temperature under different batch sizes
+momentum: 0.9
 
 # reload options
-model_path: "save" # set to the directory containing `checkpoint_##.tar` 
-epoch_num: 100 # set to checkpoint number
+model_path: "save" # set to the directory containing `checkpoint_##.tar`
+epoch_num: 0 # set to checkpoint number
 reload: False
 
 # logistic regression options

@@ -144,6 +144,9 @@ if __name__ == "__main__":
             download=True,
             transform=TransformsSimCLR(size=args.image_size).test_transform,
         )
+    elif args.dataset == "ADP":
+        train_dataset = None
+        test_dataset = None
     else:
         raise NotImplementedError
 

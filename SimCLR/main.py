@@ -76,6 +76,8 @@ def main(gpu, args):
             download=True,
             transform=TransformsSimCLR(size=args.image_size),
         )
+    elif args.dataset == "ADP":
+        train_dataset = None
     else:
         raise NotImplementedError
 
@@ -132,7 +134,7 @@ def main(gpu, args):
     for epoch in range(args.start_epoch, args.epochs):
         if train_sampler is not None:
             train_sampler.set_epoch(epoch)
-        
+
         lr = optimizer.param_groups[0]["lr"]
         loss_epoch = train(args, train_loader, model, criterion, optimizer, writer)
 
