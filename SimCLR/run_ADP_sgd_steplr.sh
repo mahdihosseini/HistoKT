@@ -21,7 +21,7 @@ tar xf /home/zhan8425/scratch/HistoKTdata/ADP\ V1.0\ Release.tar -C $SLURM_TMPDI
 echo "Finished transferring"
 echo ""
 
-sed -i "s/dataset_dir: \".\/datasets\"/dataset_dir: \"${SLURM_TMPDIR}\"/g" ./config/config.yaml
+sed -i "s/dataset_dir: \".\/datasets\"/dataset_dir: \"${SLURM_TMPDIR}\"/g" ./config/config_ADP_sgd_steplr.yaml
 
 source ~/projects/def-plato/stephy/HistoKT/env/bin/activate
 python ~/projects/def-plato/stephy/HistoKT/SimCLR/main.py --config ./config/config_ADP_sgd_steplr.yaml
