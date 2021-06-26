@@ -21,7 +21,7 @@ tar xf ~/HistoKTdata/ADP\ V1.0\ Release.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
 
-sed -i "s/slurm_tempdir/'${SLURM_TMPDIR}'" ./config/config_ADP_adam.yaml
+sed -i "s/slurm_tempdir/${SLURM_TMPDIR}/g" ./config/config_ADP_adam.yaml
 
 source ~/projects/def-plato/stephy/HistoKT/SimCLR/env/bin/activate
 python ~/projects/def-plato/stephy/HistoKT/SimCLR/main.py --config ./config/config_ADP_adam.yaml
