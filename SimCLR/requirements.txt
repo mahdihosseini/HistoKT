@@ -3,3 +3,5 @@ torchvision
 PyYAML
 tensorboard
 pandas
+numpy
+sklearn
