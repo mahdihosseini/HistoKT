@@ -15,4 +15,4 @@
 #SBATCH  --output=%x-%j.out
 
 source ~/projects/def-plato/stephy/HistoKT/env/bin/activate
-python ~/projects/def-plato/stephy/HistoKT/SimCLR/main.py --config ./config/config_CIFAR10_steplr.yaml
+python ~/projects/def-plato/stephy/HistoKT/SimCLR/main.py --config ./config/config_CIFAR10_sgd_steplr.yaml
