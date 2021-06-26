@@ -14,5 +14,5 @@
 #SBATCH  --time=23:00:00
 #SBATCH  --output=%x-%j.out
 
-source ~/projects/def-plato/stephy/HistoKT/env/bin/activate
+source ~/projects/def-plato/stephy/HistoKT/SimCLR/env/bin/activate
 python ~/projects/def-plato/stephy/HistoKT/SimCLR/main.py --config ./config/config_CIFAR10_adam.yaml

@@ -23,5 +23,5 @@ echo ""
 
 sed -i "s/slurm_tempdir/'${SLURM_TMPDIR}'" ./config/config_ADP_sgd_steplr.yaml
 
-source ~/projects/def-plato/stephy/HistoKT/env/bin/activate
+source ~/projects/def-plato/stephy/HistoKT/SimCLR/env/bin/activate
 python ~/projects/def-plato/stephy/HistoKT/SimCLR/main.py --config ./config/config_ADP_sgd_steplr.yaml
