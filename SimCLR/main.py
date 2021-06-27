@@ -172,8 +172,13 @@ if __name__ == "__main__":
     parser.add_argument(
         '--config', dest='config',
         default = "./config/config.yaml", type=str,
-        help="Configuration file file path: Default ='./config/config.yaml'")
-
+        help="Configuration file file path: Default ='./config/config.yaml'"
+    )
+    parser.add_argument(
+        '--dataset_dir', dest='dataset_dir',
+        default = "./dataset", type=str,
+        help="Path to dataset location: Default = './datasets'"
+    )
 
     args = parser.parse_args()
     config = yaml_config_hook(args.config)
