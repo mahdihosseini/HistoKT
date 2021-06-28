@@ -146,8 +146,8 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
     for label in text_label:
         # find the samples of the current class in the data
         # multi-labeled
-        if type(labels[0]) is list:
-            indices = [i for i, l in enumerate(labels) if l in text_label[label]]
+        if "ADP" in output_filename:
+            indices = [i for i, l in enumerate(labels) if l[text_label[label]] == 1]
         else:
             indices = [i for i, l in enumerate(labels) if l == text_label[label]]
         print("curr text label: ", label, "curr text label index: ", text_label[label], ", examples of targets: ", labels[:5])
@@ -163,8 +163,7 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
     # build a legend using the labels we set previously
     plt.legend(loc='best')
 
-    # finally, show the plot
-
+    # save the plot
     plt.savefig(plots_dir + "/" + output_filename + ".png", bbox_inches='tight')
     plt.clf()
     plt.close()
@@ -205,9 +204,12 @@ def main(dataset_name_list, root, checkpoint, output=None):
 
             tsne = TSNE(n_components=2).fit_transform(features)
             print("tsne shape (should be (a,2))): ", np.shape(tsne), ", tsne examples: ", tsne[:5])
-
+            
             cp_name = os.path.splitext(os.path.basename(path_to_pth))[0]
-            output_filename = dataset_name + "_" + cp_name
+            if "per_class" in path_to_pth.split('/')[-2]:
+                output_filename = dataset_name + "_" + path_to_pth.split('/')[-2] + "_" + cp_name
+            else:
+                output_filename = dataset_name + "_" + cp_name
             if output is not None:
                 visualize_tsne(tsne, labels, text_label, output_filename, plots_dir=output)
             else:
@@ -220,15 +222,12 @@ if __name__ == '__main__':
     mini_batch_size = 32
     num_workers = 4
 
-    checkpoint = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/testing/checkpoints"
-    #checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
-    root = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/.adas-data"
-    #root = "/scratch/zhan8425/HistoKTdata"
+    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
+    root = "/scratch/zhan8425/HistoKTdata"
     #root = sys.argv[1]
-    output = "/Users/JZ/PycharmProjects/HistoKT/HistoKT/testing/checkpoints"
-    #output="/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
+    output="/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
     #dataset_name_list = ["CRC_transformed","PCam_transformed"]
     #dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
-    dataset_name_list = ["MHIST_transformed"]#, "ADP"]
+    dataset_name_list = ["ADP"]
     main(dataset_name_list, root, checkpoint, output)
