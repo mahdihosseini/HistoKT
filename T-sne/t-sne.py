@@ -34,7 +34,7 @@ def fix_random_seeds():
     np.random.seed(seed)
 
 
-def get_features(dataset_name, path_to_root, path_to_pth):
+def get_features(dataset_name, split, path_to_root, path_to_pth):
     # move the input and model to GPU for speed if available
     if torch.cuda.is_available():
         device = 'cuda'
@@ -53,7 +53,7 @@ def get_features(dataset_name, path_to_root, path_to_pth):
         train_set = ADPDataset("L3Only",
                                transform=transform_train,
                                root=path_to_root,
-                               split='train')
+                               split=split)
 
         train_sampler = torch.utils.data.distributed.DistributedSampler(
             train_set) if dist else None
@@ -68,7 +68,7 @@ def get_features(dataset_name, path_to_root, path_to_pth):
     else:
         train_set = TransformedDataset(transform=transform_train,
                                        root=os.path.join(path_to_root, dataset_name),
-                                       split='train')
+                                       split=split)
 
         train_sampler = torch.utils.data.distributed.DistributedSampler(
             train_set) if dist else None
@@ -80,10 +80,9 @@ def get_features(dataset_name, path_to_root, path_to_pth):
             pin_memory=True,
             num_workers=num_workers,
             sampler=train_sampler)
-    print("load test data successfully")
+    print("load data successfully")
 
     text_label = train_loader.dataset.class_to_idx
-    print("text_label", text_label)
     # initialize our implementation of ResNet
     num_classes = len(train_loader.dataset.class_to_idx.items())
     model = resnet18(path_to_pth, pretrained=True, device=device, num_classes=num_classes)
@@ -120,28 +119,12 @@ def get_features(dataset_name, path_to_root, path_to_pth):
                 tgts = np.concatenate((tgts, curr_labels))
             else:
                 tgts = curr_labels
-        print("targets shape: ", tgts.shape, ", targets example: ", tgts[:5])
-        print("features shape: ", features.shape, ", features example: ", features[:5])
+        print("targets shape: ", tgts.shape)
+        print("features shape: ", features.shape)
     return features, tgts, text_label
 
 
-# scale and move the coordinates so they fit [0; 1] range
-def scale_to_01_range(x):
-    # compute the distribution range
-    value_range = (np.max(x) - np.min(x))
-
-    # move the distribution so that it starts from zero
-    # by extracting the minimal value from all its values
-    starts_from_zero = x - np.min(x)
-
-    # make the distribution fit [0; 1] by dividing by its range
-    return starts_from_zero / value_range
-
-
 def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir):
-    # initialize matplotlib plot
-    plt.figure()
-
     # for every class, we'll add a scatter plot separately
     for label in text_label:
         # find the samples of the current class in the data
@@ -150,15 +133,13 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
             indices = [i for i, l in enumerate(labels) if l[text_label[label]] == 1]
         else:
             indices = [i for i, l in enumerate(labels) if l == text_label[label]]
-        print("curr text label: ", label, "curr text label index: ", text_label[label], ", examples of targets: ", labels[:5])
-        print("num of points: ", np.shape(indices))
 
         # extract the coordinates of the points of this class only
         current_tx = np.take(tx, indices)
         current_ty = np.take(ty, indices)
 
         # add a scatter plot with the correponding color and label
-        plt.scatter(current_tx, current_ty, label=label)
+        plt.scatter(current_tx, current_ty, label=label, alpha=0.3)
 
     # build a legend using the labels we set previously
     plt.legend(loc='best')
@@ -166,20 +147,6 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
     # save the plot
     plt.savefig(plots_dir + "/" + output_filename + ".png", bbox_inches='tight')
     plt.clf()
-    plt.close()
-
-
-def visualize_tsne(tsne, labels, text_label, output_filename, plots_dir):
-    # extract x and y coordinates representing the positions of the images on T-SNE plot
-    tx = tsne[:, 0]
-    ty = tsne[:, 1]
-
-    # scale and move the coordinates so they fit [0; 1] range
-    tx = scale_to_01_range(tx)
-    ty = scale_to_01_range(ty)
-
-    # visualize the plot: samples as colored points
-    visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir)
 
 
 def main(dataset_name_list, root, checkpoint, output=None):
@@ -188,10 +155,8 @@ def main(dataset_name_list, root, checkpoint, output=None):
         path_to_pth_list = list()
         path_to_dataset_cp = os.path.join(checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
-            print("file/dir: ", file)
             if "per_class" in file:
                 temp = os.path.join(path_to_dataset_cp, file)
-                print(temp)
                 for file2 in os.listdir(temp):
                     if ".pth" in file2 and "best_" in file2:
                         path_to_pth_list.append(os.path.join(temp, file2))
@@ -200,20 +165,53 @@ def main(dataset_name_list, root, checkpoint, output=None):
                     path_to_pth_list.append(os.path.join(path_to_dataset_cp, file))
 
         for path_to_pth in path_to_pth_list:
-            features, labels, text_label = get_features(dataset_name, root, path_to_pth)
+            print("path_to_pth: ", path_to_pth)
 
-            tsne = TSNE(n_components=2).fit_transform(features)
-            print("tsne shape (should be (a,2))): ", np.shape(tsne), ", tsne examples: ", tsne[:5])
-            
+            split = "test"
+            features_train, labels_train, text_label = get_features(dataset_name, split, root, path_to_pth)
+            tsne_train = TSNE(n_components=2).fit_transform(features_train)
+            print("text_label", text_label)
+
+            split = "valid"
+            features_val, labels_val, _ = get_features(dataset_name, split, root, path_to_pth)
+            tsne_val = TSNE(n_components=2).fit_transform(features_val)
+
+            split = "test"
+            features_test, labels_test, _ = get_features(dataset_name, split, root, path_to_pth)
+            tsne_test = TSNE(n_components=2).fit_transform(features_test)
+
+            x_min = np.min([np.min(tsne_train[:, 0]), np.min(tsne_val[:, 0]), np.min(tsne_test[:, 0])])
+            x_max = np.max([np.max(tsne_train[:, 0]), np.max(tsne_val[:, 0]), np.max(tsne_test[:, 0])])
+            y_min = np.min([np.min(tsne_train[:, 1]), np.min(tsne_val[:, 1]), np.min(tsne_test[:, 1])])
+            y_max = np.max([np.max(tsne_train[:, 1]), np.max(tsne_val[:, 1]), np.max(tsne_test[:, 1])])
+            # initialize matplotlib plot
+            plt.figure()
             cp_name = os.path.splitext(os.path.basename(path_to_pth))[0]
             if "per_class" in path_to_pth.split('/')[-2]:
                 output_filename = dataset_name + "_" + path_to_pth.split('/')[-2] + "_" + cp_name
             else:
                 output_filename = dataset_name + "_" + cp_name
             if output is not None:
-                visualize_tsne(tsne, labels, text_label, output_filename, plots_dir=output)
+                plt.xlim(x_min, x_max)
+                plt.ylim(y_min, y_max)
+                visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=output)
+                plt.xlim(x_min, x_max)
+                plt.ylim(y_min, y_max)
+                visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=output)
+                plt.xlim(x_min, x_max)
+                plt.ylim(y_min, y_max)
+                visualize_tsne_points(tsne_test[:, 0], tsne_test[:, 1], labels_test, text_label, output_filename+"_test", plots_dir=output)
             else:
-                visualize_tsne(tsne, labels, text_label, output_filename, plots_dir=checkpoint)
+                plt.xlim(x_min, x_max)
+                plt.ylim(y_min, y_max)
+                visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=checkpoint)
+                plt.xlim(x_min, x_max)
+                plt.ylim(y_min, y_max)
+                visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=checkpoint)
+                plt.xlim(x_min, x_max)
+                plt.ylim(y_min, y_max)
+                visualize_tsne_points(tsne_test[:, 0], tsne_test[:, 1], labels_test, text_label, output_filename+"_test", plots_dir=checkpoint)
+            plt.close()
 
 
 
@@ -224,10 +222,8 @@ if __name__ == '__main__':
 
     checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
     root = "/scratch/zhan8425/HistoKTdata"
-    #root = sys.argv[1]
-    output="/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
+    output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
-    #dataset_name_list = ["CRC_transformed","PCam_transformed"]
-    #dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
-    dataset_name_list = ["ADP"]
+    #dataset_name_list = ["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed", "CRC_transformed","PCam_transformed"]
+    dataset_name_list = ["MHIST_transformed"]
     main(dataset_name_list, root, checkpoint, output)
