@@ -1,15 +1,4 @@
-import os
-
-
-def main(root):
-
-    optimizer = "Adas"
-    learning_rates = ["0.07", "0.1", "0.3"]
-    freeze_encoders = ["True", "False"]
-    for learning_rate in learning_rates:
-        with open(f"PostTrainingConfigs/MHIST_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml",
-                  "w") as outfile:
-            data = f"""###### Application Specific ######
+###### Application Specific ######
 dataset: 'MHIST_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # To use these datasets, please transform them using standardize_datasets.py
 # AIDPATH_transformed
@@ -27,7 +16,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 # SqueezeNet_1_1, VGG11, VGG11_BN, VGG13, VGG13_BN, VGG16, VGG16_BN, VGG19, VGG19_BN,
 # EfficientNetB4
 # ResNet101CIFAR, ResNet50CIFAR, ResNet34CIFAR, ResNet18CIFAR, ResNeXtCIFAR, EfficientNetB0CIFAR, VGG16CIFAR, DenseNet121CIFAR
-optimizer: '{optimizer}' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
+optimizer: 'SGDP' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
 scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
 level : 'L3Only' #L1, L2, L3, L3Only
@@ -57,17 +46,15 @@ n_holes: 1
 cutout_length: 16
 
 ###### Suggested Tune ######
-init_lr: {learning_rate}
+init_lr: 0.005
 early_stop_threshold: -1 # set to -1 if you wish not to use early stop, or equally, set to a high value. Set to -1 if not using AdaS
 optimizer_kwargs:
     momentum: 0.9
     weight_decay: 5e-4
-    beta: 0.98
-    linear: False
-    gamma: 0.5
-    step_size: 25
 
-scheduler_kwargs: {{}}
+scheduler_kwargs: 
+    gamma: 0.5
+    step_size: 20
 
 ###### Suggested Default ######
 p: 1 # options: 1, 2.
@@ -77,53 +64,4 @@ num_workers: 4
 max_epochs: 200
 mini_batch_size: 32
 loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
-early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
-
-            outfile.write(data)
-        with open(f"runMHIST_transformed-{optimizer}-lr-{learning_rate}.sh", "w") as outfile:
-            data = f"""#!/bin/bash
-
-### GPU OPTIONS:
-### CEDAR: v100l, p100
-### BELUGA: *no option, just use --gres=gpu:*COUNT*
-### GRAHAM: v100, t4
-### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
-
-#SBATCH --gres=gpu:v100l:1
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6
-#SBATCH --mem=16000M
-#SBATCH --account=def-plato
-#SBATCH --time=5:00:00
-#SBATCH --output=%x-%j.out
-
-# prepare data
-
-source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-
-echo "transferring data"
-date
-echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/MHIST_transformed.tar -C $SLURM_TMPDIR
-echo "Finished transferring"
-date
-echo ""
-
-"""
-            for freeze_encoder in freeze_encoders:
-                run_part = f"""python src/adas/train.py \
---config PostTrainingConfigs/MHIST_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml \
---output ADP_post_trained/MHIST_transformed/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
---checkpoint ADP_post_trained/MHIST_transformed/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
---data $SLURM_TMPDIR \
---pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar \
---freeze_encoder {freeze_encoder}
-"""
-                data += run_part
-            outfile.write(data)
-
-
-if __name__ == "__main__":
-    root_dir = ""
-    main(root_dir)
+early_stop_patience: 10 # epoch window to consider when deciding whether to stop
