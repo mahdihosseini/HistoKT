@@ -12,7 +12,7 @@ batch_size: 128
 image_size: 224
 start_epoch: 0
 epochs: 100
-dataset: "ADP-Release1" # STL10, CIFAR10, ADP-Release1
+dataset: "CIFAR10" # STL10, CIFAR10, ADP-Release1
 pretrain: True
 
 # model options
@@ -32,5 +32,5 @@ epoch_num: 0 # set to checkpoint number
 reload: False
 
 # logistic regression options
-logistic_batch_size: 256
-logistic_epochs: 500
+logistic_batch_size: 32
+logistic_epochs: 100

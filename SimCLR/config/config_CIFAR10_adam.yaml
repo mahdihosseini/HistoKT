@@ -8,10 +8,10 @@ dataset_dir: "./datasets"
 
 # train options
 seed: 42 # sacred handles automatic seeding when passed in the config
-batch_size: 128
+batch_size: 512
 image_size: 224
 start_epoch: 0
-epochs: 100
+epochs: 250
 dataset: "CIFAR10" # STL10, CIFAR10, ADP-Release1
 pretrain: True
 
