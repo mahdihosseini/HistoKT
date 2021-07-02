@@ -167,7 +167,7 @@ def main(dataset_name_list, root, checkpoint, output=None):
         for path_to_pth in path_to_pth_list:
             print("path_to_pth: ", path_to_pth)
 
-            split = "test"
+            split = "train"
             features_train, labels_train, text_label = get_features(dataset_name, split, root, path_to_pth)
             tsne_train = TSNE(n_components=2).fit_transform(features_train)
             print("text_label", text_label)
@@ -186,6 +186,7 @@ def main(dataset_name_list, root, checkpoint, output=None):
             y_max = np.max([np.max(tsne_train[:, 1]), np.max(tsne_val[:, 1]), np.max(tsne_test[:, 1])])
             # initialize matplotlib plot
             plt.figure()
+            ax = plt.gca()  # get the axis handle
             cp_name = os.path.splitext(os.path.basename(path_to_pth))[0]
             if "per_class" in path_to_pth.split('/')[-2]:
                 output_filename = dataset_name + "_" + path_to_pth.split('/')[-2] + "_" + cp_name
@@ -194,22 +195,34 @@ def main(dataset_name_list, root, checkpoint, output=None):
             if output is not None:
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
+                ax = plt.gca()
+                ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=output)
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
+                ax = plt.gca()
+                ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=output)
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
+                ax = plt.gca()
+                ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_test[:, 0], tsne_test[:, 1], labels_test, text_label, output_filename+"_test", plots_dir=output)
             else:
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
+                ax = plt.gca()
+                ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=checkpoint)
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
+                ax = plt.gca()
+                ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=checkpoint)
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
+                ax = plt.gca()
+                ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_test[:, 0], tsne_test[:, 1], labels_test, text_label, output_filename+"_test", plots_dir=checkpoint)
             plt.close()
 
@@ -220,10 +233,10 @@ if __name__ == '__main__':
     mini_batch_size = 32
     num_workers = 4
 
-    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
+    checkpoint = "/home/zhujiada/projects/def-plato/zhujiada/HistoKT/.adas-checkpoint-baseline"
     root = "/scratch/zhan8425/HistoKTdata"
     output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
     #dataset_name_list = ["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed", "CRC_transformed","PCam_transformed"]
-    dataset_name_list = ["MHIST_transformed"]
+    dataset_name_list = ["PCam_transformed"]#["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","CRC_transformed","PCam_transformed"]
     main(dataset_name_list, root, checkpoint, output)

@@ -1,8 +1,8 @@
 import os
 import sys
+#os.environ["PATH"] = "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/openslide/3.4.1/lib" + ":" + os.environ["PATH"]
 import openslide
 import numpy as np
-import scipy.misc
 import cv2
 import glob
 import re
@@ -27,5 +27,4 @@ if __name__ == "__main__":
 
         slide = openslide.OpenSlide(svs_load_dir + wsi_uid + ".svs")
         img = np.array(slide.read_region((0, 0), 0, slide.dimensions))
-        scipy.misc.imsave(tif_save_dir + wsi_uid + ".svs", img)
-        slide.close()
+        io.imsave(tif_save_dir + wsi_uid + ".svs", img)
