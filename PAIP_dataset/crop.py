@@ -12,31 +12,42 @@ from skimage import io
 from skimage.transform import downscale_local_mean
 
 
-def crop_helper(slide, level, crop_size, label, label_name, pts, img_name, img_list, mask_list, info_dict):
+def crop_helper(slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_size, overlap, label, label_name, pts, mask, img_name, info_dict):
     temp = np.array(pts)
     x = np.min(temp[:, 0])
     y = np.min(temp[:, 1])
     while x < np.max(temp[:, 0]):
         while y < np.max(temp[:, 1]):
-            img = np.array(slide.read_region((x,y), level, (crop_size, crop_size)))
+            if img_name % 50 == 0:
+                print((np.min(temp[:, 0]), np.min(temp[:, 1])))
+            img = np.array(slide.read_region((x, y), level, (crop_size, crop_size)))
             mask_crop = mask[x:x+crop_size, y:y+crop_size]
-            img_list.append([img])
-            mask_list.append([mask_crop])
+
             info_dict["img_name"].append(str(img_name))
             info_dict["mask_name"].append(str(img_name)+"_mask")
             info_dict["label_Id"].append(label)
             info_dict["label_Name"].append(label_name)
             info_dict["top_left_pixel"].append((x, y))
+            info_dict["svs_name"].append(str(wsi_uid))
+
+            image_name = info_dict["img_name"][img_name]
+            save_name = f"{wsi_uid}_{image_name}.png"
+            img = downscale_local_mean(img, (downscale_factor, downscale_factor))
+            io.imsave(crop_save_dir + save_name, img)
+            mask_name = info_dict["mask_name"][img_name]
+            save_name = f"{wsi_uid}_{mask_name}.png"
+            mask_crop = downscale_local_mean(mask_crop, (downscale_factor, downscale_factor))
+            io.imsave(crop_save_dir + save_name, mask_crop)
 
             img_name += 1
             y = round(y + crop_size * overlap)
 
         y = np.min(temp[:, 1])
         x = round(x + crop_size * overlap)
-    return img_name, img_list, mask_list, info_dict
+    return img_name, info_dict
 
 
-def crop(xml_fn, slide, level, crop_size, overlap, edge):
+def crop(xml_fn, slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_size, overlap, edge):
     """
     <XML Tree>
     Annotations (root)
@@ -68,7 +79,8 @@ def crop(xml_fn, slide, level, crop_size, overlap, edge):
         "label_Id": [],
         "label_Name": [],
         "top_left_pixel": [],
-        "mask_name": []
+        "mask_name": [],
+        "svs_name": []
     }
     img_list = list()
     mask_list = list()
@@ -108,7 +120,7 @@ def crop(xml_fn, slide, level, crop_size, overlap, edge):
             mask = cv2.drawContours(mask, pts, -1, label + 10, -1)
 
             # cropping
-            img_name, img_list, mask_list, info_dict = crop_helper(slide, level, crop_size, label, label_name, pts, img_name, img_list, mask_list, info_dict)
+            img_name, info_dict = crop_helper(slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_size, overlap, label, label_name, pts, mask, img_name, info_dict)
 
         for pts in cntr_pts:
             pts = [np.array(pts, dtype=np.int32)]
@@ -116,16 +128,19 @@ def crop(xml_fn, slide, level, crop_size, overlap, edge):
             if label == 2:
                 mask = cv2.polylines(mask, pts, isClosed=False, color=label, thickness=1)
                 # cropping
-                img_name, img_list, mask_list, info_dict = crop_helper(slide, level, crop_size, label, label_name, pts, img_name, img_list, mask_list, info_dict)
+                img_name, info_dict = crop_helper(slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_size, overlap, label, label_name, pts, mask, img_name, info_dict)
 
             # Contour
             else:
                 mask = cv2.drawContours(mask, pts, -1, label, -1)
                 # cropping
-                img_name, img_list, mask_list, info_dict = crop_helper(slide, level, crop_size, label, label_name, pts, img_name, img_list, mask_list, info_dict)
+                img_name, info_dict = crop_helper(slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_size, overlap, label, label_name, pts, mask, img_name, info_dict)
 
+    df = pd.DataFrame(data=info_dict, index=[0])
+    save_name = f"{wsi_uid}.xlsx"
+    df.to_excel(crop_save_dir + save_name)
 
-    return img_list, info_dict, mask_list
+    return True
 
 
 if __name__ == "__main__":
@@ -147,22 +162,8 @@ if __name__ == "__main__":
 
     for xml_fn in tqdm(xml_fns):
         wsi_uid = wsi_regex.findall(xml_fn)[0]
-
         slide = openslide.OpenSlide(svs_load_dir + wsi_uid + ".svs")
 
-        img_list, info_dict, mask_list = crop(xml_fn, slide, level, crop_size, overlap, edge)
-        info_dict["svs_name"] = []
-        for i in range(0, len(img_list)):
-            info_dict["svs_name"].append(str(wsi_uid))
-            image_name = info_dict["img_name"][i]
-            save_name = f"{wsi_uid}_{image_name}.png"
-            img = downscale_local_mean(img_list[i], (downscale_factor, downscale_factor))
-            io.imsave(crop_save_dir + save_name, img)
-            mask_name = info_dict["mask_name"][i]
-            save_name = f"{wsi_uid}_{mask_name}.png"
-            mask = downscale_local_mean(mask_list[i], (downscale_factor, downscale_factor))
-            io.imsave(crop_save_dir + save_name, mask)
-
-        df = pd.DataFrame(data=info_dict, index=[0])
-        save_name = f"{wsi_uid}.xlsx"
-        df.to_excel(crop_save_dir + save_name)
+        print("Start: ", wsi_uid)
+        crop(xml_fn, slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_size, overlap, edge)
+        print("End: ", wsi_uid)
