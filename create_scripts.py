@@ -242,7 +242,8 @@ source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
 python src/adas/train.py \
 --config ~/projects/def-plato/zhan8425/HistoKT/PretrainingConfigs/{dataset}-ycbcr-configAdas.yaml \
 --output pretraining-output/ycbcr/{dataset} --checkpoint pretraining-checkpoint/ycbcr/{dataset} \
---data $SLURM_TMPDIR"""
+--data $SLURM_TMPDIR
+"""
             outfile.write(data)
 
 
