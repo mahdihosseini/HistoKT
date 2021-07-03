@@ -64,5 +64,5 @@ n_trials: 3 #increase to more to see more results
 num_workers: 4
 max_epochs: 250
 mini_batch_size: 32
-loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
+loss: 'MultiLabelSoftMarginLoss' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop

@@ -132,6 +132,10 @@ def run_ycbcr_baselines(root):
                     "OSDataset_transformed",
                     "PCam_transformed"]:
         with open(os.path.join(root, f"PretrainingConfigs/{dataset}-ycbcr-configAdas.yaml"), "w") as write_file:
+            if "ADP" in dataset:
+                loss_fn = "MultiLabelSoftMarginLoss"
+            else:
+                loss_fn = "cross_entropy"
             data = f"""###### Application Specific ######
 dataset: '{dataset}' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # To use these datasets, please transform them using standardize_datasets.py
@@ -198,7 +202,7 @@ n_trials: 3 #increase to more to see more results
 num_workers: 4
 max_epochs: 250
 mini_batch_size: 32
-loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
+loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
             write_file.write(data)
 
