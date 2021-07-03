@@ -20,7 +20,6 @@
 echo "transferring data"
 echo ""
 date
-mkdir $SLURM_TMPDIR/data
 tar xf /home/zhan8425/scratch/HistoKTdata/CRC_transformed_2000_per_class.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""

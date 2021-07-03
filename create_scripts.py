@@ -233,7 +233,6 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 echo "transferring data"
 echo ""
 date
-mkdir $SLURM_TMPDIR/data
 tar xf /home/zhan8425/scratch/HistoKTdata/{datafile}.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
