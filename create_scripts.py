@@ -207,6 +207,8 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                 datafile = "CRC_transformed_2000_per_class"
             elif "PCam" in dataset:
                 datafile = "PCam_transformed_1000_per_class"
+            elif "ADP" in dataset:
+                datafile = "ADP\\ V1.0\\ Release"
             else:
                 datafile = dataset
             data = f"""#!/bin/bash

@@ -21,7 +21,7 @@ echo "transferring data"
 echo ""
 date
 mkdir $SLURM_TMPDIR/data
-tar xf /home/zhan8425/scratch/HistoKTdata/ADP-Release1.tar -C $SLURM_TMPDIR
+tar xf /home/zhan8425/scratch/HistoKTdata/ADP\ V1.0\ Release.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
 date
