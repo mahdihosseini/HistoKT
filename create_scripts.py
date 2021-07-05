@@ -144,7 +144,8 @@ echo ""
                 outfile.write(data)
 
 
-def run_ycbcr_baselines(root):
+def run_baselines(root):
+    colour_aug = "Colour-Distortion"
     for dataset in ["ADP-Release1",
                     "AIDPATH_transformed",
                     "AJ-Lymph_transformed",
@@ -154,7 +155,7 @@ def run_ycbcr_baselines(root):
                     "MHIST_transformed",
                     "OSDataset_transformed",
                     "PCam_transformed"]:
-        with open(os.path.join(root, f"PretrainingConfigs/{dataset}-ycbcr-configAdas.yaml"), "w") as write_file:
+        with open(os.path.join(root, f"PretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml"), "w") as write_file:
             if "ADP" in dataset:
                 loss_fn = "MultiLabelSoftMarginLoss"
             else:
@@ -185,10 +186,10 @@ level : 'L3Only' #L1, L2, L3, L3Only
 ###### Augmentation Methods ######
 # ADP ONLY
 color_kwargs:
-    augmentation: 'YCbCr' # options: YCbCr, HSV, RGB-Jitter,
+    augmentation: '{colour_aug}' # options: YCbCr, HSV, RGB-Jitter,
                                # Color-Distortion (Color-Jittering followed by color drop),
                                # None
-    distortion: 1.0 #options: 0.3 for Color-Distortion
+    distortion: 0.3 #options: 0.3 for Color-Distortion
                             # 0.1 for YCbCr-Light and HSV-Light
                             # 1.0 for YCbCr-Strong and HSV-Strong
                             # 1.0 for RBGJitter
@@ -229,7 +230,7 @@ loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
             write_file.write(data)
 
-        with open(f"run{dataset}-ycbcr.sh", "w") as outfile:
+        with open(f"run{dataset}-{colour_aug}.sh", "w") as outfile:
             if "CRC" in dataset:
                 datafile = "CRC_transformed_2000_per_class"
             elif "PCam" in dataset:
@@ -267,14 +268,15 @@ date
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
 python src/adas/train.py \
---config ~/projects/def-plato/zhan8425/HistoKT/PretrainingConfigs/{dataset}-ycbcr-configAdas.yaml \
---output pretraining-output/ycbcr/{dataset} --checkpoint pretraining-checkpoint/ycbcr/{dataset} \
---data $SLURM_TMPDIR
+--config ~/projects/def-plato/zhan8425/HistoKT/PretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml \
+--output pretraining-output/{colour_aug}/{dataset} --checkpoint pretraining-checkpoint/{colour_aug}/{dataset} \
+--data $SLURM_TMPDIR \
+--save-freq 200
 """
             outfile.write(data)
 
 
 if __name__ == "__main__":
     root_dir = ""
-    # run_ycbcr_baselines(root_dir)
-    optim_fine_tuning(root_dir)
+    run_baselines(root_dir)
+    # optim_fine_tuning(root_dir)
