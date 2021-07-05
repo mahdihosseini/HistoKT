@@ -6,7 +6,6 @@ import numpy as np
 import cv2
 import glob
 import re
-import xml.etree.ElementTree as ET
 from tqdm import tqdm
 from skimage import io
 
@@ -26,5 +25,6 @@ if __name__ == "__main__":
         wsi_uid = wsi_regex.findall(svs_fn)[0]
 
         slide = openslide.OpenSlide(svs_load_dir + wsi_uid + ".svs")
-        img = np.array(slide.read_region((0, 0), 0, slide.dimensions))
-        io.imsave(tif_save_dir + wsi_uid + ".svs", img)
+        img = np.array(slide.read_region((0, 0), 0, slide.dimensions)) # produce RGBA images with float64
+        img = img[:, :, :3]  # drop A channel
+        io.imsave(tif_save_dir + wsi_uid + ".svs", img.astype(np.uint8))
