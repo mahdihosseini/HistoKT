@@ -1,5 +1,5 @@
 ###### Application Specific ######
-dataset: 'MHIST_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+dataset: 'PCam_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # To use these datasets, please transform them using standardize_datasets.py
 # AIDPATH_transformed
 # AJ-Lymph_transformed
@@ -17,7 +17,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 # EfficientNetB4
 # ResNet101CIFAR, ResNet50CIFAR, ResNet34CIFAR, ResNet18CIFAR, ResNeXtCIFAR, EfficientNetB0CIFAR, VGG16CIFAR, DenseNet121CIFAR
 optimizer: 'AdamP' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
-scheduler: 'StepLR' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
+scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
 level : 'L3Only' #L1, L2, L3, L3Only
 
@@ -46,14 +46,14 @@ n_holes: 1
 cutout_length: 16
 
 ###### Suggested Tune ######
-init_lr: 0.0005
+init_lr: 0.001
 early_stop_threshold: -1 # set to -1 if you wish not to use early stop, or equally, set to a high value. Set to -1 if not using AdaS
 optimizer_kwargs:
     weight_decay: 5e-4
 
-scheduler_kwargs:
-    step_size: 20
+scheduler_kwargs: 
     gamma: 0.5
+    step_size: 20
 
 ###### Suggested Default ######
 p: 1 # options: 1, 2.

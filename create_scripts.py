@@ -3,14 +3,28 @@ import os
 
 def optim_fine_tuning(root):
 
-    optimizer = "AdaM"
-    learning_rates = ["0.00001", "0.000005"]
+    optimizer = "AdamP"
+    learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
     freeze_encoders = ["True", "False"]
-    for learning_rate in learning_rates:
-        with open(f"PostTrainingConfigs/MHIST_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml",
-                  "w") as outfile:
-            data = f"""###### Application Specific ######
-dataset: 'MHIST_transformed' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
+    for dataset in ["AIDPATH_transformed",
+                    "AJ-Lymph_transformed",
+                    "BACH_transformed",
+                    "CRC_transformed",
+                    "GlaS_transformed",
+                    "MHIST_transformed",
+                    "OSDataset_transformed",
+                    "PCam_transformed"]:
+
+        for learning_rate in learning_rates:
+            os.makedirs(f"PostTrainingConfigs/{dataset}_testing/{optimizer}", exist_ok=True)
+            with open(f"PostTrainingConfigs/{dataset}_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml",
+                      "w") as outfile:
+                if "ADP" in dataset:
+                    loss_fn = "MultiLabelSoftMarginLoss"
+                else:
+                    loss_fn = "cross_entropy"
+                data = f"""###### Application Specific ######
+dataset: '{dataset}' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # To use these datasets, please transform them using standardize_datasets.py
 # AIDPATH_transformed
 # AJ-Lymph_transformed
@@ -73,12 +87,20 @@ n_trials: 3 #increase to more to see more results
 num_workers: 4
 max_epochs: 200
 mini_batch_size: 32
-loss: 'cross_entropy' # options: cross_entropy, MultiLabelSoftMarginLoss
+loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
 
-            outfile.write(data)
-        with open(f"runMHIST_transformed-{optimizer}-lr-{learning_rate}.sh", "w") as outfile:
-            data = f"""#!/bin/bash
+                outfile.write(data)
+            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}.sh", "w") as outfile:
+                if "CRC" in dataset:
+                    datafile = "CRC_transformed_2000_per_class"
+                elif "PCam" in dataset:
+                    datafile = "PCam_transformed_1000_per_class"
+                elif "ADP" in dataset:
+                    datafile = "ADP\\ V1.0\\ Release"
+                else:
+                    datafile = dataset
+                data = f"""#!/bin/bash
 
 ### GPU OPTIONS:
 ### CEDAR: v100l, p100
@@ -92,7 +114,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
 #SBATCH --account=def-plato
-#SBATCH --time=5:00:00
+#SBATCH --time=11:00:00
 #SBATCH --output=%x-%j.out
 
 # prepare data
@@ -102,23 +124,23 @@ source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
 echo "transferring data"
 date
 echo ""
-tar xf /home/zhan8425/scratch/HistoKTdata/MHIST_transformed.tar -C $SLURM_TMPDIR
+tar xf /home/zhan8425/scratch/HistoKTdata/{datafile}.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 date
 echo ""
 
 """
-            for freeze_encoder in freeze_encoders:
-                run_part = f"""python src/adas/train.py \
---config PostTrainingConfigs/MHIST_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml \
---output ADP_post_trained/MHIST_transformed/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
---checkpoint ADP_post_trained/MHIST_transformed/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+                for freeze_encoder in freeze_encoders:
+                    run_part = f"""python src/adas/train.py \
+--config PostTrainingConfigs/{dataset}_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml \
+--output ADP_post_trained/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
+--checkpoint ADP_post_trained/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data $SLURM_TMPDIR \
 --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar \
 --freeze_encoder {freeze_encoder}
 """
-                data += run_part
-            outfile.write(data)
+                    data += run_part
+                outfile.write(data)
 
 
 def run_ycbcr_baselines(root):
@@ -253,4 +275,5 @@ python src/adas/train.py \
 
 if __name__ == "__main__":
     root_dir = ""
-    run_ycbcr_baselines(root_dir)
+    # run_ycbcr_baselines(root_dir)
+    optim_fine_tuning(root_dir)
