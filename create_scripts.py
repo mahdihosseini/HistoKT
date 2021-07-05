@@ -137,7 +137,8 @@ echo ""
 --checkpoint ADP_post_trained/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data $SLURM_TMPDIR \
 --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar \
---freeze_encoder {freeze_encoder}
+--freeze_encoder {freeze_encoder} \
+--save-freq 200
 """
                     data += run_part
                 outfile.write(data)
