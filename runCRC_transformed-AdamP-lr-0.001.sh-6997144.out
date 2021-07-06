@@ -1,0 +1,767 @@
+transferring data
+Mon Jul  5 10:03:05 PDT 2021
+
+Finished transferring
+Mon Jul  5 10:03:09 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/CRC_transformed_testing/AdamP/lr-0.001-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6997144.0        
+    output              : ADP_post_trained/CRC_transformed/AdamP/output/fine_tuning
+    checkpoint          : ADP_post_trained/CRC_transformed/AdamP/checkpoint/fine_tuning/lr-0.001
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 200                                     
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              CRC_transformed     
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.001               
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on CRC_transformed: T 1/3 | E 1/200 Ended | E Time: 58.898s | ~Time Left: 11720.764s |  Train Loss: 1.0292 | Train Acc. 59.9000% | Test Loss: 0.9097 | Test Acc. 66.7143%
+AdamP on CRC_transformed: T 1/3 | E 2/200 Ended | E Time: 58.678s | ~Time Left: 11618.172s |  Train Loss: 0.8426 | Train Acc. 68.2643% | Test Loss: 0.9558 | Test Acc. 60.8571%
+AdamP on CRC_transformed: T 1/3 | E 3/200 Ended | E Time: 58.811s | ~Time Left: 11585.713s |  Train Loss: 0.7212 | Train Acc. 73.2286% | Test Loss: 0.8021 | Test Acc. 75.8571%
+AdamP on CRC_transformed: T 1/3 | E 4/200 Ended | E Time: 58.611s | ~Time Left: 11487.751s |  Train Loss: 0.6332 | Train Acc. 76.7071% | Test Loss: 1.0773 | Test Acc. 60.9286%
+AdamP on CRC_transformed: T 1/3 | E 5/200 Ended | E Time: 58.663s | ~Time Left: 11439.261s |  Train Loss: 0.5420 | Train Acc. 80.5214% | Test Loss: 0.4616 | Test Acc. 84.0714%
+AdamP on CRC_transformed: T 1/3 | E 6/200 Ended | E Time: 58.522s | ~Time Left: 11353.312s |  Train Loss: 0.4738 | Train Acc. 83.2714% | Test Loss: 0.3878 | Test Acc. 84.7143%
+AdamP on CRC_transformed: T 1/3 | E 7/200 Ended | E Time: 58.464s | ~Time Left: 11283.624s |  Train Loss: 0.4250 | Train Acc. 85.1000% | Test Loss: 0.4990 | Test Acc. 82.5000%
+AdamP on CRC_transformed: T 1/3 | E 8/200 Ended | E Time: 58.851s | ~Time Left: 11299.365s |  Train Loss: 0.3736 | Train Acc. 86.6143% | Test Loss: 0.8640 | Test Acc. 79.7143%
+AdamP on CRC_transformed: T 1/3 | E 9/200 Ended | E Time: 58.757s | ~Time Left: 11222.504s |  Train Loss: 0.3502 | Train Acc. 87.7214% | Test Loss: 0.3256 | Test Acc. 87.8571%
+AdamP on CRC_transformed: T 1/3 | E 10/200 Ended | E Time: 58.617s | ~Time Left: 11137.151s |  Train Loss: 0.3440 | Train Acc. 87.7929% | Test Loss: 0.2961 | Test Acc. 89.9286%
+AdamP on CRC_transformed: T 1/3 | E 11/200 Ended | E Time: 58.699s | ~Time Left: 11094.109s |  Train Loss: 0.3247 | Train Acc. 88.5143% | Test Loss: 0.4738 | Test Acc. 83.5000%
+AdamP on CRC_transformed: T 1/3 | E 12/200 Ended | E Time: 58.681s | ~Time Left: 11032.123s |  Train Loss: 0.3028 | Train Acc. 89.3429% | Test Loss: 0.3409 | Test Acc. 88.1429%
+AdamP on CRC_transformed: T 1/3 | E 13/200 Ended | E Time: 58.543s | ~Time Left: 10947.465s |  Train Loss: 0.2928 | Train Acc. 89.9000% | Test Loss: 0.2583 | Test Acc. 91.2143%
+AdamP on CRC_transformed: T 1/3 | E 14/200 Ended | E Time: 58.887s | ~Time Left: 10953.017s |  Train Loss: 0.2949 | Train Acc. 89.9214% | Test Loss: 0.7500 | Test Acc. 78.3571%
+AdamP on CRC_transformed: T 1/3 | E 15/200 Ended | E Time: 58.790s | ~Time Left: 10876.142s |  Train Loss: 0.2796 | Train Acc. 90.3071% | Test Loss: 0.2216 | Test Acc. 92.6429%
+AdamP on CRC_transformed: T 1/3 | E 16/200 Ended | E Time: 58.905s | ~Time Left: 10838.441s |  Train Loss: 0.2617 | Train Acc. 91.2286% | Test Loss: 0.6271 | Test Acc. 78.5000%
+AdamP on CRC_transformed: T 1/3 | E 17/200 Ended | E Time: 58.906s | ~Time Left: 10779.741s |  Train Loss: 0.2489 | Train Acc. 91.4357% | Test Loss: 0.2599 | Test Acc. 91.3571%
+AdamP on CRC_transformed: T 1/3 | E 18/200 Ended | E Time: 58.747s | ~Time Left: 10691.932s |  Train Loss: 0.2524 | Train Acc. 91.3500% | Test Loss: 0.1862 | Test Acc. 94.1429%
+AdamP on CRC_transformed: T 1/3 | E 19/200 Ended | E Time: 59.034s | ~Time Left: 10685.080s |  Train Loss: 0.2417 | Train Acc. 91.6786% | Test Loss: 0.3140 | Test Acc. 91.5714%
+AdamP on CRC_transformed: T 1/3 | E 20/200 Ended | E Time: 58.779s | ~Time Left: 10580.134s |  Train Loss: 0.2321 | Train Acc. 92.1643% | Test Loss: 0.2279 | Test Acc. 92.0000%
+AdamP on CRC_transformed: T 1/3 | E 21/200 Ended | E Time: 58.790s | ~Time Left: 10523.434s |  Train Loss: 0.2438 | Train Acc. 91.8143% | Test Loss: 0.1578 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 1/3 | E 22/200 Ended | E Time: 58.620s | ~Time Left: 10434.332s |  Train Loss: 0.2311 | Train Acc. 92.0571% | Test Loss: 0.2167 | Test Acc. 93.2857%
+AdamP on CRC_transformed: T 1/3 | E 23/200 Ended | E Time: 58.595s | ~Time Left: 10371.255s |  Train Loss: 0.2355 | Train Acc. 91.9786% | Test Loss: 0.2529 | Test Acc. 91.5714%
+AdamP on CRC_transformed: T 1/3 | E 24/200 Ended | E Time: 58.976s | ~Time Left: 10379.708s |  Train Loss: 0.2264 | Train Acc. 92.2786% | Test Loss: 0.3359 | Test Acc. 88.7143%
+AdamP on CRC_transformed: T 1/3 | E 25/200 Ended | E Time: 58.527s | ~Time Left: 10242.250s |  Train Loss: 0.2127 | Train Acc. 92.5571% | Test Loss: 0.2238 | Test Acc. 92.1429%
+AdamP on CRC_transformed: T 1/3 | E 26/200 Ended | E Time: 58.778s | ~Time Left: 10227.457s |  Train Loss: 0.2166 | Train Acc. 92.4714% | Test Loss: 0.2200 | Test Acc. 93.0000%
+AdamP on CRC_transformed: T 1/3 | E 27/200 Ended | E Time: 58.812s | ~Time Left: 10174.532s |  Train Loss: 0.2136 | Train Acc. 92.8000% | Test Loss: 0.4501 | Test Acc. 84.0714%
+AdamP on CRC_transformed: T 1/3 | E 28/200 Ended | E Time: 58.642s | ~Time Left: 10086.483s |  Train Loss: 0.2417 | Train Acc. 91.7929% | Test Loss: 0.1853 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 1/3 | E 29/200 Ended | E Time: 58.607s | ~Time Left: 10021.783s |  Train Loss: 0.2069 | Train Acc. 93.1857% | Test Loss: 0.2176 | Test Acc. 92.7857%
+AdamP on CRC_transformed: T 1/3 | E 30/200 Ended | E Time: 58.693s | ~Time Left: 9977.810s |  Train Loss: 0.2122 | Train Acc. 92.7000% | Test Loss: 0.1881 | Test Acc. 93.4286%
+AdamP on CRC_transformed: T 1/3 | E 31/200 Ended | E Time: 58.618s | ~Time Left: 9906.385s |  Train Loss: 0.1985 | Train Acc. 93.2714% | Test Loss: 0.4806 | Test Acc. 83.5714%
+AdamP on CRC_transformed: T 1/3 | E 32/200 Ended | E Time: 58.752s | ~Time Left: 9870.414s |  Train Loss: 0.1969 | Train Acc. 93.2571% | Test Loss: 0.2148 | Test Acc. 92.4286%
+AdamP on CRC_transformed: T 1/3 | E 33/200 Ended | E Time: 58.844s | ~Time Left: 9826.944s |  Train Loss: 0.2029 | Train Acc. 93.3071% | Test Loss: 0.1466 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 1/3 | E 34/200 Ended | E Time: 59.096s | ~Time Left: 9809.991s |  Train Loss: 0.1852 | Train Acc. 93.7786% | Test Loss: 0.2229 | Test Acc. 92.2857%
+AdamP on CRC_transformed: T 1/3 | E 35/200 Ended | E Time: 58.677s | ~Time Left: 9681.656s |  Train Loss: 0.1980 | Train Acc. 93.4286% | Test Loss: 0.1286 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 1/3 | E 36/200 Ended | E Time: 58.621s | ~Time Left: 9613.777s |  Train Loss: 0.1829 | Train Acc. 93.6714% | Test Loss: 0.1481 | Test Acc. 94.6429%
+AdamP on CRC_transformed: T 1/3 | E 37/200 Ended | E Time: 58.969s | ~Time Left: 9611.872s |  Train Loss: 0.1957 | Train Acc. 93.5143% | Test Loss: 0.2185 | Test Acc. 92.8571%
+AdamP on CRC_transformed: T 1/3 | E 38/200 Ended | E Time: 58.656s | ~Time Left: 9502.254s |  Train Loss: 0.1931 | Train Acc. 93.4571% | Test Loss: 0.2286 | Test Acc. 91.8571%
+AdamP on CRC_transformed: T 1/3 | E 39/200 Ended | E Time: 58.899s | ~Time Left: 9482.775s |  Train Loss: 0.1823 | Train Acc. 93.7286% | Test Loss: 0.1589 | Test Acc. 94.6429%
+AdamP on CRC_transformed: T 1/3 | E 40/200 Ended | E Time: 58.586s | ~Time Left: 9373.706s |  Train Loss: 0.1750 | Train Acc. 94.0929% | Test Loss: 0.2066 | Test Acc. 93.0000%
+AdamP on CRC_transformed: T 1/3 | E 41/200 Ended | E Time: 58.474s | ~Time Left: 9297.313s |  Train Loss: 0.1740 | Train Acc. 94.1714% | Test Loss: 0.1473 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 1/3 | E 42/200 Ended | E Time: 58.614s | ~Time Left: 9261.085s |  Train Loss: 0.1699 | Train Acc. 94.3357% | Test Loss: 0.2373 | Test Acc. 91.7143%
+AdamP on CRC_transformed: T 1/3 | E 43/200 Ended | E Time: 58.907s | ~Time Left: 9248.478s |  Train Loss: 0.1785 | Train Acc. 94.0500% | Test Loss: 0.1659 | Test Acc. 94.0000%
+AdamP on CRC_transformed: T 1/3 | E 44/200 Ended | E Time: 58.510s | ~Time Left: 9127.543s |  Train Loss: 0.1867 | Train Acc. 93.7357% | Test Loss: 0.2580 | Test Acc. 91.0000%
+AdamP on CRC_transformed: T 1/3 | E 45/200 Ended | E Time: 58.405s | ~Time Left: 9052.763s |  Train Loss: 0.1684 | Train Acc. 94.4357% | Test Loss: 0.1354 | Test Acc. 95.2143%
+AdamP on CRC_transformed: T 1/3 | E 46/200 Ended | E Time: 58.779s | ~Time Left: 9051.980s |  Train Loss: 0.1540 | Train Acc. 94.7357% | Test Loss: 0.3639 | Test Acc. 88.6429%
+AdamP on CRC_transformed: T 1/3 | E 47/200 Ended | E Time: 58.740s | ~Time Left: 8987.175s |  Train Loss: 0.1673 | Train Acc. 94.3357% | Test Loss: 0.2465 | Test Acc. 92.1429%
+AdamP on CRC_transformed: T 1/3 | E 48/200 Ended | E Time: 58.427s | ~Time Left: 8880.959s |  Train Loss: 0.1721 | Train Acc. 94.0857% | Test Loss: 0.1530 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 1/3 | E 49/200 Ended | E Time: 58.753s | ~Time Left: 8871.675s |  Train Loss: 0.1742 | Train Acc. 94.1214% | Test Loss: 0.2495 | Test Acc. 91.3571%
+AdamP on CRC_transformed: T 1/3 | E 50/200 Ended | E Time: 58.558s | ~Time Left: 8783.678s |  Train Loss: 0.1649 | Train Acc. 94.2000% | Test Loss: 0.3347 | Test Acc. 87.6429%
+AdamP on CRC_transformed: T 1/3 | E 51/200 Ended | E Time: 58.747s | ~Time Left: 8753.366s |  Train Loss: 0.1637 | Train Acc. 94.6000% | Test Loss: 0.2045 | Test Acc. 92.3571%
+AdamP on CRC_transformed: T 1/3 | E 52/200 Ended | E Time: 58.786s | ~Time Left: 8700.318s |  Train Loss: 0.1611 | Train Acc. 94.5714% | Test Loss: 0.4030 | Test Acc. 89.3571%
+AdamP on CRC_transformed: T 1/3 | E 53/200 Ended | E Time: 59.016s | ~Time Left: 8675.360s |  Train Loss: 0.1581 | Train Acc. 94.6571% | Test Loss: 0.1254 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 1/3 | E 54/200 Ended | E Time: 58.634s | ~Time Left: 8560.523s |  Train Loss: 0.1483 | Train Acc. 94.8929% | Test Loss: 0.1439 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 1/3 | E 55/200 Ended | E Time: 58.711s | ~Time Left: 8513.096s |  Train Loss: 0.1401 | Train Acc. 95.0500% | Test Loss: 0.6011 | Test Acc. 83.1429%
+AdamP on CRC_transformed: T 1/3 | E 56/200 Ended | E Time: 58.581s | ~Time Left: 8435.661s |  Train Loss: 0.1595 | Train Acc. 94.4357% | Test Loss: 0.1690 | Test Acc. 93.8571%
+AdamP on CRC_transformed: T 1/3 | E 57/200 Ended | E Time: 59.220s | ~Time Left: 8468.491s |  Train Loss: 0.1506 | Train Acc. 94.9429% | Test Loss: 0.1413 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 1/3 | E 58/200 Ended | E Time: 58.490s | ~Time Left: 8305.608s |  Train Loss: 0.1421 | Train Acc. 95.0286% | Test Loss: 0.1687 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 1/3 | E 59/200 Ended | E Time: 58.846s | ~Time Left: 8297.277s |  Train Loss: 0.1494 | Train Acc. 94.9857% | Test Loss: 0.1759 | Test Acc. 94.5714%
+AdamP on CRC_transformed: T 1/3 | E 60/200 Ended | E Time: 58.714s | ~Time Left: 8219.933s |  Train Loss: 0.1577 | Train Acc. 94.5429% | Test Loss: 0.1705 | Test Acc. 93.2857%
+AdamP on CRC_transformed: T 1/3 | E 61/200 Ended | E Time: 58.823s | ~Time Left: 8176.368s |  Train Loss: 0.1425 | Train Acc. 95.0500% | Test Loss: 0.1780 | Test Acc. 94.0714%
+AdamP on CRC_transformed: T 1/3 | E 62/200 Ended | E Time: 58.954s | ~Time Left: 8135.605s |  Train Loss: 0.1493 | Train Acc. 94.8786% | Test Loss: 0.2274 | Test Acc. 91.8571%
+AdamP on CRC_transformed: T 1/3 | E 63/200 Ended | E Time: 59.161s | ~Time Left: 8105.063s |  Train Loss: 0.1354 | Train Acc. 95.3357% | Test Loss: 0.1610 | Test Acc. 93.7857%
+AdamP on CRC_transformed: T 1/3 | E 64/200 Ended | E Time: 58.973s | ~Time Left: 8020.320s |  Train Loss: 0.1418 | Train Acc. 95.1214% | Test Loss: 0.1501 | Test Acc. 94.0000%
+AdamP on CRC_transformed: T 1/3 | E 65/200 Ended | E Time: 58.953s | ~Time Left: 7958.633s |  Train Loss: 0.1356 | Train Acc. 95.6071% | Test Loss: 0.1198 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 1/3 | E 66/200 Ended | E Time: 58.903s | ~Time Left: 7892.969s |  Train Loss: 0.1361 | Train Acc. 95.4643% | Test Loss: 0.1171 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 1/3 | E 67/200 Ended | E Time: 59.096s | ~Time Left: 7859.753s |  Train Loss: 0.1382 | Train Acc. 95.0214% | Test Loss: 0.1117 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 1/3 | E 68/200 Ended | E Time: 58.918s | ~Time Left: 7777.233s |  Train Loss: 0.1394 | Train Acc. 95.1929% | Test Loss: 0.1591 | Test Acc. 94.8571%
+AdamP on CRC_transformed: T 1/3 | E 69/200 Ended | E Time: 58.786s | ~Time Left: 7700.984s |  Train Loss: 0.1354 | Train Acc. 95.4214% | Test Loss: 0.0997 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 1/3 | E 70/200 Ended | E Time: 58.427s | ~Time Left: 7595.513s |  Train Loss: 0.1365 | Train Acc. 95.3286% | Test Loss: 0.1315 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 1/3 | E 71/200 Ended | E Time: 58.653s | ~Time Left: 7566.209s |  Train Loss: 0.1303 | Train Acc. 95.5500% | Test Loss: 0.1495 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 1/3 | E 72/200 Ended | E Time: 58.717s | ~Time Left: 7515.755s |  Train Loss: 0.1339 | Train Acc. 95.2714% | Test Loss: 0.1360 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 1/3 | E 73/200 Ended | E Time: 58.695s | ~Time Left: 7454.241s |  Train Loss: 0.1242 | Train Acc. 95.5571% | Test Loss: 0.1006 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 74/200 Ended | E Time: 58.503s | ~Time Left: 7371.356s |  Train Loss: 0.1298 | Train Acc. 95.5857% | Test Loss: 0.1512 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 1/3 | E 75/200 Ended | E Time: 59.290s | ~Time Left: 7411.301s |  Train Loss: 0.1267 | Train Acc. 95.5714% | Test Loss: 0.2255 | Test Acc. 91.9286%
+AdamP on CRC_transformed: T 1/3 | E 76/200 Ended | E Time: 58.614s | ~Time Left: 7268.186s |  Train Loss: 0.1241 | Train Acc. 95.6500% | Test Loss: 0.1135 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 1/3 | E 77/200 Ended | E Time: 58.882s | ~Time Left: 7242.525s |  Train Loss: 0.1305 | Train Acc. 95.6429% | Test Loss: 0.1604 | Test Acc. 95.1429%
+AdamP on CRC_transformed: T 1/3 | E 78/200 Ended | E Time: 58.476s | ~Time Left: 7134.073s |  Train Loss: 0.1245 | Train Acc. 95.8071% | Test Loss: 0.1941 | Test Acc. 93.7143%
+AdamP on CRC_transformed: T 1/3 | E 79/200 Ended | E Time: 58.988s | ~Time Left: 7137.513s |  Train Loss: 0.1369 | Train Acc. 95.2571% | Test Loss: 0.1000 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 80/200 Ended | E Time: 58.687s | ~Time Left: 7042.454s |  Train Loss: 0.1286 | Train Acc. 95.4643% | Test Loss: 0.1125 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 1/3 | E 81/200 Ended | E Time: 58.565s | ~Time Left: 6969.230s |  Train Loss: 0.1124 | Train Acc. 96.1143% | Test Loss: 0.1192 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 1/3 | E 82/200 Ended | E Time: 58.450s | ~Time Left: 6897.081s |  Train Loss: 0.1231 | Train Acc. 95.7786% | Test Loss: 0.2262 | Test Acc. 92.5000%
+AdamP on CRC_transformed: T 1/3 | E 83/200 Ended | E Time: 59.204s | ~Time Left: 6926.868s |  Train Loss: 0.1245 | Train Acc. 95.8143% | Test Loss: 0.3065 | Test Acc. 91.7143%
+AdamP on CRC_transformed: T 1/3 | E 84/200 Ended | E Time: 58.652s | ~Time Left: 6803.606s |  Train Loss: 0.1242 | Train Acc. 95.8429% | Test Loss: 0.1023 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 1/3 | E 85/200 Ended | E Time: 58.491s | ~Time Left: 6726.469s |  Train Loss: 0.1124 | Train Acc. 96.0786% | Test Loss: 0.2175 | Test Acc. 93.6429%
+AdamP on CRC_transformed: T 1/3 | E 86/200 Ended | E Time: 58.964s | ~Time Left: 6721.903s |  Train Loss: 0.1211 | Train Acc. 95.8143% | Test Loss: 0.1190 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 1/3 | E 87/200 Ended | E Time: 59.106s | ~Time Left: 6678.964s |  Train Loss: 0.1203 | Train Acc. 95.9429% | Test Loss: 0.1144 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 1/3 | E 88/200 Ended | E Time: 59.116s | ~Time Left: 6620.960s |  Train Loss: 0.1252 | Train Acc. 96.0571% | Test Loss: 0.0987 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 1/3 | E 89/200 Ended | E Time: 58.661s | ~Time Left: 6511.366s |  Train Loss: 0.1190 | Train Acc. 96.1143% | Test Loss: 0.1196 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 1/3 | E 90/200 Ended | E Time: 58.760s | ~Time Left: 6463.656s |  Train Loss: 0.1170 | Train Acc. 95.8786% | Test Loss: 0.1560 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 1/3 | E 91/200 Ended | E Time: 58.577s | ~Time Left: 6384.914s |  Train Loss: 0.1164 | Train Acc. 96.0286% | Test Loss: 0.3056 | Test Acc. 90.8571%
+AdamP on CRC_transformed: T 1/3 | E 92/200 Ended | E Time: 58.580s | ~Time Left: 6326.647s |  Train Loss: 0.1091 | Train Acc. 96.1643% | Test Loss: 0.0854 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 1/3 | E 93/200 Ended | E Time: 58.375s | ~Time Left: 6246.123s |  Train Loss: 0.1216 | Train Acc. 95.8500% | Test Loss: 0.1034 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 1/3 | E 94/200 Ended | E Time: 58.178s | ~Time Left: 6166.877s |  Train Loss: 0.1105 | Train Acc. 96.1571% | Test Loss: 0.1273 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 1/3 | E 95/200 Ended | E Time: 58.354s | ~Time Left: 6127.137s |  Train Loss: 0.1115 | Train Acc. 96.2000% | Test Loss: 0.1127 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 96/200 Ended | E Time: 58.499s | ~Time Left: 6083.859s |  Train Loss: 0.1061 | Train Acc. 96.6143% | Test Loss: 0.0930 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 1/3 | E 97/200 Ended | E Time: 58.974s | ~Time Left: 6074.281s |  Train Loss: 0.1116 | Train Acc. 96.2143% | Test Loss: 0.1694 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 1/3 | E 98/200 Ended | E Time: 58.337s | ~Time Left: 5950.415s |  Train Loss: 0.1180 | Train Acc. 96.0714% | Test Loss: 0.1039 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 1/3 | E 99/200 Ended | E Time: 58.303s | ~Time Left: 5888.624s |  Train Loss: 0.1102 | Train Acc. 96.2143% | Test Loss: 0.2036 | Test Acc. 94.2143%
+AdamP on CRC_transformed: T 1/3 | E 100/200 Ended | E Time: 58.442s | ~Time Left: 5844.197s |  Train Loss: 0.1110 | Train Acc. 96.2786% | Test Loss: 0.1415 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 1/3 | E 101/200 Ended | E Time: 58.790s | ~Time Left: 5820.239s |  Train Loss: 0.1104 | Train Acc. 96.2786% | Test Loss: 0.1035 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 1/3 | E 102/200 Ended | E Time: 58.543s | ~Time Left: 5737.257s |  Train Loss: 0.1065 | Train Acc. 96.4714% | Test Loss: 0.1348 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 1/3 | E 103/200 Ended | E Time: 58.162s | ~Time Left: 5641.669s |  Train Loss: 0.0991 | Train Acc. 96.7214% | Test Loss: 0.1135 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 1/3 | E 104/200 Ended | E Time: 58.528s | ~Time Left: 5618.713s |  Train Loss: 0.1063 | Train Acc. 96.4714% | Test Loss: 0.1153 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 1/3 | E 105/200 Ended | E Time: 60.460s | ~Time Left: 5743.707s |  Train Loss: 0.1091 | Train Acc. 96.3286% | Test Loss: 0.1512 | Test Acc. 95.1429%
+AdamP on CRC_transformed: T 1/3 | E 106/200 Ended | E Time: 58.536s | ~Time Left: 5502.416s |  Train Loss: 0.1026 | Train Acc. 96.4357% | Test Loss: 0.3465 | Test Acc. 89.4286%
+AdamP on CRC_transformed: T 1/3 | E 107/200 Ended | E Time: 58.094s | ~Time Left: 5402.746s |  Train Loss: 0.1118 | Train Acc. 96.0643% | Test Loss: 0.0896 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 1/3 | E 108/200 Ended | E Time: 58.295s | ~Time Left: 5363.108s |  Train Loss: 0.1056 | Train Acc. 96.2357% | Test Loss: 0.0903 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 1/3 | E 109/200 Ended | E Time: 57.983s | ~Time Left: 5276.432s |  Train Loss: 0.1021 | Train Acc. 96.4214% | Test Loss: 0.1401 | Test Acc. 95.2143%
+AdamP on CRC_transformed: T 1/3 | E 110/200 Ended | E Time: 58.637s | ~Time Left: 5277.342s |  Train Loss: 0.1067 | Train Acc. 96.4714% | Test Loss: 0.1095 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 1/3 | E 111/200 Ended | E Time: 58.353s | ~Time Left: 5193.434s |  Train Loss: 0.1029 | Train Acc. 96.6571% | Test Loss: 0.1026 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 1/3 | E 112/200 Ended | E Time: 58.414s | ~Time Left: 5140.395s |  Train Loss: 0.1073 | Train Acc. 96.3857% | Test Loss: 0.1217 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 1/3 | E 113/200 Ended | E Time: 58.623s | ~Time Left: 5100.227s |  Train Loss: 0.1021 | Train Acc. 96.3857% | Test Loss: 0.0844 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 1/3 | E 114/200 Ended | E Time: 58.109s | ~Time Left: 4997.387s |  Train Loss: 0.0957 | Train Acc. 96.5214% | Test Loss: 0.2148 | Test Acc. 93.6429%
+AdamP on CRC_transformed: T 1/3 | E 115/200 Ended | E Time: 58.456s | ~Time Left: 4968.763s |  Train Loss: 0.0994 | Train Acc. 96.6286% | Test Loss: 0.1872 | Test Acc. 94.3571%
+AdamP on CRC_transformed: T 1/3 | E 116/200 Ended | E Time: 58.189s | ~Time Left: 4887.842s |  Train Loss: 0.1090 | Train Acc. 96.2429% | Test Loss: 0.1703 | Test Acc. 94.3571%
+AdamP on CRC_transformed: T 1/3 | E 117/200 Ended | E Time: 58.406s | ~Time Left: 4847.713s |  Train Loss: 0.0985 | Train Acc. 96.5857% | Test Loss: 0.1084 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 1/3 | E 118/200 Ended | E Time: 58.135s | ~Time Left: 4767.061s |  Train Loss: 0.0984 | Train Acc. 96.5571% | Test Loss: 0.1100 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 1/3 | E 119/200 Ended | E Time: 58.332s | ~Time Left: 4724.898s |  Train Loss: 0.0969 | Train Acc. 96.7500% | Test Loss: 0.1118 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 1/3 | E 120/200 Ended | E Time: 59.071s | ~Time Left: 4725.690s |  Train Loss: 0.0963 | Train Acc. 96.6500% | Test Loss: 0.0970 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 1/3 | E 121/200 Ended | E Time: 58.375s | ~Time Left: 4611.639s |  Train Loss: 0.0991 | Train Acc. 96.7000% | Test Loss: 0.1546 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 1/3 | E 122/200 Ended | E Time: 58.481s | ~Time Left: 4561.523s |  Train Loss: 0.0985 | Train Acc. 96.6214% | Test Loss: 0.1424 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 1/3 | E 123/200 Ended | E Time: 58.887s | ~Time Left: 4534.306s |  Train Loss: 0.0993 | Train Acc. 96.5643% | Test Loss: 0.1328 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 1/3 | E 124/200 Ended | E Time: 58.509s | ~Time Left: 4446.698s |  Train Loss: 0.0988 | Train Acc. 96.7714% | Test Loss: 0.0962 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 1/3 | E 125/200 Ended | E Time: 58.239s | ~Time Left: 4367.907s |  Train Loss: 0.0895 | Train Acc. 96.8786% | Test Loss: 0.0928 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 1/3 | E 126/200 Ended | E Time: 58.296s | ~Time Left: 4313.877s |  Train Loss: 0.1001 | Train Acc. 96.5214% | Test Loss: 0.0875 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 1/3 | E 127/200 Ended | E Time: 58.279s | ~Time Left: 4254.359s |  Train Loss: 0.0945 | Train Acc. 96.7071% | Test Loss: 0.0933 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 1/3 | E 128/200 Ended | E Time: 58.273s | ~Time Left: 4195.644s |  Train Loss: 0.0997 | Train Acc. 96.6214% | Test Loss: 0.1041 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 1/3 | E 129/200 Ended | E Time: 58.955s | ~Time Left: 4185.828s |  Train Loss: 0.0957 | Train Acc. 96.6643% | Test Loss: 0.3444 | Test Acc. 89.4286%
+AdamP on CRC_transformed: T 1/3 | E 130/200 Ended | E Time: 58.332s | ~Time Left: 4083.209s |  Train Loss: 0.0853 | Train Acc. 96.9857% | Test Loss: 0.0930 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 1/3 | E 131/200 Ended | E Time: 58.468s | ~Time Left: 4034.260s |  Train Loss: 0.0975 | Train Acc. 96.6643% | Test Loss: 0.1572 | Test Acc. 95.2143%
+AdamP on CRC_transformed: T 1/3 | E 132/200 Ended | E Time: 58.315s | ~Time Left: 3965.411s |  Train Loss: 0.0874 | Train Acc. 97.0429% | Test Loss: 0.1162 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 1/3 | E 133/200 Ended | E Time: 58.072s | ~Time Left: 3890.818s |  Train Loss: 0.0941 | Train Acc. 96.8357% | Test Loss: 0.1045 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 134/200 Ended | E Time: 58.265s | ~Time Left: 3845.519s |  Train Loss: 0.0872 | Train Acc. 96.8000% | Test Loss: 0.1182 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 1/3 | E 135/200 Ended | E Time: 58.006s | ~Time Left: 3770.398s |  Train Loss: 0.0930 | Train Acc. 96.8357% | Test Loss: 0.1470 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 1/3 | E 136/200 Ended | E Time: 58.134s | ~Time Left: 3720.546s |  Train Loss: 0.0936 | Train Acc. 96.6500% | Test Loss: 0.1242 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 1/3 | E 137/200 Ended | E Time: 58.263s | ~Time Left: 3670.597s |  Train Loss: 0.0888 | Train Acc. 96.8643% | Test Loss: 0.1164 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 1/3 | E 138/200 Ended | E Time: 58.800s | ~Time Left: 3645.610s |  Train Loss: 0.0949 | Train Acc. 96.8214% | Test Loss: 0.1045 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 1/3 | E 139/200 Ended | E Time: 58.278s | ~Time Left: 3554.987s |  Train Loss: 0.0853 | Train Acc. 97.1286% | Test Loss: 0.1009 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 1/3 | E 140/200 Ended | E Time: 58.595s | ~Time Left: 3515.729s |  Train Loss: 0.0956 | Train Acc. 96.7286% | Test Loss: 0.1215 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 1/3 | E 141/200 Ended | E Time: 58.489s | ~Time Left: 3450.865s |  Train Loss: 0.0870 | Train Acc. 96.9786% | Test Loss: 0.0975 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 142/200 Ended | E Time: 58.747s | ~Time Left: 3407.326s |  Train Loss: 0.0884 | Train Acc. 97.1643% | Test Loss: 0.3217 | Test Acc. 91.6429%
+AdamP on CRC_transformed: T 1/3 | E 143/200 Ended | E Time: 58.101s | ~Time Left: 3311.739s |  Train Loss: 0.0844 | Train Acc. 96.9357% | Test Loss: 0.0821 | Test Acc. 97.2857%
+AdamP on CRC_transformed: T 1/3 | E 144/200 Ended | E Time: 58.437s | ~Time Left: 3272.460s |  Train Loss: 0.0876 | Train Acc. 97.0000% | Test Loss: 0.1664 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 1/3 | E 145/200 Ended | E Time: 58.201s | ~Time Left: 3201.030s |  Train Loss: 0.0880 | Train Acc. 97.0571% | Test Loss: 0.0684 | Test Acc. 97.7857%
+AdamP on CRC_transformed: T 1/3 | E 146/200 Ended | E Time: 58.211s | ~Time Left: 3143.412s |  Train Loss: 0.0876 | Train Acc. 97.1500% | Test Loss: 0.1467 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 1/3 | E 147/200 Ended | E Time: 58.438s | ~Time Left: 3097.201s |  Train Loss: 0.0850 | Train Acc. 97.1857% | Test Loss: 0.0941 | Test Acc. 97.3571%
+AdamP on CRC_transformed: T 1/3 | E 148/200 Ended | E Time: 58.156s | ~Time Left: 3024.113s |  Train Loss: 0.0818 | Train Acc. 97.2714% | Test Loss: 0.1407 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 1/3 | E 149/200 Ended | E Time: 58.420s | ~Time Left: 2979.428s |  Train Loss: 0.0864 | Train Acc. 97.0214% | Test Loss: 0.5631 | Test Acc. 88.3571%
+AdamP on CRC_transformed: T 1/3 | E 150/200 Ended | E Time: 58.457s | ~Time Left: 2922.856s |  Train Loss: 0.0964 | Train Acc. 96.9143% | Test Loss: 0.0760 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 1/3 | E 151/200 Ended | E Time: 58.333s | ~Time Left: 2858.330s |  Train Loss: 0.0823 | Train Acc. 97.0286% | Test Loss: 0.0935 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 152/200 Ended | E Time: 58.382s | ~Time Left: 2802.330s |  Train Loss: 0.0885 | Train Acc. 97.0571% | Test Loss: 0.0934 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 1/3 | E 153/200 Ended | E Time: 58.400s | ~Time Left: 2744.816s |  Train Loss: 0.0797 | Train Acc. 97.2000% | Test Loss: 0.1829 | Test Acc. 93.3571%
+AdamP on CRC_transformed: T 1/3 | E 154/200 Ended | E Time: 58.290s | ~Time Left: 2681.356s |  Train Loss: 0.0785 | Train Acc. 97.3000% | Test Loss: 0.0813 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 155/200 Ended | E Time: 58.473s | ~Time Left: 2631.280s |  Train Loss: 0.0795 | Train Acc. 97.3214% | Test Loss: 0.2235 | Test Acc. 92.9286%
+AdamP on CRC_transformed: T 1/3 | E 156/200 Ended | E Time: 58.583s | ~Time Left: 2577.648s |  Train Loss: 0.0876 | Train Acc. 96.9643% | Test Loss: 0.0953 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 1/3 | E 157/200 Ended | E Time: 58.128s | ~Time Left: 2499.493s |  Train Loss: 0.0835 | Train Acc. 97.1143% | Test Loss: 0.0804 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 1/3 | E 158/200 Ended | E Time: 58.257s | ~Time Left: 2446.775s |  Train Loss: 0.0770 | Train Acc. 97.3786% | Test Loss: 0.0998 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 1/3 | E 159/200 Ended | E Time: 58.699s | ~Time Left: 2406.671s |  Train Loss: 0.0838 | Train Acc. 97.0786% | Test Loss: 0.0832 | Test Acc. 97.2857%
+AdamP on CRC_transformed: T 1/3 | E 160/200 Ended | E Time: 58.884s | ~Time Left: 2355.340s |  Train Loss: 0.0820 | Train Acc. 97.1929% | Test Loss: 0.2002 | Test Acc. 93.2143%
+AdamP on CRC_transformed: T 1/3 | E 161/200 Ended | E Time: 58.905s | ~Time Left: 2297.301s |  Train Loss: 0.0817 | Train Acc. 97.0929% | Test Loss: 0.1056 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 1/3 | E 162/200 Ended | E Time: 58.467s | ~Time Left: 2221.732s |  Train Loss: 0.0908 | Train Acc. 96.8571% | Test Loss: 0.1067 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 1/3 | E 163/200 Ended | E Time: 58.153s | ~Time Left: 2151.668s |  Train Loss: 0.0789 | Train Acc. 97.2071% | Test Loss: 0.1295 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 1/3 | E 164/200 Ended | E Time: 58.413s | ~Time Left: 2102.883s |  Train Loss: 0.0812 | Train Acc. 97.1071% | Test Loss: 0.0980 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 1/3 | E 165/200 Ended | E Time: 58.516s | ~Time Left: 2048.055s |  Train Loss: 0.0727 | Train Acc. 97.5857% | Test Loss: 0.1608 | Test Acc. 94.5714%
+AdamP on CRC_transformed: T 1/3 | E 166/200 Ended | E Time: 58.421s | ~Time Left: 1986.314s |  Train Loss: 0.0851 | Train Acc. 97.0429% | Test Loss: 0.0724 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 1/3 | E 167/200 Ended | E Time: 58.643s | ~Time Left: 1935.230s |  Train Loss: 0.0788 | Train Acc. 97.3214% | Test Loss: 0.1209 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 1/3 | E 168/200 Ended | E Time: 58.818s | ~Time Left: 1882.191s |  Train Loss: 0.0860 | Train Acc. 96.9786% | Test Loss: 0.1147 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 1/3 | E 169/200 Ended | E Time: 58.864s | ~Time Left: 1824.795s |  Train Loss: 0.0722 | Train Acc. 97.4786% | Test Loss: 0.1000 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 1/3 | E 170/200 Ended | E Time: 58.937s | ~Time Left: 1768.107s |  Train Loss: 0.0791 | Train Acc. 97.2786% | Test Loss: 0.2407 | Test Acc. 92.5000%
+AdamP on CRC_transformed: T 1/3 | E 171/200 Ended | E Time: 58.647s | ~Time Left: 1700.763s |  Train Loss: 0.0743 | Train Acc. 97.3571% | Test Loss: 0.0807 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 1/3 | E 172/200 Ended | E Time: 58.807s | ~Time Left: 1646.588s |  Train Loss: 0.0749 | Train Acc. 97.1429% | Test Loss: 0.0770 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 1/3 | E 173/200 Ended | E Time: 58.424s | ~Time Left: 1577.453s |  Train Loss: 0.0776 | Train Acc. 97.2857% | Test Loss: 0.1364 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 1/3 | E 174/200 Ended | E Time: 58.596s | ~Time Left: 1523.491s |  Train Loss: 0.0822 | Train Acc. 97.1857% | Test Loss: 0.1327 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 1/3 | E 175/200 Ended | E Time: 58.743s | ~Time Left: 1468.581s |  Train Loss: 0.0714 | Train Acc. 97.4929% | Test Loss: 0.2324 | Test Acc. 93.0000%
+AdamP on CRC_transformed: T 1/3 | E 176/200 Ended | E Time: 58.817s | ~Time Left: 1411.613s |  Train Loss: 0.0746 | Train Acc. 97.2643% | Test Loss: 0.0720 | Test Acc. 97.5714%
+AdamP on CRC_transformed: T 1/3 | E 177/200 Ended | E Time: 58.371s | ~Time Left: 1342.523s |  Train Loss: 0.0731 | Train Acc. 97.2786% | Test Loss: 0.1246 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 1/3 | E 178/200 Ended | E Time: 58.307s | ~Time Left: 1282.753s |  Train Loss: 0.0779 | Train Acc. 97.3500% | Test Loss: 0.0777 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 1/3 | E 179/200 Ended | E Time: 58.533s | ~Time Left: 1229.185s |  Train Loss: 0.0709 | Train Acc. 97.5643% | Test Loss: 0.0811 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 1/3 | E 180/200 Ended | E Time: 58.722s | ~Time Left: 1174.447s |  Train Loss: 0.0775 | Train Acc. 97.3643% | Test Loss: 0.0857 | Test Acc. 97.3571%
+AdamP on CRC_transformed: T 1/3 | E 181/200 Ended | E Time: 58.656s | ~Time Left: 1114.465s |  Train Loss: 0.0727 | Train Acc. 97.3643% | Test Loss: 0.0805 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 1/3 | E 182/200 Ended | E Time: 58.589s | ~Time Left: 1054.601s |  Train Loss: 0.0751 | Train Acc. 97.4071% | Test Loss: 0.0779 | Test Acc. 97.3571%
+AdamP on CRC_transformed: T 1/3 | E 183/200 Ended | E Time: 58.605s | ~Time Left: 996.279s |  Train Loss: 0.0754 | Train Acc. 97.3643% | Test Loss: 0.0810 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 1/3 | E 184/200 Ended | E Time: 58.291s | ~Time Left: 932.662s |  Train Loss: 0.0726 | Train Acc. 97.5571% | Test Loss: 0.0993 | Test Acc. 97.5714%
+AdamP on CRC_transformed: T 1/3 | E 185/200 Ended | E Time: 58.143s | ~Time Left: 872.150s |  Train Loss: 0.0735 | Train Acc. 97.5929% | Test Loss: 0.0793 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 1/3 | E 186/200 Ended | E Time: 58.827s | ~Time Left: 823.572s |  Train Loss: 0.0659 | Train Acc. 97.6571% | Test Loss: 0.0781 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 1/3 | E 187/200 Ended | E Time: 58.288s | ~Time Left: 757.748s |  Train Loss: 0.0746 | Train Acc. 97.3500% | Test Loss: 0.0770 | Test Acc. 97.5714%
+AdamP on CRC_transformed: T 1/3 | E 188/200 Ended | E Time: 58.319s | ~Time Left: 699.825s |  Train Loss: 0.0754 | Train Acc. 97.3571% | Test Loss: 0.1480 | Test Acc. 94.0714%
+AdamP on CRC_transformed: T 1/3 | E 189/200 Ended | E Time: 59.206s | ~Time Left: 651.271s |  Train Loss: 0.0699 | Train Acc. 97.6071% | Test Loss: 0.0758 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 1/3 | E 190/200 Ended | E Time: 58.182s | ~Time Left: 581.820s |  Train Loss: 0.0741 | Train Acc. 97.3000% | Test Loss: 0.3803 | Test Acc. 87.9286%
+AdamP on CRC_transformed: T 1/3 | E 191/200 Ended | E Time: 58.581s | ~Time Left: 527.233s |  Train Loss: 0.0655 | Train Acc. 97.6857% | Test Loss: 0.1215 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 1/3 | E 192/200 Ended | E Time: 58.472s | ~Time Left: 467.774s |  Train Loss: 0.0718 | Train Acc. 97.3929% | Test Loss: 0.1150 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 1/3 | E 193/200 Ended | E Time: 58.592s | ~Time Left: 410.145s |  Train Loss: 0.0746 | Train Acc. 97.5071% | Test Loss: 0.0768 | Test Acc. 97.2857%
+AdamP on CRC_transformed: T 1/3 | E 194/200 Ended | E Time: 58.605s | ~Time Left: 351.629s |  Train Loss: 0.0661 | Train Acc. 97.6929% | Test Loss: 0.0754 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 1/3 | E 195/200 Ended | E Time: 58.162s | ~Time Left: 290.812s |  Train Loss: 0.0684 | Train Acc. 97.7357% | Test Loss: 0.1024 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 1/3 | E 196/200 Ended | E Time: 58.483s | ~Time Left: 233.932s |  Train Loss: 0.0777 | Train Acc. 97.3357% | Test Loss: 0.1335 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 1/3 | E 197/200 Ended | E Time: 58.265s | ~Time Left: 174.795s |  Train Loss: 0.0672 | Train Acc. 97.6000% | Test Loss: 0.1262 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 1/3 | E 198/200 Ended | E Time: 58.409s | ~Time Left: 116.819s |  Train Loss: 0.0705 | Train Acc. 97.6286% | Test Loss: 0.1380 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 1/3 | E 199/200 Ended | E Time: 58.642s | ~Time Left: 58.642s |  Train Loss: 0.0688 | Train Acc. 97.6214% | Test Loss: 0.0813 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 1/3 | E 200/200 Ended | E Time: 58.173s | ~Time Left: 0.000s |  Train Loss: 0.0659 | Train Acc. 97.6571% | Test Loss: 0.0676 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 2/3 | E 1/200 Ended | E Time: 58.360s | ~Time Left: 11613.714s |  Train Loss: 1.0554 | Train Acc. 58.3714% | Test Loss: 1.0920 | Test Acc. 62.9286%
+AdamP on CRC_transformed: T 2/3 | E 2/200 Ended | E Time: 58.328s | ~Time Left: 11549.031s |  Train Loss: 0.8317 | Train Acc. 68.7286% | Test Loss: 1.5103 | Test Acc. 57.8571%
+AdamP on CRC_transformed: T 2/3 | E 3/200 Ended | E Time: 58.738s | ~Time Left: 11571.441s |  Train Loss: 0.7277 | Train Acc. 73.3143% | Test Loss: 0.7993 | Test Acc. 72.4286%
+AdamP on CRC_transformed: T 2/3 | E 4/200 Ended | E Time: 58.639s | ~Time Left: 11493.191s |  Train Loss: 0.6465 | Train Acc. 76.6000% | Test Loss: 1.3051 | Test Acc. 65.5714%
+AdamP on CRC_transformed: T 2/3 | E 5/200 Ended | E Time: 58.367s | ~Time Left: 11381.496s |  Train Loss: 0.5428 | Train Acc. 80.3071% | Test Loss: 0.8552 | Test Acc. 70.0714%
+AdamP on CRC_transformed: T 2/3 | E 6/200 Ended | E Time: 58.409s | ~Time Left: 11331.295s |  Train Loss: 0.4881 | Train Acc. 82.4000% | Test Loss: 0.9815 | Test Acc. 69.7857%
+AdamP on CRC_transformed: T 2/3 | E 7/200 Ended | E Time: 57.976s | ~Time Left: 11189.417s |  Train Loss: 0.4412 | Train Acc. 84.5500% | Test Loss: 0.3130 | Test Acc. 89.1429%
+AdamP on CRC_transformed: T 2/3 | E 8/200 Ended | E Time: 58.093s | ~Time Left: 11153.905s |  Train Loss: 0.3866 | Train Acc. 86.4500% | Test Loss: 0.4968 | Test Acc. 80.1429%
+AdamP on CRC_transformed: T 2/3 | E 9/200 Ended | E Time: 58.482s | ~Time Left: 11170.057s |  Train Loss: 0.3453 | Train Acc. 88.0000% | Test Loss: 0.3815 | Test Acc. 88.6429%
+AdamP on CRC_transformed: T 2/3 | E 10/200 Ended | E Time: 58.470s | ~Time Left: 11109.315s |  Train Loss: 0.3276 | Train Acc. 88.4143% | Test Loss: 0.3232 | Test Acc. 89.2143%
+AdamP on CRC_transformed: T 2/3 | E 11/200 Ended | E Time: 58.269s | ~Time Left: 11012.891s |  Train Loss: 0.3318 | Train Acc. 88.1357% | Test Loss: 0.4040 | Test Acc. 87.2857%
+AdamP on CRC_transformed: T 2/3 | E 12/200 Ended | E Time: 58.561s | ~Time Left: 11009.520s |  Train Loss: 0.3151 | Train Acc. 88.8857% | Test Loss: 0.3328 | Test Acc. 88.6429%
+AdamP on CRC_transformed: T 2/3 | E 13/200 Ended | E Time: 58.860s | ~Time Left: 11006.809s |  Train Loss: 0.2858 | Train Acc. 89.9857% | Test Loss: 0.5360 | Test Acc. 79.6429%
+AdamP on CRC_transformed: T 2/3 | E 14/200 Ended | E Time: 58.839s | ~Time Left: 10944.045s |  Train Loss: 0.2821 | Train Acc. 90.2000% | Test Loss: 0.3456 | Test Acc. 88.0000%
+AdamP on CRC_transformed: T 2/3 | E 15/200 Ended | E Time: 58.480s | ~Time Left: 10818.759s |  Train Loss: 0.3098 | Train Acc. 89.3786% | Test Loss: 0.3217 | Test Acc. 89.8571%
+AdamP on CRC_transformed: T 2/3 | E 16/200 Ended | E Time: 58.445s | ~Time Left: 10753.825s |  Train Loss: 0.2770 | Train Acc. 90.5286% | Test Loss: 0.2800 | Test Acc. 90.6429%
+AdamP on CRC_transformed: T 2/3 | E 17/200 Ended | E Time: 58.512s | ~Time Left: 10707.708s |  Train Loss: 0.2490 | Train Acc. 91.3429% | Test Loss: 0.3261 | Test Acc. 89.6429%
+AdamP on CRC_transformed: T 2/3 | E 18/200 Ended | E Time: 59.252s | ~Time Left: 10783.808s |  Train Loss: 0.2617 | Train Acc. 91.1286% | Test Loss: 0.2734 | Test Acc. 91.2143%
+AdamP on CRC_transformed: T 2/3 | E 19/200 Ended | E Time: 58.694s | ~Time Left: 10623.596s |  Train Loss: 0.2517 | Train Acc. 91.5071% | Test Loss: 0.3387 | Test Acc. 87.6429%
+AdamP on CRC_transformed: T 2/3 | E 20/200 Ended | E Time: 58.906s | ~Time Left: 10603.119s |  Train Loss: 0.2349 | Train Acc. 92.0714% | Test Loss: 0.4351 | Test Acc. 85.5000%
+AdamP on CRC_transformed: T 2/3 | E 21/200 Ended | E Time: 58.279s | ~Time Left: 10431.980s |  Train Loss: 0.2297 | Train Acc. 92.2071% | Test Loss: 0.1988 | Test Acc. 93.6429%
+AdamP on CRC_transformed: T 2/3 | E 22/200 Ended | E Time: 58.378s | ~Time Left: 10391.227s |  Train Loss: 0.2405 | Train Acc. 91.7714% | Test Loss: 0.2409 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 2/3 | E 23/200 Ended | E Time: 58.231s | ~Time Left: 10306.906s |  Train Loss: 0.2456 | Train Acc. 91.8786% | Test Loss: 0.1928 | Test Acc. 93.3571%
+AdamP on CRC_transformed: T 2/3 | E 24/200 Ended | E Time: 58.662s | ~Time Left: 10324.493s |  Train Loss: 0.2331 | Train Acc. 92.2000% | Test Loss: 0.1735 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 2/3 | E 25/200 Ended | E Time: 58.183s | ~Time Left: 10182.084s |  Train Loss: 0.2352 | Train Acc. 91.9357% | Test Loss: 0.2674 | Test Acc. 90.5000%
+AdamP on CRC_transformed: T 2/3 | E 26/200 Ended | E Time: 58.184s | ~Time Left: 10124.044s |  Train Loss: 0.2180 | Train Acc. 92.4500% | Test Loss: 0.2055 | Test Acc. 93.0714%
+AdamP on CRC_transformed: T 2/3 | E 27/200 Ended | E Time: 58.531s | ~Time Left: 10125.820s |  Train Loss: 0.2163 | Train Acc. 92.5571% | Test Loss: 0.4415 | Test Acc. 84.3571%
+AdamP on CRC_transformed: T 2/3 | E 28/200 Ended | E Time: 58.134s | ~Time Left: 9999.060s |  Train Loss: 0.2147 | Train Acc. 92.4714% | Test Loss: 0.1972 | Test Acc. 93.3571%
+AdamP on CRC_transformed: T 2/3 | E 29/200 Ended | E Time: 58.904s | ~Time Left: 10072.667s |  Train Loss: 0.2136 | Train Acc. 92.7714% | Test Loss: 0.3199 | Test Acc. 87.2143%
+AdamP on CRC_transformed: T 2/3 | E 30/200 Ended | E Time: 59.021s | ~Time Left: 10033.573s |  Train Loss: 0.2155 | Train Acc. 92.7929% | Test Loss: 0.1541 | Test Acc. 94.2143%
+AdamP on CRC_transformed: T 2/3 | E 31/200 Ended | E Time: 58.801s | ~Time Left: 9937.315s |  Train Loss: 0.2006 | Train Acc. 93.1214% | Test Loss: 0.1206 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 2/3 | E 32/200 Ended | E Time: 58.571s | ~Time Left: 9839.849s |  Train Loss: 0.1940 | Train Acc. 93.3143% | Test Loss: 0.2431 | Test Acc. 92.0714%
+AdamP on CRC_transformed: T 2/3 | E 33/200 Ended | E Time: 58.102s | ~Time Left: 9703.051s |  Train Loss: 0.1949 | Train Acc. 93.3857% | Test Loss: 0.3052 | Test Acc. 89.8571%
+AdamP on CRC_transformed: T 2/3 | E 34/200 Ended | E Time: 58.515s | ~Time Left: 9713.460s |  Train Loss: 0.1980 | Train Acc. 93.4143% | Test Loss: 0.1500 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 2/3 | E 35/200 Ended | E Time: 58.500s | ~Time Left: 9652.562s |  Train Loss: 0.2057 | Train Acc. 92.9786% | Test Loss: 0.2431 | Test Acc. 91.7143%
+AdamP on CRC_transformed: T 2/3 | E 36/200 Ended | E Time: 58.221s | ~Time Left: 9548.281s |  Train Loss: 0.1806 | Train Acc. 93.9357% | Test Loss: 0.1120 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 2/3 | E 37/200 Ended | E Time: 58.375s | ~Time Left: 9515.045s |  Train Loss: 0.1861 | Train Acc. 93.8714% | Test Loss: 0.1415 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 2/3 | E 38/200 Ended | E Time: 58.084s | ~Time Left: 9409.685s |  Train Loss: 0.1838 | Train Acc. 93.5071% | Test Loss: 0.3033 | Test Acc. 89.7143%
+AdamP on CRC_transformed: T 2/3 | E 39/200 Ended | E Time: 58.902s | ~Time Left: 9483.225s |  Train Loss: 0.1907 | Train Acc. 93.6286% | Test Loss: 0.2205 | Test Acc. 91.7143%
+AdamP on CRC_transformed: T 2/3 | E 40/200 Ended | E Time: 59.048s | ~Time Left: 9447.622s |  Train Loss: 0.1895 | Train Acc. 93.6357% | Test Loss: 0.2922 | Test Acc. 90.0000%
+AdamP on CRC_transformed: T 2/3 | E 41/200 Ended | E Time: 58.804s | ~Time Left: 9349.827s |  Train Loss: 0.1767 | Train Acc. 94.0929% | Test Loss: 0.1367 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 2/3 | E 42/200 Ended | E Time: 58.317s | ~Time Left: 9214.010s |  Train Loss: 0.1739 | Train Acc. 94.4357% | Test Loss: 0.1476 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 2/3 | E 43/200 Ended | E Time: 58.072s | ~Time Left: 9117.348s |  Train Loss: 0.1752 | Train Acc. 94.1286% | Test Loss: 0.1726 | Test Acc. 94.6429%
+AdamP on CRC_transformed: T 2/3 | E 44/200 Ended | E Time: 58.390s | ~Time Left: 9108.890s |  Train Loss: 0.1784 | Train Acc. 93.8286% | Test Loss: 0.1434 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 2/3 | E 45/200 Ended | E Time: 58.395s | ~Time Left: 9051.175s |  Train Loss: 0.1609 | Train Acc. 94.3643% | Test Loss: 0.1819 | Test Acc. 94.2857%
+AdamP on CRC_transformed: T 2/3 | E 46/200 Ended | E Time: 58.275s | ~Time Left: 8974.351s |  Train Loss: 0.1744 | Train Acc. 93.9929% | Test Loss: 0.3224 | Test Acc. 89.2143%
+AdamP on CRC_transformed: T 2/3 | E 47/200 Ended | E Time: 58.666s | ~Time Left: 8975.973s |  Train Loss: 0.1597 | Train Acc. 94.2286% | Test Loss: 0.2233 | Test Acc. 92.5714%
+AdamP on CRC_transformed: T 2/3 | E 48/200 Ended | E Time: 58.847s | ~Time Left: 8944.733s |  Train Loss: 0.1653 | Train Acc. 94.5071% | Test Loss: 0.2290 | Test Acc. 92.7143%
+AdamP on CRC_transformed: T 2/3 | E 49/200 Ended | E Time: 58.922s | ~Time Left: 8897.249s |  Train Loss: 0.1721 | Train Acc. 94.1643% | Test Loss: 0.2446 | Test Acc. 91.7143%
+AdamP on CRC_transformed: T 2/3 | E 50/200 Ended | E Time: 58.402s | ~Time Left: 8760.297s |  Train Loss: 0.1591 | Train Acc. 94.5714% | Test Loss: 0.2428 | Test Acc. 91.0714%
+AdamP on CRC_transformed: T 2/3 | E 51/200 Ended | E Time: 58.242s | ~Time Left: 8677.996s |  Train Loss: 0.1547 | Train Acc. 94.7429% | Test Loss: 0.1497 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 2/3 | E 52/200 Ended | E Time: 58.187s | ~Time Left: 8611.684s |  Train Loss: 0.1561 | Train Acc. 94.7071% | Test Loss: 0.1728 | Test Acc. 93.3571%
+AdamP on CRC_transformed: T 2/3 | E 53/200 Ended | E Time: 58.675s | ~Time Left: 8625.193s |  Train Loss: 0.1631 | Train Acc. 94.5071% | Test Loss: 0.1046 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 2/3 | E 54/200 Ended | E Time: 58.459s | ~Time Left: 8534.993s |  Train Loss: 0.1561 | Train Acc. 94.5643% | Test Loss: 0.1181 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 2/3 | E 55/200 Ended | E Time: 58.120s | ~Time Left: 8427.344s |  Train Loss: 0.1480 | Train Acc. 94.9500% | Test Loss: 0.1444 | Test Acc. 95.1429%
+AdamP on CRC_transformed: T 2/3 | E 56/200 Ended | E Time: 58.550s | ~Time Left: 8431.202s |  Train Loss: 0.1485 | Train Acc. 94.8571% | Test Loss: 0.1462 | Test Acc. 94.8571%
+AdamP on CRC_transformed: T 2/3 | E 57/200 Ended | E Time: 58.413s | ~Time Left: 8353.043s |  Train Loss: 0.1603 | Train Acc. 94.7000% | Test Loss: 0.1540 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 2/3 | E 58/200 Ended | E Time: 58.915s | ~Time Left: 8365.937s |  Train Loss: 0.1539 | Train Acc. 94.8214% | Test Loss: 0.1443 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 2/3 | E 59/200 Ended | E Time: 59.018s | ~Time Left: 8321.536s |  Train Loss: 0.1478 | Train Acc. 95.0857% | Test Loss: 0.1423 | Test Acc. 95.0000%
+AdamP on CRC_transformed: T 2/3 | E 60/200 Ended | E Time: 59.040s | ~Time Left: 8265.603s |  Train Loss: 0.1503 | Train Acc. 95.0000% | Test Loss: 0.4368 | Test Acc. 88.1429%
+AdamP on CRC_transformed: T 2/3 | E 61/200 Ended | E Time: 58.122s | ~Time Left: 8079.011s |  Train Loss: 0.1617 | Train Acc. 94.6857% | Test Loss: 0.1230 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 2/3 | E 62/200 Ended | E Time: 58.504s | ~Time Left: 8073.565s |  Train Loss: 0.1418 | Train Acc. 95.1500% | Test Loss: 0.1641 | Test Acc. 94.5714%
+AdamP on CRC_transformed: T 2/3 | E 63/200 Ended | E Time: 58.424s | ~Time Left: 8004.125s |  Train Loss: 0.1321 | Train Acc. 95.5143% | Test Loss: 0.1633 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 2/3 | E 64/200 Ended | E Time: 58.503s | ~Time Left: 7956.450s |  Train Loss: 0.1414 | Train Acc. 95.1714% | Test Loss: 0.1244 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 2/3 | E 65/200 Ended | E Time: 58.798s | ~Time Left: 7937.717s |  Train Loss: 0.1403 | Train Acc. 95.3357% | Test Loss: 0.1872 | Test Acc. 93.4286%
+AdamP on CRC_transformed: T 2/3 | E 66/200 Ended | E Time: 58.468s | ~Time Left: 7834.766s |  Train Loss: 0.1413 | Train Acc. 95.1000% | Test Loss: 0.3001 | Test Acc. 91.0714%
+AdamP on CRC_transformed: T 2/3 | E 67/200 Ended | E Time: 58.756s | ~Time Left: 7814.514s |  Train Loss: 0.1367 | Train Acc. 95.3071% | Test Loss: 0.0985 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 2/3 | E 68/200 Ended | E Time: 58.947s | ~Time Left: 7780.957s |  Train Loss: 0.1359 | Train Acc. 95.1357% | Test Loss: 0.1379 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 2/3 | E 69/200 Ended | E Time: 58.564s | ~Time Left: 7671.896s |  Train Loss: 0.1266 | Train Acc. 95.6571% | Test Loss: 0.1512 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 2/3 | E 70/200 Ended | E Time: 58.796s | ~Time Left: 7643.510s |  Train Loss: 0.1383 | Train Acc. 95.3000% | Test Loss: 0.1920 | Test Acc. 93.6429%
+AdamP on CRC_transformed: T 2/3 | E 71/200 Ended | E Time: 58.270s | ~Time Left: 7516.789s |  Train Loss: 0.1394 | Train Acc. 95.3214% | Test Loss: 0.1383 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 2/3 | E 72/200 Ended | E Time: 58.638s | ~Time Left: 7505.607s |  Train Loss: 0.1351 | Train Acc. 95.5286% | Test Loss: 0.1186 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 2/3 | E 73/200 Ended | E Time: 58.330s | ~Time Left: 7407.847s |  Train Loss: 0.1459 | Train Acc. 94.9786% | Test Loss: 0.1517 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 2/3 | E 74/200 Ended | E Time: 58.437s | ~Time Left: 7363.108s |  Train Loss: 0.1333 | Train Acc. 95.5357% | Test Loss: 0.1333 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 2/3 | E 75/200 Ended | E Time: 58.216s | ~Time Left: 7276.948s |  Train Loss: 0.1239 | Train Acc. 95.9357% | Test Loss: 0.1710 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 2/3 | E 76/200 Ended | E Time: 58.408s | ~Time Left: 7242.635s |  Train Loss: 0.1268 | Train Acc. 95.7786% | Test Loss: 0.1329 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 2/3 | E 77/200 Ended | E Time: 58.175s | ~Time Left: 7155.494s |  Train Loss: 0.1216 | Train Acc. 95.8643% | Test Loss: 0.2054 | Test Acc. 93.0000%
+AdamP on CRC_transformed: T 2/3 | E 78/200 Ended | E Time: 58.474s | ~Time Left: 7133.876s |  Train Loss: 0.1286 | Train Acc. 95.6071% | Test Loss: 0.1254 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 2/3 | E 79/200 Ended | E Time: 58.256s | ~Time Left: 7049.032s |  Train Loss: 0.1133 | Train Acc. 96.1357% | Test Loss: 0.1401 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 2/3 | E 80/200 Ended | E Time: 58.112s | ~Time Left: 6973.436s |  Train Loss: 0.1437 | Train Acc. 95.1857% | Test Loss: 0.1080 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 2/3 | E 81/200 Ended | E Time: 58.855s | ~Time Left: 7003.733s |  Train Loss: 0.1252 | Train Acc. 95.6786% | Test Loss: 0.1474 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 2/3 | E 82/200 Ended | E Time: 58.204s | ~Time Left: 6868.067s |  Train Loss: 0.1208 | Train Acc. 95.8857% | Test Loss: 0.1238 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 2/3 | E 83/200 Ended | E Time: 58.158s | ~Time Left: 6804.508s |  Train Loss: 0.1280 | Train Acc. 95.5786% | Test Loss: 0.1758 | Test Acc. 94.0000%
+AdamP on CRC_transformed: T 2/3 | E 84/200 Ended | E Time: 58.668s | ~Time Left: 6805.470s |  Train Loss: 0.1161 | Train Acc. 96.1500% | Test Loss: 0.1195 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 2/3 | E 85/200 Ended | E Time: 58.287s | ~Time Left: 6703.050s |  Train Loss: 0.1171 | Train Acc. 95.9071% | Test Loss: 0.1431 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 2/3 | E 86/200 Ended | E Time: 58.434s | ~Time Left: 6661.486s |  Train Loss: 0.1137 | Train Acc. 96.1714% | Test Loss: 0.0887 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 2/3 | E 87/200 Ended | E Time: 59.004s | ~Time Left: 6667.406s |  Train Loss: 0.1196 | Train Acc. 95.8071% | Test Loss: 0.1115 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 2/3 | E 88/200 Ended | E Time: 58.489s | ~Time Left: 6550.752s |  Train Loss: 0.1183 | Train Acc. 95.9857% | Test Loss: 0.1051 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 2/3 | E 89/200 Ended | E Time: 58.516s | ~Time Left: 6495.325s |  Train Loss: 0.1190 | Train Acc. 95.9214% | Test Loss: 0.2884 | Test Acc. 89.8571%
+AdamP on CRC_transformed: T 2/3 | E 90/200 Ended | E Time: 58.329s | ~Time Left: 6416.140s |  Train Loss: 0.1174 | Train Acc. 95.8857% | Test Loss: 0.1550 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 2/3 | E 91/200 Ended | E Time: 58.476s | ~Time Left: 6373.860s |  Train Loss: 0.1121 | Train Acc. 96.2786% | Test Loss: 0.2775 | Test Acc. 91.6429%
+AdamP on CRC_transformed: T 2/3 | E 92/200 Ended | E Time: 58.364s | ~Time Left: 6303.302s |  Train Loss: 0.1180 | Train Acc. 96.0071% | Test Loss: 0.1486 | Test Acc. 94.8571%
+AdamP on CRC_transformed: T 2/3 | E 93/200 Ended | E Time: 58.221s | ~Time Left: 6229.673s |  Train Loss: 0.1131 | Train Acc. 96.1214% | Test Loss: 0.2119 | Test Acc. 92.1429%
+AdamP on CRC_transformed: T 2/3 | E 94/200 Ended | E Time: 58.300s | ~Time Left: 6179.770s |  Train Loss: 0.1133 | Train Acc. 96.1357% | Test Loss: 0.0853 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 2/3 | E 95/200 Ended | E Time: 58.470s | ~Time Left: 6139.339s |  Train Loss: 0.1114 | Train Acc. 96.3214% | Test Loss: 0.1192 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 2/3 | E 96/200 Ended | E Time: 58.172s | ~Time Left: 6049.926s |  Train Loss: 0.1071 | Train Acc. 96.3357% | Test Loss: 0.1116 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 2/3 | E 97/200 Ended | E Time: 58.200s | ~Time Left: 5994.570s |  Train Loss: 0.1078 | Train Acc. 96.2071% | Test Loss: 0.1357 | Test Acc. 95.2143%
+AdamP on CRC_transformed: T 2/3 | E 98/200 Ended | E Time: 58.486s | ~Time Left: 5965.598s |  Train Loss: 0.1122 | Train Acc. 96.0357% | Test Loss: 0.1293 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 2/3 | E 99/200 Ended | E Time: 58.182s | ~Time Left: 5876.340s |  Train Loss: 0.1144 | Train Acc. 95.9286% | Test Loss: 0.1320 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 2/3 | E 100/200 Ended | E Time: 58.304s | ~Time Left: 5830.407s |  Train Loss: 0.1104 | Train Acc. 96.2571% | Test Loss: 0.1104 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 2/3 | E 101/200 Ended | E Time: 58.200s | ~Time Left: 5761.753s |  Train Loss: 0.1093 | Train Acc. 96.2643% | Test Loss: 0.1418 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 2/3 | E 102/200 Ended | E Time: 58.405s | ~Time Left: 5723.692s |  Train Loss: 0.1069 | Train Acc. 96.4571% | Test Loss: 0.1712 | Test Acc. 94.5714%
+AdamP on CRC_transformed: T 2/3 | E 103/200 Ended | E Time: 58.448s | ~Time Left: 5669.429s |  Train Loss: 0.1092 | Train Acc. 96.2357% | Test Loss: 0.0928 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 2/3 | E 104/200 Ended | E Time: 58.278s | ~Time Left: 5594.672s |  Train Loss: 0.1046 | Train Acc. 96.5214% | Test Loss: 0.1009 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 2/3 | E 105/200 Ended | E Time: 58.518s | ~Time Left: 5559.206s |  Train Loss: 0.0982 | Train Acc. 96.6643% | Test Loss: 0.1652 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 2/3 | E 106/200 Ended | E Time: 58.625s | ~Time Left: 5510.745s |  Train Loss: 0.1049 | Train Acc. 96.5286% | Test Loss: 0.1324 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 2/3 | E 107/200 Ended | E Time: 58.208s | ~Time Left: 5413.305s |  Train Loss: 0.0989 | Train Acc. 96.4500% | Test Loss: 0.1229 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 2/3 | E 108/200 Ended | E Time: 58.413s | ~Time Left: 5374.025s |  Train Loss: 0.0955 | Train Acc. 96.7643% | Test Loss: 0.0935 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 2/3 | E 109/200 Ended | E Time: 58.773s | ~Time Left: 5348.384s |  Train Loss: 0.1126 | Train Acc. 96.0357% | Test Loss: 0.0954 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 2/3 | E 110/200 Ended | E Time: 58.275s | ~Time Left: 5244.753s |  Train Loss: 0.1087 | Train Acc. 96.2857% | Test Loss: 0.1087 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 2/3 | E 111/200 Ended | E Time: 58.324s | ~Time Left: 5190.878s |  Train Loss: 0.0958 | Train Acc. 96.6143% | Test Loss: 0.2298 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 2/3 | E 112/200 Ended | E Time: 58.195s | ~Time Left: 5121.132s |  Train Loss: 0.0991 | Train Acc. 96.4857% | Test Loss: 0.1058 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 2/3 | E 113/200 Ended | E Time: 58.211s | ~Time Left: 5064.344s |  Train Loss: 0.1025 | Train Acc. 96.4571% | Test Loss: 0.1384 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 2/3 | E 114/200 Ended | E Time: 58.978s | ~Time Left: 5072.148s |  Train Loss: 0.1036 | Train Acc. 96.6214% | Test Loss: 0.2372 | Test Acc. 93.0714%
+AdamP on CRC_transformed: T 2/3 | E 115/200 Ended | E Time: 58.436s | ~Time Left: 4967.019s |  Train Loss: 0.1000 | Train Acc. 96.7214% | Test Loss: 0.1018 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 2/3 | E 116/200 Ended | E Time: 58.702s | ~Time Left: 4930.984s |  Train Loss: 0.1195 | Train Acc. 96.0857% | Test Loss: 0.1505 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 2/3 | E 117/200 Ended | E Time: 58.325s | ~Time Left: 4841.006s |  Train Loss: 0.0993 | Train Acc. 96.6357% | Test Loss: 0.1510 | Test Acc. 95.0000%
+AdamP on CRC_transformed: T 2/3 | E 118/200 Ended | E Time: 58.389s | ~Time Left: 4787.911s |  Train Loss: 0.0967 | Train Acc. 96.8857% | Test Loss: 0.1112 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 2/3 | E 119/200 Ended | E Time: 58.217s | ~Time Left: 4715.569s |  Train Loss: 0.1110 | Train Acc. 96.2143% | Test Loss: 0.2648 | Test Acc. 92.5000%
+AdamP on CRC_transformed: T 2/3 | E 120/200 Ended | E Time: 58.622s | ~Time Left: 4689.782s |  Train Loss: 0.0912 | Train Acc. 96.8571% | Test Loss: 0.1290 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 2/3 | E 121/200 Ended | E Time: 58.502s | ~Time Left: 4621.668s |  Train Loss: 0.1048 | Train Acc. 96.6000% | Test Loss: 0.0891 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 2/3 | E 122/200 Ended | E Time: 58.592s | ~Time Left: 4570.201s |  Train Loss: 0.0896 | Train Acc. 96.9143% | Test Loss: 0.1157 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 2/3 | E 123/200 Ended | E Time: 58.525s | ~Time Left: 4506.392s |  Train Loss: 0.0954 | Train Acc. 96.7000% | Test Loss: 0.1759 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 2/3 | E 124/200 Ended | E Time: 58.396s | ~Time Left: 4438.067s |  Train Loss: 0.0903 | Train Acc. 96.8071% | Test Loss: 0.2314 | Test Acc. 93.4286%
+AdamP on CRC_transformed: T 2/3 | E 125/200 Ended | E Time: 58.847s | ~Time Left: 4413.556s |  Train Loss: 0.0921 | Train Acc. 96.6429% | Test Loss: 0.1177 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 2/3 | E 126/200 Ended | E Time: 58.293s | ~Time Left: 4313.711s |  Train Loss: 0.0959 | Train Acc. 96.8214% | Test Loss: 0.1325 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 2/3 | E 127/200 Ended | E Time: 58.158s | ~Time Left: 4245.559s |  Train Loss: 0.0951 | Train Acc. 96.7714% | Test Loss: 0.1223 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 2/3 | E 128/200 Ended | E Time: 58.345s | ~Time Left: 4200.804s |  Train Loss: 0.0971 | Train Acc. 96.6357% | Test Loss: 0.0818 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 2/3 | E 129/200 Ended | E Time: 58.533s | ~Time Left: 4155.819s |  Train Loss: 0.0958 | Train Acc. 96.7286% | Test Loss: 0.1276 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 2/3 | E 130/200 Ended | E Time: 58.323s | ~Time Left: 4082.589s |  Train Loss: 0.0952 | Train Acc. 96.8429% | Test Loss: 0.1186 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 2/3 | E 131/200 Ended | E Time: 58.351s | ~Time Left: 4026.219s |  Train Loss: 0.0961 | Train Acc. 96.7214% | Test Loss: 0.1372 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 2/3 | E 132/200 Ended | E Time: 58.353s | ~Time Left: 3967.984s |  Train Loss: 0.0851 | Train Acc. 97.0286% | Test Loss: 0.0809 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 2/3 | E 133/200 Ended | E Time: 58.082s | ~Time Left: 3891.497s |  Train Loss: 0.0880 | Train Acc. 96.9643% | Test Loss: 0.1249 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 2/3 | E 134/200 Ended | E Time: 58.412s | ~Time Left: 3855.181s |  Train Loss: 0.0937 | Train Acc. 96.7429% | Test Loss: 0.0741 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 2/3 | E 135/200 Ended | E Time: 58.265s | ~Time Left: 3787.244s |  Train Loss: 0.0919 | Train Acc. 96.7071% | Test Loss: 0.0925 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 2/3 | E 136/200 Ended | E Time: 58.493s | ~Time Left: 3743.527s |  Train Loss: 0.0892 | Train Acc. 96.8643% | Test Loss: 0.1199 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 2/3 | E 137/200 Ended | E Time: 58.212s | ~Time Left: 3667.333s |  Train Loss: 0.0988 | Train Acc. 96.7000% | Test Loss: 0.0981 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 2/3 | E 138/200 Ended | E Time: 58.280s | ~Time Left: 3613.372s |  Train Loss: 0.1083 | Train Acc. 96.2857% | Test Loss: 0.0873 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 2/3 | E 139/200 Ended | E Time: 58.653s | ~Time Left: 3577.845s |  Train Loss: 0.0867 | Train Acc. 97.0643% | Test Loss: 0.1275 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 2/3 | E 140/200 Ended | E Time: 58.414s | ~Time Left: 3504.813s |  Train Loss: 0.0915 | Train Acc. 97.0000% | Test Loss: 0.0996 | Test Acc. 97.3571%
+AdamP on CRC_transformed: T 2/3 | E 141/200 Ended | E Time: 58.121s | ~Time Left: 3429.148s |  Train Loss: 0.0886 | Train Acc. 96.8786% | Test Loss: 0.1059 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 2/3 | E 142/200 Ended | E Time: 58.272s | ~Time Left: 3379.778s |  Train Loss: 0.0826 | Train Acc. 97.2643% | Test Loss: 0.1352 | Test Acc. 95.1429%
+AdamP on CRC_transformed: T 2/3 | E 143/200 Ended | E Time: 58.109s | ~Time Left: 3312.234s |  Train Loss: 0.0820 | Train Acc. 97.1500% | Test Loss: 0.2065 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 2/3 | E 144/200 Ended | E Time: 58.277s | ~Time Left: 3263.490s |  Train Loss: 0.0879 | Train Acc. 96.9286% | Test Loss: 0.0981 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 2/3 | E 145/200 Ended | E Time: 58.608s | ~Time Left: 3223.455s |  Train Loss: 0.0880 | Train Acc. 96.9071% | Test Loss: 0.0978 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 2/3 | E 146/200 Ended | E Time: 58.410s | ~Time Left: 3154.115s |  Train Loss: 0.0908 | Train Acc. 96.9714% | Test Loss: 0.1524 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 2/3 | E 147/200 Ended | E Time: 58.178s | ~Time Left: 3083.450s |  Train Loss: 0.0903 | Train Acc. 96.9214% | Test Loss: 0.0867 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 2/3 | E 148/200 Ended | E Time: 58.220s | ~Time Left: 3027.453s |  Train Loss: 0.0781 | Train Acc. 97.3143% | Test Loss: 0.0788 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 2/3 | E 149/200 Ended | E Time: 58.561s | ~Time Left: 2986.610s |  Train Loss: 0.0914 | Train Acc. 96.8714% | Test Loss: 0.0963 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 2/3 | E 150/200 Ended | E Time: 59.268s | ~Time Left: 2963.422s |  Train Loss: 0.0820 | Train Acc. 97.1357% | Test Loss: 0.1192 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 2/3 | E 151/200 Ended | E Time: 58.842s | ~Time Left: 2883.249s |  Train Loss: 0.0875 | Train Acc. 97.0143% | Test Loss: 0.1159 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 2/3 | E 152/200 Ended | E Time: 58.138s | ~Time Left: 2790.635s |  Train Loss: 0.0878 | Train Acc. 96.7929% | Test Loss: 0.0958 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 2/3 | E 153/200 Ended | E Time: 58.645s | ~Time Left: 2756.295s |  Train Loss: 0.0872 | Train Acc. 97.0857% | Test Loss: 0.1391 | Test Acc. 95.1429%
+AdamP on CRC_transformed: T 2/3 | E 154/200 Ended | E Time: 58.438s | ~Time Left: 2688.152s |  Train Loss: 0.0770 | Train Acc. 97.4429% | Test Loss: 0.4660 | Test Acc. 90.7857%
+AdamP on CRC_transformed: T 2/3 | E 155/200 Ended | E Time: 58.672s | ~Time Left: 2640.228s |  Train Loss: 0.0908 | Train Acc. 96.9571% | Test Loss: 0.1020 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 2/3 | E 156/200 Ended | E Time: 58.362s | ~Time Left: 2567.911s |  Train Loss: 0.0835 | Train Acc. 97.2000% | Test Loss: 0.0687 | Test Acc. 97.9286%
+AdamP on CRC_transformed: T 2/3 | E 157/200 Ended | E Time: 58.321s | ~Time Left: 2507.805s |  Train Loss: 0.0801 | Train Acc. 97.2857% | Test Loss: 0.0876 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 2/3 | E 158/200 Ended | E Time: 58.532s | ~Time Left: 2458.324s |  Train Loss: 0.0871 | Train Acc. 96.9857% | Test Loss: 0.2397 | Test Acc. 93.5000%
+AdamP on CRC_transformed: T 2/3 | E 159/200 Ended | E Time: 58.383s | ~Time Left: 2393.705s |  Train Loss: 0.0831 | Train Acc. 97.1643% | Test Loss: 0.0935 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 2/3 | E 160/200 Ended | E Time: 58.704s | ~Time Left: 2348.173s |  Train Loss: 0.0798 | Train Acc. 97.1500% | Test Loss: 0.0920 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 2/3 | E 161/200 Ended | E Time: 58.133s | ~Time Left: 2267.181s |  Train Loss: 0.0748 | Train Acc. 97.4357% | Test Loss: 0.1190 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 2/3 | E 162/200 Ended | E Time: 58.752s | ~Time Left: 2232.582s |  Train Loss: 0.0809 | Train Acc. 97.1286% | Test Loss: 0.0884 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 2/3 | E 163/200 Ended | E Time: 58.188s | ~Time Left: 2152.953s |  Train Loss: 0.0840 | Train Acc. 97.2214% | Test Loss: 0.0765 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 2/3 | E 164/200 Ended | E Time: 58.577s | ~Time Left: 2108.760s |  Train Loss: 0.0775 | Train Acc. 97.3143% | Test Loss: 0.0650 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 2/3 | E 165/200 Ended | E Time: 58.368s | ~Time Left: 2042.878s |  Train Loss: 0.0730 | Train Acc. 97.4714% | Test Loss: 0.1042 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 2/3 | E 166/200 Ended | E Time: 57.982s | ~Time Left: 1971.396s |  Train Loss: 0.0835 | Train Acc. 97.1571% | Test Loss: 0.2042 | Test Acc. 94.1429%
+AdamP on CRC_transformed: T 2/3 | E 167/200 Ended | E Time: 59.016s | ~Time Left: 1947.541s |  Train Loss: 0.0843 | Train Acc. 97.2429% | Test Loss: 0.1200 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 2/3 | E 168/200 Ended | E Time: 58.414s | ~Time Left: 1869.241s |  Train Loss: 0.0874 | Train Acc. 97.0429% | Test Loss: 0.1146 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 2/3 | E 169/200 Ended | E Time: 58.516s | ~Time Left: 1813.982s |  Train Loss: 0.0865 | Train Acc. 97.0643% | Test Loss: 0.0988 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 2/3 | E 170/200 Ended | E Time: 58.784s | ~Time Left: 1763.516s |  Train Loss: 0.0743 | Train Acc. 97.4571% | Test Loss: 0.1077 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 2/3 | E 171/200 Ended | E Time: 58.584s | ~Time Left: 1698.942s |  Train Loss: 0.0770 | Train Acc. 97.3214% | Test Loss: 0.1076 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 2/3 | E 172/200 Ended | E Time: 58.477s | ~Time Left: 1637.344s |  Train Loss: 0.0725 | Train Acc. 97.5071% | Test Loss: 0.1106 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 2/3 | E 173/200 Ended | E Time: 58.450s | ~Time Left: 1578.140s |  Train Loss: 0.0783 | Train Acc. 97.2143% | Test Loss: 0.0844 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 2/3 | E 174/200 Ended | E Time: 58.388s | ~Time Left: 1518.093s |  Train Loss: 0.0777 | Train Acc. 97.3571% | Test Loss: 0.1201 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 2/3 | E 175/200 Ended | E Time: 58.383s | ~Time Left: 1459.571s |  Train Loss: 0.0755 | Train Acc. 97.3571% | Test Loss: 0.1175 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 2/3 | E 176/200 Ended | E Time: 58.945s | ~Time Left: 1414.675s |  Train Loss: 0.0821 | Train Acc. 97.1929% | Test Loss: 0.1061 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 2/3 | E 177/200 Ended | E Time: 58.370s | ~Time Left: 1342.520s |  Train Loss: 0.0773 | Train Acc. 97.2857% | Test Loss: 0.1072 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 2/3 | E 178/200 Ended | E Time: 58.680s | ~Time Left: 1290.966s |  Train Loss: 0.0771 | Train Acc. 97.3786% | Test Loss: 0.0901 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 2/3 | E 179/200 Ended | E Time: 58.400s | ~Time Left: 1226.408s |  Train Loss: 0.0827 | Train Acc. 97.3214% | Test Loss: 0.0803 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 2/3 | E 180/200 Ended | E Time: 59.217s | ~Time Left: 1184.339s |  Train Loss: 0.0731 | Train Acc. 97.3929% | Test Loss: 0.1217 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 2/3 | E 181/200 Ended | E Time: 58.453s | ~Time Left: 1110.600s |  Train Loss: 0.0725 | Train Acc. 97.6143% | Test Loss: 0.0759 | Test Acc. 97.5714%
+AdamP on CRC_transformed: T 2/3 | E 182/200 Ended | E Time: 58.334s | ~Time Left: 1050.005s |  Train Loss: 0.0751 | Train Acc. 97.4500% | Test Loss: 0.0720 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 2/3 | E 183/200 Ended | E Time: 58.209s | ~Time Left: 989.555s |  Train Loss: 0.0690 | Train Acc. 97.6071% | Test Loss: 0.1451 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 2/3 | E 184/200 Ended | E Time: 58.533s | ~Time Left: 936.532s |  Train Loss: 0.0734 | Train Acc. 97.5857% | Test Loss: 0.0828 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 2/3 | E 185/200 Ended | E Time: 58.561s | ~Time Left: 878.414s |  Train Loss: 0.0708 | Train Acc. 97.5357% | Test Loss: 0.0778 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 2/3 | E 186/200 Ended | E Time: 58.962s | ~Time Left: 825.467s |  Train Loss: 0.0741 | Train Acc. 97.3786% | Test Loss: 0.0676 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 2/3 | E 187/200 Ended | E Time: 58.287s | ~Time Left: 757.727s |  Train Loss: 0.0640 | Train Acc. 97.7000% | Test Loss: 0.0903 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 2/3 | E 188/200 Ended | E Time: 58.295s | ~Time Left: 699.542s |  Train Loss: 0.0745 | Train Acc. 97.4857% | Test Loss: 0.1032 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 2/3 | E 189/200 Ended | E Time: 58.722s | ~Time Left: 645.938s |  Train Loss: 0.0808 | Train Acc. 97.2643% | Test Loss: 0.3280 | Test Acc. 90.4286%
+AdamP on CRC_transformed: T 2/3 | E 190/200 Ended | E Time: 58.850s | ~Time Left: 588.502s |  Train Loss: 0.0672 | Train Acc. 97.6857% | Test Loss: 0.0596 | Test Acc. 98.2857%
+AdamP on CRC_transformed: T 2/3 | E 191/200 Ended | E Time: 58.705s | ~Time Left: 528.346s |  Train Loss: 0.0742 | Train Acc. 97.5214% | Test Loss: 0.0794 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 2/3 | E 192/200 Ended | E Time: 58.528s | ~Time Left: 468.222s |  Train Loss: 0.0629 | Train Acc. 97.7786% | Test Loss: 0.1044 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 2/3 | E 193/200 Ended | E Time: 58.446s | ~Time Left: 409.124s |  Train Loss: 0.0749 | Train Acc. 97.4714% | Test Loss: 0.1300 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 2/3 | E 194/200 Ended | E Time: 58.823s | ~Time Left: 352.940s |  Train Loss: 0.0668 | Train Acc. 97.6143% | Test Loss: 0.1164 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 2/3 | E 195/200 Ended | E Time: 58.831s | ~Time Left: 294.153s |  Train Loss: 0.0700 | Train Acc. 97.6286% | Test Loss: 0.0785 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 2/3 | E 196/200 Ended | E Time: 58.708s | ~Time Left: 234.834s |  Train Loss: 0.0719 | Train Acc. 97.5000% | Test Loss: 0.0634 | Test Acc. 97.9286%
+AdamP on CRC_transformed: T 2/3 | E 197/200 Ended | E Time: 58.407s | ~Time Left: 175.222s |  Train Loss: 0.0673 | Train Acc. 97.5929% | Test Loss: 0.0711 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 2/3 | E 198/200 Ended | E Time: 58.494s | ~Time Left: 116.988s |  Train Loss: 0.0738 | Train Acc. 97.4214% | Test Loss: 0.1703 | Test Acc. 95.0000%
+AdamP on CRC_transformed: T 2/3 | E 199/200 Ended | E Time: 58.455s | ~Time Left: 58.455s |  Train Loss: 0.0780 | Train Acc. 97.2429% | Test Loss: 0.1313 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 2/3 | E 200/200 Ended | E Time: 58.167s | ~Time Left: 0.000s |  Train Loss: 0.0666 | Train Acc. 97.5929% | Test Loss: 0.1819 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 3/3 | E 1/200 Ended | E Time: 58.481s | ~Time Left: 11637.756s |  Train Loss: 1.0617 | Train Acc. 57.8214% | Test Loss: 0.8105 | Test Acc. 69.8571%
+AdamP on CRC_transformed: T 3/3 | E 2/200 Ended | E Time: 58.738s | ~Time Left: 11630.175s |  Train Loss: 0.8183 | Train Acc. 69.6500% | Test Loss: 0.7868 | Test Acc. 70.9286%
+AdamP on CRC_transformed: T 3/3 | E 3/200 Ended | E Time: 59.117s | ~Time Left: 11646.065s |  Train Loss: 0.7266 | Train Acc. 73.0714% | Test Loss: 1.3175 | Test Acc. 56.4286%
+AdamP on CRC_transformed: T 3/3 | E 4/200 Ended | E Time: 58.724s | ~Time Left: 11509.910s |  Train Loss: 0.6029 | Train Acc. 78.1714% | Test Loss: 0.6228 | Test Acc. 78.2143%
+AdamP on CRC_transformed: T 3/3 | E 5/200 Ended | E Time: 58.859s | ~Time Left: 11477.504s |  Train Loss: 0.5174 | Train Acc. 81.5357% | Test Loss: 0.5036 | Test Acc. 82.0000%
+AdamP on CRC_transformed: T 3/3 | E 6/200 Ended | E Time: 58.222s | ~Time Left: 11295.162s |  Train Loss: 0.4396 | Train Acc. 84.3857% | Test Loss: 0.6383 | Test Acc. 73.7143%
+AdamP on CRC_transformed: T 3/3 | E 7/200 Ended | E Time: 58.351s | ~Time Left: 11261.747s |  Train Loss: 0.3796 | Train Acc. 86.2643% | Test Loss: 0.5870 | Test Acc. 78.2143%
+AdamP on CRC_transformed: T 3/3 | E 8/200 Ended | E Time: 58.650s | ~Time Left: 11260.724s |  Train Loss: 0.3443 | Train Acc. 87.6571% | Test Loss: 0.3752 | Test Acc. 86.8571%
+AdamP on CRC_transformed: T 3/3 | E 9/200 Ended | E Time: 58.601s | ~Time Left: 11192.741s |  Train Loss: 0.3397 | Train Acc. 88.2714% | Test Loss: 0.3074 | Test Acc. 89.1429%
+AdamP on CRC_transformed: T 3/3 | E 10/200 Ended | E Time: 58.765s | ~Time Left: 11165.326s |  Train Loss: 0.3055 | Train Acc. 89.3714% | Test Loss: 0.5253 | Test Acc. 82.3571%
+AdamP on CRC_transformed: T 3/3 | E 11/200 Ended | E Time: 58.339s | ~Time Left: 11025.992s |  Train Loss: 0.3058 | Train Acc. 89.7357% | Test Loss: 0.5903 | Test Acc. 78.3571%
+AdamP on CRC_transformed: T 3/3 | E 12/200 Ended | E Time: 58.329s | ~Time Left: 10965.808s |  Train Loss: 0.3120 | Train Acc. 89.3571% | Test Loss: 0.3599 | Test Acc. 85.8571%
+AdamP on CRC_transformed: T 3/3 | E 13/200 Ended | E Time: 58.676s | ~Time Left: 10972.473s |  Train Loss: 0.2701 | Train Acc. 90.7786% | Test Loss: 0.2274 | Test Acc. 92.7857%
+AdamP on CRC_transformed: T 3/3 | E 14/200 Ended | E Time: 58.547s | ~Time Left: 10889.701s |  Train Loss: 0.2758 | Train Acc. 90.4571% | Test Loss: 0.2922 | Test Acc. 89.2857%
+AdamP on CRC_transformed: T 3/3 | E 15/200 Ended | E Time: 58.182s | ~Time Left: 10763.696s |  Train Loss: 0.2573 | Train Acc. 91.0714% | Test Loss: 0.6081 | Test Acc. 81.7143%
+AdamP on CRC_transformed: T 3/3 | E 16/200 Ended | E Time: 59.645s | ~Time Left: 10974.760s |  Train Loss: 0.2459 | Train Acc. 91.6143% | Test Loss: 0.2050 | Test Acc. 92.8571%
+AdamP on CRC_transformed: T 3/3 | E 17/200 Ended | E Time: 58.273s | ~Time Left: 10663.894s |  Train Loss: 0.2357 | Train Acc. 91.7571% | Test Loss: 0.2142 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 3/3 | E 18/200 Ended | E Time: 58.351s | ~Time Left: 10619.845s |  Train Loss: 0.2378 | Train Acc. 91.8643% | Test Loss: 0.1398 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 3/3 | E 19/200 Ended | E Time: 58.634s | ~Time Left: 10612.832s |  Train Loss: 0.2347 | Train Acc. 91.8857% | Test Loss: 0.2185 | Test Acc. 92.3571%
+AdamP on CRC_transformed: T 3/3 | E 20/200 Ended | E Time: 58.326s | ~Time Left: 10498.599s |  Train Loss: 0.2369 | Train Acc. 91.6786% | Test Loss: 0.2651 | Test Acc. 91.2143%
+AdamP on CRC_transformed: T 3/3 | E 21/200 Ended | E Time: 58.644s | ~Time Left: 10497.190s |  Train Loss: 0.2475 | Train Acc. 91.6714% | Test Loss: 0.4930 | Test Acc. 81.9286%
+AdamP on CRC_transformed: T 3/3 | E 22/200 Ended | E Time: 58.650s | ~Time Left: 10439.633s |  Train Loss: 0.2260 | Train Acc. 92.1929% | Test Loss: 0.1800 | Test Acc. 93.3571%
+AdamP on CRC_transformed: T 3/3 | E 23/200 Ended | E Time: 58.322s | ~Time Left: 10323.027s |  Train Loss: 0.2210 | Train Acc. 92.6071% | Test Loss: 0.2014 | Test Acc. 93.5000%
+AdamP on CRC_transformed: T 3/3 | E 24/200 Ended | E Time: 58.499s | ~Time Left: 10295.781s |  Train Loss: 0.2170 | Train Acc. 92.6929% | Test Loss: 0.1681 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 3/3 | E 25/200 Ended | E Time: 58.392s | ~Time Left: 10218.541s |  Train Loss: 0.2181 | Train Acc. 92.8500% | Test Loss: 0.2453 | Test Acc. 92.2857%
+AdamP on CRC_transformed: T 3/3 | E 26/200 Ended | E Time: 58.560s | ~Time Left: 10189.527s |  Train Loss: 0.2204 | Train Acc. 92.5357% | Test Loss: 0.1635 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 3/3 | E 27/200 Ended | E Time: 58.315s | ~Time Left: 10088.562s |  Train Loss: 0.2104 | Train Acc. 92.7429% | Test Loss: 0.1451 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 3/3 | E 28/200 Ended | E Time: 58.935s | ~Time Left: 10136.895s |  Train Loss: 0.2119 | Train Acc. 92.9714% | Test Loss: 0.1748 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 3/3 | E 29/200 Ended | E Time: 58.613s | ~Time Left: 10022.901s |  Train Loss: 0.2022 | Train Acc. 93.1500% | Test Loss: 0.2771 | Test Acc. 90.2143%
+AdamP on CRC_transformed: T 3/3 | E 30/200 Ended | E Time: 58.543s | ~Time Left: 9952.345s |  Train Loss: 0.2094 | Train Acc. 92.9571% | Test Loss: 0.3102 | Test Acc. 90.1429%
+AdamP on CRC_transformed: T 3/3 | E 31/200 Ended | E Time: 58.995s | ~Time Left: 9970.130s |  Train Loss: 0.2049 | Train Acc. 92.9571% | Test Loss: 0.1671 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 3/3 | E 32/200 Ended | E Time: 58.351s | ~Time Left: 9802.997s |  Train Loss: 0.2017 | Train Acc. 93.0643% | Test Loss: 0.1481 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 3/3 | E 33/200 Ended | E Time: 58.687s | ~Time Left: 9800.794s |  Train Loss: 0.1929 | Train Acc. 93.4143% | Test Loss: 0.3206 | Test Acc. 87.4286%
+AdamP on CRC_transformed: T 3/3 | E 34/200 Ended | E Time: 58.408s | ~Time Left: 9695.774s |  Train Loss: 0.1978 | Train Acc. 93.2643% | Test Loss: 0.2582 | Test Acc. 90.9286%
+AdamP on CRC_transformed: T 3/3 | E 35/200 Ended | E Time: 58.254s | ~Time Left: 9611.916s |  Train Loss: 0.2028 | Train Acc. 93.0857% | Test Loss: 0.1795 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 3/3 | E 36/200 Ended | E Time: 58.633s | ~Time Left: 9615.793s |  Train Loss: 0.1802 | Train Acc. 93.7857% | Test Loss: 0.1694 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 3/3 | E 37/200 Ended | E Time: 58.489s | ~Time Left: 9533.773s |  Train Loss: 0.1828 | Train Acc. 93.8429% | Test Loss: 0.2000 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 3/3 | E 38/200 Ended | E Time: 58.605s | ~Time Left: 9494.041s |  Train Loss: 0.1944 | Train Acc. 93.6143% | Test Loss: 0.3635 | Test Acc. 87.6429%
+AdamP on CRC_transformed: T 3/3 | E 39/200 Ended | E Time: 58.346s | ~Time Left: 9393.746s |  Train Loss: 0.1699 | Train Acc. 94.2429% | Test Loss: 0.2425 | Test Acc. 92.0000%
+AdamP on CRC_transformed: T 3/3 | E 40/200 Ended | E Time: 58.569s | ~Time Left: 9371.013s |  Train Loss: 0.1737 | Train Acc. 94.0286% | Test Loss: 0.4674 | Test Acc. 87.1429%
+AdamP on CRC_transformed: T 3/3 | E 41/200 Ended | E Time: 58.788s | ~Time Left: 9347.268s |  Train Loss: 0.1777 | Train Acc. 93.9143% | Test Loss: 0.1651 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 3/3 | E 42/200 Ended | E Time: 58.980s | ~Time Left: 9318.826s |  Train Loss: 0.1768 | Train Acc. 93.9357% | Test Loss: 0.1859 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 3/3 | E 43/200 Ended | E Time: 58.861s | ~Time Left: 9241.202s |  Train Loss: 0.1929 | Train Acc. 93.6000% | Test Loss: 0.2004 | Test Acc. 92.7143%
+AdamP on CRC_transformed: T 3/3 | E 44/200 Ended | E Time: 58.312s | ~Time Left: 9096.644s |  Train Loss: 0.1701 | Train Acc. 94.3000% | Test Loss: 1.9072 | Test Acc. 80.2857%
+AdamP on CRC_transformed: T 3/3 | E 45/200 Ended | E Time: 58.502s | ~Time Left: 9067.757s |  Train Loss: 0.1669 | Train Acc. 94.2429% | Test Loss: 0.1416 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 3/3 | E 46/200 Ended | E Time: 58.220s | ~Time Left: 8965.940s |  Train Loss: 0.1727 | Train Acc. 94.2857% | Test Loss: 0.1394 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 3/3 | E 47/200 Ended | E Time: 58.792s | ~Time Left: 8995.181s |  Train Loss: 0.1682 | Train Acc. 94.3000% | Test Loss: 0.1297 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 48/200 Ended | E Time: 58.704s | ~Time Left: 8923.025s |  Train Loss: 0.1618 | Train Acc. 94.3000% | Test Loss: 0.2161 | Test Acc. 92.7857%
+AdamP on CRC_transformed: T 3/3 | E 49/200 Ended | E Time: 58.997s | ~Time Left: 8908.607s |  Train Loss: 0.1626 | Train Acc. 94.5857% | Test Loss: 0.1352 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 3/3 | E 50/200 Ended | E Time: 58.507s | ~Time Left: 8776.002s |  Train Loss: 0.1593 | Train Acc. 94.5929% | Test Loss: 0.1355 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 3/3 | E 51/200 Ended | E Time: 59.014s | ~Time Left: 8793.052s |  Train Loss: 0.1596 | Train Acc. 94.6643% | Test Loss: 0.1466 | Test Acc. 95.2143%
+AdamP on CRC_transformed: T 3/3 | E 52/200 Ended | E Time: 58.546s | ~Time Left: 8664.843s |  Train Loss: 0.1517 | Train Acc. 94.5786% | Test Loss: 0.1487 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 3/3 | E 53/200 Ended | E Time: 58.629s | ~Time Left: 8618.415s |  Train Loss: 0.1603 | Train Acc. 94.5214% | Test Loss: 0.1787 | Test Acc. 93.5000%
+AdamP on CRC_transformed: T 3/3 | E 54/200 Ended | E Time: 59.135s | ~Time Left: 8633.641s |  Train Loss: 0.1653 | Train Acc. 94.3857% | Test Loss: 0.1882 | Test Acc. 94.0714%
+AdamP on CRC_transformed: T 3/3 | E 55/200 Ended | E Time: 58.541s | ~Time Left: 8488.420s |  Train Loss: 0.1567 | Train Acc. 94.6000% | Test Loss: 0.4087 | Test Acc. 87.0714%
+AdamP on CRC_transformed: T 3/3 | E 56/200 Ended | E Time: 58.816s | ~Time Left: 8469.468s |  Train Loss: 0.1657 | Train Acc. 94.4714% | Test Loss: 0.1554 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 3/3 | E 57/200 Ended | E Time: 58.759s | ~Time Left: 8402.499s |  Train Loss: 0.1564 | Train Acc. 94.4286% | Test Loss: 0.1423 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 3/3 | E 58/200 Ended | E Time: 58.753s | ~Time Left: 8342.991s |  Train Loss: 0.1405 | Train Acc. 95.1500% | Test Loss: 0.1937 | Test Acc. 93.7857%
+AdamP on CRC_transformed: T 3/3 | E 59/200 Ended | E Time: 58.369s | ~Time Left: 8230.020s |  Train Loss: 0.1475 | Train Acc. 94.9571% | Test Loss: 0.4499 | Test Acc. 88.5000%
+AdamP on CRC_transformed: T 3/3 | E 60/200 Ended | E Time: 58.872s | ~Time Left: 8242.141s |  Train Loss: 0.1460 | Train Acc. 95.0143% | Test Loss: 0.1150 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 3/3 | E 61/200 Ended | E Time: 58.245s | ~Time Left: 8096.062s |  Train Loss: 0.1674 | Train Acc. 94.3286% | Test Loss: 0.1102 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 3/3 | E 62/200 Ended | E Time: 58.858s | ~Time Left: 8122.380s |  Train Loss: 0.1547 | Train Acc. 95.0286% | Test Loss: 0.1495 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 3/3 | E 63/200 Ended | E Time: 59.205s | ~Time Left: 8111.146s |  Train Loss: 0.1377 | Train Acc. 95.3571% | Test Loss: 0.2682 | Test Acc. 90.8571%
+AdamP on CRC_transformed: T 3/3 | E 64/200 Ended | E Time: 58.536s | ~Time Left: 7960.872s |  Train Loss: 0.1467 | Train Acc. 95.1286% | Test Loss: 0.1274 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 3/3 | E 65/200 Ended | E Time: 58.622s | ~Time Left: 7913.985s |  Train Loss: 0.1269 | Train Acc. 95.5643% | Test Loss: 0.1191 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 3/3 | E 66/200 Ended | E Time: 58.726s | ~Time Left: 7869.325s |  Train Loss: 0.1461 | Train Acc. 94.9786% | Test Loss: 0.1990 | Test Acc. 93.2857%
+AdamP on CRC_transformed: T 3/3 | E 67/200 Ended | E Time: 59.445s | ~Time Left: 7906.192s |  Train Loss: 0.1413 | Train Acc. 95.1929% | Test Loss: 0.1316 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 3/3 | E 68/200 Ended | E Time: 58.839s | ~Time Left: 7766.735s |  Train Loss: 0.1350 | Train Acc. 95.4357% | Test Loss: 0.1937 | Test Acc. 93.0714%
+AdamP on CRC_transformed: T 3/3 | E 69/200 Ended | E Time: 59.635s | ~Time Left: 7812.146s |  Train Loss: 0.1367 | Train Acc. 95.1571% | Test Loss: 0.1384 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 3/3 | E 70/200 Ended | E Time: 58.603s | ~Time Left: 7618.438s |  Train Loss: 0.1360 | Train Acc. 95.5786% | Test Loss: 0.1292 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 71/200 Ended | E Time: 58.521s | ~Time Left: 7549.162s |  Train Loss: 0.1362 | Train Acc. 95.4071% | Test Loss: 0.1486 | Test Acc. 94.5714%
+AdamP on CRC_transformed: T 3/3 | E 72/200 Ended | E Time: 59.209s | ~Time Left: 7578.724s |  Train Loss: 0.1346 | Train Acc. 95.2714% | Test Loss: 0.2308 | Test Acc. 92.1429%
+AdamP on CRC_transformed: T 3/3 | E 73/200 Ended | E Time: 58.547s | ~Time Left: 7435.441s |  Train Loss: 0.1334 | Train Acc. 95.4429% | Test Loss: 0.2019 | Test Acc. 93.9286%
+AdamP on CRC_transformed: T 3/3 | E 74/200 Ended | E Time: 58.763s | ~Time Left: 7404.138s |  Train Loss: 0.1299 | Train Acc. 95.5929% | Test Loss: 0.1445 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 75/200 Ended | E Time: 58.655s | ~Time Left: 7331.859s |  Train Loss: 0.1356 | Train Acc. 95.4643% | Test Loss: 0.2053 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 3/3 | E 76/200 Ended | E Time: 58.659s | ~Time Left: 7273.693s |  Train Loss: 0.1286 | Train Acc. 95.6500% | Test Loss: 0.0922 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 3/3 | E 77/200 Ended | E Time: 58.623s | ~Time Left: 7210.576s |  Train Loss: 0.1392 | Train Acc. 95.1000% | Test Loss: 0.1768 | Test Acc. 93.7143%
+AdamP on CRC_transformed: T 3/3 | E 78/200 Ended | E Time: 58.414s | ~Time Left: 7126.540s |  Train Loss: 0.1234 | Train Acc. 95.7071% | Test Loss: 0.1759 | Test Acc. 93.8571%
+AdamP on CRC_transformed: T 3/3 | E 79/200 Ended | E Time: 58.633s | ~Time Left: 7094.551s |  Train Loss: 0.1327 | Train Acc. 95.3929% | Test Loss: 0.1522 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 3/3 | E 80/200 Ended | E Time: 58.866s | ~Time Left: 7063.949s |  Train Loss: 0.1202 | Train Acc. 96.0929% | Test Loss: 0.1545 | Test Acc. 94.8571%
+AdamP on CRC_transformed: T 3/3 | E 81/200 Ended | E Time: 59.171s | ~Time Left: 7041.318s |  Train Loss: 0.1180 | Train Acc. 95.9857% | Test Loss: 0.1113 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 3/3 | E 82/200 Ended | E Time: 58.627s | ~Time Left: 6917.982s |  Train Loss: 0.1128 | Train Acc. 95.9143% | Test Loss: 0.1318 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 3/3 | E 83/200 Ended | E Time: 58.461s | ~Time Left: 6839.980s |  Train Loss: 0.1226 | Train Acc. 95.8000% | Test Loss: 0.0884 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 3/3 | E 84/200 Ended | E Time: 59.026s | ~Time Left: 6847.061s |  Train Loss: 0.1124 | Train Acc. 96.1571% | Test Loss: 0.1763 | Test Acc. 94.7143%
+AdamP on CRC_transformed: T 3/3 | E 85/200 Ended | E Time: 58.257s | ~Time Left: 6699.581s |  Train Loss: 0.1291 | Train Acc. 95.7643% | Test Loss: 0.1920 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 3/3 | E 86/200 Ended | E Time: 58.502s | ~Time Left: 6669.252s |  Train Loss: 0.1200 | Train Acc. 95.7571% | Test Loss: 0.2970 | Test Acc. 91.9286%
+AdamP on CRC_transformed: T 3/3 | E 87/200 Ended | E Time: 58.689s | ~Time Left: 6631.909s |  Train Loss: 0.1170 | Train Acc. 95.9571% | Test Loss: 0.1050 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 3/3 | E 88/200 Ended | E Time: 58.764s | ~Time Left: 6581.519s |  Train Loss: 0.1279 | Train Acc. 95.6000% | Test Loss: 0.0970 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 3/3 | E 89/200 Ended | E Time: 58.569s | ~Time Left: 6501.193s |  Train Loss: 0.1329 | Train Acc. 95.5429% | Test Loss: 0.2345 | Test Acc. 93.0714%
+AdamP on CRC_transformed: T 3/3 | E 90/200 Ended | E Time: 58.526s | ~Time Left: 6437.901s |  Train Loss: 0.1172 | Train Acc. 96.0000% | Test Loss: 0.1063 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 3/3 | E 91/200 Ended | E Time: 58.548s | ~Time Left: 6381.780s |  Train Loss: 0.1142 | Train Acc. 96.3071% | Test Loss: 0.1209 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 3/3 | E 92/200 Ended | E Time: 58.616s | ~Time Left: 6330.522s |  Train Loss: 0.1131 | Train Acc. 96.0000% | Test Loss: 0.1150 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 3/3 | E 93/200 Ended | E Time: 58.872s | ~Time Left: 6299.268s |  Train Loss: 0.1232 | Train Acc. 95.8500% | Test Loss: 0.0954 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 3/3 | E 94/200 Ended | E Time: 58.760s | ~Time Left: 6228.531s |  Train Loss: 0.1041 | Train Acc. 96.3786% | Test Loss: 0.2318 | Test Acc. 91.7857%
+AdamP on CRC_transformed: T 3/3 | E 95/200 Ended | E Time: 58.614s | ~Time Left: 6154.477s |  Train Loss: 0.1086 | Train Acc. 96.0786% | Test Loss: 0.0923 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 3/3 | E 96/200 Ended | E Time: 58.440s | ~Time Left: 6077.752s |  Train Loss: 0.1131 | Train Acc. 96.0786% | Test Loss: 0.0911 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 3/3 | E 97/200 Ended | E Time: 58.446s | ~Time Left: 6019.946s |  Train Loss: 0.1101 | Train Acc. 96.1500% | Test Loss: 0.1282 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 3/3 | E 98/200 Ended | E Time: 58.239s | ~Time Left: 5940.370s |  Train Loss: 0.1152 | Train Acc. 96.2000% | Test Loss: 0.1081 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 3/3 | E 99/200 Ended | E Time: 58.740s | ~Time Left: 5932.742s |  Train Loss: 0.1141 | Train Acc. 95.8643% | Test Loss: 0.1297 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 3/3 | E 100/200 Ended | E Time: 58.678s | ~Time Left: 5867.769s |  Train Loss: 0.1077 | Train Acc. 96.3714% | Test Loss: 0.1151 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 3/3 | E 101/200 Ended | E Time: 58.578s | ~Time Left: 5799.206s |  Train Loss: 0.1075 | Train Acc. 96.4000% | Test Loss: 0.0811 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 3/3 | E 102/200 Ended | E Time: 58.920s | ~Time Left: 5774.170s |  Train Loss: 0.1065 | Train Acc. 96.2929% | Test Loss: 0.1402 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 103/200 Ended | E Time: 58.534s | ~Time Left: 5677.827s |  Train Loss: 0.1158 | Train Acc. 95.9429% | Test Loss: 0.1526 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 3/3 | E 104/200 Ended | E Time: 58.686s | ~Time Left: 5633.833s |  Train Loss: 0.1064 | Train Acc. 96.2357% | Test Loss: 0.1374 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 3/3 | E 105/200 Ended | E Time: 58.921s | ~Time Left: 5597.467s |  Train Loss: 0.1081 | Train Acc. 96.2071% | Test Loss: 0.1126 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 3/3 | E 106/200 Ended | E Time: 58.665s | ~Time Left: 5514.476s |  Train Loss: 0.1020 | Train Acc. 96.4286% | Test Loss: 0.1386 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 3/3 | E 107/200 Ended | E Time: 58.648s | ~Time Left: 5454.226s |  Train Loss: 0.1082 | Train Acc. 96.2643% | Test Loss: 0.3295 | Test Acc. 90.5714%
+AdamP on CRC_transformed: T 3/3 | E 108/200 Ended | E Time: 58.198s | ~Time Left: 5354.191s |  Train Loss: 0.1047 | Train Acc. 96.4714% | Test Loss: 0.1738 | Test Acc. 94.1429%
+AdamP on CRC_transformed: T 3/3 | E 109/200 Ended | E Time: 58.655s | ~Time Left: 5337.636s |  Train Loss: 0.1109 | Train Acc. 96.1429% | Test Loss: 0.1060 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 3/3 | E 110/200 Ended | E Time: 58.292s | ~Time Left: 5246.293s |  Train Loss: 0.1061 | Train Acc. 96.1500% | Test Loss: 0.0963 | Test Acc. 97.0714%
+AdamP on CRC_transformed: T 3/3 | E 111/200 Ended | E Time: 58.520s | ~Time Left: 5208.269s |  Train Loss: 0.1038 | Train Acc. 96.5929% | Test Loss: 0.1601 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 3/3 | E 112/200 Ended | E Time: 58.526s | ~Time Left: 5150.300s |  Train Loss: 0.1002 | Train Acc. 96.6000% | Test Loss: 0.1219 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 3/3 | E 113/200 Ended | E Time: 58.360s | ~Time Left: 5077.283s |  Train Loss: 0.1035 | Train Acc. 96.3786% | Test Loss: 0.1320 | Test Acc. 95.6429%
+AdamP on CRC_transformed: T 3/3 | E 114/200 Ended | E Time: 58.430s | ~Time Left: 5025.009s |  Train Loss: 0.0975 | Train Acc. 96.6357% | Test Loss: 0.1394 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 3/3 | E 115/200 Ended | E Time: 58.442s | ~Time Left: 4967.607s |  Train Loss: 0.1052 | Train Acc. 96.3714% | Test Loss: 0.1343 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 3/3 | E 116/200 Ended | E Time: 58.589s | ~Time Left: 4921.466s |  Train Loss: 0.0983 | Train Acc. 96.4714% | Test Loss: 0.1068 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 3/3 | E 117/200 Ended | E Time: 58.769s | ~Time Left: 4877.805s |  Train Loss: 0.1056 | Train Acc. 96.5071% | Test Loss: 0.0917 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 3/3 | E 118/200 Ended | E Time: 59.074s | ~Time Left: 4844.052s |  Train Loss: 0.1014 | Train Acc. 96.5500% | Test Loss: 0.1251 | Test Acc. 96.2857%
+AdamP on CRC_transformed: T 3/3 | E 119/200 Ended | E Time: 59.128s | ~Time Left: 4789.365s |  Train Loss: 0.0998 | Train Acc. 96.5214% | Test Loss: 0.1332 | Test Acc. 95.4286%
+AdamP on CRC_transformed: T 3/3 | E 120/200 Ended | E Time: 58.801s | ~Time Left: 4704.075s |  Train Loss: 0.1067 | Train Acc. 96.4286% | Test Loss: 0.0879 | Test Acc. 97.0000%
+AdamP on CRC_transformed: T 3/3 | E 121/200 Ended | E Time: 58.762s | ~Time Left: 4642.235s |  Train Loss: 0.0927 | Train Acc. 96.7357% | Test Loss: 0.1361 | Test Acc. 96.1429%
+AdamP on CRC_transformed: T 3/3 | E 122/200 Ended | E Time: 58.744s | ~Time Left: 4582.016s |  Train Loss: 0.1019 | Train Acc. 96.5000% | Test Loss: 0.0916 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 3/3 | E 123/200 Ended | E Time: 58.506s | ~Time Left: 4504.951s |  Train Loss: 0.0992 | Train Acc. 96.7143% | Test Loss: 0.0906 | Test Acc. 97.2143%
+AdamP on CRC_transformed: T 3/3 | E 124/200 Ended | E Time: 59.540s | ~Time Left: 4525.008s |  Train Loss: 0.0918 | Train Acc. 96.8429% | Test Loss: 0.1896 | Test Acc. 93.2857%
+AdamP on CRC_transformed: T 3/3 | E 125/200 Ended | E Time: 58.181s | ~Time Left: 4363.563s |  Train Loss: 0.0987 | Train Acc. 96.6786% | Test Loss: 0.1040 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 3/3 | E 126/200 Ended | E Time: 58.638s | ~Time Left: 4339.215s |  Train Loss: 0.0987 | Train Acc. 96.6429% | Test Loss: 0.1041 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 3/3 | E 127/200 Ended | E Time: 58.266s | ~Time Left: 4253.429s |  Train Loss: 0.1007 | Train Acc. 96.5143% | Test Loss: 0.1151 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 128/200 Ended | E Time: 58.477s | ~Time Left: 4210.336s |  Train Loss: 0.0901 | Train Acc. 96.8071% | Test Loss: 0.1067 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 3/3 | E 129/200 Ended | E Time: 58.667s | ~Time Left: 4165.376s |  Train Loss: 0.0906 | Train Acc. 96.8286% | Test Loss: 0.0800 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 3/3 | E 130/200 Ended | E Time: 59.385s | ~Time Left: 4156.977s |  Train Loss: 0.1048 | Train Acc. 96.3857% | Test Loss: 0.1100 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 3/3 | E 131/200 Ended | E Time: 58.430s | ~Time Left: 4031.688s |  Train Loss: 0.0856 | Train Acc. 96.9571% | Test Loss: 0.1517 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 3/3 | E 132/200 Ended | E Time: 58.630s | ~Time Left: 3986.838s |  Train Loss: 0.0957 | Train Acc. 96.6857% | Test Loss: 0.1077 | Test Acc. 95.9286%
+AdamP on CRC_transformed: T 3/3 | E 133/200 Ended | E Time: 58.797s | ~Time Left: 3939.382s |  Train Loss: 0.0992 | Train Acc. 96.6143% | Test Loss: 0.1743 | Test Acc. 94.2143%
+AdamP on CRC_transformed: T 3/3 | E 134/200 Ended | E Time: 58.217s | ~Time Left: 3842.290s |  Train Loss: 0.0863 | Train Acc. 96.9786% | Test Loss: 0.1705 | Test Acc. 94.2857%
+AdamP on CRC_transformed: T 3/3 | E 135/200 Ended | E Time: 58.752s | ~Time Left: 3818.876s |  Train Loss: 0.0902 | Train Acc. 96.8214% | Test Loss: 0.1270 | Test Acc. 96.6429%
+AdamP on CRC_transformed: T 3/3 | E 136/200 Ended | E Time: 58.545s | ~Time Left: 3746.908s |  Train Loss: 0.0928 | Train Acc. 96.8500% | Test Loss: 0.1676 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 3/3 | E 137/200 Ended | E Time: 58.800s | ~Time Left: 3704.427s |  Train Loss: 0.0931 | Train Acc. 96.9286% | Test Loss: 0.2878 | Test Acc. 91.0000%
+AdamP on CRC_transformed: T 3/3 | E 138/200 Ended | E Time: 59.291s | ~Time Left: 3676.053s |  Train Loss: 0.0894 | Train Acc. 97.0357% | Test Loss: 0.1161 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 3/3 | E 139/200 Ended | E Time: 58.242s | ~Time Left: 3552.745s |  Train Loss: 0.0912 | Train Acc. 96.7571% | Test Loss: 0.2077 | Test Acc. 94.0714%
+AdamP on CRC_transformed: T 3/3 | E 140/200 Ended | E Time: 58.390s | ~Time Left: 3503.392s |  Train Loss: 0.0903 | Train Acc. 96.8714% | Test Loss: 0.1336 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 3/3 | E 141/200 Ended | E Time: 58.177s | ~Time Left: 3432.470s |  Train Loss: 0.0826 | Train Acc. 97.1000% | Test Loss: 0.1409 | Test Acc. 94.5714%
+AdamP on CRC_transformed: T 3/3 | E 142/200 Ended | E Time: 58.764s | ~Time Left: 3408.308s |  Train Loss: 0.0882 | Train Acc. 97.0000% | Test Loss: 0.2416 | Test Acc. 93.3571%
+AdamP on CRC_transformed: T 3/3 | E 143/200 Ended | E Time: 58.333s | ~Time Left: 3324.995s |  Train Loss: 0.0973 | Train Acc. 96.5214% | Test Loss: 0.2034 | Test Acc. 93.5714%
+AdamP on CRC_transformed: T 3/3 | E 144/200 Ended | E Time: 58.412s | ~Time Left: 3271.046s |  Train Loss: 0.1032 | Train Acc. 96.4286% | Test Loss: 0.1106 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 3/3 | E 145/200 Ended | E Time: 58.831s | ~Time Left: 3235.689s |  Train Loss: 0.0888 | Train Acc. 97.1214% | Test Loss: 0.0886 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 3/3 | E 146/200 Ended | E Time: 58.636s | ~Time Left: 3166.356s |  Train Loss: 0.0872 | Train Acc. 97.0500% | Test Loss: 0.1203 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 147/200 Ended | E Time: 58.682s | ~Time Left: 3110.126s |  Train Loss: 0.0881 | Train Acc. 96.9714% | Test Loss: 0.1041 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 3/3 | E 148/200 Ended | E Time: 58.039s | ~Time Left: 3018.015s |  Train Loss: 0.0927 | Train Acc. 96.9500% | Test Loss: 0.0927 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 3/3 | E 149/200 Ended | E Time: 58.443s | ~Time Left: 2980.595s |  Train Loss: 0.0945 | Train Acc. 96.9357% | Test Loss: 0.2092 | Test Acc. 93.2857%
+AdamP on CRC_transformed: T 3/3 | E 150/200 Ended | E Time: 58.380s | ~Time Left: 2918.980s |  Train Loss: 0.0752 | Train Acc. 97.4214% | Test Loss: 0.1018 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 3/3 | E 151/200 Ended | E Time: 59.244s | ~Time Left: 2902.952s |  Train Loss: 0.0905 | Train Acc. 96.8571% | Test Loss: 0.0974 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 3/3 | E 152/200 Ended | E Time: 58.457s | ~Time Left: 2805.939s |  Train Loss: 0.0864 | Train Acc. 96.9143% | Test Loss: 0.1114 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 3/3 | E 153/200 Ended | E Time: 58.874s | ~Time Left: 2767.086s |  Train Loss: 0.0846 | Train Acc. 97.2143% | Test Loss: 0.0941 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 3/3 | E 154/200 Ended | E Time: 58.599s | ~Time Left: 2695.555s |  Train Loss: 0.0896 | Train Acc. 96.7929% | Test Loss: 0.0904 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 3/3 | E 155/200 Ended | E Time: 58.435s | ~Time Left: 2629.592s |  Train Loss: 0.0871 | Train Acc. 97.0357% | Test Loss: 0.1094 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 3/3 | E 156/200 Ended | E Time: 58.524s | ~Time Left: 2575.067s |  Train Loss: 0.0823 | Train Acc. 97.1571% | Test Loss: 0.0942 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 3/3 | E 157/200 Ended | E Time: 58.630s | ~Time Left: 2521.097s |  Train Loss: 0.0917 | Train Acc. 96.9000% | Test Loss: 0.0933 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 3/3 | E 158/200 Ended | E Time: 58.089s | ~Time Left: 2439.747s |  Train Loss: 0.0823 | Train Acc. 97.1857% | Test Loss: 0.0994 | Test Acc. 96.9286%
+AdamP on CRC_transformed: T 3/3 | E 159/200 Ended | E Time: 58.654s | ~Time Left: 2404.794s |  Train Loss: 0.0829 | Train Acc. 97.3143% | Test Loss: 0.0941 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 3/3 | E 160/200 Ended | E Time: 58.901s | ~Time Left: 2356.035s |  Train Loss: 0.0835 | Train Acc. 97.1643% | Test Loss: 0.0702 | Test Acc. 97.6429%
+AdamP on CRC_transformed: T 3/3 | E 161/200 Ended | E Time: 58.772s | ~Time Left: 2292.118s |  Train Loss: 0.0789 | Train Acc. 97.2786% | Test Loss: 0.1002 | Test Acc. 96.5714%
+AdamP on CRC_transformed: T 3/3 | E 162/200 Ended | E Time: 58.674s | ~Time Left: 2229.619s |  Train Loss: 0.0771 | Train Acc. 97.4714% | Test Loss: 0.1327 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 3/3 | E 163/200 Ended | E Time: 58.232s | ~Time Left: 2154.593s |  Train Loss: 0.0835 | Train Acc. 97.1857% | Test Loss: 0.1042 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 3/3 | E 164/200 Ended | E Time: 58.624s | ~Time Left: 2110.460s |  Train Loss: 0.0867 | Train Acc. 96.9857% | Test Loss: 0.2016 | Test Acc. 94.9286%
+AdamP on CRC_transformed: T 3/3 | E 165/200 Ended | E Time: 59.025s | ~Time Left: 2065.884s |  Train Loss: 0.0782 | Train Acc. 97.3000% | Test Loss: 0.1117 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 166/200 Ended | E Time: 58.286s | ~Time Left: 1981.727s |  Train Loss: 0.0858 | Train Acc. 97.2286% | Test Loss: 0.1550 | Test Acc. 94.6429%
+AdamP on CRC_transformed: T 3/3 | E 167/200 Ended | E Time: 58.906s | ~Time Left: 1943.907s |  Train Loss: 0.1066 | Train Acc. 96.4786% | Test Loss: 0.1037 | Test Acc. 96.4286%
+AdamP on CRC_transformed: T 3/3 | E 168/200 Ended | E Time: 58.770s | ~Time Left: 1880.629s |  Train Loss: 0.0746 | Train Acc. 97.4357% | Test Loss: 0.0999 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 3/3 | E 169/200 Ended | E Time: 58.422s | ~Time Left: 1811.076s |  Train Loss: 0.0789 | Train Acc. 97.3357% | Test Loss: 0.0828 | Test Acc. 97.4286%
+AdamP on CRC_transformed: T 3/3 | E 170/200 Ended | E Time: 58.388s | ~Time Left: 1751.636s |  Train Loss: 0.0838 | Train Acc. 96.9571% | Test Loss: 0.1280 | Test Acc. 95.5000%
+AdamP on CRC_transformed: T 3/3 | E 171/200 Ended | E Time: 58.791s | ~Time Left: 1704.930s |  Train Loss: 0.0743 | Train Acc. 97.3357% | Test Loss: 0.0836 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 3/3 | E 172/200 Ended | E Time: 58.617s | ~Time Left: 1641.290s |  Train Loss: 0.0750 | Train Acc. 97.4429% | Test Loss: 0.1275 | Test Acc. 96.3571%
+AdamP on CRC_transformed: T 3/3 | E 173/200 Ended | E Time: 58.436s | ~Time Left: 1577.782s |  Train Loss: 0.0777 | Train Acc. 97.3286% | Test Loss: 0.0989 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 3/3 | E 174/200 Ended | E Time: 59.015s | ~Time Left: 1534.402s |  Train Loss: 0.0855 | Train Acc. 97.0286% | Test Loss: 0.0957 | Test Acc. 97.7857%
+AdamP on CRC_transformed: T 3/3 | E 175/200 Ended | E Time: 58.744s | ~Time Left: 1468.611s |  Train Loss: 0.0793 | Train Acc. 97.2571% | Test Loss: 0.1018 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 3/3 | E 176/200 Ended | E Time: 58.722s | ~Time Left: 1409.323s |  Train Loss: 0.0760 | Train Acc. 97.3000% | Test Loss: 0.1712 | Test Acc. 95.1429%
+AdamP on CRC_transformed: T 3/3 | E 177/200 Ended | E Time: 58.767s | ~Time Left: 1351.637s |  Train Loss: 0.0771 | Train Acc. 97.2714% | Test Loss: 0.1224 | Test Acc. 95.8571%
+AdamP on CRC_transformed: T 3/3 | E 178/200 Ended | E Time: 58.971s | ~Time Left: 1297.356s |  Train Loss: 0.0816 | Train Acc. 97.2929% | Test Loss: 0.1037 | Test Acc. 96.8571%
+AdamP on CRC_transformed: T 3/3 | E 179/200 Ended | E Time: 58.357s | ~Time Left: 1225.505s |  Train Loss: 0.0804 | Train Acc. 97.3429% | Test Loss: 0.1322 | Test Acc. 96.0000%
+AdamP on CRC_transformed: T 3/3 | E 180/200 Ended | E Time: 58.657s | ~Time Left: 1173.137s |  Train Loss: 0.0821 | Train Acc. 97.2143% | Test Loss: 0.3578 | Test Acc. 88.2857%
+AdamP on CRC_transformed: T 3/3 | E 181/200 Ended | E Time: 58.668s | ~Time Left: 1114.699s |  Train Loss: 0.0749 | Train Acc. 97.2929% | Test Loss: 0.0999 | Test Acc. 96.7143%
+AdamP on CRC_transformed: T 3/3 | E 182/200 Ended | E Time: 58.486s | ~Time Left: 1052.754s |  Train Loss: 0.0734 | Train Acc. 97.4357% | Test Loss: 0.0715 | Test Acc. 98.0714%
+AdamP on CRC_transformed: T 3/3 | E 183/200 Ended | E Time: 58.664s | ~Time Left: 997.284s |  Train Loss: 0.0719 | Train Acc. 97.4500% | Test Loss: 0.1364 | Test Acc. 95.7143%
+AdamP on CRC_transformed: T 3/3 | E 184/200 Ended | E Time: 58.539s | ~Time Left: 936.617s |  Train Loss: 0.0917 | Train Acc. 96.9429% | Test Loss: 0.0798 | Test Acc. 97.5000%
+AdamP on CRC_transformed: T 3/3 | E 185/200 Ended | E Time: 58.328s | ~Time Left: 874.913s |  Train Loss: 0.0705 | Train Acc. 97.6643% | Test Loss: 0.1097 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 3/3 | E 186/200 Ended | E Time: 58.863s | ~Time Left: 824.076s |  Train Loss: 0.0796 | Train Acc. 97.2429% | Test Loss: 0.1789 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 3/3 | E 187/200 Ended | E Time: 58.710s | ~Time Left: 763.228s |  Train Loss: 0.0749 | Train Acc. 97.3571% | Test Loss: 0.4347 | Test Acc. 90.5714%
+AdamP on CRC_transformed: T 3/3 | E 188/200 Ended | E Time: 58.595s | ~Time Left: 703.140s |  Train Loss: 0.0723 | Train Acc. 97.4643% | Test Loss: 0.0740 | Test Acc. 97.2857%
+AdamP on CRC_transformed: T 3/3 | E 189/200 Ended | E Time: 59.453s | ~Time Left: 653.988s |  Train Loss: 0.0743 | Train Acc. 97.4929% | Test Loss: 0.1565 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 3/3 | E 190/200 Ended | E Time: 58.370s | ~Time Left: 583.699s |  Train Loss: 0.0752 | Train Acc. 97.3143% | Test Loss: 0.1148 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 3/3 | E 191/200 Ended | E Time: 58.885s | ~Time Left: 529.964s |  Train Loss: 0.0721 | Train Acc. 97.5857% | Test Loss: 0.0973 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 3/3 | E 192/200 Ended | E Time: 58.385s | ~Time Left: 467.079s |  Train Loss: 0.0673 | Train Acc. 97.6786% | Test Loss: 0.1136 | Test Acc. 95.7857%
+AdamP on CRC_transformed: T 3/3 | E 193/200 Ended | E Time: 58.636s | ~Time Left: 410.455s |  Train Loss: 0.0769 | Train Acc. 97.5143% | Test Loss: 0.0768 | Test Acc. 97.1429%
+AdamP on CRC_transformed: T 3/3 | E 194/200 Ended | E Time: 58.585s | ~Time Left: 351.508s |  Train Loss: 0.0765 | Train Acc. 97.3643% | Test Loss: 0.0725 | Test Acc. 97.7143%
+AdamP on CRC_transformed: T 3/3 | E 195/200 Ended | E Time: 58.381s | ~Time Left: 291.903s |  Train Loss: 0.0699 | Train Acc. 97.6000% | Test Loss: 0.1357 | Test Acc. 96.0714%
+AdamP on CRC_transformed: T 3/3 | E 196/200 Ended | E Time: 58.505s | ~Time Left: 234.020s |  Train Loss: 0.0880 | Train Acc. 97.0286% | Test Loss: 0.0691 | Test Acc. 97.7857%
+AdamP on CRC_transformed: T 3/3 | E 197/200 Ended | E Time: 58.700s | ~Time Left: 176.099s |  Train Loss: 0.0734 | Train Acc. 97.5429% | Test Loss: 0.1041 | Test Acc. 96.2143%
+AdamP on CRC_transformed: T 3/3 | E 198/200 Ended | E Time: 59.256s | ~Time Left: 118.511s |  Train Loss: 0.0744 | Train Acc. 97.3571% | Test Loss: 0.1015 | Test Acc. 96.7857%
+AdamP on CRC_transformed: T 3/3 | E 199/200 Ended | E Time: 58.493s | ~Time Left: 58.493s |  Train Loss: 0.0840 | Train Acc. 97.1071% | Test Loss: 0.0964 | Test Acc. 96.5000%
+AdamP on CRC_transformed: T 3/3 | E 200/200 Ended | E Time: 58.265s | ~Time Left: 0.000s |  Train Loss: 0.0660 | Train Acc. 97.8071% | Test Loss: 0.0887 | Test Acc. 96.8571%
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/CRC_transformed_testing/AdamP/lr-0.001-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6997144.0        
+    output              : ADP_post_trained/CRC_transformed/AdamP/output/deep_tuning
+    checkpoint          : ADP_post_trained/CRC_transformed/AdamP/checkpoint/deep_tuning/lr-0.001
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 200                                     
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              CRC_transformed     
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.001               
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on CRC_transformed: T 1/3 | E 1/200 Ended | E Time: 60.178s | ~Time Left: 11975.359s |  Train Loss: 1.0908 | Train Acc. 57.5500% | Test Loss: 1.5994 | Test Acc. 49.1429%
+AdamP on CRC_transformed: T 1/3 | E 2/200 Ended | E Time: 59.011s | ~Time Left: 11684.083s |  Train Loss: 0.8613 | Train Acc. 67.7857% | Test Loss: 1.1298 | Test Acc. 60.2143%
+AdamP on CRC_transformed: T 1/3 | E 3/200 Ended | E Time: 58.253s | ~Time Left: 11475.899s |  Train Loss: 0.7380 | Train Acc. 72.7071% | Test Loss: 1.3466 | Test Acc. 59.1429%
+AdamP on CRC_transformed: T 1/3 | E 4/200 Ended | E Time: 58.389s | ~Time Left: 11444.264s |  Train Loss: 0.6287 | Train Acc. 77.2500% | Test Loss: 1.1298 | Test Acc. 62.6429%
+AdamP on CRC_transformed: T 1/3 | E 5/200 Ended | E Time: 58.640s | ~Time Left: 11434.834s |  Train Loss: 0.5541 | Train Acc. 79.7357% | Test Loss: 0.7541 | Test Acc. 73.0714%
+AdamP on CRC_transformed: T 1/3 | E 6/200 Ended | E Time: 58.670s | ~Time Left: 11381.935s |  Train Loss: 0.4612 | Train Acc. 83.4929% | Test Loss: 0.8216 | Test Acc. 69.5000%
+AdamP on CRC_transformed: T 1/3 | E 7/200 Ended | E Time: 58.673s | ~Time Left: 11323.957s |  Train Loss: 0.4233 | Train Acc. 85.0000% | Test Loss: 0.8793 | Test Acc. 71.4286%
+AdamP on CRC_transformed: T 1/3 | E 8/200 Ended | E Time: 58.681s | ~Time Left: 11266.710s |  Train Loss: 0.3501 | Train Acc. 87.6357% | Test Loss: 0.2399 | Test Acc. 91.5714%
+AdamP on CRC_transformed: T 1/3 | E 9/200 Ended | E Time: 58.168s | ~Time Left: 11109.995s |  Train Loss: 0.3451 | Train Acc. 88.0500% | Test Loss: 0.4426 | Test Acc. 82.9286%
+AdamP on CRC_transformed: T 1/3 | E 10/200 Ended | E Time: 58.170s | ~Time Left: 11052.338s |  Train Loss: 0.3207 | Train Acc. 88.9500% | Test Loss: 0.2891 | Test Acc. 89.7143%
+AdamP on CRC_transformed: T 1/3 | E 11/200 Ended | E Time: 58.149s | ~Time Left: 10990.167s |  Train Loss: 0.3113 | Train Acc. 89.2643% | Test Loss: 0.2771 | Test Acc. 91.1429%
+AdamP on CRC_transformed: T 1/3 | E 12/200 Ended | E Time: 58.513s | ~Time Left: 11000.529s |  Train Loss: 0.2823 | Train Acc. 90.0143% | Test Loss: 0.4560 | Test Acc. 82.5000%
+AdamP on CRC_transformed: T 1/3 | E 13/200 Ended | E Time: 58.521s | ~Time Left: 10943.487s |  Train Loss: 0.2854 | Train Acc. 90.2429% | Test Loss: 0.2625 | Test Acc. 91.0714%
+AdamP on CRC_transformed: T 1/3 | E 14/200 Ended | E Time: 58.985s | ~Time Left: 10971.147s |  Train Loss: 0.2815 | Train Acc. 90.1571% | Test Loss: 0.3918 | Test Acc. 86.0000%
+AdamP on CRC_transformed: T 1/3 | E 15/200 Ended | E Time: 58.436s | ~Time Left: 10810.676s |  Train Loss: 0.2721 | Train Acc. 90.4714% | Test Loss: 0.2480 | Test Acc. 91.0000%
+AdamP on CRC_transformed: T 1/3 | E 16/200 Ended | E Time: 58.404s | ~Time Left: 10746.400s |  Train Loss: 0.2526 | Train Acc. 91.3571% | Test Loss: 0.2762 | Test Acc. 91.2857%
+AdamP on CRC_transformed: T 1/3 | E 17/200 Ended | E Time: 58.275s | ~Time Left: 10664.281s |  Train Loss: 0.2589 | Train Acc. 91.2643% | Test Loss: 0.2117 | Test Acc. 93.1429%
+AdamP on CRC_transformed: T 1/3 | E 18/200 Ended | E Time: 58.272s | ~Time Left: 10605.517s |  Train Loss: 0.2447 | Train Acc. 91.6357% | Test Loss: 0.3231 | Test Acc. 89.5714%
+AdamP on CRC_transformed: T 1/3 | E 19/200 Ended | E Time: 58.232s | ~Time Left: 10540.039s |  Train Loss: 0.2455 | Train Acc. 91.8714% | Test Loss: 0.1830 | Test Acc. 93.0714%
+AdamP on CRC_transformed: T 1/3 | E 20/200 Ended | E Time: 58.823s | ~Time Left: 10588.191s |  Train Loss: 0.2312 | Train Acc. 92.0143% | Test Loss: 0.1733 | Test Acc. 93.7143%
+AdamP on CRC_transformed: T 1/3 | E 21/200 Ended | E Time: 59.268s | ~Time Left: 10608.960s |  Train Loss: 0.2284 | Train Acc. 92.1214% | Test Loss: 0.2030 | Test Acc. 94.0714%
+AdamP on CRC_transformed: T 1/3 | E 22/200 Ended | E Time: 58.942s | ~Time Left: 10491.656s |  Train Loss: 0.2229 | Train Acc. 92.3429% | Test Loss: 0.3444 | Test Acc. 86.9286%
+AdamP on CRC_transformed: T 1/3 | E 23/200 Ended | E Time: 58.208s | ~Time Left: 10302.892s |  Train Loss: 0.2228 | Train Acc. 92.2500% | Test Loss: 0.5067 | Test Acc. 81.2143%
+AdamP on CRC_transformed: T 1/3 | E 24/200 Ended | E Time: 58.609s | ~Time Left: 10315.269s |  Train Loss: 0.2333 | Train Acc. 91.9000% | Test Loss: 0.4602 | Test Acc. 88.4286%
+AdamP on CRC_transformed: T 1/3 | E 25/200 Ended | E Time: 58.562s | ~Time Left: 10248.435s |  Train Loss: 0.2025 | Train Acc. 93.1429% | Test Loss: 0.3219 | Test Acc. 87.7857%
+AdamP on CRC_transformed: T 1/3 | E 26/200 Ended | E Time: 58.855s | ~Time Left: 10240.856s |  Train Loss: 0.2116 | Train Acc. 92.9857% | Test Loss: 0.2245 | Test Acc. 92.6429%
+AdamP on CRC_transformed: T 1/3 | E 27/200 Ended | E Time: 58.562s | ~Time Left: 10131.155s |  Train Loss: 0.1985 | Train Acc. 93.3286% | Test Loss: 0.1555 | Test Acc. 94.5000%
+AdamP on CRC_transformed: T 1/3 | E 28/200 Ended | E Time: 59.133s | ~Time Left: 10170.961s |  Train Loss: 0.2171 | Train Acc. 92.6786% | Test Loss: 0.2125 | Test Acc. 93.2143%
+AdamP on CRC_transformed: T 1/3 | E 29/200 Ended | E Time: 58.425s | ~Time Left: 9990.698s |  Train Loss: 0.1965 | Train Acc. 93.3857% | Test Loss: 0.1695 | Test Acc. 93.8571%
+AdamP on CRC_transformed: T 1/3 | E 30/200 Ended | E Time: 59.203s | ~Time Left: 10064.483s |  Train Loss: 0.1949 | Train Acc. 93.3643% | Test Loss: 0.1817 | Test Acc. 93.7857%
+AdamP on CRC_transformed: T 1/3 | E 31/200 Ended | E Time: 58.184s | ~Time Left: 9833.063s |  Train Loss: 0.1884 | Train Acc. 93.6429% | Test Loss: 0.2665 | Test Acc. 91.2857%
+AdamP on CRC_transformed: T 1/3 | E 32/200 Ended | E Time: 58.738s | ~Time Left: 9868.017s |  Train Loss: 0.1944 | Train Acc. 93.3786% | Test Loss: 0.1717 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 1/3 | E 33/200 Ended | E Time: 58.114s | ~Time Left: 9705.029s |  Train Loss: 0.1902 | Train Acc. 93.6643% | Test Loss: 0.1991 | Test Acc. 92.5000%
+AdamP on CRC_transformed: T 1/3 | E 34/200 Ended | E Time: 59.126s | ~Time Left: 9814.979s |  Train Loss: 0.1827 | Train Acc. 93.5786% | Test Loss: 0.2700 | Test Acc. 90.5714%
+AdamP on CRC_transformed: T 1/3 | E 35/200 Ended | E Time: 58.865s | ~Time Left: 9712.755s |  Train Loss: 0.1865 | Train Acc. 93.4214% | Test Loss: 0.1517 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 1/3 | E 36/200 Ended | E Time: 58.396s | ~Time Left: 9576.983s |  Train Loss: 0.1811 | Train Acc. 93.8786% | Test Loss: 0.1595 | Test Acc. 94.7857%
+AdamP on CRC_transformed: T 1/3 | E 37/200 Ended | E Time: 58.425s | ~Time Left: 9523.342s |  Train Loss: 0.1836 | Train Acc. 93.5143% | Test Loss: 0.2136 | Test Acc. 93.4286%
+AdamP on CRC_transformed: T 1/3 | E 38/200 Ended | E Time: 58.587s | ~Time Left: 9491.076s |  Train Loss: 0.1940 | Train Acc. 93.5643% | Test Loss: 0.2152 | Test Acc. 92.8571%
+AdamP on CRC_transformed: T 1/3 | E 39/200 Ended | E Time: 58.437s | ~Time Left: 9408.283s |  Train Loss: 0.1770 | Train Acc. 93.9571% | Test Loss: 0.2890 | Test Acc. 92.0000%
+AdamP on CRC_transformed: T 1/3 | E 40/200 Ended | E Time: 58.331s | ~Time Left: 9333.024s |  Train Loss: 0.1714 | Train Acc. 94.0643% | Test Loss: 0.1606 | Test Acc. 94.6429%
+AdamP on CRC_transformed: T 1/3 | E 41/200 Ended | E Time: 58.839s | ~Time Left: 9355.335s |  Train Loss: 0.1756 | Train Acc. 93.8571% | Test Loss: 0.1558 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 1/3 | E 42/200 Ended | E Time: 58.268s | ~Time Left: 9206.384s |  Train Loss: 0.1729 | Train Acc. 94.1214% | Test Loss: 0.1510 | Test Acc. 94.4286%
+AdamP on CRC_transformed: T 1/3 | E 43/200 Ended | E Time: 58.548s | ~Time Left: 9192.101s |  Train Loss: 0.1821 | Train Acc. 93.6071% | Test Loss: 0.1913 | Test Acc. 93.0000%
+AdamP on CRC_transformed: T 1/3 | E 44/200 Ended | E Time: 58.234s | ~Time Left: 9084.571s |  Train Loss: 0.1918 | Train Acc. 93.5143% | Test Loss: 0.1205 | Test Acc. 95.5714%
+AdamP on CRC_transformed: T 1/3 | E 45/200 Ended | E Time: 58.736s | ~Time Left: 9104.095s |  Train Loss: 0.1752 | Train Acc. 94.2000% | Test Loss: 0.1327 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 1/3 | E 46/200 Ended | E Time: 58.324s | ~Time Left: 8981.899s |  Train Loss: 0.1648 | Train Acc. 94.3214% | Test Loss: 0.1377 | Test Acc. 95.0000%
+AdamP on CRC_transformed: T 1/3 | E 47/200 Ended | E Time: 58.509s | ~Time Left: 8951.826s |  Train Loss: 0.1674 | Train Acc. 94.3571% | Test Loss: 0.1353 | Test Acc. 95.3571%
+AdamP on CRC_transformed: T 1/3 | E 48/200 Ended | E Time: 58.455s | ~Time Left: 8885.125s |  Train Loss: 0.1547 | Train Acc. 94.8357% | Test Loss: 0.5875 | Test Acc. 84.7857%
+AdamP on CRC_transformed: T 1/3 | E 49/200 Ended | E Time: 58.204s | ~Time Left: 8788.765s |  Train Loss: 0.1661 | Train Acc. 94.2857% | Test Loss: 0.1300 | Test Acc. 95.2857%
+AdamP on CRC_transformed: T 1/3 | E 50/200 Ended | E Time: 58.308s | ~Time Left: 8746.236s |  Train Loss: 0.1576 | Train Acc. 94.6000% | Test Loss: 0.1756 | Test Acc. 94.3571%
+AdamP on CRC_transformed: T 1/3 | E 51/200 Ended | E Time: 58.483s | ~Time Left: 8713.912s |  Train Loss: 0.1606 | Train Acc. 94.4000% | Test Loss: 0.1435 | Test Acc. 94.8571%
+AdamP on CRC_transformed: T 1/3 | E 52/200 Ended | E Time: 58.345s | ~Time Left: 8635.090s |  Train Loss: 0.1537 | Train Acc. 94.7500% | Test Loss: 0.2117 | Test Acc. 92.2143%
+AdamP on CRC_transformed: T 1/3 | E 53/200 Ended | E Time: 58.373s | ~Time Left: 8580.902s |  Train Loss: 0.1719 | Train Acc. 94.3071% | Test Loss: 0.1447 | Test Acc. 95.0714%
+AdamP on CRC_transformed: T 1/3 | E 54/200 Ended | E Time: 58.594s | ~Time Left: 8554.763s |  Train Loss: 0.1525 | Train Acc. 94.9214% | Test Loss: 0.2462 | Test Acc. 91.8571%
+slurmstepd: error: *** JOB 6997144 ON cdr2606 CANCELLED AT 2021-07-05T21:03:13 DUE TO TIME LIMIT ***

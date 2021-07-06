@@ -1,0 +1,1473 @@
+transferring data
+Sun Jul  4 20:15:20 PDT 2021
+
+Finished transferring
+Sun Jul  4 20:15:21 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/AIDPATH_transformed_testing/AdamP/lr-0.0001-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958536.0        
+    output              : ADP_post_trained/AIDPATH_transformed/AdamP/output/fine_tuning
+    checkpoint          : ADP_post_trained/AIDPATH_transformed/AdamP/checkpoint/fine_tuning/lr-0.0001
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              AIDPATH_transformed 
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0001              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.8784204107918498
+Valid AUC: 0.9444525761124122
+AdamP on AIDPATH_transformed: T 1/3 | E 1/200 Ended | E Time: 6.832s | ~Time Left: 1359.642s |  Train Loss: 0.4477 | Train Acc. 80.7692% | Test Loss: 0.7705 | Test Acc. 71.7949%
+Train AUC: 0.9216371384332909
+Valid AUC: 0.9651639344262295
+AdamP on AIDPATH_transformed: T 1/3 | E 2/200 Ended | E Time: 5.941s | ~Time Left: 1176.232s |  Train Loss: 0.3495 | Train Acc. 83.4402% | Test Loss: 0.2855 | Test Acc. 92.7350%
+Train AUC: 0.9539377828932645
+Valid AUC: 0.9561621779859485
+AdamP on AIDPATH_transformed: T 1/3 | E 3/200 Ended | E Time: 5.934s | ~Time Left: 1168.915s |  Train Loss: 0.2742 | Train Acc. 87.6068% | Test Loss: 0.7613 | Test Acc. 61.9658%
+Train AUC: 0.9592268307276323
+Valid AUC: 0.9814110070257611
+AdamP on AIDPATH_transformed: T 1/3 | E 4/200 Ended | E Time: 5.925s | ~Time Left: 1161.261s |  Train Loss: 0.2504 | Train Acc. 90.7051% | Test Loss: 0.1902 | Test Acc. 93.5897%
+Train AUC: 0.9756877360774265
+Valid AUC: 0.9743120608899297
+AdamP on AIDPATH_transformed: T 1/3 | E 5/200 Ended | E Time: 5.893s | ~Time Left: 1149.095s |  Train Loss: 0.1932 | Train Acc. 92.4145% | Test Loss: 0.3802 | Test Acc. 89.3162%
+Train AUC: 0.9733218234883052
+Valid AUC: 0.9445257611241216
+AdamP on AIDPATH_transformed: T 1/3 | E 6/200 Ended | E Time: 5.961s | ~Time Left: 1156.376s |  Train Loss: 0.2096 | Train Acc. 92.0940% | Test Loss: 1.7579 | Test Acc. 54.7009%
+Train AUC: 0.9801546521240688
+Valid AUC: 0.9888758782201404
+AdamP on AIDPATH_transformed: T 1/3 | E 7/200 Ended | E Time: 6.013s | ~Time Left: 1160.462s |  Train Loss: 0.1784 | Train Acc. 93.4829% | Test Loss: 0.1657 | Test Acc. 91.0256%
+Train AUC: 0.9878872583275099
+Valid AUC: 0.9855093676814988
+AdamP on AIDPATH_transformed: T 1/3 | E 8/200 Ended | E Time: 6.023s | ~Time Left: 1156.370s |  Train Loss: 0.1370 | Train Acc. 95.1923% | Test Loss: 0.2911 | Test Acc. 91.8803%
+Train AUC: 0.9929890428102291
+Valid AUC: 0.9937792740046838
+AdamP on AIDPATH_transformed: T 1/3 | E 9/200 Ended | E Time: 5.977s | ~Time Left: 1141.689s |  Train Loss: 0.1066 | Train Acc. 95.5128% | Test Loss: 0.1272 | Test Acc. 94.8718%
+Train AUC: 0.9905683214352593
+Valid AUC: 0.9929010538641687
+AdamP on AIDPATH_transformed: T 1/3 | E 10/200 Ended | E Time: 5.944s | ~Time Left: 1129.270s |  Train Loss: 0.1180 | Train Acc. 95.5128% | Test Loss: 0.1535 | Test Acc. 93.5897%
+Train AUC: 0.9919750802720343
+Valid AUC: 0.9961211943793911
+AdamP on AIDPATH_transformed: T 1/3 | E 11/200 Ended | E Time: 6.075s | ~Time Left: 1148.213s |  Train Loss: 0.1076 | Train Acc. 96.2607% | Test Loss: 0.1009 | Test Acc. 95.7265%
+Train AUC: 0.9945647954033698
+Valid AUC: 0.9937792740046839
+AdamP on AIDPATH_transformed: T 1/3 | E 12/200 Ended | E Time: 5.939s | ~Time Left: 1116.512s |  Train Loss: 0.0951 | Train Acc. 96.6880% | Test Loss: 0.1003 | Test Acc. 96.5812%
+Train AUC: 0.9927149988809874
+Valid AUC: 0.9920228337236534
+AdamP on AIDPATH_transformed: T 1/3 | E 13/200 Ended | E Time: 5.980s | ~Time Left: 1118.339s |  Train Loss: 0.1018 | Train Acc. 96.2607% | Test Loss: 0.1371 | Test Acc. 95.2991%
+Train AUC: 0.9949210525113843
+Valid AUC: 0.9962675644028103
+AdamP on AIDPATH_transformed: T 1/3 | E 14/200 Ended | E Time: 6.014s | ~Time Left: 1118.625s |  Train Loss: 0.0870 | Train Acc. 96.5812% | Test Loss: 0.1236 | Test Acc. 96.1539%
+Train AUC: 0.9928200490538633
+Valid AUC: 0.9935597189695551
+AdamP on AIDPATH_transformed: T 1/3 | E 15/200 Ended | E Time: 5.921s | ~Time Left: 1095.351s |  Train Loss: 0.1035 | Train Acc. 96.0470% | Test Loss: 0.1549 | Test Acc. 93.5897%
+Train AUC: 0.9962501655682072
+Valid AUC: 0.9979508196721312
+AdamP on AIDPATH_transformed: T 1/3 | E 16/200 Ended | E Time: 5.965s | ~Time Left: 1097.647s |  Train Loss: 0.0792 | Train Acc. 96.4744% | Test Loss: 0.0684 | Test Acc. 97.4359%
+Train AUC: 0.9962227611752831
+Valid AUC: 0.9959016393442623
+AdamP on AIDPATH_transformed: T 1/3 | E 17/200 Ended | E Time: 5.962s | ~Time Left: 1091.135s |  Train Loss: 0.0725 | Train Acc. 97.3291% | Test Loss: 0.1172 | Test Acc. 96.1539%
+Train AUC: 0.9956518363226957
+Valid AUC: 0.9971457845433256
+AdamP on AIDPATH_transformed: T 1/3 | E 18/200 Ended | E Time: 5.930s | ~Time Left: 1079.307s |  Train Loss: 0.0720 | Train Acc. 97.7564% | Test Loss: 0.0758 | Test Acc. 97.4359%
+Train AUC: 0.9957477516979305
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 1/3 | E 19/200 Ended | E Time: 6.010s | ~Time Left: 1087.815s |  Train Loss: 0.0813 | Train Acc. 95.8333% | Test Loss: 0.0601 | Test Acc. 97.4359%
+Train AUC: 0.9961862219847174
+Valid AUC: 0.9987558548009368
+AdamP on AIDPATH_transformed: T 1/3 | E 20/200 Ended | E Time: 5.986s | ~Time Left: 1077.518s |  Train Loss: 0.0774 | Train Acc. 96.6880% | Test Loss: 0.0489 | Test Acc. 98.2906%
+Train AUC: 0.9971225387429604
+Valid AUC: 0.9985362997658079
+AdamP on AIDPATH_transformed: T 1/3 | E 21/200 Ended | E Time: 5.876s | ~Time Left: 1051.770s |  Train Loss: 0.0804 | Train Acc. 97.6496% | Test Loss: 0.0605 | Test Acc. 97.8633%
+Train AUC: 0.9937746354073891
+Valid AUC: 0.9956820843091334
+AdamP on AIDPATH_transformed: T 1/3 | E 22/200 Ended | E Time: 5.926s | ~Time Left: 1054.756s |  Train Loss: 0.1058 | Train Acc. 96.0470% | Test Loss: 0.1141 | Test Acc. 96.1539%
+Train AUC: 0.9957842908884962
+Valid AUC: 0.9953161592505855
+AdamP on AIDPATH_transformed: T 1/3 | E 23/200 Ended | E Time: 6.619s | ~Time Left: 1171.480s |  Train Loss: 0.0787 | Train Acc. 97.4359% | Test Loss: 0.0765 | Test Acc. 97.4359%
+Train AUC: 0.9975838460238509
+Valid AUC: 0.9972921545667447
+AdamP on AIDPATH_transformed: T 1/3 | E 24/200 Ended | E Time: 5.954s | ~Time Left: 1047.876s |  Train Loss: 0.0631 | Train Acc. 97.5427% | Test Loss: 0.0543 | Test Acc. 98.7180%
+Train AUC: 0.9978807269471963
+Valid AUC: 0.9983167447306792
+AdamP on AIDPATH_transformed: T 1/3 | E 25/200 Ended | E Time: 5.902s | ~Time Left: 1032.925s |  Train Loss: 0.0556 | Train Acc. 97.8633% | Test Loss: 0.0734 | Test Acc. 97.4359%
+Train AUC: 0.9946104693915767
+Valid AUC: 0.9970725995316159
+AdamP on AIDPATH_transformed: T 1/3 | E 26/200 Ended | E Time: 5.950s | ~Time Left: 1035.357s |  Train Loss: 0.0927 | Train Acc. 96.4744% | Test Loss: 0.0765 | Test Acc. 97.0086%
+Train AUC: 0.998337466829266
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 1/3 | E 27/200 Ended | E Time: 5.947s | ~Time Left: 1028.902s |  Train Loss: 0.0555 | Train Acc. 98.5043% | Test Loss: 0.0377 | Test Acc. 98.2906%
+Train AUC: 0.9952773096193986
+Valid AUC: 0.998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 28/200 Ended | E Time: 5.945s | ~Time Left: 1022.509s |  Train Loss: 0.0811 | Train Acc. 97.2222% | Test Loss: 0.0624 | Test Acc. 97.4359%
+Train AUC: 0.9972823977016849
+Valid AUC: 0.9972921545667448
+AdamP on AIDPATH_transformed: T 1/3 | E 29/200 Ended | E Time: 6.009s | ~Time Left: 1027.511s |  Train Loss: 0.0629 | Train Acc. 97.6496% | Test Loss: 0.0920 | Test Acc. 97.0086%
+Train AUC: 0.9986617521455357
+Valid AUC: 0.9972921545667447
+AdamP on AIDPATH_transformed: T 1/3 | E 30/200 Ended | E Time: 6.076s | ~Time Left: 1032.864s |  Train Loss: 0.0661 | Train Acc. 98.1838% | Test Loss: 0.0705 | Test Acc. 97.4359%
+Train AUC: 0.9948982155172807
+Valid AUC: 0.9975848946135831
+AdamP on AIDPATH_transformed: T 1/3 | E 31/200 Ended | E Time: 5.978s | ~Time Left: 1010.313s |  Train Loss: 0.0955 | Train Acc. 96.4744% | Test Loss: 0.0572 | Test Acc. 97.4359%
+Train AUC: 0.9984790561927077
+Valid AUC: 0.9969262295081966
+AdamP on AIDPATH_transformed: T 1/3 | E 32/200 Ended | E Time: 6.013s | ~Time Left: 1010.157s |  Train Loss: 0.0566 | Train Acc. 97.7564% | Test Loss: 0.0731 | Test Acc. 97.8633%
+Train AUC: 0.9991733008134537
+Valid AUC: 0.9964139344262295
+AdamP on AIDPATH_transformed: T 1/3 | E 33/200 Ended | E Time: 5.953s | ~Time Left: 994.144s |  Train Loss: 0.0394 | Train Acc. 98.0769% | Test Loss: 0.0537 | Test Acc. 97.8633%
+Train AUC: 0.9973235042910711
+Valid AUC: 0.997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 34/200 Ended | E Time: 6.009s | ~Time Left: 997.461s |  Train Loss: 0.0617 | Train Acc. 97.9701% | Test Loss: 0.0619 | Test Acc. 97.0086%
+Train AUC: 0.9974376892615886
+Valid AUC: 0.998902224824356
+AdamP on AIDPATH_transformed: T 1/3 | E 35/200 Ended | E Time: 5.953s | ~Time Left: 982.278s |  Train Loss: 0.1117 | Train Acc. 99.0385% | Test Loss: 0.0746 | Test Acc. 96.5812%
+Train AUC: 0.9966155574738631
+Valid AUC: 0.9958284543325527
+AdamP on AIDPATH_transformed: T 1/3 | E 36/200 Ended | E Time: 6.125s | ~Time Left: 1004.514s |  Train Loss: 0.0806 | Train Acc. 97.1154% | Test Loss: 0.0976 | Test Acc. 97.4359%
+Train AUC: 0.9982689558469556
+Valid AUC: 0.9959016393442623
+AdamP on AIDPATH_transformed: T 1/3 | E 37/200 Ended | E Time: 5.930s | ~Time Left: 966.567s |  Train Loss: 0.0556 | Train Acc. 97.8633% | Test Loss: 0.0730 | Test Acc. 97.0086%
+Train AUC: 0.9980862598941277
+Valid AUC: 0.9967066744730679
+AdamP on AIDPATH_transformed: T 1/3 | E 38/200 Ended | E Time: 5.987s | ~Time Left: 969.822s |  Train Loss: 0.0518 | Train Acc. 98.2906% | Test Loss: 0.0792 | Test Acc. 97.8633%
+Train AUC: 0.9996711472849097
+Valid AUC: 0.9992681498829039
+AdamP on AIDPATH_transformed: T 1/3 | E 39/200 Ended | E Time: 6.005s | ~Time Left: 966.849s |  Train Loss: 0.0281 | Train Acc. 98.9316% | Test Loss: 0.0347 | Test Acc. 99.5727%
+Train AUC: 0.998474488793887
+Valid AUC: 0.9987558548009368
+AdamP on AIDPATH_transformed: T 1/3 | E 40/200 Ended | E Time: 5.952s | ~Time Left: 952.359s |  Train Loss: 0.0434 | Train Acc. 98.3974% | Test Loss: 0.0473 | Test Acc. 97.8633%
+Train AUC: 0.9973417738863539
+Valid AUC: 0.9986826697892272
+AdamP on AIDPATH_transformed: T 1/3 | E 41/200 Ended | E Time: 6.074s | ~Time Left: 965.830s |  Train Loss: 0.0605 | Train Acc. 97.8633% | Test Loss: 0.0448 | Test Acc. 97.4359%
+Train AUC: 0.9990545484441156
+Valid AUC: 0.997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 42/200 Ended | E Time: 5.964s | ~Time Left: 942.240s |  Train Loss: 0.0404 | Train Acc. 98.3974% | Test Loss: 0.0645 | Test Acc. 97.8633%
+Train AUC: 0.9996894168801925
+Valid AUC: 0.9986094847775175
+AdamP on AIDPATH_transformed: T 1/3 | E 43/200 Ended | E Time: 5.917s | ~Time Left: 928.900s |  Train Loss: 0.0260 | Train Acc. 99.0385% | Test Loss: 0.0509 | Test Acc. 98.2906%
+Train AUC: 0.9988535828960049
+Valid AUC: 0.9982435597189695
+AdamP on AIDPATH_transformed: T 1/3 | E 44/200 Ended | E Time: 5.929s | ~Time Left: 924.861s |  Train Loss: 0.0433 | Train Acc. 98.1838% | Test Loss: 0.0344 | Test Acc. 99.5727%
+Train AUC: 0.9996757146837305
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 45/200 Ended | E Time: 5.964s | ~Time Left: 924.432s |  Train Loss: 0.0224 | Train Acc. 99.5727% | Test Loss: 0.0249 | Test Acc. 99.1453%
+Train AUC: 0.9982506862516728
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 1/3 | E 46/200 Ended | E Time: 5.975s | ~Time Left: 920.143s |  Train Loss: 0.0491 | Train Acc. 98.6111% | Test Loss: 0.0296 | Test Acc. 98.7180%
+Train AUC: 0.9989449308724189
+Valid AUC: 0.99817037470726
+AdamP on AIDPATH_transformed: T 1/3 | E 47/200 Ended | E Time: 6.051s | ~Time Left: 925.823s |  Train Loss: 0.0430 | Train Acc. 97.7564% | Test Loss: 0.0607 | Test Acc. 97.0086%
+Train AUC: 0.9977985137684238
+Valid AUC: 0.9937792740046838
+AdamP on AIDPATH_transformed: T 1/3 | E 48/200 Ended | E Time: 5.985s | ~Time Left: 909.750s |  Train Loss: 0.0550 | Train Acc. 98.0769% | Test Loss: 0.2199 | Test Acc. 96.1539%
+Train AUC: 0.9983557364245488
+Valid AUC: 0.998902224824356
+AdamP on AIDPATH_transformed: T 1/3 | E 49/200 Ended | E Time: 6.039s | ~Time Left: 911.827s |  Train Loss: 0.0466 | Train Acc. 98.2906% | Test Loss: 0.0409 | Test Acc. 98.2906%
+Train AUC: 0.9978624573519135
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 50/200 Ended | E Time: 5.971s | ~Time Left: 895.623s |  Train Loss: 0.0432 | Train Acc. 98.7180% | Test Loss: 0.0206 | Test Acc. 99.1453%
+Train AUC: 0.9993285923733575
+Valid AUC: 0.9993413348946135
+AdamP on AIDPATH_transformed: T 1/3 | E 51/200 Ended | E Time: 6.015s | ~Time Left: 896.205s |  Train Loss: 0.0331 | Train Acc. 98.7180% | Test Loss: 0.0336 | Test Acc. 98.7180%
+Train AUC: 0.9991641660158123
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 52/200 Ended | E Time: 6.057s | ~Time Left: 896.504s |  Train Loss: 0.0322 | Train Acc. 99.1453% | Test Loss: 0.0260 | Test Acc. 98.7180%
+Train AUC: 0.9992692161886885
+Valid AUC: 0.9994145199063232
+AdamP on AIDPATH_transformed: T 1/3 | E 53/200 Ended | E Time: 6.108s | ~Time Left: 897.903s |  Train Loss: 0.0357 | Train Acc. 98.8248% | Test Loss: 0.0313 | Test Acc. 98.7180%
+Train AUC: 0.9996757146837304
+Valid AUC: 0.9992681498829039
+AdamP on AIDPATH_transformed: T 1/3 | E 54/200 Ended | E Time: 5.937s | ~Time Left: 866.770s |  Train Loss: 0.0212 | Train Acc. 99.3590% | Test Loss: 0.0291 | Test Acc. 99.1453%
+Train AUC: 0.9999725956070759
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 1/3 | E 55/200 Ended | E Time: 5.927s | ~Time Left: 859.368s |  Train Loss: 0.0121 | Train Acc. 99.5727% | Test Loss: 0.0353 | Test Acc. 98.7180%
+Train AUC: 0.9968165230219738
+Valid AUC: 0.9994145199063231
+AdamP on AIDPATH_transformed: T 1/3 | E 56/200 Ended | E Time: 6.037s | ~Time Left: 869.265s |  Train Loss: 0.0400 | Train Acc. 99.2521% | Test Loss: 0.0264 | Test Acc. 98.2906%
+Train AUC: 0.999940623815331
+Valid AUC: 0.9991217798594848
+AdamP on AIDPATH_transformed: T 1/3 | E 57/200 Ended | E Time: 5.917s | ~Time Left: 846.111s |  Train Loss: 0.0120 | Train Acc. 99.6795% | Test Loss: 0.0473 | Test Acc. 97.8633%
+Train AUC: 0.9997579278625031
+Valid AUC: 0.997438524590164
+AdamP on AIDPATH_transformed: T 1/3 | E 58/200 Ended | E Time: 5.887s | ~Time Left: 835.919s |  Train Loss: 0.0387 | Train Acc. 98.9316% | Test Loss: 0.0612 | Test Acc. 98.2906%
+Train AUC: 0.9963689179375455
+Valid AUC: 0.99634074941452
+AdamP on AIDPATH_transformed: T 1/3 | E 59/200 Ended | E Time: 5.994s | ~Time Left: 845.184s |  Train Loss: 0.0917 | Train Acc. 96.6880% | Test Loss: 0.0861 | Test Acc. 97.0086%
+Train AUC: 0.9957294821026477
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 1/3 | E 60/200 Ended | E Time: 5.965s | ~Time Left: 835.039s |  Train Loss: 0.0781 | Train Acc. 97.0086% | Test Loss: 0.0438 | Test Acc. 97.4359%
+Train AUC: 0.9983557364245489
+Valid AUC: 0.9987558548009368
+AdamP on AIDPATH_transformed: T 1/3 | E 61/200 Ended | E Time: 5.995s | ~Time Left: 833.354s |  Train Loss: 0.0427 | Train Acc. 98.9316% | Test Loss: 0.0447 | Test Acc. 97.4359%
+Train AUC: 0.9985612693714803
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 1/3 | E 62/200 Ended | E Time: 5.993s | ~Time Left: 826.974s |  Train Loss: 0.0479 | Train Acc. 97.9701% | Test Loss: 0.0305 | Test Acc. 98.7180%
+Train AUC: 0.9992007052063778
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 63/200 Ended | E Time: 5.960s | ~Time Left: 816.492s |  Train Loss: 0.0314 | Train Acc. 98.8248% | Test Loss: 0.0196 | Test Acc. 99.5727%
+Train AUC: 0.9995523949155717
+Valid AUC: 0.9996340749414521
+AdamP on AIDPATH_transformed: T 1/3 | E 64/200 Ended | E Time: 5.903s | ~Time Left: 802.775s |  Train Loss: 0.0261 | Train Acc. 99.3590% | Test Loss: 0.0327 | Test Acc. 98.7180%
+Train AUC: 0.9995889341061373
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 65/200 Ended | E Time: 6.086s | ~Time Left: 821.553s |  Train Loss: 0.0307 | Train Acc. 98.8248% | Test Loss: 0.0161 | Test Acc. 99.5727%
+Train AUC: 0.9993742663615645
+Valid AUC: 0.9996340749414521
+AdamP on AIDPATH_transformed: T 1/3 | E 66/200 Ended | E Time: 5.961s | ~Time Left: 798.732s |  Train Loss: 0.0339 | Train Acc. 98.6111% | Test Loss: 0.0248 | Test Acc. 99.1453%
+Train AUC: 0.9998173040471721
+Valid AUC: 0.9983899297423887
+AdamP on AIDPATH_transformed: T 1/3 | E 67/200 Ended | E Time: 5.972s | ~Time Left: 794.342s |  Train Loss: 0.0185 | Train Acc. 99.6795% | Test Loss: 0.0460 | Test Acc. 97.8633%
+Train AUC: 0.9999223542200482
+Valid AUC: 0.9980240046838407
+AdamP on AIDPATH_transformed: T 1/3 | E 68/200 Ended | E Time: 6.018s | ~Time Left: 794.377s |  Train Loss: 0.0145 | Train Acc. 99.7863% | Test Loss: 0.0646 | Test Acc. 98.2906%
+Train AUC: 0.9980451533047414
+Valid AUC: 0.9989754098360656
+AdamP on AIDPATH_transformed: T 1/3 | E 69/200 Ended | E Time: 5.984s | ~Time Left: 783.909s |  Train Loss: 0.0638 | Train Acc. 99.0385% | Test Loss: 0.0488 | Test Acc. 98.7180%
+Train AUC: 0.9992007052063779
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 1/3 | E 70/200 Ended | E Time: 6.011s | ~Time Left: 781.385s |  Train Loss: 0.0383 | Train Acc. 99.0385% | Test Loss: 0.0447 | Test Acc. 97.4359%
+Train AUC: 0.9992692161886885
+Valid AUC: 0.9982435597189695
+AdamP on AIDPATH_transformed: T 1/3 | E 71/200 Ended | E Time: 5.991s | ~Time Left: 772.878s |  Train Loss: 0.0382 | Train Acc. 98.3974% | Test Loss: 0.0523 | Test Acc. 97.8633%
+Train AUC: 0.9992920531827918
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 1/3 | E 72/200 Ended | E Time: 6.022s | ~Time Left: 770.835s |  Train Loss: 0.0333 | Train Acc. 98.8248% | Test Loss: 0.0341 | Test Acc. 98.7180%
+Train AUC: 0.9991321942240675
+Valid AUC: 0.9994145199063232
+AdamP on AIDPATH_transformed: T 1/3 | E 73/200 Ended | E Time: 6.230s | ~Time Left: 791.241s |  Train Loss: 0.0355 | Train Acc. 99.0385% | Test Loss: 0.0273 | Test Acc. 99.1453%
+Train AUC: 0.9995295579214681
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 74/200 Ended | E Time: 5.949s | ~Time Left: 749.567s |  Train Loss: 0.0290 | Train Acc. 98.8248% | Test Loss: 0.0245 | Test Acc. 99.5727%
+Train AUC: 0.9998310062436342
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 75/200 Ended | E Time: 5.952s | ~Time Left: 744.043s |  Train Loss: 0.0196 | Train Acc. 99.4658% | Test Loss: 0.0143 | Test Acc. 99.5727%
+Train AUC: 0.9999132194224067
+Valid AUC: 0.9972189695550351
+AdamP on AIDPATH_transformed: T 1/3 | E 76/200 Ended | E Time: 5.992s | ~Time Left: 743.044s |  Train Loss: 0.0147 | Train Acc. 99.3590% | Test Loss: 0.0648 | Test Acc. 98.2906%
+Train AUC: 0.9983466016269075
+Valid AUC: 0.9990485948477752
+AdamP on AIDPATH_transformed: T 1/3 | E 77/200 Ended | E Time: 5.979s | ~Time Left: 735.450s |  Train Loss: 0.0498 | Train Acc. 97.8633% | Test Loss: 0.0413 | Test Acc. 98.7180%
+Train AUC: 0.9996620124872684
+Valid AUC: 0.9993413348946135
+AdamP on AIDPATH_transformed: T 1/3 | E 78/200 Ended | E Time: 5.974s | ~Time Left: 728.853s |  Train Loss: 0.0234 | Train Acc. 99.2521% | Test Loss: 0.0346 | Test Acc. 98.2906%
+Train AUC: 0.998323764632804
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 79/200 Ended | E Time: 6.061s | ~Time Left: 733.349s |  Train Loss: 0.0455 | Train Acc. 97.9701% | Test Loss: 0.0373 | Test Acc. 98.2906%
+Train AUC: 0.9999588934106137
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 80/200 Ended | E Time: 5.974s | ~Time Left: 716.858s |  Train Loss: 0.0133 | Train Acc. 99.5727% | Test Loss: 0.0107 | Test Acc. 100.0000%
+Train AUC: 0.9995569623143924
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 81/200 Ended | E Time: 5.958s | ~Time Left: 709.048s |  Train Loss: 0.0207 | Train Acc. 99.4658% | Test Loss: 0.0110 | Test Acc. 99.5727%
+Train AUC: 0.9995889341061373
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 82/200 Ended | E Time: 6.057s | ~Time Left: 714.746s |  Train Loss: 0.0245 | Train Acc. 99.2521% | Test Loss: 0.0281 | Test Acc. 99.5727%
+Train AUC: 0.9994473447426957
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 1/3 | E 83/200 Ended | E Time: 5.957s | ~Time Left: 697.007s |  Train Loss: 0.0254 | Train Acc. 99.1453% | Test Loss: 0.0280 | Test Acc. 99.1453%
+Train AUC: 0.9999954326011793
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 84/200 Ended | E Time: 6.107s | ~Time Left: 708.438s |  Train Loss: 0.0082 | Train Acc. 99.7863% | Test Loss: 0.0112 | Test Acc. 99.5727%
+Train AUC: 0.9999680282082551
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 85/200 Ended | E Time: 5.966s | ~Time Left: 686.042s |  Train Loss: 0.0090 | Train Acc. 99.7863% | Test Loss: 0.0128 | Test Acc. 99.1453%
+Train AUC: 0.9989677678665223
+Valid AUC: 0.9962675644028103
+AdamP on AIDPATH_transformed: T 1/3 | E 86/200 Ended | E Time: 5.933s | ~Time Left: 676.395s |  Train Loss: 0.0396 | Train Acc. 98.8248% | Test Loss: 0.1348 | Test Acc. 97.4359%
+Train AUC: 0.9997076864754754
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 1/3 | E 87/200 Ended | E Time: 6.007s | ~Time Left: 678.782s |  Train Loss: 0.0256 | Train Acc. 98.9316% | Test Loss: 0.0338 | Test Acc. 98.7180%
+Train AUC: 0.9999771630058966
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 88/200 Ended | E Time: 5.925s | ~Time Left: 663.646s |  Train Loss: 0.0103 | Train Acc. 99.5727% | Test Loss: 0.0172 | Test Acc. 99.1453%
+Train AUC: 0.9999862978035379
+Valid AUC: 0.9994145199063231
+AdamP on AIDPATH_transformed: T 1/3 | E 89/200 Ended | E Time: 5.959s | ~Time Left: 661.431s |  Train Loss: 0.0101 | Train Acc. 99.7863% | Test Loss: 0.0333 | Test Acc. 98.7180%
+Train AUC: 0.9999817304047173
+Valid AUC: 0.9994877049180328
+AdamP on AIDPATH_transformed: T 1/3 | E 90/200 Ended | E Time: 6.447s | ~Time Left: 709.192s |  Train Loss: 0.0084 | Train Acc. 99.7863% | Test Loss: 0.0388 | Test Acc. 97.8633%
+Train AUC: 0.9994610469391577
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 91/200 Ended | E Time: 5.978s | ~Time Left: 651.568s |  Train Loss: 0.0444 | Train Acc. 98.6111% | Test Loss: 0.0164 | Test Acc. 99.5727%
+Train AUC: 0.9958802062637307
+Valid AUC: 0.999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 92/200 Ended | E Time: 5.961s | ~Time Left: 643.812s |  Train Loss: 0.0948 | Train Acc. 97.9701% | Test Loss: 0.0688 | Test Acc. 97.8633%
+Train AUC: 0.9952179334347295
+Valid AUC: 0.9982435597189696
+AdamP on AIDPATH_transformed: T 1/3 | E 93/200 Ended | E Time: 6.151s | ~Time Left: 658.128s |  Train Loss: 0.0989 | Train Acc. 95.8333% | Test Loss: 0.0491 | Test Acc. 98.2906%
+Train AUC: 0.9953914945899162
+Valid AUC: 0.9988290398126464
+AdamP on AIDPATH_transformed: T 1/3 | E 94/200 Ended | E Time: 6.017s | ~Time Left: 637.773s |  Train Loss: 0.0782 | Train Acc. 97.4359% | Test Loss: 0.0600 | Test Acc. 97.4359%
+Train AUC: 0.9981365012811554
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 95/200 Ended | E Time: 6.025s | ~Time Left: 632.635s |  Train Loss: 0.0504 | Train Acc. 98.1838% | Test Loss: 0.0132 | Test Acc. 100.0000%
+Train AUC: 0.9993834011592059
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 96/200 Ended | E Time: 5.977s | ~Time Left: 621.565s |  Train Loss: 0.0343 | Train Acc. 98.9316% | Test Loss: 0.0235 | Test Acc. 99.5727%
+Train AUC: 0.9989997396582673
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 1/3 | E 97/200 Ended | E Time: 5.931s | ~Time Left: 610.932s |  Train Loss: 0.0362 | Train Acc. 99.0385% | Test Loss: 0.0407 | Test Acc. 98.7180%
+Train AUC: 0.9995660971120337
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 98/200 Ended | E Time: 6.075s | ~Time Left: 619.632s |  Train Loss: 0.0417 | Train Acc. 98.6111% | Test Loss: 0.0394 | Test Acc. 97.8633%
+Train AUC: 0.9998766802318412
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 99/200 Ended | E Time: 6.022s | ~Time Left: 608.248s |  Train Loss: 0.0221 | Train Acc. 99.4658% | Test Loss: 0.0116 | Test Acc. 99.5727%
+Train AUC: 0.999378833760385
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 100/200 Ended | E Time: 6.261s | ~Time Left: 626.150s |  Train Loss: 0.0295 | Train Acc. 98.8248% | Test Loss: 0.0103 | Test Acc. 99.5727%
+Train AUC: 0.9999314890176896
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 101/200 Ended | E Time: 5.988s | ~Time Left: 592.828s |  Train Loss: 0.0163 | Train Acc. 99.5727% | Test Loss: 0.0123 | Test Acc. 99.5727%
+Train AUC: 0.9998584106365583
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 102/200 Ended | E Time: 5.988s | ~Time Left: 586.819s |  Train Loss: 0.0167 | Train Acc. 99.3590% | Test Loss: 0.0096 | Test Acc. 99.5727%
+Train AUC: 0.9999223542200482
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 1/3 | E 103/200 Ended | E Time: 5.969s | ~Time Left: 578.971s |  Train Loss: 0.0135 | Train Acc. 99.5727% | Test Loss: 0.0211 | Test Acc. 99.1453%
+Train AUC: 0.9999771630058965
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 104/200 Ended | E Time: 5.982s | ~Time Left: 574.301s |  Train Loss: 0.0108 | Train Acc. 99.7863% | Test Loss: 0.0148 | Test Acc. 99.1453%
+Train AUC: 0.9998995172259447
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 105/200 Ended | E Time: 5.941s | ~Time Left: 564.358s |  Train Loss: 0.0131 | Train Acc. 99.5727% | Test Loss: 0.0118 | Test Acc. 100.0000%
+Train AUC: 0.9999817304047173
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 106/200 Ended | E Time: 5.953s | ~Time Left: 559.550s |  Train Loss: 0.0079 | Train Acc. 99.7863% | Test Loss: 0.0044 | Test Acc. 100.0000%
+Train AUC: 0.9999451912141517
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 107/200 Ended | E Time: 6.364s | ~Time Left: 591.844s |  Train Loss: 0.0106 | Train Acc. 99.4658% | Test Loss: 0.0084 | Test Acc. 99.5727%
+Train AUC: 0.9994062381533093
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 108/200 Ended | E Time: 6.051s | ~Time Left: 556.649s |  Train Loss: 0.0224 | Train Acc. 99.3590% | Test Loss: 0.0220 | Test Acc. 99.1453%
+Train AUC: 0.9995204231238268
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 1/3 | E 109/200 Ended | E Time: 5.962s | ~Time Left: 542.538s |  Train Loss: 0.0236 | Train Acc. 99.3590% | Test Loss: 0.0262 | Test Acc. 99.1453%
+Train AUC: 0.9995615297132131
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 110/200 Ended | E Time: 5.948s | ~Time Left: 535.325s |  Train Loss: 0.0248 | Train Acc. 98.9316% | Test Loss: 0.0205 | Test Acc. 99.1453%
+Train AUC: 0.9995204231238267
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 111/200 Ended | E Time: 5.983s | ~Time Left: 532.507s |  Train Loss: 0.0281 | Train Acc. 99.0385% | Test Loss: 0.0097 | Test Acc. 99.5727%
+Train AUC: 0.9998447084400963
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 112/200 Ended | E Time: 6.016s | ~Time Left: 529.415s |  Train Loss: 0.0174 | Train Acc. 99.3590% | Test Loss: 0.0114 | Test Acc. 99.5727%
+Train AUC: 0.9998584106365584
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 113/200 Ended | E Time: 5.981s | ~Time Left: 520.336s |  Train Loss: 0.0158 | Train Acc. 99.3590% | Test Loss: 0.0206 | Test Acc. 98.7180%
+Train AUC: 0.9998812476306618
+Valid AUC: 0.9987558548009368
+AdamP on AIDPATH_transformed: T 1/3 | E 114/200 Ended | E Time: 5.988s | ~Time Left: 514.956s |  Train Loss: 0.0150 | Train Acc. 99.5727% | Test Loss: 0.0384 | Test Acc. 99.5727%
+Train AUC: 0.9999725956070759
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 115/200 Ended | E Time: 6.428s | ~Time Left: 546.400s |  Train Loss: 0.0100 | Train Acc. 99.6795% | Test Loss: 0.0171 | Test Acc. 98.7180%
+Train AUC: 1.0
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 1/3 | E 116/200 Ended | E Time: 6.058s | ~Time Left: 508.846s |  Train Loss: 0.0071 | Train Acc. 99.8932% | Test Loss: 0.0321 | Test Acc. 98.7180%
+Train AUC: 0.999940623815331
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 117/200 Ended | E Time: 6.133s | ~Time Left: 509.078s |  Train Loss: 0.0095 | Train Acc. 99.7863% | Test Loss: 0.0183 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 118/200 Ended | E Time: 5.973s | ~Time Left: 489.821s |  Train Loss: 0.0038 | Train Acc. 99.8932% | Test Loss: 0.0064 | Test Acc. 99.5727%
+Train AUC: 0.9998401410412756
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 119/200 Ended | E Time: 6.001s | ~Time Left: 486.108s |  Train Loss: 0.0151 | Train Acc. 99.5727% | Test Loss: 0.0598 | Test Acc. 97.8633%
+Train AUC: 0.999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 120/200 Ended | E Time: 6.333s | ~Time Left: 506.637s |  Train Loss: 0.0095 | Train Acc. 99.5727% | Test Loss: 0.0085 | Test Acc. 100.0000%
+Train AUC: 0.9995112883261854
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 121/200 Ended | E Time: 6.028s | ~Time Left: 476.241s |  Train Loss: 0.0160 | Train Acc. 99.5727% | Test Loss: 0.0193 | Test Acc. 99.5727%
+Train AUC: 0.999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 122/200 Ended | E Time: 5.992s | ~Time Left: 467.392s |  Train Loss: 0.0103 | Train Acc. 99.5727% | Test Loss: 0.0162 | Test Acc. 99.1453%
+Train AUC: 0.999954326011793
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 123/200 Ended | E Time: 5.951s | ~Time Left: 458.242s |  Train Loss: 0.0116 | Train Acc. 99.5727% | Test Loss: 0.0211 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 124/200 Ended | E Time: 5.970s | ~Time Left: 453.697s |  Train Loss: 0.0051 | Train Acc. 99.8932% | Test Loss: 0.0078 | Test Acc. 99.5727%
+Train AUC: 0.9999725956070759
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 125/200 Ended | E Time: 6.288s | ~Time Left: 471.614s |  Train Loss: 0.0073 | Train Acc. 99.5727% | Test Loss: 0.0200 | Test Acc. 99.1453%
+Train AUC: 0.9998584106365584
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 126/200 Ended | E Time: 5.993s | ~Time Left: 443.513s |  Train Loss: 0.0161 | Train Acc. 99.3590% | Test Loss: 0.0185 | Test Acc. 99.1453%
+Train AUC: 0.9997716300589651
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 127/200 Ended | E Time: 5.915s | ~Time Left: 431.800s |  Train Loss: 0.0177 | Train Acc. 99.7863% | Test Loss: 0.0133 | Test Acc. 99.1453%
+Train AUC: 0.9999908652023587
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 128/200 Ended | E Time: 5.979s | ~Time Left: 430.455s |  Train Loss: 0.0063 | Train Acc. 99.8932% | Test Loss: 0.0053 | Test Acc. 99.5727%
+Train AUC: 0.999652877689627
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 129/200 Ended | E Time: 5.942s | ~Time Left: 421.847s |  Train Loss: 0.0297 | Train Acc. 98.9316% | Test Loss: 0.0184 | Test Acc. 99.5727%
+Train AUC: 0.9994016707544886
+Valid AUC: 0.998902224824356
+AdamP on AIDPATH_transformed: T 1/3 | E 130/200 Ended | E Time: 5.902s | ~Time Left: 413.128s |  Train Loss: 0.0319 | Train Acc. 99.1453% | Test Loss: 0.0430 | Test Acc. 99.1453%
+Train AUC: 0.9996802820825512
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 131/200 Ended | E Time: 6.415s | ~Time Left: 442.654s |  Train Loss: 0.0238 | Train Acc. 99.1453% | Test Loss: 0.0112 | Test Acc. 99.5727%
+Train AUC: 0.9999269216188689
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 132/200 Ended | E Time: 5.987s | ~Time Left: 407.142s |  Train Loss: 0.0104 | Train Acc. 99.7863% | Test Loss: 0.0215 | Test Acc. 99.5727%
+Train AUC: 0.9999086520235861
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 133/200 Ended | E Time: 6.059s | ~Time Left: 405.984s |  Train Loss: 0.0123 | Train Acc. 99.6795% | Test Loss: 0.0250 | Test Acc. 99.1453%
+Train AUC: 0.9994610469391577
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 134/200 Ended | E Time: 6.054s | ~Time Left: 399.591s |  Train Loss: 0.0317 | Train Acc. 98.8248% | Test Loss: 0.0494 | Test Acc. 97.8633%
+Train AUC: 0.9996163384990614
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 135/200 Ended | E Time: 6.073s | ~Time Left: 394.723s |  Train Loss: 0.0261 | Train Acc. 99.0385% | Test Loss: 0.0107 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 136/200 Ended | E Time: 6.306s | ~Time Left: 403.608s |  Train Loss: 0.0042 | Train Acc. 100.0000% | Test Loss: 0.0060 | Test Acc. 99.5727%
+Train AUC: 0.9999954326011793
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 137/200 Ended | E Time: 5.990s | ~Time Left: 377.384s |  Train Loss: 0.0076 | Train Acc. 99.7863% | Test Loss: 0.0126 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 138/200 Ended | E Time: 6.031s | ~Time Left: 373.923s |  Train Loss: 0.0046 | Train Acc. 99.8932% | Test Loss: 0.0050 | Test Acc. 100.0000%
+Train AUC: 0.9997487930648616
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 139/200 Ended | E Time: 5.997s | ~Time Left: 365.811s |  Train Loss: 0.0204 | Train Acc. 99.2521% | Test Loss: 0.0070 | Test Acc. 100.0000%
+Train AUC: 0.9997990344518893
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 140/200 Ended | E Time: 6.056s | ~Time Left: 363.368s |  Train Loss: 0.0138 | Train Acc. 99.6795% | Test Loss: 0.0061 | Test Acc. 100.0000%
+Train AUC: 0.9999862978035379
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 141/200 Ended | E Time: 6.102s | ~Time Left: 360.044s |  Train Loss: 0.0069 | Train Acc. 99.6795% | Test Loss: 0.0086 | Test Acc. 99.5727%
+Train AUC: 0.9999771630058966
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 142/200 Ended | E Time: 6.029s | ~Time Left: 349.697s |  Train Loss: 0.0134 | Train Acc. 99.7863% | Test Loss: 0.0082 | Test Acc. 100.0000%
+Train AUC: 0.9983009276387005
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 143/200 Ended | E Time: 6.097s | ~Time Left: 347.510s |  Train Loss: 0.0302 | Train Acc. 99.2521% | Test Loss: 0.0344 | Test Acc. 99.1453%
+Train AUC: 0.999908652023586
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 144/200 Ended | E Time: 6.003s | ~Time Left: 336.159s |  Train Loss: 0.0124 | Train Acc. 99.5727% | Test Loss: 0.0079 | Test Acc. 99.5727%
+Train AUC: 0.9996300406955234
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 145/200 Ended | E Time: 5.994s | ~Time Left: 329.652s |  Train Loss: 0.0177 | Train Acc. 99.3590% | Test Loss: 0.0128 | Test Acc. 99.5727%
+Train AUC: 0.999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 146/200 Ended | E Time: 6.466s | ~Time Left: 349.191s |  Train Loss: 0.0113 | Train Acc. 99.6795% | Test Loss: 0.0077 | Test Acc. 99.5727%
+Train AUC: 0.9999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 147/200 Ended | E Time: 5.985s | ~Time Left: 317.185s |  Train Loss: 0.0067 | Train Acc. 99.7863% | Test Loss: 0.0068 | Test Acc. 100.0000%
+Train AUC: 0.9999588934106137
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 148/200 Ended | E Time: 6.721s | ~Time Left: 349.478s |  Train Loss: 0.0096 | Train Acc. 99.5727% | Test Loss: 0.0230 | Test Acc. 99.5727%
+Train AUC: 0.999593501504958
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 149/200 Ended | E Time: 5.945s | ~Time Left: 303.177s |  Train Loss: 0.0178 | Train Acc. 99.4658% | Test Loss: 0.0067 | Test Acc. 99.5727%
+Train AUC: 0.9999543260117931
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 150/200 Ended | E Time: 6.181s | ~Time Left: 309.059s |  Train Loss: 0.0088 | Train Acc. 99.5727% | Test Loss: 0.0138 | Test Acc. 99.5727%
+Train AUC: 0.9999588934106137
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 151/200 Ended | E Time: 6.053s | ~Time Left: 296.574s |  Train Loss: 0.0080 | Train Acc. 99.7863% | Test Loss: 0.0120 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 152/200 Ended | E Time: 5.995s | ~Time Left: 287.777s |  Train Loss: 0.0034 | Train Acc. 99.8932% | Test Loss: 0.0044 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 153/200 Ended | E Time: 5.960s | ~Time Left: 280.111s |  Train Loss: 0.0025 | Train Acc. 100.0000% | Test Loss: 0.0019 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 154/200 Ended | E Time: 5.959s | ~Time Left: 274.116s |  Train Loss: 0.0026 | Train Acc. 100.0000% | Test Loss: 0.0022 | Test Acc. 100.0000%
+Train AUC: 0.9998812476306619
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 1/3 | E 155/200 Ended | E Time: 5.992s | ~Time Left: 269.618s |  Train Loss: 0.0170 | Train Acc. 99.1453% | Test Loss: 0.0690 | Test Acc. 98.2906%
+Train AUC: 0.9999132194224069
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 1/3 | E 156/200 Ended | E Time: 6.295s | ~Time Left: 276.958s |  Train Loss: 0.0133 | Train Acc. 99.6795% | Test Loss: 0.0473 | Test Acc. 97.8633%
+Train AUC: 0.9998081692495308
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 157/200 Ended | E Time: 6.102s | ~Time Left: 262.389s |  Train Loss: 0.0180 | Train Acc. 99.3590% | Test Loss: 0.0056 | Test Acc. 100.0000%
+Train AUC: 0.9999177868212275
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 158/200 Ended | E Time: 6.247s | ~Time Left: 262.368s |  Train Loss: 0.0242 | Train Acc. 99.7863% | Test Loss: 0.0202 | Test Acc. 98.7180%
+Train AUC: 0.9963871875328282
+Valid AUC: 0.9982435597189695
+AdamP on AIDPATH_transformed: T 1/3 | E 159/200 Ended | E Time: 5.974s | ~Time Left: 244.950s |  Train Loss: 0.0767 | Train Acc. 96.9017% | Test Loss: 0.0841 | Test Acc. 95.2991%
+Train AUC: 0.9990865202358604
+Valid AUC: 0.9982435597189695
+AdamP on AIDPATH_transformed: T 1/3 | E 160/200 Ended | E Time: 6.032s | ~Time Left: 241.283s |  Train Loss: 0.0341 | Train Acc. 98.8248% | Test Loss: 0.0606 | Test Acc. 98.2906%
+Train AUC: 0.9985110279844526
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 161/200 Ended | E Time: 6.041s | ~Time Left: 235.604s |  Train Loss: 0.0486 | Train Acc. 98.0769% | Test Loss: 0.0253 | Test Acc. 99.1453%
+Train AUC: 0.9999451912141516
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 162/200 Ended | E Time: 6.063s | ~Time Left: 230.401s |  Train Loss: 0.0141 | Train Acc. 99.5727% | Test Loss: 0.0133 | Test Acc. 99.5727%
+Train AUC: 0.9997716300589651
+Valid AUC: 0.9997072599531617
+AdamP on AIDPATH_transformed: T 1/3 | E 163/200 Ended | E Time: 5.972s | ~Time Left: 220.948s |  Train Loss: 0.0189 | Train Acc. 99.2521% | Test Loss: 0.0189 | Test Acc. 99.5727%
+Train AUC: 0.9998995172259446
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 1/3 | E 164/200 Ended | E Time: 5.942s | ~Time Left: 213.920s |  Train Loss: 0.0158 | Train Acc. 99.3590% | Test Loss: 0.0277 | Test Acc. 98.7180%
+Train AUC: 0.9999817304047173
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 1/3 | E 165/200 Ended | E Time: 6.040s | ~Time Left: 211.395s |  Train Loss: 0.0090 | Train Acc. 99.7863% | Test Loss: 0.0226 | Test Acc. 98.2906%
+Train AUC: 1.0
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 1/3 | E 166/200 Ended | E Time: 6.163s | ~Time Left: 209.539s |  Train Loss: 0.0051 | Train Acc. 99.8932% | Test Loss: 0.0377 | Test Acc. 98.7180%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 167/200 Ended | E Time: 6.033s | ~Time Left: 199.103s |  Train Loss: 0.0033 | Train Acc. 100.0000% | Test Loss: 0.0048 | Test Acc. 100.0000%
+Train AUC: 0.9999908652023587
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 168/200 Ended | E Time: 5.969s | ~Time Left: 190.995s |  Train Loss: 0.0059 | Train Acc. 99.7863% | Test Loss: 0.0010 | Test Acc. 100.0000%
+Train AUC: 0.9999177868212275
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 169/200 Ended | E Time: 6.034s | ~Time Left: 187.047s |  Train Loss: 0.0122 | Train Acc. 99.3590% | Test Loss: 0.0026 | Test Acc. 100.0000%
+Train AUC: 0.9998401410412756
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 170/200 Ended | E Time: 6.003s | ~Time Left: 180.097s |  Train Loss: 0.0151 | Train Acc. 99.3590% | Test Loss: 0.0278 | Test Acc. 99.1453%
+Train AUC: 0.999986297803538
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 171/200 Ended | E Time: 6.533s | ~Time Left: 189.458s |  Train Loss: 0.0078 | Train Acc. 99.7863% | Test Loss: 0.0184 | Test Acc. 99.1453%
+Train AUC: 0.9998766802318412
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 172/200 Ended | E Time: 5.973s | ~Time Left: 167.256s |  Train Loss: 0.0189 | Train Acc. 99.4658% | Test Loss: 0.0217 | Test Acc. 98.7180%
+Train AUC: 0.9987485327231289
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 1/3 | E 173/200 Ended | E Time: 5.953s | ~Time Left: 160.735s |  Train Loss: 0.0450 | Train Acc. 98.2906% | Test Loss: 0.0204 | Test Acc. 99.5727%
+Train AUC: 0.9999177868212275
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 174/200 Ended | E Time: 6.110s | ~Time Left: 158.856s |  Train Loss: 0.0132 | Train Acc. 99.4658% | Test Loss: 0.0128 | Test Acc. 99.5727%
+Train AUC: 0.998912959080674
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 175/200 Ended | E Time: 6.082s | ~Time Left: 152.054s |  Train Loss: 0.0273 | Train Acc. 99.0385% | Test Loss: 0.0106 | Test Acc. 99.5727%
+Train AUC: 0.9990408462476534
+Valid AUC: 0.9996340749414521
+AdamP on AIDPATH_transformed: T 1/3 | E 176/200 Ended | E Time: 5.992s | ~Time Left: 143.816s |  Train Loss: 0.0365 | Train Acc. 99.3590% | Test Loss: 0.0206 | Test Acc. 99.5727%
+Train AUC: 0.9992783509863298
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 177/200 Ended | E Time: 5.947s | ~Time Left: 136.775s |  Train Loss: 0.0381 | Train Acc. 98.3974% | Test Loss: 0.0217 | Test Acc. 99.1453%
+Train AUC: 0.9993559967662817
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 178/200 Ended | E Time: 6.035s | ~Time Left: 132.780s |  Train Loss: 0.0300 | Train Acc. 98.7180% | Test Loss: 0.0168 | Test Acc. 99.1453%
+Train AUC: 0.9996939842790132
+Valid AUC: 0.9991217798594848
+AdamP on AIDPATH_transformed: T 1/3 | E 179/200 Ended | E Time: 5.961s | ~Time Left: 125.186s |  Train Loss: 0.0198 | Train Acc. 99.2521% | Test Loss: 0.0275 | Test Acc. 99.5727%
+Train AUC: 0.9998766802318412
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 180/200 Ended | E Time: 6.000s | ~Time Left: 120.006s |  Train Loss: 0.0151 | Train Acc. 99.4658% | Test Loss: 0.0072 | Test Acc. 99.5727%
+Train AUC: 0.9999954326011793
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 1/3 | E 181/200 Ended | E Time: 6.459s | ~Time Left: 122.721s |  Train Loss: 0.0048 | Train Acc. 99.8932% | Test Loss: 0.0098 | Test Acc. 99.5727%
+Train AUC: 0.9999771630058966
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 182/200 Ended | E Time: 6.002s | ~Time Left: 108.029s |  Train Loss: 0.0070 | Train Acc. 99.7863% | Test Loss: 0.0177 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 183/200 Ended | E Time: 5.972s | ~Time Left: 101.525s |  Train Loss: 0.0055 | Train Acc. 99.8932% | Test Loss: 0.0045 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 184/200 Ended | E Time: 5.960s | ~Time Left: 95.366s |  Train Loss: 0.0029 | Train Acc. 100.0000% | Test Loss: 0.0027 | Test Acc. 100.0000%
+Train AUC: 0.9999862978035379
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 185/200 Ended | E Time: 6.603s | ~Time Left: 99.039s |  Train Loss: 0.0067 | Train Acc. 99.6795% | Test Loss: 0.0042 | Test Acc. 100.0000%
+Train AUC: 0.9997487930648616
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 1/3 | E 186/200 Ended | E Time: 6.010s | ~Time Left: 84.144s |  Train Loss: 0.0193 | Train Acc. 99.2521% | Test Loss: 0.0112 | Test Acc. 98.7180%
+Train AUC: 0.999968028208255
+Valid AUC: 0.9986826697892272
+AdamP on AIDPATH_transformed: T 1/3 | E 187/200 Ended | E Time: 6.041s | ~Time Left: 78.539s |  Train Loss: 0.0141 | Train Acc. 99.7863% | Test Loss: 0.0423 | Test Acc. 99.1453%
+Train AUC: 0.9997396582672202
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 188/200 Ended | E Time: 5.945s | ~Time Left: 71.342s |  Train Loss: 0.0227 | Train Acc. 99.2521% | Test Loss: 0.0093 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 1/3 | E 189/200 Ended | E Time: 6.000s | ~Time Left: 66.000s |  Train Loss: 0.0066 | Train Acc. 100.0000% | Test Loss: 0.0179 | Test Acc. 99.5727%
+Train AUC: 0.9998858150294826
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 190/200 Ended | E Time: 6.488s | ~Time Left: 64.876s |  Train Loss: 0.0142 | Train Acc. 99.6795% | Test Loss: 0.0033 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 191/200 Ended | E Time: 6.010s | ~Time Left: 54.092s |  Train Loss: 0.0037 | Train Acc. 99.8932% | Test Loss: 0.0045 | Test Acc. 99.5727%
+Train AUC: 0.9999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 192/200 Ended | E Time: 6.069s | ~Time Left: 48.553s |  Train Loss: 0.0066 | Train Acc. 99.7863% | Test Loss: 0.0058 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 193/200 Ended | E Time: 6.017s | ~Time Left: 42.120s |  Train Loss: 0.0024 | Train Acc. 100.0000% | Test Loss: 0.0093 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 194/200 Ended | E Time: 6.002s | ~Time Left: 36.012s |  Train Loss: 0.0039 | Train Acc. 99.7863% | Test Loss: 0.0022 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 195/200 Ended | E Time: 6.069s | ~Time Left: 30.343s |  Train Loss: 0.0025 | Train Acc. 100.0000% | Test Loss: 0.0022 | Test Acc. 100.0000%
+Train AUC: 0.9999908652023586
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 196/200 Ended | E Time: 5.999s | ~Time Left: 23.998s |  Train Loss: 0.0043 | Train Acc. 99.7863% | Test Loss: 0.0012 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 197/200 Ended | E Time: 6.004s | ~Time Left: 18.012s |  Train Loss: 0.0017 | Train Acc. 100.0000% | Test Loss: 0.0027 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 198/200 Ended | E Time: 5.998s | ~Time Left: 11.996s |  Train Loss: 0.0018 | Train Acc. 100.0000% | Test Loss: 0.0023 | Test Acc. 100.0000%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 199/200 Ended | E Time: 6.651s | ~Time Left: 6.651s |  Train Loss: 0.0016 | Train Acc. 100.0000% | Test Loss: 0.0027 | Test Acc. 100.0000%
+Train AUC: 0.9999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 1/3 | E 200/200 Ended | E Time: 6.063s | ~Time Left: 0.000s |  Train Loss: 0.0044 | Train Acc. 99.7863% | Test Loss: 0.0030 | Test Acc. 100.0000%
+Train AUC: 0.8528292751994812
+Valid AUC: 0.9440134660421546
+AdamP on AIDPATH_transformed: T 2/3 | E 1/200 Ended | E Time: 5.973s | ~Time Left: 1188.570s |  Train Loss: 0.4618 | Train Acc. 75.7479% | Test Loss: 0.4915 | Test Acc. 84.6154%
+Train AUC: 0.934293400565444
+Valid AUC: 0.9414519906323184
+AdamP on AIDPATH_transformed: T 2/3 | E 2/200 Ended | E Time: 5.983s | ~Time Left: 1184.553s |  Train Loss: 0.3402 | Train Acc. 85.0427% | Test Loss: 0.3977 | Test Acc. 89.7436%
+Train AUC: 0.9502016506579338
+Valid AUC: 0.9746779859484778
+AdamP on AIDPATH_transformed: T 2/3 | E 3/200 Ended | E Time: 5.939s | ~Time Left: 1169.966s |  Train Loss: 0.2791 | Train Acc. 89.9573% | Test Loss: 0.2076 | Test Acc. 91.8803%
+Train AUC: 0.9691746253591118
+Valid AUC: 0.9673594847775175
+AdamP on AIDPATH_transformed: T 2/3 | E 4/200 Ended | E Time: 5.954s | ~Time Left: 1167.068s |  Train Loss: 0.2331 | Train Acc. 91.5598% | Test Loss: 0.3364 | Test Acc. 79.9145%
+Train AUC: 0.9783596643875346
+Valid AUC: 0.9932669789227166
+AdamP on AIDPATH_transformed: T 2/3 | E 5/200 Ended | E Time: 5.960s | ~Time Left: 1162.281s |  Train Loss: 0.1816 | Train Acc. 92.9487% | Test Loss: 0.1265 | Test Acc. 96.1539%
+Train AUC: 0.9854117281666919
+Valid AUC: 0.9858021077283372
+AdamP on AIDPATH_transformed: T 2/3 | E 6/200 Ended | E Time: 6.289s | ~Time Left: 1219.983s |  Train Loss: 0.1616 | Train Acc. 95.0855% | Test Loss: 0.2194 | Test Acc. 92.7350%
+Train AUC: 0.9841419912945378
+Valid AUC: 0.9855093676814988
+AdamP on AIDPATH_transformed: T 2/3 | E 7/200 Ended | E Time: 6.122s | ~Time Left: 1181.558s |  Train Loss: 0.1497 | Train Acc. 94.0171% | Test Loss: 0.2247 | Test Acc. 92.3077%
+Train AUC: 0.988503857168304
+Valid AUC: 0.9893149882903981
+AdamP on AIDPATH_transformed: T 2/3 | E 8/200 Ended | E Time: 6.021s | ~Time Left: 1156.009s |  Train Loss: 0.1346 | Train Acc. 94.6581% | Test Loss: 0.1292 | Test Acc. 96.1539%
+Train AUC: 0.9830960569645981
+Valid AUC: 0.9948770491803278
+AdamP on AIDPATH_transformed: T 2/3 | E 9/200 Ended | E Time: 5.968s | ~Time Left: 1139.920s |  Train Loss: 0.1495 | Train Acc. 94.7650% | Test Loss: 0.1111 | Test Acc. 97.0086%
+Train AUC: 0.9896913808616854
+Valid AUC: 0.9963407494145199
+AdamP on AIDPATH_transformed: T 2/3 | E 10/200 Ended | E Time: 5.957s | ~Time Left: 1131.878s |  Train Loss: 0.1173 | Train Acc. 95.5128% | Test Loss: 0.1751 | Test Acc. 94.8718%
+Train AUC: 0.9929662058161256
+Valid AUC: 0.9945843091334895
+AdamP on AIDPATH_transformed: T 2/3 | E 11/200 Ended | E Time: 5.998s | ~Time Left: 1133.586s |  Train Loss: 0.1061 | Train Acc. 95.4060% | Test Loss: 0.1351 | Test Acc. 95.2991%
+Train AUC: 0.9930118798043326
+Valid AUC: 0.991730093676815
+AdamP on AIDPATH_transformed: T 2/3 | E 12/200 Ended | E Time: 5.882s | ~Time Left: 1105.809s |  Train Loss: 0.0947 | Train Acc. 97.2222% | Test Loss: 0.1791 | Test Acc. 94.4445%
+Train AUC: 0.9965013725033456
+Valid AUC: 0.997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 13/200 Ended | E Time: 6.042s | ~Time Left: 1129.876s |  Train Loss: 0.0770 | Train Acc. 97.3291% | Test Loss: 0.0889 | Test Acc. 97.0086%
+Train AUC: 0.9947292217609149
+Valid AUC: 0.9934133489461359
+AdamP on AIDPATH_transformed: T 2/3 | E 14/200 Ended | E Time: 5.985s | ~Time Left: 1113.290s |  Train Loss: 0.0871 | Train Acc. 97.0086% | Test Loss: 0.1003 | Test Acc. 96.5812%
+Train AUC: 0.9980086141141759
+Valid AUC: 0.9989754098360656
+AdamP on AIDPATH_transformed: T 2/3 | E 15/200 Ended | E Time: 5.992s | ~Time Left: 1108.566s |  Train Loss: 0.0573 | Train Acc. 98.1838% | Test Loss: 0.0514 | Test Acc. 98.2906%
+Train AUC: 0.9981684730729002
+Valid AUC: 0.9956088992974239
+AdamP on AIDPATH_transformed: T 2/3 | E 16/200 Ended | E Time: 5.916s | ~Time Left: 1088.556s |  Train Loss: 0.0586 | Train Acc. 97.5427% | Test Loss: 0.0862 | Test Acc. 97.0086%
+Train AUC: 0.995528516554537
+Valid AUC: 0.9944379391100703
+AdamP on AIDPATH_transformed: T 2/3 | E 17/200 Ended | E Time: 5.975s | ~Time Left: 1093.492s |  Train Loss: 0.0808 | Train Acc. 97.0086% | Test Loss: 0.1803 | Test Acc. 94.8718%
+Train AUC: 0.9960400652224551
+Valid AUC: 0.9968530444964872
+AdamP on AIDPATH_transformed: T 2/3 | E 18/200 Ended | E Time: 6.051s | ~Time Left: 1101.195s |  Train Loss: 0.0815 | Train Acc. 96.4744% | Test Loss: 0.0805 | Test Acc. 97.8633%
+Train AUC: 0.994953024303129
+Valid AUC: 0.9972921545667447
+AdamP on AIDPATH_transformed: T 2/3 | E 19/200 Ended | E Time: 5.984s | ~Time Left: 1083.118s |  Train Loss: 0.0839 | Train Acc. 97.1154% | Test Loss: 0.0794 | Test Acc. 97.4359%
+Train AUC: 0.9980953946917691
+Valid AUC: 0.998902224824356
+AdamP on AIDPATH_transformed: T 2/3 | E 20/200 Ended | E Time: 5.959s | ~Time Left: 1072.660s |  Train Loss: 0.0552 | Train Acc. 98.0769% | Test Loss: 0.0459 | Test Acc. 98.7180%
+Train AUC: 0.996012660829531
+Valid AUC: 0.997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 21/200 Ended | E Time: 6.191s | ~Time Left: 1108.171s |  Train Loss: 0.0705 | Train Acc. 97.5427% | Test Loss: 0.0978 | Test Acc. 95.2991%
+Train AUC: 0.9956152971321304
+Valid AUC: 0.99817037470726
+AdamP on AIDPATH_transformed: T 2/3 | E 22/200 Ended | E Time: 6.042s | ~Time Left: 1075.485s |  Train Loss: 0.0833 | Train Acc. 97.6496% | Test Loss: 0.0652 | Test Acc. 97.4359%
+Train AUC: 0.9942496448847417
+Valid AUC: 0.9975117096018735
+AdamP on AIDPATH_transformed: T 2/3 | E 23/200 Ended | E Time: 5.970s | ~Time Left: 1056.691s |  Train Loss: 0.0859 | Train Acc. 97.6496% | Test Loss: 0.0569 | Test Acc. 97.8633%
+Train AUC: 0.9975473068332854
+Valid AUC: 0.9983899297423887
+AdamP on AIDPATH_transformed: T 2/3 | E 24/200 Ended | E Time: 6.000s | ~Time Left: 1055.945s |  Train Loss: 0.0634 | Train Acc. 97.5427% | Test Loss: 0.0506 | Test Acc. 98.2906%
+Train AUC: 0.9970905669512156
+Valid AUC: 0.9968530444964872
+AdamP on AIDPATH_transformed: T 2/3 | E 25/200 Ended | E Time: 6.102s | ~Time Left: 1067.891s |  Train Loss: 0.0645 | Train Acc. 97.9701% | Test Loss: 0.0736 | Test Acc. 97.8633%
+Train AUC: 0.9987439653243081
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 2/3 | E 26/200 Ended | E Time: 5.962s | ~Time Left: 1037.387s |  Train Loss: 0.0480 | Train Acc. 98.3974% | Test Loss: 0.0491 | Test Acc. 97.0086%
+Train AUC: 0.9939756009554999
+Valid AUC: 0.9926814988290398
+AdamP on AIDPATH_transformed: T 2/3 | E 27/200 Ended | E Time: 5.902s | ~Time Left: 1021.054s |  Train Loss: 0.0915 | Train Acc. 97.3291% | Test Loss: 0.1277 | Test Acc. 96.1539%
+Train AUC: 0.9982689558469556
+Valid AUC: 0.9994145199063232
+AdamP on AIDPATH_transformed: T 2/3 | E 28/200 Ended | E Time: 6.131s | ~Time Left: 1054.486s |  Train Loss: 0.0535 | Train Acc. 97.5427% | Test Loss: 0.0374 | Test Acc. 98.7180%
+Train AUC: 0.9977574071790375
+Valid AUC: 0.9960480093676815
+AdamP on AIDPATH_transformed: T 2/3 | E 29/200 Ended | E Time: 5.980s | ~Time Left: 1022.543s |  Train Loss: 0.0583 | Train Acc. 98.1838% | Test Loss: 0.0792 | Test Acc. 97.8633%
+Train AUC: 0.9984014104127559
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 30/200 Ended | E Time: 6.010s | ~Time Left: 1021.781s |  Train Loss: 0.0586 | Train Acc. 98.0769% | Test Loss: 0.0732 | Test Acc. 97.4359%
+Train AUC: 0.9953640901969919
+Valid AUC: 0.995755269320843
+AdamP on AIDPATH_transformed: T 2/3 | E 31/200 Ended | E Time: 5.964s | ~Time Left: 1007.854s |  Train Loss: 0.0818 | Train Acc. 97.3291% | Test Loss: 0.0806 | Test Acc. 96.1539%
+Train AUC: 0.9963963223304695
+Valid AUC: 0.9966334894613584
+AdamP on AIDPATH_transformed: T 2/3 | E 32/200 Ended | E Time: 6.099s | ~Time Left: 1024.709s |  Train Loss: 0.0785 | Train Acc. 98.0769% | Test Loss: 0.1224 | Test Acc. 97.0086%
+Train AUC: 0.9969992189748017
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 33/200 Ended | E Time: 5.992s | ~Time Left: 1000.651s |  Train Loss: 0.0715 | Train Acc. 97.5427% | Test Loss: 0.0461 | Test Acc. 97.8633%
+Train AUC: 0.9975929808214924
+Valid AUC: 0.9968530444964872
+AdamP on AIDPATH_transformed: T 2/3 | E 34/200 Ended | E Time: 6.275s | ~Time Left: 1041.685s |  Train Loss: 0.0607 | Train Acc. 98.3974% | Test Loss: 0.1309 | Test Acc. 96.1539%
+Train AUC: 0.9992372443969435
+Valid AUC: 0.9986094847775175
+AdamP on AIDPATH_transformed: T 2/3 | E 35/200 Ended | E Time: 6.006s | ~Time Left: 990.918s |  Train Loss: 0.0369 | Train Acc. 98.7180% | Test Loss: 0.0496 | Test Acc. 98.2906%
+Train AUC: 0.9989038242830326
+Valid AUC: 0.9989754098360656
+AdamP on AIDPATH_transformed: T 2/3 | E 36/200 Ended | E Time: 5.906s | ~Time Left: 968.643s |  Train Loss: 0.0471 | Train Acc. 98.6111% | Test Loss: 0.0390 | Test Acc. 97.8633%
+Train AUC: 0.997492498047437
+Valid AUC: 0.9969994145199064
+AdamP on AIDPATH_transformed: T 2/3 | E 37/200 Ended | E Time: 5.968s | ~Time Left: 972.716s |  Train Loss: 0.0638 | Train Acc. 97.5427% | Test Loss: 0.0540 | Test Acc. 98.2906%
+Train AUC: 0.9981319338823347
+Valid AUC: 0.9982435597189695
+AdamP on AIDPATH_transformed: T 2/3 | E 38/200 Ended | E Time: 5.950s | ~Time Left: 963.946s |  Train Loss: 0.0511 | Train Acc. 98.0769% | Test Loss: 0.0639 | Test Acc. 98.7180%
+Train AUC: 0.9988718524912876
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 39/200 Ended | E Time: 5.959s | ~Time Left: 959.417s |  Train Loss: 0.0438 | Train Acc. 98.0769% | Test Loss: 0.0183 | Test Acc. 99.5727%
+Train AUC: 0.9990408462476535
+Valid AUC: 0.9982435597189696
+AdamP on AIDPATH_transformed: T 2/3 | E 40/200 Ended | E Time: 5.996s | ~Time Left: 959.289s |  Train Loss: 0.0401 | Train Acc. 98.6111% | Test Loss: 0.0418 | Test Acc. 98.2906%
+Train AUC: 0.9984196800080386
+Valid AUC: 0.9973653395784544
+AdamP on AIDPATH_transformed: T 2/3 | E 41/200 Ended | E Time: 5.982s | ~Time Left: 951.195s |  Train Loss: 0.0477 | Train Acc. 97.9701% | Test Loss: 0.0600 | Test Acc. 96.1539%
+Train AUC: 0.9988353133007221
+Valid AUC: 0.9980971896955504
+AdamP on AIDPATH_transformed: T 2/3 | E 42/200 Ended | E Time: 5.961s | ~Time Left: 941.891s |  Train Loss: 0.0424 | Train Acc. 98.1838% | Test Loss: 0.0381 | Test Acc. 99.1453%
+Train AUC: 0.9989951722594466
+Valid AUC: 0.9994145199063231
+AdamP on AIDPATH_transformed: T 2/3 | E 43/200 Ended | E Time: 6.048s | ~Time Left: 949.528s |  Train Loss: 0.0424 | Train Acc. 98.6111% | Test Loss: 0.0378 | Test Acc. 98.7180%
+Train AUC: 0.9982506862516729
+Valid AUC: 0.999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 44/200 Ended | E Time: 5.993s | ~Time Left: 934.951s |  Train Loss: 0.0575 | Train Acc. 97.6496% | Test Loss: 0.0390 | Test Acc. 97.8633%
+Train AUC: 0.9979903445188931
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 45/200 Ended | E Time: 6.047s | ~Time Left: 937.327s |  Train Loss: 0.0543 | Train Acc. 97.5427% | Test Loss: 0.0415 | Test Acc. 98.7180%
+Train AUC: 0.9986937239372805
+Valid AUC: 0.9986094847775175
+AdamP on AIDPATH_transformed: T 2/3 | E 46/200 Ended | E Time: 6.205s | ~Time Left: 955.638s |  Train Loss: 0.0495 | Train Acc. 98.2906% | Test Loss: 0.0511 | Test Acc. 97.8633%
+Train AUC: 0.9979035639412998
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 47/200 Ended | E Time: 5.966s | ~Time Left: 912.730s |  Train Loss: 0.0534 | Train Acc. 98.1838% | Test Loss: 0.0211 | Test Acc. 99.5727%
+Train AUC: 0.9988261785030808
+Valid AUC: 0.9993413348946136
+AdamP on AIDPATH_transformed: T 2/3 | E 48/200 Ended | E Time: 6.013s | ~Time Left: 913.972s |  Train Loss: 0.0442 | Train Acc. 98.3974% | Test Loss: 0.0421 | Test Acc. 98.7180%
+Train AUC: 0.9988261785030808
+Valid AUC: 0.998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 49/200 Ended | E Time: 6.015s | ~Time Left: 908.300s |  Train Loss: 0.0408 | Train Acc. 98.5043% | Test Loss: 0.0687 | Test Acc. 98.2906%
+Train AUC: 0.9992555139922263
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 50/200 Ended | E Time: 5.999s | ~Time Left: 899.843s |  Train Loss: 0.0325 | Train Acc. 98.7180% | Test Loss: 0.0175 | Test Acc. 99.5727%
+Train AUC: 0.9993742663615643
+Valid AUC: 0.997438524590164
+AdamP on AIDPATH_transformed: T 2/3 | E 51/200 Ended | E Time: 6.051s | ~Time Left: 901.659s |  Train Loss: 0.0283 | Train Acc. 99.1453% | Test Loss: 0.0492 | Test Acc. 98.2906%
+Train AUC: 0.9982415514540314
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 52/200 Ended | E Time: 6.005s | ~Time Left: 888.668s |  Train Loss: 0.0430 | Train Acc. 99.5727% | Test Loss: 0.0305 | Test Acc. 99.1453%
+Train AUC: 0.9995752319096751
+Valid AUC: 0.9989754098360656
+AdamP on AIDPATH_transformed: T 2/3 | E 53/200 Ended | E Time: 5.940s | ~Time Left: 873.194s |  Train Loss: 0.0280 | Train Acc. 98.9316% | Test Loss: 0.0405 | Test Acc. 98.7180%
+Train AUC: 0.9984014104127558
+Valid AUC: 0.9995608899297425
+AdamP on AIDPATH_transformed: T 2/3 | E 54/200 Ended | E Time: 5.980s | ~Time Left: 873.029s |  Train Loss: 0.0466 | Train Acc. 98.6111% | Test Loss: 0.0335 | Test Acc. 98.7180%
+Train AUC: 0.9972778303028642
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 55/200 Ended | E Time: 5.970s | ~Time Left: 865.595s |  Train Loss: 0.0416 | Train Acc. 99.0385% | Test Loss: 0.0410 | Test Acc. 97.8633%
+Train AUC: 0.9994747491356197
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 56/200 Ended | E Time: 5.967s | ~Time Left: 859.291s |  Train Loss: 0.0302 | Train Acc. 98.8248% | Test Loss: 0.0488 | Test Acc. 97.8633%
+Train AUC: 0.9999360564165102
+Valid AUC: 0.9962675644028103
+AdamP on AIDPATH_transformed: T 2/3 | E 57/200 Ended | E Time: 6.218s | ~Time Left: 889.193s |  Train Loss: 0.0205 | Train Acc. 99.4658% | Test Loss: 0.0672 | Test Acc. 98.7180%
+Train AUC: 0.9996163384990614
+Valid AUC: 0.9986826697892272
+AdamP on AIDPATH_transformed: T 2/3 | E 58/200 Ended | E Time: 5.967s | ~Time Left: 847.324s |  Train Loss: 0.0270 | Train Acc. 99.2521% | Test Loss: 0.0453 | Test Acc. 98.2906%
+Train AUC: 0.9994656143379784
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 59/200 Ended | E Time: 5.994s | ~Time Left: 845.148s |  Train Loss: 0.0296 | Train Acc. 98.8248% | Test Loss: 0.0274 | Test Acc. 99.1453%
+Train AUC: 0.9994473447426956
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 60/200 Ended | E Time: 5.954s | ~Time Left: 833.605s |  Train Loss: 0.0467 | Train Acc. 98.9316% | Test Loss: 0.0564 | Test Acc. 97.8633%
+Train AUC: 0.998337466829266
+Valid AUC: 0.9980240046838407
+AdamP on AIDPATH_transformed: T 2/3 | E 61/200 Ended | E Time: 5.944s | ~Time Left: 826.200s |  Train Loss: 0.0482 | Train Acc. 98.3974% | Test Loss: 0.0579 | Test Acc. 97.4359%
+Train AUC: 0.9977025983931891
+Valid AUC: 0.9976580796252927
+AdamP on AIDPATH_transformed: T 2/3 | E 62/200 Ended | E Time: 6.191s | ~Time Left: 854.309s |  Train Loss: 0.0603 | Train Acc. 96.9017% | Test Loss: 0.2752 | Test Acc. 90.5983%
+Train AUC: 0.9994199403497713
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 63/200 Ended | E Time: 5.924s | ~Time Left: 811.596s |  Train Loss: 0.0334 | Train Acc. 98.9316% | Test Loss: 0.0457 | Test Acc. 98.2906%
+Train AUC: 0.9992189748016607
+Valid AUC: 0.9983167447306791
+AdamP on AIDPATH_transformed: T 2/3 | E 64/200 Ended | E Time: 6.011s | ~Time Left: 817.554s |  Train Loss: 0.0385 | Train Acc. 98.7180% | Test Loss: 0.0656 | Test Acc. 97.8633%
+Train AUC: 0.998926661277136
+Valid AUC: 0.9994145199063231
+AdamP on AIDPATH_transformed: T 2/3 | E 65/200 Ended | E Time: 6.014s | ~Time Left: 811.866s |  Train Loss: 0.0405 | Train Acc. 98.6111% | Test Loss: 0.0387 | Test Acc. 98.7180%
+Train AUC: 0.9991778682122744
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 66/200 Ended | E Time: 5.943s | ~Time Left: 796.344s |  Train Loss: 0.0320 | Train Acc. 98.9316% | Test Loss: 0.0169 | Test Acc. 99.1453%
+Train AUC: 0.9992189748016608
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 67/200 Ended | E Time: 6.151s | ~Time Left: 818.111s |  Train Loss: 0.0236 | Train Acc. 99.5727% | Test Loss: 0.0389 | Test Acc. 98.2906%
+Train AUC: 0.9999360564165102
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 68/200 Ended | E Time: 6.133s | ~Time Left: 809.505s |  Train Loss: 0.0140 | Train Acc. 99.5727% | Test Loss: 0.0226 | Test Acc. 98.7180%
+Train AUC: 0.9994610469391577
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 69/200 Ended | E Time: 5.950s | ~Time Left: 779.452s |  Train Loss: 0.0278 | Train Acc. 99.0385% | Test Loss: 0.0344 | Test Acc. 99.1453%
+Train AUC: 0.9996711472849098
+Valid AUC: 0.9991217798594848
+AdamP on AIDPATH_transformed: T 2/3 | E 70/200 Ended | E Time: 6.015s | ~Time Left: 781.910s |  Train Loss: 0.0230 | Train Acc. 99.0385% | Test Loss: 0.0487 | Test Acc. 99.1453%
+Train AUC: 0.9994016707544886
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 71/200 Ended | E Time: 5.972s | ~Time Left: 770.409s |  Train Loss: 0.0300 | Train Acc. 99.4658% | Test Loss: 0.0249 | Test Acc. 99.1453%
+Train AUC: 0.9983603038233695
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 72/200 Ended | E Time: 6.022s | ~Time Left: 770.766s |  Train Loss: 0.0547 | Train Acc. 98.5043% | Test Loss: 0.0221 | Test Acc. 99.5727%
+Train AUC: 0.9973463412851746
+Valid AUC: 0.9991217798594847
+AdamP on AIDPATH_transformed: T 2/3 | E 73/200 Ended | E Time: 5.992s | ~Time Left: 760.942s |  Train Loss: 0.0598 | Train Acc. 98.0769% | Test Loss: 0.0405 | Test Acc. 98.2906%
+Train AUC: 0.9982780906445969
+Valid AUC: 0.998902224824356
+AdamP on AIDPATH_transformed: T 2/3 | E 74/200 Ended | E Time: 6.166s | ~Time Left: 776.960s |  Train Loss: 0.0487 | Train Acc. 98.2906% | Test Loss: 0.0604 | Test Acc. 96.5812%
+Train AUC: 0.997145375737064
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 75/200 Ended | E Time: 5.986s | ~Time Left: 748.258s |  Train Loss: 0.0790 | Train Acc. 97.5427% | Test Loss: 0.0271 | Test Acc. 99.5727%
+Train AUC: 0.9995935015049578
+Valid AUC: 0.9989754098360656
+AdamP on AIDPATH_transformed: T 2/3 | E 76/200 Ended | E Time: 6.051s | ~Time Left: 750.266s |  Train Loss: 0.0327 | Train Acc. 98.8248% | Test Loss: 0.0401 | Test Acc. 98.7180%
+Train AUC: 0.9988855546877498
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 77/200 Ended | E Time: 5.958s | ~Time Left: 732.800s |  Train Loss: 0.0239 | Train Acc. 99.4658% | Test Loss: 0.0329 | Test Acc. 98.2906%
+Train AUC: 0.9998721128330205
+Valid AUC: 0.9991949648711944
+AdamP on AIDPATH_transformed: T 2/3 | E 78/200 Ended | E Time: 6.031s | ~Time Left: 735.829s |  Train Loss: 0.0156 | Train Acc. 99.6795% | Test Loss: 0.0360 | Test Acc. 99.1453%
+Train AUC: 0.9999497586129723
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 79/200 Ended | E Time: 5.994s | ~Time Left: 725.267s |  Train Loss: 0.0118 | Train Acc. 99.6795% | Test Loss: 0.0103 | Test Acc. 99.5727%
+Train AUC: 0.9998903824283033
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 80/200 Ended | E Time: 5.945s | ~Time Left: 713.448s |  Train Loss: 0.0225 | Train Acc. 99.3590% | Test Loss: 0.0138 | Test Acc. 99.1453%
+Train AUC: 0.9988353133007222
+Valid AUC: 0.9993413348946135
+AdamP on AIDPATH_transformed: T 2/3 | E 81/200 Ended | E Time: 5.994s | ~Time Left: 713.329s |  Train Loss: 0.0490 | Train Acc. 98.9316% | Test Loss: 0.0542 | Test Acc. 98.7180%
+Train AUC: 0.9951859616429848
+Valid AUC: 0.9969994145199064
+AdamP on AIDPATH_transformed: T 2/3 | E 82/200 Ended | E Time: 6.180s | ~Time Left: 729.198s |  Train Loss: 0.1157 | Train Acc. 97.3291% | Test Loss: 0.0697 | Test Acc. 97.4359%
+Train AUC: 0.9955878927392061
+Valid AUC: 0.9993413348946135
+AdamP on AIDPATH_transformed: T 2/3 | E 83/200 Ended | E Time: 6.030s | ~Time Left: 705.485s |  Train Loss: 0.0665 | Train Acc. 98.0769% | Test Loss: 0.0362 | Test Acc. 98.7180%
+Train AUC: 0.9995204231238268
+Valid AUC: 0.9997072599531617
+AdamP on AIDPATH_transformed: T 2/3 | E 84/200 Ended | E Time: 5.942s | ~Time Left: 689.227s |  Train Loss: 0.0312 | Train Acc. 98.9316% | Test Loss: 0.0325 | Test Acc. 99.1453%
+Train AUC: 0.9993971033556679
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 85/200 Ended | E Time: 5.988s | ~Time Left: 688.641s |  Train Loss: 0.0275 | Train Acc. 99.4658% | Test Loss: 0.0230 | Test Acc. 98.7180%
+Train AUC: 0.9999634608094344
+Valid AUC: 0.9995608899297425
+AdamP on AIDPATH_transformed: T 2/3 | E 86/200 Ended | E Time: 6.047s | ~Time Left: 689.346s |  Train Loss: 0.0132 | Train Acc. 99.6795% | Test Loss: 0.0226 | Test Acc. 99.5727%
+Train AUC: 0.9995797993084958
+Valid AUC: 0.999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 87/200 Ended | E Time: 6.245s | ~Time Left: 705.651s |  Train Loss: 0.0320 | Train Acc. 99.1453% | Test Loss: 0.0330 | Test Acc. 98.2906%
+Train AUC: 0.9988718524912876
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 88/200 Ended | E Time: 6.029s | ~Time Left: 675.276s |  Train Loss: 0.0395 | Train Acc. 98.9316% | Test Loss: 0.0243 | Test Acc. 99.1453%
+Train AUC: 0.99960720370142
+Valid AUC: 0.9958284543325526
+AdamP on AIDPATH_transformed: T 2/3 | E 89/200 Ended | E Time: 5.986s | ~Time Left: 664.469s |  Train Loss: 0.0392 | Train Acc. 98.7180% | Test Loss: 0.0753 | Test Acc. 98.7180%
+Train AUC: 0.9973280716898918
+Valid AUC: 0.9988290398126464
+AdamP on AIDPATH_transformed: T 2/3 | E 90/200 Ended | E Time: 5.988s | ~Time Left: 658.699s |  Train Loss: 0.0647 | Train Acc. 97.2222% | Test Loss: 0.0704 | Test Acc. 97.8633%
+Train AUC: 0.9972641281064022
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 91/200 Ended | E Time: 5.969s | ~Time Left: 650.589s |  Train Loss: 0.0487 | Train Acc. 98.7180% | Test Loss: 0.0315 | Test Acc. 98.7180%
+Train AUC: 0.9993742663615645
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 92/200 Ended | E Time: 6.322s | ~Time Left: 682.738s |  Train Loss: 0.0324 | Train Acc. 98.9316% | Test Loss: 0.0228 | Test Acc. 99.5727%
+Train AUC: 0.9982735232457762
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 2/3 | E 93/200 Ended | E Time: 6.135s | ~Time Left: 656.402s |  Train Loss: 0.0454 | Train Acc. 98.6111% | Test Loss: 0.0574 | Test Acc. 97.8633%
+Train AUC: 0.9993103227780746
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 94/200 Ended | E Time: 6.117s | ~Time Left: 648.455s |  Train Loss: 0.0381 | Train Acc. 98.6111% | Test Loss: 0.0180 | Test Acc. 99.1453%
+Train AUC: 0.9965927204797594
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 95/200 Ended | E Time: 5.963s | ~Time Left: 626.132s |  Train Loss: 0.1028 | Train Acc. 98.6111% | Test Loss: 0.0233 | Test Acc. 99.5727%
+Train AUC: 0.9996802820825512
+Valid AUC: 0.9993413348946136
+AdamP on AIDPATH_transformed: T 2/3 | E 96/200 Ended | E Time: 5.958s | ~Time Left: 619.623s |  Train Loss: 0.0329 | Train Acc. 99.0385% | Test Loss: 0.0327 | Test Acc. 98.7180%
+Train AUC: 0.9997533604636824
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 97/200 Ended | E Time: 6.021s | ~Time Left: 620.199s |  Train Loss: 0.0293 | Train Acc. 99.4658% | Test Loss: 0.0170 | Test Acc. 99.5727%
+Train AUC: 0.9993742663615645
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 98/200 Ended | E Time: 5.945s | ~Time Left: 606.346s |  Train Loss: 0.0340 | Train Acc. 98.6111% | Test Loss: 0.0216 | Test Acc. 99.5727%
+Train AUC: 0.9993514293674609
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 99/200 Ended | E Time: 6.138s | ~Time Left: 619.941s |  Train Loss: 0.0296 | Train Acc. 98.9316% | Test Loss: 0.0195 | Test Acc. 99.1453%
+Train AUC: 0.9999634608094344
+Valid AUC: 0.9993413348946135
+AdamP on AIDPATH_transformed: T 2/3 | E 100/200 Ended | E Time: 5.967s | ~Time Left: 596.657s |  Train Loss: 0.0129 | Train Acc. 99.7863% | Test Loss: 0.0337 | Test Acc. 98.7180%
+Train AUC: 0.9999360564165103
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 101/200 Ended | E Time: 6.009s | ~Time Left: 594.916s |  Train Loss: 0.0129 | Train Acc. 99.5727% | Test Loss: 0.0244 | Test Acc. 99.1453%
+Train AUC: 0.9997487930648616
+Valid AUC: 0.9990485948477752
+AdamP on AIDPATH_transformed: T 2/3 | E 102/200 Ended | E Time: 5.994s | ~Time Left: 587.459s |  Train Loss: 0.0218 | Train Acc. 99.2521% | Test Loss: 0.0417 | Test Acc. 98.7180%
+Train AUC: 0.999986297803538
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 103/200 Ended | E Time: 6.005s | ~Time Left: 582.508s |  Train Loss: 0.0089 | Train Acc. 99.6795% | Test Loss: 0.0335 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 104/200 Ended | E Time: 5.995s | ~Time Left: 575.482s |  Train Loss: 0.0056 | Train Acc. 100.0000% | Test Loss: 0.0205 | Test Acc. 98.2906%
+Train AUC: 1.0
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 105/200 Ended | E Time: 5.963s | ~Time Left: 566.520s |  Train Loss: 0.0053 | Train Acc. 100.0000% | Test Loss: 0.0371 | Test Acc. 98.2906%
+Train AUC: 0.9984151126092179
+Valid AUC: 0.9993413348946135
+AdamP on AIDPATH_transformed: T 2/3 | E 106/200 Ended | E Time: 6.421s | ~Time Left: 603.551s |  Train Loss: 0.0357 | Train Acc. 99.3590% | Test Loss: 0.0528 | Test Acc. 98.2906%
+Train AUC: 0.9976751940002649
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 107/200 Ended | E Time: 6.350s | ~Time Left: 590.590s |  Train Loss: 0.0540 | Train Acc. 97.7564% | Test Loss: 0.0473 | Test Acc. 97.8633%
+Train AUC: 0.9978441877566306
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 108/200 Ended | E Time: 5.941s | ~Time Left: 546.556s |  Train Loss: 0.0709 | Train Acc. 98.6111% | Test Loss: 0.0253 | Test Acc. 98.2906%
+Train AUC: 0.9992509465934056
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 2/3 | E 109/200 Ended | E Time: 5.939s | ~Time Left: 540.461s |  Train Loss: 0.0321 | Train Acc. 99.2521% | Test Loss: 0.0285 | Test Acc. 98.7180%
+Train AUC: 0.9998721128330205
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 110/200 Ended | E Time: 5.981s | ~Time Left: 538.280s |  Train Loss: 0.0171 | Train Acc. 99.2521% | Test Loss: 0.0178 | Test Acc. 99.5727%
+Train AUC: 0.9998629780353792
+Valid AUC: 0.9978044496487118
+AdamP on AIDPATH_transformed: T 2/3 | E 111/200 Ended | E Time: 6.061s | ~Time Left: 539.432s |  Train Loss: 0.0134 | Train Acc. 99.6795% | Test Loss: 0.0472 | Test Acc. 98.7180%
+Train AUC: 0.9999040846247653
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 112/200 Ended | E Time: 5.918s | ~Time Left: 520.781s |  Train Loss: 0.0134 | Train Acc. 99.6795% | Test Loss: 0.0277 | Test Acc. 98.7180%
+Train AUC: 0.999954326011793
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 2/3 | E 113/200 Ended | E Time: 5.941s | ~Time Left: 516.840s |  Train Loss: 0.0107 | Train Acc. 99.7863% | Test Loss: 0.0577 | Test Acc. 98.7180%
+Train AUC: 0.9999269216188689
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 114/200 Ended | E Time: 5.905s | ~Time Left: 507.800s |  Train Loss: 0.0137 | Train Acc. 99.3590% | Test Loss: 0.0249 | Test Acc. 99.1453%
+Train AUC: 0.9997761974577858
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 115/200 Ended | E Time: 6.141s | ~Time Left: 521.983s |  Train Loss: 0.0219 | Train Acc. 99.2521% | Test Loss: 0.0097 | Test Acc. 100.0000%
+Train AUC: 0.9998310062436342
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 116/200 Ended | E Time: 5.978s | ~Time Left: 502.143s |  Train Loss: 0.0120 | Train Acc. 99.7863% | Test Loss: 0.0247 | Test Acc. 98.7180%
+Train AUC: 0.9993331597721781
+Valid AUC: 0.9996340749414521
+AdamP on AIDPATH_transformed: T 2/3 | E 117/200 Ended | E Time: 5.948s | ~Time Left: 493.650s |  Train Loss: 0.0331 | Train Acc. 98.9316% | Test Loss: 0.0203 | Test Acc. 99.5727%
+Train AUC: 0.9994975861297233
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 118/200 Ended | E Time: 6.005s | ~Time Left: 492.397s |  Train Loss: 0.0239 | Train Acc. 99.4658% | Test Loss: 0.0299 | Test Acc. 99.1453%
+Train AUC: 0.9994153729509507
+Valid AUC: 0.9983167447306792
+AdamP on AIDPATH_transformed: T 2/3 | E 119/200 Ended | E Time: 5.936s | ~Time Left: 480.850s |  Train Loss: 0.0244 | Train Acc. 99.4658% | Test Loss: 0.0542 | Test Acc. 97.4359%
+Train AUC: 0.9991687334146331
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 120/200 Ended | E Time: 6.273s | ~Time Left: 501.818s |  Train Loss: 0.0366 | Train Acc. 98.7180% | Test Loss: 0.0363 | Test Acc. 97.4359%
+Train AUC: 0.998415112609218
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 121/200 Ended | E Time: 6.006s | ~Time Left: 474.502s |  Train Loss: 0.0417 | Train Acc. 98.6111% | Test Loss: 0.0136 | Test Acc. 99.5727%
+Train AUC: 0.9996346080943442
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 122/200 Ended | E Time: 5.959s | ~Time Left: 464.773s |  Train Loss: 0.0298 | Train Acc. 98.8248% | Test Loss: 0.0194 | Test Acc. 99.1453%
+Train AUC: 0.9999177868212275
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 123/200 Ended | E Time: 5.937s | ~Time Left: 457.127s |  Train Loss: 0.0158 | Train Acc. 99.4658% | Test Loss: 0.0094 | Test Acc. 100.0000%
+Train AUC: 0.9999132194224067
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 124/200 Ended | E Time: 6.022s | ~Time Left: 457.675s |  Train Loss: 0.0139 | Train Acc. 99.5727% | Test Loss: 0.0064 | Test Acc. 100.0000%
+Train AUC: 0.9998036018507099
+Valid AUC: 0.999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 125/200 Ended | E Time: 6.043s | ~Time Left: 453.229s |  Train Loss: 0.0122 | Train Acc. 99.6795% | Test Loss: 0.0310 | Test Acc. 99.1453%
+Train AUC: 0.9997853322554272
+Valid AUC: 0.998902224824356
+AdamP on AIDPATH_transformed: T 2/3 | E 126/200 Ended | E Time: 6.079s | ~Time Left: 449.864s |  Train Loss: 0.0186 | Train Acc. 99.3590% | Test Loss: 0.0446 | Test Acc. 98.2906%
+Train AUC: 0.9993559967662817
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 127/200 Ended | E Time: 6.018s | ~Time Left: 439.343s |  Train Loss: 0.0280 | Train Acc. 99.0385% | Test Loss: 0.0188 | Test Acc. 99.1453%
+Train AUC: 0.9999771630058965
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 128/200 Ended | E Time: 5.946s | ~Time Left: 428.142s |  Train Loss: 0.0088 | Train Acc. 99.7863% | Test Loss: 0.0281 | Test Acc. 98.7180%
+Train AUC: 0.9999634608094344
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 129/200 Ended | E Time: 5.979s | ~Time Left: 424.536s |  Train Loss: 0.0080 | Train Acc. 99.7863% | Test Loss: 0.0060 | Test Acc. 99.5727%
+Train AUC: 0.9994519121415163
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 130/200 Ended | E Time: 6.002s | ~Time Left: 420.161s |  Train Loss: 0.0284 | Train Acc. 98.9316% | Test Loss: 0.0222 | Test Acc. 98.7180%
+Train AUC: 0.9998812476306619
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 131/200 Ended | E Time: 6.051s | ~Time Left: 417.539s |  Train Loss: 0.0206 | Train Acc. 99.5727% | Test Loss: 0.0181 | Test Acc. 99.1453%
+Train AUC: 0.9987531001219496
+Valid AUC: 0.9997072599531617
+AdamP on AIDPATH_transformed: T 2/3 | E 132/200 Ended | E Time: 6.056s | ~Time Left: 411.788s |  Train Loss: 0.0423 | Train Acc. 98.3974% | Test Loss: 0.0188 | Test Acc. 99.1453%
+Train AUC: 0.9999680282082551
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 133/200 Ended | E Time: 5.931s | ~Time Left: 397.379s |  Train Loss: 0.0120 | Train Acc. 99.6795% | Test Loss: 0.0095 | Test Acc. 99.5727%
+Train AUC: 0.9999817304047173
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 134/200 Ended | E Time: 6.022s | ~Time Left: 397.445s |  Train Loss: 0.0076 | Train Acc. 99.7863% | Test Loss: 0.0109 | Test Acc. 99.5727%
+Train AUC: 0.999954326011793
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 135/200 Ended | E Time: 5.999s | ~Time Left: 389.931s |  Train Loss: 0.0117 | Train Acc. 99.5727% | Test Loss: 0.0078 | Test Acc. 100.0000%
+Train AUC: 0.999908652023586
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 136/200 Ended | E Time: 5.990s | ~Time Left: 383.367s |  Train Loss: 0.0153 | Train Acc. 99.2521% | Test Loss: 0.0076 | Test Acc. 100.0000%
+Train AUC: 0.9999725956070759
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 137/200 Ended | E Time: 5.936s | ~Time Left: 373.993s |  Train Loss: 0.0084 | Train Acc. 99.7863% | Test Loss: 0.0145 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 138/200 Ended | E Time: 5.968s | ~Time Left: 369.996s |  Train Loss: 0.0037 | Train Acc. 100.0000% | Test Loss: 0.0204 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 139/200 Ended | E Time: 6.066s | ~Time Left: 370.055s |  Train Loss: 0.0025 | Train Acc. 99.8932% | Test Loss: 0.0066 | Test Acc. 99.5727%
+Train AUC: 0.9999908652023586
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 140/200 Ended | E Time: 5.978s | ~Time Left: 358.685s |  Train Loss: 0.0047 | Train Acc. 99.8932% | Test Loss: 0.0214 | Test Acc. 98.7180%
+Train AUC: 0.9999634608094344
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 141/200 Ended | E Time: 6.092s | ~Time Left: 359.435s |  Train Loss: 0.0088 | Train Acc. 99.7863% | Test Loss: 0.0026 | Test Acc. 100.0000%
+Train AUC: 0.9998264388448135
+Valid AUC: 0.9973653395784544
+AdamP on AIDPATH_transformed: T 2/3 | E 142/200 Ended | E Time: 6.274s | ~Time Left: 363.870s |  Train Loss: 0.0153 | Train Acc. 99.3590% | Test Loss: 0.0805 | Test Acc. 98.7180%
+Train AUC: 0.9997168212731168
+Valid AUC: 0.9989754098360656
+AdamP on AIDPATH_transformed: T 2/3 | E 143/200 Ended | E Time: 5.948s | ~Time Left: 339.042s |  Train Loss: 0.0214 | Train Acc. 98.7180% | Test Loss: 0.0457 | Test Acc. 97.8633%
+Train AUC: 0.9996117711002408
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 144/200 Ended | E Time: 5.937s | ~Time Left: 332.480s |  Train Loss: 0.0206 | Train Acc. 99.3590% | Test Loss: 0.0146 | Test Acc. 99.1453%
+Train AUC: 0.9999817304047173
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 145/200 Ended | E Time: 5.999s | ~Time Left: 329.925s |  Train Loss: 0.0067 | Train Acc. 99.7863% | Test Loss: 0.0132 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 146/200 Ended | E Time: 6.015s | ~Time Left: 324.832s |  Train Loss: 0.0043 | Train Acc. 100.0000% | Test Loss: 0.0307 | Test Acc. 98.7180%
+Train AUC: 0.999986297803538
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 147/200 Ended | E Time: 6.071s | ~Time Left: 321.781s |  Train Loss: 0.0056 | Train Acc. 99.8932% | Test Loss: 0.0120 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 148/200 Ended | E Time: 5.973s | ~Time Left: 310.579s |  Train Loss: 0.0030 | Train Acc. 99.8932% | Test Loss: 0.0117 | Test Acc. 99.5727%
+Train AUC: 0.9999771630058966
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 149/200 Ended | E Time: 5.953s | ~Time Left: 303.590s |  Train Loss: 0.0071 | Train Acc. 99.6795% | Test Loss: 0.0264 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 150/200 Ended | E Time: 6.088s | ~Time Left: 304.393s |  Train Loss: 0.0031 | Train Acc. 100.0000% | Test Loss: 0.0021 | Test Acc. 100.0000%
+Train AUC: 0.9999862978035379
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 151/200 Ended | E Time: 6.075s | ~Time Left: 297.657s |  Train Loss: 0.0045 | Train Acc. 99.8932% | Test Loss: 0.0038 | Test Acc. 100.0000%
+Train AUC: 0.99960720370142
+Valid AUC: 0.9992681498829039
+AdamP on AIDPATH_transformed: T 2/3 | E 152/200 Ended | E Time: 5.972s | ~Time Left: 286.658s |  Train Loss: 0.0549 | Train Acc. 99.1453% | Test Loss: 0.0333 | Test Acc. 98.7180%
+Train AUC: 0.995921312853117
+Valid AUC: 0.99817037470726
+AdamP on AIDPATH_transformed: T 2/3 | E 153/200 Ended | E Time: 5.969s | ~Time Left: 280.556s |  Train Loss: 0.0798 | Train Acc. 97.4359% | Test Loss: 0.0733 | Test Acc. 97.8633%
+Train AUC: 0.9990043070570879
+Valid AUC: 0.9990485948477752
+AdamP on AIDPATH_transformed: T 2/3 | E 154/200 Ended | E Time: 5.947s | ~Time Left: 273.560s |  Train Loss: 0.0438 | Train Acc. 97.8633% | Test Loss: 0.0656 | Test Acc. 97.8633%
+Train AUC: 0.999502153528544
+Valid AUC: 0.9996340749414521
+AdamP on AIDPATH_transformed: T 2/3 | E 155/200 Ended | E Time: 5.960s | ~Time Left: 268.214s |  Train Loss: 0.0262 | Train Acc. 98.9316% | Test Loss: 0.0294 | Test Acc. 98.7180%
+Train AUC: 0.9996437428919855
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 156/200 Ended | E Time: 6.428s | ~Time Left: 282.835s |  Train Loss: 0.0147 | Train Acc. 99.7863% | Test Loss: 0.0228 | Test Acc. 98.7180%
+Train AUC: 0.9994062381533093
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 157/200 Ended | E Time: 5.937s | ~Time Left: 255.279s |  Train Loss: 0.0226 | Train Acc. 98.9316% | Test Loss: 0.0239 | Test Acc. 99.1453%
+Train AUC: 0.9996985516778341
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 158/200 Ended | E Time: 6.051s | ~Time Left: 254.156s |  Train Loss: 0.0374 | Train Acc. 99.1453% | Test Loss: 0.0234 | Test Acc. 99.1453%
+Train AUC: 0.9981913100670038
+Valid AUC: 0.9978776346604216
+AdamP on AIDPATH_transformed: T 2/3 | E 159/200 Ended | E Time: 6.014s | ~Time Left: 246.593s |  Train Loss: 0.0514 | Train Acc. 97.8633% | Test Loss: 0.0603 | Test Acc. 98.7180%
+Train AUC: 0.9977665419766788
+Valid AUC: 0.9988290398126465
+AdamP on AIDPATH_transformed: T 2/3 | E 160/200 Ended | E Time: 6.669s | ~Time Left: 266.747s |  Train Loss: 0.0599 | Train Acc. 97.7564% | Test Loss: 0.0385 | Test Acc. 99.1453%
+Train AUC: 0.9999177868212275
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 161/200 Ended | E Time: 5.964s | ~Time Left: 232.612s |  Train Loss: 0.0156 | Train Acc. 99.6795% | Test Loss: 0.0170 | Test Acc. 98.7180%
+Train AUC: 0.9999132194224067
+Valid AUC: 0.9991217798594847
+AdamP on AIDPATH_transformed: T 2/3 | E 162/200 Ended | E Time: 5.951s | ~Time Left: 226.141s |  Train Loss: 0.0114 | Train Acc. 99.6795% | Test Loss: 0.0402 | Test Acc. 98.2906%
+Train AUC: 0.9999680282082551
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 163/200 Ended | E Time: 5.998s | ~Time Left: 221.939s |  Train Loss: 0.0106 | Train Acc. 99.6795% | Test Loss: 0.0203 | Test Acc. 99.1453%
+Train AUC: 0.999986297803538
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 2/3 | E 164/200 Ended | E Time: 6.089s | ~Time Left: 219.212s |  Train Loss: 0.0068 | Train Acc. 99.7863% | Test Loss: 0.0339 | Test Acc. 98.2906%
+Train AUC: 0.9998812476306619
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 165/200 Ended | E Time: 6.146s | ~Time Left: 215.114s |  Train Loss: 0.0124 | Train Acc. 99.6795% | Test Loss: 0.0092 | Test Acc. 99.5727%
+Train AUC: 0.9998766802318412
+Valid AUC: 0.9997072599531616
+AdamP on AIDPATH_transformed: T 2/3 | E 166/200 Ended | E Time: 6.003s | ~Time Left: 204.115s |  Train Loss: 0.0133 | Train Acc. 99.5727% | Test Loss: 0.0256 | Test Acc. 99.1453%
+Train AUC: 0.9999451912141516
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 167/200 Ended | E Time: 5.990s | ~Time Left: 197.672s |  Train Loss: 0.0134 | Train Acc. 99.5727% | Test Loss: 0.0229 | Test Acc. 98.7180%
+Train AUC: 0.9999588934106137
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 168/200 Ended | E Time: 6.111s | ~Time Left: 195.553s |  Train Loss: 0.0129 | Train Acc. 99.7863% | Test Loss: 0.0313 | Test Acc. 98.7180%
+Train AUC: 0.9993651315639231
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 2/3 | E 169/200 Ended | E Time: 6.089s | ~Time Left: 188.744s |  Train Loss: 0.0195 | Train Acc. 99.3590% | Test Loss: 0.0336 | Test Acc. 98.7180%
+Train AUC: 0.9999040846247653
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 170/200 Ended | E Time: 6.073s | ~Time Left: 182.191s |  Train Loss: 0.0144 | Train Acc. 99.4658% | Test Loss: 0.0144 | Test Acc. 99.5727%
+Train AUC: 0.9999680282082551
+Valid AUC: 0.9994145199063231
+AdamP on AIDPATH_transformed: T 2/3 | E 171/200 Ended | E Time: 6.058s | ~Time Left: 175.689s |  Train Loss: 0.0128 | Train Acc. 99.6795% | Test Loss: 0.0293 | Test Acc. 98.2906%
+Train AUC: 0.9999634608094344
+Valid AUC: 0.9994877049180327
+AdamP on AIDPATH_transformed: T 2/3 | E 172/200 Ended | E Time: 5.977s | ~Time Left: 167.361s |  Train Loss: 0.0087 | Train Acc. 99.7863% | Test Loss: 0.0275 | Test Acc. 99.5727%
+Train AUC: 0.9998949498271239
+Valid AUC: 0.9997072599531617
+AdamP on AIDPATH_transformed: T 2/3 | E 173/200 Ended | E Time: 5.970s | ~Time Left: 161.197s |  Train Loss: 0.0124 | Train Acc. 99.5727% | Test Loss: 0.0221 | Test Acc. 98.7180%
+Train AUC: 0.9998584106365584
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 174/200 Ended | E Time: 5.986s | ~Time Left: 155.637s |  Train Loss: 0.0104 | Train Acc. 99.7863% | Test Loss: 0.0206 | Test Acc. 99.1453%
+Train AUC: 0.9998538432377376
+Valid AUC: 0.9986826697892272
+AdamP on AIDPATH_transformed: T 2/3 | E 175/200 Ended | E Time: 6.062s | ~Time Left: 151.560s |  Train Loss: 0.0144 | Train Acc. 99.4658% | Test Loss: 0.0559 | Test Acc. 99.1453%
+Train AUC: 0.9998036018507099
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 176/200 Ended | E Time: 6.009s | ~Time Left: 144.207s |  Train Loss: 0.0162 | Train Acc. 99.4658% | Test Loss: 0.0195 | Test Acc. 99.1453%
+Train AUC: 0.9999588934106137
+Valid AUC: 0.9987558548009368
+AdamP on AIDPATH_transformed: T 2/3 | E 177/200 Ended | E Time: 6.021s | ~Time Left: 138.474s |  Train Loss: 0.0105 | Train Acc. 99.5727% | Test Loss: 0.0336 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 0.9996340749414521
+AdamP on AIDPATH_transformed: T 2/3 | E 178/200 Ended | E Time: 6.026s | ~Time Left: 132.579s |  Train Loss: 0.0030 | Train Acc. 100.0000% | Test Loss: 0.0364 | Test Acc. 98.2906%
+Train AUC: 0.9999177868212275
+Valid AUC: 0.9994145199063232
+AdamP on AIDPATH_transformed: T 2/3 | E 179/200 Ended | E Time: 5.935s | ~Time Left: 124.639s |  Train Loss: 0.0083 | Train Acc. 99.8932% | Test Loss: 0.0331 | Test Acc. 99.1453%
+Train AUC: 0.9999954326011793
+Valid AUC: 0.9993413348946136
+AdamP on AIDPATH_transformed: T 2/3 | E 180/200 Ended | E Time: 6.021s | ~Time Left: 120.418s |  Train Loss: 0.0045 | Train Acc. 99.8932% | Test Loss: 0.0218 | Test Acc. 99.5727%
+Train AUC: 1.0
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 181/200 Ended | E Time: 6.440s | ~Time Left: 122.365s |  Train Loss: 0.0024 | Train Acc. 100.0000% | Test Loss: 0.0175 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 182/200 Ended | E Time: 6.210s | ~Time Left: 111.787s |  Train Loss: 0.0022 | Train Acc. 100.0000% | Test Loss: 0.0044 | Test Acc. 100.0000%
+Train AUC: 0.9999908652023587
+Valid AUC: 0.9997804449648712
+AdamP on AIDPATH_transformed: T 2/3 | E 183/200 Ended | E Time: 6.010s | ~Time Left: 102.175s |  Train Loss: 0.0055 | Train Acc. 99.7863% | Test Loss: 0.0161 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 184/200 Ended | E Time: 6.015s | ~Time Left: 96.233s |  Train Loss: 0.0028 | Train Acc. 99.8932% | Test Loss: 0.0100 | Test Acc. 99.5727%
+Train AUC: 0.9999817304047172
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 185/200 Ended | E Time: 6.017s | ~Time Left: 90.250s |  Train Loss: 0.0053 | Train Acc. 99.8932% | Test Loss: 0.0106 | Test Acc. 99.5727%
+Train AUC: 0.9999680282082551
+Valid AUC: 0.9998536299765808
+AdamP on AIDPATH_transformed: T 2/3 | E 186/200 Ended | E Time: 5.971s | ~Time Left: 83.598s |  Train Loss: 0.0080 | Train Acc. 99.6795% | Test Loss: 0.0144 | Test Acc. 99.1453%
+Train AUC: 1.0
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 187/200 Ended | E Time: 6.050s | ~Time Left: 78.647s |  Train Loss: 0.0037 | Train Acc. 100.0000% | Test Loss: 0.0110 | Test Acc. 99.5727%
+Train AUC: 0.9999862978035379
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 188/200 Ended | E Time: 6.022s | ~Time Left: 72.266s |  Train Loss: 0.0051 | Train Acc. 99.7863% | Test Loss: 0.0161 | Test Acc. 99.1453%
+Train AUC: 0.9999451912141516
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 189/200 Ended | E Time: 5.968s | ~Time Left: 65.646s |  Train Loss: 0.0107 | Train Acc. 99.6795% | Test Loss: 0.0255 | Test Acc. 98.7180%
+Train AUC: 0.9996483102908063
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 190/200 Ended | E Time: 6.447s | ~Time Left: 64.469s |  Train Loss: 0.0463 | Train Acc. 99.5727% | Test Loss: 0.0047 | Test Acc. 99.5727%
+Train AUC: 0.9974559588568714
+Valid AUC: 0.9997072599531617
+AdamP on AIDPATH_transformed: T 2/3 | E 191/200 Ended | E Time: 6.267s | ~Time Left: 56.403s |  Train Loss: 0.0559 | Train Acc. 98.3974% | Test Loss: 0.0196 | Test Acc. 99.5727%
+Train AUC: 0.9999360564165103
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 192/200 Ended | E Time: 5.924s | ~Time Left: 47.395s |  Train Loss: 0.0179 | Train Acc. 99.2521% | Test Loss: 0.0110 | Test Acc. 99.1453%
+Train AUC: 0.9996254732967027
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 193/200 Ended | E Time: 6.014s | ~Time Left: 42.101s |  Train Loss: 0.0226 | Train Acc. 99.3590% | Test Loss: 0.0199 | Test Acc. 99.1453%
+Train AUC: 0.9996894168801925
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 194/200 Ended | E Time: 6.019s | ~Time Left: 36.116s |  Train Loss: 0.0243 | Train Acc. 98.8248% | Test Loss: 0.0141 | Test Acc. 99.5727%
+Train AUC: 0.9992509465934056
+Valid AUC: 0.9992681498829039
+AdamP on AIDPATH_transformed: T 2/3 | E 195/200 Ended | E Time: 6.035s | ~Time Left: 30.177s |  Train Loss: 0.0311 | Train Acc. 98.9316% | Test Loss: 0.0566 | Test Acc. 98.7180%
+Train AUC: 0.9998492758389169
+Valid AUC: 0.9986826697892272
+AdamP on AIDPATH_transformed: T 2/3 | E 196/200 Ended | E Time: 5.972s | ~Time Left: 23.887s |  Train Loss: 0.0163 | Train Acc. 99.6795% | Test Loss: 0.0391 | Test Acc. 99.5727%
+Train AUC: 0.999940623815331
+Valid AUC: 1.0
+AdamP on AIDPATH_transformed: T 2/3 | E 197/200 Ended | E Time: 6.064s | ~Time Left: 18.192s |  Train Loss: 0.0111 | Train Acc. 99.3590% | Test Loss: 0.0096 | Test Acc. 99.5727%
+Train AUC: 0.9995889341061373
+Valid AUC: 0.999634074941452
+AdamP on AIDPATH_transformed: T 2/3 | E 198/200 Ended | E Time: 5.990s | ~Time Left: 11.979s |  Train Loss: 0.0141 | Train Acc. 99.7863% | Test Loss: 0.0317 | Test Acc. 98.7180%
+Train AUC: 0.9999680282082551
+Valid AUC: 0.9997072599531617
+AdamP on AIDPATH_transformed: T 2/3 | E 199/200 Ended | E Time: 6.132s | ~Time Left: 6.132s |  Train Loss: 0.0079 | Train Acc. 99.6795% | Test Loss: 0.0258 | Test Acc. 98.7180%
+Train AUC: 1.0
+Valid AUC: 0.9999268149882904
+AdamP on AIDPATH_transformed: T 2/3 | E 200/200 Ended | E Time: 5.981s | ~Time Left: 0.000s |  Train Loss: 0.0037 | Train Acc. 99.8932% | Test Loss: 0.0147 | Test Acc. 99.1453%
+Train AUC: 0.8684543465650878
+Valid AUC: 0.9268881733021077
+AdamP on AIDPATH_transformed: T 3/3 | E 1/200 Ended | E Time: 6.401s | ~Time Left: 1273.870s |  Train Loss: 0.4693 | Train Acc. 77.8846% | Test Loss: 0.4527 | Test Acc. 79.4872%
+Train AUC: 0.9287257414030136
+Valid AUC: 0.9707259953161593
+AdamP on AIDPATH_transformed: T 3/3 | E 2/200 Ended | E Time: 6.048s | ~Time Left: 1197.496s |  Train Loss: 0.3458 | Train Acc. 84.4017% | Test Loss: 0.2659 | Test Acc. 89.3162%
+Train AUC: 0.9586924450656107
+Valid AUC: 0.952942037470726
+AdamP on AIDPATH_transformed: T 3/3 | E 3/200 Ended | E Time: 5.883s | ~Time Left: 1158.903s |  Train Loss: 0.2579 | Train Acc. 90.0641% | Test Loss: 0.3474 | Test Acc. 83.7607%
+Train AUC: 0.9646848723183659
+Valid AUC: 0.9749707259953161
+AdamP on AIDPATH_transformed: T 3/3 | E 4/200 Ended | E Time: 5.925s | ~Time Left: 1161.351s |  Train Loss: 0.2294 | Train Acc. 91.8803% | Test Loss: 0.2483 | Test Acc. 90.1709%
+Train AUC: 0.9722165129736964
+Valid AUC: 0.9911446135831381
+AdamP on AIDPATH_transformed: T 3/3 | E 5/200 Ended | E Time: 5.995s | ~Time Left: 1169.001s |  Train Loss: 0.2011 | Train Acc. 91.7735% | Test Loss: 0.1670 | Test Acc. 96.1539%
+Train AUC: 0.9895406567006024
+Valid AUC: 0.9889490632318501
+AdamP on AIDPATH_transformed: T 3/3 | E 6/200 Ended | E Time: 5.954s | ~Time Left: 1155.117s |  Train Loss: 0.1274 | Train Acc. 95.9402% | Test Loss: 0.1842 | Test Acc. 94.4445%
+Train AUC: 0.9880014432980274
+Valid AUC: 0.992461943793911
+AdamP on AIDPATH_transformed: T 3/3 | E 7/200 Ended | E Time: 6.099s | ~Time Left: 1177.028s |  Train Loss: 0.1338 | Train Acc. 94.8718% | Test Loss: 0.1577 | Test Acc. 96.1539%
+Train AUC: 0.9855807219230577
+Valid AUC: 0.9979508196721311
+AdamP on AIDPATH_transformed: T 3/3 | E 8/200 Ended | E Time: 6.021s | ~Time Left: 1155.984s |  Train Loss: 0.1541 | Train Acc. 94.2308% | Test Loss: 0.0782 | Test Acc. 97.4359%
+Train AUC: 0.9893625281465953
+Valid AUC: 0.9950966042154568
+AdamP on AIDPATH_transformed: T 3/3 | E 9/200 Ended | E Time: 6.033s | ~Time Left: 1152.296s |  Train Loss: 0.1299 | Train Acc. 94.7650% | Test Loss: 0.1048 | Test Acc. 95.7265%
+Train AUC: 0.9871427723197362
+Valid AUC: 0.9836065573770492
+AdamP on AIDPATH_transformed: T 3/3 | E 10/200 Ended | E Time: 5.937s | ~Time Left: 1128.115s |  Train Loss: 0.1394 | Train Acc. 94.5513% | Test Loss: 0.3083 | Test Acc. 91.8803%
+Train AUC: 0.9913721836277022
+Valid AUC: 0.9962675644028103
+AdamP on AIDPATH_transformed: T 3/3 | E 11/200 Ended | E Time: 6.106s | ~Time Left: 1153.956s |  Train Loss: 0.1125 | Train Acc. 96.0470% | Test Loss: 0.2900 | Test Acc. 88.0342%
+Train AUC: 0.9837126558053922
+Valid AUC: 0.990632318501171
+AdamP on AIDPATH_transformed: T 3/3 | E 12/200 Ended | E Time: 5.978s | ~Time Left: 1123.864s |  Train Loss: 0.1834 | Train Acc. 94.3376% | Test Loss: 0.1645 | Test Acc. 96.1539%
+Train AUC: 0.9933315977217815
+Valid AUC: 0.9912909836065573
+AdamP on AIDPATH_transformed: T 3/3 | E 13/200 Ended | E Time: 5.964s | ~Time Left: 1115.179s |  Train Loss: 0.1018 | Train Acc. 96.5812% | Test Loss: 0.1023 | Test Acc. 95.7265%
+Train AUC: 0.9941857013012518
+Valid AUC: 0.9926083138173303
+AdamP on AIDPATH_transformed: T 3/3 | E 14/200 Ended | E Time: 5.949s | ~Time Left: 1106.495s |  Train Loss: 0.0937 | Train Acc. 96.3675% | Test Loss: 0.1797 | Test Acc. 93.5897%
+Train AUC: 0.9949758612972326
+Valid AUC: 0.9968530444964872
+AdamP on AIDPATH_transformed: T 3/3 | E 15/200 Ended | E Time: 5.974s | ~Time Left: 1105.133s |  Train Loss: 0.0835 | Train Acc. 96.6880% | Test Loss: 0.0873 | Test Acc. 96.1539%
+Train AUC: 0.9931077951795673
+Valid AUC: 0.9936329039812646
+AdamP on AIDPATH_transformed: T 3/3 | E 16/200 Ended | E Time: 6.014s | ~Time Left: 1106.575s |  Train Loss: 0.1154 | Train Acc. 95.8333% | Test Loss: 0.1088 | Test Acc. 97.0086%
+Train AUC: 0.9942450774859211
+Valid AUC: 0.9971457845433255
+AdamP on AIDPATH_transformed: T 3/3 | E 17/200 Ended | E Time: 6.011s | ~Time Left: 1099.934s |  Train Loss: 0.1006 | Train Acc. 95.9402% | Test Loss: 0.1298 | Test Acc. 95.2991%
+Train AUC: 0.997355476082816
+Valid AUC: 0.9966334894613583
+AdamP on AIDPATH_transformed: T 3/3 | E 18/200 Ended | E Time: 5.979s | ~Time Left: 1088.131s |  Train Loss: 0.0694 | Train Acc. 97.5427% | Test Loss: 0.0835 | Test Acc. 97.0086%
+Train AUC: 0.9970448929630087
+Valid AUC: 0.9975117096018735
+AdamP on AIDPATH_transformed: T 3/3 | E 19/200 Ended | E Time: 6.012s | ~Time Left: 1088.219s |  Train Loss: 0.0681 | Train Acc. 97.1154% | Test Loss: 0.0720 | Test Acc. 97.4359%
+Train AUC: 0.9950489396783638
+Valid AUC: 0.9995608899297423
+AdamP on AIDPATH_transformed: T 3/3 | E 20/200 Ended | E Time: 6.002s | ~Time Left: 1080.366s |  Train Loss: 0.0830 | Train Acc. 97.1154% | Test Loss: 0.0358 | Test Acc. 98.2906%
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 372, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 491, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 373, in save
+    return
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:274] . unexpected pos 13647424 vs 13647312
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 466, in run_epochs
+    torch.save(
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 374, in save
+    _legacy_save(obj, opened_file, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 214, in __exit__
+    self.file_like.close()
+OSError: [Errno 122] Disk quota exceeded
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:274] . unexpected pos 13647424 vs 13647312
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x2b928ec040e7 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x206a420 (0x2b923ed98420 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x20665f3 (0x2b923ed945f3 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xa9 (0x2b923ed98d99 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0xe1 (0x2b923ed998d1 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x115 (0x2b923ed9a0c5 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x737903 (0x2b923bc65903 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x369b90 (0x2b923b897b90 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x36adfe (0x2b923b898dfe in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #22: __libc_start_main + 0xeb (0x2b923917de1b in /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libc.so.6)
+
+/var/spool/slurmd/job6958536/slurm_script: line 30: 252931 Aborted                 (core dumped) python src/adas/train.py --config PostTrainingConfigs/AIDPATH_transformed_testing/AdamP/lr-0.0001-config-AdamP.yaml --output ADP_post_trained/AIDPATH_transformed/AdamP/output/fine_tuning --checkpoint ADP_post_trained/AIDPATH_transformed/AdamP/checkpoint/fine_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar --freeze_encoder True
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/AIDPATH_transformed_testing/AdamP/lr-0.0001-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958536.0        
+    output              : ADP_post_trained/AIDPATH_transformed/AdamP/output/deep_tuning
+    checkpoint          : ADP_post_trained/AIDPATH_transformed/AdamP/checkpoint/deep_tuning/lr-0.0001
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              AIDPATH_transformed 
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0001              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.8570221473168815
+Valid AUC: 0.9257903981264637
+AdamP on AIDPATH_transformed: T 1/3 | E 1/200 Ended | E Time: 6.411s | ~Time Left: 1275.846s |  Train Loss: 0.4619 | Train Acc. 77.7778% | Test Loss: 0.7940 | Test Acc. 73.9316%
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 372, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 491, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 373, in save
+    return
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:274] . unexpected pos 14732288 vs 14732184
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 462, in run_epochs
+    torch.save(data, str(self.checkpoint_path / filename))
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 374, in save
+    _legacy_save(obj, opened_file, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 214, in __exit__
+    self.file_like.close()
+OSError: [Errno 122] Disk quota exceeded
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:274] . unexpected pos 14732288 vs 14732184
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x2b1dc6c310e7 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x206a420 (0x2b1d76dc5420 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x20665f3 (0x2b1d76dc15f3 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xa9 (0x2b1d76dc5d99 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0xe1 (0x2b1d76dc68d1 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x115 (0x2b1d76dc70c5 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x737903 (0x2b1d73c92903 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x369b90 (0x2b1d738c4b90 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x36adfe (0x2b1d738c5dfe in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #22: __libc_start_main + 0xeb (0x2b1d711aae1b in /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libc.so.6)
+
+/var/spool/slurmd/job6958536/slurm_script: line 31:  9685 Aborted                 (core dumped) python src/adas/train.py --config PostTrainingConfigs/AIDPATH_transformed_testing/AdamP/lr-0.0001-config-AdamP.yaml --output ADP_post_trained/AIDPATH_transformed/AdamP/output/deep_tuning --checkpoint ADP_post_trained/AIDPATH_transformed/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar --freeze_encoder False

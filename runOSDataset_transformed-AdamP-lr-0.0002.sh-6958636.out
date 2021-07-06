@@ -1,0 +1,252 @@
+transferring data
+Sun Jul  4 20:18:01 PDT 2021
+
+Finished transferring
+Sun Jul  4 20:18:06 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/OSDataset_transformed_testing/AdamP/lr-0.0002-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958636.0        
+    output              : ADP_post_trained/OSDataset_transformed/AdamP/output/fine_tuning
+    checkpoint          : ADP_post_trained/OSDataset_transformed/AdamP/checkpoint/fine_tuning/lr-0.0002
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              OSDataset_transformed
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0002              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on OSDataset_transformed: T 1/3 | E 1/200 Ended | E Time: 55.367s | ~Time Left: 11018.013s |  Train Loss: 0.7885 | Train Acc. 71.2482% | Test Loss: 0.7815 | Test Acc. 70.9619%
+AdamP on OSDataset_transformed: T 1/3 | E 2/200 Ended | E Time: 54.469s | ~Time Left: 10784.925s |  Train Loss: 0.6655 | Train Acc. 75.2249% | Test Loss: 0.6112 | Test Acc. 77.1930%
+AdamP on OSDataset_transformed: T 1/3 | E 3/200 Ended | E Time: 54.520s | ~Time Left: 10740.537s |  Train Loss: 0.6112 | Train Acc. 77.7954% | Test Loss: 0.6380 | Test Acc. 76.5880%
+AdamP on OSDataset_transformed: T 1/3 | E 4/200 Ended | E Time: 54.521s | ~Time Left: 10686.204s |  Train Loss: 0.5804 | Train Acc. 78.9824% | Test Loss: 0.6013 | Test Acc. 77.6769%
+AdamP on OSDataset_transformed: T 1/3 | E 5/200 Ended | E Time: 54.397s | ~Time Left: 10607.353s |  Train Loss: 0.5547 | Train Acc. 80.1467% | Test Loss: 0.5628 | Test Acc. 79.7338%
+AdamP on OSDataset_transformed: T 1/3 | E 6/200 Ended | E Time: 54.348s | ~Time Left: 10543.468s |  Train Loss: 0.5269 | Train Acc. 81.4395% | Test Loss: 0.5417 | Test Acc. 82.0932%
+AdamP on OSDataset_transformed: T 1/3 | E 7/200 Ended | E Time: 54.378s | ~Time Left: 10495.003s |  Train Loss: 0.5179 | Train Acc. 81.4924% | Test Loss: 0.5311 | Test Acc. 81.4882%
+AdamP on OSDataset_transformed: T 1/3 | E 8/200 Ended | E Time: 54.610s | ~Time Left: 10485.175s |  Train Loss: 0.4971 | Train Acc. 82.2031% | Test Loss: 0.5136 | Test Acc. 81.6697%
+AdamP on OSDataset_transformed: T 1/3 | E 9/200 Ended | E Time: 54.597s | ~Time Left: 10428.049s |  Train Loss: 0.4941 | Train Acc. 82.4450% | Test Loss: 0.4651 | Test Acc. 82.9401%
+AdamP on OSDataset_transformed: T 1/3 | E 10/200 Ended | E Time: 54.562s | ~Time Left: 10366.739s |  Train Loss: 0.4771 | Train Acc. 83.0876% | Test Loss: 0.4857 | Test Acc. 82.6376%
+AdamP on OSDataset_transformed: T 1/3 | E 11/200 Ended | E Time: 54.629s | ~Time Left: 10324.963s |  Train Loss: 0.4725 | Train Acc. 83.1027% | Test Loss: 0.4707 | Test Acc. 82.7586%
+AdamP on OSDataset_transformed: T 1/3 | E 12/200 Ended | E Time: 54.630s | ~Time Left: 10270.447s |  Train Loss: 0.4753 | Train Acc. 82.9969% | Test Loss: 0.5317 | Test Acc. 81.4277%
+AdamP on OSDataset_transformed: T 1/3 | E 13/200 Ended | E Time: 54.424s | ~Time Left: 10177.345s |  Train Loss: 0.4550 | Train Acc. 83.8966% | Test Loss: 0.4275 | Test Acc. 84.5735%
+AdamP on OSDataset_transformed: T 1/3 | E 14/200 Ended | E Time: 54.397s | ~Time Left: 10117.911s |  Train Loss: 0.4514 | Train Acc. 83.8663% | Test Loss: 0.4467 | Test Acc. 84.3920%
+AdamP on OSDataset_transformed: T 1/3 | E 15/200 Ended | E Time: 54.499s | ~Time Left: 10082.245s |  Train Loss: 0.4462 | Train Acc. 83.9419% | Test Loss: 0.4539 | Test Acc. 83.1821%
+AdamP on OSDataset_transformed: T 1/3 | E 16/200 Ended | E Time: 54.560s | ~Time Left: 10038.985s |  Train Loss: 0.4398 | Train Acc. 83.9117% | Test Loss: 0.4346 | Test Acc. 84.9365%
+AdamP on OSDataset_transformed: T 1/3 | E 17/200 Ended | E Time: 54.605s | ~Time Left: 9992.668s |  Train Loss: 0.4340 | Train Acc. 84.3956% | Test Loss: 0.4388 | Test Acc. 84.4525%
+AdamP on OSDataset_transformed: T 1/3 | E 18/200 Ended | E Time: 54.405s | ~Time Left: 9901.702s |  Train Loss: 0.4221 | Train Acc. 84.7962% | Test Loss: 0.4208 | Test Acc. 85.1180%
+AdamP on OSDataset_transformed: T 1/3 | E 19/200 Ended | E Time: 54.469s | ~Time Left: 9858.850s |  Train Loss: 0.4179 | Train Acc. 84.8492% | Test Loss: 0.4103 | Test Acc. 84.8155%
+AdamP on OSDataset_transformed: T 1/3 | E 20/200 Ended | E Time: 54.737s | ~Time Left: 9852.723s |  Train Loss: 0.4144 | Train Acc. 85.1213% | Test Loss: 0.4239 | Test Acc. 85.1785%
+AdamP on OSDataset_transformed: T 1/3 | E 21/200 Ended | E Time: 54.658s | ~Time Left: 9783.837s |  Train Loss: 0.4034 | Train Acc. 85.4011% | Test Loss: 0.4480 | Test Acc. 84.8760%
+AdamP on OSDataset_transformed: T 1/3 | E 22/200 Ended | E Time: 54.658s | ~Time Left: 9729.155s |  Train Loss: 0.4012 | Train Acc. 85.4011% | Test Loss: 0.4081 | Test Acc. 85.3599%
+AdamP on OSDataset_transformed: T 1/3 | E 23/200 Ended | E Time: 54.591s | ~Time Left: 9662.685s |  Train Loss: 0.3961 | Train Acc. 85.6279% | Test Loss: 0.4653 | Test Acc. 82.8796%
+AdamP on OSDataset_transformed: T 1/3 | E 24/200 Ended | E Time: 54.580s | ~Time Left: 9606.015s |  Train Loss: 0.3916 | Train Acc. 85.4464% | Test Loss: 0.4137 | Test Acc. 84.9970%
+AdamP on OSDataset_transformed: T 1/3 | E 25/200 Ended | E Time: 54.940s | ~Time Left: 9614.484s |  Train Loss: 0.3903 | Train Acc. 86.1193% | Test Loss: 0.4496 | Test Acc. 84.2105%
+AdamP on OSDataset_transformed: T 1/3 | E 26/200 Ended | E Time: 54.653s | ~Time Left: 9509.565s |  Train Loss: 0.3917 | Train Acc. 85.6581% | Test Loss: 0.4402 | Test Acc. 84.4525%
+AdamP on OSDataset_transformed: T 1/3 | E 27/200 Ended | E Time: 54.697s | ~Time Left: 9462.653s |  Train Loss: 0.3777 | Train Acc. 86.0135% | Test Loss: 0.4159 | Test Acc. 84.8155%
+AdamP on OSDataset_transformed: T 1/3 | E 28/200 Ended | E Time: 54.583s | ~Time Left: 9388.282s |  Train Loss: 0.3788 | Train Acc. 86.2251% | Test Loss: 0.4008 | Test Acc. 86.5699%
+AdamP on OSDataset_transformed: T 1/3 | E 29/200 Ended | E Time: 54.755s | ~Time Left: 9363.068s |  Train Loss: 0.3744 | Train Acc. 86.3990% | Test Loss: 0.4167 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 1/3 | E 30/200 Ended | E Time: 54.590s | ~Time Left: 9280.367s |  Train Loss: 0.3708 | Train Acc. 86.5880% | Test Loss: 0.3842 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 1/3 | E 31/200 Ended | E Time: 54.537s | ~Time Left: 9216.811s |  Train Loss: 0.3687 | Train Acc. 86.3537% | Test Loss: 0.4228 | Test Acc. 85.1180%
+AdamP on OSDataset_transformed: T 1/3 | E 32/200 Ended | E Time: 54.652s | ~Time Left: 9181.588s |  Train Loss: 0.3646 | Train Acc. 86.5124% | Test Loss: 0.4003 | Test Acc. 86.0859%
+AdamP on OSDataset_transformed: T 1/3 | E 33/200 Ended | E Time: 54.582s | ~Time Left: 9115.248s |  Train Loss: 0.3586 | Train Acc. 87.1248% | Test Loss: 0.3706 | Test Acc. 86.9933%
+AdamP on OSDataset_transformed: T 1/3 | E 34/200 Ended | E Time: 54.717s | ~Time Left: 9083.092s |  Train Loss: 0.3586 | Train Acc. 86.7997% | Test Loss: 0.3856 | Test Acc. 86.3884%
+AdamP on OSDataset_transformed: T 1/3 | E 35/200 Ended | E Time: 54.541s | ~Time Left: 8999.309s |  Train Loss: 0.3558 | Train Acc. 86.8526% | Test Loss: 0.3859 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 1/3 | E 36/200 Ended | E Time: 55.481s | ~Time Left: 9098.903s |  Train Loss: 0.3485 | Train Acc. 87.2911% | Test Loss: 0.3749 | Test Acc. 87.1748%
+AdamP on OSDataset_transformed: T 1/3 | E 37/200 Ended | E Time: 54.706s | ~Time Left: 8917.024s |  Train Loss: 0.3478 | Train Acc. 87.3289% | Test Loss: 0.3671 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 1/3 | E 38/200 Ended | E Time: 54.607s | ~Time Left: 8846.403s |  Train Loss: 0.3454 | Train Acc. 87.3138% | Test Loss: 0.3847 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 1/3 | E 39/200 Ended | E Time: 54.848s | ~Time Left: 8830.543s |  Train Loss: 0.3515 | Train Acc. 86.9963% | Test Loss: 0.4138 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 1/3 | E 40/200 Ended | E Time: 54.779s | ~Time Left: 8764.639s |  Train Loss: 0.3399 | Train Acc. 87.6238% | Test Loss: 0.3712 | Test Acc. 87.5378%
+AdamP on OSDataset_transformed: T 1/3 | E 41/200 Ended | E Time: 54.714s | ~Time Left: 8699.508s |  Train Loss: 0.3413 | Train Acc. 87.3970% | Test Loss: 0.4647 | Test Acc. 83.4846%
+AdamP on OSDataset_transformed: T 1/3 | E 42/200 Ended | E Time: 54.858s | ~Time Left: 8667.548s |  Train Loss: 0.3405 | Train Acc. 87.3819% | Test Loss: 0.3811 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 1/3 | E 43/200 Ended | E Time: 54.595s | ~Time Left: 8571.491s |  Train Loss: 0.3387 | Train Acc. 87.5482% | Test Loss: 0.4038 | Test Acc. 86.2069%
+AdamP on OSDataset_transformed: T 1/3 | E 44/200 Ended | E Time: 54.669s | ~Time Left: 8528.309s |  Train Loss: 0.3262 | Train Acc. 87.9413% | Test Loss: 0.3918 | Test Acc. 85.6019%
+AdamP on OSDataset_transformed: T 1/3 | E 45/200 Ended | E Time: 54.663s | ~Time Left: 8472.808s |  Train Loss: 0.3327 | Train Acc. 87.9565% | Test Loss: 0.3965 | Test Acc. 85.9649%
+AdamP on OSDataset_transformed: T 1/3 | E 46/200 Ended | E Time: 54.701s | ~Time Left: 8423.878s |  Train Loss: 0.3305 | Train Acc. 88.1001% | Test Loss: 0.3618 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 1/3 | E 47/200 Ended | E Time: 54.610s | ~Time Left: 8355.279s |  Train Loss: 0.3270 | Train Acc. 87.9791% | Test Loss: 0.4159 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 1/3 | E 48/200 Ended | E Time: 54.597s | ~Time Left: 8298.739s |  Train Loss: 0.3249 | Train Acc. 87.9943% | Test Loss: 0.3615 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 1/3 | E 49/200 Ended | E Time: 54.790s | ~Time Left: 8273.233s |  Train Loss: 0.3273 | Train Acc. 88.0699% | Test Loss: 0.3634 | Test Acc. 86.2674%
+AdamP on OSDataset_transformed: T 1/3 | E 50/200 Ended | E Time: 54.578s | ~Time Left: 8186.687s |  Train Loss: 0.3218 | Train Acc. 88.2437% | Test Loss: 0.3791 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 1/3 | E 51/200 Ended | E Time: 54.817s | ~Time Left: 8167.676s |  Train Loss: 0.3231 | Train Acc. 88.1606% | Test Loss: 0.3450 | Test Acc. 88.3848%
+AdamP on OSDataset_transformed: T 1/3 | E 52/200 Ended | E Time: 54.497s | ~Time Left: 8065.486s |  Train Loss: 0.3209 | Train Acc. 88.2362% | Test Loss: 0.3649 | Test Acc. 87.7193%
+AdamP on OSDataset_transformed: T 1/3 | E 53/200 Ended | E Time: 54.823s | ~Time Left: 8058.956s |  Train Loss: 0.3217 | Train Acc. 88.0925% | Test Loss: 0.3802 | Test Acc. 87.7193%
+AdamP on OSDataset_transformed: T 1/3 | E 54/200 Ended | E Time: 54.496s | ~Time Left: 7956.345s |  Train Loss: 0.3184 | Train Acc. 88.4781% | Test Loss: 0.3677 | Test Acc. 87.2353%
+AdamP on OSDataset_transformed: T 1/3 | E 55/200 Ended | E Time: 54.874s | ~Time Left: 7956.737s |  Train Loss: 0.3166 | Train Acc. 88.9317% | Test Loss: 0.3676 | Test Acc. 87.4168%
+AdamP on OSDataset_transformed: T 1/3 | E 56/200 Ended | E Time: 54.640s | ~Time Left: 7868.232s |  Train Loss: 0.3079 | Train Acc. 88.7881% | Test Loss: 0.3676 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 1/3 | E 57/200 Ended | E Time: 54.942s | ~Time Left: 7856.733s |  Train Loss: 0.3119 | Train Acc. 88.6520% | Test Loss: 0.3520 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 1/3 | E 58/200 Ended | E Time: 54.755s | ~Time Left: 7775.221s |  Train Loss: 0.3102 | Train Acc. 88.3571% | Test Loss: 0.3728 | Test Acc. 86.5699%
+AdamP on OSDataset_transformed: T 1/3 | E 59/200 Ended | E Time: 54.436s | ~Time Left: 7675.444s |  Train Loss: 0.3023 | Train Acc. 88.7125% | Test Loss: 0.4402 | Test Acc. 84.7550%
+AdamP on OSDataset_transformed: T 1/3 | E 60/200 Ended | E Time: 54.653s | ~Time Left: 7651.451s |  Train Loss: 0.3076 | Train Acc. 88.7578% | Test Loss: 0.3736 | Test Acc. 86.3884%
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 443, in run_epochs
+    df.to_excel(self.output_filename)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/core/generic.py", line 2189, in to_excel
+    formatter.write(
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/formats/excel.py", line 831, in write
+    writer.close()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 898, in close
+    content = self.save()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/excel/_openpyxl.py", line 54, in save
+    self.book.save(self.handles.handle)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/workbook/workbook.py", line 407, in save
+    save_workbook(self, filename)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 293, in save_workbook
+    writer.save()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 275, in save
+    self.write_data()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 67, in write_data
+    archive.writestr(ARC_APP, tostring(props.to_tree()))
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.8.2/lib/python3.8/zipfile.py", line 1817, in writestr
+    dest.write(data)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.8.2/lib/python3.8/zipfile.py", line 1180, in close
+    self._fileobj.seek(self._zinfo.header_offset)
+OSError: [Errno 122] Disk quota exceeded
+Exception ignored in: <function ZipFile.__del__ at 0x2b33da51d430>
+Traceback (most recent call last):
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.8.2/lib/python3.8/zipfile.py", line 1821, in __del__
+    self.close()
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.8.2/lib/python3.8/zipfile.py", line 1838, in close
+    self.fp.seek(self.start_dir)
+OSError: [Errno 122] Disk quota exceeded
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/OSDataset_transformed_testing/AdamP/lr-0.0002-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958636.0        
+    output              : ADP_post_trained/OSDataset_transformed/AdamP/output/deep_tuning
+    checkpoint          : ADP_post_trained/OSDataset_transformed/AdamP/checkpoint/deep_tuning/lr-0.0002
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              OSDataset_transformed
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0002              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on OSDataset_transformed: T 1/3 | E 1/200 Ended | E Time: 55.251s | ~Time Left: 10994.911s |  Train Loss: 0.7859 | Train Acc. 71.4675% | Test Loss: 0.7049 | Test Acc. 73.7447%
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 372, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 491, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 462, in run_epochs
+    torch.save(data, str(self.checkpoint_path / filename))
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 373, in save
+    return
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:274] . unexpected pos 6446976 vs 6446864
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:274] . unexpected pos 6446976 vs 6446864
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x2b49074a80e7 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x206a420 (0x2b48b763c420 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x20665f3 (0x2b48b76385f3 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xa9 (0x2b48b763cd99 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0xe1 (0x2b48b763d8d1 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x115 (0x2b48b763e0c5 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x737903 (0x2b48b4509903 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x369b90 (0x2b48b413bb90 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x36adfe (0x2b48b413cdfe in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #22: __libc_start_main + 0xeb (0x2b48b1a21e1b in /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libc.so.6)
+
+/var/spool/slurmd/job6958636/slurm_script: line 31: 159126 Aborted                 (core dumped) python src/adas/train.py --config PostTrainingConfigs/OSDataset_transformed_testing/AdamP/lr-0.0002-config-AdamP.yaml --output ADP_post_trained/OSDataset_transformed/AdamP/output/deep_tuning --checkpoint ADP_post_trained/OSDataset_transformed/AdamP/checkpoint/deep_tuning/lr-0.0002 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar --freeze_encoder False
