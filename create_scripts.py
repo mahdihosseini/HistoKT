@@ -151,15 +151,17 @@ echo ""
 
 def run_baselines(root):
     colour_aug = "Colour-Distortion"
-    for dataset in ["ADP-Release1",
-                    "AIDPATH_transformed",
-                    "AJ-Lymph_transformed",
-                    "BACH_transformed",
+    for dataset in [
+                    # "ADP-Release1",
+                    # "AIDPATH_transformed",
+                    # "AJ-Lymph_transformed",
+                    # "BACH_transformed",
                     "CRC_transformed",
-                    "GlaS_transformed",
-                    "MHIST_transformed",
-                    "OSDataset_transformed",
-                    "PCam_transformed"]:
+                    # "GlaS_transformed",
+                    # "MHIST_transformed",
+                    # "OSDataset_transformed",
+                    # "PCam_transformed"
+                                    ]:
         with open(os.path.join(root, f"PretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml"), "w") as write_file:
             if "ADP" in dataset:
                 loss_fn = "MultiLabelSoftMarginLoss"
@@ -283,5 +285,5 @@ python src/adas/train.py \
 
 if __name__ == "__main__":
     root_dir = ""
-    # run_baselines(root_dir)
-    optim_fine_tuning(root_dir)
+    run_baselines(root_dir)
+    # optim_fine_tuning(root_dir)
