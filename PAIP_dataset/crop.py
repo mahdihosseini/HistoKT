@@ -119,7 +119,7 @@ def crop(xml_fn, slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_si
     }
     count = 0
     while count < selection:
-        i = np.random.choice(info_dict["img_name"])
+        i = int(np.random.choice(info_dict["img_name"]))
         x, y = np.array(info_dict["top_left_pixel"][i])[0], np.array(info_dict["top_left_pixel"][i])[1]
         img = np.array(slide.read_region((x, y), level, (crop_size, crop_size)))  # produce RGBA images with float64
         img = img[:, :, :3]  # drop A channel
@@ -137,7 +137,7 @@ def crop(xml_fn, slide, level, crop_save_dir, wsi_uid, downscale_factor, crop_si
 
             count += 1
 
-        info_dict["img_name"].remove(i)
+        info_dict["img_name"].remove(str(i))
 
     df = pd.DataFrame(data=selected_info_dict)
     save_name = f"{wsi_uid}.xlsx"

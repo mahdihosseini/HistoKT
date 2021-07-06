@@ -39,6 +39,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
     model = resnet18(num_classes=num_classes)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # setting default device
     cp = torch.load(path_to_pth, map_location=device)
+    print("best epoch: ", cp['epoch'])
     model.load_state_dict(cp['state_dict_network'])
     model.to(device)  # moving model to compute device
     model.eval()
@@ -92,9 +93,9 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             test_loss += loss_fn(pred, y).detach().cpu().item()
 
             tgts.extend(y.detach().cpu().tolist())  # int eg. 0, 1
-            if i == 0 :
-                print(tgts[:5])
-                print(pred_label[:5])
+            #if i == 0 :
+            #    print(tgts[:5])
+            #    print(pred_label[:5])
 
             if num_classes == 2:
                 preds.extend(pred[:, 1].detach().cpu().tolist())
@@ -169,8 +170,11 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
         #dataset.samples = dataset.samples[0:50]
         test_dataloader = DataLoader(dataset, batch_size=mini_batch_size, shuffle=False, num_workers=num_workers)
         print("load test data successfully")
-
-        path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
+        
+        if dataset_name == "ADP":
+            path_to_dataset_cp = os.path.join(path_to_checkpoint, "ADP-Release1")
+        else:
+            path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
         for file in os.listdir(path_to_dataset_cp):
             print("file/dir: ", file)
             if "per_class" in file:
@@ -200,14 +204,14 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
 
 
 if __name__ == "__main__":
-    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
+    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/pretraining-checkpoint/ycbcr"
     root = "/scratch/zhan8425/HistoKTdata"
     #root = sys.argv[1]
     output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
     #dataset_name_list = ["CRC_transformed","PCam_transformed"]
     #dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
-    dataset_name_list = ["ADP"]
+    dataset_name_list = ["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed", "CRC_transformed","PCam_transformed"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 
