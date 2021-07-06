@@ -318,10 +318,13 @@ class TrainingAgent:
     def reset(self, learning_rate: float) -> None:
         self.performance_statistics = dict()
         if self.pretrained_model is not None:
-            self.network = get_model(name=self.config["network"],
-                                     path=self.pretrained_model,
-                                     num_classes=self.num_classes,
-                                     freeze_encoder=self.freeze_encoder)
+            if pretrained_model == "ImageNet":
+
+            else:
+                self.network = get_model(name=self.config["network"],
+                                         path=self.pretrained_model,
+                                         num_classes=self.num_classes,
+                                         freeze_encoder=self.freeze_encoder)
             print(self.network)
         else:
             self.network = get_network(name=self.config['network'],

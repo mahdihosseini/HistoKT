@@ -11,6 +11,12 @@ class ModelLoader:
         self.device = device
 
     @classmethod
+    def load_from_ImageNet(cls, device=None, model=resnet18):
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
+        if model == "resnet18":
+            resnet18(num_classes=1000)
+
+    @classmethod
     def load_from_path(cls, path_to_model, device=None, model="resnet18", keep_data=False):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
         data = torch.load(path_to_model, map_location=device)
@@ -47,10 +53,13 @@ class ModelLoader:
 def get_model(name, path, num_classes, freeze_encoder):
     if name == "resnet18":
         if path:
-            loader = ModelLoader.load_from_path(path, model=name)
-            return loader.get_fine_tune_model(num_classes,
-                                              model_type=name,
-                                              freeze_encoder=freeze_encoder)
+            if path == "ImageNet":
+
+            else:
+                loader = ModelLoader.load_from_path(path, model=name)
+                return loader.get_fine_tune_model(num_classes,
+                                                  model_type=name,
+                                                  freeze_encoder=freeze_encoder)
     print("BAD MODEL CONFIG")
     return
 
