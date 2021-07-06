@@ -76,8 +76,8 @@ def get_csvs(root, optimizer, dataset="MHIST_transformed"):
     deep_out = get_aggregated_values(deep_dict)
     fine_out = get_aggregated_values(fine_dict)
 
-    deep_out_df = get_mean_stddev(deep_out)
-    fine_out_df = get_mean_stddev(fine_out)
+    deep_out_df = get_mean_stddev(deep_out, metric_of_interest="test_acc1")
+    fine_out_df = get_mean_stddev(fine_out, metric_of_interest="test_acc1")
 
     deep_out_df.to_csv(f"{dataset}-{optimizer}_deep_tuned.csv")
     fine_out_df.to_csv(f"{dataset}-{optimizer}_fine_tuned.csv")
