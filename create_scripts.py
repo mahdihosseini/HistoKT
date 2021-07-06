@@ -95,8 +95,10 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 
                 outfile.write(data)
             with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-ImageNet.sh", "w") as outfile:
+                time_taken = "11:00:00"
                 if "CRC" in dataset:
                     datafile = "CRC_transformed_2000_per_class"
+                    time_taken = "23:00:00"
                 elif "PCam" in dataset:
                     datafile = "PCam_transformed_1000_per_class"
                 elif "ADP" in dataset:
@@ -117,7 +119,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
 #SBATCH --account=def-plato
-#SBATCH --time=11:00:00
+#SBATCH --time={time_taken}
 #SBATCH --output=%x-%j.out
 
 # prepare data
