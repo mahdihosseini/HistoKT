@@ -69,7 +69,7 @@ def get_csvs(root, optimizer, dataset="MHIST_transformed"):
 
     deep_dict, fine_dict = get_file_dicts(files_list)
 
-    results_list = ["train_acc1", "train_loss", "test_acc1", "test_loss", "train_auc", "test_auc"]
+    results_list = ["train_acc1", "train_loss", "test_acc1", "test_loss"]
     deep_dict = get_relevant_metrics(deep_dict, results_list)
     fine_dict = get_relevant_metrics(fine_dict, results_list)
 
