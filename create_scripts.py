@@ -6,11 +6,10 @@ def optim_fine_tuning(root):
     optimizer = "AdamP"
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
     freeze_encoders = ["True", "False"]
-    # pretrained_model = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar"
-    pretrained_model = "ImageNet"
+    pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Colour-Distortion/ADP-Release1/best_trial_2_date_2021-07-05-14-35-14.pth.tar"
+    # pretrained_model = "ImageNet"
 
-    for dataset in ["AIDPATH_transformed",
-                    "AJ-Lymph_transformed",
+    for dataset in ["AJ-Lymph_transformed",
                     "BACH_transformed",
                     "CRC_transformed",
                     "GlaS_transformed",
@@ -94,7 +93,7 @@ loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
 
                 outfile.write(data)
-            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-ImageNet.sh", "w") as outfile:
+            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-ADP.sh", "w") as outfile:
                 time_taken = "11:00:00"
                 if "CRC" in dataset:
                     datafile = "CRC_transformed_2000_per_class"
@@ -138,8 +137,8 @@ echo ""
                 for freeze_encoder in freeze_encoders:
                     run_part = f"""python src/adas/train.py \
 --config PostTrainingConfigs/{dataset}_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml \
---output ImageNet_post_trained/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
---checkpoint ImageNet_post_trained/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+--output ADP_post_trained/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
+--checkpoint ADP_post_trained/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data $SLURM_TMPDIR \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
@@ -285,5 +284,5 @@ python src/adas/train.py \
 
 if __name__ == "__main__":
     root_dir = ""
-    run_baselines(root_dir)
-    # optim_fine_tuning(root_dir)
+    # run_baselines(root_dir)
+    optim_fine_tuning(root_dir)

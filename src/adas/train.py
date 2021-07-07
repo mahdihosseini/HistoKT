@@ -317,9 +317,7 @@ class TrainingAgent:
 
     def reset(self, learning_rate: float) -> None:
         self.performance_statistics = dict()
-        print(self.pretrained_model)
         if self.pretrained_model is not None:
-            print(self.config["network"])
             self.network = get_model(name=self.config["network"],
                                      path=self.pretrained_model,
                                      num_classes=self.num_classes,
