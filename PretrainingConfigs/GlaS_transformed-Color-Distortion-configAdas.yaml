@@ -24,7 +24,7 @@ level : 'L3Only' #L1, L2, L3, L3Only
 ###### Augmentation Methods ######
 # ADP ONLY
 color_kwargs:
-    augmentation: 'Colour-Distortion' # options: YCbCr, HSV, RGB-Jitter,
+    augmentation: 'Color-Distortion' # options: YCbCr, HSV, RGB-Jitter,
                                # Color-Distortion (Color-Jittering followed by color drop),
                                # None
     distortion: 0.3 #options: 0.3 for Color-Distortion

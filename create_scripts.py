@@ -9,7 +9,8 @@ def optim_fine_tuning(root):
     pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Colour-Distortion/ADP-Release1/best_trial_2_date_2021-07-05-14-35-14.pth.tar"
     # pretrained_model = "ImageNet"
 
-    for dataset in ["AJ-Lymph_transformed",
+    for dataset in ["ADP-Release1",
+                    "AJ-Lymph_transformed",
                     "BACH_transformed",
                     "CRC_transformed",
                     "GlaS_transformed",
@@ -149,17 +150,16 @@ echo ""
 
 
 def run_baselines(root):
-    colour_aug = "Colour-Distortion"
+    colour_aug = "Color-Distortion"
     for dataset in [
-                    # "ADP-Release1",
-                    # "AIDPATH_transformed",
-                    # "AJ-Lymph_transformed",
-                    # "BACH_transformed",
+                    "ADP-Release1",
+                    "AJ-Lymph_transformed",
+                    "BACH_transformed",
                     "CRC_transformed",
-                    # "GlaS_transformed",
-                    # "MHIST_transformed",
-                    # "OSDataset_transformed",
-                    # "PCam_transformed"
+                    "GlaS_transformed",
+                    "MHIST_transformed",
+                    "OSDataset_transformed",
+                    "PCam_transformed"
                                     ]:
         with open(os.path.join(root, f"PretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml"), "w") as write_file:
             if "ADP" in dataset:
