@@ -320,7 +320,6 @@ class TrainingAgent:
         print(self.pretrained_model)
         if self.pretrained_model is not None:
             print(self.config["network"])
-            print(self.pretrained_model)
             self.network = get_model(name=self.config["network"],
                                      path=self.pretrained_model,
                                      num_classes=self.num_classes,
