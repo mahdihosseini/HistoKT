@@ -5,7 +5,7 @@ from utils import archive_subdataset, archive_split
 def main(root):
     for dataset_name in ["CRC_transformed"]:
         num_per_class_list = [2000]
-        archive_names = [os.path.join(root, dataset_name + f"_{num_per_class}_per_class")
+        archive_names = [os.path.join(root, dataset_name + f"_{num_per_class}_per_class_with_test")
                          for num_per_class in num_per_class_list]
         split = "train"
         archive_subdataset(os.path.join(root, dataset_name),
