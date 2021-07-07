@@ -1,57 +1,48 @@
-"""
-CRC Dataset, retrieved from:https://zenodo.org/record/1214456#.YLTgV6hKhhE
-
-"""
-import os
-
-from torchvision.datasets.folder import ImageFolder
+import pickle
+import torch
 from torchvision.datasets.utils import verify_str_arg
+from torchvision.datasets.folder import default_loader
+from torch.utils.data import Dataset
+import os
+from typing import Any
 
 
-class CRC_transformed(ImageFolder):
-    """`CRC
-    Args:
-        root (string): Root directory of the CRC Dataset.
-        split (string, optional): The dataset split, supports ``train``, or
-            ``test``.
-        transform (callable, optional): A function/transform that  takes in an
-            PIL image
-            and returns a transformed version. E.g, ``transforms.RandomCrop``
-        target_transform (callable, optional): A function/transform that takes
-            in the
-            target and transforms it.
-        loader (callable, optional): A function to load an image given its
-            path.
+class CRC_transformed(Dataset):
 
-     Attributes:
-        classes (list): List of the class name tuples.
-        class_to_idx (dict): Dict with items (class_name, class_index).
-        targets (list): The class_index value for each image in the dataset
-        split_folder (os.path): a path to the split folders
-    """
+    def __init__(self, root, split="train", transform=None, loader=default_loader) -> None:
+        """
 
-    train_folder = "NCT-CRC-HE-100K-NONORM"
-    test_folder = "CRC-VAL-HE-7K"
-    classes_ = ["ADI", "LYM", "MUC", "MUS", "NORM", "STR", "TUM"]
-    # classes_ = ["ADI", "BACK", "DEB", "LYM", "MUC", "MUS", "NORM", "STR", "TUM"]
+        Args:
+            root (string):
+                Directory of the transformed dataset, e.g. /home/CRC_transformed_2000_per_class_with_test
+            split (string, optional): The dataset split, supports ``train``,
+                ``valid``, or ``test``.
+            transform (callable, optional): A function/transform that  takes in an
+                PIL image
+                and returns a transformed version. E.g, ``transforms.RandomCrop``
+            loader (callable, optional): A function to load an image given its
+                path. Defaults to default_loader defined in torchvision
+        """
 
-    def __init__(self, root, split="train", **kwargs):
-        root = self.root = os.path.expanduser(root)
-        self.split = verify_str_arg(split, "split", ("train", "test"))
-        if self.split == "train":
-            self.root = os.path.join(root, self.train_folder)
-        elif self.split == "test":
-            self.root = os.path.join(root, self.test_folder)
+        self.root = root
+        self.split = verify_str_arg(split, "split", ("train", "valid", "test"))
+        self.transform = transform
+        self.loader = loader
 
-        super(CRC, self).__init__(self.root, **kwargs)
+        # getting samples from preprocessed pickle file
+        self.samples = pickle.load(open(os.path.join(self.root, self.split+".pickle"), "rb"))
+        self.samples = [(os.path.join(self.root, path), label) for path, label in self.samples]
+        self.class_to_idx = pickle.load(open(os.path.join(self.root, "class_to_idx.pickle"), "rb"))
 
-        self.classes = self.classes_
-        self.class_to_idx = {cls_name: i for i, cls_name in enumerate(self.classes)}
+    def __getitem__(self, idx) -> [Any, torch.Tensor]:
 
-        samples = self.make_dataset(self.root, self.class_to_idx, self.extensions)
-        if len(samples) == 0:
-            msg = "Found 0 files in subfolders of: {}\n".format(self.root)
-            raise RuntimeError(msg)
+        path, label = self.samples[idx]
 
-        self.samples = samples
-        self.targets = [s[1] for s in samples]
+        sample = self.loader(path)  # Loading image
+        if self.transform is not None:  # PyTorch implementation
+            sample = self.transform(sample)
+
+        return sample, torch.tensor(label)
+
+    def __len__(self) -> int:
+        return len(self.samples)
