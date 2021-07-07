@@ -100,3 +100,32 @@ def archive_subdataset(root,
             # adding class_to_idx pickle
             tar.add(os.path.join(root, "class_to_idx.pickle"),
                     arcname=os.path.join(archive_name, "class_to_idx.pickle"))
+
+
+def archive_split(root,
+                  split,
+                  archive_names: list = []):
+    # creating dictionary with class index as a key, and [filenames, ] as the value
+
+    class_to_files = defaultdict(list)
+    samples = pickle.load(open(os.path.join(root, split + ".pickle"), "rb"))
+
+    for tar_name in archive_names:
+
+        files_to_tar = [path for path, label in samples]
+
+        # tarring files
+        with tarfile.open(os.path.join(os.path.dirname(root), tar_name+".tar"), "a") as tar:
+            archive_name = os.path.basename(root)
+            for fn in files_to_tar:
+                tar.add(os.path.join(root, fn), arcname=os.path.join(archive_name, fn))
+
+            # adding pickles
+            with open(os.path.join(tempfile.gettempdir(), f"{split}.pickle"), "wb") as file:
+                pickle.dump(samples, file)
+            tar.add(os.path.join(tempfile.gettempdir(), f"{split}.pickle"),
+                    arcname=os.path.join(archive_name, f"{split}.pickle"))
+
+            # adding class_to_idx pickle
+            tar.add(os.path.join(root, "class_to_idx.pickle"),
+                    arcname=os.path.join(archive_name, "class_to_idx.pickle"))

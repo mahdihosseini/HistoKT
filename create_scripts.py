@@ -6,7 +6,7 @@ def optim_fine_tuning(root):
     optimizer = "AdamP"
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
     freeze_encoders = ["True", "False"]
-    pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Colour-Distortion/ADP-Release1/best_trial_2_date_2021-07-05-14-35-14.pth.tar"
+    # pretrained_model =
     # pretrained_model = "ImageNet"
 
     for dataset in ["ADP-Release1",
