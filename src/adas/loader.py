@@ -53,7 +53,7 @@ class ModelLoader:
 
 
 def get_model(name, path, num_classes, freeze_encoder):
-    if name == "resnet18":
+    if name == "ResNet18":
         if path:
             if path == "ImageNet":
                 loader = ModelLoader.load_from_ImageNet(model=name)
