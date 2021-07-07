@@ -853,6 +853,8 @@ def main_worker(gpu: int, ngpus_per_node: int, args: APNamespace):
         output_path=args.output_path,
         data_path=args.data_path,
         checkpoint_path=args.checkpoint_path,
+        pretrained_model=args.pretrained_model,
+        freeze_encoder=args.freeze_encoder,
         resume=args.resume,
         save_freq=args.save_freq,
         gpu=args.gpu,
