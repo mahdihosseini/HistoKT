@@ -278,5 +278,5 @@ python src/adas/train.py \
 
 if __name__ == "__main__":
     root_dir = ""
-    # run_baselines(root_dir)
-    optim_fine_tuning(root_dir)
+    run_baselines(root_dir)
+    # optim_fine_tuning(root_dir)
