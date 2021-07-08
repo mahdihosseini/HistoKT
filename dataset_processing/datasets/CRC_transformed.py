@@ -14,7 +14,7 @@ class CRC_transformed(Dataset):
 
         Args:
             root (string):
-                Directory of the transformed dataset, e.g. /home/CRC_transformed_2000_per_class_with_test
+                Directory of the transformed dataset, e.g. /home/CRC_transformed
             split (string, optional): The dataset split, supports ``train``,
                 ``valid``, or ``test``.
             transform (callable, optional): A function/transform that  takes in an

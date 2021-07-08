@@ -59,8 +59,8 @@ scheduler_kwargs: {}
 
 ###### Suggested Default ######
 p: 1 # options: 1, 2.
-start_trial: 0 # trial to start at, indexing from zero, default 0
-n_trials: 3 #increase to more to see more results
+start_trial: 2 # trial to start at, indexing from zero, default 0
+n_trials: 1 #increase to more to see more results
 num_workers: 4
 max_epochs: 250
 mini_batch_size: 32
