@@ -9,21 +9,23 @@ def optim_fine_tuning(root):
         "True",
         "False"
     ]
-    pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
-    # pretrained_model = "ImageNet"
+    # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
+    # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/CRC_transformed/best_trial_2_date_2021-07-07-16-50-22.pth.tar"
+    pretrained_model = "ImageNet"
 
-    # pretrained_model_name = "ImageNet"
-    pretrained_model_name = "ADP"
+    pretrained_model_name = "ImageNet"
+    # pretrained_model_name = "ADP"
+    # pretrained_model_name = "CRC"
 
     for dataset in [
                     # "ADP-Release1",
-                    "AJ-Lymph_transformed",
-                    "BACH_transformed",
-                    "CRC_transformed",
-                    "GlaS_transformed",
-                    "MHIST_transformed",
-                    "OSDataset_transformed",
-                    "PCam_transformed",
+                    # "AJ-Lymph_transformed",
+                    # "BACH_transformed",
+                    # "CRC_transformed",
+                    # "GlaS_transformed",
+                    # "MHIST_transformed",
+                    # "OSDataset_transformed",
+                    # "PCam_transformed",
                     "BCSS_transformed"
                                         ]:
 
@@ -112,6 +114,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                     datafile = "PCam_transformed_1000_per_class"
                 elif "ADP" in dataset:
                     datafile = "ADP\\ V1.0\\ Release"
+                    time_taken = "23:00:00"
                 elif "OSDataset_transformed" in dataset:
                     datafile = dataset
                     time_taken = "23:00:00"
@@ -153,8 +156,8 @@ echo ""
                 for freeze_encoder in freeze_encoders:
                     run_part = f"""python src/adas/train.py \
 --config PostTrainingConfigs/{dataset}_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml \
---output ADP_post_trained/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
---checkpoint ADP_post_trained/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+--output {pretrained_model_name}_post_trained/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
+--checkpoint {pretrained_model_name}_post_trained/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data $SLURM_TMPDIR \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
