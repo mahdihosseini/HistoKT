@@ -533,7 +533,7 @@ class TrainingAgent:
             # _, predicted = outputs.max(1)
             # total += targets.size(0)
             # correct += predicted.eq(targets).sum().item()
-            if self.config['dataset'] == 'ADP-Release1':
+            if self.config['loss'] == 'MultiLabelSoftMarginLoss':
                 m = nn.Sigmoid()
                 preds = (m(outputs) > 0.5).int()
                 acc1, acc5 = accuracyADP(preds, targets)
@@ -552,7 +552,7 @@ class TrainingAgent:
                 top5.update(acc5[0], inputs.size(0))
             if isinstance(self.scheduler, OneCycleLR):
                 self.scheduler.step()
-        if self.config['dataset'] == 'ADP-Release1':
+        if self.config['loss'] == 'MultiLabelSoftMarginLoss':
             with torch.no_grad():
                 train_loss = train_loss / len(self.train_loader)
                 train_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.train_loader.dataset) * self.num_classes))
@@ -646,7 +646,7 @@ class TrainingAgent:
     def validate(self, epoch: int):
         self.network.eval()
         test_loss = 0
-        if self.config['dataset'] == 'ADP-Release1':
+        if self.config['loss'] == 'MultiLabelSoftMarginLoss':
             predALL_test = torch.zeros(len(self.test_loader.dataset), self.num_classes)
             labelsALL_test = torch.zeros(len(self.test_loader.dataset), self.num_classes)
         # correct = 0
@@ -665,7 +665,7 @@ class TrainingAgent:
                 if self.device == 'cuda':
                     targets = targets.cuda(self.gpu, non_blocking=True)
                 outputs = self.network(inputs)
-                if self.config['dataset'] == 'ADP-Release1':
+                if self.config['loss'] == 'MultiLabelSoftMarginLoss':
                     #Get the size of the current batch
                     sizeCurrentBatch = targets.size(0)
                     
@@ -684,7 +684,7 @@ class TrainingAgent:
                 # _, predicted = outputs.max(1)
                 # total += targets.size(0)
                 # correct += predicted.eq(targets).sum().item()
-                if self.config['dataset'] == 'ADP-Release1':
+                if self.config['loss'] == 'MultiLabelSoftMarginLoss':
                     acc1, acc5 = accuracyADP(preds, targets)
                     test_loss += loss.item()
                     top1.update(acc1.double(), inputs.size(0))
@@ -717,7 +717,7 @@ class TrainingAgent:
         #             self.metrics.historical_metrics
         #     torch.save(state, str(self.checkpoint_path / 'ckpt.pth'))
         #     self.best_acc = acc
-        if self.config['dataset'] == 'ADP-Release1':
+        if self.config['loss'] == 'MultiLabelSoftMarginLoss':
             with torch.no_grad():
                 test_loss = test_loss / len(self.test_loader)
                 test_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.test_loader.dataset) * self.num_classes))
