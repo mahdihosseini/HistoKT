@@ -5,24 +5,33 @@ def optim_fine_tuning(root):
 
     optimizer = "AdamP"
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
-    freeze_encoders = ["True", "False"]
-    # pretrained_model =
-    # pretrained_model = "ImageNet"
+    freeze_encoders = [
+        # "True",
+        "False"
+    ]
+    # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
+    pretrained_model = "ImageNet"
 
-    for dataset in ["ADP-Release1",
-                    "AJ-Lymph_transformed",
-                    "BACH_transformed",
-                    "CRC_transformed",
-                    "GlaS_transformed",
-                    "MHIST_transformed",
+    pretrained_model_name = "ImageNet"
+    # pretrained_model_name = "ADP"
+
+    for dataset in [
+                    # "ADP-Release1",
+                    # "AJ-Lymph_transformed",
+                    # "BACH_transformed",
+                    # "CRC_transformed",
+                    # "GlaS_transformed",
+                    # "MHIST_transformed",
                     "OSDataset_transformed",
-                    "PCam_transformed"]:
+                    # "PCam_transformed",
+                    # "BCSS_transformed"
+                                        ]:
 
         for learning_rate in learning_rates:
             os.makedirs(f"PostTrainingConfigs/{dataset}_testing/{optimizer}", exist_ok=True)
             with open(f"PostTrainingConfigs/{dataset}_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml",
                       "w") as outfile:
-                if "ADP" in dataset:
+                if "ADP" in dataset or "BCSS_transformed" in dataset:
                     loss_fn = "MultiLabelSoftMarginLoss"
                 else:
                     loss_fn = "cross_entropy"
@@ -94,7 +103,7 @@ loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
 
                 outfile.write(data)
-            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-ADP.sh", "w") as outfile:
+            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}.sh", "w") as outfile:
                 time_taken = "11:00:00"
                 if "CRC" in dataset:
                     datafile = "CRC_transformed_2000_per_class"
@@ -103,6 +112,12 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                     datafile = "PCam_transformed_1000_per_class"
                 elif "ADP" in dataset:
                     datafile = "ADP\\ V1.0\\ Release"
+                elif "OSDataset_transformed" in dataset:
+                    datafile = dataset
+                    time_taken = "23:00:00"
+                elif "BCSS_transformed" in dataset:
+                    datafile = dataset
+                    time_taken = "23:00:00"
                 else:
                     datafile = dataset
                 data = f"""#!/bin/bash
@@ -278,5 +293,5 @@ python src/adas/train.py \
 
 if __name__ == "__main__":
     root_dir = ""
-    run_baselines(root_dir)
-    # optim_fine_tuning(root_dir)
+    # run_baselines(root_dir)
+    optim_fine_tuning(root_dir)
