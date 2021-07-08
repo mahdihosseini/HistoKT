@@ -6,6 +6,7 @@ from torchvision.datasets.utils import verify_str_arg
 from torchvision.datasets.folder import default_loader
 from torch.utils.data import Dataset
 from typing import Any
+import ntpath
 
 
 class BCSSDataset(Dataset):
@@ -49,9 +50,9 @@ class BCSSDataset(Dataset):
             self.class_labels = df.to_numpy(dtype=np.float32)
 
         if multi_labelled:
-            self.samples = [(os.path.join(self.root, path), list(label)) for path, label in self.samples]
+            self.samples = [(os.path.join(self.root, path.replace(ntpath.sep, os.sep)), list(label)) for path, label in self.samples]
         else:
-            self.samples = [(os.path.join(self.root, path), np.argmax(list(label))) for path, label in self.samples]
+            self.samples = [(os.path.join(self.root, path.replace(ntpath.sep, os.sep)), np.argmax(list(label))) for path, label in self.samples]
         self.class_to_idx = {cls: idx for idx, cls in enumerate(df.columns)}
 
     def __getitem__(self, idx) -> [Any, torch.Tensor]:
