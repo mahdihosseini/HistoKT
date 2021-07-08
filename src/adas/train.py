@@ -283,7 +283,7 @@ class TrainingAgent:
             train_class_counts = np.sum(self.train_loader.dataset.class_labels, axis=0)
             weightsBCE = self.dataset_size / train_class_counts
             weightsBCE = torch.as_tensor(weightsBCE, dtype=torch.float32).to(self.gpu)
-            self.criterion = torch.nn.MultiLabelSoftMarginLoss(weight = weightsBCE).cuda(self.gpu)
+            self.criterion = torch.nn.MultiLabelSoftMarginLoss(weight=weightsBCE).cuda(self.gpu)
         else:
             self.criterion = None
 

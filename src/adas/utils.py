@@ -101,7 +101,8 @@ def parse_config(
                      "GlaS_transformed",
                      "MHIST_transformed",
                      "OSDataset_transformed",
-                     "PCam_transformed"]
+                     "PCam_transformed",
+                     "BCSS_transformed"]
     if config['dataset'] not in valid_dataset:
         raise ValueError(
             f"config.yaml: unknown dataset {config['dataset']}. " +

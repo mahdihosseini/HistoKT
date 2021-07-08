@@ -152,17 +152,10 @@ echo ""
 def run_baselines(root):
     colour_aug = "Color-Distortion"
     for dataset in [
-                    "ADP-Release1",
-                    "AJ-Lymph_transformed",
-                    "BACH_transformed",
-                    "CRC_transformed",
-                    "GlaS_transformed",
-                    "MHIST_transformed",
-                    "OSDataset_transformed",
-                    "PCam_transformed"
+                    "BCSS_transformed"
                                     ]:
         with open(os.path.join(root, f"PretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml"), "w") as write_file:
-            if "ADP" in dataset:
+            if "ADP" in dataset or "BCSS_transformed" in dataset:
                 loss_fn = "MultiLabelSoftMarginLoss"
             else:
                 loss_fn = "cross_entropy"
@@ -177,6 +170,7 @@ dataset: '{dataset}' # options: CIFAR100, CIFAR10, ImageNet, ADP-Release1, MHIST
 # MHIST_transformed
 # OSDataset_transformed
 # PCam_transformed
+# BCSS_transformed
 network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet121, GoogLeNet
 # InceptionV3, MNASNet_0_5, MNASNet_0_75, MNASNet_1, MNASNet_1_3, MobileNetV2, ResNet18
 # ResNet34, ResNet50, ResNet101, ResNet152, ResNext50, ResNext101, WideResNet50, WideResNet101

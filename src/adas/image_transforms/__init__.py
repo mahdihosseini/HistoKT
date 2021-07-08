@@ -224,7 +224,8 @@ def get_transforms(
                      "GlaS_transformed",
                      "MHIST_transformed",
                      "OSDataset_transformed",
-                     "PCam_transformed"]:
+                     "PCam_transformed",
+                     "BCSS_transformed"]:
 
         if 'augmentation' not in color_processed_kwargs.keys() or \
                 'distortion' not in color_processed_kwargs.keys():

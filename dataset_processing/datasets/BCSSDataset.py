@@ -15,7 +15,8 @@ class BCSSDataset(Dataset):
                  split="train",
                  transform=None,
                  loader=default_loader,
-                 multi_labelled=True) -> None:
+                 multi_labelled=True,
+                 class_labels=False) -> None:
         """
         Retrieved from: https://bcsegmentation.grand-challenge.org/
         Args:
@@ -43,6 +44,9 @@ class BCSSDataset(Dataset):
         else:
             df = pd.read_csv(os.path.join(self.root, self.split+"_with_norm_mass.csv"), index_col="image")
         self.samples = [(image, label) for image, label in zip(df.index, df.to_records(index=False))]
+
+        if class_labels:
+            self.class_labels = df.to_numpy(dtype=np.float32)
 
         if multi_labelled:
             self.samples = [(os.path.join(self.root, path), list(label)) for path, label in self.samples]
