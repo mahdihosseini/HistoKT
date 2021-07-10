@@ -163,6 +163,15 @@ def args(sub_parser: _SubParsersAction):
     sub_parser.add_argument(
         '--rank', default=-1, type=int,
         help='Node rank for distributed training: Default = -1')
+    sub_parser.add_argument(
+        '--color_aug', default=None, type=str,
+        help='override config color augmentation, can also choose "no_aug"'
+    )
+    sub_parser.add_argument(
+        '--norm_vals', default=None, type=str,
+        help='override normalization values, use dataset string. e.g. "BACH_transformed"'
+    )
+
     # sub_parser.add_argument(
     #     '--cutout', action='store_true',
     #     default=False,
@@ -206,7 +215,9 @@ class TrainingAgent:
             dist: bool = False,
             mpd: bool = False,
             dist_url: str = None,
-            dist_backend: str = None) -> None:
+            dist_backend: str = None,
+            color_aug: str = None,
+            norm_vals: str = None) -> None:
 
         self.gpu = gpu
         self.mpd = mpd
@@ -224,6 +235,8 @@ class TrainingAgent:
         self.world_size = world_size
         self.dist_backend = dist_backend
         self.ngpus_per_node = ngpus_per_node
+        self.color_aug = color_aug
+        self.norm_vals = norm_vals
 
         self.data_path = data_path
         self.output_path = output_path
@@ -240,6 +253,11 @@ class TrainingAgent:
                 print(f"    {k:<20} {v:<20}")
         print("-"*45)
 
+        print("Transforms:")
+        print(self.train_transform)
+        print(self.test_transform)
+        print("-"*45)
+
     def load_config(self, config_path: Path, data_path: Path) -> None:
         with config_path.open() as f:
             self.config = config = parse_config(yaml.load(f, yaml.FullLoader))
@@ -252,6 +270,9 @@ class TrainingAgent:
                 config['num_workers'] = int(
                     (config['num_workers'] + self.ngpus_per_node - 1) /
                     self.ngpus_per_node)
+        config['color_kwargs'] = (config['color_kwargs'] if self.color_aug is None else 
+                {key: (self.color_aug if key == "augmentation" else value) 
+                    for key, value in config['color_kwargs'].items()})
         self.mini_batch_size = config['mini_batch_size']
         self.level = config['level']
         self.train_transform, self.test_transform = get_transforms(
@@ -267,7 +288,8 @@ class TrainingAgent:
             color_kwargs = config['color_kwargs'],
             cutout=config['cutout'],
             n_holes=config['n_holes'],
-            length=config['cutout_length'])
+            length=config['cutout_length'],
+            norm_vals=self.norm_vals)
         self.train_loader, self.train_sampler,\
             self.test_loader, self.num_classes = get_data(
                 name=config['dataset'], root=data_path,
