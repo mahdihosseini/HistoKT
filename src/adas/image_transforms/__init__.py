@@ -26,6 +26,8 @@ def get_transforms(
     color_processed_kwargs = {
         k: v for k, v in color_kwargs.items() if v is not None}
 
+    color_processed_kwargs['augmentation'] = None if color_processed_kwargs['augmentation'] == "no_aug" else color_processed_kwargs['augmentation'] 
+
     norm_vals = norm_vals if norm_vals else dataset
 
     if dataset == 'ADP-Release1':
