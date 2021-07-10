@@ -6,7 +6,7 @@ def optim_fine_tuning(root):
     optimizer = "AdamP"
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
     freeze_encoders = [
-        "True",
+        # "True",
         "False"
     ]
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
@@ -18,7 +18,7 @@ def optim_fine_tuning(root):
     # pretrained_model_name = "CRC"
 
     for dataset in [
-                    # "ADP-Release1",
+                    "ADP-Release1",
                     # "AJ-Lymph_transformed",
                     # "BACH_transformed",
                     # "CRC_transformed",
@@ -26,7 +26,7 @@ def optim_fine_tuning(root):
                     # "MHIST_transformed",
                     # "OSDataset_transformed",
                     # "PCam_transformed",
-                    "BCSS_transformed"
+                    # "BCSS_transformed"
                                         ]:
 
         for learning_rate in learning_rates:
