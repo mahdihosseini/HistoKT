@@ -213,4 +213,5 @@ transformed_norm_weights = {
     'OSDataset_transformed': {'mean': [0.8414, 0.6492, 0.7377], 'std': [0.1379, 0.2508, 0.1979]},
     'PCam_transformed': {'mean': [0.6970, 0.5330, 0.6878], 'std': [0.2168, 0.2603, 0.1933]},
     'BCSS_transformed': {'mean': [0.7107, 0.4878, 0.6726], 'std': [0.1788, 0.2152, 0.1615]},
+    'no_norm': {'mean': [0.0, 0.0, 0.0], 'std': [1.0, 1.0, 1.0]},
 }

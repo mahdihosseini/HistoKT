@@ -460,7 +460,7 @@ echo ""
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
 --save-freq 200 \
---color_aug {colour_aug}\
+--color_aug {colour_aug} \
 --norm_vals {normalization}
 
 """
