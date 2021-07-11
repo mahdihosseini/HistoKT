@@ -304,16 +304,18 @@ def color_norm_tuning(root):
     ]
 
     colour_aug = "Color-Distortion"
-    normalization = "ADP-Release1"
+    normalization = "PCam_transformed"
 
 
-    pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
+    # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/CRC_transformed/best_trial_2_date_2021-07-07-16-50-22.pth.tar"
     # pretrained_model = "ImageNet"
+    pretrained_model = "/project/6060173/zhan8425/HistoKT/ImageNet_post_trained/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001/best_trial_2_date_2021-07-10-23-24-04.pth.tar"
 
-    pretrained_model_name = "ADP"
+    # pretrained_model_name = "ADP"
     # pretrained_model_name = "CRC"
     # pretrained_model_name = "ImageNet"
+    pretrained_model_name = "ADP_trained_on_ImageNet"
 
     for dataset in [
                     # "ADP-Release1",
