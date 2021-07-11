@@ -885,7 +885,9 @@ def main_worker(gpu: int, ngpus_per_node: int, args: APNamespace):
         dist=args.distributed,
         mpd=args.mpd,
         dist_url=args.dist_url,
-        dist_backend=args.dist_backend)
+        dist_backend=args.dist_backend,
+        norm_vals=args.norm_vals,
+        color_aug=args.color_aug)
     print(f"Adas: Pytorch device is set to {training_agent.device}")
     training_agent.train()
 
