@@ -27,4 +27,4 @@ echo "Finished transferring"
 date
 echo ""
 
-python src/adas/train.py --config PostTrainingConfigs/OSDataset_transformed_testing/AdamP/lr-0.0001-config-AdamP.yaml --output ADP_post_trained/OSDataset_transformed/AdamP/output/deep_tuning --checkpoint ADP_post_trained/OSDataset_transformed/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model ImageNet --freeze_encoder False --save-freq 200
+python src/adas/train.py --config PostTrainingConfigs/OSDataset_transformed_testing/AdamP/lr-0.0001-config-AdamP.yaml --output ImageNet_post_trained/OSDataset_transformed/AdamP/output/deep_tuning --checkpoint ImageNet_post_trained/OSDataset_transformed/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model ImageNet --freeze_encoder False --save-freq 200
