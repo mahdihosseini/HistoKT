@@ -296,6 +296,7 @@ python src/adas/train.py \
 
 def color_norm_tuning(root):
 
+    runscripts = []
     optimizer = "AdamP"
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
     freeze_encoders = [
@@ -304,8 +305,7 @@ def color_norm_tuning(root):
     ]
 
     colour_aug = "Color-Distortion"
-    normalization_all = "baseset"
-
+    normalization_all = "no_norm"
 
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/CRC_transformed/best_trial_2_date_2021-07-07-16-50-22.pth.tar"
@@ -409,7 +409,10 @@ loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
 
                 outfile.write(data)
-            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization}.sh", "w") as outfile:
+
+            runscripts.append(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}.sh")
+
+            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}.sh", "w") as outfile:
                 time_taken = "11:00:00"
                 if "CRC" in dataset:
                     datafile = "CRC_transformed_2000_per_class"
@@ -428,10 +431,10 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                 else:
                     datafile = dataset
 
-                if normalization_all == "baseset":
+                if normalization_all == "target_domain":
                     normalization = dataset
                 else:
-                    normalization = normalization
+                    normalization = normalization_all
 
                 data = f"""#!/bin/bash
 
@@ -466,8 +469,8 @@ echo ""
                 for freeze_encoder in freeze_encoders:
                     run_part = f"""python src/adas/train.py \
 --config PostTrainingConfigs/{dataset}_testing/{optimizer}/lr-{learning_rate}-config-{optimizer}.yaml \
---output {pretrained_model_name}_post_trained_norm_{normalization}_aug_{colour_aug}/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
---checkpoint {pretrained_model_name}_post_trained_norm_{normalization}_aug_{colour_aug}/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+--output {pretrained_model_name}_post_trained_norm_{normalization_all}_aug_{colour_aug}/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"} \
+--checkpoint {pretrained_model_name}_post_trained_norm_{normalization_all}_aug_{colour_aug}/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data $SLURM_TMPDIR \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
@@ -479,6 +482,12 @@ echo ""
                     data += run_part
                 outfile.write(data)
 
+    with open(f"runslurm_{pretrained_model_name}_{normalization_all}.sh", "w") as outfile:
+
+        outlines = [f"sbatch {filestring}\nsleep 2" for filestring in runscripts]
+
+        outfile.write("#!/bin/bash\n")
+        outfile.write("\n".join(outlines))
 
 if __name__ == "__main__":
     root_dir = ""
