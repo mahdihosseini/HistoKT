@@ -304,32 +304,32 @@ def color_norm_tuning(root):
     ]
 
     colour_aug = "Color-Distortion"
-    normalization = "ADP-Release1"
+    normalization_all = "baseset"
 
 
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/ADP-Release1/best_trial_0_date_2021-07-07-11-05-11.pth.tar"
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion/CRC_transformed/best_trial_2_date_2021-07-07-16-50-22.pth.tar"
     # pretrained_model = "ImageNet"
-    # pretrained_model = "/project/6060173/zhan8425/HistoKT/ImageNet_post_trained/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001/best_trial_2_date_2021-07-10-23-24-04.pth.tar"
+    pretrained_model = "/project/6060173/zhan8425/HistoKT/ImageNet_post_trained/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001/best_trial_2_date_2021-07-10-23-24-04.pth.tar"
     # pretrained_model = "/project/6060173/zhan8425/HistoKT/ImageNet_post_trained/CRC_transformed/AdamP/checkpoint/deep_tuning/lr-0.00005/best_trial_1_date_2021-07-07-21-07-36.pth.tar"
-    pretrained_model = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT/ImageNet_post_trained_norm_ImageNet/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0002/best_trial_2_date_2021-07-12-09-19-32.pth.tar"
+    # pretrained_model = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT/ImageNet_post_trained_norm_ImageNet/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0002/best_trial_2_date_2021-07-12-09-19-32.pth.tar"
 
     # pretrained_model_name = "ADP"
     # pretrained_model_name = "CRC"
     # pretrained_model_name = "ImageNet"
-    # pretrained_model_name = "ADP_trained_on_ImageNet"
+    pretrained_model_name = "ADP_trained_on_ImageNet"
     # pretrained_model_name = "CRC_trained_on_ImageNet"
-    pretrained_model_name = "ADP_trained_on_ImageNet_norm_ImageNet"
+    # pretrained_model_name = "ADP_trained_on_ImageNet_norm_ImageNet"
 
     for dataset in [
                     # "ADP-Release1",
                     # "AJ-Lymph_transformed",
-                    # "BACH_transformed",
+                    "BACH_transformed",
                     # "CRC_transformed",
                     # "GlaS_transformed",
-                    # "MHIST_transformed",
+                    "MHIST_transformed",
                     # "OSDataset_transformed",
-                    "PCam_transformed",
+                    # "PCam_transformed",
                     # "BCSS_transformed"
                                         ]:
 
@@ -427,6 +427,12 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                     time_taken = "23:00:00"
                 else:
                     datafile = dataset
+
+                if normalization_all == "baseset":
+                    normalization = dataset
+                else:
+                    normalization = normalization
+
                 data = f"""#!/bin/bash
 
 ### GPU OPTIONS:
