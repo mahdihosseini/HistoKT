@@ -378,7 +378,7 @@ date
     else:
         for dataset in datasets:
             with open(f"runlambda_{dataset}.sh", "w") as outfile:
-                outlines = [f"{filestring}\n" for filestring in runscripts if "run"+dataset in filestring]
+                outlines = [f"bash {filestring}\n" for filestring in runscripts if "run"+dataset in filestring]
 
                 outfile.write("#!/bin/bash\n")
                 outfile.write("".join(outlines))
