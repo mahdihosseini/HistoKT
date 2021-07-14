@@ -10,6 +10,10 @@ ADP_post_trained
 ImageNet_post_trained
 pretraining-output
 pretraining-checkpoint
+new-pretraining-checkpoint
+new-pretraining-output
+*.pth
+*.tar
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
