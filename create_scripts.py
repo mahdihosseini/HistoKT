@@ -360,7 +360,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 # EfficientNetB4
 # ResNet101CIFAR, ResNet50CIFAR, ResNet34CIFAR, ResNet18CIFAR, ResNeXtCIFAR, EfficientNetB0CIFAR, VGG16CIFAR, DenseNet121CIFAR
 optimizer: '{optimizer}' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
-scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
+scheduler: 'StepLR' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
 level : 'L3Only' #L1, L2, L3, L3Only
 
@@ -476,7 +476,7 @@ echo ""
 --freeze_encoder {freeze_encoder} \
 --save-freq 200 \
 --color_aug {colour_aug} \
---norm_vals {normalization}
+--norm_vals {normalization} \
 
 """
                     data += run_part
