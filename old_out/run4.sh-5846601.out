@@ -1,0 +1,359 @@
+transferring data
+Wed Jun 23 08:06:52 PDT 2021
+
+Finished transferring
+Wed Jun 23 08:06:59 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : fine_tuning_configs/4.yaml              
+    data                : /localscratch/zhan8425.5846601.0        
+    output              : ADP_post_trained/MHIST_transformed/output
+    checkpoint          : ADP_post_trained/MHIST_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              MHIST_transformed   
+    network              ResNet18            
+    optimizer            SGD                 
+    scheduler            StepLR              
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.02                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             1                   
+    num_workers          4                   
+    max_epochs           100                 
+    mini_batch_size      8                   
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.47787373373285014
+Valid AUC: 0.5836107492642447
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 1/100 Ended | E Time: 12.048s | ~Time Left: 1192.799s |  Train Loss: 0.9183 | Train Acc. 67.9885% | Test Loss: 0.6180 | Test Acc. 66.6667%
+Train AUC: 0.5037475132368543
+Valid AUC: 0.5322767404834274
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 2/100 Ended | E Time: 9.282s | ~Time Left: 909.694s |  Train Loss: 0.6156 | Train Acc. 71.2069% | Test Loss: 0.6319 | Test Acc. 67.5862%
+Train AUC: 0.4966554363870867
+Valid AUC: 0.5468229845129542
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 3/100 Ended | E Time: 9.341s | ~Time Left: 906.084s |  Train Loss: 0.6063 | Train Acc. 71.3218% | Test Loss: 0.6302 | Test Acc. 67.5862%
+Train AUC: 0.5373010385147914
+Valid AUC: 0.5358952091474888
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 4/100 Ended | E Time: 9.396s | ~Time Left: 902.048s |  Train Loss: 0.5980 | Train Acc. 71.6092% | Test Loss: 0.6407 | Test Acc. 65.9770%
+Train AUC: 0.4994286779165625
+Valid AUC: 0.5695952139721137
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 5/100 Ended | E Time: 9.431s | ~Time Left: 895.950s |  Train Loss: 0.6006 | Train Acc. 71.8966% | Test Loss: 0.6340 | Test Acc. 67.5862%
+Train AUC: 0.4968654932904392
+Valid AUC: 0.486659912191827
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 6/100 Ended | E Time: 9.352s | ~Time Left: 879.122s |  Train Loss: 0.5990 | Train Acc. 71.8966% | Test Loss: 0.6535 | Test Acc. 67.5862%
+Train AUC: 0.5122396969949603
+Valid AUC: 0.5793650793650794
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 7/100 Ended | E Time: 9.357s | ~Time Left: 870.203s |  Train Loss: 0.5960 | Train Acc. 71.8966% | Test Loss: 0.6265 | Test Acc. 67.5862%
+Train AUC: 0.5434850483621283
+Valid AUC: 0.548053263858735
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 8/100 Ended | E Time: 9.289s | ~Time Left: 854.627s |  Train Loss: 0.5971 | Train Acc. 71.7241% | Test Loss: 0.6420 | Test Acc. 67.5862%
+Train AUC: 0.5141882404097172
+Valid AUC: 0.5525884112510252
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 9/100 Ended | E Time: 9.990s | ~Time Left: 909.126s |  Train Loss: 0.6023 | Train Acc. 71.3218% | Test Loss: 0.6575 | Test Acc. 67.5862%
+Train AUC: 0.5324362187141902
+Valid AUC: 0.5844550586191923
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 10/100 Ended | E Time: 9.537s | ~Time Left: 858.347s |  Train Loss: 0.6029 | Train Acc. 71.4943% | Test Loss: 0.6229 | Test Acc. 67.5862%
+Train AUC: 0.5282563315400849
+Valid AUC: 0.6230038114536595
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 11/100 Ended | E Time: 9.303s | ~Time Left: 827.981s |  Train Loss: 0.5971 | Train Acc. 71.8966% | Test Loss: 0.6233 | Test Acc. 67.5862%
+Train AUC: 0.5518856898121585
+Valid AUC: 0.6850726106045255
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 12/100 Ended | E Time: 9.311s | ~Time Left: 819.426s |  Train Loss: 0.5928 | Train Acc. 71.7241% | Test Loss: 0.6294 | Test Acc. 67.5862%
+Train AUC: 0.5631780873869412
+Valid AUC: 0.6220388864765763
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 13/100 Ended | E Time: 9.615s | ~Time Left: 836.556s |  Train Loss: 0.5913 | Train Acc. 71.3218% | Test Loss: 0.6191 | Test Acc. 67.5862%
+Train AUC: 0.5870967847398972
+Valid AUC: 0.6987986684035317
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 14/100 Ended | E Time: 9.434s | ~Time Left: 811.307s |  Train Loss: 0.5867 | Train Acc. 71.8966% | Test Loss: 0.5892 | Test Acc. 67.5862%
+Train AUC: 0.5602830618940431
+Valid AUC: 0.561417474791335
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 15/100 Ended | E Time: 9.344s | ~Time Left: 794.259s |  Train Loss: 0.5905 | Train Acc. 72.0115% | Test Loss: 0.6256 | Test Acc. 67.5862%
+Train AUC: 0.5607064450688938
+Valid AUC: 0.6236068895643364
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 16/100 Ended | E Time: 9.250s | ~Time Left: 777.004s |  Train Loss: 0.5910 | Train Acc. 71.6092% | Test Loss: 0.6098 | Test Acc. 67.5862%
+Train AUC: 0.6029025450396329
+Valid AUC: 0.5905099628503884
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 17/100 Ended | E Time: 9.329s | ~Time Left: 774.341s |  Train Loss: 0.5827 | Train Acc. 71.0920% | Test Loss: 0.6715 | Test Acc. 67.5862%
+Train AUC: 0.5696334547903599
+Valid AUC: 0.5806918512085685
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 18/100 Ended | E Time: 10.996s | ~Time Left: 901.682s |  Train Loss: 0.5901 | Train Acc. 71.5517% | Test Loss: 0.6400 | Test Acc. 67.5862%
+Train AUC: 0.5962837092289359
+Valid AUC: 0.6512037439089111
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 19/100 Ended | E Time: 9.341s | ~Time Left: 756.613s |  Train Loss: 0.5834 | Train Acc. 71.6667% | Test Loss: 0.6009 | Test Acc. 67.3563%
+Train AUC: 0.6043214508148083
+Valid AUC: 0.6459931490326625
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 20/100 Ended | E Time: 9.294s | ~Time Left: 743.502s |  Train Loss: 0.5793 | Train Acc. 71.7241% | Test Loss: 0.6362 | Test Acc. 69.1954%
+Train AUC: 0.6237480363357576
+Valid AUC: 0.7325227963525835
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 21/100 Ended | E Time: 9.413s | ~Time Left: 743.650s |  Train Loss: 0.5754 | Train Acc. 71.3793% | Test Loss: 0.5690 | Test Acc. 67.5862%
+Train AUC: 0.6621712854665144
+Valid AUC: 0.7456216529164857
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 22/100 Ended | E Time: 9.313s | ~Time Left: 726.413s |  Train Loss: 0.5599 | Train Acc. 72.9310% | Test Loss: 0.5647 | Test Acc. 70.1149%
+Train AUC: 0.6718142868118593
+Valid AUC: 0.7080137019346745
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 23/100 Ended | E Time: 9.349s | ~Time Left: 719.874s |  Train Loss: 0.5543 | Train Acc. 71.6667% | Test Loss: 0.5889 | Test Acc. 69.8851%
+Train AUC: 0.6707958786345156
+Valid AUC: 0.7503015390553384
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 24/100 Ended | E Time: 9.836s | ~Time Left: 747.588s |  Train Loss: 0.5551 | Train Acc. 71.4368% | Test Loss: 0.5516 | Test Acc. 67.8161%
+Train AUC: 0.6726561491093423
+Valid AUC: 0.6692719641047908
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 25/100 Ended | E Time: 9.609s | ~Time Left: 720.724s |  Train Loss: 0.5544 | Train Acc. 71.6092% | Test Loss: 0.6072 | Test Acc. 68.2759%
+Train AUC: 0.6715249477309768
+Valid AUC: 0.7738215853717374
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 26/100 Ended | E Time: 9.458s | ~Time Left: 699.878s |  Train Loss: 0.5548 | Train Acc. 71.6092% | Test Loss: 0.5497 | Test Acc. 67.8161%
+Train AUC: 0.6909106661501064
+Valid AUC: 0.7692381917305929
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 27/100 Ended | E Time: 9.393s | ~Time Left: 685.689s |  Train Loss: 0.5464 | Train Acc. 72.2989% | Test Loss: 0.5506 | Test Acc. 67.8161%
+Train AUC: 0.6939904109432291
+Valid AUC: 0.7517006802721089
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 28/100 Ended | E Time: 9.343s | ~Time Left: 672.672s |  Train Loss: 0.5440 | Train Acc. 71.3218% | Test Loss: 0.5666 | Test Acc. 71.0345%
+Train AUC: 0.6912997209594287
+Valid AUC: 0.7544024702079413
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 29/100 Ended | E Time: 9.306s | ~Time Left: 660.759s |  Train Loss: 0.5456 | Train Acc. 72.0115% | Test Loss: 0.5524 | Test Acc. 68.7356%
+Train AUC: 0.7199802530164007
+Valid AUC: 0.8040237371544362
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 30/100 Ended | E Time: 10.135s | ~Time Left: 709.493s |  Train Loss: 0.5334 | Train Acc. 71.7816% | Test Loss: 0.5140 | Test Acc. 68.7356%
+Train AUC: 0.7044523890090382
+Valid AUC: 0.7334394750808124
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 31/100 Ended | E Time: 9.281s | ~Time Left: 640.365s |  Train Loss: 0.5400 | Train Acc. 72.9310% | Test Loss: 0.5948 | Test Acc. 67.5862%
+Train AUC: 0.7175821714816286
+Valid AUC: 0.6636271529888551
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 32/100 Ended | E Time: 9.338s | ~Time Left: 634.976s |  Train Loss: 0.5285 | Train Acc. 71.6092% | Test Loss: 0.6804 | Test Acc. 67.5862%
+Train AUC: 0.7310209092439749
+Valid AUC: 0.7643894437207507
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 33/100 Ended | E Time: 9.320s | ~Time Left: 624.439s |  Train Loss: 0.5255 | Train Acc. 73.2184% | Test Loss: 0.5501 | Test Acc. 67.5862%
+Train AUC: 0.7121288654148256
+Valid AUC: 0.8028417040575095
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 34/100 Ended | E Time: 9.747s | ~Time Left: 643.336s |  Train Loss: 0.5342 | Train Acc. 72.1264% | Test Loss: 0.5150 | Test Acc. 69.1954%
+Train AUC: 0.7281079022262762
+Valid AUC: 0.8074009745742269
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 35/100 Ended | E Time: 9.410s | ~Time Left: 611.662s |  Train Loss: 0.5235 | Train Acc. 71.9540% | Test Loss: 0.5563 | Test Acc. 67.5862%
+Train AUC: 0.7326196302671564
+Valid AUC: 0.8280744922082308
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 36/100 Ended | E Time: 9.491s | ~Time Left: 607.438s |  Train Loss: 0.5214 | Train Acc. 72.4138% | Test Loss: 0.4833 | Test Acc. 77.0115%
+Train AUC: 0.7224927624362678
+Valid AUC: 0.7668982486611666
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 37/100 Ended | E Time: 9.327s | ~Time Left: 587.640s |  Train Loss: 0.5291 | Train Acc. 73.2184% | Test Loss: 0.5522 | Test Acc. 71.7241%
+Train AUC: 0.7505292289685634
+Valid AUC: 0.7632315337482511
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 38/100 Ended | E Time: 9.319s | ~Time Left: 577.810s |  Train Loss: 0.5080 | Train Acc. 72.7011% | Test Loss: 0.5247 | Test Acc. 70.3448%
+Train AUC: 0.7156450708553812
+Valid AUC: 0.7605538669368456
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 39/100 Ended | E Time: 9.311s | ~Time Left: 568.013s |  Train Loss: 0.5300 | Train Acc. 71.6092% | Test Loss: 0.5318 | Test Acc. 67.1264%
+Train AUC: 0.7421498384114794
+Valid AUC: 0.7560669657934096
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 40/100 Ended | E Time: 9.653s | ~Time Left: 579.191s |  Train Loss: 0.5153 | Train Acc. 73.6207% | Test Loss: 0.5598 | Test Acc. 68.9655%
+Train AUC: 0.7547875809781623
+Valid AUC: 0.8191248130457858
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 41/100 Ended | E Time: 9.514s | ~Time Left: 561.308s |  Train Loss: 0.5048 | Train Acc. 73.1034% | Test Loss: 0.4840 | Test Acc. 75.8621%
+Train AUC: 0.7591914198702386
+Valid AUC: 0.8504848748009842
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 42/100 Ended | E Time: 9.286s | ~Time Left: 538.627s |  Train Loss: 0.5035 | Train Acc. 73.6207% | Test Loss: 0.4812 | Test Acc. 72.4138%
+Train AUC: 0.7539538921010431
+Valid AUC: 0.821127032373233
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 43/100 Ended | E Time: 9.374s | ~Time Left: 534.304s |  Train Loss: 0.5046 | Train Acc. 72.4138% | Test Loss: 0.4985 | Test Acc. 69.8851%
+Train AUC: 0.7741373363476907
+Valid AUC: 0.7992473585178753
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 44/100 Ended | E Time: 9.418s | ~Time Left: 527.409s |  Train Loss: 0.4937 | Train Acc. 75.0000% | Test Loss: 0.5216 | Test Acc. 72.6437%
+Train AUC: 0.7678764963489331
+Valid AUC: 0.7888744150142326
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 45/100 Ended | E Time: 9.455s | ~Time Left: 520.033s |  Train Loss: 0.4934 | Train Acc. 73.6782% | Test Loss: 0.5319 | Test Acc. 71.2644%
+Train AUC: 0.7677113932575821
+Valid AUC: 0.8246972547884402
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 46/100 Ended | E Time: 9.641s | ~Time Left: 520.602s |  Train Loss: 0.5024 | Train Acc. 74.0805% | Test Loss: 0.4846 | Test Acc. 70.5747%
+Train AUC: 0.7759403928799702
+Valid AUC: 0.8167607468519321
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 47/100 Ended | E Time: 9.280s | ~Time Left: 491.869s |  Train Loss: 0.4938 | Train Acc. 74.3678% | Test Loss: 0.5032 | Test Acc. 72.6437%
+Train AUC: 0.7812498467483682
+Valid AUC: 0.8387851594538523
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 48/100 Ended | E Time: 9.776s | ~Time Left: 508.355s |  Train Loss: 0.4845 | Train Acc. 75.1149% | Test Loss: 0.4717 | Test Acc. 74.7126%
+Train AUC: 0.7716705980818619
+Valid AUC: 0.8143243112847977
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 49/100 Ended | E Time: 9.379s | ~Time Left: 478.312s |  Train Loss: 0.4904 | Train Acc. 74.1379% | Test Loss: 0.4930 | Test Acc. 71.7241%
+Train AUC: 0.773820207637571
+Valid AUC: 0.8129734163168814
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 50/100 Ended | E Time: 9.267s | ~Time Left: 463.374s |  Train Loss: 0.4930 | Train Acc. 73.7931% | Test Loss: 0.4879 | Test Acc. 72.6437%
+Train AUC: 0.7775505566916611
+Valid AUC: 0.8409079944034351
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 51/100 Ended | E Time: 9.370s | ~Time Left: 459.140s |  Train Loss: 0.4928 | Train Acc. 74.5402% | Test Loss: 0.5391 | Test Acc. 68.7356%
+Train AUC: 0.7852858817240687
+Valid AUC: 0.8304868046509385
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 52/100 Ended | E Time: 9.860s | ~Time Left: 473.267s |  Train Loss: 0.4830 | Train Acc. 74.8276% | Test Loss: 0.4977 | Test Acc. 71.9540%
+Train AUC: 0.7692054945001054
+Valid AUC: 0.8499059198147344
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 53/100 Ended | E Time: 9.319s | ~Time Left: 437.998s |  Train Loss: 0.4968 | Train Acc. 74.6552% | Test Loss: 0.4630 | Test Acc. 74.7126%
+Train AUC: 0.7830251136514101
+Valid AUC: 0.7851353307280359
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 54/100 Ended | E Time: 9.306s | ~Time Left: 428.079s |  Train Loss: 0.4892 | Train Acc. 75.3448% | Test Loss: 0.5182 | Test Acc. 73.1034%
+Train AUC: 0.7893170126475507
+Valid AUC: 0.819559029285473
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 55/100 Ended | E Time: 9.549s | ~Time Left: 429.718s |  Train Loss: 0.4799 | Train Acc. 74.9425% | Test Loss: 0.4811 | Test Acc. 72.6437%
+Train AUC: 0.7842772816511617
+Valid AUC: 0.8021180103246973
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 56/100 Ended | E Time: 10.137s | ~Time Left: 446.029s |  Train Loss: 0.4817 | Train Acc. 74.8851% | Test Loss: 0.5084 | Test Acc. 74.4828%
+Train AUC: 0.7764863773602795
+Valid AUC: 0.843682153712549
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 57/100 Ended | E Time: 9.366s | ~Time Left: 402.760s |  Train Loss: 0.4899 | Train Acc. 75.1149% | Test Loss: 0.4711 | Test Acc. 76.0920%
+Train AUC: 0.7843933442203292
+Valid AUC: 0.8581319052443673
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 58/100 Ended | E Time: 9.366s | ~Time Left: 393.360s |  Train Loss: 0.4848 | Train Acc. 74.8276% | Test Loss: 0.4471 | Test Acc. 73.7931%
+Train AUC: 0.7903256127204575
+Valid AUC: 0.8459497274086939
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 59/100 Ended | E Time: 10.228s | ~Time Left: 419.373s |  Train Loss: 0.4824 | Train Acc. 75.6322% | Test Loss: 0.4595 | Test Acc. 76.7816%
+Train AUC: 0.7915450870387535
+Valid AUC: 0.8432238143484344
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 60/100 Ended | E Time: 9.364s | ~Time Left: 374.554s |  Train Loss: 0.4786 | Train Acc. 75.3448% | Test Loss: 0.4764 | Test Acc. 74.4828%
+Train AUC: 0.7981116129591215
+Valid AUC: 0.8314276065035944
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 61/100 Ended | E Time: 9.335s | ~Time Left: 364.079s |  Train Loss: 0.4726 | Train Acc. 75.8046% | Test Loss: 0.4658 | Test Acc. 74.2529%
+Train AUC: 0.8190829749288504
+Valid AUC: 0.8630530226274907
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 62/100 Ended | E Time: 10.157s | ~Time Left: 385.983s |  Train Loss: 0.4537 | Train Acc. 76.7816% | Test Loss: 0.4360 | Test Acc. 78.6207%
+Train AUC: 0.8188132520568412
+Valid AUC: 0.8491822260819221
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 63/100 Ended | E Time: 9.348s | ~Time Left: 345.871s |  Train Loss: 0.4531 | Train Acc. 76.7241% | Test Loss: 0.4656 | Test Acc. 74.7126%
+Train AUC: 0.8063046495319082
+Valid AUC: 0.8603029864428041
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 64/100 Ended | E Time: 9.317s | ~Time Left: 335.420s |  Train Loss: 0.4617 | Train Acc. 75.9195% | Test Loss: 0.4373 | Test Acc. 77.9310%
+Train AUC: 0.8185811269185062
+Valid AUC: 0.840859748154581
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 65/100 Ended | E Time: 9.338s | ~Time Left: 326.842s |  Train Loss: 0.4517 | Train Acc. 77.4713% | Test Loss: 0.4470 | Test Acc. 75.1724%
+Train AUC: 0.8034946276107948
+Valid AUC: 0.8603994789405125
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 66/100 Ended | E Time: 10.312s | ~Time Left: 350.611s |  Train Loss: 0.4694 | Train Acc. 77.7011% | Test Loss: 0.4550 | Test Acc. 74.9425%
+Train AUC: 0.8106071380114722
+Valid AUC: 0.8676846625174893
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 67/100 Ended | E Time: 9.381s | ~Time Left: 309.566s |  Train Loss: 0.4614 | Train Acc. 76.6092% | Test Loss: 0.4213 | Test Acc. 79.7701%
+Train AUC: 0.8228476523484688
+Valid AUC: 0.8566362715298886
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 68/100 Ended | E Time: 9.354s | ~Time Left: 299.328s |  Train Loss: 0.4497 | Train Acc. 77.0690% | Test Loss: 0.4363 | Test Acc. 77.4713%
+Train AUC: 0.818296691889842
+Valid AUC: 0.8703140830800405
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 69/100 Ended | E Time: 9.241s | ~Time Left: 286.473s |  Train Loss: 0.4556 | Train Acc. 78.1034% | Test Loss: 0.4240 | Test Acc. 79.0805%
+Train AUC: 0.8119083465334072
+Valid AUC: 0.8674193081487914
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 70/100 Ended | E Time: 9.320s | ~Time Left: 279.606s |  Train Loss: 0.4617 | Train Acc. 77.9310% | Test Loss: 0.4428 | Test Acc. 78.8506%
+Train AUC: 0.8183163080987153
+Valid AUC: 0.8421382737492159
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 71/100 Ended | E Time: 9.749s | ~Time Left: 282.723s |  Train Loss: 0.4527 | Train Acc. 76.6667% | Test Loss: 0.4521 | Test Acc. 76.0920%
+Train AUC: 0.8194082770593341
+Valid AUC: 0.8579871664978047
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 72/100 Ended | E Time: 9.390s | ~Time Left: 262.922s |  Train Loss: 0.4551 | Train Acc. 78.1034% | Test Loss: 0.4408 | Test Acc. 77.4713%
+Train AUC: 0.8281309512717027
+Valid AUC: 0.8673469387755103
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 73/100 Ended | E Time: 9.301s | ~Time Left: 251.137s |  Train Loss: 0.4434 | Train Acc. 77.4138% | Test Loss: 0.4345 | Test Acc. 78.3908%
+Train AUC: 0.8239723149905432
+Valid AUC: 0.862184590148116
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 74/100 Ended | E Time: 9.473s | ~Time Left: 246.291s |  Train Loss: 0.4520 | Train Acc. 77.3563% | Test Loss: 0.4361 | Test Acc. 78.1609%
+Train AUC: 0.813865063368528
+Valid AUC: 0.8374342644859362
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 75/100 Ended | E Time: 9.464s | ~Time Left: 236.611s |  Train Loss: 0.4548 | Train Acc. 76.2069% | Test Loss: 0.4585 | Test Acc. 76.5517%
+Train AUC: 0.8171932801407136
+Valid AUC: 0.8770203116707675
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 76/100 Ended | E Time: 9.344s | ~Time Left: 224.255s |  Train Loss: 0.4549 | Train Acc. 77.5862% | Test Loss: 0.4211 | Test Acc. 79.0805%
+Train AUC: 0.8268657057993687
+Valid AUC: 0.8907463694697737
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 77/100 Ended | E Time: 9.357s | ~Time Left: 215.221s |  Train Loss: 0.4435 | Train Acc. 77.9310% | Test Loss: 0.4106 | Test Acc. 77.7011%
+Train AUC: 0.810571174961871
+Valid AUC: 0.8668885994113957
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 78/100 Ended | E Time: 9.221s | ~Time Left: 202.857s |  Train Loss: 0.4609 | Train Acc. 76.6092% | Test Loss: 0.4442 | Test Acc. 73.5632%
+Train AUC: 0.8330726012237244
+Valid AUC: 0.8729917498914459
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 79/100 Ended | E Time: 9.414s | ~Time Left: 197.703s |  Train Loss: 0.4396 | Train Acc. 77.5287% | Test Loss: 0.4294 | Test Acc. 78.3908%
+Train AUC: 0.8188443110542241
+Valid AUC: 0.8344188739325518
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 80/100 Ended | E Time: 10.253s | ~Time Left: 205.061s |  Train Loss: 0.4545 | Train Acc. 77.4138% | Test Loss: 0.4622 | Test Acc. 76.5517%
+Train AUC: 0.841680847550998
+Valid AUC: 0.876489602933372
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 81/100 Ended | E Time: 9.325s | ~Time Left: 177.187s |  Train Loss: 0.4315 | Train Acc. 79.0230% | Test Loss: 0.4246 | Test Acc. 77.9310%
+Train AUC: 0.8518306009589058
+Valid AUC: 0.8539586047184832
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 82/100 Ended | E Time: 9.275s | ~Time Left: 166.947s |  Train Loss: 0.4187 | Train Acc. 79.8851% | Test Loss: 0.4403 | Test Acc. 76.3218%
+Train AUC: 0.8519581063165826
+Valid AUC: 0.873329473633425
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 83/100 Ended | E Time: 9.618s | ~Time Left: 163.506s |  Train Loss: 0.4183 | Train Acc. 79.1379% | Test Loss: 0.4145 | Test Acc. 80.6897%
+Train AUC: 0.8392991128569537
+Valid AUC: 0.8766343416799344
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 84/100 Ended | E Time: 9.432s | ~Time Left: 150.913s |  Train Loss: 0.4311 | Train Acc. 78.9655% | Test Loss: 0.4194 | Test Acc. 77.9310%
+Train AUC: 0.8474774372730854
+Valid AUC: 0.8790707772470691
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 85/100 Ended | E Time: 9.285s | ~Time Left: 139.272s |  Train Loss: 0.4242 | Train Acc. 79.1954% | Test Loss: 0.4163 | Test Acc. 77.7011%
+Train AUC: 0.852016954943203
+Valid AUC: 0.8840401408790467
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 86/100 Ended | E Time: 9.314s | ~Time Left: 130.405s |  Train Loss: 0.4162 | Train Acc. 78.9655% | Test Loss: 0.4153 | Test Acc. 79.5402%
+Train AUC: 0.8524795705358004
+Valid AUC: 0.8474694842475997
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 87/100 Ended | E Time: 9.684s | ~Time Left: 125.897s |  Train Loss: 0.4194 | Train Acc. 79.9425% | Test Loss: 0.4961 | Test Acc. 77.2414%
+Train AUC: 0.8527427546715185
+Valid AUC: 0.8734018430067062
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 88/100 Ended | E Time: 9.244s | ~Time Left: 110.933s |  Train Loss: 0.4209 | Train Acc. 80.0000% | Test Loss: 0.4413 | Test Acc. 77.0115%
+Train AUC: 0.8489437488863716
+Valid AUC: 0.8839195252569112
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 89/100 Ended | E Time: 9.330s | ~Time Left: 102.634s |  Train Loss: 0.4204 | Train Acc. 79.4828% | Test Loss: 0.4075 | Test Acc. 80.4598%
+Train AUC: 0.8661161050709535
+Valid AUC: 0.8788054228783712
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 90/100 Ended | E Time: 9.321s | ~Time Left: 93.208s |  Train Loss: 0.4024 | Train Acc. 81.8391% | Test Loss: 0.4128 | Test Acc. 80.9195%
+Train AUC: 0.8533018166244102
+Valid AUC: 0.8748009842234767
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 91/100 Ended | E Time: 9.354s | ~Time Left: 84.186s |  Train Loss: 0.4208 | Train Acc. 79.8851% | Test Loss: 0.4227 | Test Acc. 80.2299%
+Train AUC: 0.853046805909056
+Valid AUC: 0.8698798668403531
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 92/100 Ended | E Time: 9.315s | ~Time Left: 74.523s |  Train Loss: 0.4165 | Train Acc. 80.5747% | Test Loss: 0.4606 | Test Acc. 73.7931%
+Train AUC: 0.8627241356199294
+Valid AUC: 0.8880204564095142
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 93/100 Ended | E Time: 9.906s | ~Time Left: 69.341s |  Train Loss: 0.4051 | Train Acc. 80.2299% | Test Loss: 0.4098 | Test Acc. 81.6092%
+Train AUC: 0.8475722489493069
+Valid AUC: 0.8951609012399285
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 94/100 Ended | E Time: 9.410s | ~Time Left: 56.463s |  Train Loss: 0.4222 | Train Acc. 79.3678% | Test Loss: 0.4130 | Test Acc. 80.2299%
+Train AUC: 0.8626505748366542
+Valid AUC: 0.8913735707048777
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 95/100 Ended | E Time: 9.340s | ~Time Left: 46.700s |  Train Loss: 0.4057 | Train Acc. 80.2299% | Test Loss: 0.3999 | Test Acc. 83.6782%
+Train AUC: 0.8687446770599879
+Valid AUC: 0.895329763110918
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 96/100 Ended | E Time: 9.289s | ~Time Left: 37.158s |  Train Loss: 0.3985 | Train Acc. 80.9770% | Test Loss: 0.3781 | Test Acc. 82.9885%
+Train AUC: 0.8709890982919186
+Valid AUC: 0.8517875235200463
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 97/100 Ended | E Time: 9.326s | ~Time Left: 27.977s |  Train Loss: 0.3933 | Train Acc. 81.6092% | Test Loss: 0.4720 | Test Acc. 77.0115%
+Train AUC: 0.8602819176151921
+Valid AUC: 0.8967289043276885
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 98/100 Ended | E Time: 9.387s | ~Time Left: 18.774s |  Train Loss: 0.4070 | Train Acc. 80.0000% | Test Loss: 0.3802 | Test Acc. 82.7586%
+Train AUC: 0.8637719681105831
+Valid AUC: 0.8694697737250928
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 99/100 Ended | E Time: 9.318s | ~Time Left: 9.318s |  Train Loss: 0.4044 | Train Acc. 80.7471% | Test Loss: 0.4282 | Test Acc. 79.0805%
+Train AUC: 0.862545955055996
+Valid AUC: 0.8967771505765426
+SGD w/ StepLR on MHIST_transformed: T 1/1 | E 100/100 Ended | E Time: 9.439s | ~Time Left: 0.000s |  Train Loss: 0.4058 | Train Acc. 80.2299% | Test Loss: 0.3856 | Test Acc. 82.2989%

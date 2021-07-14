@@ -31,6 +31,7 @@ from typing import Dict, Union, List
 import pstats
 import sys
 import torch
+import argparse
 
 
 def get_is_module():
@@ -100,7 +101,8 @@ def parse_config(
                      "GlaS_transformed",
                      "MHIST_transformed",
                      "OSDataset_transformed",
-                     "PCam_transformed"]
+                     "PCam_transformed",
+                     "BCSS_transformed"]
     if config['dataset'] not in valid_dataset:
         raise ValueError(
             f"config.yaml: unknown dataset {config['dataset']}. " +
@@ -370,6 +372,26 @@ class ThresholdedMetrics:
         df.to_excel(sess_xlsx_path)
 
     
+def convert_checkpoint_to_model_only(path_to_checkpoint, path_to_destination):
+    data = torch.load(path_to_checkpoint, map_location=torch.device("cpu"))
+    new_checkpoint = {"model": data["state_dict_network"], "config": None, "optimizer": None, "epoch": None}
+    torch.save(new_checkpoint, path_to_destination)
+
+
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+if __name__ == "__main__":
+    checkpoint_path = "C:\\Users\\ryanr\\Desktop\\Summer_Research\\MCL\\Trained_models\\Normal\\best.pth.tar"
+    convert_checkpoint_to_model_only(checkpoint_path,
+    path_to_destination="C:\\Users\\ryanr\\Desktop\\Summer_Research\\MCL\\Trained_models\\Normal\\best_transformed.pth")
 
 
 

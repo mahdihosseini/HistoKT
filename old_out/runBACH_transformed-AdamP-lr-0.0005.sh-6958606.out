@@ -1,0 +1,594 @@
+transferring data
+Sun Jul  4 20:15:19 PDT 2021
+
+Finished transferring
+Sun Jul  4 20:15:20 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/BACH_transformed_testing/AdamP/lr-0.0005-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958606.0        
+    output              : ADP_post_trained/BACH_transformed/AdamP/output/fine_tuning
+    checkpoint          : ADP_post_trained/BACH_transformed/AdamP/checkpoint/fine_tuning/lr-0.0005
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              BACH_transformed    
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0005              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on BACH_transformed: T 1/3 | E 1/200 Ended | E Time: 7.566s | ~Time Left: 1505.704s |  Train Loss: 1.4515 | Train Acc. 34.6555% | Test Loss: 2.0810 | Test Acc. 30.0000%
+AdamP on BACH_transformed: T 1/3 | E 2/200 Ended | E Time: 6.461s | ~Time Left: 1279.317s |  Train Loss: 1.2933 | Train Acc. 40.6054% | Test Loss: 1.3219 | Test Acc. 40.0000%
+AdamP on BACH_transformed: T 1/3 | E 3/200 Ended | E Time: 6.579s | ~Time Left: 1296.102s |  Train Loss: 1.2838 | Train Acc. 40.2923% | Test Loss: 1.1759 | Test Acc. 45.4167%
+AdamP on BACH_transformed: T 1/3 | E 4/200 Ended | E Time: 6.488s | ~Time Left: 1271.745s |  Train Loss: 1.2772 | Train Acc. 43.3194% | Test Loss: 1.3335 | Test Acc. 39.1667%
+AdamP on BACH_transformed: T 1/3 | E 5/200 Ended | E Time: 6.504s | ~Time Left: 1268.287s |  Train Loss: 1.2383 | Train Acc. 42.3800% | Test Loss: 1.2906 | Test Acc. 43.7500%
+AdamP on BACH_transformed: T 1/3 | E 6/200 Ended | E Time: 6.517s | ~Time Left: 1264.230s |  Train Loss: 1.2663 | Train Acc. 41.8580% | Test Loss: 1.2657 | Test Acc. 36.2500%
+AdamP on BACH_transformed: T 1/3 | E 7/200 Ended | E Time: 6.527s | ~Time Left: 1259.777s |  Train Loss: 1.2494 | Train Acc. 41.9624% | Test Loss: 1.2401 | Test Acc. 45.8333%
+AdamP on BACH_transformed: T 1/3 | E 8/200 Ended | E Time: 6.547s | ~Time Left: 1256.937s |  Train Loss: 1.2457 | Train Acc. 44.3633% | Test Loss: 1.2495 | Test Acc. 39.5833%
+AdamP on BACH_transformed: T 1/3 | E 9/200 Ended | E Time: 6.562s | ~Time Left: 1253.380s |  Train Loss: 1.1983 | Train Acc. 45.0939% | Test Loss: 1.1720 | Test Acc. 45.8333%
+AdamP on BACH_transformed: T 1/3 | E 10/200 Ended | E Time: 6.481s | ~Time Left: 1231.303s |  Train Loss: 1.2202 | Train Acc. 43.5282% | Test Loss: 1.3171 | Test Acc. 39.1667%
+AdamP on BACH_transformed: T 1/3 | E 11/200 Ended | E Time: 6.508s | ~Time Left: 1230.001s |  Train Loss: 1.1999 | Train Acc. 45.3027% | Test Loss: 1.1407 | Test Acc. 48.7500%
+AdamP on BACH_transformed: T 1/3 | E 12/200 Ended | E Time: 6.483s | ~Time Left: 1218.891s |  Train Loss: 1.1976 | Train Acc. 44.5720% | Test Loss: 1.4282 | Test Acc. 34.1667%
+AdamP on BACH_transformed: T 1/3 | E 13/200 Ended | E Time: 6.447s | ~Time Left: 1205.522s |  Train Loss: 1.2108 | Train Acc. 44.5720% | Test Loss: 1.2243 | Test Acc. 45.4167%
+AdamP on BACH_transformed: T 1/3 | E 14/200 Ended | E Time: 6.478s | ~Time Left: 1204.851s |  Train Loss: 1.1661 | Train Acc. 48.6430% | Test Loss: 1.1800 | Test Acc. 47.5000%
+AdamP on BACH_transformed: T 1/3 | E 15/200 Ended | E Time: 6.531s | ~Time Left: 1208.288s |  Train Loss: 1.1981 | Train Acc. 44.5720% | Test Loss: 1.2955 | Test Acc. 42.0833%
+AdamP on BACH_transformed: T 1/3 | E 16/200 Ended | E Time: 6.572s | ~Time Left: 1209.258s |  Train Loss: 1.1482 | Train Acc. 50.0000% | Test Loss: 1.2351 | Test Acc. 46.2500%
+AdamP on BACH_transformed: T 1/3 | E 17/200 Ended | E Time: 6.509s | ~Time Left: 1191.206s |  Train Loss: 1.1668 | Train Acc. 47.2860% | Test Loss: 1.1896 | Test Acc. 48.7500%
+AdamP on BACH_transformed: T 1/3 | E 18/200 Ended | E Time: 6.512s | ~Time Left: 1185.204s |  Train Loss: 1.1418 | Train Acc. 50.9395% | Test Loss: 1.2180 | Test Acc. 43.7500%
+AdamP on BACH_transformed: T 1/3 | E 19/200 Ended | E Time: 6.501s | ~Time Left: 1176.731s |  Train Loss: 1.1674 | Train Acc. 49.1649% | Test Loss: 1.2330 | Test Acc. 50.0000%
+AdamP on BACH_transformed: T 1/3 | E 20/200 Ended | E Time: 6.493s | ~Time Left: 1168.790s |  Train Loss: 1.1371 | Train Acc. 52.2965% | Test Loss: 1.0873 | Test Acc. 55.8333%
+AdamP on BACH_transformed: T 1/3 | E 21/200 Ended | E Time: 6.502s | ~Time Left: 1163.918s |  Train Loss: 1.1272 | Train Acc. 51.2526% | Test Loss: 1.3203 | Test Acc. 44.1667%
+AdamP on BACH_transformed: T 1/3 | E 22/200 Ended | E Time: 6.528s | ~Time Left: 1161.932s |  Train Loss: 1.1619 | Train Acc. 49.4781% | Test Loss: 1.1816 | Test Acc. 46.6667%
+AdamP on BACH_transformed: T 1/3 | E 23/200 Ended | E Time: 6.543s | ~Time Left: 1158.083s |  Train Loss: 1.1392 | Train Acc. 48.9562% | Test Loss: 1.0945 | Test Acc. 51.6667%
+AdamP on BACH_transformed: T 1/3 | E 24/200 Ended | E Time: 6.440s | ~Time Left: 1133.491s |  Train Loss: 1.0845 | Train Acc. 53.7578% | Test Loss: 1.2111 | Test Acc. 47.5000%
+AdamP on BACH_transformed: T 1/3 | E 25/200 Ended | E Time: 6.565s | ~Time Left: 1148.915s |  Train Loss: 1.1110 | Train Acc. 51.0438% | Test Loss: 1.3602 | Test Acc. 49.5833%
+AdamP on BACH_transformed: T 1/3 | E 26/200 Ended | E Time: 6.501s | ~Time Left: 1131.129s |  Train Loss: 1.1194 | Train Acc. 51.4614% | Test Loss: 1.1952 | Test Acc. 45.8333%
+AdamP on BACH_transformed: T 1/3 | E 27/200 Ended | E Time: 6.573s | ~Time Left: 1137.192s |  Train Loss: 1.0517 | Train Acc. 56.3674% | Test Loss: 1.2695 | Test Acc. 49.5833%
+AdamP on BACH_transformed: T 1/3 | E 28/200 Ended | E Time: 6.490s | ~Time Left: 1116.241s |  Train Loss: 1.0298 | Train Acc. 56.6806% | Test Loss: 1.1463 | Test Acc. 50.0000%
+AdamP on BACH_transformed: T 1/3 | E 29/200 Ended | E Time: 6.529s | ~Time Left: 1116.402s |  Train Loss: 1.0657 | Train Acc. 55.2192% | Test Loss: 1.1882 | Test Acc. 47.0833%
+AdamP on BACH_transformed: T 1/3 | E 30/200 Ended | E Time: 6.535s | ~Time Left: 1110.925s |  Train Loss: 1.0670 | Train Acc. 55.3236% | Test Loss: 1.1709 | Test Acc. 47.9167%
+AdamP on BACH_transformed: T 1/3 | E 31/200 Ended | E Time: 6.517s | ~Time Left: 1101.378s |  Train Loss: 1.0562 | Train Acc. 54.8017% | Test Loss: 1.1447 | Test Acc. 50.8333%
+AdamP on BACH_transformed: T 1/3 | E 32/200 Ended | E Time: 6.579s | ~Time Left: 1105.221s |  Train Loss: 1.0198 | Train Acc. 57.4113% | Test Loss: 1.0506 | Test Acc. 55.4167%
+AdamP on BACH_transformed: T 1/3 | E 33/200 Ended | E Time: 6.501s | ~Time Left: 1085.713s |  Train Loss: 1.0267 | Train Acc. 56.0543% | Test Loss: 1.1111 | Test Acc. 55.8333%
+AdamP on BACH_transformed: T 1/3 | E 34/200 Ended | E Time: 6.525s | ~Time Left: 1083.190s |  Train Loss: 1.0507 | Train Acc. 54.8017% | Test Loss: 1.0997 | Test Acc. 49.1667%
+AdamP on BACH_transformed: T 1/3 | E 35/200 Ended | E Time: 6.505s | ~Time Left: 1073.248s |  Train Loss: 0.9975 | Train Acc. 59.1858% | Test Loss: 1.0732 | Test Acc. 52.5000%
+AdamP on BACH_transformed: T 1/3 | E 36/200 Ended | E Time: 6.528s | ~Time Left: 1070.571s |  Train Loss: 0.9792 | Train Acc. 58.6639% | Test Loss: 1.1886 | Test Acc. 47.9167%
+AdamP on BACH_transformed: T 1/3 | E 37/200 Ended | E Time: 6.446s | ~Time Left: 1050.654s |  Train Loss: 1.0026 | Train Acc. 57.8288% | Test Loss: 1.3787 | Test Acc. 46.6667%
+AdamP on BACH_transformed: T 1/3 | E 38/200 Ended | E Time: 6.545s | ~Time Left: 1060.280s |  Train Loss: 1.0088 | Train Acc. 58.6639% | Test Loss: 0.8973 | Test Acc. 61.2500%
+AdamP on BACH_transformed: T 1/3 | E 39/200 Ended | E Time: 6.581s | ~Time Left: 1059.601s |  Train Loss: 0.9639 | Train Acc. 60.6472% | Test Loss: 1.0890 | Test Acc. 54.1667%
+AdamP on BACH_transformed: T 1/3 | E 40/200 Ended | E Time: 6.505s | ~Time Left: 1040.758s |  Train Loss: 0.9737 | Train Acc. 60.0209% | Test Loss: 1.1254 | Test Acc. 54.5833%
+AdamP on BACH_transformed: T 1/3 | E 41/200 Ended | E Time: 6.517s | ~Time Left: 1036.166s |  Train Loss: 0.9455 | Train Acc. 57.9332% | Test Loss: 1.0497 | Test Acc. 55.4167%
+AdamP on BACH_transformed: T 1/3 | E 42/200 Ended | E Time: 6.606s | ~Time Left: 1043.730s |  Train Loss: 0.9427 | Train Acc. 61.4823% | Test Loss: 0.9837 | Test Acc. 55.8333%
+AdamP on BACH_transformed: T 1/3 | E 43/200 Ended | E Time: 6.532s | ~Time Left: 1025.517s |  Train Loss: 0.9397 | Train Acc. 59.4990% | Test Loss: 0.9755 | Test Acc. 62.0833%
+AdamP on BACH_transformed: T 1/3 | E 44/200 Ended | E Time: 6.543s | ~Time Left: 1020.743s |  Train Loss: 0.9200 | Train Acc. 59.7077% | Test Loss: 0.9333 | Test Acc. 60.0000%
+AdamP on BACH_transformed: T 1/3 | E 45/200 Ended | E Time: 6.537s | ~Time Left: 1013.204s |  Train Loss: 0.9141 | Train Acc. 62.1086% | Test Loss: 1.2508 | Test Acc. 49.5833%
+AdamP on BACH_transformed: T 1/3 | E 46/200 Ended | E Time: 7.038s | ~Time Left: 1083.885s |  Train Loss: 0.9130 | Train Acc. 61.0647% | Test Loss: 1.1013 | Test Acc. 50.4167%
+AdamP on BACH_transformed: T 1/3 | E 47/200 Ended | E Time: 6.503s | ~Time Left: 994.969s |  Train Loss: 0.8763 | Train Acc. 63.5699% | Test Loss: 1.0493 | Test Acc. 57.5000%
+AdamP on BACH_transformed: T 1/3 | E 48/200 Ended | E Time: 6.499s | ~Time Left: 987.876s |  Train Loss: 0.8421 | Train Acc. 64.1962% | Test Loss: 1.0861 | Test Acc. 57.0833%
+AdamP on BACH_transformed: T 1/3 | E 49/200 Ended | E Time: 6.453s | ~Time Left: 974.438s |  Train Loss: 0.9012 | Train Acc. 63.8831% | Test Loss: 0.9694 | Test Acc. 62.5000%
+AdamP on BACH_transformed: T 1/3 | E 50/200 Ended | E Time: 6.516s | ~Time Left: 977.442s |  Train Loss: 0.8620 | Train Acc. 64.1962% | Test Loss: 0.9416 | Test Acc. 62.9167%
+AdamP on BACH_transformed: T 1/3 | E 51/200 Ended | E Time: 6.478s | ~Time Left: 965.195s |  Train Loss: 0.8536 | Train Acc. 65.0313% | Test Loss: 1.0827 | Test Acc. 50.8333%
+AdamP on BACH_transformed: T 1/3 | E 52/200 Ended | E Time: 6.542s | ~Time Left: 968.186s |  Train Loss: 0.8141 | Train Acc. 66.0752% | Test Loss: 0.9534 | Test Acc. 61.2500%
+AdamP on BACH_transformed: T 1/3 | E 53/200 Ended | E Time: 6.551s | ~Time Left: 963.004s |  Train Loss: 0.7835 | Train Acc. 66.2839% | Test Loss: 0.9676 | Test Acc. 62.5000%
+AdamP on BACH_transformed: T 1/3 | E 54/200 Ended | E Time: 6.548s | ~Time Left: 955.994s |  Train Loss: 0.8073 | Train Acc. 66.2839% | Test Loss: 0.9760 | Test Acc. 57.5000%
+AdamP on BACH_transformed: T 1/3 | E 55/200 Ended | E Time: 6.588s | ~Time Left: 955.201s |  Train Loss: 0.8004 | Train Acc. 67.9541% | Test Loss: 1.0846 | Test Acc. 55.0000%
+AdamP on BACH_transformed: T 1/3 | E 56/200 Ended | E Time: 6.532s | ~Time Left: 940.605s |  Train Loss: 0.8284 | Train Acc. 67.2234% | Test Loss: 1.0679 | Test Acc. 59.1667%
+AdamP on BACH_transformed: T 1/3 | E 57/200 Ended | E Time: 6.474s | ~Time Left: 925.759s |  Train Loss: 0.8030 | Train Acc. 67.0146% | Test Loss: 0.8200 | Test Acc. 61.2500%
+AdamP on BACH_transformed: T 1/3 | E 58/200 Ended | E Time: 6.509s | ~Time Left: 924.210s |  Train Loss: 0.7463 | Train Acc. 69.7286% | Test Loss: 1.7001 | Test Acc. 52.5000%
+AdamP on BACH_transformed: T 1/3 | E 59/200 Ended | E Time: 6.672s | ~Time Left: 940.772s |  Train Loss: 0.8145 | Train Acc. 68.3716% | Test Loss: 0.9233 | Test Acc. 62.5000%
+AdamP on BACH_transformed: T 1/3 | E 60/200 Ended | E Time: 6.494s | ~Time Left: 909.149s |  Train Loss: 0.7430 | Train Acc. 69.6242% | Test Loss: 0.8223 | Test Acc. 68.7500%
+AdamP on BACH_transformed: T 1/3 | E 61/200 Ended | E Time: 6.489s | ~Time Left: 901.977s |  Train Loss: 0.7422 | Train Acc. 69.3111% | Test Loss: 1.1737 | Test Acc. 56.6667%
+AdamP on BACH_transformed: T 1/3 | E 62/200 Ended | E Time: 6.447s | ~Time Left: 889.651s |  Train Loss: 0.7230 | Train Acc. 70.2505% | Test Loss: 1.0400 | Test Acc. 60.8333%
+AdamP on BACH_transformed: T 1/3 | E 63/200 Ended | E Time: 6.490s | ~Time Left: 889.147s |  Train Loss: 0.6945 | Train Acc. 70.9812% | Test Loss: 0.9903 | Test Acc. 61.6667%
+AdamP on BACH_transformed: T 1/3 | E 64/200 Ended | E Time: 6.550s | ~Time Left: 890.763s |  Train Loss: 0.7436 | Train Acc. 70.2505% | Test Loss: 0.7871 | Test Acc. 69.5833%
+AdamP on BACH_transformed: T 1/3 | E 65/200 Ended | E Time: 6.563s | ~Time Left: 885.985s |  Train Loss: 0.7104 | Train Acc. 72.8601% | Test Loss: 0.9000 | Test Acc. 63.7500%
+AdamP on BACH_transformed: T 1/3 | E 66/200 Ended | E Time: 6.473s | ~Time Left: 867.434s |  Train Loss: 0.6836 | Train Acc. 72.8601% | Test Loss: 0.9045 | Test Acc. 62.0833%
+AdamP on BACH_transformed: T 1/3 | E 67/200 Ended | E Time: 6.495s | ~Time Left: 863.875s |  Train Loss: 0.6921 | Train Acc. 72.9645% | Test Loss: 1.0481 | Test Acc. 55.8333%
+AdamP on BACH_transformed: T 1/3 | E 68/200 Ended | E Time: 6.574s | ~Time Left: 867.755s |  Train Loss: 0.7079 | Train Acc. 69.8330% | Test Loss: 0.8549 | Test Acc. 65.0000%
+AdamP on BACH_transformed: T 1/3 | E 69/200 Ended | E Time: 6.581s | ~Time Left: 862.129s |  Train Loss: 0.6911 | Train Acc. 72.8601% | Test Loss: 1.0606 | Test Acc. 58.7500%
+AdamP on BACH_transformed: T 1/3 | E 70/200 Ended | E Time: 6.554s | ~Time Left: 851.957s |  Train Loss: 0.6429 | Train Acc. 74.4259% | Test Loss: 0.9877 | Test Acc. 65.0000%
+AdamP on BACH_transformed: T 1/3 | E 71/200 Ended | E Time: 6.478s | ~Time Left: 835.694s |  Train Loss: 0.6792 | Train Acc. 72.8601% | Test Loss: 0.7032 | Test Acc. 73.3333%
+AdamP on BACH_transformed: T 1/3 | E 72/200 Ended | E Time: 6.523s | ~Time Left: 834.968s |  Train Loss: 0.6496 | Train Acc. 74.0084% | Test Loss: 0.8352 | Test Acc. 65.8333%
+AdamP on BACH_transformed: T 1/3 | E 73/200 Ended | E Time: 6.539s | ~Time Left: 830.453s |  Train Loss: 0.6842 | Train Acc. 74.2171% | Test Loss: 1.0031 | Test Acc. 62.0833%
+AdamP on BACH_transformed: T 1/3 | E 74/200 Ended | E Time: 6.535s | ~Time Left: 823.468s |  Train Loss: 0.6593 | Train Acc. 74.0084% | Test Loss: 0.7771 | Test Acc. 67.9167%
+AdamP on BACH_transformed: T 1/3 | E 75/200 Ended | E Time: 6.486s | ~Time Left: 810.729s |  Train Loss: 0.6301 | Train Acc. 73.3820% | Test Loss: 0.7028 | Test Acc. 71.6667%
+AdamP on BACH_transformed: T 1/3 | E 76/200 Ended | E Time: 6.508s | ~Time Left: 807.003s |  Train Loss: 0.5967 | Train Acc. 76.2004% | Test Loss: 1.0338 | Test Acc. 59.1667%
+AdamP on BACH_transformed: T 1/3 | E 77/200 Ended | E Time: 6.585s | ~Time Left: 809.978s |  Train Loss: 0.6821 | Train Acc. 72.4426% | Test Loss: 0.7218 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 1/3 | E 78/200 Ended | E Time: 6.470s | ~Time Left: 789.312s |  Train Loss: 0.6339 | Train Acc. 74.8434% | Test Loss: 0.8674 | Test Acc. 68.7500%
+AdamP on BACH_transformed: T 1/3 | E 79/200 Ended | E Time: 6.535s | ~Time Left: 790.710s |  Train Loss: 0.5552 | Train Acc. 77.2443% | Test Loss: 0.7620 | Test Acc. 71.6667%
+AdamP on BACH_transformed: T 1/3 | E 80/200 Ended | E Time: 6.523s | ~Time Left: 782.767s |  Train Loss: 0.5782 | Train Acc. 77.0355% | Test Loss: 0.7604 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 1/3 | E 81/200 Ended | E Time: 6.469s | ~Time Left: 769.773s |  Train Loss: 0.6075 | Train Acc. 75.0522% | Test Loss: 0.6140 | Test Acc. 73.7500%
+AdamP on BACH_transformed: T 1/3 | E 82/200 Ended | E Time: 6.473s | ~Time Left: 763.792s |  Train Loss: 0.6085 | Train Acc. 77.0355% | Test Loss: 0.6472 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 1/3 | E 83/200 Ended | E Time: 6.545s | ~Time Left: 765.722s |  Train Loss: 0.5494 | Train Acc. 77.3486% | Test Loss: 0.6258 | Test Acc. 77.0833%
+AdamP on BACH_transformed: T 1/3 | E 84/200 Ended | E Time: 6.500s | ~Time Left: 754.007s |  Train Loss: 0.5467 | Train Acc. 78.6013% | Test Loss: 0.6490 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 1/3 | E 85/200 Ended | E Time: 6.509s | ~Time Left: 748.502s |  Train Loss: 0.6166 | Train Acc. 76.0960% | Test Loss: 0.7315 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 1/3 | E 86/200 Ended | E Time: 6.598s | ~Time Left: 752.193s |  Train Loss: 0.5750 | Train Acc. 77.6618% | Test Loss: 0.6579 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 1/3 | E 87/200 Ended | E Time: 6.508s | ~Time Left: 735.419s |  Train Loss: 0.5873 | Train Acc. 76.5136% | Test Loss: 0.8763 | Test Acc. 65.4167%
+AdamP on BACH_transformed: T 1/3 | E 88/200 Ended | E Time: 6.471s | ~Time Left: 724.742s |  Train Loss: 0.5537 | Train Acc. 78.3925% | Test Loss: 0.6062 | Test Acc. 73.7500%
+AdamP on BACH_transformed: T 1/3 | E 89/200 Ended | E Time: 6.519s | ~Time Left: 723.624s |  Train Loss: 0.5756 | Train Acc. 77.0355% | Test Loss: 0.8573 | Test Acc. 69.1667%
+AdamP on BACH_transformed: T 1/3 | E 90/200 Ended | E Time: 6.489s | ~Time Left: 713.795s |  Train Loss: 0.5910 | Train Acc. 76.9311% | Test Loss: 0.5868 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 1/3 | E 91/200 Ended | E Time: 6.547s | ~Time Left: 713.613s |  Train Loss: 0.5361 | Train Acc. 78.1837% | Test Loss: 0.8329 | Test Acc. 70.0000%
+AdamP on BACH_transformed: T 1/3 | E 92/200 Ended | E Time: 6.468s | ~Time Left: 698.501s |  Train Loss: 0.5103 | Train Acc. 79.9582% | Test Loss: 0.6427 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 1/3 | E 93/200 Ended | E Time: 6.466s | ~Time Left: 691.885s |  Train Loss: 0.5010 | Train Acc. 81.5240% | Test Loss: 0.9310 | Test Acc. 62.5000%
+AdamP on BACH_transformed: T 1/3 | E 94/200 Ended | E Time: 6.510s | ~Time Left: 690.072s |  Train Loss: 0.5439 | Train Acc. 78.7056% | Test Loss: 0.6486 | Test Acc. 74.1667%
+AdamP on BACH_transformed: T 1/3 | E 95/200 Ended | E Time: 6.600s | ~Time Left: 693.037s |  Train Loss: 0.5047 | Train Acc. 78.9144% | Test Loss: 0.5702 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 1/3 | E 96/200 Ended | E Time: 6.493s | ~Time Left: 675.292s |  Train Loss: 0.4633 | Train Acc. 82.0459% | Test Loss: 0.7657 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 1/3 | E 97/200 Ended | E Time: 6.545s | ~Time Left: 674.172s |  Train Loss: 0.5280 | Train Acc. 79.0188% | Test Loss: 0.6102 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 1/3 | E 98/200 Ended | E Time: 6.512s | ~Time Left: 664.202s |  Train Loss: 0.5031 | Train Acc. 79.8539% | Test Loss: 0.9515 | Test Acc. 67.0833%
+AdamP on BACH_transformed: T 1/3 | E 99/200 Ended | E Time: 6.472s | ~Time Left: 653.669s |  Train Loss: 0.5190 | Train Acc. 79.2276% | Test Loss: 0.5689 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 1/3 | E 100/200 Ended | E Time: 6.494s | ~Time Left: 649.359s |  Train Loss: 0.5077 | Train Acc. 80.3758% | Test Loss: 0.5831 | Test Acc. 75.4167%
+AdamP on BACH_transformed: T 1/3 | E 101/200 Ended | E Time: 6.497s | ~Time Left: 643.170s |  Train Loss: 0.4614 | Train Acc. 82.5678% | Test Loss: 0.7061 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 1/3 | E 102/200 Ended | E Time: 6.560s | ~Time Left: 642.863s |  Train Loss: 0.4271 | Train Acc. 84.5511% | Test Loss: 0.9617 | Test Acc. 67.0833%
+AdamP on BACH_transformed: T 1/3 | E 103/200 Ended | E Time: 6.501s | ~Time Left: 630.637s |  Train Loss: 0.5134 | Train Acc. 79.9582% | Test Loss: 0.5798 | Test Acc. 73.7500%
+AdamP on BACH_transformed: T 1/3 | E 104/200 Ended | E Time: 6.498s | ~Time Left: 623.834s |  Train Loss: 0.4640 | Train Acc. 83.5073% | Test Loss: 0.4509 | Test Acc. 79.1667%
+AdamP on BACH_transformed: T 1/3 | E 105/200 Ended | E Time: 6.454s | ~Time Left: 613.144s |  Train Loss: 0.4641 | Train Acc. 82.2547% | Test Loss: 0.7434 | Test Acc. 66.6667%
+AdamP on BACH_transformed: T 1/3 | E 106/200 Ended | E Time: 6.460s | ~Time Left: 607.208s |  Train Loss: 0.4613 | Train Acc. 82.3591% | Test Loss: 0.6716 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 1/3 | E 107/200 Ended | E Time: 6.470s | ~Time Left: 601.749s |  Train Loss: 0.4667 | Train Acc. 82.7766% | Test Loss: 0.6553 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 1/3 | E 108/200 Ended | E Time: 6.516s | ~Time Left: 599.477s |  Train Loss: 0.4703 | Train Acc. 81.4196% | Test Loss: 0.7179 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 1/3 | E 109/200 Ended | E Time: 6.634s | ~Time Left: 603.683s |  Train Loss: 0.4475 | Train Acc. 81.0021% | Test Loss: 0.7007 | Test Acc. 75.4167%
+AdamP on BACH_transformed: T 1/3 | E 110/200 Ended | E Time: 6.523s | ~Time Left: 587.060s |  Train Loss: 0.4231 | Train Acc. 83.8205% | Test Loss: 0.7025 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 1/3 | E 111/200 Ended | E Time: 6.537s | ~Time Left: 581.787s |  Train Loss: 0.4745 | Train Acc. 82.2547% | Test Loss: 0.5927 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 1/3 | E 112/200 Ended | E Time: 6.541s | ~Time Left: 575.599s |  Train Loss: 0.4448 | Train Acc. 82.7766% | Test Loss: 0.6449 | Test Acc. 73.7500%
+AdamP on BACH_transformed: T 1/3 | E 113/200 Ended | E Time: 6.491s | ~Time Left: 564.689s |  Train Loss: 0.4704 | Train Acc. 81.6284% | Test Loss: 0.7180 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 1/3 | E 114/200 Ended | E Time: 6.463s | ~Time Left: 555.832s |  Train Loss: 0.4761 | Train Acc. 82.3591% | Test Loss: 0.6315 | Test Acc. 77.5000%
+AdamP on BACH_transformed: T 1/3 | E 115/200 Ended | E Time: 6.537s | ~Time Left: 555.617s |  Train Loss: 0.4004 | Train Acc. 82.8810% | Test Loss: 0.7833 | Test Acc. 71.6667%
+AdamP on BACH_transformed: T 1/3 | E 116/200 Ended | E Time: 6.534s | ~Time Left: 548.879s |  Train Loss: 0.3733 | Train Acc. 85.4906% | Test Loss: 1.3311 | Test Acc. 61.6667%
+AdamP on BACH_transformed: T 1/3 | E 117/200 Ended | E Time: 6.536s | ~Time Left: 542.468s |  Train Loss: 0.4611 | Train Acc. 83.0898% | Test Loss: 0.8135 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 1/3 | E 118/200 Ended | E Time: 6.534s | ~Time Left: 535.776s |  Train Loss: 0.4206 | Train Acc. 84.6555% | Test Loss: 0.6146 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 1/3 | E 119/200 Ended | E Time: 6.474s | ~Time Left: 524.372s |  Train Loss: 0.3915 | Train Acc. 86.4301% | Test Loss: 0.6913 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 1/3 | E 120/200 Ended | E Time: 6.573s | ~Time Left: 525.828s |  Train Loss: 0.3785 | Train Acc. 84.7599% | Test Loss: 0.9748 | Test Acc. 67.5000%
+AdamP on BACH_transformed: T 1/3 | E 121/200 Ended | E Time: 6.732s | ~Time Left: 531.806s |  Train Loss: 0.4525 | Train Acc. 83.0898% | Test Loss: 1.0277 | Test Acc. 67.9167%
+AdamP on BACH_transformed: T 1/3 | E 122/200 Ended | E Time: 6.531s | ~Time Left: 509.398s |  Train Loss: 0.4226 | Train Acc. 83.5073% | Test Loss: 0.6911 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 1/3 | E 123/200 Ended | E Time: 6.492s | ~Time Left: 499.894s |  Train Loss: 0.4110 | Train Acc. 84.2380% | Test Loss: 0.5947 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 1/3 | E 124/200 Ended | E Time: 6.474s | ~Time Left: 492.021s |  Train Loss: 0.4216 | Train Acc. 84.1336% | Test Loss: 0.6955 | Test Acc. 73.3333%
+AdamP on BACH_transformed: T 1/3 | E 125/200 Ended | E Time: 6.481s | ~Time Left: 486.106s |  Train Loss: 0.3872 | Train Acc. 83.6117% | Test Loss: 0.8568 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 1/3 | E 126/200 Ended | E Time: 6.496s | ~Time Left: 480.738s |  Train Loss: 0.3930 | Train Acc. 84.3424% | Test Loss: 0.5689 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 1/3 | E 127/200 Ended | E Time: 6.489s | ~Time Left: 473.670s |  Train Loss: 0.4108 | Train Acc. 84.5511% | Test Loss: 0.5962 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 128/200 Ended | E Time: 6.454s | ~Time Left: 464.662s |  Train Loss: 0.3421 | Train Acc. 86.3257% | Test Loss: 0.5073 | Test Acc. 82.5000%
+AdamP on BACH_transformed: T 1/3 | E 129/200 Ended | E Time: 6.572s | ~Time Left: 466.642s |  Train Loss: 0.3130 | Train Acc. 88.6221% | Test Loss: 0.5130 | Test Acc. 80.4167%
+AdamP on BACH_transformed: T 1/3 | E 130/200 Ended | E Time: 6.497s | ~Time Left: 454.786s |  Train Loss: 0.3962 | Train Acc. 85.4906% | Test Loss: 0.5228 | Test Acc. 80.8333%
+AdamP on BACH_transformed: T 1/3 | E 131/200 Ended | E Time: 6.521s | ~Time Left: 449.968s |  Train Loss: 0.3766 | Train Acc. 86.0125% | Test Loss: 0.5575 | Test Acc. 81.2500%
+AdamP on BACH_transformed: T 1/3 | E 132/200 Ended | E Time: 6.461s | ~Time Left: 439.358s |  Train Loss: 0.4101 | Train Acc. 83.1942% | Test Loss: 0.6303 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 1/3 | E 133/200 Ended | E Time: 6.514s | ~Time Left: 436.459s |  Train Loss: 0.3772 | Train Acc. 84.4468% | Test Loss: 0.9956 | Test Acc. 65.8333%
+AdamP on BACH_transformed: T 1/3 | E 134/200 Ended | E Time: 6.552s | ~Time Left: 432.401s |  Train Loss: 0.3998 | Train Acc. 84.8643% | Test Loss: 0.5865 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 135/200 Ended | E Time: 6.574s | ~Time Left: 427.317s |  Train Loss: 0.3378 | Train Acc. 87.3695% | Test Loss: 0.5690 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 136/200 Ended | E Time: 6.505s | ~Time Left: 416.310s |  Train Loss: 0.3545 | Train Acc. 86.7432% | Test Loss: 0.7164 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 1/3 | E 137/200 Ended | E Time: 6.504s | ~Time Left: 409.735s |  Train Loss: 0.3858 | Train Acc. 85.3862% | Test Loss: 0.7545 | Test Acc. 73.7500%
+AdamP on BACH_transformed: T 1/3 | E 138/200 Ended | E Time: 6.538s | ~Time Left: 405.342s |  Train Loss: 0.3487 | Train Acc. 85.2818% | Test Loss: 0.6428 | Test Acc. 78.3333%
+AdamP on BACH_transformed: T 1/3 | E 139/200 Ended | E Time: 6.535s | ~Time Left: 398.637s |  Train Loss: 0.4033 | Train Acc. 84.5511% | Test Loss: 0.8102 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 1/3 | E 140/200 Ended | E Time: 6.500s | ~Time Left: 390.013s |  Train Loss: 0.3771 | Train Acc. 85.9081% | Test Loss: 0.4659 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 1/3 | E 141/200 Ended | E Time: 6.600s | ~Time Left: 389.401s |  Train Loss: 0.3609 | Train Acc. 86.3257% | Test Loss: 0.6183 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 1/3 | E 142/200 Ended | E Time: 6.545s | ~Time Left: 379.586s |  Train Loss: 0.3430 | Train Acc. 87.0564% | Test Loss: 0.6711 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 1/3 | E 143/200 Ended | E Time: 6.530s | ~Time Left: 372.239s |  Train Loss: 0.3177 | Train Acc. 86.9520% | Test Loss: 0.4379 | Test Acc. 82.0833%
+AdamP on BACH_transformed: T 1/3 | E 144/200 Ended | E Time: 6.576s | ~Time Left: 368.245s |  Train Loss: 0.3455 | Train Acc. 86.4301% | Test Loss: 0.9948 | Test Acc. 66.2500%
+AdamP on BACH_transformed: T 1/3 | E 145/200 Ended | E Time: 6.498s | ~Time Left: 357.416s |  Train Loss: 0.3439 | Train Acc. 86.8476% | Test Loss: 0.6493 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 146/200 Ended | E Time: 6.524s | ~Time Left: 352.304s |  Train Loss: 0.3872 | Train Acc. 84.7599% | Test Loss: 0.5442 | Test Acc. 78.3333%
+AdamP on BACH_transformed: T 1/3 | E 147/200 Ended | E Time: 6.532s | ~Time Left: 346.183s |  Train Loss: 0.3343 | Train Acc. 86.6388% | Test Loss: 0.7781 | Test Acc. 70.0000%
+AdamP on BACH_transformed: T 1/3 | E 148/200 Ended | E Time: 6.577s | ~Time Left: 341.994s |  Train Loss: 0.3645 | Train Acc. 86.3257% | Test Loss: 0.7283 | Test Acc. 77.5000%
+AdamP on BACH_transformed: T 1/3 | E 149/200 Ended | E Time: 6.581s | ~Time Left: 335.651s |  Train Loss: 0.3756 | Train Acc. 85.3862% | Test Loss: 1.1621 | Test Acc. 63.3333%
+AdamP on BACH_transformed: T 1/3 | E 150/200 Ended | E Time: 6.580s | ~Time Left: 329.015s |  Train Loss: 0.2962 | Train Acc. 89.0397% | Test Loss: 0.4601 | Test Acc. 81.6667%
+AdamP on BACH_transformed: T 1/3 | E 151/200 Ended | E Time: 6.506s | ~Time Left: 318.790s |  Train Loss: 0.3425 | Train Acc. 87.4739% | Test Loss: 0.5420 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 1/3 | E 152/200 Ended | E Time: 6.475s | ~Time Left: 310.798s |  Train Loss: 0.3430 | Train Acc. 86.4301% | Test Loss: 0.9474 | Test Acc. 69.5833%
+AdamP on BACH_transformed: T 1/3 | E 153/200 Ended | E Time: 6.548s | ~Time Left: 307.777s |  Train Loss: 0.3723 | Train Acc. 86.0125% | Test Loss: 0.6593 | Test Acc. 74.1667%
+AdamP on BACH_transformed: T 1/3 | E 154/200 Ended | E Time: 6.610s | ~Time Left: 304.064s |  Train Loss: 0.3074 | Train Acc. 87.2651% | Test Loss: 0.5489 | Test Acc. 77.0833%
+AdamP on BACH_transformed: T 1/3 | E 155/200 Ended | E Time: 6.620s | ~Time Left: 297.906s |  Train Loss: 0.3356 | Train Acc. 86.4301% | Test Loss: 0.7125 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 1/3 | E 156/200 Ended | E Time: 6.571s | ~Time Left: 289.113s |  Train Loss: 0.3067 | Train Acc. 88.6221% | Test Loss: 0.5570 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 157/200 Ended | E Time: 6.518s | ~Time Left: 280.265s |  Train Loss: 0.2964 | Train Acc. 89.1441% | Test Loss: 0.6728 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 1/3 | E 158/200 Ended | E Time: 6.457s | ~Time Left: 271.206s |  Train Loss: 0.2988 | Train Acc. 90.5010% | Test Loss: 0.6302 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 1/3 | E 159/200 Ended | E Time: 6.604s | ~Time Left: 270.754s |  Train Loss: 0.2997 | Train Acc. 87.3695% | Test Loss: 1.0993 | Test Acc. 69.1667%
+AdamP on BACH_transformed: T 1/3 | E 160/200 Ended | E Time: 6.531s | ~Time Left: 261.245s |  Train Loss: 0.3079 | Train Acc. 89.3528% | Test Loss: 0.9177 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 1/3 | E 161/200 Ended | E Time: 6.552s | ~Time Left: 255.520s |  Train Loss: 0.3009 | Train Acc. 87.7871% | Test Loss: 0.5430 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 162/200 Ended | E Time: 6.569s | ~Time Left: 249.616s |  Train Loss: 0.3002 | Train Acc. 88.8309% | Test Loss: 0.4412 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 1/3 | E 163/200 Ended | E Time: 6.582s | ~Time Left: 243.526s |  Train Loss: 0.3100 | Train Acc. 89.1441% | Test Loss: 0.6533 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 1/3 | E 164/200 Ended | E Time: 6.581s | ~Time Left: 236.903s |  Train Loss: 0.2805 | Train Acc. 89.5616% | Test Loss: 0.4122 | Test Acc. 82.5000%
+AdamP on BACH_transformed: T 1/3 | E 165/200 Ended | E Time: 6.551s | ~Time Left: 229.301s |  Train Loss: 0.2823 | Train Acc. 89.8747% | Test Loss: 0.5433 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 1/3 | E 166/200 Ended | E Time: 6.529s | ~Time Left: 221.988s |  Train Loss: 0.3246 | Train Acc. 87.1608% | Test Loss: 0.6240 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 1/3 | E 167/200 Ended | E Time: 6.471s | ~Time Left: 213.538s |  Train Loss: 0.2999 | Train Acc. 88.6221% | Test Loss: 0.5553 | Test Acc. 78.7500%
+AdamP on BACH_transformed: T 1/3 | E 168/200 Ended | E Time: 6.467s | ~Time Left: 206.950s |  Train Loss: 0.2838 | Train Acc. 87.9958% | Test Loss: 0.8388 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 1/3 | E 169/200 Ended | E Time: 6.495s | ~Time Left: 201.348s |  Train Loss: 0.3313 | Train Acc. 87.0564% | Test Loss: 0.3912 | Test Acc. 85.0000%
+AdamP on BACH_transformed: T 1/3 | E 170/200 Ended | E Time: 6.571s | ~Time Left: 197.139s |  Train Loss: 0.2923 | Train Acc. 88.3090% | Test Loss: 0.7565 | Test Acc. 73.3333%
+AdamP on BACH_transformed: T 1/3 | E 171/200 Ended | E Time: 6.591s | ~Time Left: 191.146s |  Train Loss: 0.2428 | Train Acc. 91.7537% | Test Loss: 0.5388 | Test Acc. 79.1667%
+AdamP on BACH_transformed: T 1/3 | E 172/200 Ended | E Time: 6.527s | ~Time Left: 182.745s |  Train Loss: 0.2603 | Train Acc. 89.6660% | Test Loss: 0.4828 | Test Acc. 82.5000%
+AdamP on BACH_transformed: T 1/3 | E 173/200 Ended | E Time: 6.475s | ~Time Left: 174.834s |  Train Loss: 0.2826 | Train Acc. 89.4572% | Test Loss: 0.4500 | Test Acc. 83.7500%
+AdamP on BACH_transformed: T 1/3 | E 174/200 Ended | E Time: 6.585s | ~Time Left: 171.217s |  Train Loss: 0.2684 | Train Acc. 89.9791% | Test Loss: 0.6422 | Test Acc. 79.5833%
+AdamP on BACH_transformed: T 1/3 | E 175/200 Ended | E Time: 6.546s | ~Time Left: 163.662s |  Train Loss: 0.3272 | Train Acc. 87.8914% | Test Loss: 0.8813 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 1/3 | E 176/200 Ended | E Time: 6.599s | ~Time Left: 158.369s |  Train Loss: 0.3293 | Train Acc. 88.1002% | Test Loss: 0.7586 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 1/3 | E 177/200 Ended | E Time: 6.612s | ~Time Left: 152.071s |  Train Loss: 0.2688 | Train Acc. 89.8747% | Test Loss: 0.4404 | Test Acc. 83.7500%
+AdamP on BACH_transformed: T 1/3 | E 178/200 Ended | E Time: 6.519s | ~Time Left: 143.428s |  Train Loss: 0.2419 | Train Acc. 90.5010% | Test Loss: 0.5983 | Test Acc. 77.5000%
+AdamP on BACH_transformed: T 1/3 | E 179/200 Ended | E Time: 6.502s | ~Time Left: 136.539s |  Train Loss: 0.2546 | Train Acc. 90.6054% | Test Loss: 0.5943 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 1/3 | E 180/200 Ended | E Time: 6.548s | ~Time Left: 130.967s |  Train Loss: 0.2763 | Train Acc. 89.5616% | Test Loss: 0.5038 | Test Acc. 77.5000%
+AdamP on BACH_transformed: T 1/3 | E 181/200 Ended | E Time: 6.640s | ~Time Left: 126.156s |  Train Loss: 0.2697 | Train Acc. 89.3528% | Test Loss: 0.6376 | Test Acc. 81.6667%
+AdamP on BACH_transformed: T 1/3 | E 182/200 Ended | E Time: 6.667s | ~Time Left: 120.008s |  Train Loss: 0.2839 | Train Acc. 89.8747% | Test Loss: 0.6179 | Test Acc. 77.5000%
+AdamP on BACH_transformed: T 1/3 | E 183/200 Ended | E Time: 6.541s | ~Time Left: 111.199s |  Train Loss: 0.2676 | Train Acc. 89.8747% | Test Loss: 0.6173 | Test Acc. 80.4167%
+AdamP on BACH_transformed: T 1/3 | E 184/200 Ended | E Time: 6.553s | ~Time Left: 104.851s |  Train Loss: 0.2759 | Train Acc. 89.3528% | Test Loss: 0.6940 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 1/3 | E 185/200 Ended | E Time: 6.513s | ~Time Left: 97.695s |  Train Loss: 0.2559 | Train Acc. 90.9186% | Test Loss: 0.6249 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 1/3 | E 186/200 Ended | E Time: 6.527s | ~Time Left: 91.377s |  Train Loss: 0.2832 | Train Acc. 88.9353% | Test Loss: 0.9376 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 1/3 | E 187/200 Ended | E Time: 6.545s | ~Time Left: 85.084s |  Train Loss: 0.2283 | Train Acc. 90.8142% | Test Loss: 0.6375 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 1/3 | E 188/200 Ended | E Time: 6.545s | ~Time Left: 78.538s |  Train Loss: 0.2661 | Train Acc. 89.7704% | Test Loss: 0.5325 | Test Acc. 80.4167%
+AdamP on BACH_transformed: T 1/3 | E 189/200 Ended | E Time: 6.572s | ~Time Left: 72.288s |  Train Loss: 0.2659 | Train Acc. 90.9186% | Test Loss: 0.5505 | Test Acc. 82.9167%
+AdamP on BACH_transformed: T 1/3 | E 190/200 Ended | E Time: 6.587s | ~Time Left: 65.870s |  Train Loss: 0.2623 | Train Acc. 90.8142% | Test Loss: 0.4765 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 1/3 | E 191/200 Ended | E Time: 6.559s | ~Time Left: 59.033s |  Train Loss: 0.2471 | Train Acc. 91.6493% | Test Loss: 0.7780 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 1/3 | E 192/200 Ended | E Time: 6.597s | ~Time Left: 52.777s |  Train Loss: 0.2658 | Train Acc. 91.1273% | Test Loss: 0.6152 | Test Acc. 80.4167%
+AdamP on BACH_transformed: T 1/3 | E 193/200 Ended | E Time: 6.557s | ~Time Left: 45.902s |  Train Loss: 0.2552 | Train Acc. 89.8747% | Test Loss: 0.4471 | Test Acc. 80.8333%
+AdamP on BACH_transformed: T 1/3 | E 194/200 Ended | E Time: 6.575s | ~Time Left: 39.448s |  Train Loss: 0.2350 | Train Acc. 91.5449% | Test Loss: 0.5306 | Test Acc. 81.6667%
+AdamP on BACH_transformed: T 1/3 | E 195/200 Ended | E Time: 6.518s | ~Time Left: 32.589s |  Train Loss: 0.2628 | Train Acc. 91.0230% | Test Loss: 1.0217 | Test Acc. 71.6667%
+AdamP on BACH_transformed: T 1/3 | E 196/200 Ended | E Time: 6.597s | ~Time Left: 26.390s |  Train Loss: 0.2693 | Train Acc. 89.4572% | Test Loss: 0.6659 | Test Acc. 79.1667%
+AdamP on BACH_transformed: T 1/3 | E 197/200 Ended | E Time: 6.604s | ~Time Left: 19.811s |  Train Loss: 0.2719 | Train Acc. 89.5616% | Test Loss: 0.4187 | Test Acc. 84.1667%
+AdamP on BACH_transformed: T 1/3 | E 198/200 Ended | E Time: 6.501s | ~Time Left: 13.002s |  Train Loss: 0.2305 | Train Acc. 91.0230% | Test Loss: 0.5222 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 1/3 | E 199/200 Ended | E Time: 6.494s | ~Time Left: 6.494s |  Train Loss: 0.2475 | Train Acc. 91.1273% | Test Loss: 0.4581 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 1/3 | E 200/200 Ended | E Time: 6.518s | ~Time Left: 0.000s |  Train Loss: 0.2051 | Train Acc. 90.6054% | Test Loss: 0.4275 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 2/3 | E 1/200 Ended | E Time: 6.584s | ~Time Left: 1310.137s |  Train Loss: 1.4522 | Train Acc. 34.0292% | Test Loss: 5.0487 | Test Acc. 23.7500%
+AdamP on BACH_transformed: T 2/3 | E 2/200 Ended | E Time: 6.592s | ~Time Left: 1305.301s |  Train Loss: 1.3092 | Train Acc. 41.0230% | Test Loss: 1.5798 | Test Acc. 34.5833%
+AdamP on BACH_transformed: T 2/3 | E 3/200 Ended | E Time: 6.534s | ~Time Left: 1287.280s |  Train Loss: 1.2821 | Train Acc. 40.2923% | Test Loss: 1.4382 | Test Acc. 40.8333%
+AdamP on BACH_transformed: T 2/3 | E 4/200 Ended | E Time: 6.514s | ~Time Left: 1276.818s |  Train Loss: 1.2790 | Train Acc. 37.8914% | Test Loss: 1.4046 | Test Acc. 35.8333%
+AdamP on BACH_transformed: T 2/3 | E 5/200 Ended | E Time: 6.558s | ~Time Left: 1278.719s |  Train Loss: 1.2957 | Train Acc. 39.5616% | Test Loss: 1.2667 | Test Acc. 40.4167%
+AdamP on BACH_transformed: T 2/3 | E 6/200 Ended | E Time: 6.813s | ~Time Left: 1321.817s |  Train Loss: 1.2217 | Train Acc. 45.8246% | Test Loss: 1.2570 | Test Acc. 42.9167%
+AdamP on BACH_transformed: T 2/3 | E 7/200 Ended | E Time: 6.523s | ~Time Left: 1259.000s |  Train Loss: 1.2529 | Train Acc. 42.2756% | Test Loss: 1.2871 | Test Acc. 40.0000%
+AdamP on BACH_transformed: T 2/3 | E 8/200 Ended | E Time: 6.564s | ~Time Left: 1260.253s |  Train Loss: 1.2399 | Train Acc. 42.0668% | Test Loss: 1.2377 | Test Acc. 44.5833%
+AdamP on BACH_transformed: T 2/3 | E 9/200 Ended | E Time: 6.537s | ~Time Left: 1248.511s |  Train Loss: 1.2261 | Train Acc. 44.1545% | Test Loss: 1.2196 | Test Acc. 44.5833%
+AdamP on BACH_transformed: T 2/3 | E 10/200 Ended | E Time: 6.572s | ~Time Left: 1248.736s |  Train Loss: 1.2220 | Train Acc. 45.9290% | Test Loss: 1.3424 | Test Acc. 40.0000%
+AdamP on BACH_transformed: T 2/3 | E 11/200 Ended | E Time: 6.532s | ~Time Left: 1234.587s |  Train Loss: 1.2508 | Train Acc. 43.6326% | Test Loss: 1.1712 | Test Acc. 47.5000%
+AdamP on BACH_transformed: T 2/3 | E 12/200 Ended | E Time: 6.637s | ~Time Left: 1247.803s |  Train Loss: 1.2287 | Train Acc. 43.8413% | Test Loss: 1.4087 | Test Acc. 35.4167%
+AdamP on BACH_transformed: T 2/3 | E 13/200 Ended | E Time: 6.528s | ~Time Left: 1220.646s |  Train Loss: 1.2239 | Train Acc. 43.1106% | Test Loss: 1.2055 | Test Acc. 47.0833%
+AdamP on BACH_transformed: T 2/3 | E 14/200 Ended | E Time: 6.518s | ~Time Left: 1212.262s |  Train Loss: 1.1943 | Train Acc. 46.3466% | Test Loss: 1.1489 | Test Acc. 47.0833%
+AdamP on BACH_transformed: T 2/3 | E 15/200 Ended | E Time: 6.541s | ~Time Left: 1210.168s |  Train Loss: 1.1632 | Train Acc. 47.7035% | Test Loss: 1.3895 | Test Acc. 40.4167%
+AdamP on BACH_transformed: T 2/3 | E 16/200 Ended | E Time: 6.550s | ~Time Left: 1205.257s |  Train Loss: 1.1557 | Train Acc. 48.4342% | Test Loss: 1.2099 | Test Acc. 45.0000%
+AdamP on BACH_transformed: T 2/3 | E 17/200 Ended | E Time: 6.543s | ~Time Left: 1197.330s |  Train Loss: 1.1477 | Train Acc. 49.1649% | Test Loss: 1.1772 | Test Acc. 50.8333%
+AdamP on BACH_transformed: T 2/3 | E 18/200 Ended | E Time: 6.538s | ~Time Left: 1189.947s |  Train Loss: 1.1821 | Train Acc. 46.3466% | Test Loss: 1.1806 | Test Acc. 48.7500%
+AdamP on BACH_transformed: T 2/3 | E 19/200 Ended | E Time: 6.527s | ~Time Left: 1181.406s |  Train Loss: 1.1864 | Train Acc. 46.7641% | Test Loss: 1.2326 | Test Acc. 47.5000%
+AdamP on BACH_transformed: T 2/3 | E 20/200 Ended | E Time: 6.532s | ~Time Left: 1175.688s |  Train Loss: 1.1821 | Train Acc. 46.8685% | Test Loss: 1.1414 | Test Acc. 50.8333%
+AdamP on BACH_transformed: T 2/3 | E 21/200 Ended | E Time: 6.607s | ~Time Left: 1182.630s |  Train Loss: 1.1817 | Train Acc. 46.6597% | Test Loss: 1.1914 | Test Acc. 47.9167%
+AdamP on BACH_transformed: T 2/3 | E 22/200 Ended | E Time: 6.627s | ~Time Left: 1179.660s |  Train Loss: 1.1573 | Train Acc. 48.9562% | Test Loss: 1.2295 | Test Acc. 41.6667%
+AdamP on BACH_transformed: T 2/3 | E 23/200 Ended | E Time: 6.575s | ~Time Left: 1163.693s |  Train Loss: 1.1918 | Train Acc. 47.4948% | Test Loss: 1.1398 | Test Acc. 50.0000%
+AdamP on BACH_transformed: T 2/3 | E 24/200 Ended | E Time: 6.546s | ~Time Left: 1152.168s |  Train Loss: 1.1612 | Train Acc. 47.0772% | Test Loss: 1.1238 | Test Acc. 52.9167%
+AdamP on BACH_transformed: T 2/3 | E 25/200 Ended | E Time: 6.569s | ~Time Left: 1149.576s |  Train Loss: 1.1357 | Train Acc. 50.3132% | Test Loss: 1.2163 | Test Acc. 46.6667%
+AdamP on BACH_transformed: T 2/3 | E 26/200 Ended | E Time: 6.532s | ~Time Left: 1136.488s |  Train Loss: 1.1671 | Train Acc. 49.7912% | Test Loss: 1.1380 | Test Acc. 50.8333%
+AdamP on BACH_transformed: T 2/3 | E 27/200 Ended | E Time: 6.569s | ~Time Left: 1136.359s |  Train Loss: 1.1271 | Train Acc. 50.4175% | Test Loss: 1.1209 | Test Acc. 49.1667%
+AdamP on BACH_transformed: T 2/3 | E 28/200 Ended | E Time: 6.498s | ~Time Left: 1117.736s |  Train Loss: 1.1696 | Train Acc. 46.8685% | Test Loss: 1.1567 | Test Acc. 48.3333%
+AdamP on BACH_transformed: T 2/3 | E 29/200 Ended | E Time: 6.564s | ~Time Left: 1122.379s |  Train Loss: 1.1493 | Train Acc. 50.9395% | Test Loss: 1.1644 | Test Acc. 47.9167%
+AdamP on BACH_transformed: T 2/3 | E 30/200 Ended | E Time: 6.586s | ~Time Left: 1119.682s |  Train Loss: 1.1354 | Train Acc. 49.6868% | Test Loss: 1.1538 | Test Acc. 47.0833%
+AdamP on BACH_transformed: T 2/3 | E 31/200 Ended | E Time: 6.475s | ~Time Left: 1094.209s |  Train Loss: 1.1259 | Train Acc. 50.9395% | Test Loss: 1.3375 | Test Acc. 41.6667%
+AdamP on BACH_transformed: T 2/3 | E 32/200 Ended | E Time: 6.770s | ~Time Left: 1137.317s |  Train Loss: 1.1279 | Train Acc. 48.5386% | Test Loss: 1.1841 | Test Acc. 48.3333%
+AdamP on BACH_transformed: T 2/3 | E 33/200 Ended | E Time: 6.594s | ~Time Left: 1101.277s |  Train Loss: 1.0984 | Train Acc. 52.6096% | Test Loss: 1.1564 | Test Acc. 52.0833%
+AdamP on BACH_transformed: T 2/3 | E 34/200 Ended | E Time: 6.551s | ~Time Left: 1087.505s |  Train Loss: 1.1463 | Train Acc. 50.2088% | Test Loss: 1.1641 | Test Acc. 47.0833%
+AdamP on BACH_transformed: T 2/3 | E 35/200 Ended | E Time: 6.605s | ~Time Left: 1089.854s |  Train Loss: 1.1052 | Train Acc. 52.4008% | Test Loss: 1.2211 | Test Acc. 50.4167%
+AdamP on BACH_transformed: T 2/3 | E 36/200 Ended | E Time: 6.555s | ~Time Left: 1074.952s |  Train Loss: 1.1126 | Train Acc. 52.2965% | Test Loss: 1.1550 | Test Acc. 50.8333%
+AdamP on BACH_transformed: T 2/3 | E 37/200 Ended | E Time: 6.559s | ~Time Left: 1069.169s |  Train Loss: 1.1062 | Train Acc. 51.2526% | Test Loss: 1.1900 | Test Acc. 52.0833%
+AdamP on BACH_transformed: T 2/3 | E 38/200 Ended | E Time: 6.600s | ~Time Left: 1069.161s |  Train Loss: 1.0758 | Train Acc. 53.7578% | Test Loss: 1.1951 | Test Acc. 43.7500%
+AdamP on BACH_transformed: T 2/3 | E 39/200 Ended | E Time: 6.594s | ~Time Left: 1061.659s |  Train Loss: 1.0933 | Train Acc. 53.9666% | Test Loss: 1.5850 | Test Acc. 37.5000%
+AdamP on BACH_transformed: T 2/3 | E 40/200 Ended | E Time: 6.514s | ~Time Left: 1042.226s |  Train Loss: 1.1321 | Train Acc. 49.0605% | Test Loss: 1.0882 | Test Acc. 51.2500%
+AdamP on BACH_transformed: T 2/3 | E 41/200 Ended | E Time: 6.512s | ~Time Left: 1035.452s |  Train Loss: 1.0756 | Train Acc. 53.5491% | Test Loss: 1.1812 | Test Acc. 50.4167%
+AdamP on BACH_transformed: T 2/3 | E 42/200 Ended | E Time: 6.507s | ~Time Left: 1028.083s |  Train Loss: 1.0823 | Train Acc. 53.5491% | Test Loss: 1.0633 | Test Acc. 51.2500%
+AdamP on BACH_transformed: T 2/3 | E 43/200 Ended | E Time: 6.581s | ~Time Left: 1033.196s |  Train Loss: 1.0777 | Train Acc. 54.2798% | Test Loss: 1.2317 | Test Acc. 48.3333%
+AdamP on BACH_transformed: T 2/3 | E 44/200 Ended | E Time: 6.635s | ~Time Left: 1035.050s |  Train Loss: 1.1048 | Train Acc. 52.1921% | Test Loss: 1.1137 | Test Acc. 49.5833%
+AdamP on BACH_transformed: T 2/3 | E 45/200 Ended | E Time: 6.495s | ~Time Left: 1006.758s |  Train Loss: 1.0905 | Train Acc. 54.4885% | Test Loss: 1.1445 | Test Acc. 53.3333%
+AdamP on BACH_transformed: T 2/3 | E 46/200 Ended | E Time: 6.513s | ~Time Left: 1003.067s |  Train Loss: 1.0453 | Train Acc. 56.3674% | Test Loss: 1.1407 | Test Acc. 50.0000%
+AdamP on BACH_transformed: T 2/3 | E 47/200 Ended | E Time: 6.463s | ~Time Left: 988.849s |  Train Loss: 1.0468 | Train Acc. 56.0543% | Test Loss: 1.1056 | Test Acc. 55.8333%
+AdamP on BACH_transformed: T 2/3 | E 48/200 Ended | E Time: 6.556s | ~Time Left: 996.450s |  Train Loss: 1.0466 | Train Acc. 54.3841% | Test Loss: 1.0649 | Test Acc. 53.3333%
+AdamP on BACH_transformed: T 2/3 | E 49/200 Ended | E Time: 6.569s | ~Time Left: 991.948s |  Train Loss: 1.0047 | Train Acc. 58.9770% | Test Loss: 1.0142 | Test Acc. 57.0833%
+AdamP on BACH_transformed: T 2/3 | E 50/200 Ended | E Time: 6.470s | ~Time Left: 970.531s |  Train Loss: 1.0227 | Train Acc. 57.7244% | Test Loss: 1.0203 | Test Acc. 57.0833%
+AdamP on BACH_transformed: T 2/3 | E 51/200 Ended | E Time: 6.536s | ~Time Left: 973.814s |  Train Loss: 1.0359 | Train Acc. 56.7850% | Test Loss: 1.2017 | Test Acc. 45.0000%
+AdamP on BACH_transformed: T 2/3 | E 52/200 Ended | E Time: 6.521s | ~Time Left: 965.050s |  Train Loss: 1.0037 | Train Acc. 57.3069% | Test Loss: 1.3702 | Test Acc. 47.0833%
+AdamP on BACH_transformed: T 2/3 | E 53/200 Ended | E Time: 6.613s | ~Time Left: 972.174s |  Train Loss: 0.9662 | Train Acc. 59.6033% | Test Loss: 1.0588 | Test Acc. 57.5000%
+AdamP on BACH_transformed: T 2/3 | E 54/200 Ended | E Time: 6.467s | ~Time Left: 944.204s |  Train Loss: 0.9782 | Train Acc. 60.3340% | Test Loss: 1.2035 | Test Acc. 49.5833%
+AdamP on BACH_transformed: T 2/3 | E 55/200 Ended | E Time: 6.535s | ~Time Left: 947.625s |  Train Loss: 0.9826 | Train Acc. 58.0376% | Test Loss: 1.1725 | Test Acc. 47.9167%
+AdamP on BACH_transformed: T 2/3 | E 56/200 Ended | E Time: 6.501s | ~Time Left: 936.078s |  Train Loss: 0.9578 | Train Acc. 60.6472% | Test Loss: 0.9256 | Test Acc. 64.5833%
+AdamP on BACH_transformed: T 2/3 | E 57/200 Ended | E Time: 6.518s | ~Time Left: 932.041s |  Train Loss: 0.9617 | Train Acc. 60.2296% | Test Loss: 1.1084 | Test Acc. 54.5833%
+AdamP on BACH_transformed: T 2/3 | E 58/200 Ended | E Time: 6.507s | ~Time Left: 924.064s |  Train Loss: 0.9480 | Train Acc. 59.0814% | Test Loss: 1.0411 | Test Acc. 57.0833%
+AdamP on BACH_transformed: T 2/3 | E 59/200 Ended | E Time: 6.623s | ~Time Left: 933.795s |  Train Loss: 0.8821 | Train Acc. 62.6305% | Test Loss: 1.0032 | Test Acc. 59.5833%
+AdamP on BACH_transformed: T 2/3 | E 60/200 Ended | E Time: 6.559s | ~Time Left: 918.283s |  Train Loss: 0.9272 | Train Acc. 60.2296% | Test Loss: 1.0889 | Test Acc. 55.4167%
+AdamP on BACH_transformed: T 2/3 | E 61/200 Ended | E Time: 6.612s | ~Time Left: 919.116s |  Train Loss: 0.8902 | Train Acc. 63.6743% | Test Loss: 1.0488 | Test Acc. 56.2500%
+AdamP on BACH_transformed: T 2/3 | E 62/200 Ended | E Time: 6.550s | ~Time Left: 903.838s |  Train Loss: 0.9218 | Train Acc. 62.5261% | Test Loss: 0.9075 | Test Acc. 60.8333%
+AdamP on BACH_transformed: T 2/3 | E 63/200 Ended | E Time: 6.488s | ~Time Left: 888.850s |  Train Loss: 0.8806 | Train Acc. 65.4489% | Test Loss: 1.1586 | Test Acc. 58.3333%
+AdamP on BACH_transformed: T 2/3 | E 64/200 Ended | E Time: 6.509s | ~Time Left: 885.293s |  Train Loss: 0.8995 | Train Acc. 61.2735% | Test Loss: 1.0984 | Test Acc. 52.9167%
+AdamP on BACH_transformed: T 2/3 | E 65/200 Ended | E Time: 6.534s | ~Time Left: 882.052s |  Train Loss: 0.8113 | Train Acc. 68.8935% | Test Loss: 1.0362 | Test Acc. 55.0000%
+AdamP on BACH_transformed: T 2/3 | E 66/200 Ended | E Time: 6.546s | ~Time Left: 877.180s |  Train Loss: 0.8381 | Train Acc. 66.2839% | Test Loss: 1.4601 | Test Acc. 45.8333%
+AdamP on BACH_transformed: T 2/3 | E 67/200 Ended | E Time: 6.544s | ~Time Left: 870.299s |  Train Loss: 0.8100 | Train Acc. 65.9708% | Test Loss: 0.9266 | Test Acc. 64.5833%
+AdamP on BACH_transformed: T 2/3 | E 68/200 Ended | E Time: 6.600s | ~Time Left: 871.251s |  Train Loss: 0.8335 | Train Acc. 65.2401% | Test Loss: 1.6366 | Test Acc. 37.9167%
+AdamP on BACH_transformed: T 2/3 | E 69/200 Ended | E Time: 6.527s | ~Time Left: 855.046s |  Train Loss: 0.8428 | Train Acc. 65.5532% | Test Loss: 0.9029 | Test Acc. 65.0000%
+AdamP on BACH_transformed: T 2/3 | E 70/200 Ended | E Time: 6.553s | ~Time Left: 851.840s |  Train Loss: 0.7886 | Train Acc. 67.5365% | Test Loss: 1.0491 | Test Acc. 55.8333%
+AdamP on BACH_transformed: T 2/3 | E 71/200 Ended | E Time: 6.515s | ~Time Left: 840.423s |  Train Loss: 0.7588 | Train Acc. 68.9979% | Test Loss: 0.8626 | Test Acc. 65.4167%
+AdamP on BACH_transformed: T 2/3 | E 72/200 Ended | E Time: 6.508s | ~Time Left: 832.963s |  Train Loss: 0.7523 | Train Acc. 68.2672% | Test Loss: 1.1343 | Test Acc. 52.0833%
+AdamP on BACH_transformed: T 2/3 | E 73/200 Ended | E Time: 6.548s | ~Time Left: 831.546s |  Train Loss: 0.7566 | Train Acc. 68.2672% | Test Loss: 1.0552 | Test Acc. 59.5833%
+AdamP on BACH_transformed: T 2/3 | E 74/200 Ended | E Time: 6.617s | ~Time Left: 833.698s |  Train Loss: 0.7601 | Train Acc. 69.9374% | Test Loss: 1.0510 | Test Acc. 56.2500%
+AdamP on BACH_transformed: T 2/3 | E 75/200 Ended | E Time: 6.620s | ~Time Left: 827.511s |  Train Loss: 0.7541 | Train Acc. 71.3988% | Test Loss: 1.2503 | Test Acc. 57.5000%
+AdamP on BACH_transformed: T 2/3 | E 76/200 Ended | E Time: 6.516s | ~Time Left: 807.937s |  Train Loss: 0.7658 | Train Acc. 68.1628% | Test Loss: 0.7835 | Test Acc. 66.2500%
+AdamP on BACH_transformed: T 2/3 | E 77/200 Ended | E Time: 6.471s | ~Time Left: 795.943s |  Train Loss: 0.7241 | Train Acc. 70.2505% | Test Loss: 0.8329 | Test Acc. 67.5000%
+AdamP on BACH_transformed: T 2/3 | E 78/200 Ended | E Time: 6.579s | ~Time Left: 802.592s |  Train Loss: 0.7293 | Train Acc. 70.4593% | Test Loss: 0.8448 | Test Acc. 65.0000%
+AdamP on BACH_transformed: T 2/3 | E 79/200 Ended | E Time: 6.474s | ~Time Left: 783.357s |  Train Loss: 0.7053 | Train Acc. 71.2944% | Test Loss: 0.9080 | Test Acc. 64.1667%
+AdamP on BACH_transformed: T 2/3 | E 80/200 Ended | E Time: 6.538s | ~Time Left: 784.586s |  Train Loss: 0.7160 | Train Acc. 70.9812% | Test Loss: 0.8640 | Test Acc. 65.4167%
+AdamP on BACH_transformed: T 2/3 | E 81/200 Ended | E Time: 6.783s | ~Time Left: 807.137s |  Train Loss: 0.6960 | Train Acc. 71.7119% | Test Loss: 1.3292 | Test Acc. 54.1667%
+AdamP on BACH_transformed: T 2/3 | E 82/200 Ended | E Time: 6.492s | ~Time Left: 766.097s |  Train Loss: 0.7018 | Train Acc. 72.8601% | Test Loss: 0.9344 | Test Acc. 66.2500%
+AdamP on BACH_transformed: T 2/3 | E 83/200 Ended | E Time: 6.579s | ~Time Left: 769.778s |  Train Loss: 0.6859 | Train Acc. 73.2777% | Test Loss: 1.2100 | Test Acc. 57.9167%
+AdamP on BACH_transformed: T 2/3 | E 84/200 Ended | E Time: 6.566s | ~Time Left: 761.678s |  Train Loss: 0.6692 | Train Acc. 74.6347% | Test Loss: 0.8705 | Test Acc. 69.1667%
+AdamP on BACH_transformed: T 2/3 | E 85/200 Ended | E Time: 6.560s | ~Time Left: 754.389s |  Train Loss: 0.7397 | Train Acc. 71.0856% | Test Loss: 1.0755 | Test Acc. 60.8333%
+AdamP on BACH_transformed: T 2/3 | E 86/200 Ended | E Time: 6.518s | ~Time Left: 743.065s |  Train Loss: 0.6934 | Train Acc. 72.6514% | Test Loss: 1.1041 | Test Acc. 57.9167%
+AdamP on BACH_transformed: T 2/3 | E 87/200 Ended | E Time: 6.694s | ~Time Left: 756.450s |  Train Loss: 0.6635 | Train Acc. 73.4864% | Test Loss: 0.8072 | Test Acc. 65.8333%
+AdamP on BACH_transformed: T 2/3 | E 88/200 Ended | E Time: 6.570s | ~Time Left: 735.795s |  Train Loss: 0.6635 | Train Acc. 72.9645% | Test Loss: 1.1937 | Test Acc. 60.4167%
+AdamP on BACH_transformed: T 2/3 | E 89/200 Ended | E Time: 6.551s | ~Time Left: 727.196s |  Train Loss: 0.6767 | Train Acc. 72.6514% | Test Loss: 0.8802 | Test Acc. 63.3333%
+AdamP on BACH_transformed: T 2/3 | E 90/200 Ended | E Time: 6.549s | ~Time Left: 720.391s |  Train Loss: 0.6263 | Train Acc. 73.1733% | Test Loss: 0.7970 | Test Acc. 69.1667%
+AdamP on BACH_transformed: T 2/3 | E 91/200 Ended | E Time: 6.471s | ~Time Left: 705.368s |  Train Loss: 0.6181 | Train Acc. 75.7829% | Test Loss: 0.6940 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 2/3 | E 92/200 Ended | E Time: 6.524s | ~Time Left: 704.638s |  Train Loss: 0.6219 | Train Acc. 74.9478% | Test Loss: 0.8710 | Test Acc. 68.3333%
+AdamP on BACH_transformed: T 2/3 | E 93/200 Ended | E Time: 6.635s | ~Time Left: 709.931s |  Train Loss: 0.6147 | Train Acc. 75.2610% | Test Loss: 0.8811 | Test Acc. 65.4167%
+AdamP on BACH_transformed: T 2/3 | E 94/200 Ended | E Time: 6.569s | ~Time Left: 696.337s |  Train Loss: 0.6265 | Train Acc. 75.8873% | Test Loss: 0.8336 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 2/3 | E 95/200 Ended | E Time: 6.616s | ~Time Left: 694.660s |  Train Loss: 0.6193 | Train Acc. 75.7829% | Test Loss: 1.0204 | Test Acc. 60.8333%
+AdamP on BACH_transformed: T 2/3 | E 96/200 Ended | E Time: 6.606s | ~Time Left: 687.009s |  Train Loss: 0.6331 | Train Acc. 74.4259% | Test Loss: 0.8259 | Test Acc. 68.7500%
+AdamP on BACH_transformed: T 2/3 | E 97/200 Ended | E Time: 6.614s | ~Time Left: 681.241s |  Train Loss: 0.5843 | Train Acc. 76.4092% | Test Loss: 0.7129 | Test Acc. 69.5833%
+AdamP on BACH_transformed: T 2/3 | E 98/200 Ended | E Time: 6.613s | ~Time Left: 674.552s |  Train Loss: 0.5701 | Train Acc. 78.6013% | Test Loss: 1.0175 | Test Acc. 64.1667%
+AdamP on BACH_transformed: T 2/3 | E 99/200 Ended | E Time: 6.538s | ~Time Left: 660.305s |  Train Loss: 0.6022 | Train Acc. 77.0355% | Test Loss: 0.9667 | Test Acc. 60.8333%
+AdamP on BACH_transformed: T 2/3 | E 100/200 Ended | E Time: 6.537s | ~Time Left: 653.701s |  Train Loss: 0.5892 | Train Acc. 76.8267% | Test Loss: 0.7313 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 2/3 | E 101/200 Ended | E Time: 6.602s | ~Time Left: 653.557s |  Train Loss: 0.5592 | Train Acc. 77.2443% | Test Loss: 1.2518 | Test Acc. 60.0000%
+AdamP on BACH_transformed: T 2/3 | E 102/200 Ended | E Time: 6.573s | ~Time Left: 644.122s |  Train Loss: 0.5781 | Train Acc. 77.2443% | Test Loss: 1.0021 | Test Acc. 66.2500%
+AdamP on BACH_transformed: T 2/3 | E 103/200 Ended | E Time: 6.831s | ~Time Left: 662.600s |  Train Loss: 0.6190 | Train Acc. 75.5741% | Test Loss: 0.6247 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 2/3 | E 104/200 Ended | E Time: 6.530s | ~Time Left: 626.906s |  Train Loss: 0.5613 | Train Acc. 77.6618% | Test Loss: 0.7199 | Test Acc. 71.6667%
+AdamP on BACH_transformed: T 2/3 | E 105/200 Ended | E Time: 6.734s | ~Time Left: 639.697s |  Train Loss: 0.5696 | Train Acc. 78.7056% | Test Loss: 1.0549 | Test Acc. 65.4167%
+AdamP on BACH_transformed: T 2/3 | E 106/200 Ended | E Time: 6.525s | ~Time Left: 613.333s |  Train Loss: 0.5759 | Train Acc. 77.1399% | Test Loss: 0.7661 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 2/3 | E 107/200 Ended | E Time: 6.489s | ~Time Left: 603.472s |  Train Loss: 0.5593 | Train Acc. 79.0188% | Test Loss: 0.7987 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 2/3 | E 108/200 Ended | E Time: 6.473s | ~Time Left: 595.482s |  Train Loss: 0.5715 | Train Acc. 77.7662% | Test Loss: 0.6457 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 2/3 | E 109/200 Ended | E Time: 6.521s | ~Time Left: 593.384s |  Train Loss: 0.5003 | Train Acc. 81.1065% | Test Loss: 0.6971 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 2/3 | E 110/200 Ended | E Time: 6.650s | ~Time Left: 598.459s |  Train Loss: 0.5251 | Train Acc. 77.5574% | Test Loss: 0.6906 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 2/3 | E 111/200 Ended | E Time: 6.590s | ~Time Left: 586.521s |  Train Loss: 0.5381 | Train Acc. 80.7933% | Test Loss: 0.6997 | Test Acc. 75.4167%
+AdamP on BACH_transformed: T 2/3 | E 112/200 Ended | E Time: 6.597s | ~Time Left: 580.527s |  Train Loss: 0.5101 | Train Acc. 80.4802% | Test Loss: 0.6982 | Test Acc. 73.3333%
+AdamP on BACH_transformed: T 2/3 | E 113/200 Ended | E Time: 6.593s | ~Time Left: 573.630s |  Train Loss: 0.4967 | Train Acc. 80.1670% | Test Loss: 0.9359 | Test Acc. 69.5833%
+AdamP on BACH_transformed: T 2/3 | E 114/200 Ended | E Time: 6.485s | ~Time Left: 557.704s |  Train Loss: 0.5449 | Train Acc. 79.3319% | Test Loss: 0.8517 | Test Acc. 69.5833%
+AdamP on BACH_transformed: T 2/3 | E 115/200 Ended | E Time: 6.712s | ~Time Left: 570.537s |  Train Loss: 0.5121 | Train Acc. 80.8977% | Test Loss: 0.7373 | Test Acc. 67.9167%
+AdamP on BACH_transformed: T 2/3 | E 116/200 Ended | E Time: 6.565s | ~Time Left: 551.430s |  Train Loss: 0.5106 | Train Acc. 81.3152% | Test Loss: 0.8554 | Test Acc. 68.7500%
+AdamP on BACH_transformed: T 2/3 | E 117/200 Ended | E Time: 6.560s | ~Time Left: 544.519s |  Train Loss: 0.5428 | Train Acc. 78.9144% | Test Loss: 0.8270 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 2/3 | E 118/200 Ended | E Time: 6.551s | ~Time Left: 537.210s |  Train Loss: 0.5329 | Train Acc. 79.4363% | Test Loss: 0.6717 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 2/3 | E 119/200 Ended | E Time: 6.538s | ~Time Left: 529.617s |  Train Loss: 0.5007 | Train Acc. 81.0021% | Test Loss: 0.6098 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 2/3 | E 120/200 Ended | E Time: 6.565s | ~Time Left: 525.223s |  Train Loss: 0.4699 | Train Acc. 82.6722% | Test Loss: 0.8253 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 2/3 | E 121/200 Ended | E Time: 6.511s | ~Time Left: 514.391s |  Train Loss: 0.4988 | Train Acc. 79.7495% | Test Loss: 0.6985 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 2/3 | E 122/200 Ended | E Time: 6.617s | ~Time Left: 516.102s |  Train Loss: 0.4452 | Train Acc. 83.4029% | Test Loss: 0.8272 | Test Acc. 70.0000%
+AdamP on BACH_transformed: T 2/3 | E 123/200 Ended | E Time: 6.539s | ~Time Left: 503.538s |  Train Loss: 0.4790 | Train Acc. 82.0459% | Test Loss: 0.5627 | Test Acc. 78.3333%
+AdamP on BACH_transformed: T 2/3 | E 124/200 Ended | E Time: 6.524s | ~Time Left: 495.843s |  Train Loss: 0.4771 | Train Acc. 81.4196% | Test Loss: 0.8200 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 2/3 | E 125/200 Ended | E Time: 6.600s | ~Time Left: 494.988s |  Train Loss: 0.5108 | Train Acc. 79.1232% | Test Loss: 0.5834 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 2/3 | E 126/200 Ended | E Time: 6.504s | ~Time Left: 481.325s |  Train Loss: 0.4425 | Train Acc. 83.0898% | Test Loss: 0.7996 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 2/3 | E 127/200 Ended | E Time: 6.532s | ~Time Left: 476.837s |  Train Loss: 0.4912 | Train Acc. 79.2276% | Test Loss: 1.2198 | Test Acc. 65.0000%
+AdamP on BACH_transformed: T 2/3 | E 128/200 Ended | E Time: 6.626s | ~Time Left: 477.049s |  Train Loss: 0.4143 | Train Acc. 83.1942% | Test Loss: 0.6348 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 2/3 | E 129/200 Ended | E Time: 6.546s | ~Time Left: 464.770s |  Train Loss: 0.4145 | Train Acc. 83.7161% | Test Loss: 0.8252 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 2/3 | E 130/200 Ended | E Time: 6.505s | ~Time Left: 455.319s |  Train Loss: 0.4528 | Train Acc. 82.4635% | Test Loss: 0.8949 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 2/3 | E 131/200 Ended | E Time: 6.591s | ~Time Left: 454.752s |  Train Loss: 0.4038 | Train Acc. 84.2380% | Test Loss: 0.9622 | Test Acc. 66.2500%
+AdamP on BACH_transformed: T 2/3 | E 132/200 Ended | E Time: 6.535s | ~Time Left: 444.411s |  Train Loss: 0.4349 | Train Acc. 84.2380% | Test Loss: 1.5330 | Test Acc. 59.5833%
+AdamP on BACH_transformed: T 2/3 | E 133/200 Ended | E Time: 6.522s | ~Time Left: 436.962s |  Train Loss: 0.5068 | Train Acc. 81.1065% | Test Loss: 0.9515 | Test Acc. 67.9167%
+AdamP on BACH_transformed: T 2/3 | E 134/200 Ended | E Time: 6.548s | ~Time Left: 432.151s |  Train Loss: 0.4106 | Train Acc. 84.8643% | Test Loss: 0.5162 | Test Acc. 79.5833%
+AdamP on BACH_transformed: T 2/3 | E 135/200 Ended | E Time: 6.537s | ~Time Left: 424.876s |  Train Loss: 0.4134 | Train Acc. 84.2380% | Test Loss: 0.5012 | Test Acc. 82.9167%
+AdamP on BACH_transformed: T 2/3 | E 136/200 Ended | E Time: 6.535s | ~Time Left: 418.269s |  Train Loss: 0.4129 | Train Acc. 84.2380% | Test Loss: 0.6862 | Test Acc. 72.0833%
+AdamP on BACH_transformed: T 2/3 | E 137/200 Ended | E Time: 6.553s | ~Time Left: 412.840s |  Train Loss: 0.4319 | Train Acc. 84.2380% | Test Loss: 0.6853 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 2/3 | E 138/200 Ended | E Time: 6.515s | ~Time Left: 403.939s |  Train Loss: 0.4032 | Train Acc. 85.0731% | Test Loss: 0.6644 | Test Acc. 75.4167%
+AdamP on BACH_transformed: T 2/3 | E 139/200 Ended | E Time: 6.560s | ~Time Left: 400.162s |  Train Loss: 0.4380 | Train Acc. 83.8205% | Test Loss: 0.5231 | Test Acc. 80.4167%
+AdamP on BACH_transformed: T 2/3 | E 140/200 Ended | E Time: 6.534s | ~Time Left: 392.062s |  Train Loss: 0.4278 | Train Acc. 83.7161% | Test Loss: 0.6456 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 2/3 | E 141/200 Ended | E Time: 6.536s | ~Time Left: 385.611s |  Train Loss: 0.4624 | Train Acc. 82.3591% | Test Loss: 0.6603 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 2/3 | E 142/200 Ended | E Time: 6.448s | ~Time Left: 373.990s |  Train Loss: 0.3942 | Train Acc. 85.0731% | Test Loss: 0.8533 | Test Acc. 67.9167%
+AdamP on BACH_transformed: T 2/3 | E 143/200 Ended | E Time: 6.552s | ~Time Left: 373.463s |  Train Loss: 0.3862 | Train Acc. 85.3862% | Test Loss: 0.7397 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 2/3 | E 144/200 Ended | E Time: 6.562s | ~Time Left: 367.461s |  Train Loss: 0.3669 | Train Acc. 86.2213% | Test Loss: 0.8234 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 2/3 | E 145/200 Ended | E Time: 6.564s | ~Time Left: 361.048s |  Train Loss: 0.4407 | Train Acc. 83.2985% | Test Loss: 0.6483 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 2/3 | E 146/200 Ended | E Time: 6.529s | ~Time Left: 352.554s |  Train Loss: 0.3574 | Train Acc. 86.7432% | Test Loss: 0.8544 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 2/3 | E 147/200 Ended | E Time: 6.840s | ~Time Left: 362.507s |  Train Loss: 0.3838 | Train Acc. 85.1775% | Test Loss: 1.0309 | Test Acc. 69.1667%
+AdamP on BACH_transformed: T 2/3 | E 148/200 Ended | E Time: 6.617s | ~Time Left: 344.072s |  Train Loss: 0.4065 | Train Acc. 84.1336% | Test Loss: 0.8250 | Test Acc. 70.4167%
+AdamP on BACH_transformed: T 2/3 | E 149/200 Ended | E Time: 6.628s | ~Time Left: 338.027s |  Train Loss: 0.4054 | Train Acc. 83.5073% | Test Loss: 0.5929 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 2/3 | E 150/200 Ended | E Time: 6.543s | ~Time Left: 327.146s |  Train Loss: 0.3568 | Train Acc. 85.6994% | Test Loss: 0.8953 | Test Acc. 68.3333%
+AdamP on BACH_transformed: T 2/3 | E 151/200 Ended | E Time: 6.548s | ~Time Left: 320.830s |  Train Loss: 0.4113 | Train Acc. 84.1336% | Test Loss: 0.5658 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 2/3 | E 152/200 Ended | E Time: 6.519s | ~Time Left: 312.933s |  Train Loss: 0.3847 | Train Acc. 84.6555% | Test Loss: 0.6681 | Test Acc. 74.1667%
+AdamP on BACH_transformed: T 2/3 | E 153/200 Ended | E Time: 6.486s | ~Time Left: 304.834s |  Train Loss: 0.4129 | Train Acc. 84.5511% | Test Loss: 0.6965 | Test Acc. 75.0000%
+AdamP on BACH_transformed: T 2/3 | E 154/200 Ended | E Time: 6.530s | ~Time Left: 300.370s |  Train Loss: 0.3552 | Train Acc. 86.6388% | Test Loss: 0.5973 | Test Acc. 76.2500%
+AdamP on BACH_transformed: T 2/3 | E 155/200 Ended | E Time: 6.583s | ~Time Left: 296.231s |  Train Loss: 0.3363 | Train Acc. 87.3695% | Test Loss: 1.1005 | Test Acc. 63.3333%
+AdamP on BACH_transformed: T 2/3 | E 156/200 Ended | E Time: 6.516s | ~Time Left: 286.717s |  Train Loss: 0.3422 | Train Acc. 86.7432% | Test Loss: 0.6620 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 2/3 | E 157/200 Ended | E Time: 6.600s | ~Time Left: 283.779s |  Train Loss: 0.3280 | Train Acc. 87.8914% | Test Loss: 0.6203 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 2/3 | E 158/200 Ended | E Time: 6.512s | ~Time Left: 273.499s |  Train Loss: 0.3514 | Train Acc. 86.9520% | Test Loss: 0.8576 | Test Acc. 67.0833%
+AdamP on BACH_transformed: T 2/3 | E 159/200 Ended | E Time: 6.540s | ~Time Left: 268.150s |  Train Loss: 0.3931 | Train Acc. 85.3862% | Test Loss: 0.5809 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 2/3 | E 160/200 Ended | E Time: 6.543s | ~Time Left: 261.738s |  Train Loss: 0.3411 | Train Acc. 87.3695% | Test Loss: 0.9200 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 2/3 | E 161/200 Ended | E Time: 6.495s | ~Time Left: 253.286s |  Train Loss: 0.3264 | Train Acc. 87.4739% | Test Loss: 0.7865 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 2/3 | E 162/200 Ended | E Time: 6.524s | ~Time Left: 247.894s |  Train Loss: 0.3978 | Train Acc. 83.0898% | Test Loss: 0.7701 | Test Acc. 70.8333%
+AdamP on BACH_transformed: T 2/3 | E 163/200 Ended | E Time: 6.544s | ~Time Left: 242.131s |  Train Loss: 0.3660 | Train Acc. 85.6994% | Test Loss: 0.5811 | Test Acc. 73.7500%
+AdamP on BACH_transformed: T 2/3 | E 164/200 Ended | E Time: 6.510s | ~Time Left: 234.365s |  Train Loss: 0.3036 | Train Acc. 87.9958% | Test Loss: 1.1062 | Test Acc. 66.6667%
+AdamP on BACH_transformed: T 2/3 | E 165/200 Ended | E Time: 6.556s | ~Time Left: 229.459s |  Train Loss: 0.3192 | Train Acc. 88.5177% | Test Loss: 0.5836 | Test Acc. 80.8333%
+AdamP on BACH_transformed: T 2/3 | E 166/200 Ended | E Time: 6.530s | ~Time Left: 222.017s |  Train Loss: 0.3531 | Train Acc. 85.4906% | Test Loss: 0.9519 | Test Acc. 72.5000%
+AdamP on BACH_transformed: T 2/3 | E 167/200 Ended | E Time: 6.591s | ~Time Left: 217.499s |  Train Loss: 0.3220 | Train Acc. 87.4739% | Test Loss: 1.0314 | Test Acc. 65.4167%
+AdamP on BACH_transformed: T 2/3 | E 168/200 Ended | E Time: 6.531s | ~Time Left: 209.005s |  Train Loss: 0.3429 | Train Acc. 87.5783% | Test Loss: 0.4666 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 2/3 | E 169/200 Ended | E Time: 6.569s | ~Time Left: 203.643s |  Train Loss: 0.2821 | Train Acc. 89.1441% | Test Loss: 0.4904 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 2/3 | E 170/200 Ended | E Time: 6.511s | ~Time Left: 195.339s |  Train Loss: 0.2910 | Train Acc. 88.4134% | Test Loss: 0.6044 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 2/3 | E 171/200 Ended | E Time: 6.537s | ~Time Left: 189.584s |  Train Loss: 0.3094 | Train Acc. 87.9958% | Test Loss: 0.4689 | Test Acc. 82.0833%
+AdamP on BACH_transformed: T 2/3 | E 172/200 Ended | E Time: 6.512s | ~Time Left: 182.341s |  Train Loss: 0.3261 | Train Acc. 87.7871% | Test Loss: 1.1260 | Test Acc. 69.5833%
+AdamP on BACH_transformed: T 2/3 | E 173/200 Ended | E Time: 6.564s | ~Time Left: 177.240s |  Train Loss: 0.3881 | Train Acc. 85.4906% | Test Loss: 0.4596 | Test Acc. 83.3333%
+AdamP on BACH_transformed: T 2/3 | E 174/200 Ended | E Time: 6.514s | ~Time Left: 169.357s |  Train Loss: 0.3296 | Train Acc. 88.1002% | Test Loss: 0.6798 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 2/3 | E 175/200 Ended | E Time: 6.585s | ~Time Left: 164.616s |  Train Loss: 0.3224 | Train Acc. 87.1608% | Test Loss: 0.6977 | Test Acc. 77.5000%
+AdamP on BACH_transformed: T 2/3 | E 176/200 Ended | E Time: 6.592s | ~Time Left: 158.208s |  Train Loss: 0.3622 | Train Acc. 86.6388% | Test Loss: 0.7198 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 2/3 | E 177/200 Ended | E Time: 6.594s | ~Time Left: 151.657s |  Train Loss: 0.3753 | Train Acc. 85.2818% | Test Loss: 0.6547 | Test Acc. 78.3333%
+AdamP on BACH_transformed: T 2/3 | E 178/200 Ended | E Time: 6.548s | ~Time Left: 144.060s |  Train Loss: 0.3385 | Train Acc. 87.4739% | Test Loss: 0.5820 | Test Acc. 78.7500%
+AdamP on BACH_transformed: T 2/3 | E 179/200 Ended | E Time: 6.589s | ~Time Left: 138.359s |  Train Loss: 0.2463 | Train Acc. 90.9186% | Test Loss: 0.5583 | Test Acc. 81.2500%
+AdamP on BACH_transformed: T 2/3 | E 180/200 Ended | E Time: 6.904s | ~Time Left: 138.076s |  Train Loss: 0.3468 | Train Acc. 87.0564% | Test Loss: 0.5234 | Test Acc. 78.7500%
+AdamP on BACH_transformed: T 2/3 | E 181/200 Ended | E Time: 6.576s | ~Time Left: 124.940s |  Train Loss: 0.3877 | Train Acc. 86.1169% | Test Loss: 0.5511 | Test Acc. 78.3333%
+AdamP on BACH_transformed: T 2/3 | E 182/200 Ended | E Time: 6.568s | ~Time Left: 118.219s |  Train Loss: 0.3248 | Train Acc. 87.5783% | Test Loss: 0.4551 | Test Acc. 82.0833%
+AdamP on BACH_transformed: T 2/3 | E 183/200 Ended | E Time: 6.553s | ~Time Left: 111.406s |  Train Loss: 0.2829 | Train Acc. 90.0835% | Test Loss: 0.6199 | Test Acc. 80.4167%
+AdamP on BACH_transformed: T 2/3 | E 184/200 Ended | E Time: 6.778s | ~Time Left: 108.448s |  Train Loss: 0.3168 | Train Acc. 88.7265% | Test Loss: 0.6452 | Test Acc. 74.5833%
+AdamP on BACH_transformed: T 2/3 | E 185/200 Ended | E Time: 6.571s | ~Time Left: 98.559s |  Train Loss: 0.3488 | Train Acc. 86.3257% | Test Loss: 0.7639 | Test Acc. 72.9167%
+AdamP on BACH_transformed: T 2/3 | E 186/200 Ended | E Time: 6.641s | ~Time Left: 92.975s |  Train Loss: 0.3059 | Train Acc. 88.9353% | Test Loss: 1.0708 | Test Acc. 62.9167%
+AdamP on BACH_transformed: T 2/3 | E 187/200 Ended | E Time: 6.548s | ~Time Left: 85.124s |  Train Loss: 0.2800 | Train Acc. 88.6221% | Test Loss: 0.6187 | Test Acc. 77.9167%
+AdamP on BACH_transformed: T 2/3 | E 188/200 Ended | E Time: 6.597s | ~Time Left: 79.165s |  Train Loss: 0.3292 | Train Acc. 87.9958% | Test Loss: 0.6226 | Test Acc. 76.6667%
+AdamP on BACH_transformed: T 2/3 | E 189/200 Ended | E Time: 6.609s | ~Time Left: 72.703s |  Train Loss: 0.2226 | Train Acc. 91.8580% | Test Loss: 0.5573 | Test Acc. 80.0000%
+AdamP on BACH_transformed: T 2/3 | E 190/200 Ended | E Time: 6.578s | ~Time Left: 65.776s |  Train Loss: 0.2264 | Train Acc. 91.7537% | Test Loss: 0.8342 | Test Acc. 71.6667%
+AdamP on BACH_transformed: T 2/3 | E 191/200 Ended | E Time: 6.527s | ~Time Left: 58.746s |  Train Loss: 0.2982 | Train Acc. 88.8309% | Test Loss: 0.9014 | Test Acc. 71.2500%
+AdamP on BACH_transformed: T 2/3 | E 192/200 Ended | E Time: 6.520s | ~Time Left: 52.161s |  Train Loss: 0.3097 | Train Acc. 87.6827% | Test Loss: 0.5535 | Test Acc. 77.0833%
+AdamP on BACH_transformed: T 2/3 | E 193/200 Ended | E Time: 6.519s | ~Time Left: 45.633s |  Train Loss: 0.2948 | Train Acc. 88.7265% | Test Loss: 0.5146 | Test Acc. 81.2500%
+AdamP on BACH_transformed: T 2/3 | E 194/200 Ended | E Time: 6.508s | ~Time Left: 39.046s |  Train Loss: 0.3483 | Train Acc. 87.5783% | Test Loss: 0.8934 | Test Acc. 75.8333%
+AdamP on BACH_transformed: T 2/3 | E 195/200 Ended | E Time: 6.669s | ~Time Left: 33.344s |  Train Loss: 0.2958 | Train Acc. 89.9791% | Test Loss: 0.5211 | Test Acc. 81.6667%
+AdamP on BACH_transformed: T 2/3 | E 196/200 Ended | E Time: 6.573s | ~Time Left: 26.292s |  Train Loss: 0.2875 | Train Acc. 88.4134% | Test Loss: 0.8016 | Test Acc. 73.7500%
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 443, in run_epochs
+    df.to_excel(self.output_filename)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/core/generic.py", line 2189, in to_excel
+    formatter.write(
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/formats/excel.py", line 831, in write
+    writer.close()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/excel/_base.py", line 898, in close
+    content = self.save()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/excel/_openpyxl.py", line 54, in save
+    self.book.save(self.handles.handle)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/workbook/workbook.py", line 407, in save
+    save_workbook(self, filename)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 293, in save_workbook
+    writer.save()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 275, in save
+    self.write_data()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 75, in write_data
+    self._write_worksheets()
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 215, in _write_worksheets
+    self.write_worksheet(ws)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/openpyxl/writer/excel.py", line 203, in write_worksheet
+    self._archive.write(writer.out, ws.path[1:])
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.8.2/lib/python3.8/zipfile.py", line 1776, in write
+    shutil.copyfileobj(src, dest, 1024*8)
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/python/3.8.2/lib/python3.8/zipfile.py", line 1182, in close
+    self._fileobj.seek(self._zipfile.start_dir)
+OSError: [Errno 122] Disk quota exceeded
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/BACH_transformed_testing/AdamP/lr-0.0005-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958606.0        
+    output              : ADP_post_trained/BACH_transformed/AdamP/output/deep_tuning
+    checkpoint          : ADP_post_trained/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.0005
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir ADP_post_trained/BACH_transformed/AdamP/output/deep_tuning does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              BACH_transformed    
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0005              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on BACH_transformed: T 1/3 | E 1/200 Ended | E Time: 7.183s | ~Time Left: 1429.404s |  Train Loss: 1.4345 | Train Acc. 31.4196% | Test Loss: 6.1075 | Test Acc. 20.0000%
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 372, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 491, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 373, in save
+    return
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:274] . unexpected pos 4765568 vs 4765456
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 462, in run_epochs
+    torch.save(data, str(self.checkpoint_path / filename))
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 374, in save
+    _legacy_save(obj, opened_file, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 214, in __exit__
+    self.file_like.close()
+OSError: [Errno 122] Disk quota exceeded
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:274] . unexpected pos 4765568 vs 4765456
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x2ae59103f0e7 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x206a420 (0x2ae5411d3420 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x20665f3 (0x2ae5411cf5f3 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xa9 (0x2ae5411d3d99 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0xe1 (0x2ae5411d48d1 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x115 (0x2ae5411d50c5 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x737903 (0x2ae53e0a0903 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x369b90 (0x2ae53dcd2b90 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x36adfe (0x2ae53dcd3dfe in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #22: __libc_start_main + 0xeb (0x2ae53b5b8e1b in /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libc.so.6)
+

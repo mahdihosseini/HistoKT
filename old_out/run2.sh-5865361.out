@@ -1,0 +1,39 @@
+transferring data
+Wed Jun 23 16:16:49 PDT 2021
+
+Finished transferring
+Wed Jun 23 16:16:50 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : fine_tuning_configs/2.yaml              
+    data                : /localscratch/zhan8425.5865361.0        
+    output              : ADP_post_trained/MHIST_transformed/output
+    checkpoint          : ADP_post_trained/MHIST_transformed/checkpoint
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 846, in main_worker
+    training_agent = TrainingAgent(
+  File "src/adas/train.py", line 233, in __init__
+    self.load_config(config_path, data_path)
+  File "src/adas/train.py", line 245, in load_config
+    self.config = config = parse_config(yaml.load(f, yaml.FullLoader))
+  File "/project/6060173/zhan8425/HistoKT/src/adas/utils.py", line 154, in parse_config
+    raise ValueError(e)
+ValueError: config.yaml: init_lr must be a float or list of floats

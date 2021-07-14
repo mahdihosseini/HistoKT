@@ -1,0 +1,837 @@
+transferring data
+Sun Jul  4 20:15:18 PDT 2021
+
+Finished transferring
+Sun Jul  4 20:15:24 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/AJ-Lymph_transformed_testing/AdamP/lr-0.0005-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958540.0        
+    output              : ADP_post_trained/AJ-Lymph_transformed/AdamP/output/fine_tuning
+    checkpoint          : ADP_post_trained/AJ-Lymph_transformed/AdamP/checkpoint/fine_tuning/lr-0.0005
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              AJ-Lymph_transformed
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0005              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on AJ-Lymph_transformed: T 1/3 | E 1/200 Ended | E Time: 4.035s | ~Time Left: 803.042s |  Train Loss: 1.2402 | Train Acc. 41.4716% | Test Loss: 6.1209 | Test Acc. 29.7297%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 2/200 Ended | E Time: 3.401s | ~Time Left: 673.341s |  Train Loss: 1.0874 | Train Acc. 48.4950% | Test Loss: 9.9838 | Test Acc. 32.4324%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 3/200 Ended | E Time: 3.256s | ~Time Left: 641.454s |  Train Loss: 1.0265 | Train Acc. 48.4950% | Test Loss: 0.9800 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 4/200 Ended | E Time: 3.315s | ~Time Left: 649.755s |  Train Loss: 0.9375 | Train Acc. 52.1739% | Test Loss: 1.7707 | Test Acc. 40.5405%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 5/200 Ended | E Time: 3.323s | ~Time Left: 647.996s |  Train Loss: 0.9020 | Train Acc. 53.5117% | Test Loss: 0.9386 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 6/200 Ended | E Time: 3.291s | ~Time Left: 638.375s |  Train Loss: 0.9530 | Train Acc. 60.2007% | Test Loss: 1.0943 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 7/200 Ended | E Time: 3.347s | ~Time Left: 645.935s |  Train Loss: 0.9151 | Train Acc. 53.1773% | Test Loss: 0.6503 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 8/200 Ended | E Time: 3.460s | ~Time Left: 664.332s |  Train Loss: 0.9084 | Train Acc. 61.2040% | Test Loss: 0.8915 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 9/200 Ended | E Time: 3.274s | ~Time Left: 625.415s |  Train Loss: 0.8918 | Train Acc. 57.8595% | Test Loss: 0.7882 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 10/200 Ended | E Time: 3.311s | ~Time Left: 629.035s |  Train Loss: 0.9341 | Train Acc. 58.5284% | Test Loss: 1.0624 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 11/200 Ended | E Time: 3.492s | ~Time Left: 659.913s |  Train Loss: 0.8623 | Train Acc. 58.1940% | Test Loss: 1.2840 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 12/200 Ended | E Time: 3.259s | ~Time Left: 612.742s |  Train Loss: 0.8423 | Train Acc. 60.5351% | Test Loss: 1.2923 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 13/200 Ended | E Time: 3.313s | ~Time Left: 619.475s |  Train Loss: 0.8324 | Train Acc. 60.5351% | Test Loss: 0.6407 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 14/200 Ended | E Time: 3.534s | ~Time Left: 657.326s |  Train Loss: 0.8032 | Train Acc. 63.2107% | Test Loss: 0.7320 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 15/200 Ended | E Time: 3.350s | ~Time Left: 619.769s |  Train Loss: 0.7431 | Train Acc. 63.2107% | Test Loss: 1.2466 | Test Acc. 43.2432%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 16/200 Ended | E Time: 3.346s | ~Time Left: 615.591s |  Train Loss: 0.8122 | Train Acc. 61.8729% | Test Loss: 0.7517 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 17/200 Ended | E Time: 3.347s | ~Time Left: 612.510s |  Train Loss: 0.8535 | Train Acc. 61.5385% | Test Loss: 0.6571 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 18/200 Ended | E Time: 3.309s | ~Time Left: 602.250s |  Train Loss: 0.7677 | Train Acc. 64.8829% | Test Loss: 0.6661 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 19/200 Ended | E Time: 3.314s | ~Time Left: 599.813s |  Train Loss: 0.7493 | Train Acc. 68.5619% | Test Loss: 0.7358 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 20/200 Ended | E Time: 3.342s | ~Time Left: 601.489s |  Train Loss: 0.8425 | Train Acc. 63.5452% | Test Loss: 0.5550 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 21/200 Ended | E Time: 3.273s | ~Time Left: 585.905s |  Train Loss: 0.8279 | Train Acc. 60.8696% | Test Loss: 0.6273 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 22/200 Ended | E Time: 3.463s | ~Time Left: 616.367s |  Train Loss: 0.7690 | Train Acc. 66.2207% | Test Loss: 0.8760 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 23/200 Ended | E Time: 3.310s | ~Time Left: 585.811s |  Train Loss: 0.7874 | Train Acc. 64.2140% | Test Loss: 0.9503 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 24/200 Ended | E Time: 3.297s | ~Time Left: 580.331s |  Train Loss: 0.7133 | Train Acc. 69.5652% | Test Loss: 1.2276 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 25/200 Ended | E Time: 3.309s | ~Time Left: 579.072s |  Train Loss: 0.8123 | Train Acc. 68.2274% | Test Loss: 0.6324 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 26/200 Ended | E Time: 3.312s | ~Time Left: 576.359s |  Train Loss: 0.7188 | Train Acc. 68.2274% | Test Loss: 0.9675 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 27/200 Ended | E Time: 3.394s | ~Time Left: 587.215s |  Train Loss: 0.7804 | Train Acc. 65.8863% | Test Loss: 0.4964 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 28/200 Ended | E Time: 3.300s | ~Time Left: 567.667s |  Train Loss: 0.7496 | Train Acc. 64.8829% | Test Loss: 0.6147 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 29/200 Ended | E Time: 3.288s | ~Time Left: 562.224s |  Train Loss: 0.7243 | Train Acc. 69.8997% | Test Loss: 0.5332 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 30/200 Ended | E Time: 3.399s | ~Time Left: 577.846s |  Train Loss: 0.7762 | Train Acc. 71.5719% | Test Loss: 0.6692 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 31/200 Ended | E Time: 3.316s | ~Time Left: 560.352s |  Train Loss: 0.6878 | Train Acc. 70.2341% | Test Loss: 0.5210 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 32/200 Ended | E Time: 3.274s | ~Time Left: 550.102s |  Train Loss: 0.7205 | Train Acc. 67.5585% | Test Loss: 0.6499 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 33/200 Ended | E Time: 3.294s | ~Time Left: 550.068s |  Train Loss: 0.6636 | Train Acc. 71.2375% | Test Loss: 0.6131 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 34/200 Ended | E Time: 3.301s | ~Time Left: 547.930s |  Train Loss: 0.7721 | Train Acc. 68.2274% | Test Loss: 0.7090 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 35/200 Ended | E Time: 3.355s | ~Time Left: 553.593s |  Train Loss: 0.6820 | Train Acc. 69.2308% | Test Loss: 0.4957 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 36/200 Ended | E Time: 3.350s | ~Time Left: 549.443s |  Train Loss: 0.7380 | Train Acc. 69.8997% | Test Loss: 0.8643 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 37/200 Ended | E Time: 3.338s | ~Time Left: 544.043s |  Train Loss: 0.6572 | Train Acc. 69.2308% | Test Loss: 1.1329 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 38/200 Ended | E Time: 3.308s | ~Time Left: 535.961s |  Train Loss: 0.7892 | Train Acc. 65.2174% | Test Loss: 0.6790 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 39/200 Ended | E Time: 3.529s | ~Time Left: 568.146s |  Train Loss: 0.7054 | Train Acc. 68.5619% | Test Loss: 0.5812 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 40/200 Ended | E Time: 3.319s | ~Time Left: 531.037s |  Train Loss: 0.7876 | Train Acc. 67.5585% | Test Loss: 0.6008 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 41/200 Ended | E Time: 3.351s | ~Time Left: 532.790s |  Train Loss: 0.7146 | Train Acc. 68.2274% | Test Loss: 0.8618 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 42/200 Ended | E Time: 3.318s | ~Time Left: 524.166s |  Train Loss: 0.6731 | Train Acc. 69.5652% | Test Loss: 0.5291 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 43/200 Ended | E Time: 3.453s | ~Time Left: 542.079s |  Train Loss: 0.6675 | Train Acc. 70.5686% | Test Loss: 0.4803 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 44/200 Ended | E Time: 3.331s | ~Time Left: 519.680s |  Train Loss: 0.6797 | Train Acc. 70.2341% | Test Loss: 0.5230 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 45/200 Ended | E Time: 3.557s | ~Time Left: 551.353s |  Train Loss: 0.6957 | Train Acc. 72.5752% | Test Loss: 0.7989 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 46/200 Ended | E Time: 3.326s | ~Time Left: 512.224s |  Train Loss: 0.6896 | Train Acc. 66.2207% | Test Loss: 0.8209 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 47/200 Ended | E Time: 3.339s | ~Time Left: 510.852s |  Train Loss: 0.7284 | Train Acc. 69.2308% | Test Loss: 0.5250 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 48/200 Ended | E Time: 3.369s | ~Time Left: 512.116s |  Train Loss: 0.6676 | Train Acc. 71.5719% | Test Loss: 0.5660 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 49/200 Ended | E Time: 3.345s | ~Time Left: 505.057s |  Train Loss: 0.6597 | Train Acc. 69.5652% | Test Loss: 0.5996 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 50/200 Ended | E Time: 3.323s | ~Time Left: 498.517s |  Train Loss: 0.5844 | Train Acc. 74.9164% | Test Loss: 0.9114 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 51/200 Ended | E Time: 3.327s | ~Time Left: 495.663s |  Train Loss: 0.6661 | Train Acc. 71.5719% | Test Loss: 0.4180 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 52/200 Ended | E Time: 3.369s | ~Time Left: 498.667s |  Train Loss: 0.6829 | Train Acc. 71.9064% | Test Loss: 0.5740 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 53/200 Ended | E Time: 3.327s | ~Time Left: 489.048s |  Train Loss: 0.6164 | Train Acc. 73.5786% | Test Loss: 1.1389 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 54/200 Ended | E Time: 3.316s | ~Time Left: 484.126s |  Train Loss: 0.7379 | Train Acc. 66.8896% | Test Loss: 0.4445 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 55/200 Ended | E Time: 3.393s | ~Time Left: 492.041s |  Train Loss: 0.6904 | Train Acc. 71.5719% | Test Loss: 0.5012 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 56/200 Ended | E Time: 3.288s | ~Time Left: 473.478s |  Train Loss: 0.5823 | Train Acc. 74.9164% | Test Loss: 0.4903 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 57/200 Ended | E Time: 3.324s | ~Time Left: 475.298s |  Train Loss: 0.6020 | Train Acc. 75.2508% | Test Loss: 0.4864 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 58/200 Ended | E Time: 3.338s | ~Time Left: 473.952s |  Train Loss: 0.6523 | Train Acc. 71.9064% | Test Loss: 0.6126 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 59/200 Ended | E Time: 3.315s | ~Time Left: 467.371s |  Train Loss: 0.5842 | Train Acc. 75.5853% | Test Loss: 0.4676 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 60/200 Ended | E Time: 3.430s | ~Time Left: 480.218s |  Train Loss: 0.6057 | Train Acc. 73.2441% | Test Loss: 0.4743 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 61/200 Ended | E Time: 3.314s | ~Time Left: 460.704s |  Train Loss: 0.5631 | Train Acc. 74.9164% | Test Loss: 0.3890 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 62/200 Ended | E Time: 3.292s | ~Time Left: 454.250s |  Train Loss: 0.6233 | Train Acc. 73.5786% | Test Loss: 0.5987 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 63/200 Ended | E Time: 3.335s | ~Time Left: 456.949s |  Train Loss: 0.5931 | Train Acc. 71.2375% | Test Loss: 0.5491 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 64/200 Ended | E Time: 3.314s | ~Time Left: 450.676s |  Train Loss: 0.5756 | Train Acc. 74.5819% | Test Loss: 0.4205 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 65/200 Ended | E Time: 3.349s | ~Time Left: 452.181s |  Train Loss: 0.5777 | Train Acc. 75.2508% | Test Loss: 0.7079 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 66/200 Ended | E Time: 3.341s | ~Time Left: 447.683s |  Train Loss: 0.6726 | Train Acc. 75.5853% | Test Loss: 0.8942 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 67/200 Ended | E Time: 3.334s | ~Time Left: 443.413s |  Train Loss: 0.5428 | Train Acc. 79.9331% | Test Loss: 0.4544 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 68/200 Ended | E Time: 3.484s | ~Time Left: 459.876s |  Train Loss: 0.6385 | Train Acc. 72.2408% | Test Loss: 0.5269 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 69/200 Ended | E Time: 3.652s | ~Time Left: 478.372s |  Train Loss: 0.5925 | Train Acc. 77.2575% | Test Loss: 0.5145 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 70/200 Ended | E Time: 3.341s | ~Time Left: 434.328s |  Train Loss: 0.5434 | Train Acc. 78.2609% | Test Loss: 0.5306 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 71/200 Ended | E Time: 3.275s | ~Time Left: 422.417s |  Train Loss: 0.6240 | Train Acc. 72.5752% | Test Loss: 0.4607 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 72/200 Ended | E Time: 3.332s | ~Time Left: 426.514s |  Train Loss: 0.5907 | Train Acc. 72.9097% | Test Loss: 0.5976 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 73/200 Ended | E Time: 3.318s | ~Time Left: 421.366s |  Train Loss: 0.5596 | Train Acc. 72.2408% | Test Loss: 0.4177 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 74/200 Ended | E Time: 3.324s | ~Time Left: 418.881s |  Train Loss: 0.6224 | Train Acc. 74.9164% | Test Loss: 0.9316 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 75/200 Ended | E Time: 3.310s | ~Time Left: 413.752s |  Train Loss: 0.6327 | Train Acc. 73.2441% | Test Loss: 0.8011 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 76/200 Ended | E Time: 3.594s | ~Time Left: 445.693s |  Train Loss: 0.7273 | Train Acc. 68.5619% | Test Loss: 0.5136 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 77/200 Ended | E Time: 3.311s | ~Time Left: 407.311s |  Train Loss: 0.6276 | Train Acc. 71.9064% | Test Loss: 0.5953 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 78/200 Ended | E Time: 3.294s | ~Time Left: 401.887s |  Train Loss: 0.6076 | Train Acc. 68.8963% | Test Loss: 0.4992 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 79/200 Ended | E Time: 3.286s | ~Time Left: 397.596s |  Train Loss: 0.6258 | Train Acc. 72.5752% | Test Loss: 0.3454 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 80/200 Ended | E Time: 3.310s | ~Time Left: 397.211s |  Train Loss: 0.5817 | Train Acc. 71.9064% | Test Loss: 0.5240 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 81/200 Ended | E Time: 3.350s | ~Time Left: 398.643s |  Train Loss: 0.5923 | Train Acc. 73.9130% | Test Loss: 0.4797 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 82/200 Ended | E Time: 3.358s | ~Time Left: 396.218s |  Train Loss: 0.5826 | Train Acc. 71.9064% | Test Loss: 0.4435 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 83/200 Ended | E Time: 3.320s | ~Time Left: 388.467s |  Train Loss: 0.5433 | Train Acc. 77.5920% | Test Loss: 0.4795 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 84/200 Ended | E Time: 3.337s | ~Time Left: 387.092s |  Train Loss: 0.5622 | Train Acc. 77.2575% | Test Loss: 0.2934 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 85/200 Ended | E Time: 4.034s | ~Time Left: 463.911s |  Train Loss: 0.5611 | Train Acc. 72.9097% | Test Loss: 0.3855 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 86/200 Ended | E Time: 3.322s | ~Time Left: 378.732s |  Train Loss: 0.5350 | Train Acc. 79.5987% | Test Loss: 0.3382 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 87/200 Ended | E Time: 3.304s | ~Time Left: 373.326s |  Train Loss: 0.6411 | Train Acc. 72.5752% | Test Loss: 0.8753 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 88/200 Ended | E Time: 3.284s | ~Time Left: 367.821s |  Train Loss: 0.5706 | Train Acc. 75.5853% | Test Loss: 0.4638 | Test Acc. 89.1892%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 89/200 Ended | E Time: 3.330s | ~Time Left: 369.622s |  Train Loss: 0.6143 | Train Acc. 73.2441% | Test Loss: 0.4793 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 90/200 Ended | E Time: 3.303s | ~Time Left: 363.358s |  Train Loss: 0.5590 | Train Acc. 73.5786% | Test Loss: 0.3017 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 91/200 Ended | E Time: 3.282s | ~Time Left: 357.758s |  Train Loss: 0.6106 | Train Acc. 73.5786% | Test Loss: 0.8784 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 92/200 Ended | E Time: 3.339s | ~Time Left: 360.660s |  Train Loss: 0.5700 | Train Acc. 74.5819% | Test Loss: 0.4359 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 93/200 Ended | E Time: 3.311s | ~Time Left: 354.252s |  Train Loss: 0.5876 | Train Acc. 74.2475% | Test Loss: 0.4592 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 94/200 Ended | E Time: 3.380s | ~Time Left: 358.268s |  Train Loss: 0.4704 | Train Acc. 81.2709% | Test Loss: 0.3587 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 95/200 Ended | E Time: 3.294s | ~Time Left: 345.887s |  Train Loss: 0.5123 | Train Acc. 80.9365% | Test Loss: 0.3674 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 96/200 Ended | E Time: 3.400s | ~Time Left: 353.611s |  Train Loss: 0.6051 | Train Acc. 70.2341% | Test Loss: 0.4184 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 97/200 Ended | E Time: 3.322s | ~Time Left: 342.127s |  Train Loss: 0.5437 | Train Acc. 77.5920% | Test Loss: 0.3694 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 98/200 Ended | E Time: 3.432s | ~Time Left: 350.082s |  Train Loss: 0.5195 | Train Acc. 79.2642% | Test Loss: 0.4784 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 99/200 Ended | E Time: 3.334s | ~Time Left: 336.779s |  Train Loss: 0.5657 | Train Acc. 77.2575% | Test Loss: 0.3326 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 100/200 Ended | E Time: 3.367s | ~Time Left: 336.726s |  Train Loss: 0.5432 | Train Acc. 74.5819% | Test Loss: 0.4245 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 101/200 Ended | E Time: 3.319s | ~Time Left: 328.577s |  Train Loss: 0.5218 | Train Acc. 76.9231% | Test Loss: 0.4484 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 102/200 Ended | E Time: 3.298s | ~Time Left: 323.158s |  Train Loss: 0.4539 | Train Acc. 78.2609% | Test Loss: 0.3420 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 103/200 Ended | E Time: 3.298s | ~Time Left: 319.953s |  Train Loss: 0.4376 | Train Acc. 80.9365% | Test Loss: 0.4989 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 104/200 Ended | E Time: 3.333s | ~Time Left: 320.013s |  Train Loss: 0.5117 | Train Acc. 80.9365% | Test Loss: 0.7154 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 105/200 Ended | E Time: 3.291s | ~Time Left: 312.684s |  Train Loss: 0.5492 | Train Acc. 75.5853% | Test Loss: 0.4608 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 106/200 Ended | E Time: 3.328s | ~Time Left: 312.866s |  Train Loss: 0.4924 | Train Acc. 77.9264% | Test Loss: 0.5017 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 107/200 Ended | E Time: 3.292s | ~Time Left: 306.192s |  Train Loss: 0.4446 | Train Acc. 82.9431% | Test Loss: 0.4778 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 108/200 Ended | E Time: 3.348s | ~Time Left: 308.022s |  Train Loss: 0.5496 | Train Acc. 75.9197% | Test Loss: 0.4951 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 109/200 Ended | E Time: 3.294s | ~Time Left: 299.764s |  Train Loss: 0.5041 | Train Acc. 78.2609% | Test Loss: 0.3149 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 110/200 Ended | E Time: 3.354s | ~Time Left: 301.866s |  Train Loss: 0.5355 | Train Acc. 73.2441% | Test Loss: 1.4541 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 111/200 Ended | E Time: 3.433s | ~Time Left: 305.552s |  Train Loss: 0.4830 | Train Acc. 78.5953% | Test Loss: 0.5119 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 112/200 Ended | E Time: 3.315s | ~Time Left: 291.739s |  Train Loss: 0.5112 | Train Acc. 77.5920% | Test Loss: 0.3038 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 113/200 Ended | E Time: 3.338s | ~Time Left: 290.366s |  Train Loss: 0.6956 | Train Acc. 75.9197% | Test Loss: 0.7622 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 114/200 Ended | E Time: 3.301s | ~Time Left: 283.892s |  Train Loss: 0.6001 | Train Acc. 75.2508% | Test Loss: 0.6450 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 115/200 Ended | E Time: 3.330s | ~Time Left: 283.049s |  Train Loss: 0.5850 | Train Acc. 75.2508% | Test Loss: 0.4281 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 116/200 Ended | E Time: 3.328s | ~Time Left: 279.540s |  Train Loss: 0.5695 | Train Acc. 74.5819% | Test Loss: 0.5238 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 117/200 Ended | E Time: 3.404s | ~Time Left: 282.506s |  Train Loss: 0.4820 | Train Acc. 77.2575% | Test Loss: 0.5629 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 118/200 Ended | E Time: 3.336s | ~Time Left: 273.585s |  Train Loss: 0.5207 | Train Acc. 77.9264% | Test Loss: 0.3210 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 119/200 Ended | E Time: 3.333s | ~Time Left: 270.001s |  Train Loss: 0.5900 | Train Acc. 75.2508% | Test Loss: 0.4359 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 120/200 Ended | E Time: 3.365s | ~Time Left: 269.230s |  Train Loss: 0.5512 | Train Acc. 74.2475% | Test Loss: 0.4433 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 121/200 Ended | E Time: 3.337s | ~Time Left: 263.633s |  Train Loss: 0.5250 | Train Acc. 77.9264% | Test Loss: 0.3288 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 122/200 Ended | E Time: 3.332s | ~Time Left: 259.898s |  Train Loss: 0.5549 | Train Acc. 77.5920% | Test Loss: 0.4047 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 123/200 Ended | E Time: 3.642s | ~Time Left: 280.403s |  Train Loss: 0.5052 | Train Acc. 76.9231% | Test Loss: 0.4281 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 124/200 Ended | E Time: 3.515s | ~Time Left: 267.126s |  Train Loss: 0.4814 | Train Acc. 78.2609% | Test Loss: 0.3245 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 125/200 Ended | E Time: 3.373s | ~Time Left: 252.981s |  Train Loss: 0.5275 | Train Acc. 75.2508% | Test Loss: 0.4533 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 126/200 Ended | E Time: 3.316s | ~Time Left: 245.389s |  Train Loss: 0.4985 | Train Acc. 79.2642% | Test Loss: 0.5898 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 127/200 Ended | E Time: 3.335s | ~Time Left: 243.462s |  Train Loss: 0.4370 | Train Acc. 80.9365% | Test Loss: 0.2735 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 128/200 Ended | E Time: 3.322s | ~Time Left: 239.162s |  Train Loss: 0.5619 | Train Acc. 77.2575% | Test Loss: 1.1058 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 129/200 Ended | E Time: 3.319s | ~Time Left: 235.620s |  Train Loss: 0.5248 | Train Acc. 73.5786% | Test Loss: 0.9299 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 130/200 Ended | E Time: 3.362s | ~Time Left: 235.314s |  Train Loss: 0.5754 | Train Acc. 74.5819% | Test Loss: 1.0008 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 131/200 Ended | E Time: 3.333s | ~Time Left: 229.985s |  Train Loss: 0.4838 | Train Acc. 79.9331% | Test Loss: 0.5323 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 132/200 Ended | E Time: 3.335s | ~Time Left: 226.760s |  Train Loss: 0.6133 | Train Acc. 75.2508% | Test Loss: 0.4416 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 133/200 Ended | E Time: 3.345s | ~Time Left: 224.119s |  Train Loss: 0.5727 | Train Acc. 77.9264% | Test Loss: 0.7075 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 134/200 Ended | E Time: 3.424s | ~Time Left: 225.999s |  Train Loss: 0.5438 | Train Acc. 76.5886% | Test Loss: 0.5610 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 135/200 Ended | E Time: 3.292s | ~Time Left: 213.956s |  Train Loss: 0.4420 | Train Acc. 79.9331% | Test Loss: 0.4938 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 136/200 Ended | E Time: 3.461s | ~Time Left: 221.527s |  Train Loss: 0.4553 | Train Acc. 78.5953% | Test Loss: 0.3539 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 137/200 Ended | E Time: 3.351s | ~Time Left: 211.135s |  Train Loss: 0.4459 | Train Acc. 80.9365% | Test Loss: 0.3071 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 138/200 Ended | E Time: 3.380s | ~Time Left: 209.549s |  Train Loss: 0.4802 | Train Acc. 81.2709% | Test Loss: 0.3724 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 139/200 Ended | E Time: 3.365s | ~Time Left: 205.237s |  Train Loss: 0.4333 | Train Acc. 82.2742% | Test Loss: 0.3853 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 140/200 Ended | E Time: 3.315s | ~Time Left: 198.916s |  Train Loss: 0.4685 | Train Acc. 79.5987% | Test Loss: 0.3466 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 141/200 Ended | E Time: 3.430s | ~Time Left: 202.369s |  Train Loss: 0.4759 | Train Acc. 80.6020% | Test Loss: 0.3441 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 142/200 Ended | E Time: 3.613s | ~Time Left: 209.534s |  Train Loss: 0.4010 | Train Acc. 82.2742% | Test Loss: 0.2929 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 143/200 Ended | E Time: 3.352s | ~Time Left: 191.052s |  Train Loss: 0.5390 | Train Acc. 81.2709% | Test Loss: 0.5186 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 144/200 Ended | E Time: 3.477s | ~Time Left: 194.697s |  Train Loss: 0.5219 | Train Acc. 76.5886% | Test Loss: 0.5955 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 145/200 Ended | E Time: 3.405s | ~Time Left: 187.271s |  Train Loss: 0.4865 | Train Acc. 79.5987% | Test Loss: 0.4178 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 146/200 Ended | E Time: 3.353s | ~Time Left: 181.086s |  Train Loss: 0.5217 | Train Acc. 79.9331% | Test Loss: 1.5201 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 147/200 Ended | E Time: 3.351s | ~Time Left: 177.585s |  Train Loss: 0.4221 | Train Acc. 80.9365% | Test Loss: 0.3392 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 148/200 Ended | E Time: 3.318s | ~Time Left: 172.546s |  Train Loss: 0.5030 | Train Acc. 78.2609% | Test Loss: 0.3773 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 149/200 Ended | E Time: 3.426s | ~Time Left: 174.705s |  Train Loss: 0.4619 | Train Acc. 82.2742% | Test Loss: 0.5048 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 150/200 Ended | E Time: 3.320s | ~Time Left: 166.006s |  Train Loss: 0.4191 | Train Acc. 83.6120% | Test Loss: 0.4234 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 151/200 Ended | E Time: 3.333s | ~Time Left: 163.321s |  Train Loss: 0.4315 | Train Acc. 83.9465% | Test Loss: 0.4546 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 152/200 Ended | E Time: 3.290s | ~Time Left: 157.932s |  Train Loss: 0.4629 | Train Acc. 81.2709% | Test Loss: 0.7018 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 153/200 Ended | E Time: 3.355s | ~Time Left: 157.663s |  Train Loss: 0.4718 | Train Acc. 79.5987% | Test Loss: 0.3425 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 154/200 Ended | E Time: 3.295s | ~Time Left: 151.580s |  Train Loss: 0.4466 | Train Acc. 81.6054% | Test Loss: 0.3908 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 155/200 Ended | E Time: 3.325s | ~Time Left: 149.615s |  Train Loss: 0.4666 | Train Acc. 76.5886% | Test Loss: 0.4278 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 156/200 Ended | E Time: 3.361s | ~Time Left: 147.864s |  Train Loss: 0.4932 | Train Acc. 79.5987% | Test Loss: 0.4642 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 157/200 Ended | E Time: 3.351s | ~Time Left: 144.108s |  Train Loss: 0.4779 | Train Acc. 81.2709% | Test Loss: 0.4924 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 158/200 Ended | E Time: 3.885s | ~Time Left: 163.170s |  Train Loss: 0.5410 | Train Acc. 77.5920% | Test Loss: 0.6929 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 159/200 Ended | E Time: 3.343s | ~Time Left: 137.043s |  Train Loss: 0.4876 | Train Acc. 78.5953% | Test Loss: 1.5708 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 160/200 Ended | E Time: 3.414s | ~Time Left: 136.571s |  Train Loss: 0.4993 | Train Acc. 81.6054% | Test Loss: 0.5542 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 161/200 Ended | E Time: 3.343s | ~Time Left: 130.390s |  Train Loss: 0.4439 | Train Acc. 82.2742% | Test Loss: 0.2542 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 162/200 Ended | E Time: 3.354s | ~Time Left: 127.445s |  Train Loss: 0.4734 | Train Acc. 80.6020% | Test Loss: 0.3412 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 163/200 Ended | E Time: 3.341s | ~Time Left: 123.605s |  Train Loss: 0.5595 | Train Acc. 76.9231% | Test Loss: 0.3190 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 164/200 Ended | E Time: 3.362s | ~Time Left: 121.023s |  Train Loss: 0.5177 | Train Acc. 79.5987% | Test Loss: 0.3041 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 165/200 Ended | E Time: 3.654s | ~Time Left: 127.888s |  Train Loss: 0.4673 | Train Acc. 81.9398% | Test Loss: 0.7060 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 166/200 Ended | E Time: 3.308s | ~Time Left: 112.457s |  Train Loss: 0.4678 | Train Acc. 81.2709% | Test Loss: 0.2993 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 167/200 Ended | E Time: 3.427s | ~Time Left: 113.084s |  Train Loss: 0.4338 | Train Acc. 81.9398% | Test Loss: 0.3084 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 168/200 Ended | E Time: 3.373s | ~Time Left: 107.933s |  Train Loss: 0.4174 | Train Acc. 79.9331% | Test Loss: 0.6321 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 169/200 Ended | E Time: 3.313s | ~Time Left: 102.694s |  Train Loss: 0.4597 | Train Acc. 80.2676% | Test Loss: 1.1581 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 170/200 Ended | E Time: 3.375s | ~Time Left: 101.259s |  Train Loss: 0.3839 | Train Acc. 83.6120% | Test Loss: 0.7112 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 171/200 Ended | E Time: 3.345s | ~Time Left: 97.016s |  Train Loss: 0.4751 | Train Acc. 81.2709% | Test Loss: 0.5207 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 172/200 Ended | E Time: 3.533s | ~Time Left: 98.928s |  Train Loss: 0.5543 | Train Acc. 81.2709% | Test Loss: 0.5773 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 173/200 Ended | E Time: 3.383s | ~Time Left: 91.330s |  Train Loss: 0.5257 | Train Acc. 75.5853% | Test Loss: 0.5934 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 174/200 Ended | E Time: 3.384s | ~Time Left: 87.997s |  Train Loss: 0.4902 | Train Acc. 80.6020% | Test Loss: 0.3501 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 175/200 Ended | E Time: 3.304s | ~Time Left: 82.605s |  Train Loss: 0.4526 | Train Acc. 79.5987% | Test Loss: 0.4238 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 176/200 Ended | E Time: 3.350s | ~Time Left: 80.402s |  Train Loss: 0.4768 | Train Acc. 78.9298% | Test Loss: 0.3834 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 177/200 Ended | E Time: 3.312s | ~Time Left: 76.183s |  Train Loss: 0.4058 | Train Acc. 81.6054% | Test Loss: 0.4345 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 178/200 Ended | E Time: 3.375s | ~Time Left: 74.246s |  Train Loss: 0.4191 | Train Acc. 82.2742% | Test Loss: 0.5721 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 179/200 Ended | E Time: 3.316s | ~Time Left: 69.647s |  Train Loss: 0.4106 | Train Acc. 86.9565% | Test Loss: 0.2825 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 180/200 Ended | E Time: 3.342s | ~Time Left: 66.849s |  Train Loss: 0.3723 | Train Acc. 84.9498% | Test Loss: 0.7404 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 181/200 Ended | E Time: 3.267s | ~Time Left: 62.064s |  Train Loss: 0.5097 | Train Acc. 78.5953% | Test Loss: 0.3882 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 182/200 Ended | E Time: 3.294s | ~Time Left: 59.298s |  Train Loss: 0.4376 | Train Acc. 81.2709% | Test Loss: 0.4882 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 183/200 Ended | E Time: 3.606s | ~Time Left: 61.307s |  Train Loss: 0.3904 | Train Acc. 82.9431% | Test Loss: 0.4196 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 184/200 Ended | E Time: 3.357s | ~Time Left: 53.719s |  Train Loss: 0.3607 | Train Acc. 86.6221% | Test Loss: 0.4236 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 185/200 Ended | E Time: 3.372s | ~Time Left: 50.583s |  Train Loss: 0.4064 | Train Acc. 82.9431% | Test Loss: 0.3905 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 186/200 Ended | E Time: 3.395s | ~Time Left: 47.531s |  Train Loss: 0.4437 | Train Acc. 82.2742% | Test Loss: 0.4082 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 187/200 Ended | E Time: 3.357s | ~Time Left: 43.644s |  Train Loss: 0.4450 | Train Acc. 81.2709% | Test Loss: 0.4320 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 188/200 Ended | E Time: 3.298s | ~Time Left: 39.578s |  Train Loss: 0.5061 | Train Acc. 78.9298% | Test Loss: 0.4085 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 189/200 Ended | E Time: 3.442s | ~Time Left: 37.861s |  Train Loss: 0.4501 | Train Acc. 82.6087% | Test Loss: 0.4495 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 190/200 Ended | E Time: 3.564s | ~Time Left: 35.640s |  Train Loss: 0.5441 | Train Acc. 78.5953% | Test Loss: 0.9502 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 191/200 Ended | E Time: 3.381s | ~Time Left: 30.431s |  Train Loss: 0.5438 | Train Acc. 78.2609% | Test Loss: 0.3537 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 192/200 Ended | E Time: 3.301s | ~Time Left: 26.411s |  Train Loss: 0.4642 | Train Acc. 82.6087% | Test Loss: 0.3687 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 193/200 Ended | E Time: 3.400s | ~Time Left: 23.801s |  Train Loss: 0.4323 | Train Acc. 84.6154% | Test Loss: 0.3448 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 194/200 Ended | E Time: 3.331s | ~Time Left: 19.986s |  Train Loss: 0.3990 | Train Acc. 82.6087% | Test Loss: 0.4708 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 195/200 Ended | E Time: 3.424s | ~Time Left: 17.118s |  Train Loss: 0.4834 | Train Acc. 77.5920% | Test Loss: 0.2664 | Test Acc. 89.1892%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 196/200 Ended | E Time: 3.458s | ~Time Left: 13.830s |  Train Loss: 0.3610 | Train Acc. 84.2809% | Test Loss: 0.3219 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 197/200 Ended | E Time: 3.368s | ~Time Left: 10.105s |  Train Loss: 0.4754 | Train Acc. 81.2709% | Test Loss: 0.2198 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 198/200 Ended | E Time: 3.318s | ~Time Left: 6.636s |  Train Loss: 0.4736 | Train Acc. 79.2642% | Test Loss: 0.5038 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 199/200 Ended | E Time: 3.374s | ~Time Left: 3.374s |  Train Loss: 0.3975 | Train Acc. 83.2776% | Test Loss: 0.2838 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 200/200 Ended | E Time: 3.307s | ~Time Left: 0.000s |  Train Loss: 0.4056 | Train Acc. 82.6087% | Test Loss: 0.6235 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 1/200 Ended | E Time: 3.353s | ~Time Left: 667.223s |  Train Loss: 1.3148 | Train Acc. 44.4816% | Test Loss: 3.9032 | Test Acc. 37.8378%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 2/200 Ended | E Time: 3.336s | ~Time Left: 660.571s |  Train Loss: 1.0566 | Train Acc. 49.4983% | Test Loss: 8.1523 | Test Acc. 32.4324%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 3/200 Ended | E Time: 3.374s | ~Time Left: 664.629s |  Train Loss: 0.9091 | Train Acc. 56.8562% | Test Loss: 6.5407 | Test Acc. 32.4324%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 4/200 Ended | E Time: 3.337s | ~Time Left: 654.066s |  Train Loss: 0.9205 | Train Acc. 56.8562% | Test Loss: 2.5837 | Test Acc. 43.2432%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 5/200 Ended | E Time: 3.351s | ~Time Left: 653.388s |  Train Loss: 0.8859 | Train Acc. 54.8495% | Test Loss: 0.7063 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 6/200 Ended | E Time: 3.351s | ~Time Left: 650.161s |  Train Loss: 0.9041 | Train Acc. 58.1940% | Test Loss: 1.3545 | Test Acc. 35.1351%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 7/200 Ended | E Time: 3.350s | ~Time Left: 646.612s |  Train Loss: 0.9723 | Train Acc. 47.8261% | Test Loss: 1.0073 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 8/200 Ended | E Time: 3.346s | ~Time Left: 642.342s |  Train Loss: 0.8438 | Train Acc. 58.8629% | Test Loss: 0.7992 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 9/200 Ended | E Time: 3.757s | ~Time Left: 717.534s |  Train Loss: 0.9039 | Train Acc. 56.1873% | Test Loss: 0.9166 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 10/200 Ended | E Time: 3.353s | ~Time Left: 637.142s |  Train Loss: 0.8707 | Train Acc. 58.5284% | Test Loss: 0.7837 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 11/200 Ended | E Time: 3.395s | ~Time Left: 641.568s |  Train Loss: 0.8320 | Train Acc. 60.5351% | Test Loss: 0.5818 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 12/200 Ended | E Time: 3.325s | ~Time Left: 625.071s |  Train Loss: 0.9217 | Train Acc. 54.5150% | Test Loss: 0.7320 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 13/200 Ended | E Time: 3.382s | ~Time Left: 632.476s |  Train Loss: 0.8788 | Train Acc. 55.8528% | Test Loss: 1.0539 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 14/200 Ended | E Time: 3.353s | ~Time Left: 623.664s |  Train Loss: 0.8276 | Train Acc. 61.8729% | Test Loss: 0.6685 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 15/200 Ended | E Time: 3.318s | ~Time Left: 613.772s |  Train Loss: 0.7933 | Train Acc. 58.1940% | Test Loss: 1.2025 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 16/200 Ended | E Time: 3.362s | ~Time Left: 618.616s |  Train Loss: 0.8286 | Train Acc. 57.8595% | Test Loss: 0.8180 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 17/200 Ended | E Time: 3.307s | ~Time Left: 605.224s |  Train Loss: 0.8413 | Train Acc. 59.1973% | Test Loss: 0.7520 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 18/200 Ended | E Time: 3.328s | ~Time Left: 605.775s |  Train Loss: 0.8111 | Train Acc. 61.5385% | Test Loss: 0.6845 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 19/200 Ended | E Time: 3.383s | ~Time Left: 612.362s |  Train Loss: 0.7778 | Train Acc. 64.8829% | Test Loss: 0.7986 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 20/200 Ended | E Time: 3.415s | ~Time Left: 614.731s |  Train Loss: 0.7579 | Train Acc. 64.2140% | Test Loss: 0.6728 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 21/200 Ended | E Time: 3.364s | ~Time Left: 602.116s |  Train Loss: 0.7929 | Train Acc. 63.5452% | Test Loss: 0.8492 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 22/200 Ended | E Time: 3.344s | ~Time Left: 595.278s |  Train Loss: 0.7364 | Train Acc. 65.5518% | Test Loss: 1.0943 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 23/200 Ended | E Time: 3.370s | ~Time Left: 596.484s |  Train Loss: 0.7618 | Train Acc. 61.5385% | Test Loss: 0.5329 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 24/200 Ended | E Time: 3.310s | ~Time Left: 582.643s |  Train Loss: 0.8157 | Train Acc. 61.8729% | Test Loss: 0.8672 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 25/200 Ended | E Time: 3.421s | ~Time Left: 598.610s |  Train Loss: 0.7472 | Train Acc. 67.8930% | Test Loss: 0.5563 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 26/200 Ended | E Time: 3.422s | ~Time Left: 595.355s |  Train Loss: 0.6889 | Train Acc. 65.8863% | Test Loss: 0.7111 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 27/200 Ended | E Time: 3.348s | ~Time Left: 579.173s |  Train Loss: 0.7205 | Train Acc. 65.2174% | Test Loss: 0.6057 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 28/200 Ended | E Time: 3.387s | ~Time Left: 582.614s |  Train Loss: 0.8412 | Train Acc. 62.8763% | Test Loss: 1.5956 | Test Acc. 43.2432%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 29/200 Ended | E Time: 3.321s | ~Time Left: 567.936s |  Train Loss: 0.8273 | Train Acc. 64.8829% | Test Loss: 1.0810 | Test Acc. 45.9459%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 30/200 Ended | E Time: 3.366s | ~Time Left: 572.281s |  Train Loss: 0.7599 | Train Acc. 66.5552% | Test Loss: 0.9876 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 31/200 Ended | E Time: 3.342s | ~Time Left: 564.787s |  Train Loss: 0.7669 | Train Acc. 64.5485% | Test Loss: 0.6121 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 32/200 Ended | E Time: 3.335s | ~Time Left: 560.240s |  Train Loss: 0.7361 | Train Acc. 66.8896% | Test Loss: 0.5359 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 33/200 Ended | E Time: 3.358s | ~Time Left: 560.711s |  Train Loss: 0.6915 | Train Acc. 65.5518% | Test Loss: 0.5478 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 34/200 Ended | E Time: 3.362s | ~Time Left: 558.175s |  Train Loss: 0.6377 | Train Acc. 70.9030% | Test Loss: 0.5858 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 35/200 Ended | E Time: 3.521s | ~Time Left: 581.026s |  Train Loss: 0.7377 | Train Acc. 66.8896% | Test Loss: 0.5209 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 36/200 Ended | E Time: 3.765s | ~Time Left: 617.495s |  Train Loss: 0.7394 | Train Acc. 64.8829% | Test Loss: 0.7543 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 37/200 Ended | E Time: 3.340s | ~Time Left: 544.362s |  Train Loss: 0.6737 | Train Acc. 68.5619% | Test Loss: 0.5934 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 38/200 Ended | E Time: 3.315s | ~Time Left: 537.055s |  Train Loss: 0.6837 | Train Acc. 68.5619% | Test Loss: 0.5431 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 39/200 Ended | E Time: 3.323s | ~Time Left: 535.006s |  Train Loss: 0.7211 | Train Acc. 67.8930% | Test Loss: 0.4329 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 40/200 Ended | E Time: 3.329s | ~Time Left: 532.652s |  Train Loss: 0.7188 | Train Acc. 70.2341% | Test Loss: 0.6620 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 41/200 Ended | E Time: 3.372s | ~Time Left: 536.163s |  Train Loss: 0.7079 | Train Acc. 69.8997% | Test Loss: 0.6127 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 42/200 Ended | E Time: 3.341s | ~Time Left: 527.803s |  Train Loss: 0.7736 | Train Acc. 64.8829% | Test Loss: 1.0783 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 43/200 Ended | E Time: 3.360s | ~Time Left: 527.546s |  Train Loss: 0.7095 | Train Acc. 66.8896% | Test Loss: 0.8563 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 44/200 Ended | E Time: 3.342s | ~Time Left: 521.397s |  Train Loss: 0.7310 | Train Acc. 67.2241% | Test Loss: 1.2051 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 45/200 Ended | E Time: 3.337s | ~Time Left: 517.205s |  Train Loss: 0.6574 | Train Acc. 68.2274% | Test Loss: 0.6240 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 46/200 Ended | E Time: 3.364s | ~Time Left: 518.045s |  Train Loss: 0.6723 | Train Acc. 73.9130% | Test Loss: 0.3923 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 47/200 Ended | E Time: 3.333s | ~Time Left: 509.969s |  Train Loss: 0.6337 | Train Acc. 74.5819% | Test Loss: 0.4103 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 48/200 Ended | E Time: 3.317s | ~Time Left: 504.110s |  Train Loss: 0.6770 | Train Acc. 68.5619% | Test Loss: 0.4748 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 49/200 Ended | E Time: 3.302s | ~Time Left: 498.638s |  Train Loss: 0.7147 | Train Acc. 68.5619% | Test Loss: 0.6366 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 50/200 Ended | E Time: 3.355s | ~Time Left: 503.312s |  Train Loss: 0.6863 | Train Acc. 66.2207% | Test Loss: 0.6302 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 51/200 Ended | E Time: 3.679s | ~Time Left: 548.122s |  Train Loss: 0.6999 | Train Acc. 66.2207% | Test Loss: 0.6049 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 52/200 Ended | E Time: 3.356s | ~Time Left: 496.739s |  Train Loss: 0.6764 | Train Acc. 69.8997% | Test Loss: 0.5258 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 53/200 Ended | E Time: 3.371s | ~Time Left: 495.594s |  Train Loss: 0.6684 | Train Acc. 70.5686% | Test Loss: 0.6057 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 54/200 Ended | E Time: 3.375s | ~Time Left: 492.696s |  Train Loss: 0.6279 | Train Acc. 72.5752% | Test Loss: 0.5287 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 55/200 Ended | E Time: 3.348s | ~Time Left: 485.449s |  Train Loss: 0.6474 | Train Acc. 73.9130% | Test Loss: 0.4563 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 56/200 Ended | E Time: 3.366s | ~Time Left: 484.750s |  Train Loss: 0.6509 | Train Acc. 69.8997% | Test Loss: 1.1681 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 57/200 Ended | E Time: 3.316s | ~Time Left: 474.118s |  Train Loss: 0.6102 | Train Acc. 73.5786% | Test Loss: 0.6320 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 58/200 Ended | E Time: 3.333s | ~Time Left: 473.259s |  Train Loss: 0.6728 | Train Acc. 68.8963% | Test Loss: 0.5177 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 59/200 Ended | E Time: 3.383s | ~Time Left: 476.986s |  Train Loss: 0.6771 | Train Acc. 72.2408% | Test Loss: 0.6492 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 60/200 Ended | E Time: 3.579s | ~Time Left: 501.004s |  Train Loss: 0.6776 | Train Acc. 69.5652% | Test Loss: 0.4694 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 61/200 Ended | E Time: 3.357s | ~Time Left: 466.613s |  Train Loss: 0.6777 | Train Acc. 68.5619% | Test Loss: 0.5414 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 62/200 Ended | E Time: 3.354s | ~Time Left: 462.888s |  Train Loss: 0.5868 | Train Acc. 73.9130% | Test Loss: 1.3716 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 63/200 Ended | E Time: 3.326s | ~Time Left: 455.678s |  Train Loss: 0.6729 | Train Acc. 71.2375% | Test Loss: 0.4958 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 64/200 Ended | E Time: 3.336s | ~Time Left: 453.705s |  Train Loss: 0.6340 | Train Acc. 71.9064% | Test Loss: 0.4965 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 65/200 Ended | E Time: 3.320s | ~Time Left: 448.175s |  Train Loss: 0.6538 | Train Acc. 72.5752% | Test Loss: 0.8585 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 66/200 Ended | E Time: 3.297s | ~Time Left: 441.864s |  Train Loss: 0.6143 | Train Acc. 72.2408% | Test Loss: 0.4957 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 67/200 Ended | E Time: 3.402s | ~Time Left: 452.481s |  Train Loss: 0.6066 | Train Acc. 69.8997% | Test Loss: 0.5714 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 68/200 Ended | E Time: 3.316s | ~Time Left: 437.724s |  Train Loss: 0.5752 | Train Acc. 75.5853% | Test Loss: 0.4396 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 69/200 Ended | E Time: 3.561s | ~Time Left: 466.500s |  Train Loss: 0.5912 | Train Acc. 73.2441% | Test Loss: 0.4677 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 70/200 Ended | E Time: 3.409s | ~Time Left: 443.108s |  Train Loss: 0.6062 | Train Acc. 72.9097% | Test Loss: 0.4342 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 71/200 Ended | E Time: 3.335s | ~Time Left: 430.156s |  Train Loss: 0.6606 | Train Acc. 70.5686% | Test Loss: 0.7785 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 72/200 Ended | E Time: 3.344s | ~Time Left: 428.041s |  Train Loss: 0.5758 | Train Acc. 73.9130% | Test Loss: 0.7094 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 73/200 Ended | E Time: 3.339s | ~Time Left: 424.027s |  Train Loss: 0.5505 | Train Acc. 76.2542% | Test Loss: 1.0827 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 74/200 Ended | E Time: 3.406s | ~Time Left: 429.159s |  Train Loss: 0.5971 | Train Acc. 75.2508% | Test Loss: 0.4747 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 75/200 Ended | E Time: 3.328s | ~Time Left: 416.054s |  Train Loss: 0.6808 | Train Acc. 73.2441% | Test Loss: 0.6844 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 76/200 Ended | E Time: 3.320s | ~Time Left: 411.671s |  Train Loss: 0.5633 | Train Acc. 75.5853% | Test Loss: 0.3134 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 77/200 Ended | E Time: 3.351s | ~Time Left: 412.142s |  Train Loss: 0.5421 | Train Acc. 75.9197% | Test Loss: 0.3714 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 78/200 Ended | E Time: 3.720s | ~Time Left: 453.856s |  Train Loss: 0.6166 | Train Acc. 74.2475% | Test Loss: 0.5081 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 79/200 Ended | E Time: 3.418s | ~Time Left: 413.615s |  Train Loss: 0.5474 | Train Acc. 76.2542% | Test Loss: 0.5629 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 80/200 Ended | E Time: 3.330s | ~Time Left: 399.627s |  Train Loss: 0.5213 | Train Acc. 76.2542% | Test Loss: 0.6156 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 81/200 Ended | E Time: 3.358s | ~Time Left: 399.598s |  Train Loss: 0.6033 | Train Acc. 71.5719% | Test Loss: 0.5192 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 82/200 Ended | E Time: 3.411s | ~Time Left: 402.532s |  Train Loss: 0.4937 | Train Acc. 77.2575% | Test Loss: 0.3714 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 83/200 Ended | E Time: 3.403s | ~Time Left: 398.114s |  Train Loss: 0.5485 | Train Acc. 75.9197% | Test Loss: 0.7007 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 84/200 Ended | E Time: 3.313s | ~Time Left: 384.270s |  Train Loss: 0.5205 | Train Acc. 74.9164% | Test Loss: 0.7922 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 85/200 Ended | E Time: 3.388s | ~Time Left: 389.603s |  Train Loss: 0.5625 | Train Acc. 75.9197% | Test Loss: 0.9246 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 86/200 Ended | E Time: 3.321s | ~Time Left: 378.570s |  Train Loss: 0.5505 | Train Acc. 73.9130% | Test Loss: 0.6597 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 87/200 Ended | E Time: 3.439s | ~Time Left: 388.561s |  Train Loss: 0.6334 | Train Acc. 73.5786% | Test Loss: 0.7050 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 88/200 Ended | E Time: 3.335s | ~Time Left: 373.507s |  Train Loss: 0.5730 | Train Acc. 74.5819% | Test Loss: 0.5178 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 89/200 Ended | E Time: 3.326s | ~Time Left: 369.237s |  Train Loss: 0.5312 | Train Acc. 79.2642% | Test Loss: 0.5147 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 90/200 Ended | E Time: 3.350s | ~Time Left: 368.541s |  Train Loss: 0.5800 | Train Acc. 73.2441% | Test Loss: 0.3322 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 91/200 Ended | E Time: 3.387s | ~Time Left: 369.228s |  Train Loss: 0.5967 | Train Acc. 74.9164% | Test Loss: 0.4278 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 92/200 Ended | E Time: 3.369s | ~Time Left: 363.860s |  Train Loss: 0.5354 | Train Acc. 78.2609% | Test Loss: 0.5274 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 93/200 Ended | E Time: 3.409s | ~Time Left: 364.790s |  Train Loss: 0.5659 | Train Acc. 75.2508% | Test Loss: 0.4927 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 94/200 Ended | E Time: 3.420s | ~Time Left: 362.532s |  Train Loss: 0.5928 | Train Acc. 72.5752% | Test Loss: 0.3738 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 95/200 Ended | E Time: 3.439s | ~Time Left: 361.119s |  Train Loss: 0.6175 | Train Acc. 73.2441% | Test Loss: 0.9442 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 96/200 Ended | E Time: 3.537s | ~Time Left: 367.822s |  Train Loss: 0.5345 | Train Acc. 77.2575% | Test Loss: 0.3981 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 97/200 Ended | E Time: 3.378s | ~Time Left: 347.919s |  Train Loss: 0.5146 | Train Acc. 76.9231% | Test Loss: 0.3257 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 98/200 Ended | E Time: 3.434s | ~Time Left: 350.304s |  Train Loss: 0.5402 | Train Acc. 73.9130% | Test Loss: 0.3809 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 99/200 Ended | E Time: 3.362s | ~Time Left: 339.554s |  Train Loss: 0.5574 | Train Acc. 77.2575% | Test Loss: 0.3757 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 100/200 Ended | E Time: 3.404s | ~Time Left: 340.376s |  Train Loss: 0.6304 | Train Acc. 73.5786% | Test Loss: 0.4696 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 101/200 Ended | E Time: 3.411s | ~Time Left: 337.709s |  Train Loss: 0.5718 | Train Acc. 73.5786% | Test Loss: 0.5196 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 102/200 Ended | E Time: 3.374s | ~Time Left: 330.634s |  Train Loss: 0.5072 | Train Acc. 76.2542% | Test Loss: 0.4229 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 103/200 Ended | E Time: 3.368s | ~Time Left: 326.696s |  Train Loss: 0.5299 | Train Acc. 76.5886% | Test Loss: 0.3687 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 104/200 Ended | E Time: 3.381s | ~Time Left: 324.603s |  Train Loss: 0.5387 | Train Acc. 76.2542% | Test Loss: 0.3585 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 105/200 Ended | E Time: 3.362s | ~Time Left: 319.423s |  Train Loss: 0.5298 | Train Acc. 78.9298% | Test Loss: 0.2906 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 106/200 Ended | E Time: 3.392s | ~Time Left: 318.874s |  Train Loss: 0.4486 | Train Acc. 79.2642% | Test Loss: 0.3514 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 107/200 Ended | E Time: 3.386s | ~Time Left: 314.860s |  Train Loss: 0.4721 | Train Acc. 80.2676% | Test Loss: 0.3262 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 108/200 Ended | E Time: 3.731s | ~Time Left: 343.241s |  Train Loss: 0.5270 | Train Acc. 75.5853% | Test Loss: 0.3221 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 109/200 Ended | E Time: 3.352s | ~Time Left: 305.019s |  Train Loss: 0.5008 | Train Acc. 79.5987% | Test Loss: 0.7848 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 110/200 Ended | E Time: 3.381s | ~Time Left: 304.283s |  Train Loss: 0.5712 | Train Acc. 75.2508% | Test Loss: 1.1657 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 111/200 Ended | E Time: 3.350s | ~Time Left: 298.152s |  Train Loss: 0.5687 | Train Acc. 75.2508% | Test Loss: 0.9447 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 112/200 Ended | E Time: 3.339s | ~Time Left: 293.822s |  Train Loss: 0.5896 | Train Acc. 74.5819% | Test Loss: 0.5470 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 113/200 Ended | E Time: 3.361s | ~Time Left: 292.431s |  Train Loss: 0.5702 | Train Acc. 76.5886% | Test Loss: 0.5506 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 114/200 Ended | E Time: 3.374s | ~Time Left: 290.126s |  Train Loss: 0.5976 | Train Acc. 75.2508% | Test Loss: 0.5349 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 115/200 Ended | E Time: 3.341s | ~Time Left: 283.950s |  Train Loss: 0.4964 | Train Acc. 78.2609% | Test Loss: 0.9863 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 116/200 Ended | E Time: 3.979s | ~Time Left: 334.215s |  Train Loss: 0.5585 | Train Acc. 78.5953% | Test Loss: 0.4122 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 117/200 Ended | E Time: 3.456s | ~Time Left: 286.873s |  Train Loss: 0.5355 | Train Acc. 75.2508% | Test Loss: 0.5759 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 118/200 Ended | E Time: 3.397s | ~Time Left: 278.591s |  Train Loss: 0.4283 | Train Acc. 83.2776% | Test Loss: 0.4040 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 119/200 Ended | E Time: 3.405s | ~Time Left: 275.834s |  Train Loss: 0.5181 | Train Acc. 79.5987% | Test Loss: 0.9224 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 120/200 Ended | E Time: 3.400s | ~Time Left: 271.965s |  Train Loss: 0.5196 | Train Acc. 78.5953% | Test Loss: 0.5561 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 121/200 Ended | E Time: 3.356s | ~Time Left: 265.138s |  Train Loss: 0.4917 | Train Acc. 81.6054% | Test Loss: 0.4411 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 122/200 Ended | E Time: 3.345s | ~Time Left: 260.936s |  Train Loss: 0.4597 | Train Acc. 81.6054% | Test Loss: 0.3233 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 123/200 Ended | E Time: 3.340s | ~Time Left: 257.207s |  Train Loss: 0.5155 | Train Acc. 79.2642% | Test Loss: 0.3766 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 124/200 Ended | E Time: 3.689s | ~Time Left: 280.361s |  Train Loss: 0.4923 | Train Acc. 79.2642% | Test Loss: 0.2402 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 125/200 Ended | E Time: 3.331s | ~Time Left: 249.839s |  Train Loss: 0.4888 | Train Acc. 79.2642% | Test Loss: 0.2856 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 126/200 Ended | E Time: 3.401s | ~Time Left: 251.657s |  Train Loss: 0.5643 | Train Acc. 78.5953% | Test Loss: 0.3673 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 127/200 Ended | E Time: 3.375s | ~Time Left: 246.368s |  Train Loss: 0.4945 | Train Acc. 78.2609% | Test Loss: 0.7747 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 128/200 Ended | E Time: 3.568s | ~Time Left: 256.897s |  Train Loss: 0.6242 | Train Acc. 74.2475% | Test Loss: 0.5408 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 129/200 Ended | E Time: 3.335s | ~Time Left: 236.764s |  Train Loss: 0.6122 | Train Acc. 73.2441% | Test Loss: 0.2499 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 130/200 Ended | E Time: 3.376s | ~Time Left: 236.292s |  Train Loss: 0.5234 | Train Acc. 78.2609% | Test Loss: 0.3210 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 131/200 Ended | E Time: 3.357s | ~Time Left: 231.634s |  Train Loss: 0.5596 | Train Acc. 76.2542% | Test Loss: 0.3767 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 132/200 Ended | E Time: 3.356s | ~Time Left: 228.233s |  Train Loss: 0.5298 | Train Acc. 75.5853% | Test Loss: 0.3374 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 133/200 Ended | E Time: 3.349s | ~Time Left: 224.379s |  Train Loss: 0.4667 | Train Acc. 84.2809% | Test Loss: 0.3413 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 134/200 Ended | E Time: 3.708s | ~Time Left: 244.701s |  Train Loss: 0.5009 | Train Acc. 79.5987% | Test Loss: 0.3783 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 135/200 Ended | E Time: 3.336s | ~Time Left: 216.811s |  Train Loss: 0.4700 | Train Acc. 78.2609% | Test Loss: 0.6907 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 136/200 Ended | E Time: 3.308s | ~Time Left: 211.739s |  Train Loss: 0.5150 | Train Acc. 78.5953% | Test Loss: 0.3134 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 137/200 Ended | E Time: 3.335s | ~Time Left: 210.129s |  Train Loss: 0.4808 | Train Acc. 79.2642% | Test Loss: 0.3993 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 138/200 Ended | E Time: 3.318s | ~Time Left: 205.714s |  Train Loss: 0.4761 | Train Acc. 81.2709% | Test Loss: 0.4880 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 139/200 Ended | E Time: 3.387s | ~Time Left: 206.606s |  Train Loss: 0.4973 | Train Acc. 80.6020% | Test Loss: 0.3984 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 140/200 Ended | E Time: 3.374s | ~Time Left: 202.438s |  Train Loss: 0.5006 | Train Acc. 80.2676% | Test Loss: 0.9538 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 141/200 Ended | E Time: 3.835s | ~Time Left: 226.285s |  Train Loss: 0.4582 | Train Acc. 78.5953% | Test Loss: 0.7210 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 142/200 Ended | E Time: 3.478s | ~Time Left: 201.751s |  Train Loss: 0.5054 | Train Acc. 80.9365% | Test Loss: 0.3768 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 143/200 Ended | E Time: 3.360s | ~Time Left: 191.527s |  Train Loss: 0.4736 | Train Acc. 80.2676% | Test Loss: 0.4414 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 144/200 Ended | E Time: 3.308s | ~Time Left: 185.269s |  Train Loss: 0.4662 | Train Acc. 78.9298% | Test Loss: 0.6664 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 145/200 Ended | E Time: 3.342s | ~Time Left: 183.807s |  Train Loss: 0.4149 | Train Acc. 83.9465% | Test Loss: 0.3539 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 146/200 Ended | E Time: 3.325s | ~Time Left: 179.551s |  Train Loss: 0.4279 | Train Acc. 76.9231% | Test Loss: 0.9798 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 147/200 Ended | E Time: 3.360s | ~Time Left: 178.101s |  Train Loss: 0.5366 | Train Acc. 78.2609% | Test Loss: 0.5122 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 148/200 Ended | E Time: 3.354s | ~Time Left: 174.431s |  Train Loss: 0.4598 | Train Acc. 78.9298% | Test Loss: 0.5400 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 149/200 Ended | E Time: 3.731s | ~Time Left: 190.264s |  Train Loss: 0.4143 | Train Acc. 82.2742% | Test Loss: 0.2962 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 150/200 Ended | E Time: 3.300s | ~Time Left: 165.000s |  Train Loss: 0.5417 | Train Acc. 77.5920% | Test Loss: 0.5812 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 151/200 Ended | E Time: 3.426s | ~Time Left: 167.881s |  Train Loss: 0.5144 | Train Acc. 80.2676% | Test Loss: 0.9288 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 152/200 Ended | E Time: 3.478s | ~Time Left: 166.967s |  Train Loss: 0.4362 | Train Acc. 80.6020% | Test Loss: 0.3038 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 153/200 Ended | E Time: 3.325s | ~Time Left: 156.275s |  Train Loss: 0.4056 | Train Acc. 84.6154% | Test Loss: 0.7568 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 154/200 Ended | E Time: 3.342s | ~Time Left: 153.729s |  Train Loss: 0.4257 | Train Acc. 80.2676% | Test Loss: 0.3341 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 155/200 Ended | E Time: 3.347s | ~Time Left: 150.618s |  Train Loss: 0.4304 | Train Acc. 83.9465% | Test Loss: 0.4183 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 156/200 Ended | E Time: 3.348s | ~Time Left: 147.304s |  Train Loss: 0.5269 | Train Acc. 79.2642% | Test Loss: 0.2661 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 157/200 Ended | E Time: 3.474s | ~Time Left: 149.392s |  Train Loss: 0.4569 | Train Acc. 80.6020% | Test Loss: 0.4750 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 158/200 Ended | E Time: 3.800s | ~Time Left: 159.599s |  Train Loss: 0.5402 | Train Acc. 75.9197% | Test Loss: 0.4659 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 159/200 Ended | E Time: 3.362s | ~Time Left: 137.861s |  Train Loss: 0.4884 | Train Acc. 78.9298% | Test Loss: 0.8732 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 160/200 Ended | E Time: 3.356s | ~Time Left: 134.230s |  Train Loss: 0.4778 | Train Acc. 80.2676% | Test Loss: 1.4182 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 161/200 Ended | E Time: 3.335s | ~Time Left: 130.050s |  Train Loss: 0.5093 | Train Acc. 78.5953% | Test Loss: 0.9681 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 162/200 Ended | E Time: 3.383s | ~Time Left: 128.566s |  Train Loss: 0.4779 | Train Acc. 82.2742% | Test Loss: 0.4145 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 163/200 Ended | E Time: 3.321s | ~Time Left: 122.885s |  Train Loss: 0.4655 | Train Acc. 79.9331% | Test Loss: 0.6101 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 164/200 Ended | E Time: 3.727s | ~Time Left: 134.183s |  Train Loss: 0.4307 | Train Acc. 82.2742% | Test Loss: 0.8001 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 165/200 Ended | E Time: 3.728s | ~Time Left: 130.477s |  Train Loss: 0.5092 | Train Acc. 79.2642% | Test Loss: 0.3921 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 166/200 Ended | E Time: 3.384s | ~Time Left: 115.059s |  Train Loss: 0.5331 | Train Acc. 75.5853% | Test Loss: 0.3729 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 167/200 Ended | E Time: 3.387s | ~Time Left: 111.783s |  Train Loss: 0.4783 | Train Acc. 80.6020% | Test Loss: 0.4439 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 168/200 Ended | E Time: 3.353s | ~Time Left: 107.296s |  Train Loss: 0.4424 | Train Acc. 82.9431% | Test Loss: 0.5123 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 169/200 Ended | E Time: 3.321s | ~Time Left: 102.944s |  Train Loss: 0.4082 | Train Acc. 81.6054% | Test Loss: 0.3122 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 170/200 Ended | E Time: 3.409s | ~Time Left: 102.272s |  Train Loss: 0.4374 | Train Acc. 80.6020% | Test Loss: 0.3611 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 171/200 Ended | E Time: 3.369s | ~Time Left: 97.696s |  Train Loss: 0.4272 | Train Acc. 83.6120% | Test Loss: 0.3895 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 172/200 Ended | E Time: 3.617s | ~Time Left: 101.275s |  Train Loss: 0.4790 | Train Acc. 81.9398% | Test Loss: 0.4022 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 173/200 Ended | E Time: 3.370s | ~Time Left: 90.982s |  Train Loss: 0.5214 | Train Acc. 81.2709% | Test Loss: 0.2454 | Test Acc. 91.8919%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 174/200 Ended | E Time: 3.337s | ~Time Left: 86.774s |  Train Loss: 0.4283 | Train Acc. 79.9331% | Test Loss: 0.6027 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 175/200 Ended | E Time: 3.361s | ~Time Left: 84.022s |  Train Loss: 0.4353 | Train Acc. 80.2676% | Test Loss: 0.5735 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 176/200 Ended | E Time: 3.383s | ~Time Left: 81.187s |  Train Loss: 0.4571 | Train Acc. 83.6120% | Test Loss: 0.2431 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 177/200 Ended | E Time: 3.349s | ~Time Left: 77.038s |  Train Loss: 0.4243 | Train Acc. 83.2776% | Test Loss: 0.2107 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 178/200 Ended | E Time: 3.341s | ~Time Left: 73.502s |  Train Loss: 0.4615 | Train Acc. 80.9365% | Test Loss: 0.4798 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 179/200 Ended | E Time: 3.395s | ~Time Left: 71.291s |  Train Loss: 0.4392 | Train Acc. 82.9431% | Test Loss: 0.4933 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 180/200 Ended | E Time: 3.742s | ~Time Left: 74.847s |  Train Loss: 0.4008 | Train Acc. 83.9465% | Test Loss: 0.4665 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 181/200 Ended | E Time: 3.322s | ~Time Left: 63.112s |  Train Loss: 0.4319 | Train Acc. 81.6054% | Test Loss: 0.4403 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 182/200 Ended | E Time: 3.356s | ~Time Left: 60.407s |  Train Loss: 0.4270 | Train Acc. 81.6054% | Test Loss: 0.3368 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 183/200 Ended | E Time: 3.341s | ~Time Left: 56.797s |  Train Loss: 0.4986 | Train Acc. 79.2642% | Test Loss: 0.8112 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 184/200 Ended | E Time: 3.366s | ~Time Left: 53.852s |  Train Loss: 0.4588 | Train Acc. 82.6087% | Test Loss: 0.3087 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 185/200 Ended | E Time: 3.482s | ~Time Left: 52.228s |  Train Loss: 0.4257 | Train Acc. 84.9498% | Test Loss: 0.3864 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 186/200 Ended | E Time: 3.396s | ~Time Left: 47.543s |  Train Loss: 0.4255 | Train Acc. 83.9465% | Test Loss: 0.3355 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 187/200 Ended | E Time: 3.688s | ~Time Left: 47.942s |  Train Loss: 0.4513 | Train Acc. 80.9365% | Test Loss: 0.2914 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 188/200 Ended | E Time: 3.348s | ~Time Left: 40.177s |  Train Loss: 0.5924 | Train Acc. 77.2575% | Test Loss: 0.4934 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 189/200 Ended | E Time: 3.349s | ~Time Left: 36.844s |  Train Loss: 0.4455 | Train Acc. 81.9398% | Test Loss: 0.3946 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 190/200 Ended | E Time: 3.388s | ~Time Left: 33.883s |  Train Loss: 0.4237 | Train Acc. 81.9398% | Test Loss: 0.4496 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 191/200 Ended | E Time: 3.331s | ~Time Left: 29.982s |  Train Loss: 0.4750 | Train Acc. 81.6054% | Test Loss: 0.4171 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 192/200 Ended | E Time: 3.398s | ~Time Left: 27.188s |  Train Loss: 0.4182 | Train Acc. 82.2742% | Test Loss: 0.3278 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 193/200 Ended | E Time: 3.596s | ~Time Left: 25.169s |  Train Loss: 0.4106 | Train Acc. 82.6087% | Test Loss: 0.3557 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 194/200 Ended | E Time: 3.454s | ~Time Left: 20.722s |  Train Loss: 0.4120 | Train Acc. 80.9365% | Test Loss: 1.6227 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 195/200 Ended | E Time: 3.406s | ~Time Left: 17.029s |  Train Loss: 0.4556 | Train Acc. 83.6120% | Test Loss: 0.2702 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 196/200 Ended | E Time: 3.337s | ~Time Left: 13.347s |  Train Loss: 0.3123 | Train Acc. 87.9599% | Test Loss: 0.3233 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 197/200 Ended | E Time: 3.374s | ~Time Left: 10.122s |  Train Loss: 0.3651 | Train Acc. 82.9431% | Test Loss: 0.3177 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 198/200 Ended | E Time: 3.761s | ~Time Left: 7.522s |  Train Loss: 0.3263 | Train Acc. 86.6221% | Test Loss: 0.2918 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 199/200 Ended | E Time: 3.376s | ~Time Left: 3.376s |  Train Loss: 0.3954 | Train Acc. 82.6087% | Test Loss: 0.6860 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 2/3 | E 200/200 Ended | E Time: 3.425s | ~Time Left: 0.000s |  Train Loss: 0.4025 | Train Acc. 82.9431% | Test Loss: 0.9108 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 1/200 Ended | E Time: 3.387s | ~Time Left: 673.926s |  Train Loss: 1.1837 | Train Acc. 42.8094% | Test Loss: 1.0621 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 2/200 Ended | E Time: 3.318s | ~Time Left: 656.905s |  Train Loss: 1.0781 | Train Acc. 48.1605% | Test Loss: 1.7320 | Test Acc. 35.1351%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 3/200 Ended | E Time: 3.334s | ~Time Left: 656.874s |  Train Loss: 1.0587 | Train Acc. 52.5084% | Test Loss: 1.9287 | Test Acc. 27.0270%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 4/200 Ended | E Time: 3.300s | ~Time Left: 646.884s |  Train Loss: 1.0228 | Train Acc. 52.8428% | Test Loss: 1.0576 | Test Acc. 45.9459%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 5/200 Ended | E Time: 3.282s | ~Time Left: 639.947s |  Train Loss: 0.9293 | Train Acc. 55.1839% | Test Loss: 0.9740 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 6/200 Ended | E Time: 3.351s | ~Time Left: 650.017s |  Train Loss: 0.9278 | Train Acc. 52.5084% | Test Loss: 1.3260 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 7/200 Ended | E Time: 3.338s | ~Time Left: 644.224s |  Train Loss: 0.9432 | Train Acc. 53.5117% | Test Loss: 0.9017 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 8/200 Ended | E Time: 3.347s | ~Time Left: 642.544s |  Train Loss: 0.9138 | Train Acc. 62.2074% | Test Loss: 0.6457 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 9/200 Ended | E Time: 3.303s | ~Time Left: 630.930s |  Train Loss: 0.9429 | Train Acc. 56.8562% | Test Loss: 0.8539 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 10/200 Ended | E Time: 3.759s | ~Time Left: 714.240s |  Train Loss: 0.8974 | Train Acc. 56.5217% | Test Loss: 0.6056 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 11/200 Ended | E Time: 3.333s | ~Time Left: 630.026s |  Train Loss: 0.8224 | Train Acc. 60.8696% | Test Loss: 0.8891 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 12/200 Ended | E Time: 3.305s | ~Time Left: 621.302s |  Train Loss: 0.7917 | Train Acc. 61.5385% | Test Loss: 0.6202 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 13/200 Ended | E Time: 3.327s | ~Time Left: 622.213s |  Train Loss: 0.8794 | Train Acc. 58.8629% | Test Loss: 0.9297 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 14/200 Ended | E Time: 3.305s | ~Time Left: 614.816s |  Train Loss: 0.8790 | Train Acc. 60.2007% | Test Loss: 0.6360 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 15/200 Ended | E Time: 3.374s | ~Time Left: 624.241s |  Train Loss: 0.9177 | Train Acc. 57.1906% | Test Loss: 0.7861 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 16/200 Ended | E Time: 3.327s | ~Time Left: 612.079s |  Train Loss: 0.8739 | Train Acc. 56.5217% | Test Loss: 1.0600 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 17/200 Ended | E Time: 3.358s | ~Time Left: 614.599s |  Train Loss: 0.8511 | Train Acc. 56.5217% | Test Loss: 0.7489 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 18/200 Ended | E Time: 3.323s | ~Time Left: 604.842s |  Train Loss: 0.8155 | Train Acc. 63.8796% | Test Loss: 0.9691 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 19/200 Ended | E Time: 3.296s | ~Time Left: 596.564s |  Train Loss: 0.7987 | Train Acc. 63.5452% | Test Loss: 0.8060 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 20/200 Ended | E Time: 3.350s | ~Time Left: 602.966s |  Train Loss: 0.7705 | Train Acc. 61.8729% | Test Loss: 0.8500 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 21/200 Ended | E Time: 3.980s | ~Time Left: 712.401s |  Train Loss: 0.7796 | Train Acc. 63.5452% | Test Loss: 0.7041 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 22/200 Ended | E Time: 3.359s | ~Time Left: 597.872s |  Train Loss: 0.8239 | Train Acc. 64.2140% | Test Loss: 0.5740 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 23/200 Ended | E Time: 3.322s | ~Time Left: 587.988s |  Train Loss: 0.7757 | Train Acc. 66.5552% | Test Loss: 0.6224 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 24/200 Ended | E Time: 3.347s | ~Time Left: 589.072s |  Train Loss: 0.7924 | Train Acc. 62.5418% | Test Loss: 0.7508 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 25/200 Ended | E Time: 3.343s | ~Time Left: 584.969s |  Train Loss: 0.7629 | Train Acc. 65.2174% | Test Loss: 0.5698 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 26/200 Ended | E Time: 3.356s | ~Time Left: 583.872s |  Train Loss: 0.6890 | Train Acc. 70.5686% | Test Loss: 0.5405 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 27/200 Ended | E Time: 3.332s | ~Time Left: 576.363s |  Train Loss: 0.6552 | Train Acc. 70.9030% | Test Loss: 0.6598 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 28/200 Ended | E Time: 3.299s | ~Time Left: 567.364s |  Train Loss: 0.7096 | Train Acc. 68.8963% | Test Loss: 0.6314 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 29/200 Ended | E Time: 3.315s | ~Time Left: 566.916s |  Train Loss: 0.7401 | Train Acc. 66.8896% | Test Loss: 1.2020 | Test Acc. 35.1351%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 30/200 Ended | E Time: 3.333s | ~Time Left: 566.533s |  Train Loss: 0.7999 | Train Acc. 62.5418% | Test Loss: 1.0967 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 31/200 Ended | E Time: 3.356s | ~Time Left: 567.228s |  Train Loss: 0.7163 | Train Acc. 65.5518% | Test Loss: 0.5148 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 32/200 Ended | E Time: 3.704s | ~Time Left: 622.289s |  Train Loss: 0.7382 | Train Acc. 68.5619% | Test Loss: 0.4594 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 33/200 Ended | E Time: 3.310s | ~Time Left: 552.738s |  Train Loss: 0.7086 | Train Acc. 67.8930% | Test Loss: 0.5823 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 34/200 Ended | E Time: 3.419s | ~Time Left: 567.502s |  Train Loss: 0.6351 | Train Acc. 71.9064% | Test Loss: 0.5729 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 35/200 Ended | E Time: 3.335s | ~Time Left: 550.280s |  Train Loss: 0.7363 | Train Acc. 69.2308% | Test Loss: 0.5162 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 36/200 Ended | E Time: 3.345s | ~Time Left: 548.618s |  Train Loss: 0.7150 | Train Acc. 68.5619% | Test Loss: 1.1849 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 37/200 Ended | E Time: 3.322s | ~Time Left: 541.516s |  Train Loss: 0.7546 | Train Acc. 63.8796% | Test Loss: 0.7887 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 38/200 Ended | E Time: 3.304s | ~Time Left: 535.176s |  Train Loss: 0.7502 | Train Acc. 65.8863% | Test Loss: 0.6200 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 39/200 Ended | E Time: 3.294s | ~Time Left: 530.288s |  Train Loss: 0.7532 | Train Acc. 66.5552% | Test Loss: 0.4761 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 40/200 Ended | E Time: 3.435s | ~Time Left: 549.617s |  Train Loss: 0.7629 | Train Acc. 68.2274% | Test Loss: 0.5831 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 41/200 Ended | E Time: 3.294s | ~Time Left: 523.813s |  Train Loss: 0.6902 | Train Acc. 68.8963% | Test Loss: 0.5599 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 42/200 Ended | E Time: 3.794s | ~Time Left: 599.441s |  Train Loss: 0.6227 | Train Acc. 70.9030% | Test Loss: 0.5353 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 43/200 Ended | E Time: 3.341s | ~Time Left: 524.529s |  Train Loss: 0.6508 | Train Acc. 70.9030% | Test Loss: 0.5178 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 44/200 Ended | E Time: 3.341s | ~Time Left: 521.154s |  Train Loss: 0.7469 | Train Acc. 67.5585% | Test Loss: 1.1726 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 45/200 Ended | E Time: 3.321s | ~Time Left: 514.780s |  Train Loss: 0.6914 | Train Acc. 68.5619% | Test Loss: 1.5938 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 46/200 Ended | E Time: 3.354s | ~Time Left: 516.494s |  Train Loss: 0.7180 | Train Acc. 66.2207% | Test Loss: 0.4966 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 47/200 Ended | E Time: 3.346s | ~Time Left: 511.962s |  Train Loss: 0.7441 | Train Acc. 68.5619% | Test Loss: 0.5643 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 48/200 Ended | E Time: 3.327s | ~Time Left: 505.717s |  Train Loss: 0.6411 | Train Acc. 70.9030% | Test Loss: 0.5978 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 49/200 Ended | E Time: 3.330s | ~Time Left: 502.890s |  Train Loss: 0.6034 | Train Acc. 74.2475% | Test Loss: 0.8014 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 50/200 Ended | E Time: 3.341s | ~Time Left: 501.214s |  Train Loss: 0.6309 | Train Acc. 70.5686% | Test Loss: 0.4540 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 51/200 Ended | E Time: 3.334s | ~Time Left: 496.719s |  Train Loss: 0.6121 | Train Acc. 69.8997% | Test Loss: 0.4440 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 52/200 Ended | E Time: 3.617s | ~Time Left: 535.373s |  Train Loss: 0.5276 | Train Acc. 74.9164% | Test Loss: 1.8587 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 53/200 Ended | E Time: 3.345s | ~Time Left: 491.674s |  Train Loss: 0.6416 | Train Acc. 73.5786% | Test Loss: 0.6962 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 54/200 Ended | E Time: 3.318s | ~Time Left: 484.473s |  Train Loss: 0.6376 | Train Acc. 72.5752% | Test Loss: 1.4786 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 55/200 Ended | E Time: 3.332s | ~Time Left: 483.142s |  Train Loss: 0.7209 | Train Acc. 69.5652% | Test Loss: 1.0244 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 56/200 Ended | E Time: 3.356s | ~Time Left: 483.327s |  Train Loss: 0.6870 | Train Acc. 69.2308% | Test Loss: 0.4736 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 57/200 Ended | E Time: 3.355s | ~Time Left: 479.773s |  Train Loss: 0.6911 | Train Acc. 70.5686% | Test Loss: 0.8058 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 58/200 Ended | E Time: 3.344s | ~Time Left: 474.787s |  Train Loss: 0.6342 | Train Acc. 72.2408% | Test Loss: 0.5482 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 59/200 Ended | E Time: 3.363s | ~Time Left: 474.165s |  Train Loss: 0.6384 | Train Acc. 72.2408% | Test Loss: 0.6741 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 60/200 Ended | E Time: 3.417s | ~Time Left: 478.402s |  Train Loss: 0.5759 | Train Acc. 74.5819% | Test Loss: 0.3937 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 61/200 Ended | E Time: 3.401s | ~Time Left: 472.793s |  Train Loss: 0.5674 | Train Acc. 75.5853% | Test Loss: 0.9373 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 62/200 Ended | E Time: 3.353s | ~Time Left: 462.745s |  Train Loss: 0.6844 | Train Acc. 68.2274% | Test Loss: 0.7551 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 63/200 Ended | E Time: 3.399s | ~Time Left: 465.685s |  Train Loss: 0.6348 | Train Acc. 72.5752% | Test Loss: 1.0997 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 64/200 Ended | E Time: 3.417s | ~Time Left: 464.772s |  Train Loss: 0.6438 | Train Acc. 72.2408% | Test Loss: 0.9233 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 65/200 Ended | E Time: 3.390s | ~Time Left: 457.680s |  Train Loss: 0.6307 | Train Acc. 70.9030% | Test Loss: 0.7107 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 66/200 Ended | E Time: 3.398s | ~Time Left: 455.302s |  Train Loss: 0.6615 | Train Acc. 68.5619% | Test Loss: 0.7933 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 67/200 Ended | E Time: 3.339s | ~Time Left: 444.085s |  Train Loss: 0.6165 | Train Acc. 70.9030% | Test Loss: 0.5614 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 68/200 Ended | E Time: 3.377s | ~Time Left: 445.768s |  Train Loss: 0.6143 | Train Acc. 74.5819% | Test Loss: 0.6939 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 69/200 Ended | E Time: 3.357s | ~Time Left: 439.786s |  Train Loss: 0.6367 | Train Acc. 77.9264% | Test Loss: 0.5663 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 70/200 Ended | E Time: 3.569s | ~Time Left: 463.973s |  Train Loss: 0.6702 | Train Acc. 71.2375% | Test Loss: 0.6848 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 71/200 Ended | E Time: 3.405s | ~Time Left: 439.183s |  Train Loss: 0.7589 | Train Acc. 66.5552% | Test Loss: 0.4879 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 72/200 Ended | E Time: 3.347s | ~Time Left: 428.435s |  Train Loss: 0.6460 | Train Acc. 70.2341% | Test Loss: 0.6042 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 73/200 Ended | E Time: 3.446s | ~Time Left: 437.629s |  Train Loss: 0.5623 | Train Acc. 73.9130% | Test Loss: 0.4641 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 74/200 Ended | E Time: 3.351s | ~Time Left: 422.210s |  Train Loss: 0.5549 | Train Acc. 75.9197% | Test Loss: 0.5480 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 75/200 Ended | E Time: 3.415s | ~Time Left: 426.860s |  Train Loss: 0.5532 | Train Acc. 75.5853% | Test Loss: 1.3532 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 76/200 Ended | E Time: 3.384s | ~Time Left: 419.644s |  Train Loss: 0.5531 | Train Acc. 73.9130% | Test Loss: 0.3839 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 77/200 Ended | E Time: 3.357s | ~Time Left: 412.901s |  Train Loss: 0.4775 | Train Acc. 78.2609% | Test Loss: 0.3595 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 78/200 Ended | E Time: 3.321s | ~Time Left: 405.158s |  Train Loss: 0.4823 | Train Acc. 78.5953% | Test Loss: 0.2515 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 79/200 Ended | E Time: 3.538s | ~Time Left: 428.059s |  Train Loss: 0.5424 | Train Acc. 76.9231% | Test Loss: 0.4081 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 80/200 Ended | E Time: 3.354s | ~Time Left: 402.495s |  Train Loss: 0.5570 | Train Acc. 76.5886% | Test Loss: 0.3641 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 81/200 Ended | E Time: 3.343s | ~Time Left: 397.816s |  Train Loss: 0.5761 | Train Acc. 75.2508% | Test Loss: 1.5471 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 82/200 Ended | E Time: 3.317s | ~Time Left: 391.465s |  Train Loss: 0.5611 | Train Acc. 78.2609% | Test Loss: 0.6923 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 83/200 Ended | E Time: 3.332s | ~Time Left: 389.787s |  Train Loss: 0.6529 | Train Acc. 71.9064% | Test Loss: 0.4452 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 84/200 Ended | E Time: 3.531s | ~Time Left: 409.587s |  Train Loss: 0.5832 | Train Acc. 75.9197% | Test Loss: 0.3862 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 85/200 Ended | E Time: 3.392s | ~Time Left: 390.113s |  Train Loss: 0.4943 | Train Acc. 80.6020% | Test Loss: 0.6252 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 86/200 Ended | E Time: 3.349s | ~Time Left: 381.801s |  Train Loss: 0.6168 | Train Acc. 73.2441% | Test Loss: 0.4690 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 87/200 Ended | E Time: 3.702s | ~Time Left: 418.319s |  Train Loss: 0.6301 | Train Acc. 73.5786% | Test Loss: 0.3923 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 88/200 Ended | E Time: 3.335s | ~Time Left: 373.569s |  Train Loss: 0.5387 | Train Acc. 74.5819% | Test Loss: 0.4112 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 89/200 Ended | E Time: 3.349s | ~Time Left: 371.700s |  Train Loss: 0.5674 | Train Acc. 75.2508% | Test Loss: 0.5814 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 90/200 Ended | E Time: 3.467s | ~Time Left: 381.406s |  Train Loss: 0.5198 | Train Acc. 77.9264% | Test Loss: 0.4658 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 91/200 Ended | E Time: 3.361s | ~Time Left: 366.336s |  Train Loss: 0.4803 | Train Acc. 80.6020% | Test Loss: 0.4446 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 92/200 Ended | E Time: 3.380s | ~Time Left: 365.087s |  Train Loss: 0.6112 | Train Acc. 70.9030% | Test Loss: 0.6778 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 93/200 Ended | E Time: 3.399s | ~Time Left: 363.694s |  Train Loss: 0.5579 | Train Acc. 78.2609% | Test Loss: 0.4367 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 94/200 Ended | E Time: 3.331s | ~Time Left: 353.094s |  Train Loss: 0.5784 | Train Acc. 72.9097% | Test Loss: 0.3991 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 95/200 Ended | E Time: 3.611s | ~Time Left: 379.203s |  Train Loss: 0.5500 | Train Acc. 76.2542% | Test Loss: 0.7956 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 96/200 Ended | E Time: 3.338s | ~Time Left: 347.150s |  Train Loss: 0.5296 | Train Acc. 75.9197% | Test Loss: 0.4265 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 97/200 Ended | E Time: 3.344s | ~Time Left: 344.429s |  Train Loss: 0.5373 | Train Acc. 76.5886% | Test Loss: 0.7866 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 98/200 Ended | E Time: 3.334s | ~Time Left: 340.118s |  Train Loss: 0.5692 | Train Acc. 75.5853% | Test Loss: 0.5351 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 99/200 Ended | E Time: 3.398s | ~Time Left: 343.222s |  Train Loss: 0.5548 | Train Acc. 76.2542% | Test Loss: 0.3770 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 100/200 Ended | E Time: 3.380s | ~Time Left: 338.049s |  Train Loss: 0.4879 | Train Acc. 80.2676% | Test Loss: 0.5812 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 101/200 Ended | E Time: 3.385s | ~Time Left: 335.100s |  Train Loss: 0.4633 | Train Acc. 79.5987% | Test Loss: 0.2879 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 102/200 Ended | E Time: 3.337s | ~Time Left: 326.982s |  Train Loss: 0.5237 | Train Acc. 76.5886% | Test Loss: 0.6339 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 103/200 Ended | E Time: 3.348s | ~Time Left: 324.786s |  Train Loss: 0.5902 | Train Acc. 72.5752% | Test Loss: 0.4039 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 104/200 Ended | E Time: 3.386s | ~Time Left: 325.028s |  Train Loss: 0.5889 | Train Acc. 72.9097% | Test Loss: 2.0534 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 105/200 Ended | E Time: 3.332s | ~Time Left: 316.513s |  Train Loss: 0.5057 | Train Acc. 75.9197% | Test Loss: 0.5516 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 106/200 Ended | E Time: 3.285s | ~Time Left: 308.776s |  Train Loss: 0.5309 | Train Acc. 77.2575% | Test Loss: 0.6805 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 107/200 Ended | E Time: 3.354s | ~Time Left: 311.894s |  Train Loss: 0.6037 | Train Acc. 73.5786% | Test Loss: 0.6553 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 108/200 Ended | E Time: 3.381s | ~Time Left: 311.061s |  Train Loss: 0.5204 | Train Acc. 79.2642% | Test Loss: 0.9958 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 109/200 Ended | E Time: 3.601s | ~Time Left: 327.728s |  Train Loss: 0.5511 | Train Acc. 77.9264% | Test Loss: 0.5035 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 110/200 Ended | E Time: 3.327s | ~Time Left: 299.473s |  Train Loss: 0.5320 | Train Acc. 76.9231% | Test Loss: 0.6281 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 111/200 Ended | E Time: 3.369s | ~Time Left: 299.842s |  Train Loss: 0.4982 | Train Acc. 78.5953% | Test Loss: 0.4137 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 112/200 Ended | E Time: 3.294s | ~Time Left: 289.854s |  Train Loss: 0.5240 | Train Acc. 75.9197% | Test Loss: 0.5224 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 113/200 Ended | E Time: 3.356s | ~Time Left: 291.984s |  Train Loss: 0.5149 | Train Acc. 79.2642% | Test Loss: 0.5811 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 114/200 Ended | E Time: 3.466s | ~Time Left: 298.035s |  Train Loss: 0.5084 | Train Acc. 77.5920% | Test Loss: 0.4778 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 115/200 Ended | E Time: 3.661s | ~Time Left: 311.173s |  Train Loss: 0.4755 | Train Acc. 81.2709% | Test Loss: 0.4745 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 116/200 Ended | E Time: 3.377s | ~Time Left: 283.640s |  Train Loss: 0.5397 | Train Acc. 76.2542% | Test Loss: 1.0917 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 117/200 Ended | E Time: 3.458s | ~Time Left: 286.988s |  Train Loss: 0.4825 | Train Acc. 78.2609% | Test Loss: 0.3576 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 118/200 Ended | E Time: 3.374s | ~Time Left: 276.667s |  Train Loss: 0.6002 | Train Acc. 74.9164% | Test Loss: 0.4783 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 119/200 Ended | E Time: 3.370s | ~Time Left: 272.993s |  Train Loss: 0.7016 | Train Acc. 70.2341% | Test Loss: 0.3573 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 120/200 Ended | E Time: 3.335s | ~Time Left: 266.832s |  Train Loss: 0.5632 | Train Acc. 73.5786% | Test Loss: 0.4322 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 121/200 Ended | E Time: 3.396s | ~Time Left: 268.301s |  Train Loss: 0.5510 | Train Acc. 77.9264% | Test Loss: 0.3815 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 122/200 Ended | E Time: 3.452s | ~Time Left: 269.223s |  Train Loss: 0.4987 | Train Acc. 79.5987% | Test Loss: 0.3442 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 123/200 Ended | E Time: 3.389s | ~Time Left: 260.946s |  Train Loss: 0.4664 | Train Acc. 80.9365% | Test Loss: 0.3745 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 124/200 Ended | E Time: 3.537s | ~Time Left: 268.826s |  Train Loss: 0.4842 | Train Acc. 79.2642% | Test Loss: 0.4712 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 125/200 Ended | E Time: 3.295s | ~Time Left: 247.123s |  Train Loss: 0.4813 | Train Acc. 78.5953% | Test Loss: 0.5136 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 126/200 Ended | E Time: 3.327s | ~Time Left: 246.226s |  Train Loss: 0.4696 | Train Acc. 80.6020% | Test Loss: 0.3702 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 127/200 Ended | E Time: 3.339s | ~Time Left: 243.761s |  Train Loss: 0.5201 | Train Acc. 79.9331% | Test Loss: 0.4732 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 128/200 Ended | E Time: 3.388s | ~Time Left: 243.953s |  Train Loss: 0.5374 | Train Acc. 77.9264% | Test Loss: 0.4231 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 129/200 Ended | E Time: 3.700s | ~Time Left: 262.709s |  Train Loss: 0.4764 | Train Acc. 78.5953% | Test Loss: 0.2774 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 130/200 Ended | E Time: 3.324s | ~Time Left: 232.660s |  Train Loss: 0.5615 | Train Acc. 74.5819% | Test Loss: 0.5318 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 131/200 Ended | E Time: 3.336s | ~Time Left: 230.203s |  Train Loss: 0.4916 | Train Acc. 75.9197% | Test Loss: 0.3687 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 132/200 Ended | E Time: 3.280s | ~Time Left: 223.055s |  Train Loss: 0.5093 | Train Acc. 78.2609% | Test Loss: 0.3623 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 133/200 Ended | E Time: 3.621s | ~Time Left: 242.620s |  Train Loss: 0.5158 | Train Acc. 77.5920% | Test Loss: 0.5565 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 134/200 Ended | E Time: 3.332s | ~Time Left: 219.917s |  Train Loss: 0.4855 | Train Acc. 78.2609% | Test Loss: 0.5666 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 135/200 Ended | E Time: 3.327s | ~Time Left: 216.287s |  Train Loss: 0.4878 | Train Acc. 79.9331% | Test Loss: 0.3276 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 136/200 Ended | E Time: 3.316s | ~Time Left: 212.221s |  Train Loss: 0.5608 | Train Acc. 77.9264% | Test Loss: 0.9304 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 137/200 Ended | E Time: 3.327s | ~Time Left: 209.624s |  Train Loss: 0.5228 | Train Acc. 77.2575% | Test Loss: 0.4343 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 138/200 Ended | E Time: 3.322s | ~Time Left: 205.990s |  Train Loss: 0.5429 | Train Acc. 80.2676% | Test Loss: 0.4097 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 139/200 Ended | E Time: 3.444s | ~Time Left: 210.087s |  Train Loss: 0.4548 | Train Acc. 78.9298% | Test Loss: 0.4183 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 140/200 Ended | E Time: 3.597s | ~Time Left: 215.806s |  Train Loss: 0.5344 | Train Acc. 77.2575% | Test Loss: 0.3814 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 141/200 Ended | E Time: 3.599s | ~Time Left: 212.368s |  Train Loss: 0.5139 | Train Acc. 79.9331% | Test Loss: 0.4897 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 142/200 Ended | E Time: 3.402s | ~Time Left: 197.295s |  Train Loss: 0.5088 | Train Acc. 78.9298% | Test Loss: 0.3463 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 143/200 Ended | E Time: 3.347s | ~Time Left: 190.767s |  Train Loss: 0.5523 | Train Acc. 79.2642% | Test Loss: 0.7218 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 144/200 Ended | E Time: 3.380s | ~Time Left: 189.260s |  Train Loss: 0.5820 | Train Acc. 76.5886% | Test Loss: 0.3314 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 145/200 Ended | E Time: 3.341s | ~Time Left: 183.767s |  Train Loss: 0.4785 | Train Acc. 78.9298% | Test Loss: 0.3397 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 146/200 Ended | E Time: 3.616s | ~Time Left: 195.251s |  Train Loss: 0.4891 | Train Acc. 83.2776% | Test Loss: 0.3067 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 147/200 Ended | E Time: 3.434s | ~Time Left: 181.982s |  Train Loss: 0.4143 | Train Acc. 82.6087% | Test Loss: 0.3103 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 148/200 Ended | E Time: 3.524s | ~Time Left: 183.273s |  Train Loss: 0.4059 | Train Acc. 81.6054% | Test Loss: 0.3983 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 149/200 Ended | E Time: 3.331s | ~Time Left: 169.894s |  Train Loss: 0.4861 | Train Acc. 75.5853% | Test Loss: 0.3179 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 150/200 Ended | E Time: 3.349s | ~Time Left: 167.439s |  Train Loss: 0.4867 | Train Acc. 81.9398% | Test Loss: 0.3520 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 151/200 Ended | E Time: 3.470s | ~Time Left: 170.010s |  Train Loss: 0.4858 | Train Acc. 81.2709% | Test Loss: 0.3996 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 152/200 Ended | E Time: 3.346s | ~Time Left: 160.586s |  Train Loss: 0.4161 | Train Acc. 82.6087% | Test Loss: 0.3348 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 153/200 Ended | E Time: 3.366s | ~Time Left: 158.191s |  Train Loss: 0.4993 | Train Acc. 77.2575% | Test Loss: 0.6558 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 154/200 Ended | E Time: 3.383s | ~Time Left: 155.618s |  Train Loss: 0.4848 | Train Acc. 82.6087% | Test Loss: 0.8880 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 155/200 Ended | E Time: 3.358s | ~Time Left: 151.106s |  Train Loss: 0.6421 | Train Acc. 71.9064% | Test Loss: 0.4860 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 156/200 Ended | E Time: 3.373s | ~Time Left: 148.424s |  Train Loss: 0.4278 | Train Acc. 81.9398% | Test Loss: 0.7873 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 157/200 Ended | E Time: 3.326s | ~Time Left: 143.031s |  Train Loss: 0.4745 | Train Acc. 80.2676% | Test Loss: 0.4938 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 158/200 Ended | E Time: 3.315s | ~Time Left: 139.232s |  Train Loss: 0.5440 | Train Acc. 76.9231% | Test Loss: 0.5599 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 159/200 Ended | E Time: 3.716s | ~Time Left: 152.344s |  Train Loss: 0.4956 | Train Acc. 80.9365% | Test Loss: 0.2879 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 160/200 Ended | E Time: 3.409s | ~Time Left: 136.368s |  Train Loss: 0.4589 | Train Acc. 80.6020% | Test Loss: 0.6838 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 161/200 Ended | E Time: 3.375s | ~Time Left: 131.626s |  Train Loss: 0.4712 | Train Acc. 79.5987% | Test Loss: 0.3961 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 162/200 Ended | E Time: 3.466s | ~Time Left: 131.709s |  Train Loss: 0.4802 | Train Acc. 81.2709% | Test Loss: 0.3694 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 163/200 Ended | E Time: 3.369s | ~Time Left: 124.670s |  Train Loss: 0.4460 | Train Acc. 78.9298% | Test Loss: 0.5905 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 164/200 Ended | E Time: 3.326s | ~Time Left: 119.719s |  Train Loss: 0.4938 | Train Acc. 79.2642% | Test Loss: 0.8778 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 165/200 Ended | E Time: 3.350s | ~Time Left: 117.253s |  Train Loss: 0.5352 | Train Acc. 78.5953% | Test Loss: 0.5284 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 166/200 Ended | E Time: 3.836s | ~Time Left: 130.424s |  Train Loss: 0.5142 | Train Acc. 77.2575% | Test Loss: 0.3322 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 167/200 Ended | E Time: 3.347s | ~Time Left: 110.456s |  Train Loss: 0.4440 | Train Acc. 79.5987% | Test Loss: 0.3566 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 168/200 Ended | E Time: 3.351s | ~Time Left: 107.225s |  Train Loss: 0.4522 | Train Acc. 82.6087% | Test Loss: 0.3527 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 169/200 Ended | E Time: 3.379s | ~Time Left: 104.753s |  Train Loss: 0.4856 | Train Acc. 80.9365% | Test Loss: 0.4732 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 170/200 Ended | E Time: 3.333s | ~Time Left: 99.980s |  Train Loss: 0.4721 | Train Acc. 78.9298% | Test Loss: 0.5243 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 171/200 Ended | E Time: 3.629s | ~Time Left: 105.255s |  Train Loss: 0.4999 | Train Acc. 81.2709% | Test Loss: 0.3611 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 172/200 Ended | E Time: 3.319s | ~Time Left: 92.928s |  Train Loss: 0.4612 | Train Acc. 82.6087% | Test Loss: 0.6209 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 173/200 Ended | E Time: 3.799s | ~Time Left: 102.583s |  Train Loss: 0.4880 | Train Acc. 80.9365% | Test Loss: 0.6066 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 174/200 Ended | E Time: 3.355s | ~Time Left: 87.225s |  Train Loss: 0.4432 | Train Acc. 80.6020% | Test Loss: 0.3947 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 175/200 Ended | E Time: 3.400s | ~Time Left: 85.003s |  Train Loss: 0.4270 | Train Acc. 80.9365% | Test Loss: 0.2630 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 176/200 Ended | E Time: 3.344s | ~Time Left: 80.254s |  Train Loss: 0.3932 | Train Acc. 86.6221% | Test Loss: 0.4597 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 177/200 Ended | E Time: 3.329s | ~Time Left: 76.564s |  Train Loss: 0.4458 | Train Acc. 79.9331% | Test Loss: 0.4530 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 178/200 Ended | E Time: 3.322s | ~Time Left: 73.080s |  Train Loss: 0.4348 | Train Acc. 79.5987% | Test Loss: 1.1866 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 179/200 Ended | E Time: 3.385s | ~Time Left: 71.087s |  Train Loss: 0.4125 | Train Acc. 82.2742% | Test Loss: 0.6970 | Test Acc. 54.0541%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 180/200 Ended | E Time: 3.345s | ~Time Left: 66.910s |  Train Loss: 0.4679 | Train Acc. 78.2609% | Test Loss: 0.5562 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 181/200 Ended | E Time: 3.359s | ~Time Left: 63.817s |  Train Loss: 0.5378 | Train Acc. 79.5987% | Test Loss: 0.4052 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 182/200 Ended | E Time: 3.338s | ~Time Left: 60.090s |  Train Loss: 0.4166 | Train Acc. 81.6054% | Test Loss: 0.4273 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 183/200 Ended | E Time: 3.847s | ~Time Left: 65.393s |  Train Loss: 0.5025 | Train Acc. 75.9197% | Test Loss: 0.5096 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 184/200 Ended | E Time: 3.347s | ~Time Left: 53.555s |  Train Loss: 0.4901 | Train Acc. 79.9331% | Test Loss: 0.5838 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 185/200 Ended | E Time: 3.398s | ~Time Left: 50.967s |  Train Loss: 0.4813 | Train Acc. 79.9331% | Test Loss: 0.3308 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 186/200 Ended | E Time: 3.400s | ~Time Left: 47.605s |  Train Loss: 0.4819 | Train Acc. 81.6054% | Test Loss: 0.3666 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 187/200 Ended | E Time: 3.311s | ~Time Left: 43.045s |  Train Loss: 0.4403 | Train Acc. 80.9365% | Test Loss: 0.2910 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 188/200 Ended | E Time: 3.343s | ~Time Left: 40.111s |  Train Loss: 0.4191 | Train Acc. 83.6120% | Test Loss: 0.4243 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 189/200 Ended | E Time: 3.301s | ~Time Left: 36.309s |  Train Loss: 0.4901 | Train Acc. 80.2676% | Test Loss: 0.3151 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 190/200 Ended | E Time: 3.753s | ~Time Left: 37.532s |  Train Loss: 0.4317 | Train Acc. 79.9331% | Test Loss: 0.7071 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 191/200 Ended | E Time: 3.401s | ~Time Left: 30.608s |  Train Loss: 0.5109 | Train Acc. 80.2676% | Test Loss: 0.2694 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 192/200 Ended | E Time: 3.314s | ~Time Left: 26.516s |  Train Loss: 0.5595 | Train Acc. 76.9231% | Test Loss: 1.0826 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 193/200 Ended | E Time: 3.468s | ~Time Left: 24.274s |  Train Loss: 0.5084 | Train Acc. 76.9231% | Test Loss: 1.1349 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 194/200 Ended | E Time: 3.417s | ~Time Left: 20.504s |  Train Loss: 0.4925 | Train Acc. 79.5987% | Test Loss: 0.2916 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 195/200 Ended | E Time: 3.357s | ~Time Left: 16.787s |  Train Loss: 0.4817 | Train Acc. 80.2676% | Test Loss: 0.4106 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 196/200 Ended | E Time: 3.567s | ~Time Left: 14.268s |  Train Loss: 0.4445 | Train Acc. 79.9331% | Test Loss: 0.2551 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 197/200 Ended | E Time: 3.384s | ~Time Left: 10.151s |  Train Loss: 0.4191 | Train Acc. 80.6020% | Test Loss: 0.2686 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 198/200 Ended | E Time: 3.364s | ~Time Left: 6.729s |  Train Loss: 0.3874 | Train Acc. 82.9431% | Test Loss: 0.2920 | Test Acc. 86.4865%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 199/200 Ended | E Time: 3.343s | ~Time Left: 3.343s |  Train Loss: 0.3982 | Train Acc. 85.2843% | Test Loss: 0.3107 | Test Acc. 81.0811%
+AdamP on AJ-Lymph_transformed: T 3/3 | E 200/200 Ended | E Time: 3.381s | ~Time Left: 0.000s |  Train Loss: 0.4290 | Train Acc. 83.2776% | Test Loss: 0.3425 | Test Acc. 72.9730%
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/AJ-Lymph_transformed_testing/AdamP/lr-0.0005-config-AdamP.yaml
+    data                : /localscratch/zhan8425.6958540.0        
+    output              : ADP_post_trained/AJ-Lymph_transformed/AdamP/output/deep_tuning
+    checkpoint          : ADP_post_trained/AJ-Lymph_transformed/AdamP/checkpoint/deep_tuning/lr-0.0005
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 25                                      
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              AJ-Lymph_transformed
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.0005              
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on AJ-Lymph_transformed: T 1/3 | E 1/200 Ended | E Time: 3.718s | ~Time Left: 739.860s |  Train Loss: 1.3480 | Train Acc. 39.7993% | Test Loss: 1.1297 | Test Acc. 43.2432%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 2/200 Ended | E Time: 3.295s | ~Time Left: 652.425s |  Train Loss: 1.0699 | Train Acc. 43.8127% | Test Loss: 0.7037 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 3/200 Ended | E Time: 3.290s | ~Time Left: 648.104s |  Train Loss: 1.0495 | Train Acc. 52.5084% | Test Loss: 0.9577 | Test Acc. 45.9459%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 4/200 Ended | E Time: 3.340s | ~Time Left: 654.661s |  Train Loss: 0.9639 | Train Acc. 56.1873% | Test Loss: 1.3530 | Test Acc. 43.2432%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 5/200 Ended | E Time: 3.385s | ~Time Left: 660.123s |  Train Loss: 0.9003 | Train Acc. 51.1706% | Test Loss: 0.9494 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 6/200 Ended | E Time: 3.291s | ~Time Left: 638.438s |  Train Loss: 0.9605 | Train Acc. 57.5251% | Test Loss: 1.8177 | Test Acc. 45.9459%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 7/200 Ended | E Time: 3.340s | ~Time Left: 644.629s |  Train Loss: 0.8644 | Train Acc. 60.8696% | Test Loss: 2.2773 | Test Acc. 45.9459%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 8/200 Ended | E Time: 3.320s | ~Time Left: 637.517s |  Train Loss: 0.8169 | Train Acc. 60.2007% | Test Loss: 1.8584 | Test Acc. 43.2432%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 9/200 Ended | E Time: 3.322s | ~Time Left: 634.518s |  Train Loss: 0.8807 | Train Acc. 58.8629% | Test Loss: 1.3679 | Test Acc. 48.6487%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 10/200 Ended | E Time: 3.412s | ~Time Left: 648.245s |  Train Loss: 0.8464 | Train Acc. 55.5184% | Test Loss: 0.8557 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 11/200 Ended | E Time: 3.403s | ~Time Left: 643.172s |  Train Loss: 0.8407 | Train Acc. 58.1940% | Test Loss: 1.3935 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 12/200 Ended | E Time: 3.340s | ~Time Left: 627.917s |  Train Loss: 0.8284 | Train Acc. 62.2074% | Test Loss: 0.5927 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 13/200 Ended | E Time: 3.342s | ~Time Left: 624.869s |  Train Loss: 0.8694 | Train Acc. 59.5318% | Test Loss: 0.5437 | Test Acc. 83.7838%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 14/200 Ended | E Time: 3.321s | ~Time Left: 617.647s |  Train Loss: 0.8150 | Train Acc. 58.1940% | Test Loss: 0.7105 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 15/200 Ended | E Time: 3.313s | ~Time Left: 612.850s |  Train Loss: 0.8685 | Train Acc. 61.8729% | Test Loss: 1.3852 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 16/200 Ended | E Time: 3.320s | ~Time Left: 610.889s |  Train Loss: 0.8478 | Train Acc. 57.8595% | Test Loss: 1.3183 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 17/200 Ended | E Time: 3.664s | ~Time Left: 670.584s |  Train Loss: 0.7896 | Train Acc. 63.2107% | Test Loss: 0.8460 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 18/200 Ended | E Time: 3.412s | ~Time Left: 620.924s |  Train Loss: 0.7197 | Train Acc. 63.5452% | Test Loss: 0.8290 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 19/200 Ended | E Time: 3.348s | ~Time Left: 605.936s |  Train Loss: 0.7991 | Train Acc. 67.8930% | Test Loss: 1.2110 | Test Acc. 51.3514%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 20/200 Ended | E Time: 3.325s | ~Time Left: 598.415s |  Train Loss: 0.7617 | Train Acc. 64.5485% | Test Loss: 0.8323 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 21/200 Ended | E Time: 3.328s | ~Time Left: 595.740s |  Train Loss: 0.8259 | Train Acc. 64.8829% | Test Loss: 0.5888 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 22/200 Ended | E Time: 3.451s | ~Time Left: 614.259s |  Train Loss: 0.7968 | Train Acc. 64.8829% | Test Loss: 0.7140 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 23/200 Ended | E Time: 3.409s | ~Time Left: 603.397s |  Train Loss: 0.7339 | Train Acc. 69.2308% | Test Loss: 0.6487 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 24/200 Ended | E Time: 3.367s | ~Time Left: 592.525s |  Train Loss: 0.7840 | Train Acc. 65.5518% | Test Loss: 0.6029 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 25/200 Ended | E Time: 3.584s | ~Time Left: 627.281s |  Train Loss: 0.7182 | Train Acc. 68.8963% | Test Loss: 0.6514 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 26/200 Ended | E Time: 3.334s | ~Time Left: 580.077s |  Train Loss: 0.7683 | Train Acc. 67.8930% | Test Loss: 0.4972 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 27/200 Ended | E Time: 3.325s | ~Time Left: 575.226s |  Train Loss: 0.6958 | Train Acc. 67.5585% | Test Loss: 0.5597 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 28/200 Ended | E Time: 3.343s | ~Time Left: 574.936s |  Train Loss: 0.8000 | Train Acc. 65.8863% | Test Loss: 0.6829 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 29/200 Ended | E Time: 3.287s | ~Time Left: 562.048s |  Train Loss: 0.7174 | Train Acc. 66.8896% | Test Loss: 0.6842 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 30/200 Ended | E Time: 3.335s | ~Time Left: 566.964s |  Train Loss: 0.8324 | Train Acc. 59.8662% | Test Loss: 0.7611 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 31/200 Ended | E Time: 3.372s | ~Time Left: 569.941s |  Train Loss: 0.8079 | Train Acc. 64.2140% | Test Loss: 0.6713 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 32/200 Ended | E Time: 3.353s | ~Time Left: 563.270s |  Train Loss: 0.6929 | Train Acc. 68.5619% | Test Loss: 0.6879 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 33/200 Ended | E Time: 3.365s | ~Time Left: 562.001s |  Train Loss: 0.7426 | Train Acc. 66.8896% | Test Loss: 0.4226 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 34/200 Ended | E Time: 3.339s | ~Time Left: 554.192s |  Train Loss: 0.7526 | Train Acc. 66.8896% | Test Loss: 0.6493 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 35/200 Ended | E Time: 3.363s | ~Time Left: 554.898s |  Train Loss: 0.6891 | Train Acc. 65.8863% | Test Loss: 0.4926 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 36/200 Ended | E Time: 3.412s | ~Time Left: 559.565s |  Train Loss: 0.6255 | Train Acc. 70.2341% | Test Loss: 1.7427 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 37/200 Ended | E Time: 3.333s | ~Time Left: 543.292s |  Train Loss: 0.6900 | Train Acc. 71.2375% | Test Loss: 1.4389 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 38/200 Ended | E Time: 3.442s | ~Time Left: 557.557s |  Train Loss: 0.8132 | Train Acc. 62.5418% | Test Loss: 0.9148 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 39/200 Ended | E Time: 3.357s | ~Time Left: 540.547s |  Train Loss: 0.7371 | Train Acc. 68.5619% | Test Loss: 0.8974 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 40/200 Ended | E Time: 3.335s | ~Time Left: 533.632s |  Train Loss: 0.6855 | Train Acc. 71.2375% | Test Loss: 0.6078 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 41/200 Ended | E Time: 3.365s | ~Time Left: 535.018s |  Train Loss: 0.6875 | Train Acc. 71.5719% | Test Loss: 0.6950 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 42/200 Ended | E Time: 3.348s | ~Time Left: 529.060s |  Train Loss: 0.6239 | Train Acc. 72.2408% | Test Loss: 0.7009 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 43/200 Ended | E Time: 3.316s | ~Time Left: 520.568s |  Train Loss: 0.6143 | Train Acc. 75.9197% | Test Loss: 0.5414 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 44/200 Ended | E Time: 3.350s | ~Time Left: 522.578s |  Train Loss: 0.6864 | Train Acc. 67.2241% | Test Loss: 1.1767 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 45/200 Ended | E Time: 3.643s | ~Time Left: 564.723s |  Train Loss: 0.8159 | Train Acc. 60.8696% | Test Loss: 0.8127 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 46/200 Ended | E Time: 3.436s | ~Time Left: 529.149s |  Train Loss: 0.7804 | Train Acc. 67.5585% | Test Loss: 0.7023 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 47/200 Ended | E Time: 3.346s | ~Time Left: 511.878s |  Train Loss: 0.7231 | Train Acc. 66.8896% | Test Loss: 0.5048 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 48/200 Ended | E Time: 3.370s | ~Time Left: 512.295s |  Train Loss: 0.7665 | Train Acc. 66.5552% | Test Loss: 0.9944 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 49/200 Ended | E Time: 3.323s | ~Time Left: 501.796s |  Train Loss: 0.7546 | Train Acc. 65.2174% | Test Loss: 0.7256 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 50/200 Ended | E Time: 3.305s | ~Time Left: 495.787s |  Train Loss: 0.6547 | Train Acc. 71.9064% | Test Loss: 0.7776 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 51/200 Ended | E Time: 3.367s | ~Time Left: 501.731s |  Train Loss: 0.6105 | Train Acc. 74.5819% | Test Loss: 1.2564 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 52/200 Ended | E Time: 3.311s | ~Time Left: 490.026s |  Train Loss: 0.6394 | Train Acc. 72.2408% | Test Loss: 0.6062 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 53/200 Ended | E Time: 3.407s | ~Time Left: 500.892s |  Train Loss: 0.6580 | Train Acc. 72.5752% | Test Loss: 0.4292 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 54/200 Ended | E Time: 3.303s | ~Time Left: 482.264s |  Train Loss: 0.5687 | Train Acc. 72.2408% | Test Loss: 0.9459 | Test Acc. 56.7568%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 55/200 Ended | E Time: 3.329s | ~Time Left: 482.683s |  Train Loss: 0.5604 | Train Acc. 73.9130% | Test Loss: 0.7730 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 56/200 Ended | E Time: 3.435s | ~Time Left: 494.592s |  Train Loss: 0.5715 | Train Acc. 75.2508% | Test Loss: 0.4396 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 57/200 Ended | E Time: 3.329s | ~Time Left: 475.996s |  Train Loss: 0.6115 | Train Acc. 70.5686% | Test Loss: 0.5299 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 58/200 Ended | E Time: 3.280s | ~Time Left: 465.756s |  Train Loss: 0.5692 | Train Acc. 77.2575% | Test Loss: 0.5035 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 59/200 Ended | E Time: 3.288s | ~Time Left: 463.635s |  Train Loss: 0.6077 | Train Acc. 75.9197% | Test Loss: 0.6394 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 60/200 Ended | E Time: 3.440s | ~Time Left: 481.641s |  Train Loss: 0.7694 | Train Acc. 66.2207% | Test Loss: 0.5293 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 61/200 Ended | E Time: 3.614s | ~Time Left: 502.287s |  Train Loss: 0.6569 | Train Acc. 71.5719% | Test Loss: 0.3659 | Test Acc. 78.3784%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 62/200 Ended | E Time: 3.350s | ~Time Left: 462.317s |  Train Loss: 0.5768 | Train Acc. 72.5752% | Test Loss: 0.8840 | Test Acc. 64.8649%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 63/200 Ended | E Time: 3.324s | ~Time Left: 455.421s |  Train Loss: 0.6620 | Train Acc. 75.5853% | Test Loss: 0.4233 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 64/200 Ended | E Time: 3.300s | ~Time Left: 448.825s |  Train Loss: 0.5939 | Train Acc. 75.9197% | Test Loss: 0.4405 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 65/200 Ended | E Time: 3.472s | ~Time Left: 468.715s |  Train Loss: 0.5378 | Train Acc. 77.2575% | Test Loss: 0.8278 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 66/200 Ended | E Time: 3.305s | ~Time Left: 442.937s |  Train Loss: 0.5957 | Train Acc. 73.5786% | Test Loss: 0.4014 | Test Acc. 75.6757%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 67/200 Ended | E Time: 3.337s | ~Time Left: 443.802s |  Train Loss: 0.5913 | Train Acc. 76.5886% | Test Loss: 1.8668 | Test Acc. 45.9459%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 68/200 Ended | E Time: 3.319s | ~Time Left: 438.123s |  Train Loss: 0.6280 | Train Acc. 72.9097% | Test Loss: 1.0913 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 69/200 Ended | E Time: 3.405s | ~Time Left: 446.044s |  Train Loss: 0.5963 | Train Acc. 70.5686% | Test Loss: 0.3864 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 70/200 Ended | E Time: 3.458s | ~Time Left: 449.561s |  Train Loss: 0.6048 | Train Acc. 76.5886% | Test Loss: 0.4386 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 71/200 Ended | E Time: 3.329s | ~Time Left: 429.447s |  Train Loss: 0.6101 | Train Acc. 72.2408% | Test Loss: 0.5313 | Test Acc. 67.5676%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 72/200 Ended | E Time: 3.523s | ~Time Left: 450.973s |  Train Loss: 0.5704 | Train Acc. 76.5886% | Test Loss: 1.3078 | Test Acc. 59.4595%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 73/200 Ended | E Time: 3.478s | ~Time Left: 441.662s |  Train Loss: 0.5762 | Train Acc. 74.2475% | Test Loss: 0.3871 | Test Acc. 72.9730%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 74/200 Ended | E Time: 3.889s | ~Time Left: 489.999s |  Train Loss: 0.5932 | Train Acc. 74.9164% | Test Loss: 0.6979 | Test Acc. 70.2703%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 75/200 Ended | E Time: 3.413s | ~Time Left: 426.617s |  Train Loss: 0.5571 | Train Acc. 73.9130% | Test Loss: 1.1195 | Test Acc. 62.1622%
+AdamP on AJ-Lymph_transformed: T 1/3 | E 76/200 Ended | E Time: 3.302s | ~Time Left: 409.477s |  Train Loss: 0.5342 | Train Acc. 76.2542% | Test Loss: 0.6942 | Test Acc. 72.9730%
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 372, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 491, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 373, in save
+    return
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:274] . unexpected pos 12853888 vs 12853776
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/adas/train.py", line 871, in <module>
+    main(args)
+  File "src/adas/train.py", line 834, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 863, in main_worker
+    training_agent.train()
+  File "src/adas/train.py", line 411, in train
+    self.run_epochs(trial, epochs)
+  File "src/adas/train.py", line 462, in run_epochs
+    torch.save(data, str(self.checkpoint_path / filename))
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 374, in save
+    _legacy_save(obj, opened_file, pickle_module, pickle_protocol)
+  File "/project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/serialization.py", line 214, in __exit__
+    self.file_like.close()
+OSError: [Errno 122] Disk quota exceeded
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:274] . unexpected pos 12853888 vs 12853776
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x2aec0c87d0e7 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x206a420 (0x2aebbca11420 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x20665f3 (0x2aebbca0d5f3 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xa9 (0x2aebbca11d99 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0xe1 (0x2aebbca128d1 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x115 (0x2aebbca130c5 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x737903 (0x2aebb98de903 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x369b90 (0x2aebb9510b90 in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x36adfe (0x2aebb9511dfe in /project/6060173/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #22: __libc_start_main + 0xeb (0x2aebb6df6e1b in /cvmfs/soft.computecanada.ca/gentoo/2020/lib64/libc.so.6)
+
+/var/spool/slurmd/job6958540/slurm_script: line 31: 54952 Aborted                 (core dumped) python src/adas/train.py --config PostTrainingConfigs/AJ-Lymph_transformed_testing/AdamP/lr-0.0005-config-AdamP.yaml --output ADP_post_trained/AJ-Lymph_transformed/AdamP/output/deep_tuning --checkpoint ADP_post_trained/AJ-Lymph_transformed/AdamP/checkpoint/deep_tuning/lr-0.0005 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint/ADP/best_trial_2.pth.tar --freeze_encoder False

@@ -1,0 +1,513 @@
+transferring data
+Tue Jul  6 23:24:47 PDT 2021
+
+Finished transferring
+Tue Jul  6 23:24:50 PDT 2021
+
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : PostTrainingConfigs/OSDataset_transformed_testing/AdamP/lr-0.001-config-AdamP.yaml
+    data                : /localscratch/zhan8425.7068136.0        
+    output              : ImageNet_post_trained/OSDataset_transformed/AdamP/output/fine_tuning
+    checkpoint          : ImageNet_post_trained/OSDataset_transformed/AdamP/checkpoint/fine_tuning/lr-0.001
+    resume              : None                                    
+    pretrained_model    : ImageNet                                
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 200                                     
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              OSDataset_transformed
+    network              ResNet18            
+    optimizer            AdamP               
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Color-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.001               
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'weight_decay': 0.0005}
+    scheduler_kwargs     {'gamma': 0.5, 'step_size': 20.0}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           200                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+AdamP on OSDataset_transformed: T 1/3 | E 1/200 Ended | E Time: 55.141s | ~Time Left: 10973.005s |  Train Loss: 0.8468 | Train Acc. 68.6475% | Test Loss: 0.8983 | Test Acc. 64.4888%
+AdamP on OSDataset_transformed: T 1/3 | E 2/200 Ended | E Time: 54.670s | ~Time Left: 10824.757s |  Train Loss: 0.7409 | Train Acc. 72.6469% | Test Loss: 0.7711 | Test Acc. 70.9014%
+AdamP on OSDataset_transformed: T 1/3 | E 3/200 Ended | E Time: 54.397s | ~Time Left: 10716.296s |  Train Loss: 0.6728 | Train Acc. 75.2249% | Test Loss: 0.6720 | Test Acc. 75.0756%
+AdamP on OSDataset_transformed: T 1/3 | E 4/200 Ended | E Time: 54.352s | ~Time Left: 10653.076s |  Train Loss: 0.6404 | Train Acc. 76.4421% | Test Loss: 0.6265 | Test Acc. 77.0115%
+AdamP on OSDataset_transformed: T 1/3 | E 5/200 Ended | E Time: 54.776s | ~Time Left: 10681.385s |  Train Loss: 0.6113 | Train Acc. 77.6518% | Test Loss: 0.6281 | Test Acc. 75.5596%
+AdamP on OSDataset_transformed: T 1/3 | E 6/200 Ended | E Time: 54.300s | ~Time Left: 10534.278s |  Train Loss: 0.5914 | Train Acc. 78.7858% | Test Loss: 0.5807 | Test Acc. 77.8584%
+AdamP on OSDataset_transformed: T 1/3 | E 7/200 Ended | E Time: 54.368s | ~Time Left: 10493.098s |  Train Loss: 0.5778 | Train Acc. 79.1487% | Test Loss: 0.6107 | Test Acc. 78.5844%
+AdamP on OSDataset_transformed: T 1/3 | E 8/200 Ended | E Time: 54.474s | ~Time Left: 10458.972s |  Train Loss: 0.5567 | Train Acc. 80.0030% | Test Loss: 0.6795 | Test Acc. 76.2855%
+AdamP on OSDataset_transformed: T 1/3 | E 9/200 Ended | E Time: 54.715s | ~Time Left: 10450.662s |  Train Loss: 0.5502 | Train Acc. 80.0635% | Test Loss: 0.5464 | Test Acc. 79.8548%
+AdamP on OSDataset_transformed: T 1/3 | E 10/200 Ended | E Time: 54.524s | ~Time Left: 10359.588s |  Train Loss: 0.5401 | Train Acc. 80.4340% | Test Loss: 0.5867 | Test Acc. 77.0720%
+AdamP on OSDataset_transformed: T 1/3 | E 11/200 Ended | E Time: 54.274s | ~Time Left: 10257.712s |  Train Loss: 0.5307 | Train Acc. 81.2278% | Test Loss: 0.5746 | Test Acc. 79.7338%
+AdamP on OSDataset_transformed: T 1/3 | E 12/200 Ended | E Time: 54.451s | ~Time Left: 10236.758s |  Train Loss: 0.5213 | Train Acc. 81.2656% | Test Loss: 0.5499 | Test Acc. 79.5523%
+AdamP on OSDataset_transformed: T 1/3 | E 13/200 Ended | E Time: 55.099s | ~Time Left: 10303.457s |  Train Loss: 0.5137 | Train Acc. 81.5075% | Test Loss: 0.5626 | Test Acc. 80.0363%
+AdamP on OSDataset_transformed: T 1/3 | E 14/200 Ended | E Time: 55.502s | ~Time Left: 10323.360s |  Train Loss: 0.5135 | Train Acc. 81.8931% | Test Loss: 0.5696 | Test Acc. 78.8869%
+AdamP on OSDataset_transformed: T 1/3 | E 15/200 Ended | E Time: 55.341s | ~Time Left: 10238.014s |  Train Loss: 0.5019 | Train Acc. 82.1048% | Test Loss: 0.5167 | Test Acc. 80.8227%
+AdamP on OSDataset_transformed: T 1/3 | E 16/200 Ended | E Time: 55.286s | ~Time Left: 10172.601s |  Train Loss: 0.5024 | Train Acc. 81.9763% | Test Loss: 0.5205 | Test Acc. 81.8512%
+AdamP on OSDataset_transformed: T 1/3 | E 17/200 Ended | E Time: 55.492s | ~Time Left: 10155.093s |  Train Loss: 0.4894 | Train Acc. 82.2711% | Test Loss: 0.4801 | Test Acc. 82.4561%
+AdamP on OSDataset_transformed: T 1/3 | E 18/200 Ended | E Time: 55.259s | ~Time Left: 10057.148s |  Train Loss: 0.4873 | Train Acc. 82.5811% | Test Loss: 0.4649 | Test Acc. 83.5451%
+AdamP on OSDataset_transformed: T 1/3 | E 19/200 Ended | E Time: 55.790s | ~Time Left: 10098.048s |  Train Loss: 0.4815 | Train Acc. 82.6945% | Test Loss: 0.4830 | Test Acc. 83.3031%
+AdamP on OSDataset_transformed: T 1/3 | E 20/200 Ended | E Time: 55.387s | ~Time Left: 9969.672s |  Train Loss: 0.4784 | Train Acc. 82.9818% | Test Loss: 0.4977 | Test Acc. 82.1537%
+AdamP on OSDataset_transformed: T 1/3 | E 21/200 Ended | E Time: 55.332s | ~Time Left: 9904.402s |  Train Loss: 0.4786 | Train Acc. 82.7701% | Test Loss: 0.4653 | Test Acc. 83.1216%
+AdamP on OSDataset_transformed: T 1/3 | E 22/200 Ended | E Time: 55.614s | ~Time Left: 9899.306s |  Train Loss: 0.4778 | Train Acc. 82.8986% | Test Loss: 0.4908 | Test Acc. 81.7907%
+AdamP on OSDataset_transformed: T 1/3 | E 23/200 Ended | E Time: 55.232s | ~Time Left: 9776.024s |  Train Loss: 0.4644 | Train Acc. 83.2615% | Test Loss: 0.4716 | Test Acc. 82.6376%
+AdamP on OSDataset_transformed: T 1/3 | E 24/200 Ended | E Time: 55.565s | ~Time Left: 9779.454s |  Train Loss: 0.4549 | Train Acc. 83.4203% | Test Loss: 0.4384 | Test Acc. 84.7550%
+AdamP on OSDataset_transformed: T 1/3 | E 25/200 Ended | E Time: 55.434s | ~Time Left: 9701.021s |  Train Loss: 0.4596 | Train Acc. 83.5790% | Test Loss: 0.5074 | Test Acc. 81.7302%
+AdamP on OSDataset_transformed: T 1/3 | E 26/200 Ended | E Time: 55.308s | ~Time Left: 9623.617s |  Train Loss: 0.4555 | Train Acc. 83.4732% | Test Loss: 0.5745 | Test Acc. 78.5239%
+AdamP on OSDataset_transformed: T 1/3 | E 27/200 Ended | E Time: 55.564s | ~Time Left: 9612.513s |  Train Loss: 0.4519 | Train Acc. 83.7378% | Test Loss: 0.4663 | Test Acc. 83.6661%
+AdamP on OSDataset_transformed: T 1/3 | E 28/200 Ended | E Time: 55.599s | ~Time Left: 9563.033s |  Train Loss: 0.4452 | Train Acc. 83.8512% | Test Loss: 0.5035 | Test Acc. 80.5808%
+AdamP on OSDataset_transformed: T 1/3 | E 29/200 Ended | E Time: 55.626s | ~Time Left: 9512.067s |  Train Loss: 0.4486 | Train Acc. 84.1007% | Test Loss: 0.4842 | Test Acc. 82.8191%
+AdamP on OSDataset_transformed: T 1/3 | E 30/200 Ended | E Time: 55.436s | ~Time Left: 9424.093s |  Train Loss: 0.4410 | Train Acc. 83.8437% | Test Loss: 0.4602 | Test Acc. 83.7266%
+AdamP on OSDataset_transformed: T 1/3 | E 31/200 Ended | E Time: 55.488s | ~Time Left: 9377.543s |  Train Loss: 0.4416 | Train Acc. 84.0402% | Test Loss: 0.4716 | Test Acc. 83.1821%
+AdamP on OSDataset_transformed: T 1/3 | E 32/200 Ended | E Time: 55.315s | ~Time Left: 9292.911s |  Train Loss: 0.4312 | Train Acc. 84.2141% | Test Loss: 0.4664 | Test Acc. 83.4846%
+AdamP on OSDataset_transformed: T 1/3 | E 33/200 Ended | E Time: 55.395s | ~Time Left: 9250.913s |  Train Loss: 0.4339 | Train Acc. 84.6375% | Test Loss: 0.4925 | Test Acc. 83.0006%
+AdamP on OSDataset_transformed: T 1/3 | E 34/200 Ended | E Time: 55.428s | ~Time Left: 9201.037s |  Train Loss: 0.4284 | Train Acc. 84.5241% | Test Loss: 0.4673 | Test Acc. 82.8796%
+AdamP on OSDataset_transformed: T 1/3 | E 35/200 Ended | E Time: 55.854s | ~Time Left: 9215.935s |  Train Loss: 0.4222 | Train Acc. 84.6904% | Test Loss: 0.4669 | Test Acc. 82.6981%
+AdamP on OSDataset_transformed: T 1/3 | E 36/200 Ended | E Time: 55.230s | ~Time Left: 9057.710s |  Train Loss: 0.4292 | Train Acc. 84.6072% | Test Loss: 0.5040 | Test Acc. 82.2747%
+AdamP on OSDataset_transformed: T 1/3 | E 37/200 Ended | E Time: 55.198s | ~Time Left: 8997.256s |  Train Loss: 0.4229 | Train Acc. 84.7433% | Test Loss: 0.4400 | Test Acc. 84.1500%
+AdamP on OSDataset_transformed: T 1/3 | E 38/200 Ended | E Time: 55.525s | ~Time Left: 8994.994s |  Train Loss: 0.4291 | Train Acc. 84.4787% | Test Loss: 0.4213 | Test Acc. 85.0575%
+AdamP on OSDataset_transformed: T 1/3 | E 39/200 Ended | E Time: 55.426s | ~Time Left: 8923.644s |  Train Loss: 0.4135 | Train Acc. 85.0004% | Test Loss: 0.4495 | Test Acc. 83.8475%
+AdamP on OSDataset_transformed: T 1/3 | E 40/200 Ended | E Time: 55.658s | ~Time Left: 8905.315s |  Train Loss: 0.4231 | Train Acc. 84.8265% | Test Loss: 0.4655 | Test Acc. 83.1216%
+AdamP on OSDataset_transformed: T 1/3 | E 41/200 Ended | E Time: 55.102s | ~Time Left: 8761.259s |  Train Loss: 0.4181 | Train Acc. 84.9021% | Test Loss: 0.4241 | Test Acc. 84.6945%
+AdamP on OSDataset_transformed: T 1/3 | E 42/200 Ended | E Time: 55.489s | ~Time Left: 8767.296s |  Train Loss: 0.4165 | Train Acc. 85.0987% | Test Loss: 0.5776 | Test Acc. 79.9758%
+AdamP on OSDataset_transformed: T 1/3 | E 43/200 Ended | E Time: 55.258s | ~Time Left: 8675.432s |  Train Loss: 0.4101 | Train Acc. 85.0835% | Test Loss: 0.4270 | Test Acc. 84.9365%
+AdamP on OSDataset_transformed: T 1/3 | E 44/200 Ended | E Time: 55.440s | ~Time Left: 8648.630s |  Train Loss: 0.4065 | Train Acc. 85.3406% | Test Loss: 0.4289 | Test Acc. 84.7550%
+AdamP on OSDataset_transformed: T 1/3 | E 45/200 Ended | E Time: 55.235s | ~Time Left: 8561.363s |  Train Loss: 0.4091 | Train Acc. 85.0760% | Test Loss: 0.4765 | Test Acc. 83.3636%
+AdamP on OSDataset_transformed: T 1/3 | E 46/200 Ended | E Time: 55.770s | ~Time Left: 8588.650s |  Train Loss: 0.4001 | Train Acc. 85.6884% | Test Loss: 0.4564 | Test Acc. 82.8191%
+AdamP on OSDataset_transformed: T 1/3 | E 47/200 Ended | E Time: 55.903s | ~Time Left: 8553.175s |  Train Loss: 0.4006 | Train Acc. 85.5825% | Test Loss: 0.4152 | Test Acc. 85.2390%
+AdamP on OSDataset_transformed: T 1/3 | E 48/200 Ended | E Time: 55.418s | ~Time Left: 8423.513s |  Train Loss: 0.3959 | Train Acc. 85.3860% | Test Loss: 0.4057 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 1/3 | E 49/200 Ended | E Time: 55.923s | ~Time Left: 8444.365s |  Train Loss: 0.3916 | Train Acc. 85.6732% | Test Loss: 0.4259 | Test Acc. 85.1785%
+AdamP on OSDataset_transformed: T 1/3 | E 50/200 Ended | E Time: 55.726s | ~Time Left: 8358.876s |  Train Loss: 0.3991 | Train Acc. 85.5372% | Test Loss: 0.4336 | Test Acc. 84.8155%
+AdamP on OSDataset_transformed: T 1/3 | E 51/200 Ended | E Time: 55.855s | ~Time Left: 8322.440s |  Train Loss: 0.3944 | Train Acc. 85.7413% | Test Loss: 0.4069 | Test Acc. 85.8439%
+AdamP on OSDataset_transformed: T 1/3 | E 52/200 Ended | E Time: 55.505s | ~Time Left: 8214.677s |  Train Loss: 0.3949 | Train Acc. 85.7186% | Test Loss: 0.4439 | Test Acc. 85.3599%
+AdamP on OSDataset_transformed: T 1/3 | E 53/200 Ended | E Time: 55.842s | ~Time Left: 8208.780s |  Train Loss: 0.3955 | Train Acc. 85.7942% | Test Loss: 0.4075 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 1/3 | E 54/200 Ended | E Time: 55.498s | ~Time Left: 8102.781s |  Train Loss: 0.3907 | Train Acc. 86.0513% | Test Loss: 0.3980 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 1/3 | E 55/200 Ended | E Time: 54.081s | ~Time Left: 7841.714s |  Train Loss: 0.3863 | Train Acc. 86.0437% | Test Loss: 0.4228 | Test Acc. 84.3315%
+AdamP on OSDataset_transformed: T 1/3 | E 56/200 Ended | E Time: 54.401s | ~Time Left: 7833.783s |  Train Loss: 0.3893 | Train Acc. 85.7791% | Test Loss: 0.4469 | Test Acc. 83.1821%
+AdamP on OSDataset_transformed: T 1/3 | E 57/200 Ended | E Time: 54.530s | ~Time Left: 7797.736s |  Train Loss: 0.3870 | Train Acc. 85.9832% | Test Loss: 0.4034 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 1/3 | E 58/200 Ended | E Time: 54.551s | ~Time Left: 7746.195s |  Train Loss: 0.3866 | Train Acc. 86.2403% | Test Loss: 0.4000 | Test Acc. 86.2069%
+AdamP on OSDataset_transformed: T 1/3 | E 59/200 Ended | E Time: 54.448s | ~Time Left: 7677.172s |  Train Loss: 0.3800 | Train Acc. 86.0664% | Test Loss: 0.4065 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 1/3 | E 60/200 Ended | E Time: 54.694s | ~Time Left: 7657.156s |  Train Loss: 0.3793 | Train Acc. 86.3008% | Test Loss: 0.3876 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 1/3 | E 61/200 Ended | E Time: 54.376s | ~Time Left: 7558.272s |  Train Loss: 0.3743 | Train Acc. 86.3008% | Test Loss: 0.3936 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 1/3 | E 62/200 Ended | E Time: 54.453s | ~Time Left: 7514.498s |  Train Loss: 0.3695 | Train Acc. 86.6258% | Test Loss: 0.3992 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 1/3 | E 63/200 Ended | E Time: 54.395s | ~Time Left: 7452.101s |  Train Loss: 0.3709 | Train Acc. 86.6258% | Test Loss: 0.4884 | Test Acc. 82.8191%
+AdamP on OSDataset_transformed: T 1/3 | E 64/200 Ended | E Time: 54.385s | ~Time Left: 7396.404s |  Train Loss: 0.3781 | Train Acc. 86.4293% | Test Loss: 0.3978 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 1/3 | E 65/200 Ended | E Time: 54.161s | ~Time Left: 7311.794s |  Train Loss: 0.3666 | Train Acc. 86.5654% | Test Loss: 0.3938 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 1/3 | E 66/200 Ended | E Time: 54.417s | ~Time Left: 7291.871s |  Train Loss: 0.3670 | Train Acc. 86.5276% | Test Loss: 0.4030 | Test Acc. 86.2069%
+AdamP on OSDataset_transformed: T 1/3 | E 67/200 Ended | E Time: 54.506s | ~Time Left: 7249.291s |  Train Loss: 0.3689 | Train Acc. 86.5049% | Test Loss: 0.4134 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 1/3 | E 68/200 Ended | E Time: 54.375s | ~Time Left: 7177.462s |  Train Loss: 0.3647 | Train Acc. 86.7090% | Test Loss: 0.4207 | Test Acc. 84.8760%
+AdamP on OSDataset_transformed: T 1/3 | E 69/200 Ended | E Time: 54.226s | ~Time Left: 7103.656s |  Train Loss: 0.3682 | Train Acc. 86.8300% | Test Loss: 0.4600 | Test Acc. 83.3031%
+AdamP on OSDataset_transformed: T 1/3 | E 70/200 Ended | E Time: 54.464s | ~Time Left: 7080.381s |  Train Loss: 0.3638 | Train Acc. 86.5956% | Test Loss: 0.3753 | Test Acc. 86.6304%
+AdamP on OSDataset_transformed: T 1/3 | E 71/200 Ended | E Time: 54.176s | ~Time Left: 6988.698s |  Train Loss: 0.3625 | Train Acc. 86.8300% | Test Loss: 0.5166 | Test Acc. 82.3351%
+AdamP on OSDataset_transformed: T 1/3 | E 72/200 Ended | E Time: 54.401s | ~Time Left: 6963.389s |  Train Loss: 0.3564 | Train Acc. 87.3743% | Test Loss: 0.4044 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 1/3 | E 73/200 Ended | E Time: 54.322s | ~Time Left: 6898.881s |  Train Loss: 0.3526 | Train Acc. 87.0341% | Test Loss: 0.4097 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 1/3 | E 74/200 Ended | E Time: 54.277s | ~Time Left: 6838.850s |  Train Loss: 0.3613 | Train Acc. 86.8526% | Test Loss: 0.3823 | Test Acc. 86.6304%
+AdamP on OSDataset_transformed: T 1/3 | E 75/200 Ended | E Time: 54.311s | ~Time Left: 6788.832s |  Train Loss: 0.3575 | Train Acc. 86.9056% | Test Loss: 0.4200 | Test Acc. 84.7550%
+AdamP on OSDataset_transformed: T 1/3 | E 76/200 Ended | E Time: 54.390s | ~Time Left: 6744.311s |  Train Loss: 0.3564 | Train Acc. 86.8451% | Test Loss: 0.3913 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 1/3 | E 77/200 Ended | E Time: 54.237s | ~Time Left: 6671.124s |  Train Loss: 0.3520 | Train Acc. 87.3365% | Test Loss: 0.3897 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 1/3 | E 78/200 Ended | E Time: 54.615s | ~Time Left: 6663.079s |  Train Loss: 0.3544 | Train Acc. 86.8451% | Test Loss: 0.3820 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 1/3 | E 79/200 Ended | E Time: 54.317s | ~Time Left: 6572.303s |  Train Loss: 0.3514 | Train Acc. 87.1777% | Test Loss: 0.4142 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 1/3 | E 80/200 Ended | E Time: 54.200s | ~Time Left: 6504.044s |  Train Loss: 0.3525 | Train Acc. 87.2231% | Test Loss: 0.3793 | Test Acc. 86.9933%
+AdamP on OSDataset_transformed: T 1/3 | E 81/200 Ended | E Time: 54.351s | ~Time Left: 6467.815s |  Train Loss: 0.3490 | Train Acc. 87.3819% | Test Loss: 0.4161 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 1/3 | E 82/200 Ended | E Time: 54.494s | ~Time Left: 6430.311s |  Train Loss: 0.3519 | Train Acc. 87.2760% | Test Loss: 0.4926 | Test Acc. 82.6981%
+AdamP on OSDataset_transformed: T 1/3 | E 83/200 Ended | E Time: 54.155s | ~Time Left: 6336.149s |  Train Loss: 0.3514 | Train Acc. 87.2307% | Test Loss: 0.3890 | Test Acc. 84.9970%
+AdamP on OSDataset_transformed: T 1/3 | E 84/200 Ended | E Time: 54.451s | ~Time Left: 6316.295s |  Train Loss: 0.3489 | Train Acc. 87.3138% | Test Loss: 0.3940 | Test Acc. 85.1785%
+AdamP on OSDataset_transformed: T 1/3 | E 85/200 Ended | E Time: 54.346s | ~Time Left: 6249.737s |  Train Loss: 0.3404 | Train Acc. 87.6087% | Test Loss: 0.4041 | Test Acc. 86.0859%
+AdamP on OSDataset_transformed: T 1/3 | E 86/200 Ended | E Time: 54.509s | ~Time Left: 6214.012s |  Train Loss: 0.3440 | Train Acc. 87.3668% | Test Loss: 0.4032 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 1/3 | E 87/200 Ended | E Time: 54.309s | ~Time Left: 6136.915s |  Train Loss: 0.3464 | Train Acc. 87.5180% | Test Loss: 0.4020 | Test Acc. 86.3279%
+AdamP on OSDataset_transformed: T 1/3 | E 88/200 Ended | E Time: 54.131s | ~Time Left: 6062.638s |  Train Loss: 0.3431 | Train Acc. 87.5331% | Test Loss: 0.3967 | Test Acc. 84.6340%
+AdamP on OSDataset_transformed: T 1/3 | E 89/200 Ended | E Time: 54.433s | ~Time Left: 6042.050s |  Train Loss: 0.3407 | Train Acc. 87.4424% | Test Loss: 0.3953 | Test Acc. 86.8119%
+AdamP on OSDataset_transformed: T 1/3 | E 90/200 Ended | E Time: 54.371s | ~Time Left: 5980.813s |  Train Loss: 0.3368 | Train Acc. 87.7826% | Test Loss: 0.3701 | Test Acc. 87.4168%
+AdamP on OSDataset_transformed: T 1/3 | E 91/200 Ended | E Time: 54.374s | ~Time Left: 5926.821s |  Train Loss: 0.3322 | Train Acc. 87.7750% | Test Loss: 0.3923 | Test Acc. 86.2069%
+AdamP on OSDataset_transformed: T 1/3 | E 92/200 Ended | E Time: 54.607s | ~Time Left: 5897.553s |  Train Loss: 0.3330 | Train Acc. 87.7523% | Test Loss: 0.3864 | Test Acc. 86.0859%
+AdamP on OSDataset_transformed: T 1/3 | E 93/200 Ended | E Time: 54.224s | ~Time Left: 5802.001s |  Train Loss: 0.3387 | Train Acc. 87.4121% | Test Loss: 0.4354 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 1/3 | E 94/200 Ended | E Time: 54.539s | ~Time Left: 5781.137s |  Train Loss: 0.3339 | Train Acc. 87.7448% | Test Loss: 0.3823 | Test Acc. 86.3884%
+AdamP on OSDataset_transformed: T 1/3 | E 95/200 Ended | E Time: 54.292s | ~Time Left: 5700.667s |  Train Loss: 0.3390 | Train Acc. 87.7372% | Test Loss: 0.3973 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 1/3 | E 96/200 Ended | E Time: 54.237s | ~Time Left: 5640.609s |  Train Loss: 0.3325 | Train Acc. 87.8430% | Test Loss: 0.3578 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 1/3 | E 97/200 Ended | E Time: 54.551s | ~Time Left: 5618.749s |  Train Loss: 0.3290 | Train Acc. 87.7221% | Test Loss: 0.3992 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 1/3 | E 98/200 Ended | E Time: 54.406s | ~Time Left: 5549.408s |  Train Loss: 0.3292 | Train Acc. 87.9867% | Test Loss: 0.3927 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 1/3 | E 99/200 Ended | E Time: 54.419s | ~Time Left: 5496.361s |  Train Loss: 0.3290 | Train Acc. 87.9489% | Test Loss: 0.3779 | Test Acc. 87.0538%
+AdamP on OSDataset_transformed: T 1/3 | E 100/200 Ended | E Time: 54.396s | ~Time Left: 5439.569s |  Train Loss: 0.3227 | Train Acc. 87.7901% | Test Loss: 0.4236 | Test Acc. 84.5735%
+AdamP on OSDataset_transformed: T 1/3 | E 101/200 Ended | E Time: 54.408s | ~Time Left: 5386.402s |  Train Loss: 0.3273 | Train Acc. 88.1228% | Test Loss: 0.3996 | Test Acc. 86.8119%
+AdamP on OSDataset_transformed: T 1/3 | E 102/200 Ended | E Time: 54.410s | ~Time Left: 5332.132s |  Train Loss: 0.3232 | Train Acc. 88.1152% | Test Loss: 0.4045 | Test Acc. 86.8119%
+AdamP on OSDataset_transformed: T 1/3 | E 103/200 Ended | E Time: 54.466s | ~Time Left: 5283.166s |  Train Loss: 0.3227 | Train Acc. 88.1228% | Test Loss: 0.3860 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 1/3 | E 104/200 Ended | E Time: 54.364s | ~Time Left: 5218.945s |  Train Loss: 0.3271 | Train Acc. 88.0472% | Test Loss: 0.3871 | Test Acc. 87.2958%
+AdamP on OSDataset_transformed: T 1/3 | E 105/200 Ended | E Time: 54.469s | ~Time Left: 5174.555s |  Train Loss: 0.3264 | Train Acc. 88.1833% | Test Loss: 0.3690 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 1/3 | E 106/200 Ended | E Time: 54.976s | ~Time Left: 5167.789s |  Train Loss: 0.3199 | Train Acc. 88.1530% | Test Loss: 0.3792 | Test Acc. 86.9933%
+AdamP on OSDataset_transformed: T 1/3 | E 107/200 Ended | E Time: 54.273s | ~Time Left: 5047.396s |  Train Loss: 0.3244 | Train Acc. 88.3798% | Test Loss: 0.3757 | Test Acc. 87.1748%
+AdamP on OSDataset_transformed: T 1/3 | E 108/200 Ended | E Time: 55.232s | ~Time Left: 5081.377s |  Train Loss: 0.3208 | Train Acc. 88.2286% | Test Loss: 0.3536 | Test Acc. 86.9933%
+AdamP on OSDataset_transformed: T 1/3 | E 109/200 Ended | E Time: 54.600s | ~Time Left: 4968.561s |  Train Loss: 0.3207 | Train Acc. 88.2891% | Test Loss: 0.3458 | Test Acc. 87.8403%
+AdamP on OSDataset_transformed: T 1/3 | E 110/200 Ended | E Time: 54.457s | ~Time Left: 4901.107s |  Train Loss: 0.3148 | Train Acc. 88.7125% | Test Loss: 0.3520 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 1/3 | E 111/200 Ended | E Time: 54.600s | ~Time Left: 4859.370s |  Train Loss: 0.3134 | Train Acc. 88.4101% | Test Loss: 0.3726 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 1/3 | E 112/200 Ended | E Time: 54.476s | ~Time Left: 4793.879s |  Train Loss: 0.3153 | Train Acc. 88.4328% | Test Loss: 0.3808 | Test Acc. 86.5699%
+AdamP on OSDataset_transformed: T 1/3 | E 113/200 Ended | E Time: 54.567s | ~Time Left: 4747.299s |  Train Loss: 0.3160 | Train Acc. 88.3193% | Test Loss: 0.3453 | Test Acc. 88.5662%
+AdamP on OSDataset_transformed: T 1/3 | E 114/200 Ended | E Time: 54.753s | ~Time Left: 4708.749s |  Train Loss: 0.3136 | Train Acc. 88.5613% | Test Loss: 0.3703 | Test Acc. 87.4168%
+AdamP on OSDataset_transformed: T 1/3 | E 115/200 Ended | E Time: 54.847s | ~Time Left: 4661.999s |  Train Loss: 0.3171 | Train Acc. 88.3193% | Test Loss: 0.3637 | Test Acc. 87.1748%
+AdamP on OSDataset_transformed: T 1/3 | E 116/200 Ended | E Time: 54.527s | ~Time Left: 4580.268s |  Train Loss: 0.3098 | Train Acc. 88.3118% | Test Loss: 0.3713 | Test Acc. 86.9933%
+AdamP on OSDataset_transformed: T 1/3 | E 117/200 Ended | E Time: 54.655s | ~Time Left: 4536.385s |  Train Loss: 0.3077 | Train Acc. 88.4706% | Test Loss: 0.3962 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 1/3 | E 118/200 Ended | E Time: 54.524s | ~Time Left: 4470.972s |  Train Loss: 0.3064 | Train Acc. 88.6293% | Test Loss: 0.3437 | Test Acc. 87.9008%
+AdamP on OSDataset_transformed: T 1/3 | E 119/200 Ended | E Time: 54.458s | ~Time Left: 4411.104s |  Train Loss: 0.3127 | Train Acc. 88.3193% | Test Loss: 0.3906 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 1/3 | E 120/200 Ended | E Time: 54.714s | ~Time Left: 4377.155s |  Train Loss: 0.3135 | Train Acc. 88.5084% | Test Loss: 0.3790 | Test Acc. 86.7514%
+AdamP on OSDataset_transformed: T 1/3 | E 121/200 Ended | E Time: 54.235s | ~Time Left: 4284.540s |  Train Loss: 0.3124 | Train Acc. 88.7427% | Test Loss: 0.3599 | Test Acc. 87.8403%
+AdamP on OSDataset_transformed: T 1/3 | E 122/200 Ended | E Time: 55.247s | ~Time Left: 4309.251s |  Train Loss: 0.3020 | Train Acc. 89.0225% | Test Loss: 0.3923 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 1/3 | E 123/200 Ended | E Time: 54.346s | ~Time Left: 4184.621s |  Train Loss: 0.3029 | Train Acc. 88.9846% | Test Loss: 0.3680 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 1/3 | E 124/200 Ended | E Time: 54.695s | ~Time Left: 4156.789s |  Train Loss: 0.3067 | Train Acc. 88.8259% | Test Loss: 0.3935 | Test Acc. 85.8439%
+AdamP on OSDataset_transformed: T 1/3 | E 125/200 Ended | E Time: 54.153s | ~Time Left: 4061.441s |  Train Loss: 0.3059 | Train Acc. 88.8864% | Test Loss: 0.4162 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 1/3 | E 126/200 Ended | E Time: 54.355s | ~Time Left: 4022.285s |  Train Loss: 0.3022 | Train Acc. 88.9620% | Test Loss: 0.3397 | Test Acc. 88.5057%
+AdamP on OSDataset_transformed: T 1/3 | E 127/200 Ended | E Time: 54.381s | ~Time Left: 3969.801s |  Train Loss: 0.3015 | Train Acc. 88.9090% | Test Loss: 0.3523 | Test Acc. 86.9933%
+AdamP on OSDataset_transformed: T 1/3 | E 128/200 Ended | E Time: 54.396s | ~Time Left: 3916.509s |  Train Loss: 0.3004 | Train Acc. 89.1737% | Test Loss: 0.3607 | Test Acc. 86.9328%
+AdamP on OSDataset_transformed: T 1/3 | E 129/200 Ended | E Time: 54.462s | ~Time Left: 3866.802s |  Train Loss: 0.3002 | Train Acc. 88.8788% | Test Loss: 0.3534 | Test Acc. 87.5378%
+AdamP on OSDataset_transformed: T 1/3 | E 130/200 Ended | E Time: 54.380s | ~Time Left: 3806.598s |  Train Loss: 0.3001 | Train Acc. 89.0451% | Test Loss: 0.3330 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 1/3 | E 131/200 Ended | E Time: 54.471s | ~Time Left: 3758.492s |  Train Loss: 0.3012 | Train Acc. 88.9846% | Test Loss: 0.3401 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 1/3 | E 132/200 Ended | E Time: 55.360s | ~Time Left: 3764.484s |  Train Loss: 0.2982 | Train Acc. 88.8259% | Test Loss: 0.3310 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 1/3 | E 133/200 Ended | E Time: 54.162s | ~Time Left: 3628.875s |  Train Loss: 0.2935 | Train Acc. 88.8637% | Test Loss: 0.3948 | Test Acc. 85.5414%
+AdamP on OSDataset_transformed: T 1/3 | E 134/200 Ended | E Time: 54.489s | ~Time Left: 3596.288s |  Train Loss: 0.2970 | Train Acc. 89.1585% | Test Loss: 0.3278 | Test Acc. 88.6267%
+AdamP on OSDataset_transformed: T 1/3 | E 135/200 Ended | E Time: 54.409s | ~Time Left: 3536.557s |  Train Loss: 0.2986 | Train Acc. 89.0376% | Test Loss: 0.3398 | Test Acc. 88.6872%
+AdamP on OSDataset_transformed: T 1/3 | E 136/200 Ended | E Time: 54.484s | ~Time Left: 3486.956s |  Train Loss: 0.3026 | Train Acc. 88.9846% | Test Loss: 0.3540 | Test Acc. 88.0823%
+AdamP on OSDataset_transformed: T 1/3 | E 137/200 Ended | E Time: 54.462s | ~Time Left: 3431.130s |  Train Loss: 0.3035 | Train Acc. 88.8939% | Test Loss: 0.3548 | Test Acc. 87.7193%
+AdamP on OSDataset_transformed: T 1/3 | E 138/200 Ended | E Time: 54.376s | ~Time Left: 3371.294s |  Train Loss: 0.2911 | Train Acc. 89.1888% | Test Loss: 0.3603 | Test Acc. 87.4168%
+AdamP on OSDataset_transformed: T 1/3 | E 139/200 Ended | E Time: 54.360s | ~Time Left: 3315.957s |  Train Loss: 0.2957 | Train Acc. 88.7654% | Test Loss: 0.3463 | Test Acc. 88.2638%
+AdamP on OSDataset_transformed: T 1/3 | E 140/200 Ended | E Time: 54.429s | ~Time Left: 3265.758s |  Train Loss: 0.2923 | Train Acc. 89.1888% | Test Loss: 0.3518 | Test Acc. 87.2353%
+AdamP on OSDataset_transformed: T 1/3 | E 141/200 Ended | E Time: 54.431s | ~Time Left: 3211.422s |  Train Loss: 0.2912 | Train Acc. 89.1661% | Test Loss: 0.3399 | Test Acc. 88.8687%
+AdamP on OSDataset_transformed: T 1/3 | E 142/200 Ended | E Time: 54.634s | ~Time Left: 3168.779s |  Train Loss: 0.2903 | Train Acc. 89.0829% | Test Loss: 0.3376 | Test Acc. 88.4453%
+AdamP on OSDataset_transformed: T 1/3 | E 143/200 Ended | E Time: 54.346s | ~Time Left: 3097.732s |  Train Loss: 0.2919 | Train Acc. 89.5139% | Test Loss: 0.3949 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 1/3 | E 144/200 Ended | E Time: 54.398s | ~Time Left: 3046.268s |  Train Loss: 0.2910 | Train Acc. 89.3929% | Test Loss: 0.3449 | Test Acc. 87.9008%
+AdamP on OSDataset_transformed: T 1/3 | E 145/200 Ended | E Time: 54.494s | ~Time Left: 2997.181s |  Train Loss: 0.2893 | Train Acc. 89.5517% | Test Loss: 0.3236 | Test Acc. 88.8082%
+AdamP on OSDataset_transformed: T 1/3 | E 146/200 Ended | E Time: 54.516s | ~Time Left: 2943.838s |  Train Loss: 0.2922 | Train Acc. 89.3022% | Test Loss: 0.3416 | Test Acc. 87.5378%
+AdamP on OSDataset_transformed: T 1/3 | E 147/200 Ended | E Time: 54.913s | ~Time Left: 2910.414s |  Train Loss: 0.2826 | Train Acc. 89.5592% | Test Loss: 0.3238 | Test Acc. 88.2033%
+AdamP on OSDataset_transformed: T 1/3 | E 148/200 Ended | E Time: 55.425s | ~Time Left: 2882.082s |  Train Loss: 0.2853 | Train Acc. 89.4307% | Test Loss: 0.3360 | Test Acc. 88.9897%
+AdamP on OSDataset_transformed: T 1/3 | E 149/200 Ended | E Time: 54.422s | ~Time Left: 2775.545s |  Train Loss: 0.2922 | Train Acc. 89.1585% | Test Loss: 0.3645 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 1/3 | E 150/200 Ended | E Time: 54.380s | ~Time Left: 2718.979s |  Train Loss: 0.2867 | Train Acc. 89.1434% | Test Loss: 0.3402 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 1/3 | E 151/200 Ended | E Time: 54.314s | ~Time Left: 2661.378s |  Train Loss: 0.2869 | Train Acc. 89.3702% | Test Loss: 0.3513 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 1/3 | E 152/200 Ended | E Time: 54.611s | ~Time Left: 2621.347s |  Train Loss: 0.2835 | Train Acc. 89.4836% | Test Loss: 0.3891 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 1/3 | E 153/200 Ended | E Time: 54.473s | ~Time Left: 2560.233s |  Train Loss: 0.2839 | Train Acc. 89.3249% | Test Loss: 0.3461 | Test Acc. 88.3243%
+AdamP on OSDataset_transformed: T 1/3 | E 154/200 Ended | E Time: 54.473s | ~Time Left: 2505.767s |  Train Loss: 0.2821 | Train Acc. 89.6500% | Test Loss: 0.3467 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 1/3 | E 155/200 Ended | E Time: 54.804s | ~Time Left: 2466.182s |  Train Loss: 0.2757 | Train Acc. 89.6878% | Test Loss: 0.3535 | Test Acc. 87.8403%
+AdamP on OSDataset_transformed: T 1/3 | E 156/200 Ended | E Time: 54.229s | ~Time Left: 2386.085s |  Train Loss: 0.2816 | Train Acc. 89.4987% | Test Loss: 0.3893 | Test Acc. 86.3884%
+AdamP on OSDataset_transformed: T 1/3 | E 157/200 Ended | E Time: 54.527s | ~Time Left: 2344.678s |  Train Loss: 0.2796 | Train Acc. 89.3778% | Test Loss: 0.3456 | Test Acc. 88.0823%
+AdamP on OSDataset_transformed: T 1/3 | E 158/200 Ended | E Time: 54.535s | ~Time Left: 2290.458s |  Train Loss: 0.2861 | Train Acc. 89.3702% | Test Loss: 0.3504 | Test Acc. 88.0218%
+AdamP on OSDataset_transformed: T 1/3 | E 159/200 Ended | E Time: 54.446s | ~Time Left: 2232.301s |  Train Loss: 0.2741 | Train Acc. 89.7709% | Test Loss: 0.3409 | Test Acc. 88.5057%
+AdamP on OSDataset_transformed: T 1/3 | E 160/200 Ended | E Time: 54.271s | ~Time Left: 2170.850s |  Train Loss: 0.2815 | Train Acc. 89.6273% | Test Loss: 0.3491 | Test Acc. 88.1428%
+AdamP on OSDataset_transformed: T 1/3 | E 161/200 Ended | E Time: 54.589s | ~Time Left: 2128.958s |  Train Loss: 0.2816 | Train Acc. 89.6802% | Test Loss: 0.3379 | Test Acc. 88.2638%
+AdamP on OSDataset_transformed: T 1/3 | E 162/200 Ended | E Time: 54.751s | ~Time Left: 2080.554s |  Train Loss: 0.2697 | Train Acc. 89.7482% | Test Loss: 0.4017 | Test Acc. 85.8439%
+AdamP on OSDataset_transformed: T 1/3 | E 163/200 Ended | E Time: 54.366s | ~Time Left: 2011.535s |  Train Loss: 0.2717 | Train Acc. 89.7407% | Test Loss: 0.3294 | Test Acc. 88.3243%
+AdamP on OSDataset_transformed: T 1/3 | E 164/200 Ended | E Time: 54.385s | ~Time Left: 1957.844s |  Train Loss: 0.2744 | Train Acc. 90.0355% | Test Loss: 0.3788 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 1/3 | E 165/200 Ended | E Time: 54.368s | ~Time Left: 1902.897s |  Train Loss: 0.2794 | Train Acc. 89.4458% | Test Loss: 0.3917 | Test Acc. 86.6304%
+AdamP on OSDataset_transformed: T 1/3 | E 166/200 Ended | E Time: 54.144s | ~Time Left: 1840.884s |  Train Loss: 0.2698 | Train Acc. 90.0204% | Test Loss: 0.3144 | Test Acc. 88.9897%
+AdamP on OSDataset_transformed: T 1/3 | E 167/200 Ended | E Time: 54.302s | ~Time Left: 1791.950s |  Train Loss: 0.2732 | Train Acc. 89.7407% | Test Loss: 0.3808 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 1/3 | E 168/200 Ended | E Time: 54.362s | ~Time Left: 1739.572s |  Train Loss: 0.2758 | Train Acc. 89.5744% | Test Loss: 0.3610 | Test Acc. 86.9328%
+AdamP on OSDataset_transformed: T 1/3 | E 169/200 Ended | E Time: 54.228s | ~Time Left: 1681.062s |  Train Loss: 0.2669 | Train Acc. 89.8465% | Test Loss: 0.3227 | Test Acc. 89.2317%
+AdamP on OSDataset_transformed: T 1/3 | E 170/200 Ended | E Time: 54.335s | ~Time Left: 1630.058s |  Train Loss: 0.2742 | Train Acc. 89.7558% | Test Loss: 0.3885 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 1/3 | E 171/200 Ended | E Time: 54.637s | ~Time Left: 1584.487s |  Train Loss: 0.2688 | Train Acc. 90.0355% | Test Loss: 0.3344 | Test Acc. 88.1428%
+AdamP on OSDataset_transformed: T 1/3 | E 172/200 Ended | E Time: 54.283s | ~Time Left: 1519.925s |  Train Loss: 0.2701 | Train Acc. 90.0129% | Test Loss: 0.3640 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 1/3 | E 173/200 Ended | E Time: 54.500s | ~Time Left: 1471.489s |  Train Loss: 0.2759 | Train Acc. 89.4005% | Test Loss: 0.3571 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 1/3 | E 174/200 Ended | E Time: 54.443s | ~Time Left: 1415.510s |  Train Loss: 0.2610 | Train Acc. 90.1263% | Test Loss: 0.3445 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 1/3 | E 175/200 Ended | E Time: 54.402s | ~Time Left: 1360.058s |  Train Loss: 0.2637 | Train Acc. 90.3833% | Test Loss: 0.3420 | Test Acc. 87.9008%
+AdamP on OSDataset_transformed: T 1/3 | E 176/200 Ended | E Time: 54.525s | ~Time Left: 1308.611s |  Train Loss: 0.2676 | Train Acc. 90.2775% | Test Loss: 0.3413 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 1/3 | E 177/200 Ended | E Time: 54.398s | ~Time Left: 1251.148s |  Train Loss: 0.2641 | Train Acc. 90.2321% | Test Loss: 0.3583 | Test Acc. 88.2033%
+AdamP on OSDataset_transformed: T 1/3 | E 178/200 Ended | E Time: 54.366s | ~Time Left: 1196.043s |  Train Loss: 0.2620 | Train Acc. 90.1414% | Test Loss: 0.3411 | Test Acc. 88.9897%
+AdamP on OSDataset_transformed: T 1/3 | E 179/200 Ended | E Time: 54.600s | ~Time Left: 1146.605s |  Train Loss: 0.2625 | Train Acc. 89.9675% | Test Loss: 0.3341 | Test Acc. 88.6872%
+AdamP on OSDataset_transformed: T 1/3 | E 180/200 Ended | E Time: 54.356s | ~Time Left: 1087.121s |  Train Loss: 0.2595 | Train Acc. 90.2850% | Test Loss: 0.3475 | Test Acc. 88.0823%
+AdamP on OSDataset_transformed: T 1/3 | E 181/200 Ended | E Time: 54.423s | ~Time Left: 1034.046s |  Train Loss: 0.2637 | Train Acc. 90.1489% | Test Loss: 0.3626 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 1/3 | E 182/200 Ended | E Time: 54.355s | ~Time Left: 978.396s |  Train Loss: 0.2619 | Train Acc. 90.1414% | Test Loss: 0.3541 | Test Acc. 88.7477%
+AdamP on OSDataset_transformed: T 1/3 | E 183/200 Ended | E Time: 54.488s | ~Time Left: 926.301s |  Train Loss: 0.2652 | Train Acc. 90.0053% | Test Loss: 0.4156 | Test Acc. 86.0254%
+AdamP on OSDataset_transformed: T 1/3 | E 184/200 Ended | E Time: 54.343s | ~Time Left: 869.481s |  Train Loss: 0.2569 | Train Acc. 90.3682% | Test Loss: 0.3584 | Test Acc. 87.7798%
+AdamP on OSDataset_transformed: T 1/3 | E 185/200 Ended | E Time: 54.402s | ~Time Left: 816.030s |  Train Loss: 0.2592 | Train Acc. 90.3455% | Test Loss: 0.3300 | Test Acc. 88.8082%
+AdamP on OSDataset_transformed: T 1/3 | E 186/200 Ended | E Time: 54.463s | ~Time Left: 762.481s |  Train Loss: 0.2647 | Train Acc. 90.0431% | Test Loss: 0.3334 | Test Acc. 88.4453%
+AdamP on OSDataset_transformed: T 1/3 | E 187/200 Ended | E Time: 54.473s | ~Time Left: 708.146s |  Train Loss: 0.2572 | Train Acc. 90.5572% | Test Loss: 0.3282 | Test Acc. 88.3243%
+AdamP on OSDataset_transformed: T 1/3 | E 188/200 Ended | E Time: 54.475s | ~Time Left: 653.697s |  Train Loss: 0.2602 | Train Acc. 90.1716% | Test Loss: 0.3530 | Test Acc. 88.6267%
+AdamP on OSDataset_transformed: T 1/3 | E 189/200 Ended | E Time: 54.467s | ~Time Left: 599.139s |  Train Loss: 0.2628 | Train Acc. 90.2775% | Test Loss: 0.3283 | Test Acc. 88.4453%
+AdamP on OSDataset_transformed: T 1/3 | E 190/200 Ended | E Time: 54.425s | ~Time Left: 544.246s |  Train Loss: 0.2569 | Train Acc. 90.4967% | Test Loss: 0.3863 | Test Acc. 87.2958%
+AdamP on OSDataset_transformed: T 1/3 | E 191/200 Ended | E Time: 54.609s | ~Time Left: 491.480s |  Train Loss: 0.2622 | Train Acc. 90.2170% | Test Loss: 0.3825 | Test Acc. 86.0859%
+AdamP on OSDataset_transformed: T 1/3 | E 192/200 Ended | E Time: 54.437s | ~Time Left: 435.497s |  Train Loss: 0.2537 | Train Acc. 90.4589% | Test Loss: 0.3722 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 1/3 | E 193/200 Ended | E Time: 54.673s | ~Time Left: 382.708s |  Train Loss: 0.2527 | Train Acc. 90.4060% | Test Loss: 0.3390 | Test Acc. 88.8082%
+AdamP on OSDataset_transformed: T 1/3 | E 194/200 Ended | E Time: 54.291s | ~Time Left: 325.744s |  Train Loss: 0.2560 | Train Acc. 90.4362% | Test Loss: 0.3848 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 1/3 | E 195/200 Ended | E Time: 54.404s | ~Time Left: 272.019s |  Train Loss: 0.2578 | Train Acc. 90.3833% | Test Loss: 0.3601 | Test Acc. 88.0218%
+AdamP on OSDataset_transformed: T 1/3 | E 196/200 Ended | E Time: 54.293s | ~Time Left: 217.172s |  Train Loss: 0.2540 | Train Acc. 90.5723% | Test Loss: 0.3650 | Test Acc. 88.5057%
+AdamP on OSDataset_transformed: T 1/3 | E 197/200 Ended | E Time: 54.417s | ~Time Left: 163.250s |  Train Loss: 0.2551 | Train Acc. 90.5496% | Test Loss: 0.3513 | Test Acc. 88.5057%
+AdamP on OSDataset_transformed: T 1/3 | E 198/200 Ended | E Time: 54.708s | ~Time Left: 109.416s |  Train Loss: 0.2504 | Train Acc. 90.7916% | Test Loss: 0.3653 | Test Acc. 87.5983%
+AdamP on OSDataset_transformed: T 1/3 | E 199/200 Ended | E Time: 54.410s | ~Time Left: 54.410s |  Train Loss: 0.2565 | Train Acc. 90.2472% | Test Loss: 0.3395 | Test Acc. 87.8403%
+AdamP on OSDataset_transformed: T 1/3 | E 200/200 Ended | E Time: 54.450s | ~Time Left: 0.000s |  Train Loss: 0.2541 | Train Acc. 90.3833% | Test Loss: 0.3472 | Test Acc. 88.4453%
+AdamP on OSDataset_transformed: T 2/3 | E 1/200 Ended | E Time: 54.269s | ~Time Left: 10799.606s |  Train Loss: 0.8606 | Train Acc. 68.4358% | Test Loss: 1.1189 | Test Acc. 60.9195%
+AdamP on OSDataset_transformed: T 2/3 | E 2/200 Ended | E Time: 54.349s | ~Time Left: 10761.065s |  Train Loss: 0.7495 | Train Acc. 72.2310% | Test Loss: 0.9466 | Test Acc. 64.9728%
+AdamP on OSDataset_transformed: T 2/3 | E 3/200 Ended | E Time: 54.580s | ~Time Left: 10752.283s |  Train Loss: 0.6986 | Train Acc. 74.4311% | Test Loss: 0.6975 | Test Acc. 73.6237%
+AdamP on OSDataset_transformed: T 2/3 | E 4/200 Ended | E Time: 54.335s | ~Time Left: 10649.621s |  Train Loss: 0.6494 | Train Acc. 76.2985% | Test Loss: 0.9634 | Test Acc. 67.1506%
+AdamP on OSDataset_transformed: T 2/3 | E 5/200 Ended | E Time: 54.202s | ~Time Left: 10569.478s |  Train Loss: 0.6320 | Train Acc. 77.0016% | Test Loss: 0.6696 | Test Acc. 76.7695%
+AdamP on OSDataset_transformed: T 2/3 | E 6/200 Ended | E Time: 54.543s | ~Time Left: 10581.353s |  Train Loss: 0.5963 | Train Acc. 78.9446% | Test Loss: 0.6751 | Test Acc. 76.4065%
+AdamP on OSDataset_transformed: T 2/3 | E 7/200 Ended | E Time: 54.192s | ~Time Left: 10459.023s |  Train Loss: 0.5837 | Train Acc. 78.8236% | Test Loss: 0.9586 | Test Acc. 69.2075%
+AdamP on OSDataset_transformed: T 2/3 | E 8/200 Ended | E Time: 55.001s | ~Time Left: 10560.239s |  Train Loss: 0.5642 | Train Acc. 80.1089% | Test Loss: 0.5584 | Test Acc. 79.2498%
+AdamP on OSDataset_transformed: T 2/3 | E 9/200 Ended | E Time: 54.502s | ~Time Left: 10409.901s |  Train Loss: 0.5489 | Train Acc. 80.5852% | Test Loss: 0.5710 | Test Acc. 79.9153%
+AdamP on OSDataset_transformed: T 2/3 | E 10/200 Ended | E Time: 54.131s | ~Time Left: 10284.966s |  Train Loss: 0.5340 | Train Acc. 81.0010% | Test Loss: 0.6210 | Test Acc. 76.7090%
+AdamP on OSDataset_transformed: T 2/3 | E 11/200 Ended | E Time: 54.581s | ~Time Left: 10315.736s |  Train Loss: 0.5264 | Train Acc. 81.2958% | Test Loss: 0.6050 | Test Acc. 78.9474%
+AdamP on OSDataset_transformed: T 2/3 | E 12/200 Ended | E Time: 54.387s | ~Time Left: 10224.716s |  Train Loss: 0.5327 | Train Acc. 80.9783% | Test Loss: 0.5673 | Test Acc. 80.0968%
+AdamP on OSDataset_transformed: T 2/3 | E 13/200 Ended | E Time: 54.417s | ~Time Left: 10176.004s |  Train Loss: 0.5160 | Train Acc. 81.7419% | Test Loss: 0.5345 | Test Acc. 81.7302%
+AdamP on OSDataset_transformed: T 2/3 | E 14/200 Ended | E Time: 55.136s | ~Time Left: 10255.340s |  Train Loss: 0.5147 | Train Acc. 81.6360% | Test Loss: 0.5327 | Test Acc. 80.2783%
+AdamP on OSDataset_transformed: T 2/3 | E 15/200 Ended | E Time: 54.328s | ~Time Left: 10050.734s |  Train Loss: 0.5001 | Train Acc. 81.7948% | Test Loss: 0.4953 | Test Acc. 81.6092%
+AdamP on OSDataset_transformed: T 2/3 | E 16/200 Ended | E Time: 54.465s | ~Time Left: 10021.638s |  Train Loss: 0.4965 | Train Acc. 82.1577% | Test Loss: 0.5076 | Test Acc. 82.8191%
+AdamP on OSDataset_transformed: T 2/3 | E 17/200 Ended | E Time: 54.462s | ~Time Left: 9966.613s |  Train Loss: 0.4972 | Train Acc. 82.4752% | Test Loss: 0.4982 | Test Acc. 82.9401%
+AdamP on OSDataset_transformed: T 2/3 | E 18/200 Ended | E Time: 54.582s | ~Time Left: 9933.980s |  Train Loss: 0.4851 | Train Acc. 82.7928% | Test Loss: 0.5007 | Test Acc. 83.1216%
+AdamP on OSDataset_transformed: T 2/3 | E 19/200 Ended | E Time: 54.280s | ~Time Left: 9824.706s |  Train Loss: 0.4855 | Train Acc. 82.8986% | Test Loss: 0.5350 | Test Acc. 80.7622%
+AdamP on OSDataset_transformed: T 2/3 | E 20/200 Ended | E Time: 54.650s | ~Time Left: 9836.979s |  Train Loss: 0.4744 | Train Acc. 82.8684% | Test Loss: 0.5073 | Test Acc. 82.5166%
+AdamP on OSDataset_transformed: T 2/3 | E 21/200 Ended | E Time: 54.642s | ~Time Left: 9780.889s |  Train Loss: 0.4788 | Train Acc. 83.1027% | Test Loss: 0.4731 | Test Acc. 82.8191%
+AdamP on OSDataset_transformed: T 2/3 | E 22/200 Ended | E Time: 54.264s | ~Time Left: 9658.984s |  Train Loss: 0.4795 | Train Acc. 82.8911% | Test Loss: 0.4789 | Test Acc. 83.1821%
+AdamP on OSDataset_transformed: T 2/3 | E 23/200 Ended | E Time: 55.045s | ~Time Left: 9742.936s |  Train Loss: 0.4679 | Train Acc. 82.9213% | Test Loss: 0.5006 | Test Acc. 82.7586%
+AdamP on OSDataset_transformed: T 2/3 | E 24/200 Ended | E Time: 54.411s | ~Time Left: 9576.308s |  Train Loss: 0.4584 | Train Acc. 83.5337% | Test Loss: 0.4486 | Test Acc. 84.3920%
+AdamP on OSDataset_transformed: T 2/3 | E 25/200 Ended | E Time: 54.490s | ~Time Left: 9535.786s |  Train Loss: 0.4602 | Train Acc. 83.6320% | Test Loss: 0.5499 | Test Acc. 80.7622%
+AdamP on OSDataset_transformed: T 2/3 | E 26/200 Ended | E Time: 54.439s | ~Time Left: 9472.379s |  Train Loss: 0.4505 | Train Acc. 83.7605% | Test Loss: 0.4813 | Test Acc. 83.7870%
+AdamP on OSDataset_transformed: T 2/3 | E 27/200 Ended | E Time: 54.337s | ~Time Left: 9400.293s |  Train Loss: 0.4530 | Train Acc. 83.8663% | Test Loss: 0.5197 | Test Acc. 81.7302%
+AdamP on OSDataset_transformed: T 2/3 | E 28/200 Ended | E Time: 54.584s | ~Time Left: 9388.524s |  Train Loss: 0.4476 | Train Acc. 84.0856% | Test Loss: 0.5724 | Test Acc. 77.9189%
+AdamP on OSDataset_transformed: T 2/3 | E 29/200 Ended | E Time: 54.332s | ~Time Left: 9290.793s |  Train Loss: 0.4512 | Train Acc. 83.7605% | Test Loss: 0.4692 | Test Acc. 82.4561%
+AdamP on OSDataset_transformed: T 2/3 | E 30/200 Ended | E Time: 54.574s | ~Time Left: 9277.552s |  Train Loss: 0.4470 | Train Acc. 83.7832% | Test Loss: 0.4644 | Test Acc. 83.7870%
+AdamP on OSDataset_transformed: T 2/3 | E 31/200 Ended | E Time: 54.322s | ~Time Left: 9180.344s |  Train Loss: 0.4422 | Train Acc. 83.9722% | Test Loss: 0.5064 | Test Acc. 81.6092%
+AdamP on OSDataset_transformed: T 2/3 | E 32/200 Ended | E Time: 54.564s | ~Time Left: 9166.831s |  Train Loss: 0.4352 | Train Acc. 84.5316% | Test Loss: 0.4859 | Test Acc. 83.4241%
+AdamP on OSDataset_transformed: T 2/3 | E 33/200 Ended | E Time: 54.532s | ~Time Left: 9106.912s |  Train Loss: 0.4294 | Train Acc. 84.4485% | Test Loss: 0.4561 | Test Acc. 83.9685%
+AdamP on OSDataset_transformed: T 2/3 | E 34/200 Ended | E Time: 54.994s | ~Time Left: 9129.048s |  Train Loss: 0.4361 | Train Acc. 84.1158% | Test Loss: 0.4633 | Test Acc. 83.3031%
+AdamP on OSDataset_transformed: T 2/3 | E 35/200 Ended | E Time: 54.337s | ~Time Left: 8965.557s |  Train Loss: 0.4287 | Train Acc. 84.6753% | Test Loss: 0.4761 | Test Acc. 82.6376%
+AdamP on OSDataset_transformed: T 2/3 | E 36/200 Ended | E Time: 54.259s | ~Time Left: 8898.403s |  Train Loss: 0.4282 | Train Acc. 84.4560% | Test Loss: 0.4420 | Test Acc. 84.3315%
+AdamP on OSDataset_transformed: T 2/3 | E 37/200 Ended | E Time: 54.276s | ~Time Left: 8846.942s |  Train Loss: 0.4253 | Train Acc. 84.8492% | Test Loss: 0.4617 | Test Acc. 82.3351%
+AdamP on OSDataset_transformed: T 2/3 | E 38/200 Ended | E Time: 54.235s | ~Time Left: 8786.063s |  Train Loss: 0.4235 | Train Acc. 85.0004% | Test Loss: 0.4139 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 2/3 | E 39/200 Ended | E Time: 54.374s | ~Time Left: 8754.252s |  Train Loss: 0.4229 | Train Acc. 84.9399% | Test Loss: 0.4255 | Test Acc. 84.8760%
+AdamP on OSDataset_transformed: T 2/3 | E 40/200 Ended | E Time: 54.629s | ~Time Left: 8740.636s |  Train Loss: 0.4206 | Train Acc. 85.0911% | Test Loss: 0.4255 | Test Acc. 85.2390%
+AdamP on OSDataset_transformed: T 2/3 | E 41/200 Ended | E Time: 54.440s | ~Time Left: 8656.027s |  Train Loss: 0.4194 | Train Acc. 85.0533% | Test Loss: 0.4487 | Test Acc. 83.7266%
+AdamP on OSDataset_transformed: T 2/3 | E 42/200 Ended | E Time: 54.548s | ~Time Left: 8618.577s |  Train Loss: 0.4102 | Train Acc. 84.9475% | Test Loss: 0.5417 | Test Acc. 81.1857%
+AdamP on OSDataset_transformed: T 2/3 | E 43/200 Ended | E Time: 55.290s | ~Time Left: 8680.508s |  Train Loss: 0.4141 | Train Acc. 84.8870% | Test Loss: 0.4211 | Test Acc. 85.8439%
+AdamP on OSDataset_transformed: T 2/3 | E 44/200 Ended | E Time: 54.796s | ~Time Left: 8548.187s |  Train Loss: 0.4096 | Train Acc. 85.4691% | Test Loss: 0.4115 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 2/3 | E 45/200 Ended | E Time: 54.868s | ~Time Left: 8504.511s |  Train Loss: 0.4124 | Train Acc. 85.0987% | Test Loss: 0.4259 | Test Acc. 85.1180%
+AdamP on OSDataset_transformed: T 2/3 | E 46/200 Ended | E Time: 54.531s | ~Time Left: 8397.837s |  Train Loss: 0.4082 | Train Acc. 85.3330% | Test Loss: 0.4675 | Test Acc. 83.2426%
+AdamP on OSDataset_transformed: T 2/3 | E 47/200 Ended | E Time: 54.413s | ~Time Left: 8325.218s |  Train Loss: 0.4026 | Train Acc. 85.3406% | Test Loss: 0.4733 | Test Acc. 83.9080%
+AdamP on OSDataset_transformed: T 2/3 | E 48/200 Ended | E Time: 54.578s | ~Time Left: 8295.798s |  Train Loss: 0.3976 | Train Acc. 85.3028% | Test Loss: 0.4277 | Test Acc. 85.1785%
+AdamP on OSDataset_transformed: T 2/3 | E 49/200 Ended | E Time: 54.520s | ~Time Left: 8232.552s |  Train Loss: 0.4000 | Train Acc. 85.7867% | Test Loss: 0.4582 | Test Acc. 83.5451%
+AdamP on OSDataset_transformed: T 2/3 | E 50/200 Ended | E Time: 54.400s | ~Time Left: 8160.047s |  Train Loss: 0.3994 | Train Acc. 85.7035% | Test Loss: 0.4681 | Test Acc. 84.5735%
+AdamP on OSDataset_transformed: T 2/3 | E 51/200 Ended | E Time: 54.440s | ~Time Left: 8111.601s |  Train Loss: 0.3990 | Train Acc. 85.6506% | Test Loss: 0.5861 | Test Acc. 79.2498%
+AdamP on OSDataset_transformed: T 2/3 | E 52/200 Ended | E Time: 54.392s | ~Time Left: 8049.961s |  Train Loss: 0.3991 | Train Acc. 85.4842% | Test Loss: 0.4309 | Test Acc. 84.5735%
+AdamP on OSDataset_transformed: T 2/3 | E 53/200 Ended | E Time: 54.343s | ~Time Left: 7988.425s |  Train Loss: 0.3933 | Train Acc. 85.9832% | Test Loss: 0.4224 | Test Acc. 84.7550%
+AdamP on OSDataset_transformed: T 2/3 | E 54/200 Ended | E Time: 54.438s | ~Time Left: 7947.945s |  Train Loss: 0.3944 | Train Acc. 86.0135% | Test Loss: 0.4276 | Test Acc. 84.9365%
+AdamP on OSDataset_transformed: T 2/3 | E 55/200 Ended | E Time: 54.392s | ~Time Left: 7886.779s |  Train Loss: 0.3887 | Train Acc. 85.9227% | Test Loss: 0.4232 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 2/3 | E 56/200 Ended | E Time: 54.535s | ~Time Left: 7852.976s |  Train Loss: 0.3869 | Train Acc. 85.8320% | Test Loss: 0.4796 | Test Acc. 83.1821%
+AdamP on OSDataset_transformed: T 2/3 | E 57/200 Ended | E Time: 54.419s | ~Time Left: 7781.923s |  Train Loss: 0.3904 | Train Acc. 85.7791% | Test Loss: 0.4452 | Test Acc. 84.6945%
+AdamP on OSDataset_transformed: T 2/3 | E 58/200 Ended | E Time: 54.596s | ~Time Left: 7752.701s |  Train Loss: 0.3871 | Train Acc. 86.0210% | Test Loss: 0.3834 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 2/3 | E 59/200 Ended | E Time: 54.544s | ~Time Left: 7690.638s |  Train Loss: 0.3798 | Train Acc. 86.2327% | Test Loss: 0.4258 | Test Acc. 85.4204%
+AdamP on OSDataset_transformed: T 2/3 | E 60/200 Ended | E Time: 64.045s | ~Time Left: 8966.360s |  Train Loss: 0.3845 | Train Acc. 86.3839% | Test Loss: 0.4005 | Test Acc. 86.2069%
+AdamP on OSDataset_transformed: T 2/3 | E 61/200 Ended | E Time: 75.246s | ~Time Left: 10459.213s |  Train Loss: 0.3851 | Train Acc. 85.8244% | Test Loss: 0.4108 | Test Acc. 84.9970%
+AdamP on OSDataset_transformed: T 2/3 | E 62/200 Ended | E Time: 76.950s | ~Time Left: 10619.099s |  Train Loss: 0.3883 | Train Acc. 86.2932% | Test Loss: 0.4049 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 2/3 | E 63/200 Ended | E Time: 73.667s | ~Time Left: 10092.327s |  Train Loss: 0.3801 | Train Acc. 86.0739% | Test Loss: 0.4900 | Test Acc. 82.3351%
+AdamP on OSDataset_transformed: T 2/3 | E 64/200 Ended | E Time: 70.769s | ~Time Left: 9624.620s |  Train Loss: 0.3717 | Train Acc. 86.3537% | Test Loss: 0.4006 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 2/3 | E 65/200 Ended | E Time: 74.364s | ~Time Left: 10039.118s |  Train Loss: 0.3740 | Train Acc. 86.3385% | Test Loss: 0.3934 | Test Acc. 86.5699%
+AdamP on OSDataset_transformed: T 2/3 | E 66/200 Ended | E Time: 66.652s | ~Time Left: 8931.326s |  Train Loss: 0.3735 | Train Acc. 86.4671% | Test Loss: 0.4086 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 2/3 | E 67/200 Ended | E Time: 68.163s | ~Time Left: 9065.647s |  Train Loss: 0.3723 | Train Acc. 86.5276% | Test Loss: 0.4906 | Test Acc. 81.3067%
+AdamP on OSDataset_transformed: T 2/3 | E 68/200 Ended | E Time: 63.819s | ~Time Left: 8424.050s |  Train Loss: 0.3757 | Train Acc. 86.5049% | Test Loss: 0.3835 | Test Acc. 86.3279%
+AdamP on OSDataset_transformed: T 2/3 | E 69/200 Ended | E Time: 56.344s | ~Time Left: 7381.001s |  Train Loss: 0.3706 | Train Acc. 86.5351% | Test Loss: 0.4226 | Test Acc. 85.0575%
+AdamP on OSDataset_transformed: T 2/3 | E 70/200 Ended | E Time: 54.589s | ~Time Left: 7096.631s |  Train Loss: 0.3683 | Train Acc. 86.7014% | Test Loss: 0.4203 | Test Acc. 84.6945%
+AdamP on OSDataset_transformed: T 2/3 | E 71/200 Ended | E Time: 54.390s | ~Time Left: 7016.251s |  Train Loss: 0.3640 | Train Acc. 87.0265% | Test Loss: 0.3936 | Test Acc. 86.5094%
+AdamP on OSDataset_transformed: T 2/3 | E 72/200 Ended | E Time: 54.430s | ~Time Left: 6967.020s |  Train Loss: 0.3711 | Train Acc. 86.4520% | Test Loss: 0.4169 | Test Acc. 84.3315%
+AdamP on OSDataset_transformed: T 2/3 | E 73/200 Ended | E Time: 54.637s | ~Time Left: 6938.948s |  Train Loss: 0.3657 | Train Acc. 86.3764% | Test Loss: 0.5047 | Test Acc. 81.1857%
+AdamP on OSDataset_transformed: T 2/3 | E 74/200 Ended | E Time: 54.843s | ~Time Left: 6910.207s |  Train Loss: 0.3687 | Train Acc. 86.6107% | Test Loss: 0.4159 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 2/3 | E 75/200 Ended | E Time: 54.625s | ~Time Left: 6828.146s |  Train Loss: 0.3636 | Train Acc. 87.0039% | Test Loss: 0.4170 | Test Acc. 84.6340%
+AdamP on OSDataset_transformed: T 2/3 | E 76/200 Ended | E Time: 54.880s | ~Time Left: 6805.072s |  Train Loss: 0.3646 | Train Acc. 86.5200% | Test Loss: 0.3755 | Test Acc. 86.8119%
+AdamP on OSDataset_transformed: T 2/3 | E 77/200 Ended | E Time: 54.470s | ~Time Left: 6699.800s |  Train Loss: 0.3617 | Train Acc. 86.9056% | Test Loss: 0.3878 | Test Acc. 86.0859%
+AdamP on OSDataset_transformed: T 2/3 | E 78/200 Ended | E Time: 54.632s | ~Time Left: 6665.128s |  Train Loss: 0.3560 | Train Acc. 87.1173% | Test Loss: 0.4015 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 2/3 | E 79/200 Ended | E Time: 54.408s | ~Time Left: 6583.391s |  Train Loss: 0.3542 | Train Acc. 87.1929% | Test Loss: 0.3734 | Test Acc. 86.3884%
+AdamP on OSDataset_transformed: T 2/3 | E 80/200 Ended | E Time: 54.422s | ~Time Left: 6530.628s |  Train Loss: 0.3589 | Train Acc. 86.8148% | Test Loss: 0.4420 | Test Acc. 84.6945%
+AdamP on OSDataset_transformed: T 2/3 | E 81/200 Ended | E Time: 54.475s | ~Time Left: 6482.551s |  Train Loss: 0.3493 | Train Acc. 87.2987% | Test Loss: 0.3958 | Test Acc. 85.4204%
+AdamP on OSDataset_transformed: T 2/3 | E 82/200 Ended | E Time: 54.545s | ~Time Left: 6436.361s |  Train Loss: 0.3520 | Train Acc. 87.2382% | Test Loss: 0.4056 | Test Acc. 85.4204%
+AdamP on OSDataset_transformed: T 2/3 | E 83/200 Ended | E Time: 54.642s | ~Time Left: 6393.157s |  Train Loss: 0.3543 | Train Acc. 87.0492% | Test Loss: 0.3922 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 2/3 | E 84/200 Ended | E Time: 54.880s | ~Time Left: 6366.069s |  Train Loss: 0.3439 | Train Acc. 87.3743% | Test Loss: 0.4305 | Test Acc. 84.9970%
+AdamP on OSDataset_transformed: T 2/3 | E 85/200 Ended | E Time: 54.717s | ~Time Left: 6292.407s |  Train Loss: 0.3514 | Train Acc. 87.2080% | Test Loss: 0.3870 | Test Acc. 85.9649%
+AdamP on OSDataset_transformed: T 2/3 | E 86/200 Ended | E Time: 54.480s | ~Time Left: 6210.702s |  Train Loss: 0.3449 | Train Acc. 87.3214% | Test Loss: 0.3789 | Test Acc. 86.2069%
+AdamP on OSDataset_transformed: T 2/3 | E 87/200 Ended | E Time: 54.558s | ~Time Left: 6165.097s |  Train Loss: 0.3506 | Train Acc. 87.1853% | Test Loss: 0.4041 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 2/3 | E 88/200 Ended | E Time: 54.412s | ~Time Left: 6094.142s |  Train Loss: 0.3400 | Train Acc. 87.5936% | Test Loss: 0.3750 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 2/3 | E 89/200 Ended | E Time: 54.486s | ~Time Left: 6047.904s |  Train Loss: 0.3457 | Train Acc. 87.3516% | Test Loss: 0.3930 | Test Acc. 87.5378%
+AdamP on OSDataset_transformed: T 2/3 | E 90/200 Ended | E Time: 54.534s | ~Time Left: 5998.738s |  Train Loss: 0.3483 | Train Acc. 87.2231% | Test Loss: 0.4002 | Test Acc. 86.0254%
+AdamP on OSDataset_transformed: T 2/3 | E 91/200 Ended | E Time: 54.389s | ~Time Left: 5928.352s |  Train Loss: 0.3359 | Train Acc. 87.9035% | Test Loss: 0.4089 | Test Acc. 85.3599%
+AdamP on OSDataset_transformed: T 2/3 | E 92/200 Ended | E Time: 54.888s | ~Time Left: 5927.956s |  Train Loss: 0.3383 | Train Acc. 87.6389% | Test Loss: 0.4061 | Test Acc. 85.5414%
+AdamP on OSDataset_transformed: T 2/3 | E 93/200 Ended | E Time: 54.588s | ~Time Left: 5840.943s |  Train Loss: 0.3453 | Train Acc. 87.5633% | Test Loss: 0.4192 | Test Acc. 85.4809%
+AdamP on OSDataset_transformed: T 2/3 | E 94/200 Ended | E Time: 54.576s | ~Time Left: 5785.037s |  Train Loss: 0.3363 | Train Acc. 87.5709% | Test Loss: 0.3713 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 2/3 | E 95/200 Ended | E Time: 54.487s | ~Time Left: 5721.185s |  Train Loss: 0.3402 | Train Acc. 87.4726% | Test Loss: 0.3694 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 2/3 | E 96/200 Ended | E Time: 57.262s | ~Time Left: 5955.243s |  Train Loss: 0.3412 | Train Acc. 87.4499% | Test Loss: 0.3805 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 2/3 | E 97/200 Ended | E Time: 66.289s | ~Time Left: 6827.815s |  Train Loss: 0.3339 | Train Acc. 87.8960% | Test Loss: 0.4742 | Test Acc. 82.7586%
+AdamP on OSDataset_transformed: T 2/3 | E 98/200 Ended | E Time: 63.194s | ~Time Left: 6445.742s |  Train Loss: 0.3333 | Train Acc. 87.6314% | Test Loss: 0.3887 | Test Acc. 86.6304%
+AdamP on OSDataset_transformed: T 2/3 | E 99/200 Ended | E Time: 63.817s | ~Time Left: 6445.480s |  Train Loss: 0.3329 | Train Acc. 87.8657% | Test Loss: 0.3854 | Test Acc. 85.7229%
+AdamP on OSDataset_transformed: T 2/3 | E 100/200 Ended | E Time: 62.979s | ~Time Left: 6297.943s |  Train Loss: 0.3314 | Train Acc. 88.0169% | Test Loss: 0.3917 | Test Acc. 85.6019%
+AdamP on OSDataset_transformed: T 2/3 | E 101/200 Ended | E Time: 64.037s | ~Time Left: 6339.657s |  Train Loss: 0.3339 | Train Acc. 87.7750% | Test Loss: 0.3731 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 2/3 | E 102/200 Ended | E Time: 62.316s | ~Time Left: 6106.967s |  Train Loss: 0.3300 | Train Acc. 87.7296% | Test Loss: 0.4847 | Test Acc. 82.6981%
+AdamP on OSDataset_transformed: T 2/3 | E 103/200 Ended | E Time: 62.710s | ~Time Left: 6082.881s |  Train Loss: 0.3326 | Train Acc. 88.2286% | Test Loss: 0.3869 | Test Acc. 86.2674%
+AdamP on OSDataset_transformed: T 2/3 | E 104/200 Ended | E Time: 61.201s | ~Time Left: 5875.319s |  Train Loss: 0.3307 | Train Acc. 88.0018% | Test Loss: 0.3691 | Test Acc. 86.8119%
+AdamP on OSDataset_transformed: T 2/3 | E 105/200 Ended | E Time: 62.433s | ~Time Left: 5931.124s |  Train Loss: 0.3233 | Train Acc. 88.2740% | Test Loss: 0.3839 | Test Acc. 86.8119%
+AdamP on OSDataset_transformed: T 2/3 | E 106/200 Ended | E Time: 60.500s | ~Time Left: 5687.042s |  Train Loss: 0.3250 | Train Acc. 88.0094% | Test Loss: 0.3504 | Test Acc. 88.5057%
+AdamP on OSDataset_transformed: T 2/3 | E 107/200 Ended | E Time: 61.509s | ~Time Left: 5720.378s |  Train Loss: 0.3264 | Train Acc. 88.0925% | Test Loss: 0.3907 | Test Acc. 85.8439%
+AdamP on OSDataset_transformed: T 2/3 | E 108/200 Ended | E Time: 59.852s | ~Time Left: 5506.414s |  Train Loss: 0.3246 | Train Acc. 87.8960% | Test Loss: 0.4845 | Test Acc. 82.0932%
+AdamP on OSDataset_transformed: T 2/3 | E 109/200 Ended | E Time: 61.197s | ~Time Left: 5568.942s |  Train Loss: 0.3235 | Train Acc. 88.2059% | Test Loss: 0.3861 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 2/3 | E 110/200 Ended | E Time: 59.948s | ~Time Left: 5395.361s |  Train Loss: 0.3198 | Train Acc. 88.3345% | Test Loss: 0.3648 | Test Acc. 88.1428%
+AdamP on OSDataset_transformed: T 2/3 | E 111/200 Ended | E Time: 58.076s | ~Time Left: 5168.779s |  Train Loss: 0.3229 | Train Acc. 88.0774% | Test Loss: 0.3797 | Test Acc. 86.3884%
+AdamP on OSDataset_transformed: T 2/3 | E 112/200 Ended | E Time: 59.785s | ~Time Left: 5261.066s |  Train Loss: 0.3255 | Train Acc. 88.4554% | Test Loss: 0.3794 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 2/3 | E 113/200 Ended | E Time: 62.361s | ~Time Left: 5425.413s |  Train Loss: 0.3161 | Train Acc. 88.4403% | Test Loss: 0.3874 | Test Acc. 86.3884%
+AdamP on OSDataset_transformed: T 2/3 | E 114/200 Ended | E Time: 62.228s | ~Time Left: 5351.627s |  Train Loss: 0.3164 | Train Acc. 88.5008% | Test Loss: 0.3610 | Test Acc. 87.0538%
+AdamP on OSDataset_transformed: T 2/3 | E 115/200 Ended | E Time: 60.415s | ~Time Left: 5135.238s |  Train Loss: 0.3164 | Train Acc. 88.2589% | Test Loss: 0.4078 | Test Acc. 86.1464%
+AdamP on OSDataset_transformed: T 2/3 | E 116/200 Ended | E Time: 62.925s | ~Time Left: 5285.669s |  Train Loss: 0.3228 | Train Acc. 88.2211% | Test Loss: 0.3848 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 2/3 | E 117/200 Ended | E Time: 64.150s | ~Time Left: 5324.455s |  Train Loss: 0.3124 | Train Acc. 88.4403% | Test Loss: 0.3926 | Test Acc. 86.3279%
+AdamP on OSDataset_transformed: T 2/3 | E 118/200 Ended | E Time: 56.328s | ~Time Left: 4618.903s |  Train Loss: 0.3139 | Train Acc. 88.4252% | Test Loss: 0.3566 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 2/3 | E 119/200 Ended | E Time: 55.032s | ~Time Left: 4457.594s |  Train Loss: 0.3250 | Train Acc. 88.2891% | Test Loss: 0.3972 | Test Acc. 86.3279%
+AdamP on OSDataset_transformed: T 2/3 | E 120/200 Ended | E Time: 55.990s | ~Time Left: 4479.189s |  Train Loss: 0.3122 | Train Acc. 88.2211% | Test Loss: 0.3761 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 2/3 | E 121/200 Ended | E Time: 58.268s | ~Time Left: 4603.152s |  Train Loss: 0.3208 | Train Acc. 88.1984% | Test Loss: 0.3449 | Test Acc. 88.4453%
+AdamP on OSDataset_transformed: T 2/3 | E 122/200 Ended | E Time: 60.781s | ~Time Left: 4740.894s |  Train Loss: 0.3144 | Train Acc. 88.4706% | Test Loss: 0.3585 | Test Acc. 87.7798%
+AdamP on OSDataset_transformed: T 2/3 | E 123/200 Ended | E Time: 60.894s | ~Time Left: 4688.860s |  Train Loss: 0.3151 | Train Acc. 88.6520% | Test Loss: 0.3604 | Test Acc. 87.7798%
+AdamP on OSDataset_transformed: T 2/3 | E 124/200 Ended | E Time: 61.389s | ~Time Left: 4665.535s |  Train Loss: 0.3079 | Train Acc. 88.7352% | Test Loss: 0.5092 | Test Acc. 81.4277%
+AdamP on OSDataset_transformed: T 2/3 | E 125/200 Ended | E Time: 65.268s | ~Time Left: 4895.100s |  Train Loss: 0.3124 | Train Acc. 88.3496% | Test Loss: 0.3636 | Test Acc. 87.1748%
+AdamP on OSDataset_transformed: T 2/3 | E 126/200 Ended | E Time: 61.314s | ~Time Left: 4537.223s |  Train Loss: 0.3136 | Train Acc. 88.2815% | Test Loss: 0.3881 | Test Acc. 85.6019%
+AdamP on OSDataset_transformed: T 2/3 | E 127/200 Ended | E Time: 59.631s | ~Time Left: 4353.036s |  Train Loss: 0.3033 | Train Acc. 88.7427% | Test Loss: 0.3787 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 2/3 | E 128/200 Ended | E Time: 54.489s | ~Time Left: 3923.234s |  Train Loss: 0.3089 | Train Acc. 88.5764% | Test Loss: 0.3608 | Test Acc. 87.9008%
+AdamP on OSDataset_transformed: T 2/3 | E 129/200 Ended | E Time: 54.761s | ~Time Left: 3888.038s |  Train Loss: 0.3022 | Train Acc. 88.9317% | Test Loss: 0.3558 | Test Acc. 87.5378%
+AdamP on OSDataset_transformed: T 2/3 | E 130/200 Ended | E Time: 57.142s | ~Time Left: 3999.940s |  Train Loss: 0.3042 | Train Acc. 88.8334% | Test Loss: 0.3736 | Test Acc. 85.9649%
+AdamP on OSDataset_transformed: T 2/3 | E 131/200 Ended | E Time: 61.627s | ~Time Left: 4252.276s |  Train Loss: 0.3014 | Train Acc. 89.0225% | Test Loss: 0.3635 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 2/3 | E 132/200 Ended | E Time: 60.937s | ~Time Left: 4143.684s |  Train Loss: 0.2967 | Train Acc. 89.2871% | Test Loss: 0.3791 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 2/3 | E 133/200 Ended | E Time: 61.946s | ~Time Left: 4150.408s |  Train Loss: 0.3074 | Train Acc. 88.8032% | Test Loss: 0.3750 | Test Acc. 86.7514%
+AdamP on OSDataset_transformed: T 2/3 | E 134/200 Ended | E Time: 56.879s | ~Time Left: 3754.032s |  Train Loss: 0.3001 | Train Acc. 88.8334% | Test Loss: 0.3581 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 2/3 | E 135/200 Ended | E Time: 63.101s | ~Time Left: 4101.545s |  Train Loss: 0.3013 | Train Acc. 88.9015% | Test Loss: 0.3561 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 2/3 | E 136/200 Ended | E Time: 62.139s | ~Time Left: 3976.887s |  Train Loss: 0.3012 | Train Acc. 89.0678% | Test Loss: 0.3437 | Test Acc. 89.2922%
+AdamP on OSDataset_transformed: T 2/3 | E 137/200 Ended | E Time: 62.388s | ~Time Left: 3930.466s |  Train Loss: 0.2981 | Train Acc. 89.0149% | Test Loss: 0.3626 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 2/3 | E 138/200 Ended | E Time: 62.052s | ~Time Left: 3847.221s |  Train Loss: 0.2994 | Train Acc. 89.2341% | Test Loss: 0.3314 | Test Acc. 88.6267%
+AdamP on OSDataset_transformed: T 2/3 | E 139/200 Ended | E Time: 61.236s | ~Time Left: 3735.390s |  Train Loss: 0.3009 | Train Acc. 88.9317% | Test Loss: 0.3784 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 2/3 | E 140/200 Ended | E Time: 62.633s | ~Time Left: 3757.982s |  Train Loss: 0.2952 | Train Acc. 88.9620% | Test Loss: 0.3524 | Test Acc. 87.2353%
+AdamP on OSDataset_transformed: T 2/3 | E 141/200 Ended | E Time: 62.156s | ~Time Left: 3667.200s |  Train Loss: 0.2969 | Train Acc. 88.9317% | Test Loss: 0.3590 | Test Acc. 87.2958%
+AdamP on OSDataset_transformed: T 2/3 | E 142/200 Ended | E Time: 64.924s | ~Time Left: 3765.604s |  Train Loss: 0.2983 | Train Acc. 89.2795% | Test Loss: 0.4077 | Test Acc. 87.3563%
+AdamP on OSDataset_transformed: T 2/3 | E 143/200 Ended | E Time: 63.212s | ~Time Left: 3603.083s |  Train Loss: 0.2956 | Train Acc. 89.1132% | Test Loss: 0.3244 | Test Acc. 88.9292%
+AdamP on OSDataset_transformed: T 2/3 | E 144/200 Ended | E Time: 64.374s | ~Time Left: 3604.927s |  Train Loss: 0.2928 | Train Acc. 89.2417% | Test Loss: 0.3537 | Test Acc. 87.5983%
+AdamP on OSDataset_transformed: T 2/3 | E 145/200 Ended | E Time: 61.277s | ~Time Left: 3370.256s |  Train Loss: 0.2962 | Train Acc. 89.1585% | Test Loss: 0.3563 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 2/3 | E 146/200 Ended | E Time: 62.321s | ~Time Left: 3365.308s |  Train Loss: 0.2913 | Train Acc. 88.9544% | Test Loss: 0.3956 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 2/3 | E 147/200 Ended | E Time: 63.350s | ~Time Left: 3357.565s |  Train Loss: 0.2898 | Train Acc. 89.3853% | Test Loss: 0.3662 | Test Acc. 87.1748%
+AdamP on OSDataset_transformed: T 2/3 | E 148/200 Ended | E Time: 66.299s | ~Time Left: 3447.556s |  Train Loss: 0.2890 | Train Acc. 89.2795% | Test Loss: 0.3940 | Test Acc. 85.6019%
+AdamP on OSDataset_transformed: T 2/3 | E 149/200 Ended | E Time: 68.563s | ~Time Left: 3496.695s |  Train Loss: 0.2868 | Train Acc. 89.6046% | Test Loss: 0.3496 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 2/3 | E 150/200 Ended | E Time: 67.938s | ~Time Left: 3396.883s |  Train Loss: 0.2887 | Train Acc. 89.2341% | Test Loss: 0.3656 | Test Acc. 88.3848%
+AdamP on OSDataset_transformed: T 2/3 | E 151/200 Ended | E Time: 64.321s | ~Time Left: 3151.751s |  Train Loss: 0.2842 | Train Acc. 89.5441% | Test Loss: 0.3212 | Test Acc. 88.7477%
+AdamP on OSDataset_transformed: T 2/3 | E 152/200 Ended | E Time: 66.623s | ~Time Left: 3197.921s |  Train Loss: 0.2902 | Train Acc. 89.3324% | Test Loss: 0.3329 | Test Acc. 88.6267%
+AdamP on OSDataset_transformed: T 2/3 | E 153/200 Ended | E Time: 65.264s | ~Time Left: 3067.401s |  Train Loss: 0.2865 | Train Acc. 89.3022% | Test Loss: 0.3900 | Test Acc. 86.6304%
+AdamP on OSDataset_transformed: T 2/3 | E 154/200 Ended | E Time: 68.852s | ~Time Left: 3167.180s |  Train Loss: 0.2892 | Train Acc. 89.4685% | Test Loss: 0.3553 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 2/3 | E 155/200 Ended | E Time: 67.152s | ~Time Left: 3021.861s |  Train Loss: 0.2796 | Train Acc. 89.6500% | Test Loss: 0.3739 | Test Acc. 87.5983%
+AdamP on OSDataset_transformed: T 2/3 | E 156/200 Ended | E Time: 68.369s | ~Time Left: 3008.222s |  Train Loss: 0.2875 | Train Acc. 89.4610% | Test Loss: 0.3545 | Test Acc. 87.5378%
+AdamP on OSDataset_transformed: T 2/3 | E 157/200 Ended | E Time: 66.777s | ~Time Left: 2871.418s |  Train Loss: 0.2847 | Train Acc. 89.3853% | Test Loss: 0.3354 | Test Acc. 88.2638%
+AdamP on OSDataset_transformed: T 2/3 | E 158/200 Ended | E Time: 63.748s | ~Time Left: 2677.401s |  Train Loss: 0.2841 | Train Acc. 89.4156% | Test Loss: 0.3456 | Test Acc. 88.2638%
+AdamP on OSDataset_transformed: T 2/3 | E 159/200 Ended | E Time: 67.134s | ~Time Left: 2752.480s |  Train Loss: 0.2828 | Train Acc. 89.3627% | Test Loss: 0.3227 | Test Acc. 89.2317%
+AdamP on OSDataset_transformed: T 2/3 | E 160/200 Ended | E Time: 65.988s | ~Time Left: 2639.535s |  Train Loss: 0.2758 | Train Acc. 89.6726% | Test Loss: 0.3609 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 2/3 | E 161/200 Ended | E Time: 65.817s | ~Time Left: 2566.858s |  Train Loss: 0.2812 | Train Acc. 89.3702% | Test Loss: 0.3886 | Test Acc. 86.6304%
+AdamP on OSDataset_transformed: T 2/3 | E 162/200 Ended | E Time: 69.775s | ~Time Left: 2651.435s |  Train Loss: 0.2794 | Train Acc. 89.3551% | Test Loss: 0.3384 | Test Acc. 88.0823%
+AdamP on OSDataset_transformed: T 2/3 | E 163/200 Ended | E Time: 67.320s | ~Time Left: 2490.846s |  Train Loss: 0.2775 | Train Acc. 89.6046% | Test Loss: 0.4167 | Test Acc. 84.1500%
+AdamP on OSDataset_transformed: T 2/3 | E 164/200 Ended | E Time: 60.420s | ~Time Left: 2175.115s |  Train Loss: 0.2810 | Train Acc. 89.5517% | Test Loss: 0.3996 | Test Acc. 85.7834%
+AdamP on OSDataset_transformed: T 2/3 | E 165/200 Ended | E Time: 67.391s | ~Time Left: 2358.683s |  Train Loss: 0.2768 | Train Acc. 89.5970% | Test Loss: 0.3593 | Test Acc. 88.3848%
+AdamP on OSDataset_transformed: T 2/3 | E 166/200 Ended | E Time: 68.395s | ~Time Left: 2325.431s |  Train Loss: 0.2757 | Train Acc. 89.7029% | Test Loss: 0.3482 | Test Acc. 87.5983%
+AdamP on OSDataset_transformed: T 2/3 | E 167/200 Ended | E Time: 65.858s | ~Time Left: 2173.331s |  Train Loss: 0.2723 | Train Acc. 89.8541% | Test Loss: 0.3646 | Test Acc. 87.1143%
+AdamP on OSDataset_transformed: T 2/3 | E 168/200 Ended | E Time: 67.397s | ~Time Left: 2156.709s |  Train Loss: 0.2805 | Train Acc. 89.3627% | Test Loss: 0.3449 | Test Acc. 88.0218%
+AdamP on OSDataset_transformed: T 2/3 | E 169/200 Ended | E Time: 69.054s | ~Time Left: 2140.688s |  Train Loss: 0.2799 | Train Acc. 89.7180% | Test Loss: 0.3463 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 2/3 | E 170/200 Ended | E Time: 66.131s | ~Time Left: 1983.944s |  Train Loss: 0.2741 | Train Acc. 89.7558% | Test Loss: 0.3092 | Test Acc. 88.9292%
+AdamP on OSDataset_transformed: T 2/3 | E 171/200 Ended | E Time: 65.649s | ~Time Left: 1903.834s |  Train Loss: 0.2736 | Train Acc. 89.9070% | Test Loss: 0.3399 | Test Acc. 87.4773%
+AdamP on OSDataset_transformed: T 2/3 | E 172/200 Ended | E Time: 65.676s | ~Time Left: 1838.941s |  Train Loss: 0.2666 | Train Acc. 89.9902% | Test Loss: 0.3449 | Test Acc. 87.9613%
+AdamP on OSDataset_transformed: T 2/3 | E 173/200 Ended | E Time: 63.933s | ~Time Left: 1726.194s |  Train Loss: 0.2689 | Train Acc. 90.0053% | Test Loss: 0.3538 | Test Acc. 86.4489%
+AdamP on OSDataset_transformed: T 2/3 | E 174/200 Ended | E Time: 61.760s | ~Time Left: 1605.753s |  Train Loss: 0.2671 | Train Acc. 90.1036% | Test Loss: 0.3510 | Test Acc. 87.5983%
+AdamP on OSDataset_transformed: T 2/3 | E 175/200 Ended | E Time: 62.422s | ~Time Left: 1560.544s |  Train Loss: 0.2728 | Train Acc. 89.8314% | Test Loss: 0.3366 | Test Acc. 88.6267%
+AdamP on OSDataset_transformed: T 2/3 | E 176/200 Ended | E Time: 62.232s | ~Time Left: 1493.566s |  Train Loss: 0.2760 | Train Acc. 89.8012% | Test Loss: 0.3701 | Test Acc. 86.2674%
+AdamP on OSDataset_transformed: T 2/3 | E 177/200 Ended | E Time: 59.920s | ~Time Left: 1378.163s |  Train Loss: 0.2747 | Train Acc. 89.8994% | Test Loss: 0.3103 | Test Acc. 88.9897%
+AdamP on OSDataset_transformed: T 2/3 | E 178/200 Ended | E Time: 59.880s | ~Time Left: 1317.363s |  Train Loss: 0.2631 | Train Acc. 90.0809% | Test Loss: 0.3671 | Test Acc. 88.5662%
+AdamP on OSDataset_transformed: T 2/3 | E 179/200 Ended | E Time: 62.871s | ~Time Left: 1320.293s |  Train Loss: 0.2677 | Train Acc. 90.0809% | Test Loss: 0.3555 | Test Acc. 87.1748%
+AdamP on OSDataset_transformed: T 2/3 | E 180/200 Ended | E Time: 59.324s | ~Time Left: 1186.483s |  Train Loss: 0.2669 | Train Acc. 90.3001% | Test Loss: 0.3403 | Test Acc. 88.3243%
+AdamP on OSDataset_transformed: T 2/3 | E 181/200 Ended | E Time: 58.183s | ~Time Left: 1105.477s |  Train Loss: 0.2638 | Train Acc. 90.0507% | Test Loss: 0.3567 | Test Acc. 87.2353%
+AdamP on OSDataset_transformed: T 2/3 | E 182/200 Ended | E Time: 58.907s | ~Time Left: 1060.328s |  Train Loss: 0.2623 | Train Acc. 90.2321% | Test Loss: 0.4065 | Test Acc. 85.6624%
+AdamP on OSDataset_transformed: T 2/3 | E 183/200 Ended | E Time: 59.274s | ~Time Left: 1007.657s |  Train Loss: 0.2667 | Train Acc. 90.0280% | Test Loss: 0.3353 | Test Acc. 89.2317%
+AdamP on OSDataset_transformed: T 2/3 | E 184/200 Ended | E Time: 55.604s | ~Time Left: 889.671s |  Train Loss: 0.2674 | Train Acc. 90.0204% | Test Loss: 0.3443 | Test Acc. 86.6909%
+AdamP on OSDataset_transformed: T 2/3 | E 185/200 Ended | E Time: 56.294s | ~Time Left: 844.410s |  Train Loss: 0.2582 | Train Acc. 90.5723% | Test Loss: 0.3351 | Test Acc. 88.3848%
+AdamP on OSDataset_transformed: T 2/3 | E 186/200 Ended | E Time: 56.775s | ~Time Left: 794.853s |  Train Loss: 0.2600 | Train Acc. 90.0431% | Test Loss: 0.3432 | Test Acc. 87.0538%
+AdamP on OSDataset_transformed: T 2/3 | E 187/200 Ended | E Time: 56.416s | ~Time Left: 733.403s |  Train Loss: 0.2547 | Train Acc. 90.4589% | Test Loss: 0.3471 | Test Acc. 88.3848%
+AdamP on OSDataset_transformed: T 2/3 | E 188/200 Ended | E Time: 61.313s | ~Time Left: 735.753s |  Train Loss: 0.2598 | Train Acc. 90.2321% | Test Loss: 0.3360 | Test Acc. 88.9897%
+AdamP on OSDataset_transformed: T 2/3 | E 189/200 Ended | E Time: 59.987s | ~Time Left: 659.857s |  Train Loss: 0.2555 | Train Acc. 90.5194% | Test Loss: 0.3769 | Test Acc. 86.8724%
+AdamP on OSDataset_transformed: T 2/3 | E 190/200 Ended | E Time: 59.788s | ~Time Left: 597.876s |  Train Loss: 0.2568 | Train Acc. 89.9372% | Test Loss: 0.3425 | Test Acc. 88.6872%
+AdamP on OSDataset_transformed: T 2/3 | E 191/200 Ended | E Time: 60.068s | ~Time Left: 540.612s |  Train Loss: 0.2567 | Train Acc. 90.3379% | Test Loss: 0.3264 | Test Acc. 89.0502%
+AdamP on OSDataset_transformed: T 2/3 | E 192/200 Ended | E Time: 57.029s | ~Time Left: 456.229s |  Train Loss: 0.2546 | Train Acc. 90.3984% | Test Loss: 0.3303 | Test Acc. 89.2317%
+AdamP on OSDataset_transformed: T 2/3 | E 193/200 Ended | E Time: 55.233s | ~Time Left: 386.634s |  Train Loss: 0.2548 | Train Acc. 90.5345% | Test Loss: 0.3451 | Test Acc. 88.2033%
+AdamP on OSDataset_transformed: T 2/3 | E 194/200 Ended | E Time: 56.741s | ~Time Left: 340.445s |  Train Loss: 0.2582 | Train Acc. 90.3379% | Test Loss: 0.3393 | Test Acc. 87.5983%
+AdamP on OSDataset_transformed: T 2/3 | E 195/200 Ended | E Time: 54.939s | ~Time Left: 274.695s |  Train Loss: 0.2570 | Train Acc. 90.3757% | Test Loss: 0.3396 | Test Acc. 88.2638%
+AdamP on OSDataset_transformed: T 2/3 | E 196/200 Ended | E Time: 56.029s | ~Time Left: 224.117s |  Train Loss: 0.2554 | Train Acc. 90.3001% | Test Loss: 0.2974 | Test Acc. 89.4132%
+AdamP on OSDataset_transformed: T 2/3 | E 197/200 Ended | E Time: 55.818s | ~Time Left: 167.455s |  Train Loss: 0.2494 | Train Acc. 90.6782% | Test Loss: 0.4362 | Test Acc. 85.9044%
+AdamP on OSDataset_transformed: T 2/3 | E 198/200 Ended | E Time: 56.420s | ~Time Left: 112.841s |  Train Loss: 0.2562 | Train Acc. 90.4513% | Test Loss: 0.3595 | Test Acc. 87.6588%
+AdamP on OSDataset_transformed: T 2/3 | E 199/200 Ended | E Time: 55.037s | ~Time Left: 55.037s |  Train Loss: 0.2558 | Train Acc. 90.1641% | Test Loss: 0.3346 | Test Acc. 88.6267%
+AdamP on OSDataset_transformed: T 2/3 | E 200/200 Ended | E Time: 55.118s | ~Time Left: 0.000s |  Train Loss: 0.2483 | Train Acc. 90.3909% | Test Loss: 0.3752 | Test Acc. 87.7798%
+AdamP on OSDataset_transformed: T 3/3 | E 1/200 Ended | E Time: 54.597s | ~Time Left: 10864.775s |  Train Loss: 0.8614 | Train Acc. 68.0729% | Test Loss: 0.9111 | Test Acc. 64.9123%
+AdamP on OSDataset_transformed: T 3/3 | E 2/200 Ended | E Time: 54.634s | ~Time Left: 10817.464s |  Train Loss: 0.7459 | Train Acc. 72.6242% | Test Loss: 0.7443 | Test Acc. 72.1113%
+AdamP on OSDataset_transformed: T 3/3 | E 3/200 Ended | E Time: 55.468s | ~Time Left: 10927.230s |  Train Loss: 0.6782 | Train Acc. 75.3610% | Test Loss: 0.7578 | Test Acc. 72.1113%
+AdamP on OSDataset_transformed: T 3/3 | E 4/200 Ended | E Time: 54.483s | ~Time Left: 10678.599s |  Train Loss: 0.6312 | Train Acc. 77.1528% | Test Loss: 0.5980 | Test Acc. 77.3140%
+AdamP on OSDataset_transformed: T 3/3 | E 5/200 Ended | E Time: 54.573s | ~Time Left: 10641.833s |  Train Loss: 0.6047 | Train Acc. 78.2037% | Test Loss: 0.5777 | Test Acc. 80.3388%
+AdamP on OSDataset_transformed: T 3/3 | E 6/200 Ended | E Time: 54.849s | ~Time Left: 10640.748s |  Train Loss: 0.5811 | Train Acc. 79.2772% | Test Loss: 0.6306 | Test Acc. 77.4955%
+AdamP on OSDataset_transformed: T 3/3 | E 7/200 Ended | E Time: 54.474s | ~Time Left: 10513.536s |  Train Loss: 0.5644 | Train Acc. 79.8291% | Test Loss: 0.7941 | Test Acc. 73.0188%
+AdamP on OSDataset_transformed: T 3/3 | E 8/200 Ended | E Time: 54.731s | ~Time Left: 10508.354s |  Train Loss: 0.5584 | Train Acc. 80.0635% | Test Loss: 0.5337 | Test Acc. 80.5203%
+AdamP on OSDataset_transformed: T 3/3 | E 9/200 Ended | E Time: 54.458s | ~Time Left: 10401.388s |  Train Loss: 0.5482 | Train Acc. 80.1315% | Test Loss: 0.7241 | Test Acc. 75.3176%
+AdamP on OSDataset_transformed: T 3/3 | E 10/200 Ended | E Time: 54.428s | ~Time Left: 10341.310s |  Train Loss: 0.5305 | Train Acc. 81.0161% | Test Loss: 0.6307 | Test Acc. 76.9510%
+AdamP on OSDataset_transformed: T 3/3 | E 11/200 Ended | E Time: 54.454s | ~Time Left: 10291.828s |  Train Loss: 0.5351 | Train Acc. 80.9103% | Test Loss: 0.5648 | Test Acc. 80.0363%
+AdamP on OSDataset_transformed: T 3/3 | E 12/200 Ended | E Time: 54.607s | ~Time Left: 10266.149s |  Train Loss: 0.5318 | Train Acc. 81.0463% | Test Loss: 0.5507 | Test Acc. 80.2783%
+AdamP on OSDataset_transformed: T 3/3 | E 13/200 Ended | E Time: 55.166s | ~Time Left: 10316.017s |  Train Loss: 0.5104 | Train Acc. 81.6285% | Test Loss: 0.5643 | Test Acc. 79.0684%
+AdamP on OSDataset_transformed: T 3/3 | E 14/200 Ended | E Time: 54.865s | ~Time Left: 10204.847s |  Train Loss: 0.5136 | Train Acc. 81.7646% | Test Loss: 0.6230 | Test Acc. 78.8264%
+AdamP on OSDataset_transformed: T 3/3 | E 15/200 Ended | E Time: 54.915s | ~Time Left: 10159.223s |  Train Loss: 0.5034 | Train Acc. 81.7570% | Test Loss: 0.5717 | Test Acc. 78.5239%
+AdamP on OSDataset_transformed: T 3/3 | E 16/200 Ended | E Time: 54.904s | ~Time Left: 10102.386s |  Train Loss: 0.4999 | Train Acc. 82.1653% | Test Loss: 0.5226 | Test Acc. 80.4598%
+AdamP on OSDataset_transformed: T 3/3 | E 17/200 Ended | E Time: 55.014s | ~Time Left: 10067.494s |  Train Loss: 0.4890 | Train Acc. 82.6491% | Test Loss: 0.4854 | Test Acc. 82.3956%
+AdamP on OSDataset_transformed: T 3/3 | E 18/200 Ended | E Time: 54.899s | ~Time Left: 9991.703s |  Train Loss: 0.4927 | Train Acc. 82.1577% | Test Loss: 0.4792 | Test Acc. 82.6376%
+AdamP on OSDataset_transformed: T 3/3 | E 19/200 Ended | E Time: 54.784s | ~Time Left: 9915.827s |  Train Loss: 0.4767 | Train Acc. 83.0801% | Test Loss: 0.4609 | Test Acc. 83.6056%
+AdamP on OSDataset_transformed: T 3/3 | E 20/200 Ended | E Time: 54.822s | ~Time Left: 9867.976s |  Train Loss: 0.4818 | Train Acc. 83.0876% | Test Loss: 0.4799 | Test Acc. 82.5771%
+AdamP on OSDataset_transformed: T 3/3 | E 21/200 Ended | E Time: 54.850s | ~Time Left: 9818.091s |  Train Loss: 0.4705 | Train Acc. 83.1254% | Test Loss: 0.5283 | Test Acc. 81.9722%
+AdamP on OSDataset_transformed: T 3/3 | E 22/200 Ended | E Time: 54.890s | ~Time Left: 9770.372s |  Train Loss: 0.4684 | Train Acc. 83.2313% | Test Loss: 0.4469 | Test Acc. 84.2710%
+AdamP on OSDataset_transformed: T 3/3 | E 23/200 Ended | E Time: 54.723s | ~Time Left: 9685.915s |  Train Loss: 0.4677 | Train Acc. 83.1405% | Test Loss: 0.4397 | Test Acc. 83.9685%
+AdamP on OSDataset_transformed: T 3/3 | E 24/200 Ended | E Time: 54.658s | ~Time Left: 9619.745s |  Train Loss: 0.4593 | Train Acc. 83.6017% | Test Loss: 0.4744 | Test Acc. 83.6661%
+AdamP on OSDataset_transformed: T 3/3 | E 25/200 Ended | E Time: 54.620s | ~Time Left: 9558.476s |  Train Loss: 0.4479 | Train Acc. 84.1083% | Test Loss: 0.4641 | Test Acc. 83.3031%
+AdamP on OSDataset_transformed: T 3/3 | E 26/200 Ended | E Time: 54.911s | ~Time Left: 9554.586s |  Train Loss: 0.4545 | Train Acc. 83.7605% | Test Loss: 0.4308 | Test Acc. 84.5735%
+AdamP on OSDataset_transformed: T 3/3 | E 27/200 Ended | E Time: 54.563s | ~Time Left: 9439.400s |  Train Loss: 0.4451 | Train Acc. 83.7076% | Test Loss: 0.4449 | Test Acc. 83.7266%
+AdamP on OSDataset_transformed: T 3/3 | E 28/200 Ended | E Time: 54.916s | ~Time Left: 9445.630s |  Train Loss: 0.4482 | Train Acc. 83.5639% | Test Loss: 0.5071 | Test Acc. 81.1857%
+AdamP on OSDataset_transformed: T 3/3 | E 29/200 Ended | E Time: 55.017s | ~Time Left: 9407.925s |  Train Loss: 0.4411 | Train Acc. 84.1536% | Test Loss: 0.5952 | Test Acc. 79.1289%
+AdamP on OSDataset_transformed: T 3/3 | E 30/200 Ended | E Time: 55.302s | ~Time Left: 9401.285s |  Train Loss: 0.4413 | Train Acc. 83.9646% | Test Loss: 0.4971 | Test Acc. 82.2747%
+AdamP on OSDataset_transformed: T 3/3 | E 31/200 Ended | E Time: 54.785s | ~Time Left: 9258.651s |  Train Loss: 0.4381 | Train Acc. 84.3502% | Test Loss: 0.4228 | Test Acc. 84.8155%
+AdamP on OSDataset_transformed: T 3/3 | E 32/200 Ended | E Time: 54.797s | ~Time Left: 9205.909s |  Train Loss: 0.4394 | Train Acc. 84.0856% | Test Loss: 0.4734 | Test Acc. 82.6981%
+AdamP on OSDataset_transformed: T 3/3 | E 33/200 Ended | E Time: 55.122s | ~Time Left: 9205.359s |  Train Loss: 0.4377 | Train Acc. 84.0175% | Test Loss: 0.4438 | Test Acc. 83.9685%
+AdamP on OSDataset_transformed: T 3/3 | E 34/200 Ended | E Time: 54.766s | ~Time Left: 9091.176s |  Train Loss: 0.4429 | Train Acc. 84.1990% | Test Loss: 0.5351 | Test Acc. 80.3388%
+AdamP on OSDataset_transformed: T 3/3 | E 35/200 Ended | E Time: 54.730s | ~Time Left: 9030.486s |  Train Loss: 0.4282 | Train Acc. 84.7055% | Test Loss: 0.4352 | Test Acc. 84.2105%
+AdamP on OSDataset_transformed: T 3/3 | E 36/200 Ended | E Time: 54.643s | ~Time Left: 8961.390s |  Train Loss: 0.4241 | Train Acc. 84.5165% | Test Loss: 0.4391 | Test Acc. 83.8475%
+AdamP on OSDataset_transformed: T 3/3 | E 37/200 Ended | E Time: 54.762s | ~Time Left: 8926.250s |  Train Loss: 0.4193 | Train Acc. 84.6904% | Test Loss: 0.4406 | Test Acc. 84.5735%
+AdamP on OSDataset_transformed: T 3/3 | E 38/200 Ended | E Time: 54.597s | ~Time Left: 8844.677s |  Train Loss: 0.4119 | Train Acc. 85.0079% | Test Loss: 0.4244 | Test Acc. 84.2710%
+AdamP on OSDataset_transformed: T 3/3 | E 39/200 Ended | E Time: 54.796s | ~Time Left: 8822.219s |  Train Loss: 0.4223 | Train Acc. 84.7433% | Test Loss: 0.5250 | Test Acc. 81.7907%
+AdamP on OSDataset_transformed: T 3/3 | E 40/200 Ended | E Time: 54.472s | ~Time Left: 8715.522s |  Train Loss: 0.4212 | Train Acc. 84.6753% | Test Loss: 0.4224 | Test Acc. 85.0575%
+AdamP on OSDataset_transformed: T 3/3 | E 41/200 Ended | E Time: 54.589s | ~Time Left: 8679.620s |  Train Loss: 0.4122 | Train Acc. 84.9172% | Test Loss: 0.4391 | Test Acc. 84.4525%
+AdamP on OSDataset_transformed: T 3/3 | E 42/200 Ended | E Time: 54.672s | ~Time Left: 8638.127s |  Train Loss: 0.4112 | Train Acc. 85.0987% | Test Loss: 0.4942 | Test Acc. 82.0327%
+AdamP on OSDataset_transformed: T 3/3 | E 43/200 Ended | E Time: 54.987s | ~Time Left: 8632.977s |  Train Loss: 0.4098 | Train Acc. 85.5447% | Test Loss: 0.4427 | Test Acc. 84.6340%
+AdamP on OSDataset_transformed: T 3/3 | E 44/200 Ended | E Time: 55.268s | ~Time Left: 8621.871s |  Train Loss: 0.4093 | Train Acc. 85.4238% | Test Loss: 0.4075 | Test Acc. 85.1785%
+AdamP on OSDataset_transformed: T 3/3 | E 45/200 Ended | E Time: 56.906s | ~Time Left: 8820.489s |  Train Loss: 0.4044 | Train Acc. 85.5901% | Test Loss: 0.4344 | Test Acc. 85.2390%
+AdamP on OSDataset_transformed: T 3/3 | E 46/200 Ended | E Time: 56.740s | ~Time Left: 8737.913s |  Train Loss: 0.4039 | Train Acc. 85.2574% | Test Loss: 0.4384 | Test Acc. 85.1180%
+AdamP on OSDataset_transformed: T 3/3 | E 47/200 Ended | E Time: 54.695s | ~Time Left: 8368.304s |  Train Loss: 0.4063 | Train Acc. 85.5296% | Test Loss: 0.4206 | Test Acc. 84.0895%
+AdamP on OSDataset_transformed: T 3/3 | E 48/200 Ended | E Time: 55.551s | ~Time Left: 8443.746s |  Train Loss: 0.4026 | Train Acc. 85.4767% | Test Loss: 0.4321 | Test Acc. 84.6340%
+AdamP on OSDataset_transformed: T 3/3 | E 49/200 Ended | E Time: 55.055s | ~Time Left: 8313.266s |  Train Loss: 0.3927 | Train Acc. 85.6128% | Test Loss: 0.4289 | Test Acc. 84.2710%
+AdamP on OSDataset_transformed: T 3/3 | E 50/200 Ended | E Time: 56.595s | ~Time Left: 8489.303s |  Train Loss: 0.4015 | Train Acc. 85.4842% | Test Loss: 0.4471 | Test Acc. 84.0895%
+AdamP on OSDataset_transformed: T 3/3 | E 51/200 Ended | E Time: 57.105s | ~Time Left: 8508.600s |  Train Loss: 0.3891 | Train Acc. 85.8320% | Test Loss: 0.4427 | Test Acc. 84.5130%
+AdamP on OSDataset_transformed: T 3/3 | E 52/200 Ended | E Time: 58.511s | ~Time Left: 8659.660s |  Train Loss: 0.3921 | Train Acc. 85.8698% | Test Loss: 0.4302 | Test Acc. 84.0895%
+AdamP on OSDataset_transformed: T 3/3 | E 53/200 Ended | E Time: 54.688s | ~Time Left: 8039.081s |  Train Loss: 0.3993 | Train Acc. 85.6732% | Test Loss: 0.3889 | Test Acc. 85.8439%
+slurmstepd: error: *** JOB 7068136 ON cdr2617 CANCELLED AT 2021-07-07T06:46:36 ***

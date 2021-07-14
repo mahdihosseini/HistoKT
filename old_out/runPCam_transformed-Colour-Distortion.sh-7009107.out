@@ -1,0 +1,2310 @@
+transferring data
+
+Mon Jul  5 14:34:25 PDT 2021
+Finished transferring
+
+Mon Jul  5 14:34:26 PDT 2021
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : /home/zhan8425/projects/def-plato/zhan8425/HistoKT/PretrainingConfigs/PCam_transformed-Colour-Distortion-configAdas.yaml
+    data                : /localscratch/zhan8425.7009107.0        
+    output              : pretraining-output/Colour-Distortion/PCam_transformed
+    checkpoint          : pretraining-checkpoint/Colour-Distortion/PCam_transformed
+    resume              : None                                    
+    pretrained_model    : None                                    
+    freeze_encoder      : 1                                       
+    root                : .                                       
+    save_freq           : 200                                     
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+---------------------------------------------
+Adas: Output dir pretraining-output/Colour-Distortion/PCam_transformed does not exist, building
+Adas: Notice: early stop will not be used as it was set to -1.0, training till completion
+Adas: Experiment Configuration
+---------------------------------------------
+    dataset              PCam_transformed    
+    network              ResNet18            
+    optimizer            Adas                
+    scheduler            None                
+    level                L3Only              
+    color_kwargs         {'augmentation': 'Colour-Distortion', 'distortion': 0.3}
+    degree_of_rotation   45                  
+    vertical_flipping    0.5                 
+    horizontal_flipping  0.5                 
+    horizontal_shift     0.1                 
+    vertical_shift       0.1                 
+    gaussian_blur        0                   
+    kernel_size          9                   
+    variance             0.1                 
+    cutout               0                   
+    n_holes              1                   
+    cutout_length        16                  
+    init_lr              0.03                
+    early_stop_threshold -1.0                
+    optimizer_kwargs     {'momentum': 0.9, 'weight_decay': 0.0005, 'beta': 0.98, 'linear': 0.0, 'gamma': 0.5, 'step_size': 25.0}
+    scheduler_kwargs     {}
+    p                    1                   
+    start_trial          0                   
+    n_trials             3                   
+    num_workers          4                   
+    max_epochs           250                 
+    mini_batch_size      32                  
+    loss                 cross_entropy       
+    early_stop_patience  10                  
+---------------------------------------------
+Adas: Pytorch device is set to cuda
+Train AUC: 0.731479
+Valid AUC: 0.7780499999999999
+Adas on PCam_transformed: T 1/3 | E 1/250 Ended | E Time: 6.987s | ~Time Left: 1739.841s |  Train Loss: 1.0344 | Train Acc. 67.9000% | Test Loss: 0.6929 | Test Acc. 68.2500%
+Train AUC: 0.807828
+Valid AUC: 0.8455750000000001
+Adas on PCam_transformed: T 1/3 | E 2/250 Ended | E Time: 5.739s | ~Time Left: 1423.390s |  Train Loss: 0.6123 | Train Acc. 74.4000% | Test Loss: 0.5011 | Test Acc. 75.7500%
+Train AUC: 0.8339539999999999
+Valid AUC: 0.8565500000000001
+Adas on PCam_transformed: T 1/3 | E 3/250 Ended | E Time: 5.679s | ~Time Left: 1402.719s |  Train Loss: 0.5640 | Train Acc. 76.3000% | Test Loss: 0.5098 | Test Acc. 77.5000%
+Train AUC: 0.837097
+Valid AUC: 0.829775
+Adas on PCam_transformed: T 1/3 | E 4/250 Ended | E Time: 5.701s | ~Time Left: 1402.524s |  Train Loss: 0.5236 | Train Acc. 77.7000% | Test Loss: 0.5019 | Test Acc. 74.7500%
+Train AUC: 0.840991
+Valid AUC: 0.85255
+Adas on PCam_transformed: T 1/3 | E 5/250 Ended | E Time: 5.773s | ~Time Left: 1414.409s |  Train Loss: 0.5234 | Train Acc. 76.6500% | Test Loss: 0.5171 | Test Acc. 76.0000%
+Train AUC: 0.8660880000000002
+Valid AUC: 0.8167500000000001
+Adas on PCam_transformed: T 1/3 | E 6/250 Ended | E Time: 5.692s | ~Time Left: 1388.875s |  Train Loss: 0.4759 | Train Acc. 80.4500% | Test Loss: 0.5499 | Test Acc. 69.7500%
+Train AUC: 0.873627
+Valid AUC: 0.860575
+Adas on PCam_transformed: T 1/3 | E 7/250 Ended | E Time: 5.943s | ~Time Left: 1444.110s |  Train Loss: 0.4479 | Train Acc. 79.7000% | Test Loss: 0.4856 | Test Acc. 73.5000%
+Train AUC: 0.880884
+Valid AUC: 0.8567750000000001
+Adas on PCam_transformed: T 1/3 | E 8/250 Ended | E Time: 5.749s | ~Time Left: 1391.331s |  Train Loss: 0.4418 | Train Acc. 81.3000% | Test Loss: 0.4792 | Test Acc. 78.7500%
+Train AUC: 0.878269
+Valid AUC: 0.8712249999999999
+Adas on PCam_transformed: T 1/3 | E 9/250 Ended | E Time: 5.736s | ~Time Left: 1382.354s |  Train Loss: 0.4488 | Train Acc. 80.8000% | Test Loss: 0.4643 | Test Acc. 80.5000%
+Train AUC: 0.8825970000000001
+Valid AUC: 0.864775
+Adas on PCam_transformed: T 1/3 | E 10/250 Ended | E Time: 5.751s | ~Time Left: 1380.296s |  Train Loss: 0.4377 | Train Acc. 81.5000% | Test Loss: 0.4854 | Test Acc. 79.2500%
+Train AUC: 0.890643
+Valid AUC: 0.8310249999999999
+Adas on PCam_transformed: T 1/3 | E 11/250 Ended | E Time: 5.740s | ~Time Left: 1371.809s |  Train Loss: 0.4255 | Train Acc. 82.2000% | Test Loss: 0.5732 | Test Acc. 71.5000%
+Train AUC: 0.8977089999999999
+Valid AUC: 0.83565
+Adas on PCam_transformed: T 1/3 | E 12/250 Ended | E Time: 5.797s | ~Time Left: 1379.685s |  Train Loss: 0.4118 | Train Acc. 83.0500% | Test Loss: 0.5205 | Test Acc. 72.0000%
+Train AUC: 0.891566
+Valid AUC: 0.859825
+Adas on PCam_transformed: T 1/3 | E 13/250 Ended | E Time: 5.745s | ~Time Left: 1361.594s |  Train Loss: 0.4248 | Train Acc. 82.4000% | Test Loss: 0.4659 | Test Acc. 79.7500%
+Train AUC: 0.897642
+Valid AUC: 0.8460749999999999
+Adas on PCam_transformed: T 1/3 | E 14/250 Ended | E Time: 5.941s | ~Time Left: 1402.048s |  Train Loss: 0.4118 | Train Acc. 82.7000% | Test Loss: 0.4993 | Test Acc. 78.0000%
+Train AUC: 0.9015970000000001
+Valid AUC: 0.8272499999999999
+Adas on PCam_transformed: T 1/3 | E 15/250 Ended | E Time: 5.769s | ~Time Left: 1355.701s |  Train Loss: 0.3993 | Train Acc. 83.0000% | Test Loss: 1.0242 | Test Acc. 76.5000%
+Train AUC: 0.8907940000000001
+Valid AUC: 0.840925
+Adas on PCam_transformed: T 1/3 | E 16/250 Ended | E Time: 5.763s | ~Time Left: 1348.454s |  Train Loss: 0.4236 | Train Acc. 81.5000% | Test Loss: 0.5170 | Test Acc. 77.7500%
+Train AUC: 0.892276
+Valid AUC: 0.864025
+Adas on PCam_transformed: T 1/3 | E 17/250 Ended | E Time: 5.838s | ~Time Left: 1360.326s |  Train Loss: 0.4172 | Train Acc. 83.0500% | Test Loss: 0.4791 | Test Acc. 78.7500%
+Train AUC: 0.904498
+Valid AUC: 0.8236749999999999
+Adas on PCam_transformed: T 1/3 | E 18/250 Ended | E Time: 5.723s | ~Time Left: 1327.682s |  Train Loss: 0.3948 | Train Acc. 83.4000% | Test Loss: 0.5499 | Test Acc. 76.0000%
+Train AUC: 0.899636
+Valid AUC: 0.855425
+Adas on PCam_transformed: T 1/3 | E 19/250 Ended | E Time: 5.756s | ~Time Left: 1329.697s |  Train Loss: 0.4071 | Train Acc. 82.1500% | Test Loss: 0.4801 | Test Acc. 78.0000%
+Train AUC: 0.9085770000000001
+Valid AUC: 0.855675
+Adas on PCam_transformed: T 1/3 | E 20/250 Ended | E Time: 5.783s | ~Time Left: 1330.175s |  Train Loss: 0.3880 | Train Acc. 82.8500% | Test Loss: 0.4705 | Test Acc. 77.7500%
+Train AUC: 0.9101239999999999
+Valid AUC: 0.8634249999999999
+Adas on PCam_transformed: T 1/3 | E 21/250 Ended | E Time: 5.756s | ~Time Left: 1318.056s |  Train Loss: 0.3809 | Train Acc. 83.7000% | Test Loss: 0.4630 | Test Acc. 80.5000%
+Train AUC: 0.913875
+Valid AUC: 0.8647750000000001
+Adas on PCam_transformed: T 1/3 | E 22/250 Ended | E Time: 5.777s | ~Time Left: 1317.215s |  Train Loss: 0.3733 | Train Acc. 84.2000% | Test Loss: 0.4797 | Test Acc. 79.2500%
+Train AUC: 0.9011429999999999
+Valid AUC: 0.867225
+Adas on PCam_transformed: T 1/3 | E 23/250 Ended | E Time: 5.734s | ~Time Left: 1301.667s |  Train Loss: 0.4035 | Train Acc. 82.6000% | Test Loss: 0.4749 | Test Acc. 79.0000%
+Train AUC: 0.9065940000000001
+Valid AUC: 0.83885
+Adas on PCam_transformed: T 1/3 | E 24/250 Ended | E Time: 5.743s | ~Time Left: 1297.829s |  Train Loss: 0.3892 | Train Acc. 83.5500% | Test Loss: 0.5172 | Test Acc. 77.0000%
+Train AUC: 0.9091879999999999
+Valid AUC: 0.882675
+Adas on PCam_transformed: T 1/3 | E 25/250 Ended | E Time: 5.706s | ~Time Left: 1283.740s |  Train Loss: 0.3839 | Train Acc. 84.2000% | Test Loss: 0.4681 | Test Acc. 80.5000%
+Train AUC: 0.912425
+Valid AUC: 0.873675
+Adas on PCam_transformed: T 1/3 | E 26/250 Ended | E Time: 5.842s | ~Time Left: 1308.708s |  Train Loss: 0.3825 | Train Acc. 84.0000% | Test Loss: 0.4524 | Test Acc. 78.7500%
+Train AUC: 0.919316
+Valid AUC: 0.8760499999999999
+Adas on PCam_transformed: T 1/3 | E 27/250 Ended | E Time: 5.770s | ~Time Left: 1286.703s |  Train Loss: 0.3637 | Train Acc. 84.2500% | Test Loss: 0.4521 | Test Acc. 78.7500%
+Train AUC: 0.919389
+Valid AUC: 0.875775
+Adas on PCam_transformed: T 1/3 | E 28/250 Ended | E Time: 5.774s | ~Time Left: 1281.874s |  Train Loss: 0.3613 | Train Acc. 84.7500% | Test Loss: 0.4843 | Test Acc. 77.5000%
+Train AUC: 0.9213819999999999
+Valid AUC: 0.7974749999999999
+Adas on PCam_transformed: T 1/3 | E 29/250 Ended | E Time: 6.580s | ~Time Left: 1454.094s |  Train Loss: 0.3600 | Train Acc. 85.2000% | Test Loss: 0.6247 | Test Acc. 66.5000%
+Train AUC: 0.922881
+Valid AUC: 0.871925
+Adas on PCam_transformed: T 1/3 | E 30/250 Ended | E Time: 5.790s | ~Time Left: 1273.907s |  Train Loss: 0.3557 | Train Acc. 84.9000% | Test Loss: 0.4876 | Test Acc. 80.0000%
+Train AUC: 0.9250980000000001
+Valid AUC: 0.8554749999999999
+Adas on PCam_transformed: T 1/3 | E 31/250 Ended | E Time: 5.705s | ~Time Left: 1249.298s |  Train Loss: 0.3441 | Train Acc. 85.6500% | Test Loss: 0.5003 | Test Acc. 77.7500%
+Train AUC: 0.9199179999999998
+Valid AUC: 0.86005
+Adas on PCam_transformed: T 1/3 | E 32/250 Ended | E Time: 5.667s | ~Time Left: 1235.306s |  Train Loss: 0.3596 | Train Acc. 85.0500% | Test Loss: 0.4704 | Test Acc. 79.0000%
+Train AUC: 0.920916
+Valid AUC: 0.8591
+Adas on PCam_transformed: T 1/3 | E 33/250 Ended | E Time: 5.820s | ~Time Left: 1262.957s |  Train Loss: 0.3566 | Train Acc. 85.2000% | Test Loss: 0.5139 | Test Acc. 77.2500%
+Train AUC: 0.9303480000000001
+Valid AUC: 0.841275
+Adas on PCam_transformed: T 1/3 | E 34/250 Ended | E Time: 5.747s | ~Time Left: 1241.435s |  Train Loss: 0.3344 | Train Acc. 86.1500% | Test Loss: 0.5379 | Test Acc. 74.0000%
+Train AUC: 0.918561
+Valid AUC: 0.866525
+Adas on PCam_transformed: T 1/3 | E 35/250 Ended | E Time: 5.749s | ~Time Left: 1235.989s |  Train Loss: 0.3710 | Train Acc. 84.9500% | Test Loss: 0.4726 | Test Acc. 79.0000%
+Train AUC: 0.927304
+Valid AUC: 0.856125
+Adas on PCam_transformed: T 1/3 | E 36/250 Ended | E Time: 5.750s | ~Time Left: 1230.524s |  Train Loss: 0.3480 | Train Acc. 85.5500% | Test Loss: 0.4891 | Test Acc. 78.5000%
+Train AUC: 0.91913
+Valid AUC: 0.880125
+Adas on PCam_transformed: T 1/3 | E 37/250 Ended | E Time: 5.700s | ~Time Left: 1214.183s |  Train Loss: 0.3610 | Train Acc. 84.9000% | Test Loss: 0.4349 | Test Acc. 78.7500%
+Train AUC: 0.929316
+Valid AUC: 0.8712500000000001
+Adas on PCam_transformed: T 1/3 | E 38/250 Ended | E Time: 5.767s | ~Time Left: 1222.604s |  Train Loss: 0.3400 | Train Acc. 85.1000% | Test Loss: 0.4670 | Test Acc. 77.7500%
+Train AUC: 0.928833
+Valid AUC: 0.8839499999999999
+Adas on PCam_transformed: T 1/3 | E 39/250 Ended | E Time: 5.734s | ~Time Left: 1209.904s |  Train Loss: 0.3406 | Train Acc. 85.7500% | Test Loss: 0.4828 | Test Acc. 80.5000%
+Train AUC: 0.930353
+Valid AUC: 0.8721
+Adas on PCam_transformed: T 1/3 | E 40/250 Ended | E Time: 5.766s | ~Time Left: 1210.882s |  Train Loss: 0.3358 | Train Acc. 85.3500% | Test Loss: 0.4627 | Test Acc. 78.7500%
+Train AUC: 0.9241849999999998
+Valid AUC: 0.8576249999999999
+Adas on PCam_transformed: T 1/3 | E 41/250 Ended | E Time: 5.743s | ~Time Left: 1200.248s |  Train Loss: 0.3508 | Train Acc. 84.2500% | Test Loss: 0.5182 | Test Acc. 74.5000%
+Train AUC: 0.9218609999999999
+Valid AUC: 0.8800749999999999
+Adas on PCam_transformed: T 1/3 | E 42/250 Ended | E Time: 5.725s | ~Time Left: 1190.701s |  Train Loss: 0.3573 | Train Acc. 84.8000% | Test Loss: 0.4276 | Test Acc. 78.0000%
+Train AUC: 0.932447
+Valid AUC: 0.857925
+Adas on PCam_transformed: T 1/3 | E 43/250 Ended | E Time: 5.853s | ~Time Left: 1211.612s |  Train Loss: 0.3316 | Train Acc. 86.1000% | Test Loss: 0.5551 | Test Acc. 79.5000%
+Train AUC: 0.9352020000000001
+Valid AUC: 0.8795499999999999
+Adas on PCam_transformed: T 1/3 | E 44/250 Ended | E Time: 5.686s | ~Time Left: 1171.352s |  Train Loss: 0.3252 | Train Acc. 86.2500% | Test Loss: 0.5355 | Test Acc. 80.5000%
+Train AUC: 0.929672
+Valid AUC: 0.8818
+Adas on PCam_transformed: T 1/3 | E 45/250 Ended | E Time: 5.802s | ~Time Left: 1189.434s |  Train Loss: 0.3397 | Train Acc. 86.3000% | Test Loss: 0.4800 | Test Acc. 78.5000%
+Train AUC: 0.932358
+Valid AUC: 0.8876
+Adas on PCam_transformed: T 1/3 | E 46/250 Ended | E Time: 5.813s | ~Time Left: 1185.827s |  Train Loss: 0.3322 | Train Acc. 85.6500% | Test Loss: 0.4246 | Test Acc. 79.0000%
+Train AUC: 0.9333230000000001
+Valid AUC: 0.8757750000000001
+Adas on PCam_transformed: T 1/3 | E 47/250 Ended | E Time: 5.755s | ~Time Left: 1168.165s |  Train Loss: 0.3294 | Train Acc. 86.3000% | Test Loss: 0.5091 | Test Acc. 74.7500%
+Train AUC: 0.9353639999999999
+Valid AUC: 0.883925
+Adas on PCam_transformed: T 1/3 | E 48/250 Ended | E Time: 5.742s | ~Time Left: 1159.926s |  Train Loss: 0.3211 | Train Acc. 86.7500% | Test Loss: 0.4448 | Test Acc. 78.0000%
+Train AUC: 0.938265
+Valid AUC: 0.8719250000000001
+Adas on PCam_transformed: T 1/3 | E 49/250 Ended | E Time: 6.002s | ~Time Left: 1206.482s |  Train Loss: 0.3157 | Train Acc. 87.0500% | Test Loss: 0.4797 | Test Acc. 79.7500%
+Train AUC: 0.9378679999999999
+Valid AUC: 0.8682250000000001
+Adas on PCam_transformed: T 1/3 | E 50/250 Ended | E Time: 5.686s | ~Time Left: 1137.210s |  Train Loss: 0.3205 | Train Acc. 87.4000% | Test Loss: 0.5033 | Test Acc. 78.2500%
+Train AUC: 0.9399730000000001
+Valid AUC: 0.8615499999999999
+Adas on PCam_transformed: T 1/3 | E 51/250 Ended | E Time: 5.854s | ~Time Left: 1164.868s |  Train Loss: 0.3132 | Train Acc. 86.2500% | Test Loss: 0.5591 | Test Acc. 76.0000%
+Train AUC: 0.939227
+Valid AUC: 0.8657500000000001
+Adas on PCam_transformed: T 1/3 | E 52/250 Ended | E Time: 5.805s | ~Time Left: 1149.323s |  Train Loss: 0.3195 | Train Acc. 85.7500% | Test Loss: 0.5101 | Test Acc. 78.0000%
+Train AUC: 0.9401840000000001
+Valid AUC: 0.887875
+Adas on PCam_transformed: T 1/3 | E 53/250 Ended | E Time: 5.719s | ~Time Left: 1126.603s |  Train Loss: 0.3105 | Train Acc. 87.6500% | Test Loss: 0.4665 | Test Acc. 78.0000%
+Train AUC: 0.9411370000000001
+Valid AUC: 0.8587
+Adas on PCam_transformed: T 1/3 | E 54/250 Ended | E Time: 5.767s | ~Time Left: 1130.427s |  Train Loss: 0.3117 | Train Acc. 86.8000% | Test Loss: 0.5554 | Test Acc. 77.2500%
+Train AUC: 0.946618
+Valid AUC: 0.8697999999999999
+Adas on PCam_transformed: T 1/3 | E 55/250 Ended | E Time: 5.675s | ~Time Left: 1106.618s |  Train Loss: 0.2950 | Train Acc. 87.9500% | Test Loss: 0.5029 | Test Acc. 78.2500%
+Train AUC: 0.943537
+Valid AUC: 0.8903749999999999
+Adas on PCam_transformed: T 1/3 | E 56/250 Ended | E Time: 5.755s | ~Time Left: 1116.476s |  Train Loss: 0.3037 | Train Acc. 87.9000% | Test Loss: 0.4364 | Test Acc. 79.2500%
+Train AUC: 0.9432290000000001
+Valid AUC: 0.888825
+Adas on PCam_transformed: T 1/3 | E 57/250 Ended | E Time: 5.758s | ~Time Left: 1111.339s |  Train Loss: 0.3030 | Train Acc. 87.5000% | Test Loss: 0.4281 | Test Acc. 80.0000%
+Train AUC: 0.9463769999999999
+Valid AUC: 0.864475
+Adas on PCam_transformed: T 1/3 | E 58/250 Ended | E Time: 5.808s | ~Time Left: 1115.165s |  Train Loss: 0.2965 | Train Acc. 88.0000% | Test Loss: 0.5014 | Test Acc. 79.7500%
+Train AUC: 0.9388180000000002
+Valid AUC: 0.8785249999999999
+Adas on PCam_transformed: T 1/3 | E 59/250 Ended | E Time: 5.746s | ~Time Left: 1097.484s |  Train Loss: 0.3179 | Train Acc. 86.5000% | Test Loss: 0.4532 | Test Acc. 78.5000%
+Train AUC: 0.9436869999999999
+Valid AUC: 0.890775
+Adas on PCam_transformed: T 1/3 | E 60/250 Ended | E Time: 5.723s | ~Time Left: 1087.325s |  Train Loss: 0.3020 | Train Acc. 86.7000% | Test Loss: 0.4628 | Test Acc. 78.7500%
+Train AUC: 0.946303
+Valid AUC: 0.8879499999999999
+Adas on PCam_transformed: T 1/3 | E 61/250 Ended | E Time: 5.761s | ~Time Left: 1088.890s |  Train Loss: 0.2978 | Train Acc. 88.1500% | Test Loss: 0.4437 | Test Acc. 79.7500%
+Train AUC: 0.949282
+Valid AUC: 0.87835
+Adas on PCam_transformed: T 1/3 | E 62/250 Ended | E Time: 5.800s | ~Time Left: 1090.381s |  Train Loss: 0.2874 | Train Acc. 88.3000% | Test Loss: 0.4785 | Test Acc. 79.7500%
+Train AUC: 0.9554529999999999
+Valid AUC: 0.8915500000000001
+Adas on PCam_transformed: T 1/3 | E 63/250 Ended | E Time: 5.787s | ~Time Left: 1082.104s |  Train Loss: 0.2703 | Train Acc. 89.0500% | Test Loss: 0.4331 | Test Acc. 80.7500%
+Train AUC: 0.9466479999999999
+Valid AUC: 0.858225
+Adas on PCam_transformed: T 1/3 | E 64/250 Ended | E Time: 5.747s | ~Time Left: 1069.037s |  Train Loss: 0.2963 | Train Acc. 87.0500% | Test Loss: 0.5448 | Test Acc. 79.7500%
+Train AUC: 0.947976
+Valid AUC: 0.88455
+Adas on PCam_transformed: T 1/3 | E 65/250 Ended | E Time: 5.771s | ~Time Left: 1067.558s |  Train Loss: 0.2900 | Train Acc. 87.9500% | Test Loss: 0.4313 | Test Acc. 79.2500%
+Train AUC: 0.9455870000000001
+Valid AUC: 0.877775
+Adas on PCam_transformed: T 1/3 | E 66/250 Ended | E Time: 5.711s | ~Time Left: 1050.876s |  Train Loss: 0.2987 | Train Acc. 88.6000% | Test Loss: 0.4864 | Test Acc. 78.0000%
+Train AUC: 0.9520449999999999
+Valid AUC: 0.8552500000000001
+Adas on PCam_transformed: T 1/3 | E 67/250 Ended | E Time: 5.855s | ~Time Left: 1071.488s |  Train Loss: 0.2796 | Train Acc. 88.3000% | Test Loss: 0.5099 | Test Acc. 77.0000%
+Train AUC: 0.94808
+Valid AUC: 0.880075
+Adas on PCam_transformed: T 1/3 | E 68/250 Ended | E Time: 5.793s | ~Time Left: 1054.250s |  Train Loss: 0.2923 | Train Acc. 88.6000% | Test Loss: 0.4836 | Test Acc. 78.5000%
+Train AUC: 0.9549190000000001
+Valid AUC: 0.880325
+Adas on PCam_transformed: T 1/3 | E 69/250 Ended | E Time: 5.775s | ~Time Left: 1045.195s |  Train Loss: 0.2692 | Train Acc. 89.2500% | Test Loss: 0.4779 | Test Acc. 80.0000%
+Train AUC: 0.948066
+Valid AUC: 0.87865
+Adas on PCam_transformed: T 1/3 | E 70/250 Ended | E Time: 5.736s | ~Time Left: 1032.410s |  Train Loss: 0.2892 | Train Acc. 87.5500% | Test Loss: 0.4813 | Test Acc. 78.5000%
+Train AUC: 0.9534220000000001
+Valid AUC: 0.8762749999999999
+Adas on PCam_transformed: T 1/3 | E 71/250 Ended | E Time: 5.835s | ~Time Left: 1044.389s |  Train Loss: 0.2760 | Train Acc. 88.5500% | Test Loss: 0.5198 | Test Acc. 79.0000%
+Train AUC: 0.954798
+Valid AUC: 0.8795999999999999
+Adas on PCam_transformed: T 1/3 | E 72/250 Ended | E Time: 5.915s | ~Time Left: 1052.842s |  Train Loss: 0.2717 | Train Acc. 89.6000% | Test Loss: 0.5095 | Test Acc. 79.2500%
+Train AUC: 0.9547649999999999
+Valid AUC: 0.861025
+Adas on PCam_transformed: T 1/3 | E 73/250 Ended | E Time: 5.753s | ~Time Left: 1018.312s |  Train Loss: 0.2694 | Train Acc. 89.6500% | Test Loss: 0.5475 | Test Acc. 77.0000%
+Train AUC: 0.9530339999999999
+Valid AUC: 0.8812499999999999
+Adas on PCam_transformed: T 1/3 | E 74/250 Ended | E Time: 5.810s | ~Time Left: 1022.491s |  Train Loss: 0.2764 | Train Acc. 88.0000% | Test Loss: 0.5159 | Test Acc. 81.7500%
+Train AUC: 0.946874
+Valid AUC: 0.8833
+Adas on PCam_transformed: T 1/3 | E 75/250 Ended | E Time: 5.818s | ~Time Left: 1018.113s |  Train Loss: 0.2966 | Train Acc. 87.7000% | Test Loss: 0.4789 | Test Acc. 79.5000%
+Train AUC: 0.9518190000000001
+Valid AUC: 0.87675
+Adas on PCam_transformed: T 1/3 | E 76/250 Ended | E Time: 5.711s | ~Time Left: 993.691s |  Train Loss: 0.2823 | Train Acc. 88.5000% | Test Loss: 0.4692 | Test Acc. 80.5000%
+Train AUC: 0.9546809999999999
+Valid AUC: 0.87985
+Adas on PCam_transformed: T 1/3 | E 77/250 Ended | E Time: 5.758s | ~Time Left: 996.093s |  Train Loss: 0.2735 | Train Acc. 88.0500% | Test Loss: 0.4751 | Test Acc. 80.0000%
+Train AUC: 0.957019
+Valid AUC: 0.8898999999999999
+Adas on PCam_transformed: T 1/3 | E 78/250 Ended | E Time: 5.856s | ~Time Left: 1007.310s |  Train Loss: 0.2648 | Train Acc. 89.3500% | Test Loss: 0.4942 | Test Acc. 80.0000%
+Train AUC: 0.9538519999999999
+Valid AUC: 0.89405
+Adas on PCam_transformed: T 1/3 | E 79/250 Ended | E Time: 5.658s | ~Time Left: 967.499s |  Train Loss: 0.2722 | Train Acc. 89.6500% | Test Loss: 0.4678 | Test Acc. 81.5000%
+Train AUC: 0.9594390000000002
+Valid AUC: 0.8841249999999999
+Adas on PCam_transformed: T 1/3 | E 80/250 Ended | E Time: 6.875s | ~Time Left: 1168.742s |  Train Loss: 0.2569 | Train Acc. 89.4000% | Test Loss: 0.4610 | Test Acc. 80.5000%
+Train AUC: 0.9607039999999999
+Valid AUC: 0.861225
+Adas on PCam_transformed: T 1/3 | E 81/250 Ended | E Time: 5.804s | ~Time Left: 980.908s |  Train Loss: 0.2553 | Train Acc. 90.8000% | Test Loss: 0.5978 | Test Acc. 78.7500%
+Train AUC: 0.9609979999999998
+Valid AUC: 0.8849249999999999
+Adas on PCam_transformed: T 1/3 | E 82/250 Ended | E Time: 5.804s | ~Time Left: 975.146s |  Train Loss: 0.2531 | Train Acc. 89.6000% | Test Loss: 0.5015 | Test Acc. 79.2500%
+Train AUC: 0.960855
+Valid AUC: 0.8955250000000001
+Adas on PCam_transformed: T 1/3 | E 83/250 Ended | E Time: 5.786s | ~Time Left: 966.224s |  Train Loss: 0.2546 | Train Acc. 89.3500% | Test Loss: 0.4737 | Test Acc. 79.5000%
+Train AUC: 0.962127
+Valid AUC: 0.903875
+Adas on PCam_transformed: T 1/3 | E 84/250 Ended | E Time: 5.699s | ~Time Left: 945.990s |  Train Loss: 0.2475 | Train Acc. 90.5000% | Test Loss: 0.4137 | Test Acc. 81.5000%
+Train AUC: 0.960413
+Valid AUC: 0.893975
+Adas on PCam_transformed: T 1/3 | E 85/250 Ended | E Time: 5.751s | ~Time Left: 948.941s |  Train Loss: 0.2536 | Train Acc. 89.3500% | Test Loss: 0.4503 | Test Acc. 79.0000%
+Train AUC: 0.955652
+Valid AUC: 0.853325
+Adas on PCam_transformed: T 1/3 | E 86/250 Ended | E Time: 5.783s | ~Time Left: 948.379s |  Train Loss: 0.2682 | Train Acc. 88.1500% | Test Loss: 0.5511 | Test Acc. 77.0000%
+Train AUC: 0.9579019999999999
+Valid AUC: 0.896375
+Adas on PCam_transformed: T 1/3 | E 87/250 Ended | E Time: 5.701s | ~Time Left: 929.245s |  Train Loss: 0.2609 | Train Acc. 89.6000% | Test Loss: 0.4809 | Test Acc. 78.7500%
+Train AUC: 0.959199
+Valid AUC: 0.8803
+Adas on PCam_transformed: T 1/3 | E 88/250 Ended | E Time: 5.746s | ~Time Left: 930.897s |  Train Loss: 0.2595 | Train Acc. 89.0000% | Test Loss: 0.5730 | Test Acc. 77.2500%
+Train AUC: 0.961711
+Valid AUC: 0.8957999999999999
+Adas on PCam_transformed: T 1/3 | E 89/250 Ended | E Time: 5.843s | ~Time Left: 940.685s |  Train Loss: 0.2516 | Train Acc. 90.1500% | Test Loss: 0.4768 | Test Acc. 78.0000%
+Train AUC: 0.959465
+Valid AUC: 0.883225
+Adas on PCam_transformed: T 1/3 | E 90/250 Ended | E Time: 5.685s | ~Time Left: 909.557s |  Train Loss: 0.2572 | Train Acc. 89.4500% | Test Loss: 0.4932 | Test Acc. 79.0000%
+Train AUC: 0.964174
+Valid AUC: 0.890075
+Adas on PCam_transformed: T 1/3 | E 91/250 Ended | E Time: 5.754s | ~Time Left: 914.833s |  Train Loss: 0.2425 | Train Acc. 90.1000% | Test Loss: 0.5006 | Test Acc. 78.7500%
+Train AUC: 0.9590529999999999
+Valid AUC: 0.878
+Adas on PCam_transformed: T 1/3 | E 92/250 Ended | E Time: 5.736s | ~Time Left: 906.245s |  Train Loss: 0.2578 | Train Acc. 89.3500% | Test Loss: 0.4767 | Test Acc. 79.5000%
+Train AUC: 0.962577
+Valid AUC: 0.892675
+Adas on PCam_transformed: T 1/3 | E 93/250 Ended | E Time: 5.713s | ~Time Left: 896.950s |  Train Loss: 0.2455 | Train Acc. 90.0000% | Test Loss: 0.5159 | Test Acc. 79.0000%
+Train AUC: 0.963116
+Valid AUC: 0.8955
+Adas on PCam_transformed: T 1/3 | E 94/250 Ended | E Time: 5.734s | ~Time Left: 894.580s |  Train Loss: 0.2434 | Train Acc. 90.5000% | Test Loss: 0.4699 | Test Acc. 79.7500%
+Train AUC: 0.966106
+Valid AUC: 0.8927750000000001
+Adas on PCam_transformed: T 1/3 | E 95/250 Ended | E Time: 5.759s | ~Time Left: 892.657s |  Train Loss: 0.2397 | Train Acc. 90.8500% | Test Loss: 0.5302 | Test Acc. 79.2500%
+Train AUC: 0.9628289999999999
+Valid AUC: 0.8948499999999999
+Adas on PCam_transformed: T 1/3 | E 96/250 Ended | E Time: 5.777s | ~Time Left: 889.643s |  Train Loss: 0.2463 | Train Acc. 90.1000% | Test Loss: 0.4814 | Test Acc. 80.5000%
+Train AUC: 0.968425
+Valid AUC: 0.8699250000000001
+Adas on PCam_transformed: T 1/3 | E 97/250 Ended | E Time: 5.790s | ~Time Left: 885.862s |  Train Loss: 0.2272 | Train Acc. 91.3500% | Test Loss: 0.5988 | Test Acc. 78.5000%
+Train AUC: 0.958658
+Valid AUC: 0.8896
+Adas on PCam_transformed: T 1/3 | E 98/250 Ended | E Time: 5.747s | ~Time Left: 873.519s |  Train Loss: 0.2621 | Train Acc. 89.7000% | Test Loss: 0.4805 | Test Acc. 79.2500%
+Train AUC: 0.965597
+Valid AUC: 0.8801749999999999
+Adas on PCam_transformed: T 1/3 | E 99/250 Ended | E Time: 5.785s | ~Time Left: 873.609s |  Train Loss: 0.2382 | Train Acc. 89.9000% | Test Loss: 0.5082 | Test Acc. 80.0000%
+Train AUC: 0.9649199999999999
+Valid AUC: 0.89725
+Adas on PCam_transformed: T 1/3 | E 100/250 Ended | E Time: 5.689s | ~Time Left: 853.293s |  Train Loss: 0.2375 | Train Acc. 90.7000% | Test Loss: 0.4565 | Test Acc. 81.0000%
+Train AUC: 0.967786
+Valid AUC: 0.8759999999999999
+Adas on PCam_transformed: T 1/3 | E 101/250 Ended | E Time: 5.746s | ~Time Left: 856.190s |  Train Loss: 0.2285 | Train Acc. 91.2000% | Test Loss: 0.6513 | Test Acc. 80.0000%
+Train AUC: 0.964982
+Valid AUC: 0.9081250000000001
+Adas on PCam_transformed: T 1/3 | E 102/250 Ended | E Time: 5.742s | ~Time Left: 849.803s |  Train Loss: 0.2372 | Train Acc. 90.5500% | Test Loss: 0.4181 | Test Acc. 81.0000%
+Train AUC: 0.9723919999999999
+Valid AUC: 0.9024
+Adas on PCam_transformed: T 1/3 | E 103/250 Ended | E Time: 5.731s | ~Time Left: 842.523s |  Train Loss: 0.2145 | Train Acc. 91.2500% | Test Loss: 0.4709 | Test Acc. 81.7500%
+Train AUC: 0.971477
+Valid AUC: 0.8831249999999999
+Adas on PCam_transformed: T 1/3 | E 104/250 Ended | E Time: 5.741s | ~Time Left: 838.233s |  Train Loss: 0.2174 | Train Acc. 91.5000% | Test Loss: 0.5233 | Test Acc. 80.2500%
+Train AUC: 0.9709230000000001
+Valid AUC: 0.8812500000000001
+Adas on PCam_transformed: T 1/3 | E 105/250 Ended | E Time: 5.740s | ~Time Left: 832.301s |  Train Loss: 0.2187 | Train Acc. 90.9500% | Test Loss: 0.4904 | Test Acc. 79.7500%
+Train AUC: 0.970348
+Valid AUC: 0.9008750000000001
+Adas on PCam_transformed: T 1/3 | E 106/250 Ended | E Time: 5.726s | ~Time Left: 824.550s |  Train Loss: 0.2191 | Train Acc. 91.5500% | Test Loss: 0.5210 | Test Acc. 78.7500%
+Train AUC: 0.971947
+Valid AUC: 0.842225
+Adas on PCam_transformed: T 1/3 | E 107/250 Ended | E Time: 5.794s | ~Time Left: 828.564s |  Train Loss: 0.2147 | Train Acc. 91.1500% | Test Loss: 0.8006 | Test Acc. 77.0000%
+Train AUC: 0.973715
+Valid AUC: 0.8834749999999999
+Adas on PCam_transformed: T 1/3 | E 108/250 Ended | E Time: 5.795s | ~Time Left: 822.955s |  Train Loss: 0.2102 | Train Acc. 91.8500% | Test Loss: 0.5255 | Test Acc. 79.0000%
+Train AUC: 0.974028
+Valid AUC: 0.898425
+Adas on PCam_transformed: T 1/3 | E 109/250 Ended | E Time: 5.700s | ~Time Left: 803.664s |  Train Loss: 0.2062 | Train Acc. 91.7500% | Test Loss: 0.4531 | Test Acc. 81.7500%
+Train AUC: 0.9721549999999999
+Valid AUC: 0.898
+Adas on PCam_transformed: T 1/3 | E 110/250 Ended | E Time: 5.796s | ~Time Left: 811.407s |  Train Loss: 0.2132 | Train Acc. 91.5500% | Test Loss: 0.4484 | Test Acc. 81.2500%
+Train AUC: 0.9717079999999999
+Valid AUC: 0.90025
+Adas on PCam_transformed: T 1/3 | E 111/250 Ended | E Time: 5.712s | ~Time Left: 794.027s |  Train Loss: 0.2138 | Train Acc. 90.9000% | Test Loss: 0.4772 | Test Acc. 81.5000%
+Train AUC: 0.974148
+Valid AUC: 0.87915
+Adas on PCam_transformed: T 1/3 | E 112/250 Ended | E Time: 5.743s | ~Time Left: 792.537s |  Train Loss: 0.2047 | Train Acc. 91.9000% | Test Loss: 0.5929 | Test Acc. 77.7500%
+Train AUC: 0.971747
+Valid AUC: 0.8827750000000001
+Adas on PCam_transformed: T 1/3 | E 113/250 Ended | E Time: 5.795s | ~Time Left: 793.877s |  Train Loss: 0.2149 | Train Acc. 91.3000% | Test Loss: 0.5435 | Test Acc. 79.7500%
+Train AUC: 0.971356
+Valid AUC: 0.895175
+Adas on PCam_transformed: T 1/3 | E 114/250 Ended | E Time: 5.760s | ~Time Left: 783.402s |  Train Loss: 0.2177 | Train Acc. 91.3500% | Test Loss: 0.4756 | Test Acc. 80.2500%
+Train AUC: 0.970262
+Valid AUC: 0.902325
+Adas on PCam_transformed: T 1/3 | E 115/250 Ended | E Time: 5.742s | ~Time Left: 775.188s |  Train Loss: 0.2208 | Train Acc. 91.8000% | Test Loss: 0.4387 | Test Acc. 81.0000%
+Train AUC: 0.974379
+Valid AUC: 0.861525
+Adas on PCam_transformed: T 1/3 | E 116/250 Ended | E Time: 5.756s | ~Time Left: 771.347s |  Train Loss: 0.2025 | Train Acc. 91.8500% | Test Loss: 0.6235 | Test Acc. 79.5000%
+Train AUC: 0.976905
+Valid AUC: 0.891575
+Adas on PCam_transformed: T 1/3 | E 117/250 Ended | E Time: 5.631s | ~Time Left: 748.880s |  Train Loss: 0.1937 | Train Acc. 93.0000% | Test Loss: 0.5940 | Test Acc. 81.5000%
+Train AUC: 0.976007
+Valid AUC: 0.879075
+Adas on PCam_transformed: T 1/3 | E 118/250 Ended | E Time: 5.773s | ~Time Left: 761.989s |  Train Loss: 0.1968 | Train Acc. 91.7500% | Test Loss: 0.5960 | Test Acc. 80.2500%
+Train AUC: 0.976355
+Valid AUC: 0.8953
+Adas on PCam_transformed: T 1/3 | E 119/250 Ended | E Time: 5.797s | ~Time Left: 759.447s |  Train Loss: 0.1968 | Train Acc. 92.3000% | Test Loss: 0.4881 | Test Acc. 81.7500%
+Train AUC: 0.975934
+Valid AUC: 0.8812
+Adas on PCam_transformed: T 1/3 | E 120/250 Ended | E Time: 5.746s | ~Time Left: 746.937s |  Train Loss: 0.1968 | Train Acc. 92.5000% | Test Loss: 0.5506 | Test Acc. 81.0000%
+Train AUC: 0.981662
+Valid AUC: 0.9042749999999999
+Adas on PCam_transformed: T 1/3 | E 121/250 Ended | E Time: 5.760s | ~Time Left: 743.033s |  Train Loss: 0.1729 | Train Acc. 93.2000% | Test Loss: 0.4623 | Test Acc. 81.7500%
+Train AUC: 0.975129
+Valid AUC: 0.896375
+Adas on PCam_transformed: T 1/3 | E 122/250 Ended | E Time: 5.779s | ~Time Left: 739.680s |  Train Loss: 0.2003 | Train Acc. 92.1000% | Test Loss: 0.4535 | Test Acc. 81.2500%
+Train AUC: 0.980189
+Valid AUC: 0.8940750000000001
+Adas on PCam_transformed: T 1/3 | E 123/250 Ended | E Time: 5.737s | ~Time Left: 728.618s |  Train Loss: 0.1796 | Train Acc. 93.2500% | Test Loss: 0.4999 | Test Acc. 81.2500%
+Train AUC: 0.9823939999999999
+Valid AUC: 0.8963249999999999
+Adas on PCam_transformed: T 1/3 | E 124/250 Ended | E Time: 5.749s | ~Time Left: 724.411s |  Train Loss: 0.1698 | Train Acc. 93.1500% | Test Loss: 0.5156 | Test Acc. 79.7500%
+Train AUC: 0.979654
+Valid AUC: 0.9103
+Adas on PCam_transformed: T 1/3 | E 125/250 Ended | E Time: 5.770s | ~Time Left: 721.222s |  Train Loss: 0.1836 | Train Acc. 92.6000% | Test Loss: 0.5106 | Test Acc. 82.2500%
+Train AUC: 0.980816
+Valid AUC: 0.8895249999999999
+Adas on PCam_transformed: T 1/3 | E 126/250 Ended | E Time: 5.795s | ~Time Left: 718.588s |  Train Loss: 0.1781 | Train Acc. 92.8500% | Test Loss: 0.6135 | Test Acc. 81.0000%
+Train AUC: 0.9811719999999999
+Valid AUC: 0.8907749999999999
+Adas on PCam_transformed: T 1/3 | E 127/250 Ended | E Time: 5.695s | ~Time Left: 700.505s |  Train Loss: 0.1727 | Train Acc. 93.2000% | Test Loss: 0.6302 | Test Acc. 80.7500%
+Train AUC: 0.9831
+Valid AUC: 0.8807499999999999
+Adas on PCam_transformed: T 1/3 | E 128/250 Ended | E Time: 6.049s | ~Time Left: 737.981s |  Train Loss: 0.1708 | Train Acc. 93.0000% | Test Loss: 0.6092 | Test Acc. 81.2500%
+Train AUC: 0.9812899999999999
+Valid AUC: 0.8710249999999999
+Adas on PCam_transformed: T 1/3 | E 129/250 Ended | E Time: 5.771s | ~Time Left: 698.245s |  Train Loss: 0.1736 | Train Acc. 92.9500% | Test Loss: 0.6851 | Test Acc. 81.0000%
+Train AUC: 0.9847199999999999
+Valid AUC: 0.8994500000000001
+Adas on PCam_transformed: T 1/3 | E 130/250 Ended | E Time: 5.734s | ~Time Left: 688.115s |  Train Loss: 0.1587 | Train Acc. 93.6500% | Test Loss: 0.5100 | Test Acc. 81.2500%
+Train AUC: 0.981588
+Valid AUC: 0.8774500000000001
+Adas on PCam_transformed: T 1/3 | E 131/250 Ended | E Time: 5.736s | ~Time Left: 682.625s |  Train Loss: 0.1757 | Train Acc. 92.9000% | Test Loss: 0.7000 | Test Acc. 80.2500%
+Train AUC: 0.9832489999999999
+Valid AUC: 0.9112
+Adas on PCam_transformed: T 1/3 | E 132/250 Ended | E Time: 5.712s | ~Time Left: 673.993s |  Train Loss: 0.1653 | Train Acc. 93.2500% | Test Loss: 0.5277 | Test Acc. 83.7500%
+Train AUC: 0.9840220000000001
+Valid AUC: 0.865475
+Adas on PCam_transformed: T 1/3 | E 133/250 Ended | E Time: 5.692s | ~Time Left: 665.911s |  Train Loss: 0.1599 | Train Acc. 93.5000% | Test Loss: 0.6551 | Test Acc. 79.7500%
+Train AUC: 0.982023
+Valid AUC: 0.876625
+Adas on PCam_transformed: T 1/3 | E 134/250 Ended | E Time: 5.739s | ~Time Left: 665.767s |  Train Loss: 0.1721 | Train Acc. 92.9500% | Test Loss: 0.5715 | Test Acc. 77.0000%
+Train AUC: 0.983976
+Valid AUC: 0.9043
+Adas on PCam_transformed: T 1/3 | E 135/250 Ended | E Time: 5.706s | ~Time Left: 656.135s |  Train Loss: 0.1635 | Train Acc. 93.5500% | Test Loss: 0.5089 | Test Acc. 82.7500%
+Train AUC: 0.983571
+Valid AUC: 0.889425
+Adas on PCam_transformed: T 1/3 | E 136/250 Ended | E Time: 5.799s | ~Time Left: 661.104s |  Train Loss: 0.1625 | Train Acc. 93.7500% | Test Loss: 0.6266 | Test Acc. 82.7500%
+Train AUC: 0.9875619999999999
+Valid AUC: 0.9023249999999999
+Adas on PCam_transformed: T 1/3 | E 137/250 Ended | E Time: 5.815s | ~Time Left: 657.100s |  Train Loss: 0.1407 | Train Acc. 94.4000% | Test Loss: 0.6229 | Test Acc. 81.5000%
+Train AUC: 0.986564
+Valid AUC: 0.90965
+Adas on PCam_transformed: T 1/3 | E 138/250 Ended | E Time: 5.793s | ~Time Left: 648.836s |  Train Loss: 0.1472 | Train Acc. 93.7000% | Test Loss: 0.5215 | Test Acc. 82.2500%
+Train AUC: 0.983296
+Valid AUC: 0.898225
+Adas on PCam_transformed: T 1/3 | E 139/250 Ended | E Time: 5.722s | ~Time Left: 635.101s |  Train Loss: 0.1645 | Train Acc. 93.5500% | Test Loss: 0.5382 | Test Acc. 80.7500%
+Train AUC: 0.986353
+Valid AUC: 0.87385
+Adas on PCam_transformed: T 1/3 | E 140/250 Ended | E Time: 5.762s | ~Time Left: 633.801s |  Train Loss: 0.1468 | Train Acc. 94.7000% | Test Loss: 0.5949 | Test Acc. 78.2500%
+Train AUC: 0.9865160000000001
+Valid AUC: 0.89085
+Adas on PCam_transformed: T 1/3 | E 141/250 Ended | E Time: 5.754s | ~Time Left: 627.203s |  Train Loss: 0.1482 | Train Acc. 94.6000% | Test Loss: 0.5570 | Test Acc. 80.5000%
+Train AUC: 0.9819709999999999
+Valid AUC: 0.903675
+Adas on PCam_transformed: T 1/3 | E 142/250 Ended | E Time: 5.774s | ~Time Left: 623.567s |  Train Loss: 0.1731 | Train Acc. 93.6500% | Test Loss: 0.5575 | Test Acc. 80.5000%
+Train AUC: 0.986336
+Valid AUC: 0.8970499999999999
+Adas on PCam_transformed: T 1/3 | E 143/250 Ended | E Time: 5.672s | ~Time Left: 606.869s |  Train Loss: 0.1558 | Train Acc. 94.3000% | Test Loss: 0.5506 | Test Acc. 81.7500%
+Train AUC: 0.979888
+Valid AUC: 0.913775
+Adas on PCam_transformed: T 1/3 | E 144/250 Ended | E Time: 5.722s | ~Time Left: 606.492s |  Train Loss: 0.1821 | Train Acc. 92.4500% | Test Loss: 0.4718 | Test Acc. 82.7500%
+Train AUC: 0.9900909999999999
+Valid AUC: 0.89675
+Adas on PCam_transformed: T 1/3 | E 145/250 Ended | E Time: 5.797s | ~Time Left: 608.708s |  Train Loss: 0.1318 | Train Acc. 94.7500% | Test Loss: 0.5005 | Test Acc. 82.7500%
+Train AUC: 0.988485
+Valid AUC: 0.8945000000000001
+Adas on PCam_transformed: T 1/3 | E 146/250 Ended | E Time: 5.734s | ~Time Left: 596.378s |  Train Loss: 0.1366 | Train Acc. 94.8500% | Test Loss: 0.5709 | Test Acc. 80.2500%
+Train AUC: 0.985298
+Valid AUC: 0.886425
+Adas on PCam_transformed: T 1/3 | E 147/250 Ended | E Time: 5.776s | ~Time Left: 594.920s |  Train Loss: 0.1530 | Train Acc. 94.5500% | Test Loss: 0.6443 | Test Acc. 80.2500%
+Train AUC: 0.991964
+Valid AUC: 0.89175
+Adas on PCam_transformed: T 1/3 | E 148/250 Ended | E Time: 5.793s | ~Time Left: 590.912s |  Train Loss: 0.1174 | Train Acc. 95.6500% | Test Loss: 0.6033 | Test Acc. 81.5000%
+Train AUC: 0.988312
+Valid AUC: 0.8960500000000001
+Adas on PCam_transformed: T 1/3 | E 149/250 Ended | E Time: 5.753s | ~Time Left: 581.026s |  Train Loss: 0.1412 | Train Acc. 95.1000% | Test Loss: 0.5664 | Test Acc. 81.7500%
+Train AUC: 0.987851
+Valid AUC: 0.9075749999999999
+Adas on PCam_transformed: T 1/3 | E 150/250 Ended | E Time: 5.678s | ~Time Left: 567.782s |  Train Loss: 0.1407 | Train Acc. 94.5500% | Test Loss: 0.4853 | Test Acc. 83.7500%
+Train AUC: 0.9882540000000001
+Valid AUC: 0.89455
+Adas on PCam_transformed: T 1/3 | E 151/250 Ended | E Time: 5.804s | ~Time Left: 574.587s |  Train Loss: 0.1398 | Train Acc. 94.4500% | Test Loss: 0.5893 | Test Acc. 79.7500%
+Train AUC: 0.990327
+Valid AUC: 0.9004
+Adas on PCam_transformed: T 1/3 | E 152/250 Ended | E Time: 5.787s | ~Time Left: 567.095s |  Train Loss: 0.1240 | Train Acc. 95.5500% | Test Loss: 0.5767 | Test Acc. 82.5000%
+Train AUC: 0.9898760000000001
+Valid AUC: 0.8889499999999999
+Adas on PCam_transformed: T 1/3 | E 153/250 Ended | E Time: 5.802s | ~Time Left: 562.806s |  Train Loss: 0.1293 | Train Acc. 94.7500% | Test Loss: 0.6436 | Test Acc. 81.7500%
+Train AUC: 0.992024
+Valid AUC: 0.88435
+Adas on PCam_transformed: T 1/3 | E 154/250 Ended | E Time: 5.716s | ~Time Left: 548.732s |  Train Loss: 0.1156 | Train Acc. 96.1000% | Test Loss: 0.6221 | Test Acc. 79.2500%
+Train AUC: 0.990113
+Valid AUC: 0.907925
+Adas on PCam_transformed: T 1/3 | E 155/250 Ended | E Time: 5.754s | ~Time Left: 546.660s |  Train Loss: 0.1270 | Train Acc. 94.8000% | Test Loss: 0.5195 | Test Acc. 83.2500%
+Train AUC: 0.994097
+Valid AUC: 0.8891249999999999
+Adas on PCam_transformed: T 1/3 | E 156/250 Ended | E Time: 5.786s | ~Time Left: 543.905s |  Train Loss: 0.1029 | Train Acc. 95.9500% | Test Loss: 0.6686 | Test Acc. 81.7500%
+Train AUC: 0.992645
+Valid AUC: 0.896575
+Adas on PCam_transformed: T 1/3 | E 157/250 Ended | E Time: 5.788s | ~Time Left: 538.272s |  Train Loss: 0.1108 | Train Acc. 95.7000% | Test Loss: 0.6537 | Test Acc. 79.2500%
+Train AUC: 0.991434
+Valid AUC: 0.8896999999999999
+Adas on PCam_transformed: T 1/3 | E 158/250 Ended | E Time: 5.825s | ~Time Left: 535.880s |  Train Loss: 0.1163 | Train Acc. 95.4500% | Test Loss: 0.6380 | Test Acc. 80.2500%
+Train AUC: 0.993323
+Valid AUC: 0.9217249999999999
+Adas on PCam_transformed: T 1/3 | E 159/250 Ended | E Time: 5.734s | ~Time Left: 521.798s |  Train Loss: 0.1045 | Train Acc. 95.4500% | Test Loss: 0.4801 | Test Acc. 84.2500%
+Train AUC: 0.994576
+Valid AUC: 0.905825
+Adas on PCam_transformed: T 1/3 | E 160/250 Ended | E Time: 5.739s | ~Time Left: 516.505s |  Train Loss: 0.0967 | Train Acc. 96.1500% | Test Loss: 0.5701 | Test Acc. 83.0000%
+Train AUC: 0.991847
+Valid AUC: 0.905025
+Adas on PCam_transformed: T 1/3 | E 161/250 Ended | E Time: 5.693s | ~Time Left: 506.640s |  Train Loss: 0.1139 | Train Acc. 95.9500% | Test Loss: 0.5322 | Test Acc. 83.2500%
+Train AUC: 0.991165
+Valid AUC: 0.897425
+Adas on PCam_transformed: T 1/3 | E 162/250 Ended | E Time: 5.762s | ~Time Left: 507.062s |  Train Loss: 0.1216 | Train Acc. 95.1000% | Test Loss: 0.5598 | Test Acc. 80.0000%
+Train AUC: 0.99338
+Valid AUC: 0.9042499999999999
+Adas on PCam_transformed: T 1/3 | E 163/250 Ended | E Time: 5.787s | ~Time Left: 503.470s |  Train Loss: 0.0999 | Train Acc. 96.7500% | Test Loss: 0.5608 | Test Acc. 82.5000%
+Train AUC: 0.99472
+Valid AUC: 0.8882
+Adas on PCam_transformed: T 1/3 | E 164/250 Ended | E Time: 5.921s | ~Time Left: 509.240s |  Train Loss: 0.0933 | Train Acc. 96.4500% | Test Loss: 0.5777 | Test Acc. 80.7500%
+Train AUC: 0.9928250000000001
+Valid AUC: 0.90245
+Adas on PCam_transformed: T 1/3 | E 165/250 Ended | E Time: 5.773s | ~Time Left: 490.681s |  Train Loss: 0.1026 | Train Acc. 96.3000% | Test Loss: 0.6149 | Test Acc. 82.7500%
+Train AUC: 0.9933050000000001
+Valid AUC: 0.887425
+Adas on PCam_transformed: T 1/3 | E 166/250 Ended | E Time: 5.702s | ~Time Left: 478.944s |  Train Loss: 0.1036 | Train Acc. 96.3000% | Test Loss: 0.6997 | Test Acc. 82.5000%
+Train AUC: 0.9947600000000001
+Valid AUC: 0.897925
+Adas on PCam_transformed: T 1/3 | E 167/250 Ended | E Time: 5.772s | ~Time Left: 479.077s |  Train Loss: 0.0955 | Train Acc. 96.5000% | Test Loss: 0.6255 | Test Acc. 82.2500%
+Train AUC: 0.993522
+Valid AUC: 0.8837999999999999
+Adas on PCam_transformed: T 1/3 | E 168/250 Ended | E Time: 5.696s | ~Time Left: 467.087s |  Train Loss: 0.1008 | Train Acc. 96.3000% | Test Loss: 0.6729 | Test Acc. 84.0000%
+Train AUC: 0.995074
+Valid AUC: 0.89625
+Adas on PCam_transformed: T 1/3 | E 169/250 Ended | E Time: 5.859s | ~Time Left: 474.563s |  Train Loss: 0.0904 | Train Acc. 96.6000% | Test Loss: 0.6002 | Test Acc. 82.5000%
+Train AUC: 0.994839
+Valid AUC: 0.902675
+Adas on PCam_transformed: T 1/3 | E 170/250 Ended | E Time: 5.712s | ~Time Left: 456.973s |  Train Loss: 0.0902 | Train Acc. 96.8500% | Test Loss: 0.5549 | Test Acc. 83.7500%
+Train AUC: 0.9958359999999999
+Valid AUC: 0.8897
+Adas on PCam_transformed: T 1/3 | E 171/250 Ended | E Time: 5.709s | ~Time Left: 451.031s |  Train Loss: 0.0816 | Train Acc. 97.1000% | Test Loss: 0.7554 | Test Acc. 82.2500%
+Train AUC: 0.996202
+Valid AUC: 0.8697749999999997
+Adas on PCam_transformed: T 1/3 | E 172/250 Ended | E Time: 5.803s | ~Time Left: 452.601s |  Train Loss: 0.0796 | Train Acc. 97.2000% | Test Loss: 0.7808 | Test Acc. 80.7500%
+Train AUC: 0.9966489999999999
+Valid AUC: 0.894925
+Adas on PCam_transformed: T 1/3 | E 173/250 Ended | E Time: 5.785s | ~Time Left: 445.451s |  Train Loss: 0.0750 | Train Acc. 97.0500% | Test Loss: 0.6831 | Test Acc. 82.0000%
+Train AUC: 0.9928049999999999
+Valid AUC: 0.9049750000000001
+Adas on PCam_transformed: T 1/3 | E 174/250 Ended | E Time: 5.756s | ~Time Left: 437.443s |  Train Loss: 0.1037 | Train Acc. 96.4000% | Test Loss: 0.5366 | Test Acc. 82.0000%
+Train AUC: 0.9959549999999999
+Valid AUC: 0.9139999999999999
+Adas on PCam_transformed: T 1/3 | E 175/250 Ended | E Time: 5.711s | ~Time Left: 428.338s |  Train Loss: 0.0809 | Train Acc. 97.0500% | Test Loss: 0.5536 | Test Acc. 84.2500%
+Train AUC: 0.994409
+Valid AUC: 0.9184000000000001
+Adas on PCam_transformed: T 1/3 | E 176/250 Ended | E Time: 5.892s | ~Time Left: 436.004s |  Train Loss: 0.0950 | Train Acc. 96.5500% | Test Loss: 0.5168 | Test Acc. 85.0000%
+Train AUC: 0.9953080000000001
+Valid AUC: 0.906475
+Adas on PCam_transformed: T 1/3 | E 177/250 Ended | E Time: 5.767s | ~Time Left: 421.016s |  Train Loss: 0.0869 | Train Acc. 96.6000% | Test Loss: 0.5828 | Test Acc. 81.7500%
+Train AUC: 0.99638
+Valid AUC: 0.9131749999999998
+Adas on PCam_transformed: T 1/3 | E 178/250 Ended | E Time: 5.825s | ~Time Left: 419.435s |  Train Loss: 0.0762 | Train Acc. 97.0500% | Test Loss: 0.5772 | Test Acc. 83.0000%
+Train AUC: 0.994178
+Valid AUC: 0.86625
+Adas on PCam_transformed: T 1/3 | E 179/250 Ended | E Time: 5.723s | ~Time Left: 406.320s |  Train Loss: 0.0973 | Train Acc. 97.1000% | Test Loss: 0.7557 | Test Acc. 78.5000%
+Train AUC: 0.9919450000000001
+Valid AUC: 0.90405
+Adas on PCam_transformed: T 1/3 | E 180/250 Ended | E Time: 5.782s | ~Time Left: 404.722s |  Train Loss: 0.1138 | Train Acc. 95.6500% | Test Loss: 0.6709 | Test Acc. 81.2500%
+Train AUC: 0.9939100000000001
+Valid AUC: 0.90235
+Adas on PCam_transformed: T 1/3 | E 181/250 Ended | E Time: 5.753s | ~Time Left: 396.959s |  Train Loss: 0.1006 | Train Acc. 96.0000% | Test Loss: 0.5903 | Test Acc. 81.7500%
+Train AUC: 0.9950990000000001
+Valid AUC: 0.91255
+Adas on PCam_transformed: T 1/3 | E 182/250 Ended | E Time: 5.760s | ~Time Left: 391.657s |  Train Loss: 0.0895 | Train Acc. 96.8500% | Test Loss: 0.5257 | Test Acc. 83.5000%
+Train AUC: 0.996944
+Valid AUC: 0.9157500000000001
+Adas on PCam_transformed: T 1/3 | E 183/250 Ended | E Time: 6.082s | ~Time Left: 407.527s |  Train Loss: 0.0709 | Train Acc. 97.5000% | Test Loss: 0.5146 | Test Acc. 85.2500%
+Train AUC: 0.9967210000000001
+Valid AUC: 0.9254500000000001
+Adas on PCam_transformed: T 1/3 | E 184/250 Ended | E Time: 5.660s | ~Time Left: 373.593s |  Train Loss: 0.0749 | Train Acc. 97.1000% | Test Loss: 0.5006 | Test Acc. 85.0000%
+Train AUC: 0.997864
+Valid AUC: 0.9013749999999999
+Adas on PCam_transformed: T 1/3 | E 185/250 Ended | E Time: 5.760s | ~Time Left: 374.381s |  Train Loss: 0.0643 | Train Acc. 97.4500% | Test Loss: 0.6123 | Test Acc. 82.2500%
+Train AUC: 0.9974970000000001
+Valid AUC: 0.9038749999999999
+Adas on PCam_transformed: T 1/3 | E 186/250 Ended | E Time: 5.733s | ~Time Left: 366.936s |  Train Loss: 0.0646 | Train Acc. 97.8500% | Test Loss: 0.6162 | Test Acc. 82.7500%
+Train AUC: 0.997203
+Valid AUC: 0.9039250000000001
+Adas on PCam_transformed: T 1/3 | E 187/250 Ended | E Time: 5.697s | ~Time Left: 358.935s |  Train Loss: 0.0659 | Train Acc. 97.9500% | Test Loss: 0.5788 | Test Acc. 82.0000%
+Train AUC: 0.996972
+Valid AUC: 0.907475
+Adas on PCam_transformed: T 1/3 | E 188/250 Ended | E Time: 5.726s | ~Time Left: 354.983s |  Train Loss: 0.0709 | Train Acc. 97.1500% | Test Loss: 0.6831 | Test Acc. 82.0000%
+Train AUC: 0.996352
+Valid AUC: 0.9014749999999999
+Adas on PCam_transformed: T 1/3 | E 189/250 Ended | E Time: 5.877s | ~Time Left: 358.524s |  Train Loss: 0.0748 | Train Acc. 97.6000% | Test Loss: 0.6258 | Test Acc. 81.2500%
+Train AUC: 0.997887
+Valid AUC: 0.909575
+Adas on PCam_transformed: T 1/3 | E 190/250 Ended | E Time: 5.857s | ~Time Left: 351.446s |  Train Loss: 0.0592 | Train Acc. 98.1000% | Test Loss: 0.5911 | Test Acc. 83.0000%
+Train AUC: 0.998486
+Valid AUC: 0.900675
+Adas on PCam_transformed: T 1/3 | E 191/250 Ended | E Time: 5.725s | ~Time Left: 337.767s |  Train Loss: 0.0539 | Train Acc. 98.0000% | Test Loss: 0.7068 | Test Acc. 80.5000%
+Train AUC: 0.997553
+Valid AUC: 0.9113
+Adas on PCam_transformed: T 1/3 | E 192/250 Ended | E Time: 5.700s | ~Time Left: 330.582s |  Train Loss: 0.0600 | Train Acc. 98.2000% | Test Loss: 0.6177 | Test Acc. 84.7500%
+Train AUC: 0.996902
+Valid AUC: 0.8906249999999999
+Adas on PCam_transformed: T 1/3 | E 193/250 Ended | E Time: 5.842s | ~Time Left: 332.968s |  Train Loss: 0.0704 | Train Acc. 97.6000% | Test Loss: 0.6549 | Test Acc. 81.7500%
+Train AUC: 0.996649
+Valid AUC: 0.9080250000000001
+Adas on PCam_transformed: T 1/3 | E 194/250 Ended | E Time: 5.817s | ~Time Left: 325.726s |  Train Loss: 0.0693 | Train Acc. 97.7000% | Test Loss: 0.6935 | Test Acc. 82.2500%
+Train AUC: 0.997951
+Valid AUC: 0.88735
+Adas on PCam_transformed: T 1/3 | E 195/250 Ended | E Time: 5.735s | ~Time Left: 315.421s |  Train Loss: 0.0583 | Train Acc. 98.1500% | Test Loss: 0.7484 | Test Acc. 83.0000%
+Train AUC: 0.997422
+Valid AUC: 0.9046000000000001
+Adas on PCam_transformed: T 1/3 | E 196/250 Ended | E Time: 5.731s | ~Time Left: 309.452s |  Train Loss: 0.0583 | Train Acc. 98.0000% | Test Loss: 0.7013 | Test Acc. 83.0000%
+Train AUC: 0.9987710000000001
+Valid AUC: 0.9053
+Adas on PCam_transformed: T 1/3 | E 197/250 Ended | E Time: 5.687s | ~Time Left: 301.432s |  Train Loss: 0.0443 | Train Acc. 98.5000% | Test Loss: 0.6196 | Test Acc. 83.2500%
+Train AUC: 0.997844
+Valid AUC: 0.91425
+Adas on PCam_transformed: T 1/3 | E 198/250 Ended | E Time: 5.780s | ~Time Left: 300.571s |  Train Loss: 0.0603 | Train Acc. 98.1500% | Test Loss: 0.5675 | Test Acc. 83.0000%
+Train AUC: 0.9967379999999999
+Valid AUC: 0.903375
+Adas on PCam_transformed: T 1/3 | E 199/250 Ended | E Time: 5.833s | ~Time Left: 297.476s |  Train Loss: 0.0705 | Train Acc. 97.3000% | Test Loss: 0.7356 | Test Acc. 82.7500%
+Train AUC: 0.995685
+Valid AUC: 0.8959250000000001
+Adas on PCam_transformed: T 1/3 | E 200/250 Ended | E Time: 5.719s | ~Time Left: 285.955s |  Train Loss: 0.0796 | Train Acc. 97.1500% | Test Loss: 0.6914 | Test Acc. 82.0000%
+Train AUC: 0.997985
+Valid AUC: 0.90305
+Adas on PCam_transformed: T 1/3 | E 201/250 Ended | E Time: 5.720s | ~Time Left: 280.289s |  Train Loss: 0.0544 | Train Acc. 98.0000% | Test Loss: 0.6911 | Test Acc. 83.0000%
+Train AUC: 0.997901
+Valid AUC: 0.90375
+Adas on PCam_transformed: T 1/3 | E 202/250 Ended | E Time: 5.705s | ~Time Left: 273.836s |  Train Loss: 0.0518 | Train Acc. 98.6000% | Test Loss: 0.6888 | Test Acc. 83.0000%
+Train AUC: 0.9987499999999999
+Valid AUC: 0.899475
+Adas on PCam_transformed: T 1/3 | E 203/250 Ended | E Time: 5.836s | ~Time Left: 274.294s |  Train Loss: 0.0462 | Train Acc. 98.2000% | Test Loss: 0.7787 | Test Acc. 81.7500%
+Train AUC: 0.998638
+Valid AUC: 0.909225
+Adas on PCam_transformed: T 1/3 | E 204/250 Ended | E Time: 5.793s | ~Time Left: 266.472s |  Train Loss: 0.0476 | Train Acc. 98.3000% | Test Loss: 0.6563 | Test Acc. 84.2500%
+Train AUC: 0.997353
+Valid AUC: 0.91115
+Adas on PCam_transformed: T 1/3 | E 205/250 Ended | E Time: 5.699s | ~Time Left: 256.445s |  Train Loss: 0.0678 | Train Acc. 97.7500% | Test Loss: 0.6546 | Test Acc. 84.0000%
+Train AUC: 0.9958149999999999
+Valid AUC: 0.9016
+Adas on PCam_transformed: T 1/3 | E 206/250 Ended | E Time: 5.776s | ~Time Left: 254.152s |  Train Loss: 0.0754 | Train Acc. 97.4000% | Test Loss: 0.7291 | Test Acc. 83.5000%
+Train AUC: 0.9985869999999999
+Valid AUC: 0.90135
+Adas on PCam_transformed: T 1/3 | E 207/250 Ended | E Time: 5.707s | ~Time Left: 245.383s |  Train Loss: 0.0492 | Train Acc. 98.4000% | Test Loss: 0.6643 | Test Acc. 83.5000%
+Train AUC: 0.9988440000000001
+Valid AUC: 0.90285
+Adas on PCam_transformed: T 1/3 | E 208/250 Ended | E Time: 5.758s | ~Time Left: 241.844s |  Train Loss: 0.0458 | Train Acc. 98.5500% | Test Loss: 0.6655 | Test Acc. 83.0000%
+Train AUC: 0.9992369999999999
+Valid AUC: 0.902075
+Adas on PCam_transformed: T 1/3 | E 209/250 Ended | E Time: 5.753s | ~Time Left: 235.864s |  Train Loss: 0.0409 | Train Acc. 98.6000% | Test Loss: 0.7636 | Test Acc. 81.2500%
+Train AUC: 0.997138
+Valid AUC: 0.92115
+Adas on PCam_transformed: T 1/3 | E 210/250 Ended | E Time: 5.775s | ~Time Left: 230.983s |  Train Loss: 0.0612 | Train Acc. 97.7500% | Test Loss: 0.6117 | Test Acc. 82.5000%
+Train AUC: 0.998936
+Valid AUC: 0.907
+Adas on PCam_transformed: T 1/3 | E 211/250 Ended | E Time: 5.742s | ~Time Left: 223.921s |  Train Loss: 0.0426 | Train Acc. 98.7000% | Test Loss: 0.6653 | Test Acc. 81.7500%
+Train AUC: 0.998866
+Valid AUC: 0.9064250000000001
+Adas on PCam_transformed: T 1/3 | E 212/250 Ended | E Time: 5.829s | ~Time Left: 221.500s |  Train Loss: 0.0428 | Train Acc. 98.3000% | Test Loss: 0.6390 | Test Acc. 82.7500%
+Train AUC: 0.998685
+Valid AUC: 0.90605
+Adas on PCam_transformed: T 1/3 | E 213/250 Ended | E Time: 5.751s | ~Time Left: 212.783s |  Train Loss: 0.0452 | Train Acc. 98.5500% | Test Loss: 0.6567 | Test Acc. 82.5000%
+Train AUC: 0.99915
+Valid AUC: 0.9077500000000001
+Adas on PCam_transformed: T 1/3 | E 214/250 Ended | E Time: 5.816s | ~Time Left: 209.374s |  Train Loss: 0.0397 | Train Acc. 98.5000% | Test Loss: 0.6222 | Test Acc. 81.0000%
+Train AUC: 0.999056
+Valid AUC: 0.8927499999999999
+Adas on PCam_transformed: T 1/3 | E 215/250 Ended | E Time: 5.722s | ~Time Left: 200.283s |  Train Loss: 0.0401 | Train Acc. 98.7000% | Test Loss: 0.8554 | Test Acc. 80.7500%
+Train AUC: 0.998897
+Valid AUC: 0.9203000000000001
+Adas on PCam_transformed: T 1/3 | E 216/250 Ended | E Time: 5.803s | ~Time Left: 197.308s |  Train Loss: 0.0435 | Train Acc. 98.7000% | Test Loss: 0.6191 | Test Acc. 84.2500%
+Train AUC: 0.998759
+Valid AUC: 0.8985
+Adas on PCam_transformed: T 1/3 | E 217/250 Ended | E Time: 5.921s | ~Time Left: 195.381s |  Train Loss: 0.0454 | Train Acc. 98.5500% | Test Loss: 0.7300 | Test Acc. 80.5000%
+Train AUC: 0.998723
+Valid AUC: 0.900775
+Adas on PCam_transformed: T 1/3 | E 218/250 Ended | E Time: 5.764s | ~Time Left: 184.441s |  Train Loss: 0.0438 | Train Acc. 98.4500% | Test Loss: 0.6359 | Test Acc. 82.0000%
+Train AUC: 0.9985919999999999
+Valid AUC: 0.909
+Adas on PCam_transformed: T 1/3 | E 219/250 Ended | E Time: 5.799s | ~Time Left: 179.755s |  Train Loss: 0.0462 | Train Acc. 98.2500% | Test Loss: 0.6716 | Test Acc. 83.5000%
+Train AUC: 0.999386
+Valid AUC: 0.908225
+Adas on PCam_transformed: T 1/3 | E 220/250 Ended | E Time: 5.806s | ~Time Left: 174.169s |  Train Loss: 0.0341 | Train Acc. 99.0000% | Test Loss: 0.6872 | Test Acc. 84.2500%
+Train AUC: 0.998734
+Valid AUC: 0.904825
+Adas on PCam_transformed: T 1/3 | E 221/250 Ended | E Time: 5.716s | ~Time Left: 165.766s |  Train Loss: 0.0415 | Train Acc. 98.8500% | Test Loss: 0.6946 | Test Acc. 82.2500%
+Train AUC: 0.999583
+Valid AUC: 0.9069999999999999
+Adas on PCam_transformed: T 1/3 | E 222/250 Ended | E Time: 5.682s | ~Time Left: 159.101s |  Train Loss: 0.0290 | Train Acc. 99.1500% | Test Loss: 0.6655 | Test Acc. 83.0000%
+Train AUC: 0.999314
+Valid AUC: 0.918425
+Adas on PCam_transformed: T 1/3 | E 223/250 Ended | E Time: 5.747s | ~Time Left: 155.173s |  Train Loss: 0.0378 | Train Acc. 98.6500% | Test Loss: 0.6346 | Test Acc. 83.2500%
+Train AUC: 0.99847
+Valid AUC: 0.905175
+Adas on PCam_transformed: T 1/3 | E 224/250 Ended | E Time: 5.813s | ~Time Left: 151.148s |  Train Loss: 0.0418 | Train Acc. 98.7000% | Test Loss: 0.7174 | Test Acc. 84.0000%
+Train AUC: 0.998884
+Valid AUC: 0.90305
+Adas on PCam_transformed: T 1/3 | E 225/250 Ended | E Time: 5.741s | ~Time Left: 143.514s |  Train Loss: 0.0384 | Train Acc. 98.8000% | Test Loss: 0.7123 | Test Acc. 81.5000%
+Train AUC: 0.9993799999999999
+Valid AUC: 0.9073
+Adas on PCam_transformed: T 1/3 | E 226/250 Ended | E Time: 5.767s | ~Time Left: 138.410s |  Train Loss: 0.0297 | Train Acc. 99.2000% | Test Loss: 0.7213 | Test Acc. 83.5000%
+Train AUC: 0.999474
+Valid AUC: 0.908225
+Adas on PCam_transformed: T 1/3 | E 227/250 Ended | E Time: 5.766s | ~Time Left: 132.619s |  Train Loss: 0.0315 | Train Acc. 99.0500% | Test Loss: 0.6425 | Test Acc. 83.7500%
+Train AUC: 0.999558
+Valid AUC: 0.8928999999999999
+Adas on PCam_transformed: T 1/3 | E 228/250 Ended | E Time: 5.817s | ~Time Left: 127.967s |  Train Loss: 0.0307 | Train Acc. 98.9500% | Test Loss: 0.7526 | Test Acc. 82.5000%
+Train AUC: 0.99956
+Valid AUC: 0.893175
+Adas on PCam_transformed: T 1/3 | E 229/250 Ended | E Time: 5.892s | ~Time Left: 123.742s |  Train Loss: 0.0278 | Train Acc. 99.2500% | Test Loss: 0.7811 | Test Acc. 82.7500%
+Train AUC: 0.9995109999999999
+Valid AUC: 0.9152499999999999
+Adas on PCam_transformed: T 1/3 | E 230/250 Ended | E Time: 5.772s | ~Time Left: 115.432s |  Train Loss: 0.0311 | Train Acc. 98.9500% | Test Loss: 0.6915 | Test Acc. 82.0000%
+Train AUC: 0.999303
+Valid AUC: 0.9131499999999999
+Adas on PCam_transformed: T 1/3 | E 231/250 Ended | E Time: 5.728s | ~Time Left: 108.828s |  Train Loss: 0.0343 | Train Acc. 98.9500% | Test Loss: 0.6782 | Test Acc. 85.2500%
+Train AUC: 0.999619
+Valid AUC: 0.9111
+Adas on PCam_transformed: T 1/3 | E 232/250 Ended | E Time: 5.765s | ~Time Left: 103.769s |  Train Loss: 0.0258 | Train Acc. 99.2000% | Test Loss: 0.6617 | Test Acc. 82.7500%
+Train AUC: 0.999697
+Valid AUC: 0.906075
+Adas on PCam_transformed: T 1/3 | E 233/250 Ended | E Time: 5.761s | ~Time Left: 97.943s |  Train Loss: 0.0250 | Train Acc. 99.2000% | Test Loss: 0.7194 | Test Acc. 82.5000%
+Train AUC: 0.999241
+Valid AUC: 0.89565
+Adas on PCam_transformed: T 1/3 | E 234/250 Ended | E Time: 5.753s | ~Time Left: 92.050s |  Train Loss: 0.0314 | Train Acc. 99.0500% | Test Loss: 0.7231 | Test Acc. 81.2500%
+Train AUC: 0.999733
+Valid AUC: 0.899275
+Adas on PCam_transformed: T 1/3 | E 235/250 Ended | E Time: 5.752s | ~Time Left: 86.285s |  Train Loss: 0.0258 | Train Acc. 99.1500% | Test Loss: 0.7261 | Test Acc. 82.5000%
+Train AUC: 0.999715
+Valid AUC: 0.9031
+Adas on PCam_transformed: T 1/3 | E 236/250 Ended | E Time: 5.714s | ~Time Left: 79.998s |  Train Loss: 0.0235 | Train Acc. 99.2500% | Test Loss: 0.7200 | Test Acc. 82.2500%
+Train AUC: 0.99954
+Valid AUC: 0.90685
+Adas on PCam_transformed: T 1/3 | E 237/250 Ended | E Time: 5.783s | ~Time Left: 75.177s |  Train Loss: 0.0259 | Train Acc. 99.4500% | Test Loss: 0.6962 | Test Acc. 84.0000%
+Train AUC: 0.999239
+Valid AUC: 0.884875
+Adas on PCam_transformed: T 1/3 | E 238/250 Ended | E Time: 5.783s | ~Time Left: 69.391s |  Train Loss: 0.0389 | Train Acc. 98.7500% | Test Loss: 0.8390 | Test Acc. 81.0000%
+Train AUC: 0.99899
+Valid AUC: 0.9111499999999999
+Adas on PCam_transformed: T 1/3 | E 239/250 Ended | E Time: 6.060s | ~Time Left: 66.657s |  Train Loss: 0.0409 | Train Acc. 98.6500% | Test Loss: 0.6552 | Test Acc. 83.5000%
+Train AUC: 0.9995320000000001
+Valid AUC: 0.9034500000000001
+Adas on PCam_transformed: T 1/3 | E 240/250 Ended | E Time: 5.782s | ~Time Left: 57.816s |  Train Loss: 0.0309 | Train Acc. 98.9000% | Test Loss: 0.7838 | Test Acc. 80.5000%
+Train AUC: 0.999721
+Valid AUC: 0.902425
+Adas on PCam_transformed: T 1/3 | E 241/250 Ended | E Time: 5.832s | ~Time Left: 52.488s |  Train Loss: 0.0211 | Train Acc. 99.4000% | Test Loss: 0.6996 | Test Acc. 82.7500%
+Train AUC: 0.999693
+Valid AUC: 0.9125749999999999
+Adas on PCam_transformed: T 1/3 | E 242/250 Ended | E Time: 5.821s | ~Time Left: 46.570s |  Train Loss: 0.0252 | Train Acc. 99.2000% | Test Loss: 0.7496 | Test Acc. 83.7500%
+Train AUC: 0.999346
+Valid AUC: 0.904025
+Adas on PCam_transformed: T 1/3 | E 243/250 Ended | E Time: 5.846s | ~Time Left: 40.921s |  Train Loss: 0.0305 | Train Acc. 99.1000% | Test Loss: 0.7809 | Test Acc. 82.7500%
+Train AUC: 0.999489
+Valid AUC: 0.900625
+Adas on PCam_transformed: T 1/3 | E 244/250 Ended | E Time: 5.752s | ~Time Left: 34.512s |  Train Loss: 0.0261 | Train Acc. 99.1500% | Test Loss: 0.7963 | Test Acc. 84.0000%
+Train AUC: 0.999607
+Valid AUC: 0.901
+Adas on PCam_transformed: T 1/3 | E 245/250 Ended | E Time: 5.747s | ~Time Left: 28.734s |  Train Loss: 0.0268 | Train Acc. 99.1000% | Test Loss: 0.7841 | Test Acc. 82.7500%
+Train AUC: 0.9994109999999999
+Valid AUC: 0.911025
+Adas on PCam_transformed: T 1/3 | E 246/250 Ended | E Time: 5.780s | ~Time Left: 23.120s |  Train Loss: 0.0269 | Train Acc. 99.1500% | Test Loss: 0.6746 | Test Acc. 82.2500%
+Train AUC: 0.9995759999999999
+Valid AUC: 0.9046499999999998
+Adas on PCam_transformed: T 1/3 | E 247/250 Ended | E Time: 5.687s | ~Time Left: 17.060s |  Train Loss: 0.0287 | Train Acc. 99.0500% | Test Loss: 0.7648 | Test Acc. 82.2500%
+Train AUC: 0.999456
+Valid AUC: 0.8948
+Adas on PCam_transformed: T 1/3 | E 248/250 Ended | E Time: 5.747s | ~Time Left: 11.493s |  Train Loss: 0.0285 | Train Acc. 99.1500% | Test Loss: 0.7807 | Test Acc. 82.2500%
+Train AUC: 0.999576
+Valid AUC: 0.9163
+Adas on PCam_transformed: T 1/3 | E 249/250 Ended | E Time: 5.836s | ~Time Left: 5.836s |  Train Loss: 0.0284 | Train Acc. 98.9000% | Test Loss: 0.6559 | Test Acc. 82.7500%
+Train AUC: 0.999459
+Valid AUC: 0.9122250000000001
+Adas on PCam_transformed: T 1/3 | E 250/250 Ended | E Time: 5.785s | ~Time Left: 0.000s |  Train Loss: 0.0241 | Train Acc. 99.4000% | Test Loss: 0.7153 | Test Acc. 83.0000%
+Train AUC: 0.678528
+Valid AUC: 0.668025
+Adas on PCam_transformed: T 2/3 | E 1/250 Ended | E Time: 5.705s | ~Time Left: 1420.427s |  Train Loss: 1.3639 | Train Acc. 62.9000% | Test Loss: 0.7833 | Test Acc. 59.7500%
+Train AUC: 0.8289839999999999
+Valid AUC: 0.8346999999999999
+Adas on PCam_transformed: T 2/3 | E 2/250 Ended | E Time: 5.772s | ~Time Left: 1431.526s |  Train Loss: 0.5320 | Train Acc. 74.9500% | Test Loss: 0.5247 | Test Acc. 74.5000%
+Train AUC: 0.844007
+Valid AUC: 0.832525
+Adas on PCam_transformed: T 2/3 | E 3/250 Ended | E Time: 5.760s | ~Time Left: 1422.808s |  Train Loss: 0.5672 | Train Acc. 77.2500% | Test Loss: 0.5178 | Test Acc. 74.0000%
+Train AUC: 0.827151
+Valid AUC: 0.8289000000000001
+Adas on PCam_transformed: T 2/3 | E 4/250 Ended | E Time: 5.819s | ~Time Left: 1431.580s |  Train Loss: 0.5562 | Train Acc. 77.3500% | Test Loss: 0.8236 | Test Acc. 75.7500%
+Train AUC: 0.8002759999999999
+Valid AUC: 0.8383250000000001
+Adas on PCam_transformed: T 2/3 | E 5/250 Ended | E Time: 5.790s | ~Time Left: 1418.521s |  Train Loss: 0.7174 | Train Acc. 72.9000% | Test Loss: 0.6678 | Test Acc. 71.0000%
+Train AUC: 0.8381830000000001
+Valid AUC: 0.83755
+Adas on PCam_transformed: T 2/3 | E 6/250 Ended | E Time: 5.762s | ~Time Left: 1405.830s |  Train Loss: 0.5687 | Train Acc. 76.5500% | Test Loss: 0.5108 | Test Acc. 76.7500%
+Train AUC: 0.849883
+Valid AUC: 0.85135
+Adas on PCam_transformed: T 2/3 | E 7/250 Ended | E Time: 5.809s | ~Time Left: 1411.550s |  Train Loss: 0.5037 | Train Acc. 77.5500% | Test Loss: 0.4953 | Test Acc. 76.0000%
+Train AUC: 0.860641
+Valid AUC: 0.82445
+Adas on PCam_transformed: T 2/3 | E 8/250 Ended | E Time: 5.687s | ~Time Left: 1376.339s |  Train Loss: 0.5091 | Train Acc. 78.8500% | Test Loss: 0.5171 | Test Acc. 75.7500%
+Train AUC: 0.858911
+Valid AUC: 0.8444249999999999
+Adas on PCam_transformed: T 2/3 | E 9/250 Ended | E Time: 5.725s | ~Time Left: 1379.758s |  Train Loss: 0.4867 | Train Acc. 78.0000% | Test Loss: 0.4956 | Test Acc. 77.5000%
+Train AUC: 0.8857279999999998
+Valid AUC: 0.8337249999999999
+Adas on PCam_transformed: T 2/3 | E 10/250 Ended | E Time: 5.759s | ~Time Left: 1382.074s |  Train Loss: 0.4427 | Train Acc. 80.8500% | Test Loss: 0.5312 | Test Acc. 77.0000%
+Train AUC: 0.883625
+Valid AUC: 0.836975
+Adas on PCam_transformed: T 2/3 | E 11/250 Ended | E Time: 5.757s | ~Time Left: 1375.927s |  Train Loss: 0.4408 | Train Acc. 81.8000% | Test Loss: 0.5004 | Test Acc. 75.7500%
+Train AUC: 0.895379
+Valid AUC: 0.8326000000000001
+Adas on PCam_transformed: T 2/3 | E 12/250 Ended | E Time: 5.756s | ~Time Left: 1369.970s |  Train Loss: 0.4136 | Train Acc. 82.5000% | Test Loss: 0.5561 | Test Acc. 74.5000%
+Train AUC: 0.8886080000000001
+Valid AUC: 0.873975
+Adas on PCam_transformed: T 2/3 | E 13/250 Ended | E Time: 5.881s | ~Time Left: 1393.906s |  Train Loss: 0.4250 | Train Acc. 80.9000% | Test Loss: 0.4570 | Test Acc. 80.2500%
+Train AUC: 0.8902479999999999
+Valid AUC: 0.8568
+Adas on PCam_transformed: T 2/3 | E 14/250 Ended | E Time: 5.795s | ~Time Left: 1367.606s |  Train Loss: 0.4232 | Train Acc. 82.2500% | Test Loss: 0.4835 | Test Acc. 77.5000%
+Train AUC: 0.896943
+Valid AUC: 0.8494999999999999
+Adas on PCam_transformed: T 2/3 | E 15/250 Ended | E Time: 5.685s | ~Time Left: 1335.969s |  Train Loss: 0.4164 | Train Acc. 82.3000% | Test Loss: 0.4974 | Test Acc. 78.0000%
+Train AUC: 0.900642
+Valid AUC: 0.8460500000000001
+Adas on PCam_transformed: T 2/3 | E 16/250 Ended | E Time: 5.791s | ~Time Left: 1355.091s |  Train Loss: 0.4024 | Train Acc. 83.0000% | Test Loss: 0.4951 | Test Acc. 74.5000%
+Train AUC: 0.89834
+Valid AUC: 0.8722
+Adas on PCam_transformed: T 2/3 | E 17/250 Ended | E Time: 5.850s | ~Time Left: 1362.997s |  Train Loss: 0.4071 | Train Acc. 82.5000% | Test Loss: 0.4445 | Test Acc. 78.5000%
+Train AUC: 0.899268
+Valid AUC: 0.8324250000000001
+Adas on PCam_transformed: T 2/3 | E 18/250 Ended | E Time: 5.822s | ~Time Left: 1350.636s |  Train Loss: 0.4041 | Train Acc. 82.6000% | Test Loss: 0.5294 | Test Acc. 76.0000%
+Train AUC: 0.9039929999999999
+Valid AUC: 0.852775
+Adas on PCam_transformed: T 2/3 | E 19/250 Ended | E Time: 5.674s | ~Time Left: 1310.592s |  Train Loss: 0.3981 | Train Acc. 83.4500% | Test Loss: 0.4827 | Test Acc. 79.2500%
+Train AUC: 0.903386
+Valid AUC: 0.863375
+Adas on PCam_transformed: T 2/3 | E 20/250 Ended | E Time: 5.743s | ~Time Left: 1320.825s |  Train Loss: 0.3964 | Train Acc. 83.8000% | Test Loss: 0.4930 | Test Acc. 78.0000%
+Train AUC: 0.9022969999999999
+Valid AUC: 0.8385499999999999
+Adas on PCam_transformed: T 2/3 | E 21/250 Ended | E Time: 5.740s | ~Time Left: 1314.365s |  Train Loss: 0.3986 | Train Acc. 83.2500% | Test Loss: 0.5497 | Test Acc. 73.2500%
+Train AUC: 0.902514
+Valid AUC: 0.85985
+Adas on PCam_transformed: T 2/3 | E 22/250 Ended | E Time: 5.872s | ~Time Left: 1338.799s |  Train Loss: 0.4046 | Train Acc. 84.0500% | Test Loss: 0.4816 | Test Acc. 79.0000%
+Train AUC: 0.913387
+Valid AUC: 0.8257
+Adas on PCam_transformed: T 2/3 | E 23/250 Ended | E Time: 5.769s | ~Time Left: 1309.460s |  Train Loss: 0.3772 | Train Acc. 84.6000% | Test Loss: 0.6237 | Test Acc. 68.7500%
+Train AUC: 0.9051049999999999
+Valid AUC: 0.85115
+Adas on PCam_transformed: T 2/3 | E 24/250 Ended | E Time: 5.746s | ~Time Left: 1298.512s |  Train Loss: 0.3915 | Train Acc. 83.0000% | Test Loss: 0.5129 | Test Acc. 76.7500%
+Train AUC: 0.910956
+Valid AUC: 0.856225
+Adas on PCam_transformed: T 2/3 | E 25/250 Ended | E Time: 5.796s | ~Time Left: 1304.078s |  Train Loss: 0.3768 | Train Acc. 83.6500% | Test Loss: 0.4974 | Test Acc. 77.5000%
+Train AUC: 0.916774
+Valid AUC: 0.868625
+Adas on PCam_transformed: T 2/3 | E 26/250 Ended | E Time: 5.788s | ~Time Left: 1296.489s |  Train Loss: 0.3661 | Train Acc. 85.1500% | Test Loss: 0.4545 | Test Acc. 79.0000%
+Train AUC: 0.914381
+Valid AUC: 0.8661249999999999
+Adas on PCam_transformed: T 2/3 | E 27/250 Ended | E Time: 5.817s | ~Time Left: 1297.187s |  Train Loss: 0.3770 | Train Acc. 84.0500% | Test Loss: 0.4949 | Test Acc. 79.5000%
+Train AUC: 0.914829
+Valid AUC: 0.8356250000000001
+Adas on PCam_transformed: T 2/3 | E 28/250 Ended | E Time: 5.684s | ~Time Left: 1261.860s |  Train Loss: 0.3698 | Train Acc. 83.9000% | Test Loss: 0.5340 | Test Acc. 77.5000%
+Train AUC: 0.919526
+Valid AUC: 0.877875
+Adas on PCam_transformed: T 2/3 | E 29/250 Ended | E Time: 5.759s | ~Time Left: 1272.733s |  Train Loss: 0.3642 | Train Acc. 84.3000% | Test Loss: 0.4681 | Test Acc. 78.5000%
+Train AUC: 0.918464
+Valid AUC: 0.87535
+Adas on PCam_transformed: T 2/3 | E 30/250 Ended | E Time: 5.707s | ~Time Left: 1255.582s |  Train Loss: 0.3630 | Train Acc. 85.1500% | Test Loss: 0.4644 | Test Acc. 77.7500%
+Train AUC: 0.923963
+Valid AUC: 0.874275
+Adas on PCam_transformed: T 2/3 | E 31/250 Ended | E Time: 5.823s | ~Time Left: 1275.201s |  Train Loss: 0.3537 | Train Acc. 85.1500% | Test Loss: 0.4510 | Test Acc. 79.7500%
+Train AUC: 0.9143220000000001
+Valid AUC: 0.8613
+Adas on PCam_transformed: T 2/3 | E 32/250 Ended | E Time: 5.880s | ~Time Left: 1281.844s |  Train Loss: 0.3726 | Train Acc. 84.5000% | Test Loss: 0.4929 | Test Acc. 79.2500%
+Train AUC: 0.923465
+Valid AUC: 0.8302500000000002
+Adas on PCam_transformed: T 2/3 | E 33/250 Ended | E Time: 5.763s | ~Time Left: 1250.558s |  Train Loss: 0.3539 | Train Acc. 85.6000% | Test Loss: 0.5536 | Test Acc. 75.7500%
+Train AUC: 0.9299759999999999
+Valid AUC: 0.8541
+Adas on PCam_transformed: T 2/3 | E 34/250 Ended | E Time: 5.810s | ~Time Left: 1254.897s |  Train Loss: 0.3386 | Train Acc. 85.9500% | Test Loss: 0.5041 | Test Acc. 77.5000%
+Train AUC: 0.9222140000000001
+Valid AUC: 0.819475
+Adas on PCam_transformed: T 2/3 | E 35/250 Ended | E Time: 5.864s | ~Time Left: 1260.726s |  Train Loss: 0.3549 | Train Acc. 84.9500% | Test Loss: 0.6105 | Test Acc. 72.7500%
+Train AUC: 0.919514
+Valid AUC: 0.8588
+Adas on PCam_transformed: T 2/3 | E 36/250 Ended | E Time: 5.841s | ~Time Left: 1249.985s |  Train Loss: 0.3610 | Train Acc. 85.0000% | Test Loss: 0.5256 | Test Acc. 78.0000%
+Train AUC: 0.9236840000000002
+Valid AUC: 0.838
+Adas on PCam_transformed: T 2/3 | E 37/250 Ended | E Time: 5.761s | ~Time Left: 1227.118s |  Train Loss: 0.3475 | Train Acc. 85.7000% | Test Loss: 0.5474 | Test Acc. 77.2500%
+Train AUC: 0.9193840000000001
+Valid AUC: 0.881775
+Adas on PCam_transformed: T 2/3 | E 38/250 Ended | E Time: 5.790s | ~Time Left: 1227.479s |  Train Loss: 0.3657 | Train Acc. 84.5500% | Test Loss: 0.4250 | Test Acc. 79.7500%
+Train AUC: 0.9271769999999999
+Valid AUC: 0.8509749999999999
+Adas on PCam_transformed: T 2/3 | E 39/250 Ended | E Time: 5.851s | ~Time Left: 1234.570s |  Train Loss: 0.3437 | Train Acc. 85.8500% | Test Loss: 0.5318 | Test Acc. 77.2500%
+Train AUC: 0.920959
+Valid AUC: 0.8508249999999999
+Adas on PCam_transformed: T 2/3 | E 40/250 Ended | E Time: 5.824s | ~Time Left: 1223.144s |  Train Loss: 0.3592 | Train Acc. 85.2500% | Test Loss: 0.4802 | Test Acc. 75.7500%
+Train AUC: 0.914647
+Valid AUC: 0.8689749999999999
+Adas on PCam_transformed: T 2/3 | E 41/250 Ended | E Time: 5.788s | ~Time Left: 1209.675s |  Train Loss: 0.3689 | Train Acc. 83.9500% | Test Loss: 0.4610 | Test Acc. 78.0000%
+Train AUC: 0.9338469999999999
+Valid AUC: 0.856925
+Adas on PCam_transformed: T 2/3 | E 42/250 Ended | E Time: 5.812s | ~Time Left: 1208.845s |  Train Loss: 0.3273 | Train Acc. 85.6500% | Test Loss: 0.5370 | Test Acc. 79.0000%
+Train AUC: 0.926652
+Valid AUC: 0.865525
+Adas on PCam_transformed: T 2/3 | E 43/250 Ended | E Time: 5.772s | ~Time Left: 1194.787s |  Train Loss: 0.3443 | Train Acc. 86.2000% | Test Loss: 0.4884 | Test Acc. 77.0000%
+Train AUC: 0.931967
+Valid AUC: 0.8619249999999999
+Adas on PCam_transformed: T 2/3 | E 44/250 Ended | E Time: 5.795s | ~Time Left: 1193.723s |  Train Loss: 0.3302 | Train Acc. 86.4500% | Test Loss: 0.5130 | Test Acc. 78.5000%
+Train AUC: 0.932313
+Valid AUC: 0.847925
+Adas on PCam_transformed: T 2/3 | E 45/250 Ended | E Time: 5.738s | ~Time Left: 1176.372s |  Train Loss: 0.3304 | Train Acc. 86.4500% | Test Loss: 0.5012 | Test Acc. 73.2500%
+Train AUC: 0.9307780000000001
+Valid AUC: 0.880275
+Adas on PCam_transformed: T 2/3 | E 46/250 Ended | E Time: 5.727s | ~Time Left: 1168.216s |  Train Loss: 0.3402 | Train Acc. 86.1000% | Test Loss: 0.4370 | Test Acc. 78.7500%
+Train AUC: 0.9332039999999999
+Valid AUC: 0.8587499999999999
+Adas on PCam_transformed: T 2/3 | E 47/250 Ended | E Time: 5.803s | ~Time Left: 1178.048s |  Train Loss: 0.3293 | Train Acc. 86.5000% | Test Loss: 0.4929 | Test Acc. 77.0000%
+Train AUC: 0.931753
+Valid AUC: 0.8622749999999999
+Adas on PCam_transformed: T 2/3 | E 48/250 Ended | E Time: 5.836s | ~Time Left: 1178.954s |  Train Loss: 0.3330 | Train Acc. 86.0500% | Test Loss: 0.5544 | Test Acc. 77.7500%
+Train AUC: 0.9314920000000001
+Valid AUC: 0.87195
+Adas on PCam_transformed: T 2/3 | E 49/250 Ended | E Time: 5.744s | ~Time Left: 1154.620s |  Train Loss: 0.3316 | Train Acc. 86.1500% | Test Loss: 0.4824 | Test Acc. 78.2500%
+Train AUC: 0.926247
+Valid AUC: 0.8540749999999999
+Adas on PCam_transformed: T 2/3 | E 50/250 Ended | E Time: 5.706s | ~Time Left: 1141.125s |  Train Loss: 0.3457 | Train Acc. 84.7500% | Test Loss: 0.5441 | Test Acc. 74.0000%
+Train AUC: 0.930524
+Valid AUC: 0.868475
+Adas on PCam_transformed: T 2/3 | E 51/250 Ended | E Time: 5.764s | ~Time Left: 1147.006s |  Train Loss: 0.3346 | Train Acc. 85.0500% | Test Loss: 0.4799 | Test Acc. 77.5000%
+Train AUC: 0.929804
+Valid AUC: 0.86435
+Adas on PCam_transformed: T 2/3 | E 52/250 Ended | E Time: 5.755s | ~Time Left: 1139.551s |  Train Loss: 0.3370 | Train Acc. 85.4500% | Test Loss: 0.4683 | Test Acc. 77.2500%
+Train AUC: 0.935318
+Valid AUC: 0.8562499999999998
+Adas on PCam_transformed: T 2/3 | E 53/250 Ended | E Time: 5.802s | ~Time Left: 1143.015s |  Train Loss: 0.3228 | Train Acc. 86.8500% | Test Loss: 0.6180 | Test Acc. 77.2500%
+Train AUC: 0.930692
+Valid AUC: 0.867925
+Adas on PCam_transformed: T 2/3 | E 54/250 Ended | E Time: 5.717s | ~Time Left: 1120.577s |  Train Loss: 0.3354 | Train Acc. 85.3000% | Test Loss: 0.5000 | Test Acc. 78.2500%
+Train AUC: 0.934736
+Valid AUC: 0.8766
+Adas on PCam_transformed: T 2/3 | E 55/250 Ended | E Time: 5.804s | ~Time Left: 1131.691s |  Train Loss: 0.3253 | Train Acc. 86.3000% | Test Loss: 0.4794 | Test Acc. 78.7500%
+Train AUC: 0.9336450000000001
+Valid AUC: 0.8467
+Adas on PCam_transformed: T 2/3 | E 56/250 Ended | E Time: 5.760s | ~Time Left: 1117.492s |  Train Loss: 0.3275 | Train Acc. 86.3000% | Test Loss: 0.4948 | Test Acc. 75.7500%
+Train AUC: 0.9279810000000001
+Valid AUC: 0.8660749999999999
+Adas on PCam_transformed: T 2/3 | E 57/250 Ended | E Time: 5.719s | ~Time Left: 1103.774s |  Train Loss: 0.3450 | Train Acc. 85.2500% | Test Loss: 0.5383 | Test Acc. 77.7500%
+Train AUC: 0.9357880000000001
+Valid AUC: 0.87235
+Adas on PCam_transformed: T 2/3 | E 58/250 Ended | E Time: 5.807s | ~Time Left: 1114.904s |  Train Loss: 0.3225 | Train Acc. 85.9000% | Test Loss: 0.4871 | Test Acc. 79.5000%
+Train AUC: 0.9344
+Valid AUC: 0.868
+Adas on PCam_transformed: T 2/3 | E 59/250 Ended | E Time: 5.814s | ~Time Left: 1110.545s |  Train Loss: 0.3269 | Train Acc. 85.6000% | Test Loss: 0.4729 | Test Acc. 77.0000%
+Train AUC: 0.94138
+Valid AUC: 0.865275
+Adas on PCam_transformed: T 2/3 | E 60/250 Ended | E Time: 5.798s | ~Time Left: 1101.558s |  Train Loss: 0.3116 | Train Acc. 86.4500% | Test Loss: 0.5515 | Test Acc. 79.0000%
+Train AUC: 0.9441860000000001
+Valid AUC: 0.887775
+Adas on PCam_transformed: T 2/3 | E 61/250 Ended | E Time: 5.726s | ~Time Left: 1082.224s |  Train Loss: 0.3014 | Train Acc. 87.5500% | Test Loss: 0.4942 | Test Acc. 79.0000%
+Train AUC: 0.939531
+Valid AUC: 0.8841500000000001
+Adas on PCam_transformed: T 2/3 | E 62/250 Ended | E Time: 5.769s | ~Time Left: 1084.487s |  Train Loss: 0.3104 | Train Acc. 87.2000% | Test Loss: 0.4629 | Test Acc. 80.0000%
+Train AUC: 0.936546
+Valid AUC: 0.869025
+Adas on PCam_transformed: T 2/3 | E 63/250 Ended | E Time: 5.838s | ~Time Left: 1091.665s |  Train Loss: 0.3198 | Train Acc. 86.5500% | Test Loss: 0.5277 | Test Acc. 79.2500%
+Train AUC: 0.94459
+Valid AUC: 0.8579749999999999
+Adas on PCam_transformed: T 2/3 | E 64/250 Ended | E Time: 5.786s | ~Time Left: 1076.157s |  Train Loss: 0.3016 | Train Acc. 87.2000% | Test Loss: 0.4995 | Test Acc. 77.7500%
+Train AUC: 0.9442050000000001
+Valid AUC: 0.8792500000000001
+Adas on PCam_transformed: T 2/3 | E 65/250 Ended | E Time: 5.778s | ~Time Left: 1069.016s |  Train Loss: 0.2999 | Train Acc. 88.0500% | Test Loss: 0.4740 | Test Acc. 81.0000%
+Train AUC: 0.945565
+Valid AUC: 0.861775
+Adas on PCam_transformed: T 2/3 | E 66/250 Ended | E Time: 5.680s | ~Time Left: 1045.124s |  Train Loss: 0.2962 | Train Acc. 87.6000% | Test Loss: 0.4848 | Test Acc. 78.5000%
+Train AUC: 0.945887
+Valid AUC: 0.8957499999999999
+Adas on PCam_transformed: T 2/3 | E 67/250 Ended | E Time: 5.750s | ~Time Left: 1052.169s |  Train Loss: 0.2971 | Train Acc. 88.0500% | Test Loss: 0.4409 | Test Acc. 79.7500%
+Train AUC: 0.937701
+Valid AUC: 0.8870250000000001
+Adas on PCam_transformed: T 2/3 | E 68/250 Ended | E Time: 5.802s | ~Time Left: 1055.934s |  Train Loss: 0.3167 | Train Acc. 87.8000% | Test Loss: 0.4423 | Test Acc. 80.2500%
+Train AUC: 0.9437059999999999
+Valid AUC: 0.8807
+Adas on PCam_transformed: T 2/3 | E 69/250 Ended | E Time: 5.798s | ~Time Left: 1049.414s |  Train Loss: 0.3036 | Train Acc. 87.7000% | Test Loss: 0.4497 | Test Acc. 78.7500%
+Train AUC: 0.945222
+Valid AUC: 0.87485
+Adas on PCam_transformed: T 2/3 | E 70/250 Ended | E Time: 5.701s | ~Time Left: 1026.204s |  Train Loss: 0.2975 | Train Acc. 88.1500% | Test Loss: 0.5112 | Test Acc. 79.7500%
+Train AUC: 0.946048
+Valid AUC: 0.893825
+Adas on PCam_transformed: T 2/3 | E 71/250 Ended | E Time: 5.955s | ~Time Left: 1065.993s |  Train Loss: 0.2990 | Train Acc. 88.3000% | Test Loss: 0.4446 | Test Acc. 80.0000%
+Train AUC: 0.9506659999999999
+Valid AUC: 0.884625
+Adas on PCam_transformed: T 2/3 | E 72/250 Ended | E Time: 6.039s | ~Time Left: 1075.018s |  Train Loss: 0.2868 | Train Acc. 88.4500% | Test Loss: 0.5181 | Test Acc. 77.5000%
+Train AUC: 0.946474
+Valid AUC: 0.87545
+Adas on PCam_transformed: T 2/3 | E 73/250 Ended | E Time: 5.772s | ~Time Left: 1021.641s |  Train Loss: 0.2923 | Train Acc. 87.8500% | Test Loss: 0.4854 | Test Acc. 82.7500%
+Train AUC: 0.9468899999999999
+Valid AUC: 0.8796499999999999
+Adas on PCam_transformed: T 2/3 | E 74/250 Ended | E Time: 5.711s | ~Time Left: 1005.121s |  Train Loss: 0.2924 | Train Acc. 88.0500% | Test Loss: 0.4668 | Test Acc. 78.5000%
+Train AUC: 0.944
+Valid AUC: 0.871375
+Adas on PCam_transformed: T 2/3 | E 75/250 Ended | E Time: 5.776s | ~Time Left: 1010.775s |  Train Loss: 0.3022 | Train Acc. 87.6500% | Test Loss: 0.5036 | Test Acc. 76.5000%
+Train AUC: 0.9493929999999999
+Valid AUC: 0.8626499999999999
+Adas on PCam_transformed: T 2/3 | E 76/250 Ended | E Time: 5.830s | ~Time Left: 1014.436s |  Train Loss: 0.2894 | Train Acc. 87.9500% | Test Loss: 0.6126 | Test Acc. 77.2500%
+Train AUC: 0.944587
+Valid AUC: 0.8869
+Adas on PCam_transformed: T 2/3 | E 77/250 Ended | E Time: 5.743s | ~Time Left: 993.469s |  Train Loss: 0.3005 | Train Acc. 88.0000% | Test Loss: 0.4475 | Test Acc. 79.7500%
+Train AUC: 0.9552380000000001
+Valid AUC: 0.8819999999999999
+Adas on PCam_transformed: T 2/3 | E 78/250 Ended | E Time: 5.798s | ~Time Left: 997.219s |  Train Loss: 0.2682 | Train Acc. 88.2000% | Test Loss: 0.5132 | Test Acc. 79.2500%
+Train AUC: 0.952644
+Valid AUC: 0.8524250000000001
+Adas on PCam_transformed: T 2/3 | E 79/250 Ended | E Time: 5.824s | ~Time Left: 995.913s |  Train Loss: 0.2761 | Train Acc. 88.9000% | Test Loss: 0.5568 | Test Acc. 75.0000%
+Train AUC: 0.9526140000000001
+Valid AUC: 0.877975
+Adas on PCam_transformed: T 2/3 | E 80/250 Ended | E Time: 5.800s | ~Time Left: 985.976s |  Train Loss: 0.2784 | Train Acc. 88.8500% | Test Loss: 0.4872 | Test Acc. 79.5000%
+Train AUC: 0.9455680000000001
+Valid AUC: 0.8701500000000001
+Adas on PCam_transformed: T 2/3 | E 81/250 Ended | E Time: 5.746s | ~Time Left: 971.068s |  Train Loss: 0.2959 | Train Acc. 87.7000% | Test Loss: 0.4995 | Test Acc. 78.7500%
+Train AUC: 0.9524829999999999
+Valid AUC: 0.88175
+Adas on PCam_transformed: T 2/3 | E 82/250 Ended | E Time: 5.793s | ~Time Left: 973.205s |  Train Loss: 0.2779 | Train Acc. 87.5500% | Test Loss: 0.5035 | Test Acc. 79.5000%
+Train AUC: 0.9512550000000001
+Valid AUC: 0.88225
+Adas on PCam_transformed: T 2/3 | E 83/250 Ended | E Time: 5.733s | ~Time Left: 957.420s |  Train Loss: 0.2814 | Train Acc. 88.9000% | Test Loss: 0.5078 | Test Acc. 79.2500%
+Train AUC: 0.9554910000000002
+Valid AUC: 0.8908249999999999
+Adas on PCam_transformed: T 2/3 | E 84/250 Ended | E Time: 5.734s | ~Time Left: 951.815s |  Train Loss: 0.2656 | Train Acc. 89.4000% | Test Loss: 0.4838 | Test Acc. 78.5000%
+Train AUC: 0.9529860000000001
+Valid AUC: 0.883725
+Adas on PCam_transformed: T 2/3 | E 85/250 Ended | E Time: 5.745s | ~Time Left: 947.850s |  Train Loss: 0.2776 | Train Acc. 88.5500% | Test Loss: 0.5136 | Test Acc. 78.0000%
+Train AUC: 0.9579169999999999
+Valid AUC: 0.8787
+Adas on PCam_transformed: T 2/3 | E 86/250 Ended | E Time: 5.779s | ~Time Left: 947.724s |  Train Loss: 0.2615 | Train Acc. 89.5000% | Test Loss: 0.5251 | Test Acc. 79.2500%
+Train AUC: 0.9551129999999999
+Valid AUC: 0.8797499999999999
+Adas on PCam_transformed: T 2/3 | E 87/250 Ended | E Time: 5.743s | ~Time Left: 936.037s |  Train Loss: 0.2695 | Train Acc. 88.3500% | Test Loss: 0.5116 | Test Acc. 80.0000%
+Train AUC: 0.957956
+Valid AUC: 0.884825
+Adas on PCam_transformed: T 2/3 | E 88/250 Ended | E Time: 5.833s | ~Time Left: 944.924s |  Train Loss: 0.2621 | Train Acc. 88.5000% | Test Loss: 0.4698 | Test Acc. 78.0000%
+Train AUC: 0.953894
+Valid AUC: 0.8910750000000001
+Adas on PCam_transformed: T 2/3 | E 89/250 Ended | E Time: 5.788s | ~Time Left: 931.946s |  Train Loss: 0.2763 | Train Acc. 88.6000% | Test Loss: 0.4635 | Test Acc. 81.7500%
+Train AUC: 0.9517520000000002
+Valid AUC: 0.8620000000000001
+Adas on PCam_transformed: T 2/3 | E 90/250 Ended | E Time: 5.772s | ~Time Left: 923.505s |  Train Loss: 0.2779 | Train Acc. 88.1500% | Test Loss: 0.6048 | Test Acc. 79.2500%
+Train AUC: 0.948909
+Valid AUC: 0.883825
+Adas on PCam_transformed: T 2/3 | E 91/250 Ended | E Time: 5.805s | ~Time Left: 923.042s |  Train Loss: 0.2887 | Train Acc. 88.1000% | Test Loss: 0.5060 | Test Acc. 79.7500%
+Train AUC: 0.960266
+Valid AUC: 0.87655
+Adas on PCam_transformed: T 2/3 | E 92/250 Ended | E Time: 5.769s | ~Time Left: 911.500s |  Train Loss: 0.2526 | Train Acc. 89.8500% | Test Loss: 0.5600 | Test Acc. 80.2500%
+Train AUC: 0.9494230000000001
+Valid AUC: 0.902975
+Adas on PCam_transformed: T 2/3 | E 93/250 Ended | E Time: 5.768s | ~Time Left: 905.580s |  Train Loss: 0.2894 | Train Acc. 88.1500% | Test Loss: 0.4370 | Test Acc. 80.0000%
+Train AUC: 0.9567210000000002
+Valid AUC: 0.8685499999999999
+Adas on PCam_transformed: T 2/3 | E 94/250 Ended | E Time: 5.749s | ~Time Left: 896.859s |  Train Loss: 0.2655 | Train Acc. 89.1000% | Test Loss: 0.5121 | Test Acc. 79.0000%
+Train AUC: 0.9572559999999999
+Valid AUC: 0.86985
+Adas on PCam_transformed: T 2/3 | E 95/250 Ended | E Time: 5.749s | ~Time Left: 891.143s |  Train Loss: 0.2640 | Train Acc. 88.8000% | Test Loss: 0.5473 | Test Acc. 76.2500%
+Train AUC: 0.9599249999999999
+Valid AUC: 0.8685999999999999
+Adas on PCam_transformed: T 2/3 | E 96/250 Ended | E Time: 5.786s | ~Time Left: 891.027s |  Train Loss: 0.2569 | Train Acc. 88.7500% | Test Loss: 0.5197 | Test Acc. 78.7500%
+Train AUC: 0.958673
+Valid AUC: 0.885075
+Adas on PCam_transformed: T 2/3 | E 97/250 Ended | E Time: 5.731s | ~Time Left: 876.868s |  Train Loss: 0.2639 | Train Acc. 89.4500% | Test Loss: 0.5377 | Test Acc. 80.0000%
+Train AUC: 0.9598840000000001
+Valid AUC: 0.865
+Adas on PCam_transformed: T 2/3 | E 98/250 Ended | E Time: 5.800s | ~Time Left: 881.612s |  Train Loss: 0.2586 | Train Acc. 89.3000% | Test Loss: 0.5595 | Test Acc. 79.5000%
+Train AUC: 0.9583250000000001
+Valid AUC: 0.8661
+Adas on PCam_transformed: T 2/3 | E 99/250 Ended | E Time: 5.721s | ~Time Left: 863.823s |  Train Loss: 0.2607 | Train Acc. 89.2000% | Test Loss: 0.6597 | Test Acc. 77.2500%
+Train AUC: 0.954968
+Valid AUC: 0.896275
+Adas on PCam_transformed: T 2/3 | E 100/250 Ended | E Time: 5.837s | ~Time Left: 875.516s |  Train Loss: 0.2715 | Train Acc. 88.8000% | Test Loss: 0.4599 | Test Acc. 80.0000%
+Train AUC: 0.9632510000000001
+Valid AUC: 0.8836250000000001
+Adas on PCam_transformed: T 2/3 | E 101/250 Ended | E Time: 5.882s | ~Time Left: 876.412s |  Train Loss: 0.2437 | Train Acc. 90.8500% | Test Loss: 0.4955 | Test Acc. 79.2500%
+Train AUC: 0.964072
+Valid AUC: 0.8839
+Adas on PCam_transformed: T 2/3 | E 102/250 Ended | E Time: 5.712s | ~Time Left: 845.447s |  Train Loss: 0.2409 | Train Acc. 89.6500% | Test Loss: 0.5532 | Test Acc. 81.0000%
+Train AUC: 0.963349
+Valid AUC: 0.8798999999999999
+Adas on PCam_transformed: T 2/3 | E 103/250 Ended | E Time: 5.749s | ~Time Left: 845.169s |  Train Loss: 0.2447 | Train Acc. 89.8000% | Test Loss: 0.5117 | Test Acc. 78.0000%
+Train AUC: 0.9669
+Valid AUC: 0.870325
+Adas on PCam_transformed: T 2/3 | E 104/250 Ended | E Time: 5.785s | ~Time Left: 844.604s |  Train Loss: 0.2324 | Train Acc. 90.7500% | Test Loss: 0.5398 | Test Acc. 80.0000%
+Train AUC: 0.960602
+Valid AUC: 0.886775
+Adas on PCam_transformed: T 2/3 | E 105/250 Ended | E Time: 5.756s | ~Time Left: 834.682s |  Train Loss: 0.2553 | Train Acc. 89.4000% | Test Loss: 0.5679 | Test Acc. 80.2500%
+Train AUC: 0.9623169999999999
+Valid AUC: 0.895925
+Adas on PCam_transformed: T 2/3 | E 106/250 Ended | E Time: 5.744s | ~Time Left: 827.106s |  Train Loss: 0.2477 | Train Acc. 88.8000% | Test Loss: 0.4985 | Test Acc. 80.0000%
+Train AUC: 0.967523
+Valid AUC: 0.866575
+Adas on PCam_transformed: T 2/3 | E 107/250 Ended | E Time: 5.810s | ~Time Left: 830.796s |  Train Loss: 0.2302 | Train Acc. 90.6500% | Test Loss: 0.5427 | Test Acc. 76.7500%
+Train AUC: 0.9705890000000001
+Valid AUC: 0.8884000000000002
+Adas on PCam_transformed: T 2/3 | E 108/250 Ended | E Time: 5.775s | ~Time Left: 820.050s |  Train Loss: 0.2172 | Train Acc. 91.6000% | Test Loss: 0.5517 | Test Acc. 80.0000%
+Train AUC: 0.962059
+Valid AUC: 0.8825
+Adas on PCam_transformed: T 2/3 | E 109/250 Ended | E Time: 5.798s | ~Time Left: 817.477s |  Train Loss: 0.2494 | Train Acc. 90.0000% | Test Loss: 0.5461 | Test Acc. 80.5000%
+Train AUC: 0.970009
+Valid AUC: 0.8880250000000001
+Adas on PCam_transformed: T 2/3 | E 110/250 Ended | E Time: 5.739s | ~Time Left: 803.487s |  Train Loss: 0.2202 | Train Acc. 91.4000% | Test Loss: 0.5135 | Test Acc. 80.5000%
+Train AUC: 0.962969
+Valid AUC: 0.8924
+Adas on PCam_transformed: T 2/3 | E 111/250 Ended | E Time: 5.761s | ~Time Left: 800.822s |  Train Loss: 0.2450 | Train Acc. 90.4500% | Test Loss: 0.4882 | Test Acc. 80.5000%
+Train AUC: 0.9675669999999998
+Valid AUC: 0.8751249999999999
+Adas on PCam_transformed: T 2/3 | E 112/250 Ended | E Time: 5.780s | ~Time Left: 797.583s |  Train Loss: 0.2284 | Train Acc. 91.0000% | Test Loss: 0.5787 | Test Acc. 79.7500%
+Train AUC: 0.971286
+Valid AUC: 0.8860000000000001
+Adas on PCam_transformed: T 2/3 | E 113/250 Ended | E Time: 5.762s | ~Time Left: 789.333s |  Train Loss: 0.2196 | Train Acc. 91.3000% | Test Loss: 0.5855 | Test Acc. 80.0000%
+Train AUC: 0.9659179999999999
+Valid AUC: 0.884425
+Adas on PCam_transformed: T 2/3 | E 114/250 Ended | E Time: 5.822s | ~Time Left: 791.755s |  Train Loss: 0.2358 | Train Acc. 90.8500% | Test Loss: 0.4976 | Test Acc. 80.5000%
+Train AUC: 0.963983
+Valid AUC: 0.850225
+Adas on PCam_transformed: T 2/3 | E 115/250 Ended | E Time: 5.752s | ~Time Left: 776.550s |  Train Loss: 0.2436 | Train Acc. 89.1500% | Test Loss: 0.6055 | Test Acc. 76.7500%
+Train AUC: 0.968149
+Valid AUC: 0.892625
+Adas on PCam_transformed: T 2/3 | E 116/250 Ended | E Time: 5.870s | ~Time Left: 786.556s |  Train Loss: 0.2296 | Train Acc. 90.5500% | Test Loss: 0.5044 | Test Acc. 79.2500%
+Train AUC: 0.971016
+Valid AUC: 0.87
+Adas on PCam_transformed: T 2/3 | E 117/250 Ended | E Time: 5.775s | ~Time Left: 768.081s |  Train Loss: 0.2205 | Train Acc. 90.9500% | Test Loss: 0.5675 | Test Acc. 79.5000%
+Train AUC: 0.9630029999999999
+Valid AUC: 0.8808
+Adas on PCam_transformed: T 2/3 | E 118/250 Ended | E Time: 5.789s | ~Time Left: 764.133s |  Train Loss: 0.2486 | Train Acc. 90.5500% | Test Loss: 0.5283 | Test Acc. 79.0000%
+Train AUC: 0.9710340000000001
+Valid AUC: 0.900975
+Adas on PCam_transformed: T 2/3 | E 119/250 Ended | E Time: 5.860s | ~Time Left: 767.665s |  Train Loss: 0.2184 | Train Acc. 91.0000% | Test Loss: 0.5153 | Test Acc. 82.0000%
+Train AUC: 0.9716589999999999
+Valid AUC: 0.8497000000000001
+Adas on PCam_transformed: T 2/3 | E 120/250 Ended | E Time: 5.761s | ~Time Left: 748.903s |  Train Loss: 0.2158 | Train Acc. 91.3000% | Test Loss: 0.6196 | Test Acc. 77.2500%
+Train AUC: 0.970721
+Valid AUC: 0.9063249999999999
+Adas on PCam_transformed: T 2/3 | E 121/250 Ended | E Time: 5.701s | ~Time Left: 735.381s |  Train Loss: 0.2162 | Train Acc. 91.0500% | Test Loss: 0.4631 | Test Acc. 81.7500%
+Train AUC: 0.974152
+Valid AUC: 0.890425
+Adas on PCam_transformed: T 2/3 | E 122/250 Ended | E Time: 5.715s | ~Time Left: 731.531s |  Train Loss: 0.2060 | Train Acc. 91.7000% | Test Loss: 0.5115 | Test Acc. 81.5000%
+Train AUC: 0.973769
+Valid AUC: 0.893025
+Adas on PCam_transformed: T 2/3 | E 123/250 Ended | E Time: 5.765s | ~Time Left: 732.137s |  Train Loss: 0.2078 | Train Acc. 91.3000% | Test Loss: 0.5342 | Test Acc. 80.0000%
+Train AUC: 0.971437
+Valid AUC: 0.89395
+Adas on PCam_transformed: T 2/3 | E 124/250 Ended | E Time: 5.771s | ~Time Left: 727.106s |  Train Loss: 0.2148 | Train Acc. 91.2500% | Test Loss: 0.4814 | Test Acc. 81.7500%
+Train AUC: 0.972242
+Valid AUC: 0.8952500000000002
+Adas on PCam_transformed: T 2/3 | E 125/250 Ended | E Time: 5.827s | ~Time Left: 728.434s |  Train Loss: 0.2111 | Train Acc. 91.7000% | Test Loss: 0.4538 | Test Acc. 81.7500%
+Train AUC: 0.971808
+Valid AUC: 0.87995
+Adas on PCam_transformed: T 2/3 | E 126/250 Ended | E Time: 5.752s | ~Time Left: 713.228s |  Train Loss: 0.2117 | Train Acc. 91.7000% | Test Loss: 0.5562 | Test Acc. 82.0000%
+Train AUC: 0.9743370000000001
+Valid AUC: 0.896775
+Adas on PCam_transformed: T 2/3 | E 127/250 Ended | E Time: 5.789s | ~Time Left: 712.039s |  Train Loss: 0.2037 | Train Acc. 91.4500% | Test Loss: 0.5519 | Test Acc. 79.7500%
+Train AUC: 0.9738579999999999
+Valid AUC: 0.868875
+Adas on PCam_transformed: T 2/3 | E 128/250 Ended | E Time: 5.712s | ~Time Left: 696.876s |  Train Loss: 0.2074 | Train Acc. 91.3500% | Test Loss: 0.6042 | Test Acc. 78.5000%
+Train AUC: 0.972386
+Valid AUC: 0.885275
+Adas on PCam_transformed: T 2/3 | E 129/250 Ended | E Time: 5.810s | ~Time Left: 702.977s |  Train Loss: 0.2118 | Train Acc. 91.3000% | Test Loss: 0.5425 | Test Acc. 80.7500%
+Train AUC: 0.978048
+Valid AUC: 0.8969999999999999
+Adas on PCam_transformed: T 2/3 | E 130/250 Ended | E Time: 5.753s | ~Time Left: 690.390s |  Train Loss: 0.1895 | Train Acc. 92.3000% | Test Loss: 0.5348 | Test Acc. 81.0000%
+Train AUC: 0.976923
+Valid AUC: 0.8945
+Adas on PCam_transformed: T 2/3 | E 131/250 Ended | E Time: 5.719s | ~Time Left: 680.559s |  Train Loss: 0.1949 | Train Acc. 92.0500% | Test Loss: 0.5132 | Test Acc. 80.5000%
+Train AUC: 0.971318
+Valid AUC: 0.893125
+Adas on PCam_transformed: T 2/3 | E 132/250 Ended | E Time: 5.764s | ~Time Left: 680.155s |  Train Loss: 0.2171 | Train Acc. 90.8500% | Test Loss: 0.5357 | Test Acc. 80.7500%
+Train AUC: 0.9763759999999999
+Valid AUC: 0.8995
+Adas on PCam_transformed: T 2/3 | E 133/250 Ended | E Time: 5.802s | ~Time Left: 678.882s |  Train Loss: 0.1987 | Train Acc. 92.2500% | Test Loss: 0.5362 | Test Acc. 82.0000%
+Train AUC: 0.976344
+Valid AUC: 0.8987999999999999
+Adas on PCam_transformed: T 2/3 | E 134/250 Ended | E Time: 5.816s | ~Time Left: 674.610s |  Train Loss: 0.1986 | Train Acc. 91.8000% | Test Loss: 0.4921 | Test Acc. 81.5000%
+Train AUC: 0.981413
+Valid AUC: 0.900025
+Adas on PCam_transformed: T 2/3 | E 135/250 Ended | E Time: 5.775s | ~Time Left: 664.156s |  Train Loss: 0.1726 | Train Acc. 93.5000% | Test Loss: 0.5053 | Test Acc. 81.5000%
+Train AUC: 0.9792069999999999
+Valid AUC: 0.8910750000000001
+Adas on PCam_transformed: T 2/3 | E 136/250 Ended | E Time: 5.776s | ~Time Left: 658.451s |  Train Loss: 0.1812 | Train Acc. 92.9000% | Test Loss: 0.6317 | Test Acc. 80.5000%
+Train AUC: 0.978825
+Valid AUC: 0.89235
+Adas on PCam_transformed: T 2/3 | E 137/250 Ended | E Time: 5.712s | ~Time Left: 645.458s |  Train Loss: 0.1854 | Train Acc. 92.6000% | Test Loss: 0.5181 | Test Acc. 80.5000%
+Train AUC: 0.9751000000000001
+Valid AUC: 0.885725
+Adas on PCam_transformed: T 2/3 | E 138/250 Ended | E Time: 5.798s | ~Time Left: 649.372s |  Train Loss: 0.2058 | Train Acc. 91.7500% | Test Loss: 0.5466 | Test Acc. 79.0000%
+Train AUC: 0.979331
+Valid AUC: 0.902575
+Adas on PCam_transformed: T 2/3 | E 139/250 Ended | E Time: 5.773s | ~Time Left: 640.761s |  Train Loss: 0.1844 | Train Acc. 92.6500% | Test Loss: 0.4836 | Test Acc. 82.7500%
+Train AUC: 0.9794809999999999
+Valid AUC: 0.8819
+Adas on PCam_transformed: T 2/3 | E 140/250 Ended | E Time: 5.841s | ~Time Left: 642.527s |  Train Loss: 0.1821 | Train Acc. 93.1000% | Test Loss: 0.6045 | Test Acc. 79.7500%
+Train AUC: 0.980795
+Valid AUC: 0.88115
+Adas on PCam_transformed: T 2/3 | E 141/250 Ended | E Time: 5.745s | ~Time Left: 626.245s |  Train Loss: 0.1765 | Train Acc. 93.3500% | Test Loss: 0.6739 | Test Acc. 79.5000%
+Train AUC: 0.979183
+Valid AUC: 0.872425
+Adas on PCam_transformed: T 2/3 | E 142/250 Ended | E Time: 5.780s | ~Time Left: 624.279s |  Train Loss: 0.1824 | Train Acc. 92.6000% | Test Loss: 0.6087 | Test Acc. 79.5000%
+Train AUC: 0.98169
+Valid AUC: 0.88945
+Adas on PCam_transformed: T 2/3 | E 143/250 Ended | E Time: 5.846s | ~Time Left: 625.539s |  Train Loss: 0.1722 | Train Acc. 92.5500% | Test Loss: 0.5309 | Test Acc. 80.2500%
+Train AUC: 0.9830479999999999
+Valid AUC: 0.90055
+Adas on PCam_transformed: T 2/3 | E 144/250 Ended | E Time: 5.827s | ~Time Left: 617.663s |  Train Loss: 0.1685 | Train Acc. 93.5000% | Test Loss: 0.4970 | Test Acc. 81.7500%
+Train AUC: 0.9818100000000001
+Valid AUC: 0.879175
+Adas on PCam_transformed: T 2/3 | E 145/250 Ended | E Time: 5.791s | ~Time Left: 608.066s |  Train Loss: 0.1772 | Train Acc. 93.5500% | Test Loss: 0.5405 | Test Acc. 80.5000%
+Train AUC: 0.986063
+Valid AUC: 0.8990500000000001
+Adas on PCam_transformed: T 2/3 | E 146/250 Ended | E Time: 5.734s | ~Time Left: 596.379s |  Train Loss: 0.1540 | Train Acc. 93.6500% | Test Loss: 0.5464 | Test Acc. 82.5000%
+Train AUC: 0.9811500000000001
+Valid AUC: 0.8861749999999998
+Adas on PCam_transformed: T 2/3 | E 147/250 Ended | E Time: 5.739s | ~Time Left: 591.124s |  Train Loss: 0.1733 | Train Acc. 93.3500% | Test Loss: 0.6140 | Test Acc. 82.2500%
+Train AUC: 0.9832860000000001
+Valid AUC: 0.884275
+Adas on PCam_transformed: T 2/3 | E 148/250 Ended | E Time: 5.995s | ~Time Left: 611.467s |  Train Loss: 0.1652 | Train Acc. 93.3000% | Test Loss: 0.5540 | Test Acc. 78.0000%
+Train AUC: 0.983626
+Valid AUC: 0.8773
+Adas on PCam_transformed: T 2/3 | E 149/250 Ended | E Time: 5.774s | ~Time Left: 583.184s |  Train Loss: 0.1659 | Train Acc. 93.1000% | Test Loss: 0.6265 | Test Acc. 80.2500%
+Train AUC: 0.9842960000000001
+Valid AUC: 0.8738
+Adas on PCam_transformed: T 2/3 | E 150/250 Ended | E Time: 6.162s | ~Time Left: 616.227s |  Train Loss: 0.1593 | Train Acc. 93.4500% | Test Loss: 0.7079 | Test Acc. 79.7500%
+Train AUC: 0.982722
+Valid AUC: 0.8794999999999998
+Adas on PCam_transformed: T 2/3 | E 151/250 Ended | E Time: 5.819s | ~Time Left: 576.059s |  Train Loss: 0.1685 | Train Acc. 93.4500% | Test Loss: 0.6653 | Test Acc. 80.2500%
+Train AUC: 0.982559
+Valid AUC: 0.8944249999999999
+Adas on PCam_transformed: T 2/3 | E 152/250 Ended | E Time: 5.808s | ~Time Left: 569.136s |  Train Loss: 0.1668 | Train Acc. 93.6000% | Test Loss: 0.6087 | Test Acc. 83.2500%
+Train AUC: 0.982941
+Valid AUC: 0.8926999999999999
+Adas on PCam_transformed: T 2/3 | E 153/250 Ended | E Time: 5.703s | ~Time Left: 553.178s |  Train Loss: 0.1651 | Train Acc. 93.4000% | Test Loss: 0.5942 | Test Acc. 80.2500%
+Train AUC: 0.9867889999999999
+Valid AUC: 0.87805
+Adas on PCam_transformed: T 2/3 | E 154/250 Ended | E Time: 5.739s | ~Time Left: 550.932s |  Train Loss: 0.1466 | Train Acc. 94.1000% | Test Loss: 0.6606 | Test Acc. 80.2500%
+Train AUC: 0.9874449999999999
+Valid AUC: 0.9005
+Adas on PCam_transformed: T 2/3 | E 155/250 Ended | E Time: 5.734s | ~Time Left: 544.736s |  Train Loss: 0.1457 | Train Acc. 94.2000% | Test Loss: 0.5723 | Test Acc. 81.7500%
+Train AUC: 0.9850599999999999
+Valid AUC: 0.88675
+Adas on PCam_transformed: T 2/3 | E 156/250 Ended | E Time: 5.713s | ~Time Left: 536.987s |  Train Loss: 0.1611 | Train Acc. 93.3500% | Test Loss: 0.5412 | Test Acc. 79.7500%
+Train AUC: 0.9876010000000001
+Valid AUC: 0.8978
+Adas on PCam_transformed: T 2/3 | E 157/250 Ended | E Time: 5.821s | ~Time Left: 541.328s |  Train Loss: 0.1420 | Train Acc. 94.4500% | Test Loss: 0.5988 | Test Acc. 83.0000%
+Train AUC: 0.986569
+Valid AUC: 0.8976249999999999
+Adas on PCam_transformed: T 2/3 | E 158/250 Ended | E Time: 5.713s | ~Time Left: 525.552s |  Train Loss: 0.1460 | Train Acc. 94.3000% | Test Loss: 0.5385 | Test Acc. 79.5000%
+Train AUC: 0.9866499999999999
+Valid AUC: 0.875675
+Adas on PCam_transformed: T 2/3 | E 159/250 Ended | E Time: 5.712s | ~Time Left: 519.761s |  Train Loss: 0.1454 | Train Acc. 94.6500% | Test Loss: 0.6436 | Test Acc. 80.2500%
+Train AUC: 0.9860680000000001
+Valid AUC: 0.885
+Adas on PCam_transformed: T 2/3 | E 160/250 Ended | E Time: 5.866s | ~Time Left: 527.952s |  Train Loss: 0.1525 | Train Acc. 93.5000% | Test Loss: 0.6117 | Test Acc. 80.0000%
+Train AUC: 0.986455
+Valid AUC: 0.8846499999999999
+Adas on PCam_transformed: T 2/3 | E 161/250 Ended | E Time: 5.795s | ~Time Left: 515.763s |  Train Loss: 0.1471 | Train Acc. 94.5000% | Test Loss: 0.6153 | Test Acc. 81.0000%
+Train AUC: 0.988615
+Valid AUC: 0.8914249999999999
+Adas on PCam_transformed: T 2/3 | E 162/250 Ended | E Time: 5.867s | ~Time Left: 516.270s |  Train Loss: 0.1360 | Train Acc. 95.3500% | Test Loss: 0.6363 | Test Acc. 82.0000%
+Train AUC: 0.9848509999999999
+Valid AUC: 0.8793749999999999
+Adas on PCam_transformed: T 2/3 | E 163/250 Ended | E Time: 5.725s | ~Time Left: 498.061s |  Train Loss: 0.1582 | Train Acc. 93.0500% | Test Loss: 0.6557 | Test Acc. 77.7500%
+Train AUC: 0.9874040000000001
+Valid AUC: 0.87585
+Adas on PCam_transformed: T 2/3 | E 164/250 Ended | E Time: 5.754s | ~Time Left: 494.852s |  Train Loss: 0.1426 | Train Acc. 94.4500% | Test Loss: 0.6564 | Test Acc. 80.5000%
+Train AUC: 0.9862200000000001
+Valid AUC: 0.8625
+Adas on PCam_transformed: T 2/3 | E 165/250 Ended | E Time: 5.877s | ~Time Left: 499.538s |  Train Loss: 0.1516 | Train Acc. 93.9500% | Test Loss: 0.7646 | Test Acc. 78.2500%
+Train AUC: 0.98392
+Valid AUC: 0.8925749999999999
+Adas on PCam_transformed: T 2/3 | E 166/250 Ended | E Time: 5.805s | ~Time Left: 487.637s |  Train Loss: 0.1614 | Train Acc. 93.6000% | Test Loss: 0.6179 | Test Acc. 83.5000%
+Train AUC: 0.989249
+Valid AUC: 0.8819249999999998
+Adas on PCam_transformed: T 2/3 | E 167/250 Ended | E Time: 5.791s | ~Time Left: 480.626s |  Train Loss: 0.1346 | Train Acc. 94.7500% | Test Loss: 0.6234 | Test Acc. 80.2500%
+Train AUC: 0.990168
+Valid AUC: 0.8843
+Adas on PCam_transformed: T 2/3 | E 168/250 Ended | E Time: 5.728s | ~Time Left: 469.730s |  Train Loss: 0.1259 | Train Acc. 95.3500% | Test Loss: 0.7202 | Test Acc. 81.7500%
+Train AUC: 0.987498
+Valid AUC: 0.894075
+Adas on PCam_transformed: T 2/3 | E 169/250 Ended | E Time: 5.782s | ~Time Left: 468.344s |  Train Loss: 0.1418 | Train Acc. 94.6000% | Test Loss: 0.5725 | Test Acc. 81.2500%
+Train AUC: 0.990125
+Valid AUC: 0.890475
+Adas on PCam_transformed: T 2/3 | E 170/250 Ended | E Time: 5.787s | ~Time Left: 462.942s |  Train Loss: 0.1287 | Train Acc. 94.9500% | Test Loss: 0.6044 | Test Acc. 82.0000%
+Train AUC: 0.99223
+Valid AUC: 0.86185
+Adas on PCam_transformed: T 2/3 | E 171/250 Ended | E Time: 5.960s | ~Time Left: 470.873s |  Train Loss: 0.1158 | Train Acc. 95.5000% | Test Loss: 0.7360 | Test Acc. 79.5000%
+Train AUC: 0.9883
+Valid AUC: 0.8848
+Adas on PCam_transformed: T 2/3 | E 172/250 Ended | E Time: 5.845s | ~Time Left: 455.921s |  Train Loss: 0.1380 | Train Acc. 94.8000% | Test Loss: 0.6807 | Test Acc. 79.7500%
+Train AUC: 0.98832
+Valid AUC: 0.884725
+Adas on PCam_transformed: T 2/3 | E 173/250 Ended | E Time: 5.725s | ~Time Left: 440.809s |  Train Loss: 0.1384 | Train Acc. 94.6000% | Test Loss: 0.7526 | Test Acc. 82.2500%
+Train AUC: 0.9908129999999999
+Valid AUC: 0.883475
+Adas on PCam_transformed: T 2/3 | E 174/250 Ended | E Time: 5.828s | ~Time Left: 442.898s |  Train Loss: 0.1226 | Train Acc. 95.2000% | Test Loss: 0.6341 | Test Acc. 81.2500%
+Train AUC: 0.990362
+Valid AUC: 0.871175
+Adas on PCam_transformed: T 2/3 | E 175/250 Ended | E Time: 5.776s | ~Time Left: 433.232s |  Train Loss: 0.1248 | Train Acc. 95.3000% | Test Loss: 0.7278 | Test Acc. 81.0000%
+Train AUC: 0.9904580000000001
+Valid AUC: 0.8944500000000001
+Adas on PCam_transformed: T 2/3 | E 176/250 Ended | E Time: 5.764s | ~Time Left: 426.541s |  Train Loss: 0.1235 | Train Acc. 95.1000% | Test Loss: 0.6393 | Test Acc. 81.7500%
+Train AUC: 0.991848
+Valid AUC: 0.8733000000000001
+Adas on PCam_transformed: T 2/3 | E 177/250 Ended | E Time: 5.698s | ~Time Left: 415.953s |  Train Loss: 0.1151 | Train Acc. 95.9500% | Test Loss: 0.7281 | Test Acc. 80.5000%
+Train AUC: 0.9921990000000002
+Valid AUC: 0.88
+Adas on PCam_transformed: T 2/3 | E 178/250 Ended | E Time: 5.780s | ~Time Left: 416.176s |  Train Loss: 0.1140 | Train Acc. 96.2000% | Test Loss: 0.6789 | Test Acc. 79.0000%
+Train AUC: 0.9891319999999999
+Valid AUC: 0.9000499999999999
+Adas on PCam_transformed: T 2/3 | E 179/250 Ended | E Time: 5.766s | ~Time Left: 409.375s |  Train Loss: 0.1330 | Train Acc. 94.1000% | Test Loss: 0.5630 | Test Acc. 82.2500%
+Train AUC: 0.9872989999999999
+Valid AUC: 0.8877249999999999
+Adas on PCam_transformed: T 2/3 | E 180/250 Ended | E Time: 5.723s | ~Time Left: 400.586s |  Train Loss: 0.1450 | Train Acc. 93.9500% | Test Loss: 0.5948 | Test Acc. 81.0000%
+Train AUC: 0.9924179999999999
+Valid AUC: 0.8895250000000001
+Adas on PCam_transformed: T 2/3 | E 181/250 Ended | E Time: 5.768s | ~Time Left: 397.958s |  Train Loss: 0.1122 | Train Acc. 95.6000% | Test Loss: 0.6560 | Test Acc. 81.0000%
+Train AUC: 0.9941230000000001
+Valid AUC: 0.8941000000000001
+Adas on PCam_transformed: T 2/3 | E 182/250 Ended | E Time: 5.721s | ~Time Left: 389.051s |  Train Loss: 0.1003 | Train Acc. 95.9500% | Test Loss: 0.6468 | Test Acc. 82.7500%
+Train AUC: 0.993553
+Valid AUC: 0.8925
+Adas on PCam_transformed: T 2/3 | E 183/250 Ended | E Time: 5.762s | ~Time Left: 386.065s |  Train Loss: 0.1035 | Train Acc. 95.7500% | Test Loss: 0.6985 | Test Acc. 81.0000%
+Train AUC: 0.990461
+Valid AUC: 0.877575
+Adas on PCam_transformed: T 2/3 | E 184/250 Ended | E Time: 5.778s | ~Time Left: 381.380s |  Train Loss: 0.1247 | Train Acc. 95.1000% | Test Loss: 0.8254 | Test Acc. 82.5000%
+Train AUC: 0.991489
+Valid AUC: 0.886825
+Adas on PCam_transformed: T 2/3 | E 185/250 Ended | E Time: 5.768s | ~Time Left: 374.936s |  Train Loss: 0.1197 | Train Acc. 95.6500% | Test Loss: 0.7828 | Test Acc. 82.7500%
+Train AUC: 0.9911119999999999
+Valid AUC: 0.894425
+Adas on PCam_transformed: T 2/3 | E 186/250 Ended | E Time: 5.734s | ~Time Left: 366.958s |  Train Loss: 0.1210 | Train Acc. 95.5000% | Test Loss: 0.5637 | Test Acc. 79.0000%
+Train AUC: 0.9946539999999999
+Valid AUC: 0.8627250000000001
+Adas on PCam_transformed: T 2/3 | E 187/250 Ended | E Time: 5.780s | ~Time Left: 364.126s |  Train Loss: 0.0964 | Train Acc. 96.6000% | Test Loss: 0.8324 | Test Acc. 79.5000%
+Train AUC: 0.993601
+Valid AUC: 0.8835750000000001
+Adas on PCam_transformed: T 2/3 | E 188/250 Ended | E Time: 5.779s | ~Time Left: 358.302s |  Train Loss: 0.1013 | Train Acc. 96.0000% | Test Loss: 0.6488 | Test Acc. 79.0000%
+Train AUC: 0.993401
+Valid AUC: 0.9029
+Adas on PCam_transformed: T 2/3 | E 189/250 Ended | E Time: 5.742s | ~Time Left: 350.292s |  Train Loss: 0.1049 | Train Acc. 95.8000% | Test Loss: 0.5940 | Test Acc. 82.0000%
+Train AUC: 0.9944410000000001
+Valid AUC: 0.90945
+Adas on PCam_transformed: T 2/3 | E 190/250 Ended | E Time: 5.753s | ~Time Left: 345.199s |  Train Loss: 0.0958 | Train Acc. 97.0000% | Test Loss: 0.6334 | Test Acc. 82.0000%
+Train AUC: 0.9942799999999999
+Valid AUC: 0.891775
+Adas on PCam_transformed: T 2/3 | E 191/250 Ended | E Time: 5.785s | ~Time Left: 341.323s |  Train Loss: 0.0970 | Train Acc. 96.6500% | Test Loss: 0.6815 | Test Acc. 83.0000%
+Train AUC: 0.9928060000000001
+Valid AUC: 0.8982
+Adas on PCam_transformed: T 2/3 | E 192/250 Ended | E Time: 5.790s | ~Time Left: 335.799s |  Train Loss: 0.1082 | Train Acc. 95.7500% | Test Loss: 0.5982 | Test Acc. 82.7500%
+Train AUC: 0.994274
+Valid AUC: 0.896475
+Adas on PCam_transformed: T 2/3 | E 193/250 Ended | E Time: 5.780s | ~Time Left: 329.451s |  Train Loss: 0.0964 | Train Acc. 96.5000% | Test Loss: 0.6754 | Test Acc. 80.7500%
+Train AUC: 0.996247
+Valid AUC: 0.8886500000000002
+Adas on PCam_transformed: T 2/3 | E 194/250 Ended | E Time: 5.767s | ~Time Left: 322.953s |  Train Loss: 0.0788 | Train Acc. 97.3000% | Test Loss: 0.7184 | Test Acc. 80.7500%
+Train AUC: 0.994915
+Valid AUC: 0.8911500000000001
+Adas on PCam_transformed: T 2/3 | E 195/250 Ended | E Time: 5.743s | ~Time Left: 315.848s |  Train Loss: 0.0896 | Train Acc. 96.6000% | Test Loss: 0.6481 | Test Acc. 83.5000%
+Train AUC: 0.993201
+Valid AUC: 0.8977499999999999
+Adas on PCam_transformed: T 2/3 | E 196/250 Ended | E Time: 5.804s | ~Time Left: 313.419s |  Train Loss: 0.1053 | Train Acc. 96.0000% | Test Loss: 0.6765 | Test Acc. 81.7500%
+Train AUC: 0.995716
+Valid AUC: 0.9035249999999999
+Adas on PCam_transformed: T 2/3 | E 197/250 Ended | E Time: 5.791s | ~Time Left: 306.942s |  Train Loss: 0.0845 | Train Acc. 96.9500% | Test Loss: 0.6321 | Test Acc. 82.0000%
+Train AUC: 0.9949790000000001
+Valid AUC: 0.89185
+Adas on PCam_transformed: T 2/3 | E 198/250 Ended | E Time: 5.847s | ~Time Left: 304.062s |  Train Loss: 0.0920 | Train Acc. 96.5000% | Test Loss: 0.7301 | Test Acc. 83.0000%
+Train AUC: 0.996274
+Valid AUC: 0.898325
+Adas on PCam_transformed: T 2/3 | E 199/250 Ended | E Time: 5.717s | ~Time Left: 291.549s |  Train Loss: 0.0799 | Train Acc. 96.9000% | Test Loss: 0.7048 | Test Acc. 82.7500%
+Train AUC: 0.994132
+Valid AUC: 0.8955249999999999
+Adas on PCam_transformed: T 2/3 | E 200/250 Ended | E Time: 5.800s | ~Time Left: 290.023s |  Train Loss: 0.0974 | Train Acc. 95.8000% | Test Loss: 0.6770 | Test Acc. 81.2500%
+Train AUC: 0.99535
+Valid AUC: 0.8808499999999999
+Adas on PCam_transformed: T 2/3 | E 201/250 Ended | E Time: 5.788s | ~Time Left: 283.606s |  Train Loss: 0.0868 | Train Acc. 96.6000% | Test Loss: 0.7371 | Test Acc. 82.0000%
+Train AUC: 0.996006
+Valid AUC: 0.90025
+Adas on PCam_transformed: T 2/3 | E 202/250 Ended | E Time: 5.714s | ~Time Left: 274.265s |  Train Loss: 0.0821 | Train Acc. 96.9000% | Test Loss: 0.6833 | Test Acc. 81.7500%
+Train AUC: 0.9966280000000001
+Valid AUC: 0.8984
+Adas on PCam_transformed: T 2/3 | E 203/250 Ended | E Time: 5.816s | ~Time Left: 273.370s |  Train Loss: 0.0725 | Train Acc. 97.9500% | Test Loss: 0.6344 | Test Acc. 82.7500%
+Train AUC: 0.996415
+Valid AUC: 0.894325
+Adas on PCam_transformed: T 2/3 | E 204/250 Ended | E Time: 5.775s | ~Time Left: 265.656s |  Train Loss: 0.0789 | Train Acc. 97.2500% | Test Loss: 0.6765 | Test Acc. 81.0000%
+Train AUC: 0.9967550000000001
+Valid AUC: 0.8865749999999999
+Adas on PCam_transformed: T 2/3 | E 205/250 Ended | E Time: 5.801s | ~Time Left: 261.048s |  Train Loss: 0.0722 | Train Acc. 97.5500% | Test Loss: 0.6875 | Test Acc. 81.0000%
+Train AUC: 0.9966160000000001
+Valid AUC: 0.8982249999999999
+Adas on PCam_transformed: T 2/3 | E 206/250 Ended | E Time: 5.761s | ~Time Left: 253.491s |  Train Loss: 0.0744 | Train Acc. 97.1000% | Test Loss: 0.6424 | Test Acc. 80.2500%
+Train AUC: 0.9951889999999999
+Valid AUC: 0.889975
+Adas on PCam_transformed: T 2/3 | E 207/250 Ended | E Time: 5.723s | ~Time Left: 246.098s |  Train Loss: 0.0875 | Train Acc. 96.7500% | Test Loss: 0.7224 | Test Acc. 81.5000%
+Train AUC: 0.995433
+Valid AUC: 0.903775
+Adas on PCam_transformed: T 2/3 | E 208/250 Ended | E Time: 5.729s | ~Time Left: 240.616s |  Train Loss: 0.0851 | Train Acc. 97.0000% | Test Loss: 0.6365 | Test Acc. 83.5000%
+Train AUC: 0.995783
+Valid AUC: 0.89515
+Adas on PCam_transformed: T 2/3 | E 209/250 Ended | E Time: 5.696s | ~Time Left: 233.538s |  Train Loss: 0.0819 | Train Acc. 96.9500% | Test Loss: 0.6855 | Test Acc. 82.0000%
+Train AUC: 0.9963069999999999
+Valid AUC: 0.891575
+Adas on PCam_transformed: T 2/3 | E 210/250 Ended | E Time: 5.785s | ~Time Left: 231.387s |  Train Loss: 0.0793 | Train Acc. 97.0000% | Test Loss: 0.7773 | Test Acc. 82.0000%
+Train AUC: 0.997479
+Valid AUC: 0.8948750000000001
+Adas on PCam_transformed: T 2/3 | E 211/250 Ended | E Time: 5.717s | ~Time Left: 222.956s |  Train Loss: 0.0654 | Train Acc. 97.6500% | Test Loss: 0.6702 | Test Acc. 81.2500%
+Train AUC: 0.997146
+Valid AUC: 0.909775
+Adas on PCam_transformed: T 2/3 | E 212/250 Ended | E Time: 5.847s | ~Time Left: 222.168s |  Train Loss: 0.0705 | Train Acc. 97.6000% | Test Loss: 0.6530 | Test Acc. 82.7500%
+Train AUC: 0.9946899999999999
+Valid AUC: 0.885725
+Adas on PCam_transformed: T 2/3 | E 213/250 Ended | E Time: 5.750s | ~Time Left: 212.756s |  Train Loss: 0.0921 | Train Acc. 96.3500% | Test Loss: 0.7279 | Test Acc. 83.0000%
+Train AUC: 0.995993
+Valid AUC: 0.87865
+Adas on PCam_transformed: T 2/3 | E 214/250 Ended | E Time: 5.743s | ~Time Left: 206.761s |  Train Loss: 0.0768 | Train Acc. 97.3000% | Test Loss: 0.8154 | Test Acc. 81.5000%
+Train AUC: 0.996892
+Valid AUC: 0.8842749999999999
+Adas on PCam_transformed: T 2/3 | E 215/250 Ended | E Time: 5.784s | ~Time Left: 202.424s |  Train Loss: 0.0733 | Train Acc. 97.4500% | Test Loss: 0.8253 | Test Acc. 81.0000%
+Train AUC: 0.9961260000000001
+Valid AUC: 0.8885000000000001
+Adas on PCam_transformed: T 2/3 | E 216/250 Ended | E Time: 5.707s | ~Time Left: 194.039s |  Train Loss: 0.0813 | Train Acc. 96.8000% | Test Loss: 0.7283 | Test Acc. 83.5000%
+Train AUC: 0.996916
+Valid AUC: 0.8863749999999999
+Adas on PCam_transformed: T 2/3 | E 217/250 Ended | E Time: 5.726s | ~Time Left: 188.945s |  Train Loss: 0.0721 | Train Acc. 97.3500% | Test Loss: 0.7901 | Test Acc. 83.0000%
+Train AUC: 0.997287
+Valid AUC: 0.8808999999999999
+Adas on PCam_transformed: T 2/3 | E 218/250 Ended | E Time: 5.734s | ~Time Left: 183.485s |  Train Loss: 0.0684 | Train Acc. 97.2000% | Test Loss: 0.7771 | Test Acc. 81.0000%
+Train AUC: 0.997194
+Valid AUC: 0.8957999999999999
+Adas on PCam_transformed: T 2/3 | E 219/250 Ended | E Time: 5.702s | ~Time Left: 176.758s |  Train Loss: 0.0686 | Train Acc. 97.8000% | Test Loss: 0.6769 | Test Acc. 81.5000%
+Train AUC: 0.996018
+Valid AUC: 0.8828249999999999
+Adas on PCam_transformed: T 2/3 | E 220/250 Ended | E Time: 5.793s | ~Time Left: 173.780s |  Train Loss: 0.0799 | Train Acc. 97.1000% | Test Loss: 0.8034 | Test Acc. 82.5000%
+Train AUC: 0.995926
+Valid AUC: 0.887
+Adas on PCam_transformed: T 2/3 | E 221/250 Ended | E Time: 5.746s | ~Time Left: 166.630s |  Train Loss: 0.0829 | Train Acc. 97.0500% | Test Loss: 0.8129 | Test Acc. 82.7500%
+Train AUC: 0.996705
+Valid AUC: 0.88635
+Adas on PCam_transformed: T 2/3 | E 222/250 Ended | E Time: 5.724s | ~Time Left: 160.273s |  Train Loss: 0.0715 | Train Acc. 97.9000% | Test Loss: 0.7297 | Test Acc. 81.0000%
+Train AUC: 0.997885
+Valid AUC: 0.892875
+Adas on PCam_transformed: T 2/3 | E 223/250 Ended | E Time: 5.699s | ~Time Left: 153.883s |  Train Loss: 0.0606 | Train Acc. 98.0000% | Test Loss: 0.7392 | Test Acc. 81.5000%
+Train AUC: 0.996509
+Valid AUC: 0.90725
+Adas on PCam_transformed: T 2/3 | E 224/250 Ended | E Time: 5.758s | ~Time Left: 149.715s |  Train Loss: 0.0753 | Train Acc. 96.9500% | Test Loss: 0.6449 | Test Acc. 82.7500%
+Train AUC: 0.998266
+Valid AUC: 0.8885749999999999
+Adas on PCam_transformed: T 2/3 | E 225/250 Ended | E Time: 5.793s | ~Time Left: 144.829s |  Train Loss: 0.0556 | Train Acc. 98.0500% | Test Loss: 0.7708 | Test Acc. 82.0000%
+Train AUC: 0.99821
+Valid AUC: 0.88495
+Adas on PCam_transformed: T 2/3 | E 226/250 Ended | E Time: 5.770s | ~Time Left: 138.475s |  Train Loss: 0.0583 | Train Acc. 97.4500% | Test Loss: 0.7279 | Test Acc. 81.5000%
+Train AUC: 0.9973010000000001
+Valid AUC: 0.886
+Adas on PCam_transformed: T 2/3 | E 227/250 Ended | E Time: 5.841s | ~Time Left: 134.348s |  Train Loss: 0.0657 | Train Acc. 97.8000% | Test Loss: 0.8258 | Test Acc. 80.7500%
+Train AUC: 0.996867
+Valid AUC: 0.88915
+Adas on PCam_transformed: T 2/3 | E 228/250 Ended | E Time: 5.806s | ~Time Left: 127.731s |  Train Loss: 0.0690 | Train Acc. 97.5500% | Test Loss: 0.8576 | Test Acc. 83.2500%
+Train AUC: 0.996904
+Valid AUC: 0.8907
+Adas on PCam_transformed: T 2/3 | E 229/250 Ended | E Time: 5.862s | ~Time Left: 123.107s |  Train Loss: 0.0713 | Train Acc. 97.2500% | Test Loss: 0.7930 | Test Acc. 82.0000%
+Train AUC: 0.997352
+Valid AUC: 0.886425
+Adas on PCam_transformed: T 2/3 | E 230/250 Ended | E Time: 5.821s | ~Time Left: 116.430s |  Train Loss: 0.0606 | Train Acc. 98.1000% | Test Loss: 0.7961 | Test Acc. 82.0000%
+Train AUC: 0.9983009999999999
+Valid AUC: 0.8838999999999999
+Adas on PCam_transformed: T 2/3 | E 231/250 Ended | E Time: 5.784s | ~Time Left: 109.890s |  Train Loss: 0.0548 | Train Acc. 97.9000% | Test Loss: 0.7633 | Test Acc. 81.2500%
+Train AUC: 0.9963690000000001
+Valid AUC: 0.8798250000000002
+Adas on PCam_transformed: T 2/3 | E 232/250 Ended | E Time: 5.762s | ~Time Left: 103.721s |  Train Loss: 0.0791 | Train Acc. 97.2500% | Test Loss: 0.8571 | Test Acc. 80.5000%
+Train AUC: 0.996236
+Valid AUC: 0.8739
+Adas on PCam_transformed: T 2/3 | E 233/250 Ended | E Time: 5.813s | ~Time Left: 98.827s |  Train Loss: 0.0752 | Train Acc. 97.4000% | Test Loss: 0.8658 | Test Acc. 81.0000%
+Train AUC: 0.998254
+Valid AUC: 0.8824749999999999
+Adas on PCam_transformed: T 2/3 | E 234/250 Ended | E Time: 5.779s | ~Time Left: 92.472s |  Train Loss: 0.0532 | Train Acc. 98.1500% | Test Loss: 0.7649 | Test Acc. 81.2500%
+Train AUC: 0.9979640000000001
+Valid AUC: 0.90125
+Adas on PCam_transformed: T 2/3 | E 235/250 Ended | E Time: 5.797s | ~Time Left: 86.960s |  Train Loss: 0.0573 | Train Acc. 98.3000% | Test Loss: 0.7126 | Test Acc. 83.5000%
+Train AUC: 0.997619
+Valid AUC: 0.904225
+Adas on PCam_transformed: T 2/3 | E 236/250 Ended | E Time: 5.830s | ~Time Left: 81.614s |  Train Loss: 0.0620 | Train Acc. 97.4000% | Test Loss: 0.6880 | Test Acc. 83.2500%
+Train AUC: 0.998166
+Valid AUC: 0.894025
+Adas on PCam_transformed: T 2/3 | E 237/250 Ended | E Time: 5.800s | ~Time Left: 75.397s |  Train Loss: 0.0538 | Train Acc. 98.2500% | Test Loss: 0.7407 | Test Acc. 82.2500%
+Train AUC: 0.99792
+Valid AUC: 0.894
+Adas on PCam_transformed: T 2/3 | E 238/250 Ended | E Time: 5.704s | ~Time Left: 68.449s |  Train Loss: 0.0565 | Train Acc. 98.2500% | Test Loss: 0.7323 | Test Acc. 84.0000%
+Train AUC: 0.9978969999999999
+Valid AUC: 0.885075
+Adas on PCam_transformed: T 2/3 | E 239/250 Ended | E Time: 5.736s | ~Time Left: 63.091s |  Train Loss: 0.0603 | Train Acc. 97.9000% | Test Loss: 0.8434 | Test Acc. 81.5000%
+Train AUC: 0.9982880000000001
+Valid AUC: 0.886925
+Adas on PCam_transformed: T 2/3 | E 240/250 Ended | E Time: 5.750s | ~Time Left: 57.501s |  Train Loss: 0.0549 | Train Acc. 97.7000% | Test Loss: 0.8816 | Test Acc. 80.5000%
+Train AUC: 0.9977960000000001
+Valid AUC: 0.8919499999999999
+Adas on PCam_transformed: T 2/3 | E 241/250 Ended | E Time: 5.666s | ~Time Left: 50.993s |  Train Loss: 0.0583 | Train Acc. 98.0000% | Test Loss: 0.8241 | Test Acc. 82.0000%
+Train AUC: 0.9977199999999999
+Valid AUC: 0.88535
+Adas on PCam_transformed: T 2/3 | E 242/250 Ended | E Time: 5.761s | ~Time Left: 46.086s |  Train Loss: 0.0621 | Train Acc. 97.5000% | Test Loss: 0.8192 | Test Acc. 83.0000%
+Train AUC: 0.9985679999999999
+Valid AUC: 0.8902500000000001
+Adas on PCam_transformed: T 2/3 | E 243/250 Ended | E Time: 5.786s | ~Time Left: 40.500s |  Train Loss: 0.0488 | Train Acc. 98.2000% | Test Loss: 0.7735 | Test Acc. 83.2500%
+Train AUC: 0.998374
+Valid AUC: 0.886425
+Adas on PCam_transformed: T 2/3 | E 244/250 Ended | E Time: 5.830s | ~Time Left: 34.982s |  Train Loss: 0.0540 | Train Acc. 98.2000% | Test Loss: 0.8104 | Test Acc. 82.5000%
+Train AUC: 0.998804
+Valid AUC: 0.89225
+Adas on PCam_transformed: T 2/3 | E 245/250 Ended | E Time: 5.819s | ~Time Left: 29.096s |  Train Loss: 0.0463 | Train Acc. 98.0500% | Test Loss: 0.7885 | Test Acc. 83.5000%
+Train AUC: 0.9984019999999999
+Valid AUC: 0.887475
+Adas on PCam_transformed: T 2/3 | E 246/250 Ended | E Time: 5.775s | ~Time Left: 23.098s |  Train Loss: 0.0555 | Train Acc. 98.0500% | Test Loss: 0.8416 | Test Acc. 83.0000%
+Train AUC: 0.999012
+Valid AUC: 0.89275
+Adas on PCam_transformed: T 2/3 | E 247/250 Ended | E Time: 5.858s | ~Time Left: 17.574s |  Train Loss: 0.0469 | Train Acc. 98.5000% | Test Loss: 0.7797 | Test Acc. 82.7500%
+Train AUC: 0.9985120000000001
+Valid AUC: 0.89995
+Adas on PCam_transformed: T 2/3 | E 248/250 Ended | E Time: 5.734s | ~Time Left: 11.468s |  Train Loss: 0.0514 | Train Acc. 97.7500% | Test Loss: 0.7414 | Test Acc. 82.5000%
+Train AUC: 0.99839
+Valid AUC: 0.88825
+Adas on PCam_transformed: T 2/3 | E 249/250 Ended | E Time: 5.818s | ~Time Left: 5.818s |  Train Loss: 0.0496 | Train Acc. 98.2000% | Test Loss: 0.8313 | Test Acc. 83.0000%
+Train AUC: 0.9988980000000001
+Valid AUC: 0.882425
+Adas on PCam_transformed: T 2/3 | E 250/250 Ended | E Time: 5.771s | ~Time Left: 0.000s |  Train Loss: 0.0445 | Train Acc. 98.3500% | Test Loss: 0.8504 | Test Acc. 81.7500%
+Train AUC: 0.6843870000000001
+Valid AUC: 0.679375
+Adas on PCam_transformed: T 3/3 | E 1/250 Ended | E Time: 5.820s | ~Time Left: 1449.125s |  Train Loss: 1.0766 | Train Acc. 62.8000% | Test Loss: 6.6485 | Test Acc. 52.5000%
+Train AUC: 0.7901050000000001
+Valid AUC: 0.816875
+Adas on PCam_transformed: T 3/3 | E 2/250 Ended | E Time: 5.772s | ~Time Left: 1431.504s |  Train Loss: 0.6708 | Train Acc. 74.0500% | Test Loss: 0.6700 | Test Acc. 75.2500%
+Train AUC: 0.81885
+Valid AUC: 0.814825
+Adas on PCam_transformed: T 3/3 | E 3/250 Ended | E Time: 5.792s | ~Time Left: 1430.649s |  Train Loss: 0.5717 | Train Acc. 75.2000% | Test Loss: 1.0230 | Test Acc. 75.5000%
+Train AUC: 0.833817
+Valid AUC: 0.8068
+Adas on PCam_transformed: T 3/3 | E 4/250 Ended | E Time: 5.768s | ~Time Left: 1419.029s |  Train Loss: 0.5198 | Train Acc. 76.9500% | Test Loss: 0.5911 | Test Acc. 69.7500%
+Train AUC: 0.850476
+Valid AUC: 0.861275
+Adas on PCam_transformed: T 3/3 | E 5/250 Ended | E Time: 5.780s | ~Time Left: 1416.035s |  Train Loss: 0.4994 | Train Acc. 79.0500% | Test Loss: 0.4987 | Test Acc. 75.2500%
+Train AUC: 0.8669189999999999
+Valid AUC: 0.8217750000000001
+Adas on PCam_transformed: T 3/3 | E 6/250 Ended | E Time: 5.838s | ~Time Left: 1424.555s |  Train Loss: 0.4712 | Train Acc. 79.7500% | Test Loss: 0.5695 | Test Acc. 73.0000%
+Train AUC: 0.8666280000000002
+Valid AUC: 0.859725
+Adas on PCam_transformed: T 3/3 | E 7/250 Ended | E Time: 5.815s | ~Time Left: 1413.126s |  Train Loss: 0.4645 | Train Acc. 79.3500% | Test Loss: 0.5052 | Test Acc. 78.7500%
+Train AUC: 0.8811150000000001
+Valid AUC: 0.859
+Adas on PCam_transformed: T 3/3 | E 8/250 Ended | E Time: 5.775s | ~Time Left: 1397.565s |  Train Loss: 0.4453 | Train Acc. 80.4500% | Test Loss: 0.4834 | Test Acc. 78.7500%
+Train AUC: 0.8905869999999999
+Valid AUC: 0.8515000000000001
+Adas on PCam_transformed: T 3/3 | E 9/250 Ended | E Time: 5.799s | ~Time Left: 1397.578s |  Train Loss: 0.4267 | Train Acc. 81.9000% | Test Loss: 0.5891 | Test Acc. 77.2500%
+Train AUC: 0.893532
+Valid AUC: 0.8626250000000001
+Adas on PCam_transformed: T 3/3 | E 10/250 Ended | E Time: 5.743s | ~Time Left: 1378.231s |  Train Loss: 0.4170 | Train Acc. 82.2000% | Test Loss: 0.4712 | Test Acc. 78.0000%
+Train AUC: 0.901214
+Valid AUC: 0.8700999999999999
+Adas on PCam_transformed: T 3/3 | E 11/250 Ended | E Time: 5.808s | ~Time Left: 1388.003s |  Train Loss: 0.4015 | Train Acc. 83.5500% | Test Loss: 0.4709 | Test Acc. 77.2500%
+Train AUC: 0.88899
+Valid AUC: 0.87405
+Adas on PCam_transformed: T 3/3 | E 12/250 Ended | E Time: 5.750s | ~Time Left: 1368.457s |  Train Loss: 0.4230 | Train Acc. 82.5000% | Test Loss: 0.4702 | Test Acc. 79.7500%
+Train AUC: 0.8978329999999999
+Valid AUC: 0.863325
+Adas on PCam_transformed: T 3/3 | E 13/250 Ended | E Time: 5.760s | ~Time Left: 1365.053s |  Train Loss: 0.4081 | Train Acc. 82.3000% | Test Loss: 0.4558 | Test Acc. 80.0000%
+Train AUC: 0.8975925
+Valid AUC: 0.859475
+Adas on PCam_transformed: T 3/3 | E 14/250 Ended | E Time: 5.692s | ~Time Left: 1343.272s |  Train Loss: 0.4116 | Train Acc. 82.3000% | Test Loss: 0.4780 | Test Acc. 79.0000%
+Train AUC: 0.900434
+Valid AUC: 0.8666250000000001
+Adas on PCam_transformed: T 3/3 | E 15/250 Ended | E Time: 5.736s | ~Time Left: 1348.014s |  Train Loss: 0.4014 | Train Acc. 82.6500% | Test Loss: 0.4622 | Test Acc. 80.0000%
+Train AUC: 0.897946
+Valid AUC: 0.8561500000000001
+Adas on PCam_transformed: T 3/3 | E 16/250 Ended | E Time: 5.734s | ~Time Left: 1341.745s |  Train Loss: 0.4046 | Train Acc. 82.5000% | Test Loss: 0.5461 | Test Acc. 76.5000%
+Train AUC: 0.9003099999999999
+Valid AUC: 0.8734500000000001
+Adas on PCam_transformed: T 3/3 | E 17/250 Ended | E Time: 5.795s | ~Time Left: 1350.281s |  Train Loss: 0.4053 | Train Acc. 82.8000% | Test Loss: 0.4425 | Test Acc. 77.7500%
+Train AUC: 0.9119590000000001
+Valid AUC: 0.8219500000000001
+Adas on PCam_transformed: T 3/3 | E 18/250 Ended | E Time: 5.774s | ~Time Left: 1339.538s |  Train Loss: 0.3759 | Train Acc. 84.0500% | Test Loss: 0.5346 | Test Acc. 75.2500%
+Train AUC: 0.9030529999999999
+Valid AUC: 0.83345
+Adas on PCam_transformed: T 3/3 | E 19/250 Ended | E Time: 5.820s | ~Time Left: 1344.453s |  Train Loss: 0.3967 | Train Acc. 83.5500% | Test Loss: 0.6223 | Test Acc. 80.0000%
+Train AUC: 0.896026
+Valid AUC: 0.868525
+Adas on PCam_transformed: T 3/3 | E 20/250 Ended | E Time: 5.770s | ~Time Left: 1327.069s |  Train Loss: 0.4091 | Train Acc. 82.2000% | Test Loss: 0.4510 | Test Acc. 79.0000%
+Train AUC: 0.901091
+Valid AUC: 0.883
+Adas on PCam_transformed: T 3/3 | E 21/250 Ended | E Time: 5.749s | ~Time Left: 1316.622s |  Train Loss: 0.4020 | Train Acc. 82.7000% | Test Loss: 0.4273 | Test Acc. 80.2500%
+Train AUC: 0.9080039999999999
+Valid AUC: 0.85605
+Adas on PCam_transformed: T 3/3 | E 22/250 Ended | E Time: 5.742s | ~Time Left: 1309.197s |  Train Loss: 0.3891 | Train Acc. 83.2500% | Test Loss: 0.4776 | Test Acc. 76.7500%
+Train AUC: 0.9051520000000001
+Valid AUC: 0.869375
+Adas on PCam_transformed: T 3/3 | E 23/250 Ended | E Time: 5.814s | ~Time Left: 1319.880s |  Train Loss: 0.3944 | Train Acc. 83.2500% | Test Loss: 0.4636 | Test Acc. 80.5000%
+Train AUC: 0.900147
+Valid AUC: 0.8511
+Adas on PCam_transformed: T 3/3 | E 24/250 Ended | E Time: 5.831s | ~Time Left: 1317.743s |  Train Loss: 0.4032 | Train Acc. 82.9500% | Test Loss: 0.5195 | Test Acc. 76.7500%
+Train AUC: 0.895266
+Valid AUC: 0.856425
+Adas on PCam_transformed: T 3/3 | E 25/250 Ended | E Time: 5.716s | ~Time Left: 1286.093s |  Train Loss: 0.4104 | Train Acc. 82.3500% | Test Loss: 0.4867 | Test Acc. 76.7500%
+Train AUC: 0.9061159999999999
+Valid AUC: 0.837075
+Adas on PCam_transformed: T 3/3 | E 26/250 Ended | E Time: 5.849s | ~Time Left: 1310.282s |  Train Loss: 0.3923 | Train Acc. 83.6500% | Test Loss: 0.5026 | Test Acc. 74.5000%
+Train AUC: 0.9169399999999999
+Valid AUC: 0.872525
+Adas on PCam_transformed: T 3/3 | E 27/250 Ended | E Time: 5.714s | ~Time Left: 1274.198s |  Train Loss: 0.3662 | Train Acc. 84.1000% | Test Loss: 0.4985 | Test Acc. 79.2500%
+Train AUC: 0.92109
+Valid AUC: 0.8582
+Adas on PCam_transformed: T 3/3 | E 28/250 Ended | E Time: 5.732s | ~Time Left: 1272.491s |  Train Loss: 0.3553 | Train Acc. 84.6500% | Test Loss: 0.5166 | Test Acc. 78.0000%
+Train AUC: 0.909554
+Valid AUC: 0.8875000000000001
+Adas on PCam_transformed: T 3/3 | E 29/250 Ended | E Time: 5.758s | ~Time Left: 1272.438s |  Train Loss: 0.3835 | Train Acc. 84.3500% | Test Loss: 0.4242 | Test Acc. 80.7500%
+Train AUC: 0.9117879999999999
+Valid AUC: 0.8560750000000001
+Adas on PCam_transformed: T 3/3 | E 30/250 Ended | E Time: 5.776s | ~Time Left: 1270.670s |  Train Loss: 0.3825 | Train Acc. 83.9000% | Test Loss: 0.4914 | Test Acc. 78.0000%
+Train AUC: 0.9136565
+Valid AUC: 0.8745499999999999
+Adas on PCam_transformed: T 3/3 | E 31/250 Ended | E Time: 5.799s | ~Time Left: 1270.083s |  Train Loss: 0.3812 | Train Acc. 84.7500% | Test Loss: 0.4470 | Test Acc. 77.7500%
+Train AUC: 0.920361
+Valid AUC: 0.8431000000000001
+Adas on PCam_transformed: T 3/3 | E 32/250 Ended | E Time: 5.762s | ~Time Left: 1256.071s |  Train Loss: 0.3619 | Train Acc. 83.7000% | Test Loss: 0.5476 | Test Acc. 77.0000%
+Train AUC: 0.915323
+Valid AUC: 0.866975
+Adas on PCam_transformed: T 3/3 | E 33/250 Ended | E Time: 5.790s | ~Time Left: 1256.506s |  Train Loss: 0.3701 | Train Acc. 84.0000% | Test Loss: 0.4831 | Test Acc. 75.7500%
+Train AUC: 0.926023
+Valid AUC: 0.875775
+Adas on PCam_transformed: T 3/3 | E 34/250 Ended | E Time: 5.749s | ~Time Left: 1241.843s |  Train Loss: 0.3457 | Train Acc. 85.1000% | Test Loss: 0.4589 | Test Acc. 78.2500%
+Train AUC: 0.9248730000000001
+Valid AUC: 0.866525
+Adas on PCam_transformed: T 3/3 | E 35/250 Ended | E Time: 5.815s | ~Time Left: 1250.213s |  Train Loss: 0.3487 | Train Acc. 85.5000% | Test Loss: 0.4826 | Test Acc. 77.0000%
+Train AUC: 0.921057
+Valid AUC: 0.8603
+Adas on PCam_transformed: T 3/3 | E 36/250 Ended | E Time: 5.783s | ~Time Left: 1237.527s |  Train Loss: 0.3602 | Train Acc. 84.4500% | Test Loss: 0.4769 | Test Acc. 75.7500%
+Train AUC: 0.922516
+Valid AUC: 0.8749
+Adas on PCam_transformed: T 3/3 | E 37/250 Ended | E Time: 5.758s | ~Time Left: 1226.419s |  Train Loss: 0.3552 | Train Acc. 84.8500% | Test Loss: 0.4513 | Test Acc. 79.0000%
+Train AUC: 0.9299029999999999
+Valid AUC: 0.8493250000000001
+Adas on PCam_transformed: T 3/3 | E 38/250 Ended | E Time: 5.702s | ~Time Left: 1208.768s |  Train Loss: 0.3400 | Train Acc. 85.5000% | Test Loss: 0.5302 | Test Acc. 75.5000%
+Train AUC: 0.9274279999999999
+Valid AUC: 0.874525
+Adas on PCam_transformed: T 3/3 | E 39/250 Ended | E Time: 5.742s | ~Time Left: 1211.598s |  Train Loss: 0.3475 | Train Acc. 85.7500% | Test Loss: 0.4885 | Test Acc. 78.5000%
+Train AUC: 0.9304400000000002
+Valid AUC: 0.858775
+Adas on PCam_transformed: T 3/3 | E 40/250 Ended | E Time: 5.755s | ~Time Left: 1208.531s |  Train Loss: 0.3372 | Train Acc. 85.8500% | Test Loss: 0.4913 | Test Acc. 75.7500%
+Train AUC: 0.9269320000000001
+Valid AUC: 0.848425
+Adas on PCam_transformed: T 3/3 | E 41/250 Ended | E Time: 5.793s | ~Time Left: 1210.709s |  Train Loss: 0.3449 | Train Acc. 84.9500% | Test Loss: 0.4941 | Test Acc. 75.2500%
+Train AUC: 0.93612
+Valid AUC: 0.87115
+Adas on PCam_transformed: T 3/3 | E 42/250 Ended | E Time: 5.727s | ~Time Left: 1191.296s |  Train Loss: 0.3220 | Train Acc. 86.7500% | Test Loss: 0.4833 | Test Acc. 79.7500%
+Train AUC: 0.93121
+Valid AUC: 0.865725
+Adas on PCam_transformed: T 3/3 | E 43/250 Ended | E Time: 5.669s | ~Time Left: 1173.393s |  Train Loss: 0.3348 | Train Acc. 86.1000% | Test Loss: 0.4711 | Test Acc. 79.5000%
+Train AUC: 0.93134
+Valid AUC: 0.853275
+Adas on PCam_transformed: T 3/3 | E 44/250 Ended | E Time: 5.757s | ~Time Left: 1186.004s |  Train Loss: 0.3316 | Train Acc. 86.8500% | Test Loss: 0.5113 | Test Acc. 78.2500%
+Train AUC: 0.934064
+Valid AUC: 0.8791
+Adas on PCam_transformed: T 3/3 | E 45/250 Ended | E Time: 5.737s | ~Time Left: 1176.181s |  Train Loss: 0.3281 | Train Acc. 85.3500% | Test Loss: 0.4476 | Test Acc. 77.5000%
+Train AUC: 0.931234
+Valid AUC: 0.8752750000000001
+Adas on PCam_transformed: T 3/3 | E 46/250 Ended | E Time: 5.765s | ~Time Left: 1176.024s |  Train Loss: 0.3312 | Train Acc. 85.8000% | Test Loss: 0.4981 | Test Acc. 78.2500%
+Train AUC: 0.938377
+Valid AUC: 0.856425
+Adas on PCam_transformed: T 3/3 | E 47/250 Ended | E Time: 5.881s | ~Time Left: 1193.938s |  Train Loss: 0.3186 | Train Acc. 86.0000% | Test Loss: 0.5079 | Test Acc. 76.7500%
+Train AUC: 0.923025
+Valid AUC: 0.8549749999999999
+Adas on PCam_transformed: T 3/3 | E 48/250 Ended | E Time: 5.747s | ~Time Left: 1160.882s |  Train Loss: 0.3524 | Train Acc. 84.5500% | Test Loss: 0.4926 | Test Acc. 78.2500%
+Train AUC: 0.9298179999999998
+Valid AUC: 0.86815
+Adas on PCam_transformed: T 3/3 | E 49/250 Ended | E Time: 5.801s | ~Time Left: 1166.087s |  Train Loss: 0.3379 | Train Acc. 85.6500% | Test Loss: 0.4751 | Test Acc. 78.5000%
+Train AUC: 0.940937
+Valid AUC: 0.8718499999999999
+Adas on PCam_transformed: T 3/3 | E 50/250 Ended | E Time: 5.781s | ~Time Left: 1156.250s |  Train Loss: 0.3096 | Train Acc. 87.8500% | Test Loss: 0.5367 | Test Acc. 78.2500%
+Train AUC: 0.935766
+Valid AUC: 0.867875
+Adas on PCam_transformed: T 3/3 | E 51/250 Ended | E Time: 5.806s | ~Time Left: 1155.492s |  Train Loss: 0.3209 | Train Acc. 87.1000% | Test Loss: 0.5031 | Test Acc. 79.2500%
+Train AUC: 0.9339089999999999
+Valid AUC: 0.8790250000000001
+Adas on PCam_transformed: T 3/3 | E 52/250 Ended | E Time: 5.706s | ~Time Left: 1129.874s |  Train Loss: 0.3246 | Train Acc. 86.6500% | Test Loss: 0.4651 | Test Acc. 80.5000%
+Train AUC: 0.9423860000000001
+Valid AUC: 0.859325
+Adas on PCam_transformed: T 3/3 | E 53/250 Ended | E Time: 5.663s | ~Time Left: 1115.570s |  Train Loss: 0.3057 | Train Acc. 87.3500% | Test Loss: 0.5631 | Test Acc. 77.7500%
+Train AUC: 0.936179
+Valid AUC: 0.865075
+Adas on PCam_transformed: T 3/3 | E 54/250 Ended | E Time: 5.700s | ~Time Left: 1117.148s |  Train Loss: 0.3212 | Train Acc. 86.0500% | Test Loss: 0.5132 | Test Acc. 76.7500%
+Train AUC: 0.9461849999999999
+Valid AUC: 0.8672000000000001
+Adas on PCam_transformed: T 3/3 | E 55/250 Ended | E Time: 5.796s | ~Time Left: 1130.258s |  Train Loss: 0.2969 | Train Acc. 87.6500% | Test Loss: 0.5249 | Test Acc. 79.7500%
+Train AUC: 0.9414699999999999
+Valid AUC: 0.8674
+Adas on PCam_transformed: T 3/3 | E 56/250 Ended | E Time: 5.766s | ~Time Left: 1118.641s |  Train Loss: 0.3093 | Train Acc. 87.4500% | Test Loss: 0.4748 | Test Acc. 78.5000%
+Train AUC: 0.942227
+Valid AUC: 0.8689749999999999
+Adas on PCam_transformed: T 3/3 | E 57/250 Ended | E Time: 5.747s | ~Time Left: 1109.241s |  Train Loss: 0.3057 | Train Acc. 87.3500% | Test Loss: 0.5448 | Test Acc. 79.5000%
+Train AUC: 0.9370780000000001
+Valid AUC: 0.8703000000000001
+Adas on PCam_transformed: T 3/3 | E 58/250 Ended | E Time: 5.900s | ~Time Left: 1132.881s |  Train Loss: 0.3210 | Train Acc. 86.7000% | Test Loss: 0.4767 | Test Acc. 78.7500%
+Train AUC: 0.9442889999999999
+Valid AUC: 0.865125
+Adas on PCam_transformed: T 3/3 | E 59/250 Ended | E Time: 5.766s | ~Time Left: 1101.369s |  Train Loss: 0.3019 | Train Acc. 87.8000% | Test Loss: 0.4701 | Test Acc. 77.5000%
+Train AUC: 0.943306
+Valid AUC: 0.871175
+Adas on PCam_transformed: T 3/3 | E 60/250 Ended | E Time: 5.801s | ~Time Left: 1102.239s |  Train Loss: 0.3039 | Train Acc. 88.1000% | Test Loss: 0.4592 | Test Acc. 78.2500%
+Train AUC: 0.9398509999999999
+Valid AUC: 0.8674000000000001
+Adas on PCam_transformed: T 3/3 | E 61/250 Ended | E Time: 5.782s | ~Time Left: 1092.829s |  Train Loss: 0.3117 | Train Acc. 87.0000% | Test Loss: 0.5203 | Test Acc. 78.7500%
+Train AUC: 0.943102
+Valid AUC: 0.8766999999999999
+Adas on PCam_transformed: T 3/3 | E 62/250 Ended | E Time: 5.750s | ~Time Left: 1081.073s |  Train Loss: 0.3027 | Train Acc. 88.1000% | Test Loss: 0.4641 | Test Acc. 78.5000%
+Train AUC: 0.939678
+Valid AUC: 0.8499
+Adas on PCam_transformed: T 3/3 | E 63/250 Ended | E Time: 5.733s | ~Time Left: 1072.119s |  Train Loss: 0.3171 | Train Acc. 87.1000% | Test Loss: 0.5110 | Test Acc. 77.7500%
+Train AUC: 0.946129
+Valid AUC: 0.870725
+Adas on PCam_transformed: T 3/3 | E 64/250 Ended | E Time: 5.937s | ~Time Left: 1104.365s |  Train Loss: 0.2962 | Train Acc. 87.6000% | Test Loss: 0.4907 | Test Acc. 77.7500%
+Train AUC: 0.941471
+Valid AUC: 0.8679
+Adas on PCam_transformed: T 3/3 | E 65/250 Ended | E Time: 5.701s | ~Time Left: 1054.733s |  Train Loss: 0.3070 | Train Acc. 86.5000% | Test Loss: 0.4976 | Test Acc. 76.0000%
+Train AUC: 0.9409270000000001
+Valid AUC: 0.8729750000000001
+Adas on PCam_transformed: T 3/3 | E 66/250 Ended | E Time: 5.704s | ~Time Left: 1049.539s |  Train Loss: 0.3135 | Train Acc. 86.9000% | Test Loss: 0.4792 | Test Acc. 78.7500%
+Train AUC: 0.9499500000000001
+Valid AUC: 0.8887750000000001
+Adas on PCam_transformed: T 3/3 | E 67/250 Ended | E Time: 5.734s | ~Time Left: 1049.354s |  Train Loss: 0.2897 | Train Acc. 87.8500% | Test Loss: 0.4579 | Test Acc. 82.0000%
+Train AUC: 0.951092
+Valid AUC: 0.8821749999999999
+Adas on PCam_transformed: T 3/3 | E 68/250 Ended | E Time: 5.817s | ~Time Left: 1058.783s |  Train Loss: 0.2818 | Train Acc. 88.7500% | Test Loss: 0.5297 | Test Acc. 78.5000%
+Train AUC: 0.946757
+Valid AUC: 0.8924250000000001
+Adas on PCam_transformed: T 3/3 | E 69/250 Ended | E Time: 5.803s | ~Time Left: 1050.292s |  Train Loss: 0.2930 | Train Acc. 88.1500% | Test Loss: 0.4584 | Test Acc. 79.7500%
+Train AUC: 0.9518420000000001
+Valid AUC: 0.88165
+Adas on PCam_transformed: T 3/3 | E 70/250 Ended | E Time: 5.667s | ~Time Left: 1020.088s |  Train Loss: 0.2775 | Train Acc. 89.1500% | Test Loss: 0.4790 | Test Acc. 80.0000%
+Train AUC: 0.950121
+Valid AUC: 0.888675
+Adas on PCam_transformed: T 3/3 | E 71/250 Ended | E Time: 5.740s | ~Time Left: 1027.517s |  Train Loss: 0.2866 | Train Acc. 88.3000% | Test Loss: 0.4516 | Test Acc. 80.5000%
+Train AUC: 0.951176
+Valid AUC: 0.8691
+Adas on PCam_transformed: T 3/3 | E 72/250 Ended | E Time: 5.752s | ~Time Left: 1023.939s |  Train Loss: 0.2823 | Train Acc. 89.4000% | Test Loss: 0.5011 | Test Acc. 79.0000%
+Train AUC: 0.952294
+Valid AUC: 0.8802
+Adas on PCam_transformed: T 3/3 | E 73/250 Ended | E Time: 5.725s | ~Time Left: 1013.259s |  Train Loss: 0.2780 | Train Acc. 88.7500% | Test Loss: 0.4831 | Test Acc. 78.2500%
+Train AUC: 0.954665
+Valid AUC: 0.888725
+Adas on PCam_transformed: T 3/3 | E 74/250 Ended | E Time: 5.785s | ~Time Left: 1018.226s |  Train Loss: 0.2741 | Train Acc. 89.2500% | Test Loss: 0.4685 | Test Acc. 78.5000%
+Train AUC: 0.9518279999999998
+Valid AUC: 0.8752500000000001
+Adas on PCam_transformed: T 3/3 | E 75/250 Ended | E Time: 5.784s | ~Time Left: 1012.230s |  Train Loss: 0.2807 | Train Acc. 88.3000% | Test Loss: 0.5251 | Test Acc. 81.5000%
+Train AUC: 0.955268
+Valid AUC: 0.87115
+Adas on PCam_transformed: T 3/3 | E 76/250 Ended | E Time: 5.788s | ~Time Left: 1007.186s |  Train Loss: 0.2702 | Train Acc. 88.9000% | Test Loss: 0.5410 | Test Acc. 80.5000%
+Train AUC: 0.955591
+Valid AUC: 0.89435
+Adas on PCam_transformed: T 3/3 | E 77/250 Ended | E Time: 5.825s | ~Time Left: 1007.794s |  Train Loss: 0.2689 | Train Acc. 88.8000% | Test Loss: 0.4849 | Test Acc. 79.5000%
+Train AUC: 0.9608969999999999
+Valid AUC: 0.8651249999999999
+Adas on PCam_transformed: T 3/3 | E 78/250 Ended | E Time: 5.720s | ~Time Left: 983.868s |  Train Loss: 0.2512 | Train Acc. 90.2500% | Test Loss: 0.5964 | Test Acc. 79.0000%
+Train AUC: 0.961228
+Valid AUC: 0.89325
+Adas on PCam_transformed: T 3/3 | E 79/250 Ended | E Time: 5.728s | ~Time Left: 979.415s |  Train Loss: 0.2508 | Train Acc. 89.7500% | Test Loss: 0.4335 | Test Acc. 80.5000%
+Train AUC: 0.962144
+Valid AUC: 0.8908750000000001
+Adas on PCam_transformed: T 3/3 | E 80/250 Ended | E Time: 5.753s | ~Time Left: 978.075s |  Train Loss: 0.2484 | Train Acc. 89.7500% | Test Loss: 0.5006 | Test Acc. 79.7500%
+Train AUC: 0.9571719999999999
+Valid AUC: 0.87715
+Adas on PCam_transformed: T 3/3 | E 81/250 Ended | E Time: 5.885s | ~Time Left: 994.632s |  Train Loss: 0.2631 | Train Acc. 89.6000% | Test Loss: 0.5234 | Test Acc. 78.7500%
+Train AUC: 0.9533430000000002
+Valid AUC: 0.895025
+Adas on PCam_transformed: T 3/3 | E 82/250 Ended | E Time: 5.715s | ~Time Left: 960.106s |  Train Loss: 0.2745 | Train Acc. 89.5500% | Test Loss: 0.4670 | Test Acc. 78.7500%
+Train AUC: 0.959057
+Valid AUC: 0.8847750000000001
+Adas on PCam_transformed: T 3/3 | E 83/250 Ended | E Time: 5.730s | ~Time Left: 956.886s |  Train Loss: 0.2580 | Train Acc. 89.5500% | Test Loss: 0.4708 | Test Acc. 80.7500%
+Train AUC: 0.959252
+Valid AUC: 0.88855
+Adas on PCam_transformed: T 3/3 | E 84/250 Ended | E Time: 5.757s | ~Time Left: 955.646s |  Train Loss: 0.2576 | Train Acc. 89.5500% | Test Loss: 0.5167 | Test Acc. 79.0000%
+Train AUC: 0.96682
+Valid AUC: 0.888675
+Adas on PCam_transformed: T 3/3 | E 85/250 Ended | E Time: 5.758s | ~Time Left: 950.107s |  Train Loss: 0.2358 | Train Acc. 90.7000% | Test Loss: 0.4650 | Test Acc. 79.7500%
+Train AUC: 0.9543039999999998
+Valid AUC: 0.8837750000000001
+Adas on PCam_transformed: T 3/3 | E 86/250 Ended | E Time: 5.812s | ~Time Left: 953.173s |  Train Loss: 0.2715 | Train Acc. 89.1000% | Test Loss: 0.4607 | Test Acc. 80.5000%
+Train AUC: 0.965628
+Valid AUC: 0.880775
+Adas on PCam_transformed: T 3/3 | E 87/250 Ended | E Time: 5.763s | ~Time Left: 939.326s |  Train Loss: 0.2370 | Train Acc. 90.7500% | Test Loss: 0.5218 | Test Acc. 80.0000%
+Train AUC: 0.953855
+Valid AUC: 0.886625
+Adas on PCam_transformed: T 3/3 | E 88/250 Ended | E Time: 5.778s | ~Time Left: 935.987s |  Train Loss: 0.2788 | Train Acc. 88.4500% | Test Loss: 0.5105 | Test Acc. 82.0000%
+Train AUC: 0.9634849999999999
+Valid AUC: 0.8907249999999999
+Adas on PCam_transformed: T 3/3 | E 89/250 Ended | E Time: 5.781s | ~Time Left: 930.663s |  Train Loss: 0.2470 | Train Acc. 90.2000% | Test Loss: 0.5059 | Test Acc. 80.2500%
+Train AUC: 0.9657549999999999
+Valid AUC: 0.8996
+Adas on PCam_transformed: T 3/3 | E 90/250 Ended | E Time: 5.758s | ~Time Left: 921.307s |  Train Loss: 0.2362 | Train Acc. 89.9000% | Test Loss: 0.4595 | Test Acc. 81.5000%
+Train AUC: 0.964998
+Valid AUC: 0.88185
+Adas on PCam_transformed: T 3/3 | E 91/250 Ended | E Time: 5.713s | ~Time Left: 908.436s |  Train Loss: 0.2397 | Train Acc. 90.3000% | Test Loss: 0.4865 | Test Acc. 79.0000%
+Train AUC: 0.965347
+Valid AUC: 0.8818
+Adas on PCam_transformed: T 3/3 | E 92/250 Ended | E Time: 5.793s | ~Time Left: 915.229s |  Train Loss: 0.2411 | Train Acc. 90.4000% | Test Loss: 0.5812 | Test Acc. 79.2500%
+Train AUC: 0.9662439999999999
+Valid AUC: 0.8997250000000001
+Adas on PCam_transformed: T 3/3 | E 93/250 Ended | E Time: 5.795s | ~Time Left: 909.821s |  Train Loss: 0.2353 | Train Acc. 90.1500% | Test Loss: 0.4315 | Test Acc. 79.5000%
+Train AUC: 0.9669814999999999
+Valid AUC: 0.8787
+Adas on PCam_transformed: T 3/3 | E 94/250 Ended | E Time: 5.746s | ~Time Left: 896.307s |  Train Loss: 0.2314 | Train Acc. 90.7500% | Test Loss: 0.5214 | Test Acc. 83.5000%
+Train AUC: 0.966081
+Valid AUC: 0.8817999999999999
+Adas on PCam_transformed: T 3/3 | E 95/250 Ended | E Time: 5.721s | ~Time Left: 886.688s |  Train Loss: 0.2356 | Train Acc. 91.0500% | Test Loss: 0.5133 | Test Acc. 79.2500%
+Train AUC: 0.9670939999999999
+Valid AUC: 0.8843499999999999
+Adas on PCam_transformed: T 3/3 | E 96/250 Ended | E Time: 5.784s | ~Time Left: 890.765s |  Train Loss: 0.2311 | Train Acc. 90.8000% | Test Loss: 0.5272 | Test Acc. 80.0000%
+Train AUC: 0.96638
+Valid AUC: 0.889425
+Adas on PCam_transformed: T 3/3 | E 97/250 Ended | E Time: 5.890s | ~Time Left: 901.114s |  Train Loss: 0.2333 | Train Acc. 90.9000% | Test Loss: 0.4875 | Test Acc. 79.0000%
+Train AUC: 0.9691839999999999
+Valid AUC: 0.882
+Adas on PCam_transformed: T 3/3 | E 98/250 Ended | E Time: 5.759s | ~Time Left: 875.364s |  Train Loss: 0.2225 | Train Acc. 91.1500% | Test Loss: 0.6119 | Test Acc. 81.5000%
+Train AUC: 0.970937
+Valid AUC: 0.893925
+Adas on PCam_transformed: T 3/3 | E 99/250 Ended | E Time: 5.765s | ~Time Left: 870.560s |  Train Loss: 0.2190 | Train Acc. 91.2000% | Test Loss: 0.4694 | Test Acc. 80.2500%
+Train AUC: 0.9700059999999999
+Valid AUC: 0.886275
+Adas on PCam_transformed: T 3/3 | E 100/250 Ended | E Time: 5.825s | ~Time Left: 873.739s |  Train Loss: 0.2237 | Train Acc. 91.5000% | Test Loss: 0.4658 | Test Acc. 79.2500%
+Train AUC: 0.965684
+Valid AUC: 0.8846
+Adas on PCam_transformed: T 3/3 | E 101/250 Ended | E Time: 5.760s | ~Time Left: 858.237s |  Train Loss: 0.2351 | Train Acc. 89.8500% | Test Loss: 0.4645 | Test Acc. 79.0000%
+Train AUC: 0.9730099999999998
+Valid AUC: 0.8920499999999999
+Adas on PCam_transformed: T 3/3 | E 102/250 Ended | E Time: 5.763s | ~Time Left: 852.983s |  Train Loss: 0.2107 | Train Acc. 91.6000% | Test Loss: 0.5339 | Test Acc. 81.2500%
+Train AUC: 0.971656
+Valid AUC: 0.8704249999999999
+Adas on PCam_transformed: T 3/3 | E 103/250 Ended | E Time: 5.810s | ~Time Left: 854.136s |  Train Loss: 0.2136 | Train Acc. 91.5000% | Test Loss: 0.5106 | Test Acc. 77.5000%
+Train AUC: 0.976808
+Valid AUC: 0.8952249999999999
+Adas on PCam_transformed: T 3/3 | E 104/250 Ended | E Time: 5.703s | ~Time Left: 832.683s |  Train Loss: 0.1961 | Train Acc. 91.5000% | Test Loss: 0.4939 | Test Acc. 77.7500%
+Train AUC: 0.972107
+Valid AUC: 0.88165
+Adas on PCam_transformed: T 3/3 | E 105/250 Ended | E Time: 5.825s | ~Time Left: 844.663s |  Train Loss: 0.2122 | Train Acc. 91.5000% | Test Loss: 0.5338 | Test Acc. 79.7500%
+Train AUC: 0.970355
+Valid AUC: 0.900025
+Adas on PCam_transformed: T 3/3 | E 106/250 Ended | E Time: 5.728s | ~Time Left: 824.799s |  Train Loss: 0.2229 | Train Acc. 91.1500% | Test Loss: 0.4474 | Test Acc. 81.2500%
+Train AUC: 0.973967
+Valid AUC: 0.8981
+Adas on PCam_transformed: T 3/3 | E 107/250 Ended | E Time: 5.822s | ~Time Left: 832.607s |  Train Loss: 0.2057 | Train Acc. 91.7500% | Test Loss: 0.5015 | Test Acc. 81.5000%
+Train AUC: 0.971159
+Valid AUC: 0.893
+Adas on PCam_transformed: T 3/3 | E 108/250 Ended | E Time: 5.889s | ~Time Left: 836.239s |  Train Loss: 0.2174 | Train Acc. 91.0000% | Test Loss: 0.4829 | Test Acc. 81.0000%
+Train AUC: 0.9746879999999999
+Valid AUC: 0.8713500000000001
+Adas on PCam_transformed: T 3/3 | E 109/250 Ended | E Time: 5.708s | ~Time Left: 804.893s |  Train Loss: 0.2006 | Train Acc. 92.0500% | Test Loss: 0.5492 | Test Acc. 78.7500%
+Train AUC: 0.9740869999999999
+Valid AUC: 0.899275
+Adas on PCam_transformed: T 3/3 | E 110/250 Ended | E Time: 5.818s | ~Time Left: 814.495s |  Train Loss: 0.2063 | Train Acc. 91.8000% | Test Loss: 0.4632 | Test Acc. 81.5000%
+Train AUC: 0.974529
+Valid AUC: 0.90785
+Adas on PCam_transformed: T 3/3 | E 111/250 Ended | E Time: 5.765s | ~Time Left: 801.367s |  Train Loss: 0.2032 | Train Acc. 92.1500% | Test Loss: 0.5068 | Test Acc. 81.7500%
+Train AUC: 0.9775729999999999
+Valid AUC: 0.8994750000000001
+Adas on PCam_transformed: T 3/3 | E 112/250 Ended | E Time: 5.736s | ~Time Left: 791.617s |  Train Loss: 0.1932 | Train Acc. 92.3000% | Test Loss: 0.4885 | Test Acc. 82.0000%
+Train AUC: 0.9724139999999999
+Valid AUC: 0.8722
+Adas on PCam_transformed: T 3/3 | E 113/250 Ended | E Time: 5.831s | ~Time Left: 798.896s |  Train Loss: 0.2138 | Train Acc. 91.5000% | Test Loss: 0.6612 | Test Acc. 77.5000%
+Train AUC: 0.978989
+Valid AUC: 0.891225
+Adas on PCam_transformed: T 3/3 | E 114/250 Ended | E Time: 5.819s | ~Time Left: 791.326s |  Train Loss: 0.1846 | Train Acc. 92.4500% | Test Loss: 0.5628 | Test Acc. 80.0000%
+Train AUC: 0.976903
+Valid AUC: 0.8728999999999999
+Adas on PCam_transformed: T 3/3 | E 115/250 Ended | E Time: 5.730s | ~Time Left: 773.514s |  Train Loss: 0.1946 | Train Acc. 92.0500% | Test Loss: 0.5960 | Test Acc. 80.5000%
+Train AUC: 0.9798799999999999
+Valid AUC: 0.904875
+Adas on PCam_transformed: T 3/3 | E 116/250 Ended | E Time: 5.784s | ~Time Left: 775.085s |  Train Loss: 0.1823 | Train Acc. 93.1000% | Test Loss: 0.4828 | Test Acc. 82.5000%
+Train AUC: 0.980738
+Valid AUC: 0.887275
+Adas on PCam_transformed: T 3/3 | E 117/250 Ended | E Time: 5.780s | ~Time Left: 768.720s |  Train Loss: 0.1773 | Train Acc. 93.6000% | Test Loss: 0.5338 | Test Acc. 78.2500%
+Train AUC: 0.9773149999999999
+Valid AUC: 0.8715499999999999
+Adas on PCam_transformed: T 3/3 | E 118/250 Ended | E Time: 5.774s | ~Time Left: 762.135s |  Train Loss: 0.1916 | Train Acc. 91.9000% | Test Loss: 0.6402 | Test Acc. 80.0000%
+Train AUC: 0.981973
+Valid AUC: 0.8848999999999999
+Adas on PCam_transformed: T 3/3 | E 119/250 Ended | E Time: 5.729s | ~Time Left: 750.529s |  Train Loss: 0.1715 | Train Acc. 93.4500% | Test Loss: 0.6107 | Test Acc. 79.2500%
+Train AUC: 0.9836889999999999
+Valid AUC: 0.910275
+Adas on PCam_transformed: T 3/3 | E 120/250 Ended | E Time: 5.744s | ~Time Left: 746.739s |  Train Loss: 0.1652 | Train Acc. 93.0000% | Test Loss: 0.4670 | Test Acc. 83.2500%
+Train AUC: 0.9782730000000001
+Valid AUC: 0.897775
+Adas on PCam_transformed: T 3/3 | E 121/250 Ended | E Time: 5.802s | ~Time Left: 748.426s |  Train Loss: 0.1891 | Train Acc. 92.3500% | Test Loss: 0.4349 | Test Acc. 80.5000%
+Train AUC: 0.980386
+Valid AUC: 0.8902749999999999
+Adas on PCam_transformed: T 3/3 | E 122/250 Ended | E Time: 5.818s | ~Time Left: 744.656s |  Train Loss: 0.1788 | Train Acc. 92.7500% | Test Loss: 0.6279 | Test Acc. 82.2500%
+Train AUC: 0.9833400000000001
+Valid AUC: 0.898
+Adas on PCam_transformed: T 3/3 | E 123/250 Ended | E Time: 5.718s | ~Time Left: 726.151s |  Train Loss: 0.1732 | Train Acc. 93.3500% | Test Loss: 0.5368 | Test Acc. 84.0000%
+Train AUC: 0.975773
+Valid AUC: 0.902875
+Adas on PCam_transformed: T 3/3 | E 124/250 Ended | E Time: 5.775s | ~Time Left: 727.703s |  Train Loss: 0.2028 | Train Acc. 92.9000% | Test Loss: 0.4605 | Test Acc. 80.5000%
+Train AUC: 0.9861589999999999
+Valid AUC: 0.8904
+Adas on PCam_transformed: T 3/3 | E 125/250 Ended | E Time: 5.764s | ~Time Left: 720.537s |  Train Loss: 0.1536 | Train Acc. 94.2000% | Test Loss: 0.5763 | Test Acc. 81.0000%
+Train AUC: 0.981838
+Valid AUC: 0.89535
+Adas on PCam_transformed: T 3/3 | E 126/250 Ended | E Time: 5.834s | ~Time Left: 723.374s |  Train Loss: 0.1720 | Train Acc. 93.0000% | Test Loss: 0.5629 | Test Acc. 83.0000%
+Train AUC: 0.985869
+Valid AUC: 0.8785250000000001
+Adas on PCam_transformed: T 3/3 | E 127/250 Ended | E Time: 6.143s | ~Time Left: 755.559s |  Train Loss: 0.1535 | Train Acc. 94.4500% | Test Loss: 0.5727 | Test Acc. 79.5000%
+Train AUC: 0.987003
+Valid AUC: 0.8962500000000001
+Adas on PCam_transformed: T 3/3 | E 128/250 Ended | E Time: 6.216s | ~Time Left: 758.386s |  Train Loss: 0.1474 | Train Acc. 93.9000% | Test Loss: 0.5489 | Test Acc. 81.5000%
+Train AUC: 0.987906
+Valid AUC: 0.8993000000000001
+Adas on PCam_transformed: T 3/3 | E 129/250 Ended | E Time: 5.838s | ~Time Left: 706.399s |  Train Loss: 0.1397 | Train Acc. 94.3000% | Test Loss: 0.5385 | Test Acc. 83.0000%
+Train AUC: 0.9839570000000001
+Valid AUC: 0.902025
+Adas on PCam_transformed: T 3/3 | E 130/250 Ended | E Time: 5.796s | ~Time Left: 695.495s |  Train Loss: 0.1616 | Train Acc. 93.2000% | Test Loss: 0.4840 | Test Acc. 80.5000%
+Train AUC: 0.986664
+Valid AUC: 0.907875
+Adas on PCam_transformed: T 3/3 | E 131/250 Ended | E Time: 5.839s | ~Time Left: 694.864s |  Train Loss: 0.1483 | Train Acc. 94.2500% | Test Loss: 0.5449 | Test Acc. 83.2500%
+Train AUC: 0.988587
+Valid AUC: 0.89435
+Adas on PCam_transformed: T 3/3 | E 132/250 Ended | E Time: 5.756s | ~Time Left: 679.199s |  Train Loss: 0.1378 | Train Acc. 94.4000% | Test Loss: 0.6032 | Test Acc. 81.2500%
+Train AUC: 0.986721
+Valid AUC: 0.906925
+Adas on PCam_transformed: T 3/3 | E 133/250 Ended | E Time: 5.909s | ~Time Left: 691.299s |  Train Loss: 0.1487 | Train Acc. 94.0000% | Test Loss: 0.4689 | Test Acc. 81.2500%
+Train AUC: 0.9879159999999999
+Valid AUC: 0.9015999999999998
+Adas on PCam_transformed: T 3/3 | E 134/250 Ended | E Time: 5.929s | ~Time Left: 687.735s |  Train Loss: 0.1400 | Train Acc. 94.5000% | Test Loss: 0.4788 | Test Acc. 82.5000%
+Train AUC: 0.9889850000000001
+Valid AUC: 0.9006
+Adas on PCam_transformed: T 3/3 | E 135/250 Ended | E Time: 5.736s | ~Time Left: 659.658s |  Train Loss: 0.1312 | Train Acc. 95.3000% | Test Loss: 0.5200 | Test Acc. 79.2500%
+Train AUC: 0.9883369999999999
+Valid AUC: 0.906575
+Adas on PCam_transformed: T 3/3 | E 136/250 Ended | E Time: 5.778s | ~Time Left: 658.728s |  Train Loss: 0.1390 | Train Acc. 94.4000% | Test Loss: 0.5610 | Test Acc. 81.7500%
+Train AUC: 0.9911480000000001
+Valid AUC: 0.9038499999999999
+Adas on PCam_transformed: T 3/3 | E 137/250 Ended | E Time: 5.729s | ~Time Left: 647.372s |  Train Loss: 0.1202 | Train Acc. 95.3500% | Test Loss: 0.5713 | Test Acc. 82.7500%
+Train AUC: 0.986777
+Valid AUC: 0.902675
+Adas on PCam_transformed: T 3/3 | E 138/250 Ended | E Time: 5.823s | ~Time Left: 652.222s |  Train Loss: 0.1478 | Train Acc. 93.7500% | Test Loss: 0.5776 | Test Acc. 81.7500%
+Train AUC: 0.9879299999999999
+Valid AUC: 0.884625
+Adas on PCam_transformed: T 3/3 | E 139/250 Ended | E Time: 5.777s | ~Time Left: 641.212s |  Train Loss: 0.1428 | Train Acc. 94.4000% | Test Loss: 0.6098 | Test Acc. 81.2500%
+Train AUC: 0.990294
+Valid AUC: 0.8823250000000001
+Adas on PCam_transformed: T 3/3 | E 140/250 Ended | E Time: 5.781s | ~Time Left: 635.899s |  Train Loss: 0.1264 | Train Acc. 95.2000% | Test Loss: 0.6279 | Test Acc. 80.7500%
+Train AUC: 0.988532
+Valid AUC: 0.8876499999999999
+Adas on PCam_transformed: T 3/3 | E 141/250 Ended | E Time: 6.443s | ~Time Left: 702.297s |  Train Loss: 0.1396 | Train Acc. 94.8500% | Test Loss: 0.5799 | Test Acc. 78.7500%
+Train AUC: 0.985216
+Valid AUC: 0.9001
+Adas on PCam_transformed: T 3/3 | E 142/250 Ended | E Time: 5.910s | ~Time Left: 638.322s |  Train Loss: 0.1553 | Train Acc. 94.3000% | Test Loss: 0.5532 | Test Acc. 81.0000%
+Train AUC: 0.989888
+Valid AUC: 0.8867499999999999
+Adas on PCam_transformed: T 3/3 | E 143/250 Ended | E Time: 5.802s | ~Time Left: 620.843s |  Train Loss: 0.1255 | Train Acc. 95.0500% | Test Loss: 0.7193 | Test Acc. 80.5000%
+Train AUC: 0.992904
+Valid AUC: 0.8903249999999999
+Adas on PCam_transformed: T 3/3 | E 144/250 Ended | E Time: 5.717s | ~Time Left: 606.047s |  Train Loss: 0.1097 | Train Acc. 95.5500% | Test Loss: 0.6738 | Test Acc. 81.0000%
+Train AUC: 0.98929
+Valid AUC: 0.882825
+Adas on PCam_transformed: T 3/3 | E 145/250 Ended | E Time: 5.771s | ~Time Left: 606.004s |  Train Loss: 0.1304 | Train Acc. 94.7500% | Test Loss: 0.7006 | Test Acc. 79.7500%
+Train AUC: 0.9915510000000001
+Valid AUC: 0.8774500000000001
+Adas on PCam_transformed: T 3/3 | E 146/250 Ended | E Time: 5.771s | ~Time Left: 600.138s |  Train Loss: 0.1180 | Train Acc. 95.4500% | Test Loss: 0.7295 | Test Acc. 80.5000%
+Train AUC: 0.993123
+Valid AUC: 0.8958499999999999
+Adas on PCam_transformed: T 3/3 | E 147/250 Ended | E Time: 5.775s | ~Time Left: 594.826s |  Train Loss: 0.1079 | Train Acc. 95.7000% | Test Loss: 0.5891 | Test Acc. 81.7500%
+Train AUC: 0.99339
+Valid AUC: 0.8672000000000001
+Adas on PCam_transformed: T 3/3 | E 148/250 Ended | E Time: 5.827s | ~Time Left: 594.333s |  Train Loss: 0.1054 | Train Acc. 96.0000% | Test Loss: 0.7764 | Test Acc. 78.2500%
+Train AUC: 0.989947
+Valid AUC: 0.8857
+Adas on PCam_transformed: T 3/3 | E 149/250 Ended | E Time: 5.788s | ~Time Left: 584.638s |  Train Loss: 0.1261 | Train Acc. 94.8000% | Test Loss: 0.6958 | Test Acc. 81.5000%
+Train AUC: 0.988984
+Valid AUC: 0.8867499999999999
+Adas on PCam_transformed: T 3/3 | E 150/250 Ended | E Time: 5.778s | ~Time Left: 577.780s |  Train Loss: 0.1308 | Train Acc. 95.1500% | Test Loss: 0.6242 | Test Acc. 81.5000%
+Train AUC: 0.9945919999999999
+Valid AUC: 0.8926249999999999
+Adas on PCam_transformed: T 3/3 | E 151/250 Ended | E Time: 5.778s | ~Time Left: 572.051s |  Train Loss: 0.0969 | Train Acc. 96.4500% | Test Loss: 0.6585 | Test Acc. 81.5000%
+Train AUC: 0.995396
+Valid AUC: 0.8825
+Adas on PCam_transformed: T 3/3 | E 152/250 Ended | E Time: 5.765s | ~Time Left: 565.004s |  Train Loss: 0.0867 | Train Acc. 96.5000% | Test Loss: 0.7838 | Test Acc. 79.7500%
+Train AUC: 0.9906860000000001
+Valid AUC: 0.9024
+Adas on PCam_transformed: T 3/3 | E 153/250 Ended | E Time: 5.786s | ~Time Left: 561.216s |  Train Loss: 0.1229 | Train Acc. 95.0500% | Test Loss: 0.6786 | Test Acc. 81.0000%
+Train AUC: 0.992626
+Valid AUC: 0.894625
+Adas on PCam_transformed: T 3/3 | E 154/250 Ended | E Time: 5.820s | ~Time Left: 558.725s |  Train Loss: 0.1118 | Train Acc. 95.6500% | Test Loss: 0.6757 | Test Acc. 82.2500%
+Train AUC: 0.994341
+Valid AUC: 0.87495
+Adas on PCam_transformed: T 3/3 | E 155/250 Ended | E Time: 5.742s | ~Time Left: 545.448s |  Train Loss: 0.0958 | Train Acc. 96.3000% | Test Loss: 0.6752 | Test Acc. 76.5000%
+Train AUC: 0.992696
+Valid AUC: 0.8955749999999999
+Adas on PCam_transformed: T 3/3 | E 156/250 Ended | E Time: 5.851s | ~Time Left: 550.030s |  Train Loss: 0.1069 | Train Acc. 95.9500% | Test Loss: 0.6022 | Test Acc. 81.0000%
+Train AUC: 0.9944249999999999
+Valid AUC: 0.894825
+Adas on PCam_transformed: T 3/3 | E 157/250 Ended | E Time: 5.815s | ~Time Left: 540.759s |  Train Loss: 0.0958 | Train Acc. 96.6000% | Test Loss: 0.6765 | Test Acc. 80.7500%
+Train AUC: 0.9939880000000001
+Valid AUC: 0.8919250000000001
+Adas on PCam_transformed: T 3/3 | E 158/250 Ended | E Time: 5.656s | ~Time Left: 520.352s |  Train Loss: 0.0980 | Train Acc. 96.4000% | Test Loss: 0.6583 | Test Acc. 80.0000%
+Train AUC: 0.996124
+Valid AUC: 0.899375
+Adas on PCam_transformed: T 3/3 | E 159/250 Ended | E Time: 5.825s | ~Time Left: 530.064s |  Train Loss: 0.0807 | Train Acc. 96.9500% | Test Loss: 0.6279 | Test Acc. 82.0000%
+Train AUC: 0.993961
+Valid AUC: 0.8973750000000001
+Adas on PCam_transformed: T 3/3 | E 160/250 Ended | E Time: 5.803s | ~Time Left: 522.315s |  Train Loss: 0.0998 | Train Acc. 96.4000% | Test Loss: 0.5974 | Test Acc. 80.7500%
+Train AUC: 0.996158
+Valid AUC: 0.8865
+Adas on PCam_transformed: T 3/3 | E 161/250 Ended | E Time: 5.822s | ~Time Left: 518.163s |  Train Loss: 0.0794 | Train Acc. 97.2000% | Test Loss: 0.6881 | Test Acc. 80.5000%
+Train AUC: 0.99339
+Valid AUC: 0.9018
+Adas on PCam_transformed: T 3/3 | E 162/250 Ended | E Time: 5.745s | ~Time Left: 505.569s |  Train Loss: 0.1034 | Train Acc. 95.7500% | Test Loss: 0.6951 | Test Acc. 81.2500%
+Train AUC: 0.996225
+Valid AUC: 0.8865
+Adas on PCam_transformed: T 3/3 | E 163/250 Ended | E Time: 5.802s | ~Time Left: 504.766s |  Train Loss: 0.0765 | Train Acc. 97.3500% | Test Loss: 0.7599 | Test Acc. 82.5000%
+Train AUC: 0.996273
+Valid AUC: 0.881625
+Adas on PCam_transformed: T 3/3 | E 164/250 Ended | E Time: 5.779s | ~Time Left: 497.037s |  Train Loss: 0.0787 | Train Acc. 97.2000% | Test Loss: 0.8352 | Test Acc. 80.5000%
+Train AUC: 0.996634
+Valid AUC: 0.9030499999999999
+Adas on PCam_transformed: T 3/3 | E 165/250 Ended | E Time: 5.883s | ~Time Left: 500.086s |  Train Loss: 0.0734 | Train Acc. 97.2500% | Test Loss: 0.6209 | Test Acc. 82.7500%
+Train AUC: 0.9970640000000001
+Valid AUC: 0.8968
+Adas on PCam_transformed: T 3/3 | E 166/250 Ended | E Time: 5.833s | ~Time Left: 489.965s |  Train Loss: 0.0733 | Train Acc. 97.1000% | Test Loss: 0.6976 | Test Acc. 80.7500%
+Train AUC: 0.994761
+Valid AUC: 0.8958499999999999
+Adas on PCam_transformed: T 3/3 | E 167/250 Ended | E Time: 5.845s | ~Time Left: 485.166s |  Train Loss: 0.0880 | Train Acc. 96.8000% | Test Loss: 0.6492 | Test Acc. 81.7500%
+Train AUC: 0.995396
+Valid AUC: 0.8710749999999999
+Adas on PCam_transformed: T 3/3 | E 168/250 Ended | E Time: 5.749s | ~Time Left: 471.404s |  Train Loss: 0.0890 | Train Acc. 96.2500% | Test Loss: 0.9011 | Test Acc. 79.7500%
+Train AUC: 0.996757
+Valid AUC: 0.894325
+Adas on PCam_transformed: T 3/3 | E 169/250 Ended | E Time: 5.743s | ~Time Left: 465.206s |  Train Loss: 0.0695 | Train Acc. 97.6000% | Test Loss: 0.6218 | Test Acc. 80.0000%
+Train AUC: 0.997714
+Valid AUC: 0.9054249999999999
+Adas on PCam_transformed: T 3/3 | E 170/250 Ended | E Time: 5.748s | ~Time Left: 459.859s |  Train Loss: 0.0619 | Train Acc. 97.7000% | Test Loss: 0.7530 | Test Acc. 82.5000%
+Train AUC: 0.997851
+Valid AUC: 0.8911250000000002
+Adas on PCam_transformed: T 3/3 | E 171/250 Ended | E Time: 5.808s | ~Time Left: 458.859s |  Train Loss: 0.0605 | Train Acc. 97.6000% | Test Loss: 0.7516 | Test Acc. 81.2500%
+Train AUC: 0.998176
+Valid AUC: 0.892
+Adas on PCam_transformed: T 3/3 | E 172/250 Ended | E Time: 5.741s | ~Time Left: 447.836s |  Train Loss: 0.0537 | Train Acc. 98.3000% | Test Loss: 0.7855 | Test Acc. 82.2500%
+Train AUC: 0.998341
+Valid AUC: 0.8886999999999999
+Adas on PCam_transformed: T 3/3 | E 173/250 Ended | E Time: 5.767s | ~Time Left: 444.070s |  Train Loss: 0.0528 | Train Acc. 98.2000% | Test Loss: 0.8647 | Test Acc. 81.7500%
+Train AUC: 0.9984639999999999
+Valid AUC: 0.89135
+Adas on PCam_transformed: T 3/3 | E 174/250 Ended | E Time: 5.808s | ~Time Left: 441.400s |  Train Loss: 0.0519 | Train Acc. 98.1500% | Test Loss: 0.8612 | Test Acc. 82.5000%
+Train AUC: 0.997847
+Valid AUC: 0.892475
+Adas on PCam_transformed: T 3/3 | E 175/250 Ended | E Time: 5.774s | ~Time Left: 433.037s |  Train Loss: 0.0619 | Train Acc. 97.9000% | Test Loss: 0.8683 | Test Acc. 80.7500%
+Train AUC: 0.996907
+Valid AUC: 0.8874750000000001
+Adas on PCam_transformed: T 3/3 | E 176/250 Ended | E Time: 5.844s | ~Time Left: 432.481s |  Train Loss: 0.0706 | Train Acc. 97.5500% | Test Loss: 0.7078 | Test Acc. 80.2500%
+Train AUC: 0.9981789999999999
+Valid AUC: 0.881925
+Adas on PCam_transformed: T 3/3 | E 177/250 Ended | E Time: 5.760s | ~Time Left: 420.475s |  Train Loss: 0.0557 | Train Acc. 98.3500% | Test Loss: 0.7662 | Test Acc. 80.0000%
+Train AUC: 0.99828
+Valid AUC: 0.8710499999999999
+Adas on PCam_transformed: T 3/3 | E 178/250 Ended | E Time: 5.690s | ~Time Left: 409.702s |  Train Loss: 0.0526 | Train Acc. 98.1000% | Test Loss: 0.9368 | Test Acc. 81.2500%
+Train AUC: 0.998241
+Valid AUC: 0.8990999999999999
+Adas on PCam_transformed: T 3/3 | E 179/250 Ended | E Time: 5.757s | ~Time Left: 408.776s |  Train Loss: 0.0497 | Train Acc. 98.3500% | Test Loss: 0.7351 | Test Acc. 80.7500%
+Train AUC: 0.997456
+Valid AUC: 0.9027499999999999
+Adas on PCam_transformed: T 3/3 | E 180/250 Ended | E Time: 6.260s | ~Time Left: 438.170s |  Train Loss: 0.0618 | Train Acc. 97.9500% | Test Loss: 0.8535 | Test Acc. 80.7500%
+Train AUC: 0.997665
+Valid AUC: 0.88545
+Adas on PCam_transformed: T 3/3 | E 181/250 Ended | E Time: 5.784s | ~Time Left: 399.101s |  Train Loss: 0.0605 | Train Acc. 97.9000% | Test Loss: 0.9063 | Test Acc. 80.2500%
+Train AUC: 0.998389
+Valid AUC: 0.892075
+Adas on PCam_transformed: T 3/3 | E 182/250 Ended | E Time: 5.792s | ~Time Left: 393.836s |  Train Loss: 0.0517 | Train Acc. 98.0500% | Test Loss: 0.7770 | Test Acc. 80.2500%
+Train AUC: 0.9977820000000001
+Valid AUC: 0.8882
+Adas on PCam_transformed: T 3/3 | E 183/250 Ended | E Time: 5.785s | ~Time Left: 387.611s |  Train Loss: 0.0576 | Train Acc. 98.0500% | Test Loss: 0.8528 | Test Acc. 80.0000%
+Train AUC: 0.997547
+Valid AUC: 0.86485
+Adas on PCam_transformed: T 3/3 | E 184/250 Ended | E Time: 5.822s | ~Time Left: 384.278s |  Train Loss: 0.0604 | Train Acc. 97.9500% | Test Loss: 0.9052 | Test Acc. 78.7500%
+Train AUC: 0.997844
+Valid AUC: 0.8863749999999999
+Adas on PCam_transformed: T 3/3 | E 185/250 Ended | E Time: 5.841s | ~Time Left: 379.668s |  Train Loss: 0.0552 | Train Acc. 98.1000% | Test Loss: 0.8032 | Test Acc. 79.5000%
+Train AUC: 0.99898
+Valid AUC: 0.881875
+Adas on PCam_transformed: T 3/3 | E 186/250 Ended | E Time: 5.745s | ~Time Left: 367.690s |  Train Loss: 0.0433 | Train Acc. 98.4500% | Test Loss: 0.8537 | Test Acc. 80.7500%
+Train AUC: 0.997169
+Valid AUC: 0.87505
+Adas on PCam_transformed: T 3/3 | E 187/250 Ended | E Time: 5.841s | ~Time Left: 367.996s |  Train Loss: 0.0555 | Train Acc. 98.6500% | Test Loss: 0.9054 | Test Acc. 80.5000%
+Train AUC: 0.998244
+Valid AUC: 0.891075
+Adas on PCam_transformed: T 3/3 | E 188/250 Ended | E Time: 5.786s | ~Time Left: 358.737s |  Train Loss: 0.0485 | Train Acc. 98.4500% | Test Loss: 0.7728 | Test Acc. 82.0000%
+Train AUC: 0.9990789999999999
+Valid AUC: 0.8997
+Adas on PCam_transformed: T 3/3 | E 189/250 Ended | E Time: 5.740s | ~Time Left: 350.132s |  Train Loss: 0.0414 | Train Acc. 98.5500% | Test Loss: 0.8034 | Test Acc. 82.2500%
+Train AUC: 0.998852
+Valid AUC: 0.887275
+Adas on PCam_transformed: T 3/3 | E 190/250 Ended | E Time: 5.806s | ~Time Left: 348.339s |  Train Loss: 0.0412 | Train Acc. 98.6000% | Test Loss: 0.9769 | Test Acc. 79.7500%
+Train AUC: 0.998608
+Valid AUC: 0.879975
+Adas on PCam_transformed: T 3/3 | E 191/250 Ended | E Time: 5.742s | ~Time Left: 338.764s |  Train Loss: 0.0456 | Train Acc. 98.4000% | Test Loss: 1.0025 | Test Acc. 81.0000%
+Train AUC: 0.998861
+Valid AUC: 0.8744500000000001
+Adas on PCam_transformed: T 3/3 | E 192/250 Ended | E Time: 5.778s | ~Time Left: 335.152s |  Train Loss: 0.0424 | Train Acc. 98.6000% | Test Loss: 0.9843 | Test Acc. 79.2500%
+Train AUC: 0.999547
+Valid AUC: 0.888025
+Adas on PCam_transformed: T 3/3 | E 193/250 Ended | E Time: 5.831s | ~Time Left: 332.346s |  Train Loss: 0.0307 | Train Acc. 98.9500% | Test Loss: 0.8820 | Test Acc. 81.2500%
+Train AUC: 0.999227
+Valid AUC: 0.87515
+Adas on PCam_transformed: T 3/3 | E 194/250 Ended | E Time: 5.746s | ~Time Left: 321.787s |  Train Loss: 0.0377 | Train Acc. 98.7500% | Test Loss: 0.9773 | Test Acc. 79.7500%
+Train AUC: 0.9993559999999999
+Valid AUC: 0.8807750000000001
+Adas on PCam_transformed: T 3/3 | E 195/250 Ended | E Time: 5.827s | ~Time Left: 320.495s |  Train Loss: 0.0336 | Train Acc. 99.0500% | Test Loss: 0.9318 | Test Acc. 80.2500%
+Train AUC: 0.99945
+Valid AUC: 0.8765249999999999
+Adas on PCam_transformed: T 3/3 | E 196/250 Ended | E Time: 5.719s | ~Time Left: 308.840s |  Train Loss: 0.0299 | Train Acc. 98.9000% | Test Loss: 0.9080 | Test Acc. 81.7500%
+Train AUC: 0.99865
+Valid AUC: 0.89145
+Adas on PCam_transformed: T 3/3 | E 197/250 Ended | E Time: 5.766s | ~Time Left: 305.605s |  Train Loss: 0.0473 | Train Acc. 98.1000% | Test Loss: 0.8989 | Test Acc. 82.2500%
+Train AUC: 0.998795
+Valid AUC: 0.882925
+Adas on PCam_transformed: T 3/3 | E 198/250 Ended | E Time: 5.838s | ~Time Left: 303.560s |  Train Loss: 0.0346 | Train Acc. 99.0000% | Test Loss: 1.0229 | Test Acc. 81.7500%
+Train AUC: 0.9989420000000001
+Valid AUC: 0.8946999999999999
+Adas on PCam_transformed: T 3/3 | E 199/250 Ended | E Time: 5.783s | ~Time Left: 294.949s |  Train Loss: 0.0386 | Train Acc. 98.8000% | Test Loss: 0.8559 | Test Acc. 80.5000%
+Train AUC: 0.9981479999999999
+Valid AUC: 0.8880500000000001
+Adas on PCam_transformed: T 3/3 | E 200/250 Ended | E Time: 6.536s | ~Time Left: 326.781s |  Train Loss: 0.0503 | Train Acc. 98.3000% | Test Loss: 0.9036 | Test Acc. 80.0000%
+Train AUC: 0.99951
+Valid AUC: 0.881575
+Adas on PCam_transformed: T 3/3 | E 201/250 Ended | E Time: 5.763s | ~Time Left: 282.397s |  Train Loss: 0.0284 | Train Acc. 99.2000% | Test Loss: 0.9432 | Test Acc. 79.2500%
+Train AUC: 0.999528
+Valid AUC: 0.879525
+Adas on PCam_transformed: T 3/3 | E 202/250 Ended | E Time: 5.752s | ~Time Left: 276.080s |  Train Loss: 0.0309 | Train Acc. 98.9500% | Test Loss: 1.0222 | Test Acc. 78.5000%
+Train AUC: 0.998998
+Valid AUC: 0.8797499999999999
+Adas on PCam_transformed: T 3/3 | E 203/250 Ended | E Time: 5.739s | ~Time Left: 269.711s |  Train Loss: 0.0379 | Train Acc. 98.9000% | Test Loss: 0.9012 | Test Acc. 79.5000%
+Train AUC: 0.999576
+Valid AUC: 0.8793249999999999
+Adas on PCam_transformed: T 3/3 | E 204/250 Ended | E Time: 5.747s | ~Time Left: 264.375s |  Train Loss: 0.0284 | Train Acc. 99.0500% | Test Loss: 0.9760 | Test Acc. 79.5000%
+Train AUC: 0.9988760000000001
+Valid AUC: 0.8751
+Adas on PCam_transformed: T 3/3 | E 205/250 Ended | E Time: 5.785s | ~Time Left: 260.329s |  Train Loss: 0.0423 | Train Acc. 98.5000% | Test Loss: 1.0866 | Test Acc. 79.0000%
+Train AUC: 0.999291
+Valid AUC: 0.87785
+Adas on PCam_transformed: T 3/3 | E 206/250 Ended | E Time: 5.752s | ~Time Left: 253.067s |  Train Loss: 0.0331 | Train Acc. 98.9500% | Test Loss: 0.9529 | Test Acc. 80.7500%
+Train AUC: 0.999484
+Valid AUC: 0.8767750000000001
+Adas on PCam_transformed: T 3/3 | E 207/250 Ended | E Time: 5.790s | ~Time Left: 248.951s |  Train Loss: 0.0305 | Train Acc. 98.9000% | Test Loss: 1.0461 | Test Acc. 79.5000%
+Train AUC: 0.999698
+Valid AUC: 0.874975
+Adas on PCam_transformed: T 3/3 | E 208/250 Ended | E Time: 5.778s | ~Time Left: 242.696s |  Train Loss: 0.0230 | Train Acc. 99.3500% | Test Loss: 1.0475 | Test Acc. 80.2500%
+Train AUC: 0.999641
+Valid AUC: 0.8666999999999999
+Adas on PCam_transformed: T 3/3 | E 209/250 Ended | E Time: 5.824s | ~Time Left: 238.804s |  Train Loss: 0.0270 | Train Acc. 98.9500% | Test Loss: 1.0290 | Test Acc. 79.0000%
+Train AUC: 0.998575
+Valid AUC: 0.87705
+Adas on PCam_transformed: T 3/3 | E 210/250 Ended | E Time: 5.807s | ~Time Left: 232.271s |  Train Loss: 0.0457 | Train Acc. 98.4000% | Test Loss: 1.0599 | Test Acc. 80.0000%
+Train AUC: 0.99875
+Valid AUC: 0.8906499999999999
+Adas on PCam_transformed: T 3/3 | E 211/250 Ended | E Time: 5.801s | ~Time Left: 226.240s |  Train Loss: 0.0429 | Train Acc. 98.3000% | Test Loss: 0.8719 | Test Acc. 81.5000%
+Train AUC: 0.999357
+Valid AUC: 0.8695
+Adas on PCam_transformed: T 3/3 | E 212/250 Ended | E Time: 5.761s | ~Time Left: 218.916s |  Train Loss: 0.0302 | Train Acc. 98.9000% | Test Loss: 1.0333 | Test Acc. 80.7500%
+Train AUC: 0.9998239999999999
+Valid AUC: 0.8744000000000001
+Adas on PCam_transformed: T 3/3 | E 213/250 Ended | E Time: 5.800s | ~Time Left: 214.588s |  Train Loss: 0.0217 | Train Acc. 99.2500% | Test Loss: 1.0655 | Test Acc. 79.2500%
+Train AUC: 0.9997400000000001
+Valid AUC: 0.8892
+Adas on PCam_transformed: T 3/3 | E 214/250 Ended | E Time: 5.756s | ~Time Left: 207.223s |  Train Loss: 0.0205 | Train Acc. 99.4000% | Test Loss: 0.9516 | Test Acc. 81.5000%
+Train AUC: 0.999511
+Valid AUC: 0.8904249999999999
+Adas on PCam_transformed: T 3/3 | E 215/250 Ended | E Time: 5.792s | ~Time Left: 202.726s |  Train Loss: 0.0294 | Train Acc. 98.8000% | Test Loss: 0.9793 | Test Acc. 82.2500%
+Train AUC: 0.999135
+Valid AUC: 0.900225
+Adas on PCam_transformed: T 3/3 | E 216/250 Ended | E Time: 5.739s | ~Time Left: 195.129s |  Train Loss: 0.0317 | Train Acc. 99.0500% | Test Loss: 0.8622 | Test Acc. 82.2500%
+Train AUC: 0.999488
+Valid AUC: 0.8935999999999998
+Adas on PCam_transformed: T 3/3 | E 217/250 Ended | E Time: 5.745s | ~Time Left: 189.601s |  Train Loss: 0.0302 | Train Acc. 98.9000% | Test Loss: 0.8529 | Test Acc. 81.2500%
+Train AUC: 0.998895
+Valid AUC: 0.8856749999999999
+Adas on PCam_transformed: T 3/3 | E 218/250 Ended | E Time: 5.715s | ~Time Left: 182.876s |  Train Loss: 0.0340 | Train Acc. 98.9500% | Test Loss: 0.9669 | Test Acc. 80.5000%
+Train AUC: 0.9996050000000001
+Valid AUC: 0.8903749999999999
+Adas on PCam_transformed: T 3/3 | E 219/250 Ended | E Time: 5.769s | ~Time Left: 178.841s |  Train Loss: 0.0258 | Train Acc. 99.1500% | Test Loss: 0.9195 | Test Acc. 81.7500%
+Train AUC: 0.999403
+Valid AUC: 0.8797
+Adas on PCam_transformed: T 3/3 | E 220/250 Ended | E Time: 5.723s | ~Time Left: 171.699s |  Train Loss: 0.0320 | Train Acc. 99.1500% | Test Loss: 1.0246 | Test Acc. 79.5000%
+Train AUC: 0.999455
+Valid AUC: 0.8958750000000001
+Adas on PCam_transformed: T 3/3 | E 221/250 Ended | E Time: 5.768s | ~Time Left: 167.281s |  Train Loss: 0.0275 | Train Acc. 99.1500% | Test Loss: 0.8934 | Test Acc. 80.7500%
+Train AUC: 0.9994430000000001
+Valid AUC: 0.893375
+Adas on PCam_transformed: T 3/3 | E 222/250 Ended | E Time: 5.780s | ~Time Left: 161.842s |  Train Loss: 0.0286 | Train Acc. 99.2000% | Test Loss: 0.8749 | Test Acc. 80.0000%
+Train AUC: 0.999339
+Valid AUC: 0.875125
+Adas on PCam_transformed: T 3/3 | E 223/250 Ended | E Time: 5.786s | ~Time Left: 156.211s |  Train Loss: 0.0331 | Train Acc. 98.6000% | Test Loss: 0.9996 | Test Acc. 81.2500%
+Train AUC: 0.999691
+Valid AUC: 0.8886
+Adas on PCam_transformed: T 3/3 | E 224/250 Ended | E Time: 5.814s | ~Time Left: 151.164s |  Train Loss: 0.0251 | Train Acc. 99.1000% | Test Loss: 0.9163 | Test Acc. 79.2500%
+Train AUC: 0.999684
+Valid AUC: 0.8962500000000001
+Adas on PCam_transformed: T 3/3 | E 225/250 Ended | E Time: 5.796s | ~Time Left: 144.900s |  Train Loss: 0.0234 | Train Acc. 99.2500% | Test Loss: 0.8772 | Test Acc. 81.5000%
+Train AUC: 0.9996590000000001
+Valid AUC: 0.890275
+Adas on PCam_transformed: T 3/3 | E 226/250 Ended | E Time: 5.791s | ~Time Left: 138.981s |  Train Loss: 0.0214 | Train Acc. 99.3000% | Test Loss: 0.8526 | Test Acc. 78.7500%
+Train AUC: 0.999567
+Valid AUC: 0.8895500000000001
+Adas on PCam_transformed: T 3/3 | E 227/250 Ended | E Time: 5.695s | ~Time Left: 130.991s |  Train Loss: 0.0257 | Train Acc. 99.2000% | Test Loss: 0.8809 | Test Acc. 80.2500%
+Train AUC: 0.999811
+Valid AUC: 0.8960499999999999
+Adas on PCam_transformed: T 3/3 | E 228/250 Ended | E Time: 5.752s | ~Time Left: 126.534s |  Train Loss: 0.0193 | Train Acc. 99.5000% | Test Loss: 0.9195 | Test Acc. 82.0000%
+Train AUC: 0.999677
+Valid AUC: 0.88455
+Adas on PCam_transformed: T 3/3 | E 229/250 Ended | E Time: 5.866s | ~Time Left: 123.178s |  Train Loss: 0.0203 | Train Acc. 99.4500% | Test Loss: 0.9819 | Test Acc. 80.0000%
+Train AUC: 0.999835
+Valid AUC: 0.8709
+Adas on PCam_transformed: T 3/3 | E 230/250 Ended | E Time: 5.779s | ~Time Left: 115.575s |  Train Loss: 0.0188 | Train Acc. 99.3000% | Test Loss: 1.0308 | Test Acc. 79.5000%
+Train AUC: 0.9998260000000001
+Valid AUC: 0.895275
+Adas on PCam_transformed: T 3/3 | E 231/250 Ended | E Time: 5.758s | ~Time Left: 109.400s |  Train Loss: 0.0194 | Train Acc. 99.4500% | Test Loss: 0.9607 | Test Acc. 80.7500%
+Train AUC: 0.9998659999999999
+Valid AUC: 0.9064000000000001
+Adas on PCam_transformed: T 3/3 | E 232/250 Ended | E Time: 6.228s | ~Time Left: 112.101s |  Train Loss: 0.0181 | Train Acc. 99.2500% | Test Loss: 0.7887 | Test Acc. 83.2500%
+Train AUC: 0.999468
+Valid AUC: 0.8847250000000001
+Adas on PCam_transformed: T 3/3 | E 233/250 Ended | E Time: 5.818s | ~Time Left: 98.899s |  Train Loss: 0.0284 | Train Acc. 98.9000% | Test Loss: 0.9351 | Test Acc. 81.2500%
+Train AUC: 0.999624
+Valid AUC: 0.888675
+Adas on PCam_transformed: T 3/3 | E 234/250 Ended | E Time: 5.728s | ~Time Left: 91.655s |  Train Loss: 0.0232 | Train Acc. 99.2000% | Test Loss: 0.9672 | Test Acc. 81.2500%
+Train AUC: 0.999801
+Valid AUC: 0.8803749999999999
+Adas on PCam_transformed: T 3/3 | E 235/250 Ended | E Time: 5.770s | ~Time Left: 86.552s |  Train Loss: 0.0192 | Train Acc. 99.2000% | Test Loss: 0.9537 | Test Acc. 81.0000%
+Train AUC: 0.999814
+Valid AUC: 0.8964500000000001
+Adas on PCam_transformed: T 3/3 | E 236/250 Ended | E Time: 5.818s | ~Time Left: 81.450s |  Train Loss: 0.0197 | Train Acc. 99.4000% | Test Loss: 0.8791 | Test Acc. 82.0000%
+Train AUC: 0.999783
+Valid AUC: 0.9001750000000001
+Adas on PCam_transformed: T 3/3 | E 237/250 Ended | E Time: 5.787s | ~Time Left: 75.226s |  Train Loss: 0.0196 | Train Acc. 99.3500% | Test Loss: 0.8971 | Test Acc. 81.5000%
+Train AUC: 0.9996090000000001
+Valid AUC: 0.9010250000000001
+Adas on PCam_transformed: T 3/3 | E 238/250 Ended | E Time: 5.769s | ~Time Left: 69.228s |  Train Loss: 0.0233 | Train Acc. 99.3000% | Test Loss: 0.8162 | Test Acc. 81.5000%
+Train AUC: 0.9998969999999999
+Valid AUC: 0.89955
+Adas on PCam_transformed: T 3/3 | E 239/250 Ended | E Time: 6.062s | ~Time Left: 66.687s |  Train Loss: 0.0145 | Train Acc. 99.5500% | Test Loss: 0.8883 | Test Acc. 80.5000%
+Train AUC: 0.9998579999999999
+Valid AUC: 0.895275
+Adas on PCam_transformed: T 3/3 | E 240/250 Ended | E Time: 5.821s | ~Time Left: 58.212s |  Train Loss: 0.0160 | Train Acc. 99.6000% | Test Loss: 0.9755 | Test Acc. 80.2500%
+Train AUC: 0.999719
+Valid AUC: 0.896625
+Adas on PCam_transformed: T 3/3 | E 241/250 Ended | E Time: 5.701s | ~Time Left: 51.308s |  Train Loss: 0.0187 | Train Acc. 99.4500% | Test Loss: 0.9560 | Test Acc. 81.2500%
+Train AUC: 0.999883
+Valid AUC: 0.883075
+Adas on PCam_transformed: T 3/3 | E 242/250 Ended | E Time: 5.853s | ~Time Left: 46.827s |  Train Loss: 0.0169 | Train Acc. 99.3000% | Test Loss: 1.0626 | Test Acc. 79.2500%
+Train AUC: 0.9998729999999999
+Valid AUC: 0.896075
+Adas on PCam_transformed: T 3/3 | E 243/250 Ended | E Time: 5.835s | ~Time Left: 40.842s |  Train Loss: 0.0148 | Train Acc. 99.6000% | Test Loss: 1.0181 | Test Acc. 80.7500%
+Train AUC: 0.999931
+Valid AUC: 0.896625
+Adas on PCam_transformed: T 3/3 | E 244/250 Ended | E Time: 5.735s | ~Time Left: 34.411s |  Train Loss: 0.0133 | Train Acc. 99.6500% | Test Loss: 0.9214 | Test Acc. 80.5000%
+Train AUC: 0.999822
+Valid AUC: 0.8977
+Adas on PCam_transformed: T 3/3 | E 245/250 Ended | E Time: 5.765s | ~Time Left: 28.823s |  Train Loss: 0.0172 | Train Acc. 99.5000% | Test Loss: 0.9540 | Test Acc. 80.2500%
+Train AUC: 0.999875
+Valid AUC: 0.8978749999999999
+Adas on PCam_transformed: T 3/3 | E 246/250 Ended | E Time: 5.787s | ~Time Left: 23.147s |  Train Loss: 0.0165 | Train Acc. 99.4500% | Test Loss: 0.8816 | Test Acc. 81.5000%
+Train AUC: 0.999974
+Valid AUC: 0.8929499999999999
+Adas on PCam_transformed: T 3/3 | E 247/250 Ended | E Time: 5.767s | ~Time Left: 17.300s |  Train Loss: 0.0096 | Train Acc. 99.7500% | Test Loss: 0.9780 | Test Acc. 81.2500%
+Train AUC: 0.999941
+Valid AUC: 0.880525
+Adas on PCam_transformed: T 3/3 | E 248/250 Ended | E Time: 5.760s | ~Time Left: 11.521s |  Train Loss: 0.0116 | Train Acc. 99.7000% | Test Loss: 1.0455 | Test Acc. 81.0000%
+Train AUC: 0.9998579999999999
+Valid AUC: 0.884275
+Adas on PCam_transformed: T 3/3 | E 249/250 Ended | E Time: 5.768s | ~Time Left: 5.768s |  Train Loss: 0.0165 | Train Acc. 99.4500% | Test Loss: 0.9838 | Test Acc. 81.2500%
+Train AUC: 0.999953
+Valid AUC: 0.9017499999999999
+Adas on PCam_transformed: T 3/3 | E 250/250 Ended | E Time: 5.773s | ~Time Left: 0.000s |  Train Loss: 0.0130 | Train Acc. 99.6000% | Test Loss: 0.8821 | Test Acc. 81.2500%
