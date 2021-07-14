@@ -19,14 +19,14 @@ def run_baselines(root, CC=True):
     colour_aug = "None"
     for dataset in [
         # "ADP-Release1",
-        # "BCSS_transformed",
-        # "OSDataset_transformed",
-        # "CRC_transformed",
-        "AJ-Lymph_transformed",
-        "BACH_transformed",
-        "GlaS_transformed",
-        "MHIST_transformed",
-        "PCam_transformed",
+        "BCSS_transformed",
+        "OSDataset_transformed",
+        "CRC_transformed",
+        # "AJ-Lymph_transformed",
+        # "BACH_transformed",
+        # "GlaS_transformed",
+        # "MHIST_transformed",
+        # "PCam_transformed",
     ]:
 
         with open(os.path.join(root, f"NewPretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml"),
@@ -177,7 +177,7 @@ def run_fine_tune(root, CC=True):
     optimizer = "AdamP"
     dist_val_list = [0.1, 0.2, 0.3, 0.4, 0.5]
     freeze_encoders = [
-        "True",
+        # "True",
         "False"
     ]
 
@@ -311,7 +311,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                 else:
                     env_root = "/ssd2/HistoKT/source"
                     env_name = "env"
-                    data_dir = "/ssd2/HistoKT/datasets"
+                    data_dir = f"/ssd{gpu_start+1}/users/mhosseini/datasets/"
 
                 if normalization_all == "target_domain":
                     normalization = dataset
