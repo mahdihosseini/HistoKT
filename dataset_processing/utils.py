@@ -58,6 +58,7 @@ def get_mean_and_std(dataset: torch.utils.data.dataset,
 
 def archive_subdataset(root,
                        split,
+                       splits: list,
                        archive_names: list = [],
                        num_per_class_list: list = []):
     # creating dictionary with class index as a key, and [filenames, ] as the value
@@ -74,32 +75,35 @@ def archive_subdataset(root,
             class_to_files[label].append(filename)
 
     for num_per_class, tar_name in zip(num_per_class_list, archive_names):
-        try:
-            new_samples = [(file_list[i], label)
-                           for label, file_list in class_to_files.items()
-                           for i in range(num_per_class)]
-        except IndexError as err:
-            class_list = [(key, len(value)) for key, value in class_to_files.items()]
-            print(f"not {num_per_class} enough of a class: {class_list}")
-            raise err
-        # getting list of files to tar
-        files_to_tar = [path for path, label in new_samples]
+        cum_num = 0
+        for spl in splits:
+            try:
+                new_samples = [(file_list[i], label)
+                               for label, file_list in class_to_files.items()
+                               for i in range(cum_num, num_per_class)]
+            except IndexError as err:
+                class_list = [(key, len(value)) for key, value in class_to_files.items()]
+                print(f"not {num_per_class} enough of a class: {class_list}")
+                raise err
+            # getting list of files to tar
+            files_to_tar = [path for path, label in new_samples]
 
-        # tarring files
-        with tarfile.open(os.path.join(os.path.dirname(root), tar_name+".tar"), "a") as tar:
-            archive_name = os.path.basename(root)
-            for fn in files_to_tar:
-                tar.add(os.path.join(root, fn), arcname=os.path.join(archive_name, fn))
+            # tarring files
+            with tarfile.open(os.path.join(os.path.dirname(root), tar_name+".tar"), "a") as tar:
+                archive_name = os.path.basename(root)
+                for fn in files_to_tar:
+                    tar.add(os.path.join(root, fn), arcname=os.path.join(archive_name, fn))
 
-            # adding pickles
-            with open(os.path.join(tempfile.gettempdir(), f"{split}.pickle"), "wb") as file:
-                pickle.dump(new_samples, file)
-            tar.add(os.path.join(tempfile.gettempdir(), f"{split}.pickle"),
-                    arcname=os.path.join(archive_name, f"{split}.pickle"))
+                # adding pickles
+                with open(os.path.join(tempfile.gettempdir(), f"{spl}.pickle"), "wb") as file:
+                    pickle.dump(new_samples, file)
+                tar.add(os.path.join(tempfile.gettempdir(), f"{spl}.pickle"),
+                        arcname=os.path.join(archive_name, f"{spl}.pickle"))
 
-            # adding class_to_idx pickle
-            tar.add(os.path.join(root, "class_to_idx.pickle"),
-                    arcname=os.path.join(archive_name, "class_to_idx.pickle"))
+                # adding class_to_idx pickle
+                tar.add(os.path.join(root, "class_to_idx.pickle"),
+                        arcname=os.path.join(archive_name, "class_to_idx.pickle"))
+            cum_num += num_per_class
 
 
 def archive_split(root,
