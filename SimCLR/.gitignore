@@ -8,3 +8,4 @@ dist/
 simclr.egg-info
 lightning_logs/
 env/
+outputs/
