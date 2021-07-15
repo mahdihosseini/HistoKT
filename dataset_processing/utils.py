@@ -99,6 +99,7 @@ def archive_subdataset(root,
 
                 # adding pickles
                 with open(os.path.join(tempfile.gettempdir(), f"{spl}.pickle"), "wb") as file:
+                    print(file, len(new_samples))
                     pickle.dump(new_samples, file)
                 tar.add(os.path.join(tempfile.gettempdir(), f"{spl}.pickle"),
                         arcname=os.path.join(archive_name, f"{spl}.pickle"))
