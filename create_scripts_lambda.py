@@ -249,7 +249,7 @@ def run_fine_tune(root, CC=True, node="cedar"):
             normalization_all = pretrained_dataset
             pretrained_model_name = pretrained_dataset
 
-            pretrained_model_root = f"{env_root}best-pretraining-checkpoint/None/{pretrained_dataset}"
+            pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
             files = os.listdir(pretrained_model_root)
             assert len(files) == 1
             pretrained_model = os.path.join(pretrained_model_root, files[0])
