@@ -7,7 +7,7 @@ best_lrs = {
     "OSDataset_transformed": 0.0001,
     "CRC_transformed": 0.0005,
     "AJ-Lymph_transformed": 0.0002,
-    "BACH_transformed": 0.00005,
+    "BACH_transformed": "0.00005",
     "GlaS_transformed": 0.001,
     "MHIST_transformed": 0.0005,
     "PCam_transformed": 0.001,
