@@ -77,6 +77,9 @@ def archive_subdataset(root,
     for num_per_class, tar_name in zip(num_per_class_list, archive_names):
         cum_num = 0
         for spl in splits:
+            for label, file_list in class_to_files.items():
+                print("size of labels list")
+                print(label, len(file_list))
             try:
                 new_samples = [(file_list[i], label)
                                for label, file_list in class_to_files.items()

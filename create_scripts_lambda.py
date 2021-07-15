@@ -174,6 +174,8 @@ python src/adas/train.py \
 
 def run_fine_tune(root, CC=True):
     runscripts = []
+    account = "def-plato"
+    # account = "def-mahdi"
     optimizer = "AdamP"
     dist_val_list = [0.1, 0.2, 0.3, 0.4, 0.5]
     freeze_encoders = [
@@ -331,7 +333,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-plato
+#SBATCH --account={account}
 #SBATCH --time={time_taken}
 #SBATCH --output=%x-%j.out
 
