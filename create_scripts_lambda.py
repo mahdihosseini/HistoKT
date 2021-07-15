@@ -174,8 +174,8 @@ python src/adas/train.py \
 
 def run_fine_tune(root, CC=True):
     runscripts = []
-    account = "def-plato"
-    # account = "def-mahdi"
+    # account = "def-plato"
+    account = "def-msh"
     optimizer = "AdamP"
     dist_val_list = [0.1, 0.2, 0.3, 0.4, 0.5]
     freeze_encoders = [
@@ -196,14 +196,14 @@ def run_fine_tune(root, CC=True):
 
     datasets = [
         # "ADP-Release1",
-        "BCSS_transformed",
-        "OSDataset_transformed",
-        "CRC_transformed",
-        # "AJ-Lymph_transformed",
-        # "BACH_transformed",
-        # "GlaS_transformed",
-        # "MHIST_transformed",
-        # "PCam_transformed",
+        # "BCSS_transformed",
+        # "OSDataset_transformed",
+        # "CRC_transformed",
+        "AJ-Lymph_transformed",
+        "BACH_transformed",
+        "GlaS_transformed",
+        "MHIST_transformed",
+        "PCam_transformed",
     ]
     gpu_start = 1
     for dataset in datasets:
@@ -389,4 +389,4 @@ date
 if __name__ == "__main__":
     root_dir = ""
     # run_baselines(root_dir, CC=True)
-    run_fine_tune(root_dir, CC=False)
+    run_fine_tune(root_dir, CC=True)

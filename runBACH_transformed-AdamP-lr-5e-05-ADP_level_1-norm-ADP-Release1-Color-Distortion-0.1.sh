@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-plato
+#SBATCH --account=def-msh
 #SBATCH --time=11:00:00
 #SBATCH --output=%x-%j.out
 
@@ -26,7 +26,5 @@ echo ""
 date
 
 source ~/projects/def-plato/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config ~/projects/def-plato/zhan8425/HistoKT/NewPostTrainingConfigs/BACH_transformed/AdamP/Color-Distortion-0.1-config.yaml --output ADP_level_1_norm_ADP-Release1/BACH_transformed/AdamP/output/fine_tuning/Color-Distortion/distortion-0.1 --checkpoint ADP_level_1_norm_ADP-Release1/BACH_transformed/AdamP/checkpoint/fine_tuning/Color-Distortion/distortion-0.1/lr-5e-05 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar --freeze_encoder True --save-freq 200 --color_aug Color-Distortion --norm_vals ADP-Release1
-
-python src/adas/train.py --config ~/projects/def-plato/zhan8425/HistoKT/NewPostTrainingConfigs/BACH_transformed/AdamP/Color-Distortion-0.1-config.yaml --output ADP_level_1_norm_ADP-Release1/BACH_transformed/AdamP/output/deep_tuning/Color-Distortion/distortion-0.1 --checkpoint ADP_level_1_norm_ADP-Release1/BACH_transformed/AdamP/checkpoint/deep_tuning/Color-Distortion/distortion-0.1/lr-5e-05 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar --freeze_encoder False --save-freq 200 --color_aug Color-Distortion --norm_vals ADP-Release1
+python src/adas/train.py --config ~/projects/def-plato/zhan8425/HistoKT/NewPostTrainingConfigs/BACH_transformed/AdamP/Color-Distortion-0.1-config.yaml --output ADP_level_1_norm_ADP-Release1/BACH_transformed/AdamP/output/deep_tuning/Color-Distortion/distortion-0.1 --checkpoint ADP_level_1_norm_ADP-Release1/BACH_transformed/AdamP/checkpoint/deep_tuning/Color-Distortion/distortion-0.1/lr-5e-05 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-plato/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar --freeze_encoder False --save-freq 200 --color_aug Color-Distortion --norm_vals ADP-Release1 
 
