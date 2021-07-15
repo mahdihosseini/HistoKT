@@ -234,10 +234,10 @@ def run_fine_tune(root, CC=True, node="cedar"):
         if CC:
             if node == "cedar":
                 data_storage = "/home/zhan8425/scratch/HistoKTdata"
-                env_root = "~/projects/def-plato/zhan8425/HistoKT"
+                env_root = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT"
             elif node == "beluga":
                 data_storage = "/scratch/stephy/HistoKTdata"
-                env_root = "~/projects/def-msh/zhan8425/HistoKT"
+                env_root = "/home/zhan8425/projects/def-msh/zhan8425/HistoKT"
             env_name = "ENV"
             data_dir = "$SLURM_TMPDIR"
         else:
