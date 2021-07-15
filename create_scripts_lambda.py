@@ -14,7 +14,7 @@ best_lrs = {
 }
 
 
-def run_baselines(root, CC=True):
+def run_baselines(root, CC=True, node="Cedar"):
     runscripts = []
     colour_aug = "None"
     for dataset in [
@@ -172,10 +172,16 @@ python src/adas/train.py \
             outfile.write("".join(outlines))
 
 
-def run_fine_tune(root, CC=True):
+def run_fine_tune(root, CC=True, node="cedar"):
     runscripts = []
     # account = "def-plato"
     account = "def-msh"
+
+    if node == "cedar":
+        gpu = "v100l"
+    elif node == "beluga":
+        gpu = "v100"
+
     optimizer = "AdamP"
     dist_val_list = [0.1, 0.2, 0.3, 0.4, 0.5]
     freeze_encoders = [
@@ -307,7 +313,12 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                     datafile = dataset
 
                 if CC:
-                    env_root = "~/projects/def-plato/zhan8425/HistoKT"
+                    if node == "cedar":
+                        data_storage = "/home/zhan8425/scratch/HistoKTdata"
+                        env_root = "~/projects/def-plato/zhan8425/HistoKT"
+                    elif node == "beluga":
+                        data_storage = "/scratch/stephy/HistoKTdata"
+                        env_root = "~/projects/def-msh/zhan8425/HistoKT"
                     env_name = "ENV"
                     data_dir = "$SLURM_TMPDIR"
                 else:
@@ -328,7 +339,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
-#SBATCH --gres=gpu:v100l:1
+#SBATCH --gres=gpu:{gpu}:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
@@ -342,7 +353,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 echo "transferring data"
 echo ""
 date
-tar xf /home/zhan8425/scratch/HistoKTdata/{datafile}.tar -C $SLURM_TMPDIR
+tar xf {data_storage}/{datafile}.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
 date
@@ -389,4 +400,4 @@ date
 if __name__ == "__main__":
     root_dir = ""
     # run_baselines(root_dir, CC=True)
-    run_fine_tune(root_dir, CC=True)
+    run_fine_tune(root_dir, CC=True, node="beluga")
