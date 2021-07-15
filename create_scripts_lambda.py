@@ -13,6 +13,18 @@ best_lrs = {
     "PCam_transformed": 0.001,
 }
 
+best_dist_vals = {
+    "ADP-Release1": 0.3,
+    "BCSS_transformed": 0.1,
+    "OSDataset_transformed": 0.1,
+    "CRC_transformed": 0.1,
+    "AJ-Lymph_transformed": 0.1,
+    "BACH_transformed": 0.1,
+    "GlaS_transformed": 0.1,
+    "MHIST_transformed": 0.4,
+    "PCam_transformed": 0.2,
+}
+
 
 def run_baselines(root, CC=True, node="Cedar"):
     runscripts = []
@@ -181,28 +193,29 @@ def run_fine_tune(root, CC=True, node="cedar"):
         gpu = "v100l"
     elif node == "beluga":
         gpu = "v100"
+    elif node == "graham":
+        gpu = "p100"
 
     optimizer = "AdamP"
-    dist_val_list = [0.1, 0.2, 0.3, 0.4, 0.5]
+
     freeze_encoders = [
         # "True",
         "False"
     ]
 
     color_aug = "Color-Distortion"
-    normalization_all = "ADP-Release1"
-    # choose from no_norm, target_domain, or a dataset name
 
-    if CC:
-        if node == "cedar":
-            pretrained_model = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
-        elif node == "beluga":
-            pretrained_model = "/home/zhan8425/projects/def-msh/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
-    else:
-        pretrained_model = "/ssd2/HistoKT/source/new-pretraining-checkpoint/None/ADP-Release1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
-
-    pretrained_model_name = "ADP_level_1"
-
+    pretrained_datasets = [
+        # "ADP-Release1",
+        "BCSS_transformed",
+        "OSDataset_transformed",
+        "CRC_transformed",
+        "AJ-Lymph_transformed",
+        "BACH_transformed",
+        "GlaS_transformed",
+        "MHIST_transformed",
+        "PCam_transformed",
+    ]
     datasets = [
         # "ADP-Release1",
         # "BCSS_transformed",
@@ -216,8 +229,35 @@ def run_fine_tune(root, CC=True, node="cedar"):
     ]
     gpu_start = 1
     for dataset in datasets:
-        for dist_val in dist_val_list:
+
+        # choose from no_norm, target_domain, or a dataset name
+        if CC:
+            if node == "cedar":
+                data_storage = "/home/zhan8425/scratch/HistoKTdata"
+                env_root = "~/projects/def-plato/zhan8425/HistoKT"
+            elif node == "beluga":
+                data_storage = "/scratch/stephy/HistoKTdata"
+                env_root = "~/projects/def-msh/zhan8425/HistoKT"
+            env_name = "ENV"
+            data_dir = "$SLURM_TMPDIR"
+        else:
+            env_root = "/ssd2/HistoKT/source"
+            env_name = "env"
+            data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
+
+        for pretrained_dataset in pretrained_datasets:
+            normalization_all = pretrained_dataset
+            pretrained_model_name = pretrained_dataset
+
+            pretrained_model_root = f"{env_root}best-pretraining-checkpoint/None/{pretrained_dataset}"
+            files = os.listdir(pretrained_model_root)
+            assert len(files) == 1
+            pretrained_model = os.path.join(pretrained_model_root, files[0])
+
+            if dataset == pretrained_dataset:
+                continue
             learning_rate = best_lrs[dataset]
+            dist_val = best_dist_vals[dataset]
             os.makedirs(f"NewPostTrainingConfigs/{dataset}/{optimizer}", exist_ok=True)
             with open(os.path.join(root, f"NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-{dist_val}-config.yaml"),
                       "w") as write_file:
@@ -314,20 +354,6 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                     time_taken = "23:00:00"
                 else:
                     datafile = dataset
-
-                if CC:
-                    if node == "cedar":
-                        data_storage = "/home/zhan8425/scratch/HistoKTdata"
-                        env_root = "~/projects/def-plato/zhan8425/HistoKT"
-                    elif node == "beluga":
-                        data_storage = "/scratch/stephy/HistoKTdata"
-                        env_root = "~/projects/def-msh/zhan8425/HistoKT"
-                    env_name = "ENV"
-                    data_dir = "$SLURM_TMPDIR"
-                else:
-                    env_root = "/ssd2/HistoKT/source"
-                    env_name = "env"
-                    data_dir = f"/ssd{gpu_start+1}/users/mhosseini/datasets/"
 
                 if normalization_all == "target_domain":
                     normalization = dataset
