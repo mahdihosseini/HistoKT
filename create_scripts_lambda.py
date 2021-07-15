@@ -194,7 +194,10 @@ def run_fine_tune(root, CC=True, node="cedar"):
     # choose from no_norm, target_domain, or a dataset name
 
     if CC:
-        pretrained_model = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
+        if node == "cedar":
+            pretrained_model = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
+        elif node == "beluga":
+            pretrained_model = "/home/zhan8425/projects/def-msh/zhan8425/HistoKT/pretrained_weights/ADP-Release1/level_1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
     else:
         pretrained_model = "/ssd2/HistoKT/source/new-pretraining-checkpoint/None/ADP-Release1/best_trial_2_date_2021-07-13-19-43-53.pth.tar"
 
