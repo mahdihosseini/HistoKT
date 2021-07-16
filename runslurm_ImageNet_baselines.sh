@@ -1,0 +1,19 @@
+#!/bin/bash
+sbatch runADP-Release1-None.sh
+sleep 2
+sbatch runBCSS_transformed-None.sh
+sleep 2
+sbatch runOSDataset_transformed-None.sh
+sleep 2
+sbatch runCRC_transformed-None.sh
+sleep 2
+sbatch runAJ-Lymph_transformed-None.sh
+sleep 2
+sbatch runBACH_transformed-None.sh
+sleep 2
+sbatch runGlaS_transformed-None.sh
+sleep 2
+sbatch runMHIST_transformed-None.sh
+sleep 2
+sbatch runPCam_transformed-None.sh
+sleep 2

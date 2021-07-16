@@ -14,20 +14,49 @@ best_lrs = {
 }
 
 
-def run_baselines(root, CC=True, node="Cedar"):
+def run_baselines(root, CC=True, node="cedar"):
     runscripts = []
     colour_aug = "None"
+    pretrained_model = "ImageNet"
+    normalization = "ImageNet"
+
+    # account = "def-plato"
+    account = "def-msh"
+
+    if node == "cedar":
+        gpu = "v100l"
+    elif node == "beluga":
+        gpu = "v100"
+    elif node == "graham":
+        gpu = "p100"
+
+    gpu_start = 1
+
     for dataset in [
-        # "ADP-Release1",
+        "ADP-Release1",
         "BCSS_transformed",
         "OSDataset_transformed",
         "CRC_transformed",
-        # "AJ-Lymph_transformed",
-        # "BACH_transformed",
-        # "GlaS_transformed",
-        # "MHIST_transformed",
-        # "PCam_transformed",
+        "AJ-Lymph_transformed",
+        "BACH_transformed",
+        "GlaS_transformed",
+        "MHIST_transformed",
+        "PCam_transformed",
     ]:
+
+        if CC:
+            if node == "cedar":
+                data_storage = "/home/zhan8425/scratch/HistoKTdata"
+                env_root = "/home/zhan8425/projects/def-plato/zhan8425/HistoKT"
+            elif node == "beluga":
+                data_storage = "/scratch/stephy/HistoKTdata"
+                env_root = "/home/zhan8425/projects/def-msh/zhan8425/HistoKT"
+            env_name = "ENV"
+            data_dir = "$SLURM_TMPDIR"
+        else:
+            env_root = "/ssd2/HistoKT/source"
+            env_name = "env"
+            data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
 
         with open(os.path.join(root, f"NewPretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml"),
                   "w") as write_file:
@@ -65,7 +94,7 @@ color_kwargs:
     augmentation: '{colour_aug}' # options: YCbCr, HSV, RGB-Jitter,
                                # Color-Distortion (Color-Jittering followed by color drop),
                                # None
-    distortion: 0.3 #options: 0.3 for Color-Distortion
+    distortion: 0.0 #options: 0.3 for Color-Distortion
                             # 0.1 for YCbCr-Light and HSV-Light
                             # 1.0 for YCbCr-Strong and HSV-Strong
                             # 1.0 for RBGJitter
@@ -109,23 +138,24 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
         runscripts.append(f"run{dataset}-{colour_aug}.sh")
 
         with open(f"run{dataset}-{colour_aug}.sh", "w") as outfile:
+            time_taken = "11:00:00"
             if "CRC" in dataset:
                 datafile = "CRC_transformed_2000_per_class"
+                time_taken = "23:00:00"
             elif "PCam" in dataset:
                 datafile = "PCam_transformed_1000_per_class"
             elif "ADP" in dataset:
                 datafile = "ADP\\ V1.0\\ Release"
+                time_taken = "23:00:00"
+            elif "OSDataset_transformed" in dataset:
+                time_taken = "23:00:00"
+                datafile = dataset
+            elif "BCSS_transformed" in dataset:
+                datafile = dataset
+                time_taken = "23:00:00"
             else:
                 datafile = dataset
 
-            if CC:
-                env_root = "~/projects/def-plato/zhan8425/HistoKT"
-                env_name = "ENV"
-                data_dir = "$SLURM_TMPDIR"
-            else:
-                env_root = "/ssd2/HistoKT/source"
-                env_name = "env"
-                data_dir = "/ssd2/HistoKT/datasets"
             dataCC = f"""#!/bin/bash
 
 ### GPU OPTIONS:
@@ -134,13 +164,13 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
-#SBATCH --gres=gpu:v100l:1
+#SBATCH --gres=gpu:{gpu}:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-plato
-#SBATCH --time=12:00:00
+#SBATCH --account={account}
+#SBATCH --time={time_taken}
 #SBATCH --output=%x-%j.out
 
 # prepare data
@@ -148,7 +178,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 echo "transferring data"
 echo ""
 date
-tar xf /home/zhan8425/scratch/HistoKTdata/{datafile}.tar -C $SLURM_TMPDIR
+tar xf {data_storage}/{datafile}.tar -C $SLURM_TMPDIR
 echo "Finished transferring"
 echo ""
 date
@@ -156,15 +186,22 @@ date
 """
 
             data = f"""source {env_root}/{env_name}/bin/activate
+
 python src/adas/train.py \
 --config {env_root}/NewPretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml \
---output new-pretraining-output/{colour_aug}/{dataset} --checkpoint new-pretraining-checkpoint/{colour_aug}/{dataset} \
+--output new-ImageNet-pretraining-output/{colour_aug}/{dataset} \
+--checkpoint new-ImageNet-pretraining-checkpoint/{colour_aug}/{dataset} \
 --data {data_dir} \
---save-freq 200"""
+--pretrained_model {pretrained_model} \
+--freeze_encoder False \
+--save-freq 200 \
+--norm_vals {normalization}
+
+"""
 
             outfile.write(data if not CC else dataCC + data)
 
-        with open(f"runslurm_baselines.sh", "w") as outfile:
+        with open(f"runslurm_ImageNet_baselines.sh", "w") as outfile:
 
             outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts]
 
@@ -414,5 +451,5 @@ date
 
 if __name__ == "__main__":
     root_dir = ""
-    # run_baselines(root_dir, CC=True)
-    run_fine_tune(root_dir, CC=True, node="beluga")
+    run_baselines(root_dir, CC=True, node="beluga")
+    # run_fine_tune(root_dir, CC=True, node="beluga")
