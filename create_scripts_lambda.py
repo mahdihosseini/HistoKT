@@ -17,7 +17,7 @@ best_lrs = {
 def run_baselines(root, CC=True, node="cedar"):
     runscripts = []
     colour_aug = "None"
-    pretrained_model = "ImageNet"
+    pretrained_model = "ImageNet_weights/ResNet18ImageNet.pth"
     normalization = "ImageNet"
 
     account = "def-plato"

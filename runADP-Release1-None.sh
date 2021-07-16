@@ -27,5 +27,5 @@ date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
 
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPretrainingConfigs/ADP-Release1-None-configAdas.yaml --output new-ImageNet-pretraining-output/None/ADP-Release1 --checkpoint new-ImageNet-pretraining-checkpoint/None/ADP-Release1 --data $SLURM_TMPDIR --pretrained_model ImageNet --freeze_encoder False --save-freq 200 --norm_vals ImageNet
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPretrainingConfigs/ADP-Release1-None-configAdas.yaml --output new-ImageNet-pretraining-output/None/ADP-Release1 --checkpoint new-ImageNet-pretraining-checkpoint/None/ADP-Release1 --data $SLURM_TMPDIR --pretrained_model ImageNet_weights/ResNet18ImageNet.pth --freeze_encoder False --save-freq 200 --norm_vals ImageNet
 
