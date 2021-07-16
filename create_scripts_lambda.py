@@ -217,9 +217,9 @@ def run_fine_tune(root, CC=True, node="cedar"):
         "PCam_transformed",
     ]
     datasets = [
-        "ADP-Release1",
+        # "ADP-Release1",
         # "BCSS_transformed",
-        # "OSDataset_transformed",
+        "OSDataset_transformed",
         # "CRC_transformed",
         # "AJ-Lymph_transformed",
         # "BACH_transformed",
