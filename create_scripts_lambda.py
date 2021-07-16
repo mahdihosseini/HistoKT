@@ -218,9 +218,9 @@ def run_fine_tune(root, CC=True, node="cedar"):
     ]
     datasets = [
         # "ADP-Release1",
-        # "BCSS_transformed",
-        "OSDataset_transformed",
-        # "CRC_transformed",
+        "BCSS_transformed",
+        # "OSDataset_transformed",
+        "CRC_transformed",
         # "AJ-Lymph_transformed",
         # "BACH_transformed",
         # "GlaS_transformed",
