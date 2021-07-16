@@ -20,8 +20,8 @@ def run_baselines(root, CC=True, node="cedar"):
     pretrained_model = "ImageNet"
     normalization = "ImageNet"
 
-    # account = "def-plato"
-    account = "def-msh"
+    account = "def-plato"
+    # account = "def-msh"
 
     if node == "cedar":
         gpu = "v100l"
