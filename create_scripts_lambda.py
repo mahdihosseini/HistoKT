@@ -13,18 +13,6 @@ best_lrs = {
     "PCam_transformed": 0.001,
 }
 
-best_dist_vals = {
-    "ADP-Release1": 0.3,
-    "BCSS_transformed": 0.1,
-    "OSDataset_transformed": 0.1,
-    "CRC_transformed": 0.1,
-    "AJ-Lymph_transformed": 0.1,
-    "BACH_transformed": 0.1,
-    "GlaS_transformed": 0.1,
-    "MHIST_transformed": 0.4,
-    "PCam_transformed": 0.2,
-}
-
 
 def run_baselines(root, CC=True, node="Cedar"):
     runscripts = []
@@ -203,10 +191,10 @@ def run_fine_tune(root, CC=True, node="cedar"):
         "False"
     ]
 
-    color_aug = "Color-Distortion"
+    color_aug = "None"
 
     pretrained_datasets = [
-        # "ADP-Release1",
+        "ADP-Release1",
         "BCSS_transformed",
         "OSDataset_transformed",
         "CRC_transformed",
@@ -217,9 +205,9 @@ def run_fine_tune(root, CC=True, node="cedar"):
         "PCam_transformed",
     ]
     datasets = [
-        # "ADP-Release1",
+        "ADP-Release1",
         "BCSS_transformed",
-        # "OSDataset_transformed",
+        "OSDataset_transformed",
         "CRC_transformed",
         # "AJ-Lymph_transformed",
         # "BACH_transformed",
@@ -257,9 +245,8 @@ def run_fine_tune(root, CC=True, node="cedar"):
             if dataset == pretrained_dataset:
                 continue
             learning_rate = best_lrs[dataset]
-            dist_val = best_dist_vals[dataset]
             os.makedirs(f"NewPostTrainingConfigs/{dataset}/{optimizer}", exist_ok=True)
-            with open(os.path.join(root, f"NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-{dist_val}-config.yaml"),
+            with open(os.path.join(root, f"NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-config.yaml"),
                       "w") as write_file:
                 if "ADP" in dataset or "BCSS_transformed" in dataset:
                     loss_fn = "MultiLabelSoftMarginLoss"
@@ -295,7 +282,7 @@ color_kwargs:
     augmentation: '{color_aug}' # options: YCbCr, HSV, RGB-Jitter,
                                # Color-Distortion (Color-Jittering followed by color drop),
                                # None
-    distortion: {dist_val} #options: 0.3 for Color-Distortion
+    distortion: 0.0 #options: 0.3 for Color-Distortion
                             # 0.1 for YCbCr-Light and HSV-Light
                             # 1.0 for YCbCr-Strong and HSV-Strong
                             # 1.0 for RBGJitter
@@ -334,9 +321,9 @@ loss: '{loss_fn}' # options: cross_entropy, MultiLabelSoftMarginLoss
 early_stop_patience: 10 # epoch window to consider when deciding whether to stop"""
                 write_file.write(data)
 
-            runscripts.append(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}-{color_aug}-{dist_val}.sh")
+            runscripts.append(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}-{color_aug}.sh")
 
-            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}-{color_aug}-{dist_val}.sh", "w") as outfile:
+            with open(f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}-{color_aug}.sh", "w") as outfile:
                 time_taken = "11:00:00"
                 if "CRC" in dataset:
                     datafile = "CRC_transformed_2000_per_class"
@@ -392,14 +379,13 @@ date
                 data = f"""source {env_root}/{env_name}/bin/activate\n"""
                 for freeze_encoder in freeze_encoders:
                     run_part = f"""python src/adas/train.py \
---config {env_root}/NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-{dist_val}-config.yaml \
---output {pretrained_model_name}_norm_{normalization_all}/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/{color_aug}/distortion-{dist_val} \
---checkpoint {pretrained_model_name}_norm_{normalization_all}/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/{color_aug}/distortion-{dist_val}/lr-{learning_rate} \
+--config {env_root}/NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-config.yaml \
+--output {pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
+--checkpoint {pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data {data_dir} \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
 --save-freq 200 \
---color_aug {color_aug} \
 --norm_vals {normalization} \
 {"" if CC else f"--gpu {gpu_start}"}
 
