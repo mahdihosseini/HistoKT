@@ -186,8 +186,8 @@ python src/adas/train.py \
 
 def run_fine_tune(root, CC=True, node="cedar"):
     runscripts = []
-    # account = "def-plato"
-    account = "def-msh"
+    account = "def-plato"
+    # account = "def-msh"
 
     if node == "cedar":
         gpu = "v100l"
