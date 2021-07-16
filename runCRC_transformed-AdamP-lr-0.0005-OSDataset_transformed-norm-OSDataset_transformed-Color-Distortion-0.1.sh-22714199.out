@@ -1,0 +1,47 @@
+transferring data
+
+Fri Jul 16 12:11:49 EDT 2021
+tar: /scratch/stephy/HistoKTdata/CRC_transformed_2000_per_class.tar: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+Finished transferring
+
+Fri Jul 16 12:11:49 EDT 2021
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/CRC_transformed/AdamP/Color-Distortion-0.1-config.yaml
+    data                : /localscratch/zhan8425.22714199.0       
+    output              : OSDataset_transformed_norm_OSDataset_transformed/CRC_transformed/AdamP/output/deep_tuning/Color-Distortion/distortion-0.1
+    checkpoint          : OSDataset_transformed_norm_OSDataset_transformed/CRC_transformed/AdamP/checkpoint/deep_tuning/Color-Distortion/distortion-0.1/lr-0.0005
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-msh/zhan8425/HistoKT/best-pretraining-checkpoint/None/OSDataset_transformed/best_trial_2_date_2021-07-13-19-35-33.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 200                                     
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+    color_aug           : Color-Distortion                        
+    norm_vals           : OSDataset_transformed                   
+---------------------------------------------
+Adas: Output dir OSDataset_transformed_norm_OSDataset_transformed/CRC_transformed/AdamP/output/deep_tuning/Color-Distortion/distortion-0.1 does not exist, building
+OSDataset_transformed
+Traceback (most recent call last):
+  File "src/adas/train.py", line 900, in <module>
+    main(args)
+  File "src/adas/train.py", line 859, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 871, in main_worker
+    training_agent = TrainingAgent(
+  File "src/adas/train.py", line 246, in __init__
+    self.load_config(config_path, data_path)
+  File "src/adas/train.py", line 294, in load_config
+    self.test_loader, self.num_classes = get_data(
+  File "/lustre03/project/6057785/zhan8425/HistoKT/src/adas/data.py", line 212, in get_data
+    train_set = TransformedDataset(transform=transform_train,
+  File "/lustre03/project/6057785/zhan8425/HistoKT/src/adas/datasets/TransformedDataset.py", line 33, in __init__
+    self.samples = pickle.load(open(os.path.join(self.root, self.split+".pickle"), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/localscratch/zhan8425.22714199.0/CRC_transformed/train.pickle'
