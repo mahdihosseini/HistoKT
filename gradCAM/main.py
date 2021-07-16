@@ -2,8 +2,10 @@ import argparse
 import yaml
 import torch
 import os
+import glob
 import cv2
 import numpy as np
+import csv
 
 from PIL import Image
 from pytorch_grad_cam import GradCAM
@@ -32,6 +34,7 @@ transformed_norm_weights = {
     'PCam_transformed': {'mean': [0.6970, 0.5330, 0.6878], 'std': [0.2168, 0.2603, 0.1933]},
     'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]}}
 
+# dataset number of classes
 dataset_classes = {
     "ADP": 9,
     "GlaS_transformed": 2,
@@ -80,19 +83,30 @@ def generate_gradCAM(args):
     cam = GradCAM(model=model, target_layer=target_layer, use_cuda=args.use_cuda)
     print("success")
 
-    img_name = os.path.splitext(os.path.basename(args.image_path))[0]
-    # print(img_name)
-    img, input_tensor = img_to_tensor(args.image_path,args.dataset_name)
+    return model, cam
+
+def create_output(args,model,cam,img_file,target_category):
+
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     print("generating gradCAM output")
+
+    img_name = os.path.splitext(os.path.basename(img_file))[0]
+    img, input_tensor = img_to_tensor(img_file,args.dataset_name)
+
+
     grayscale_cam = cam(input_tensor=input_tensor,
+                        target_category=target_category,
                         aug_smooth=args.aug_smooth,
                         eigen_smooth=args.eigen_smooth)
 
-    grayscale_cam = grayscale_cam[0, :]
+    grayscale_cam = grayscale_cam[0,:]
 
     cam_image = show_cam_on_image(img, grayscale_cam, use_rgb=True)
     print("success")
+
+    model.to(device)
+    model.eval()
 
     print("saving gradCAM output")
     cam_image = cv2.cvtColor(cam_image, cv2.COLOR_RGB2BGR)
@@ -110,8 +124,6 @@ def generate_gradCAM(args):
     print("success")
 
 if(__name__=="__main__"):
-    mini_batch_size = 32
-    num_workers = 4
 
     # dataset_name_list = ["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed", "CRC_transformed","PCam_transformed"]
     parser = argparse.ArgumentParser(description="gradCAM")
@@ -149,12 +161,36 @@ if(__name__=="__main__"):
             'of cam_weights*activations')
 
     args = parser.parse_args()
-    # if not(os.path.exists(args.image_path) and os.path.isfile(args.image_path)):
-    #     print("error: image_path is not defined")
-    #     raise SystemExit
-    # if not(os.path.exists(args.model_path) and os.path.isfile(args.model_path)):
-    #     print("error: model_path is not defined")
-    #     raise SystemExit
+    if not(os.path.exists(args.image_path)):
+        print("error: image_path is not defined")
+        raise SystemExit
+    if not(os.path.exists(args.model_path) and os.path.isfile(args.model_path)):
+        print("error: model_path is not defined")
+        raise SystemExit
     if not(os.path.exists(args.output_path)):
         os.makedirs(args.output_path)
-    generate_gradCAM(args)
+
+    if(os.path.isfile(args.image_path)):
+        # image path points to specific image
+        model, cam = generate_gradCAM(args)
+        create_output(args,model,cam,args.image_path,None)
+    else:
+        # image path points to a directory of images
+        model, cam = generate_gradCAM(args)
+
+        class_file_list = []
+        try:
+            with open(os.path.join(args.image_path,"classes.csv")) as csvfile:
+                classes = csv.reader(csvfile)
+                for row in classes:
+                    class_file_list.append(row)
+                    print(row)
+        except IOError:
+            print("Error: cannot open classes.csv")
+            pass
+        for file in glob.glob(os.path.join(args.image_path,"*.jpg")) or glob.glob(os.path.join(args.image_path,"*.png")):
+            img_file = os.path.abspath(file)
+            img_name = os.path.splitext(os.path.basename(img_file))[0]
+            target_class = [int(x[1]) for x in class_file_list if(img_name in x[0])]
+            print(target_class)
+            create_output(args,model,cam,os.path.abspath(file),target_class)
