@@ -27,5 +27,5 @@ date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
 
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPretrainingConfigs/AJ-Lymph_transformed-None-configAdas.yaml --output new-ImageNet-pretraining-output/None/AJ-Lymph_transformed --checkpoint new-ImageNet-pretraining-checkpoint/None/AJ-Lymph_transformed --data $SLURM_TMPDIR --pretrained_model ImageNet_weights/ResNet18ImageNet.pth --freeze_encoder False --save-freq 200 --norm_vals ImageNet
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPretrainingConfigs/AJ-Lymph_transformed-None-configAdas.yaml --output new-ImageNet-pretraining-output/None/AJ-Lymph_transformed --checkpoint new-ImageNet-pretraining-checkpoint/None/AJ-Lymph_transformed --data $SLURM_TMPDIR --pretrained_model ImageNet_weights/resnet18ImageNet.pth --freeze_encoder False --save-freq 200 --norm_vals ImageNet
 
