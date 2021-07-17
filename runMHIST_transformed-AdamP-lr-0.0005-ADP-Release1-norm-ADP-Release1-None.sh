@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/MHIST_transformed/AdamP/None-config.yaml --output ADP-Release1_norm_ADP-Release1_color_aug_None/MHIST_transformed/AdamP/output/deep_tuning/ --checkpoint ADP-Release1_norm_ADP-Release1_color_aug_None/MHIST_transformed/AdamP/checkpoint/deep_tuning/lr-0.0005 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/best-pretraining-checkpoint/None/ADP-Release1/best_trial_2_date_2021-07-13-19-43-53.pth.tar --freeze_encoder False --save-freq 200 --norm_vals ADP-Release1 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/MHIST_transformed/AdamP/None-config.yaml --output ADP-Release1_norm_ADP-Release1_color_aug_None_ImageNet/MHIST_transformed/AdamP/output/deep_tuning/ --checkpoint ADP-Release1_norm_ADP-Release1_color_aug_None_ImageNet/MHIST_transformed/AdamP/checkpoint/deep_tuning/lr-0.0005 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/ADP-Release1.pth.tar --freeze_encoder False --save-freq 200 --norm_vals ADP-Release1 
 

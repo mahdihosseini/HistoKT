@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/ADP-Release1/AdamP/None-config.yaml --output CRC_transformed_norm_CRC_transformed_color_aug_None/ADP-Release1/AdamP/output/deep_tuning/ --checkpoint CRC_transformed_norm_CRC_transformed_color_aug_None/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/best-pretraining-checkpoint/None/CRC_transformed/best_trial_0_date_2021-07-13-19-43-35.pth.tar --freeze_encoder False --save-freq 200 --norm_vals CRC_transformed 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/ADP-Release1/AdamP/None-config.yaml --output CRC_transformed_norm_CRC_transformed_color_aug_None_ImageNet/ADP-Release1/AdamP/output/deep_tuning/ --checkpoint CRC_transformed_norm_CRC_transformed_color_aug_None_ImageNet/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/CRC_transformed.pth.tar --freeze_encoder False --save-freq 200 --norm_vals CRC_transformed 
 

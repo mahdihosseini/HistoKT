@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/BCSS_transformed/AdamP/None-config.yaml --output AJ-Lymph_transformed_norm_AJ-Lymph_transformed_color_aug_None/BCSS_transformed/AdamP/output/deep_tuning/ --checkpoint AJ-Lymph_transformed_norm_AJ-Lymph_transformed_color_aug_None/BCSS_transformed/AdamP/checkpoint/deep_tuning/lr-0.001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/best-pretraining-checkpoint/None/AJ-Lymph_transformed/best_trial_1_date_2021-07-14-04-50-12.pth.tar --freeze_encoder False --save-freq 200 --norm_vals AJ-Lymph_transformed 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/BCSS_transformed/AdamP/None-config.yaml --output AJ-Lymph_transformed_norm_AJ-Lymph_transformed_color_aug_None_ImageNet/BCSS_transformed/AdamP/output/deep_tuning/ --checkpoint AJ-Lymph_transformed_norm_AJ-Lymph_transformed_color_aug_None_ImageNet/BCSS_transformed/AdamP/checkpoint/deep_tuning/lr-0.001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/AJ-Lymph_transformed.pth.tar --freeze_encoder False --save-freq 200 --norm_vals AJ-Lymph_transformed 
 

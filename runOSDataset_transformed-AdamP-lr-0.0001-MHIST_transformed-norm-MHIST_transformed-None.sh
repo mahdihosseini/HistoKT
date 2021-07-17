@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/OSDataset_transformed/AdamP/None-config.yaml --output MHIST_transformed_norm_MHIST_transformed_color_aug_None/OSDataset_transformed/AdamP/output/deep_tuning/ --checkpoint MHIST_transformed_norm_MHIST_transformed_color_aug_None/OSDataset_transformed/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/best-pretraining-checkpoint/None/MHIST_transformed/best_trial_0_date_2021-07-14-05-06-15.pth.tar --freeze_encoder False --save-freq 200 --norm_vals MHIST_transformed 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/OSDataset_transformed/AdamP/None-config.yaml --output MHIST_transformed_norm_MHIST_transformed_color_aug_None_ImageNet/OSDataset_transformed/AdamP/output/deep_tuning/ --checkpoint MHIST_transformed_norm_MHIST_transformed_color_aug_None_ImageNet/OSDataset_transformed/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/MHIST_transformed.pth.tar --freeze_encoder False --save-freq 200 --norm_vals MHIST_transformed 
 

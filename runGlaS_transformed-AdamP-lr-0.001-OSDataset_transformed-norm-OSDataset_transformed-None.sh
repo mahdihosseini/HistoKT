@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/GlaS_transformed/AdamP/None-config.yaml --output OSDataset_transformed_norm_OSDataset_transformed_color_aug_None/GlaS_transformed/AdamP/output/deep_tuning/ --checkpoint OSDataset_transformed_norm_OSDataset_transformed_color_aug_None/GlaS_transformed/AdamP/checkpoint/deep_tuning/lr-0.001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/best-pretraining-checkpoint/None/OSDataset_transformed/best_trial_2_date_2021-07-13-19-35-33.pth.tar --freeze_encoder False --save-freq 200 --norm_vals OSDataset_transformed 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/GlaS_transformed/AdamP/None-config.yaml --output OSDataset_transformed_norm_OSDataset_transformed_color_aug_None_ImageNet/GlaS_transformed/AdamP/output/deep_tuning/ --checkpoint OSDataset_transformed_norm_OSDataset_transformed_color_aug_None_ImageNet/GlaS_transformed/AdamP/checkpoint/deep_tuning/lr-0.001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/OSDataset_transformed.pth.tar --freeze_encoder False --save-freq 200 --norm_vals OSDataset_transformed 
 
