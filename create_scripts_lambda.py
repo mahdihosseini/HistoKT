@@ -242,10 +242,10 @@ def run_fine_tune(root, CC=True, node="cedar"):
         "PCam_transformed",
     ]
     datasets = [
-        # "ADP-Release1",
-        # "BCSS_transformed",
-        # "OSDataset_transformed",
-        # "CRC_transformed",
+        "ADP-Release1",
+        "BCSS_transformed",
+        "OSDataset_transformed",
+        "CRC_transformed",
         "AJ-Lymph_transformed",
         "BACH_transformed",
         "GlaS_transformed",
@@ -274,10 +274,12 @@ def run_fine_tune(root, CC=True, node="cedar"):
             normalization_all = pretrained_dataset
             pretrained_model_name = pretrained_dataset
 
-            pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
-            files = os.listdir(pretrained_model_root)
-            assert len(files) == 1
-            pretrained_model = os.path.join(pretrained_model_root, files[0])
+            # pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
+            # files = os.listdir(pretrained_model_root)
+            # assert len(files) == 1
+            # pretrained_model = os.path.join(pretrained_model_root, files[0])
+
+            pretrained_model = f"{env_root}/BestImageNet_Weights/{pretrained_dataset}.pth.tar"
 
             if dataset == pretrained_dataset:
                 continue
@@ -417,8 +419,8 @@ date
                 for freeze_encoder in freeze_encoders:
                     run_part = f"""python src/adas/train.py \
 --config {env_root}/NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-config.yaml \
---output {pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
---checkpoint {pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+--output {pretrained_model_name}_norm_{normalization_all}_color_aug_None_ImageNet/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
+--checkpoint {pretrained_model_name}_norm_{normalization_all}_color_aug_None_ImageNet/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data {data_dir} \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
@@ -451,5 +453,5 @@ date
 
 if __name__ == "__main__":
     root_dir = ""
-    run_baselines(root_dir, CC=True, node="beluga")
-    # run_fine_tune(root_dir, CC=True, node="beluga")
+    # run_baselines(root_dir, CC=True, node="beluga")
+    run_fine_tune(root_dir, CC=True, node="beluga")
