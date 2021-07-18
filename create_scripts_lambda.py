@@ -212,10 +212,10 @@ python src/adas/train.py \
             outfile.write("".join(outlines))
 
 
-def run_fine_tune(root, CC=True, node="cedar"):
+def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
     runscripts = []
     # account = "def-plato"
-    account = "def-msh"
+    # account = "def-msh"
 
     if node == "cedar":
         gpu = "v100l"
@@ -249,11 +249,11 @@ def run_fine_tune(root, CC=True, node="cedar"):
         "BCSS_transformed",
         "OSDataset_transformed",
         "CRC_transformed",
-        "AJ-Lymph_transformed",
-        "BACH_transformed",
-        "GlaS_transformed",
-        "MHIST_transformed",
-        "PCam_transformed",
+        # "AJ-Lymph_transformed",
+        # "BACH_transformed",
+        # "GlaS_transformed",
+        # "MHIST_transformed",
+        # "PCam_transformed",
     ]
     gpu_start = 1
     for dataset in datasets:
@@ -460,5 +460,5 @@ date
 
 if __name__ == "__main__":
     root_dir = ""
-    run_baselines(root_dir, CC=False, node="beluga")
-    # run_fine_tune(root_dir, CC=True, node="beluga")
+    # run_baselines(root_dir, CC=False, node="beluga")
+    run_fine_tune(root_dir, CC=True, node="beluga", account="def-msh")

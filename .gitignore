@@ -202,3 +202,5 @@ tags
 # NEVER TO BE COMMITTED TO REPO. May contain secrets, like embedded
 # username:password@ in DATABASE_URL.
 /.env
+/Plots/ADP post - Sheet2.csv
+/Plots/Learning Rate Search.png
