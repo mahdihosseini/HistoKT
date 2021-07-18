@@ -20,7 +20,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 optimizer: 'Adas' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
 scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
-level : 'L1' #L1, L2, L3, L3Only
+level : 'L3' #L1, L2, L3, L3Only
 
 ###### Augmentation Methods ######
 # ADP ONLY

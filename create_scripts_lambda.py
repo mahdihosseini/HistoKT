@@ -17,8 +17,8 @@ best_lrs = {
 def run_baselines(root, CC=True, node="cedar"):
     runscripts = []
     colour_aug = "None"
-    pretrained_model = "ImageNet_weights/resnet18ImageNet.pth"
-    normalization = "ImageNet"
+    # pretrained_model = "ImageNet_weights/resnet18ImageNet.pth"
+    normalization = "ADP-Release1"
 
     account = "def-plato"
     # account = "def-msh"
@@ -30,18 +30,18 @@ def run_baselines(root, CC=True, node="cedar"):
     elif node == "graham":
         gpu = "p100"
 
-    gpu_start = 1
+    gpu_start = 2
 
     for dataset in [
         "ADP-Release1",
-        "BCSS_transformed",
-        "OSDataset_transformed",
-        "CRC_transformed",
-        "AJ-Lymph_transformed",
-        "BACH_transformed",
-        "GlaS_transformed",
-        "MHIST_transformed",
-        "PCam_transformed",
+        # "BCSS_transformed",
+        # "OSDataset_transformed",
+        # "CRC_transformed",
+        # "AJ-Lymph_transformed",
+        # "BACH_transformed",
+        # "GlaS_transformed",
+        # "MHIST_transformed",
+        # "PCam_transformed",
     ]:
 
         if CC:
@@ -54,6 +54,7 @@ def run_baselines(root, CC=True, node="cedar"):
             env_name = "ENV"
             data_dir = "$SLURM_TMPDIR"
         else:
+            data_storage = "None"
             env_root = "/ssd2/HistoKT/source"
             env_name = "env"
             data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
@@ -86,7 +87,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 optimizer: 'Adas' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
 scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
-level : 'L1' #L1, L2, L3, L3Only
+level : 'L3' #L1, L2, L3, L3Only
 
 ###### Augmentation Methods ######
 # ADP ONLY
@@ -189,19 +190,19 @@ date
 
 python src/adas/train.py \
 --config {env_root}/NewPretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml \
---output new-ImageNet-pretraining-output/{colour_aug}/{dataset} \
---checkpoint new-ImageNet-pretraining-checkpoint/{colour_aug}/{dataset} \
+--output new-ADPL3-pretraining-output/{colour_aug}/{dataset} \
+--checkpoint new-ADPL3-pretraining-checkpoint/{colour_aug}/{dataset} \
 --data {data_dir} \
---pretrained_model {pretrained_model} \
 --freeze_encoder False \
 --save-freq 200 \
---norm_vals {normalization}
+--norm_vals {normalization} \
+{"" if CC else f"--gpu {gpu_start}"}
 
 """
 
             outfile.write(data if not CC else dataCC + data)
 
-        with open(f"runslurm_ImageNet_baselines.sh", "w") as outfile:
+        with open(f"runslurm_ADPL3_baselines.sh", "w") as outfile:
 
             outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts]
 
@@ -263,9 +264,13 @@ def run_fine_tune(root, CC=True, node="cedar"):
             elif node == "beluga":
                 data_storage = "/scratch/stephy/HistoKTdata"
                 env_root = "/home/zhan8425/projects/def-msh/zhan8425/HistoKT"
+            elif node == "graham":
+                data_storage = "/scratch/stephy/HistoKTdata"
+                env_root = "/home/zhan8425/projects/def-msh/zhan8425/HistoKT"
             env_name = "ENV"
             data_dir = "$SLURM_TMPDIR"
         else:
+            data_storage = "None"
             env_root = "/ssd2/HistoKT/source"
             env_name = "env"
             data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
@@ -453,5 +458,5 @@ date
 
 if __name__ == "__main__":
     root_dir = ""
-    # run_baselines(root_dir, CC=True, node="beluga")
-    run_fine_tune(root_dir, CC=True, node="cedar")
+    run_baselines(root_dir, CC=False, node="beluga")
+    # run_fine_tune(root_dir, CC=True, node="beluga")
