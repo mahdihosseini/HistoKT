@@ -211,8 +211,8 @@ python src/adas/train.py \
 
 def run_fine_tune(root, CC=True, node="cedar"):
     runscripts = []
-    account = "def-plato"
-    # account = "def-msh"
+    # account = "def-plato"
+    account = "def-msh"
 
     if node == "cedar":
         gpu = "v100l"
@@ -271,7 +271,7 @@ def run_fine_tune(root, CC=True, node="cedar"):
             data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
 
         for pretrained_dataset in pretrained_datasets:
-            normalization_all = pretrained_dataset
+            normalization_all = "ImageNet"
             pretrained_model_name = pretrained_dataset
 
             # pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
@@ -454,4 +454,4 @@ date
 if __name__ == "__main__":
     root_dir = ""
     # run_baselines(root_dir, CC=True, node="beluga")
-    run_fine_tune(root_dir, CC=True, node="beluga")
+    run_fine_tune(root_dir, CC=True, node="cedar")
