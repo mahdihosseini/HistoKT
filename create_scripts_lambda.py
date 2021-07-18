@@ -18,7 +18,8 @@ def run_baselines(root, CC=True, node="cedar"):
     runscripts = []
     colour_aug = "None"
     # pretrained_model = "ImageNet_weights/resnet18ImageNet.pth"
-    normalization = "ADP-Release1"
+    pretrained_model = "ImageNet"
+    normalization = "ImageNet"
 
     account = "def-plato"
     # account = "def-msh"
@@ -30,7 +31,7 @@ def run_baselines(root, CC=True, node="cedar"):
     elif node == "graham":
         gpu = "p100"
 
-    gpu_start = 2
+    gpu_start = 3
 
     for dataset in [
         "ADP-Release1",
@@ -138,7 +139,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
 
         runscripts.append(f"run{dataset}-{colour_aug}.sh")
 
-        with open(f"run{dataset}-{colour_aug}.sh", "w") as outfile:
+        with open(f"run{dataset}-{colour_aug}-ImageNet.sh", "w") as outfile:
             time_taken = "11:00:00"
             if "CRC" in dataset:
                 datafile = "CRC_transformed_2000_per_class"
@@ -190,13 +191,14 @@ date
 
 python src/adas/train.py \
 --config {env_root}/NewPretrainingConfigs/{dataset}-{colour_aug}-configAdas.yaml \
---output new-ADPL3-pretraining-output/{colour_aug}/{dataset} \
---checkpoint new-ADPL3-pretraining-checkpoint/{colour_aug}/{dataset} \
+--output new-ADPL3-ImageNet-pretraining-output/{colour_aug}/{dataset} \
+--checkpoint new-ADPL3-ImageNet-pretraining-checkpoint/{colour_aug}/{dataset} \
 --data {data_dir} \
 --freeze_encoder False \
 --save-freq 200 \
 --norm_vals {normalization} \
-{"" if CC else f"--gpu {gpu_start}"}
+{"" if CC else f"--gpu {gpu_start}"} \
+--pretrained_model {pretrained_model}
 
 """
 
