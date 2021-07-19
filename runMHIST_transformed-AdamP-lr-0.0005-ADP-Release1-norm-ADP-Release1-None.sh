@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-msh
+#SBATCH --account=def-plato
 #SBATCH --time=11:00:00
 #SBATCH --output=%x-%j.out
 
