@@ -468,4 +468,4 @@ date
 if __name__ == "__main__":
     root_dir = ""
     # run_baselines(root_dir, CC=False, node="beluga")
-    run_fine_tune(root_dir, CC=True, node="graham", account="def-msh")
+    run_fine_tune(root_dir, CC=False, node="graham", account="def-msh")
