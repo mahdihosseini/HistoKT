@@ -1,0 +1,61 @@
+transferring data
+
+Mon 19 Jul 2021 12:17:53 AM EDT
+tar: /scratch/stephy/HistoKTdata/ADP V1.0 Release.tar: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+Finished transferring
+
+Mon 19 Jul 2021 12:17:53 AM EDT
+Adas: Argument Parser Options
+---------------------------------------------
+    config              : /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/ADP-Release1/AdamP/None-config.yaml
+    data                : /localscratch/zhan8425.50224785.0       
+    output              : MHIST_transformed_norm_ImageNet_color_aug_None_ADPL3/ADP-Release1/AdamP/output/deep_tuning/
+    checkpoint          : MHIST_transformed_norm_ImageNet_color_aug_None_ADPL3/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001
+    resume              : None                                    
+    pretrained_model    : /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/MHIST_transformed.pth.tar
+    freeze_encoder      : 0                                       
+    root                : .                                       
+    save_freq           : 200                                     
+    cpu                 : 0                                       
+    gpu                 : 0                                       
+    mpd                 : 0                                       
+    dist_url            : tcp://127.0.0.1:23456                   
+    dist_backend        : nccl                                    
+    world_size          : -1                                      
+    rank                : -1                                      
+    color_aug           : None                                    
+    norm_vals           : ImageNet                                
+---------------------------------------------
+Adas: Output dir MHIST_transformed_norm_ImageNet_color_aug_None_ADPL3/ADP-Release1/AdamP/output/deep_tuning does not exist, building
+ImageNet
+Traceback (most recent call last):
+  File "src/adas/train.py", line 900, in <module>
+    main(args)
+  File "src/adas/train.py", line 859, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "src/adas/train.py", line 871, in main_worker
+    training_agent = TrainingAgent(
+  File "src/adas/train.py", line 246, in __init__
+    self.load_config(config_path, data_path)
+  File "src/adas/train.py", line 294, in load_config
+    self.test_loader, self.num_classes = get_data(
+  File "/project/6057785/zhan8425/HistoKT/src/adas/data.py", line 176, in get_data
+    train_set = ADPDataset(level,
+  File "/project/6057785/zhan8425/HistoKT/src/adas/datasets/ADPDataset.py", line 112, in __init__
+    ADP_data = pd.read_csv(filepath_or_buffer=csv_file_path, header=0)  # reads data and returns a pd.dataframe
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/parsers.py", line 610, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/parsers.py", line 462, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/parsers.py", line 819, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/parsers.py", line 1050, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/parsers.py", line 1867, in __init__
+    self._open_handles(src, kwds)
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/parsers.py", line 1362, in _open_handles
+    self.handles = get_handle(
+  File "/project/6057785/zhan8425/HistoKT/ENV/lib/python3.8/site-packages/pandas/io/common.py", line 642, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/localscratch/zhan8425.50224785.0/ADP V1.0 Release/ADP_EncodedLabels_Release1_Flat.csv'
