@@ -278,15 +278,15 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
             data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
 
         for pretrained_dataset in pretrained_datasets:
-            normalization_all = "ImageNet"
+            normalization_all = pretrained_dataset
             pretrained_model_name = pretrained_dataset
 
-            # pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
-            # files = os.listdir(pretrained_model_root)
-            # assert len(files) == 1
-            # pretrained_model = os.path.join(pretrained_model_root, files[0])
+            pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
+            files = os.listdir(pretrained_model_root)
+            assert len(files) == 1
+            pretrained_model = os.path.join(pretrained_model_root, files[0])
 
-            pretrained_model = f"{env_root}/BestImageNet_Weights/{pretrained_dataset}.pth.tar"
+            # pretrained_model = f"{env_root}/BestImageNet_Weights/{pretrained_dataset}.pth.tar"
             # pretrained_model = f"{env_root}/ADPL3_weights/{normalization_all}.pth.tar"
 
             if dataset == pretrained_dataset:
