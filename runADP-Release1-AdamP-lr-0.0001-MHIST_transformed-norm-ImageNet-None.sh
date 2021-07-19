@@ -6,12 +6,12 @@
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-msh
+#SBATCH --account=def-plato
 #SBATCH --time=23:00:00
 #SBATCH --output=%x-%j.out
 
@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/ADP-Release1/AdamP/None-config.yaml --output MHIST_transformed_norm_ImageNet_color_aug_None_ImageNet/ADP-Release1/AdamP/output/deep_tuning/ --checkpoint MHIST_transformed_norm_ImageNet_color_aug_None_ImageNet/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/MHIST_transformed.pth.tar --freeze_encoder False --save-freq 200 --norm_vals ImageNet 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/ADP-Release1/AdamP/None-config.yaml --output MHIST_transformed_norm_ImageNet_color_aug_None_ADPL3/ADP-Release1/AdamP/output/deep_tuning/ --checkpoint MHIST_transformed_norm_ImageNet_color_aug_None_ADPL3/ADP-Release1/AdamP/checkpoint/deep_tuning/lr-0.0001 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/MHIST_transformed.pth.tar --freeze_encoder False --save-freq 200 --norm_vals ImageNet 
 
