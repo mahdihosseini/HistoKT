@@ -6,12 +6,12 @@
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-msh
+#SBATCH --account=def-plato
 #SBATCH --time=23:00:00
 #SBATCH --output=%x-%j.out
 
