@@ -458,16 +458,11 @@ date
 
                 outfile.write("#!/bin/bash\n")
                 outfile.write("".join(outlines))
-    # if CC:
-    #     with open(f"runslurm_ADPL3_{normalization_all}.sh", "w") as outfile:
-    #         outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts]
-    #         outfile.write("#!/bin/bash\n")
-    #         outfile.write("".join(outlines))
-    # else:
-    #     with open(f"runlambda_ADPL3_{dataset}.sh", "w") as outfile:
-    #         outlines = [f"bash {filestring}\n" for filestring in runscripts]
-    #         outfile.write("#!/bin/bash\n")
-    #         outfile.write("".join(outlines))
+    if CC:
+        with open(f"runslurm_ADPL3_{normalization_all}.sh", "w") as outfile:
+            outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts]
+            outfile.write("#!/bin/bash\n")
+            outfile.write("".join(outlines))
 
 
 if __name__ == "__main__":
