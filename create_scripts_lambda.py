@@ -234,26 +234,26 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
     color_aug = "None"
 
     pretrained_datasets = [
-        "ADP-Release1",
-        "BCSS_transformed",
-        "OSDataset_transformed",
-        "CRC_transformed",
-        "AJ-Lymph_transformed",
-        "BACH_transformed",
-        "GlaS_transformed",
-        "MHIST_transformed",
-        "PCam_transformed",
-    ]
-    datasets = [
         # "ADP-Release1",
-        "BCSS_transformed",
+        # "BCSS_transformed",
         "OSDataset_transformed",
-        "CRC_transformed",
+        # "CRC_transformed",
         # "AJ-Lymph_transformed",
         # "BACH_transformed",
         # "GlaS_transformed",
         # "MHIST_transformed",
         # "PCam_transformed",
+    ]
+    datasets = [
+        # "ADP-Release1",
+        # "BCSS_transformed",
+        # "OSDataset_transformed",
+        # "CRC_transformed",
+        # "AJ-Lymph_transformed",
+        # "BACH_transformed",
+        # "GlaS_transformed",
+        # "MHIST_transformed",
+        "PCam_transformed",
     ]
     gpu_start = 0
     for dataset in datasets:
