@@ -235,17 +235,17 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
 
     pretrained_datasets = [
         "ADP-Release1",
-        "BCSS_transformed",
-        "OSDataset_transformed",
-        "CRC_transformed",
-        "AJ-Lymph_transformed",
-        "BACH_transformed",
-        "GlaS_transformed",
-        "MHIST_transformed",
-        "PCam_transformed",
+        # "BCSS_transformed",
+        # "OSDataset_transformed",
+        # "CRC_transformed",
+        # "AJ-Lymph_transformed",
+        # "BACH_transformed",
+        # "GlaS_transformed",
+        # "MHIST_transformed",
+        # "PCam_transformed",
     ]
     datasets = [
-        "ADP-Release1",
+        # "ADP-Release1",
         "BCSS_transformed",
         "OSDataset_transformed",
         "CRC_transformed",
@@ -255,7 +255,7 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
         # "MHIST_transformed",
         # "PCam_transformed",
     ]
-    gpu_start = 1
+    gpu_start = 0
     for dataset in datasets:
 
         # choose from no_norm, target_domain, or a dataset name
@@ -286,7 +286,8 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
             # assert len(files) == 1
             # pretrained_model = os.path.join(pretrained_model_root, files[0])
 
-            pretrained_model = f"{env_root}/BestImageNet_Weights/{pretrained_dataset}.pth.tar"
+            # pretrained_model = f"{env_root}/BestImageNet_Weights/{pretrained_dataset}.pth.tar"
+            pretrained_model = f"{env_root}/ADPL3_weights/{normalization_all}.pth.tar"
 
             if dataset == pretrained_dataset:
                 continue
@@ -426,8 +427,8 @@ date
                 for freeze_encoder in freeze_encoders:
                     run_part = f"""python src/adas/train.py \
 --config {env_root}/NewPostTrainingConfigs/{dataset}/{optimizer}/{color_aug}-config.yaml \
---output {pretrained_model_name}_norm_{normalization_all}_color_aug_None_ImageNet/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
---checkpoint {pretrained_model_name}_norm_{normalization_all}_color_aug_None_ImageNet/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+--output {pretrained_model_name}_norm_{normalization_all}_color_aug_None_ADPL3/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
+--checkpoint {pretrained_model_name}_norm_{normalization_all}_color_aug_None_ADPL3/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data {data_dir} \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
@@ -443,7 +444,7 @@ date
 
     if CC:
         for dataset in datasets:
-            with open(f"runslurm_{dataset}.sh", "w") as outfile:
+            with open(f"runslurm_ADPL3_{normalization_all}.sh", "w") as outfile:
 
                 outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts if "run"+dataset in filestring]
 
@@ -451,14 +452,25 @@ date
                 outfile.write("".join(outlines))
     else:
         for dataset in datasets:
-            with open(f"runlambda_{dataset}.sh", "w") as outfile:
+            with open(f"runlambda_ADPL3_{dataset}.sh", "a") as outfile:
+
                 outlines = [f"bash {filestring}\n" for filestring in runscripts if "run"+dataset in filestring]
 
-                outfile.write("#!/bin/bash\n")
+                # outfile.write("#!/bin/bash\n")
                 outfile.write("".join(outlines))
+    # if CC:
+    #     with open(f"runslurm_ADPL3_{normalization_all}.sh", "w") as outfile:
+    #         outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts]
+    #         outfile.write("#!/bin/bash\n")
+    #         outfile.write("".join(outlines))
+    # else:
+    #     with open(f"runlambda_ADPL3_{dataset}.sh", "w") as outfile:
+    #         outlines = [f"bash {filestring}\n" for filestring in runscripts]
+    #         outfile.write("#!/bin/bash\n")
+    #         outfile.write("".join(outlines))
 
 
 if __name__ == "__main__":
     root_dir = ""
     # run_baselines(root_dir, CC=False, node="beluga")
-    run_fine_tune(root_dir, CC=True, node="beluga", account="def-msh")
+    run_fine_tune(root_dir, CC=False, node="beluga", account="def-msh")
