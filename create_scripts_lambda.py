@@ -246,14 +246,14 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
     ]
     datasets = [
         # "ADP-Release1",
-        "BCSS_transformed",
-        "OSDataset_transformed",
-        "CRC_transformed",
-        # "AJ-Lymph_transformed",
-        # "BACH_transformed",
-        # "GlaS_transformed",
-        # "MHIST_transformed",
-        # "PCam_transformed",
+        # "BCSS_transformed",
+        # "OSDataset_transformed",
+        # "CRC_transformed",
+        "AJ-Lymph_transformed",
+        "BACH_transformed",
+        "GlaS_transformed",
+        "MHIST_transformed",
+        "PCam_transformed",
     ]
     gpu_start = 0
     for dataset in datasets:
@@ -278,7 +278,7 @@ def run_fine_tune(root, CC=True, node="cedar", account="def-msh"):
             data_dir = f"/ssd{gpu_start + 1}/users/mhosseini/datasets/"
 
         for pretrained_dataset in pretrained_datasets:
-            normalization_all = "ImageNet"
+            normalization_all = "ADP-Release1"
             pretrained_model_name = pretrained_dataset
 
             # pretrained_model_root = f"{env_root}/best-pretraining-checkpoint/None/{pretrained_dataset}"
@@ -321,7 +321,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 optimizer: '{optimizer}' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
 scheduler: 'StepLR' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
-level : 'L1' #L1, L2, L3, L3Only
+level : 'L3' #L1, L2, L3, L3Only
 
 ###### Augmentation Methods ######
 # ADP ONLY
@@ -444,7 +444,7 @@ date
 
     if CC:
         for dataset in datasets:
-            with open(f"runslurm_ADPL3_{normalization_all}.sh", "w") as outfile:
+            with open(f"runslurm_ADPL3_{normalization_all}_{dataset}.sh", "w") as outfile:
 
                 outlines = [f"sbatch {filestring}\nsleep 2\n" for filestring in runscripts if "run"+dataset in filestring]
 
@@ -456,7 +456,7 @@ date
 
                 outlines = [f"bash {filestring}\n" for filestring in runscripts if "run"+dataset in filestring]
 
-                # outfile.write("#!/bin/bash\n")
+                outfile.write("#!/bin/bash\n")
                 outfile.write("".join(outlines))
     # if CC:
     #     with open(f"runslurm_ADPL3_{normalization_all}.sh", "w") as outfile:
@@ -473,4 +473,4 @@ date
 if __name__ == "__main__":
     root_dir = ""
     # run_baselines(root_dir, CC=False, node="beluga")
-    run_fine_tune(root_dir, CC=False, node="beluga", account="def-msh")
+    run_fine_tune(root_dir, CC=True, node="graham", account="def-msh")

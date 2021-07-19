@@ -6,12 +6,12 @@
 ### GRAHAM: v100, t4
 ### see https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm
 
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=16000M
-#SBATCH --account=def-plato
+#SBATCH --account=def-msh
 #SBATCH --time=11:00:00
 #SBATCH --output=%x-%j.out
 
@@ -26,5 +26,5 @@ echo ""
 date
 
 source /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ENV/bin/activate
-python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/BACH_transformed/AdamP/None-config.yaml --output ADP-Release1_norm_ADP-Release1_color_aug_None_ImageNet/BACH_transformed/AdamP/output/deep_tuning/ --checkpoint ADP-Release1_norm_ADP-Release1_color_aug_None_ImageNet/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.00005 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/BestImageNet_Weights/ADP-Release1.pth.tar --freeze_encoder False --save-freq 200 --norm_vals ADP-Release1 
+python src/adas/train.py --config /home/zhan8425/projects/def-msh/zhan8425/HistoKT/NewPostTrainingConfigs/BACH_transformed/AdamP/None-config.yaml --output ADP-Release1_norm_ADP-Release1_color_aug_None_ADPL3/BACH_transformed/AdamP/output/deep_tuning/ --checkpoint ADP-Release1_norm_ADP-Release1_color_aug_None_ADPL3/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.00005 --data $SLURM_TMPDIR --pretrained_model /home/zhan8425/projects/def-msh/zhan8425/HistoKT/ADPL3_weights/ADP-Release1.pth.tar --freeze_encoder False --save-freq 200 --norm_vals ADP-Release1 
 
