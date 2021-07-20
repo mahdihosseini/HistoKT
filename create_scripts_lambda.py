@@ -673,8 +673,8 @@ date
                         for freeze_encoder in freeze_encoders:
                             run_part = f"""python src/adas/train.py \
 --config {env_root}/WeightSharingTrainingConfigs/{dataset}/{optimizer}/lr-{learning_rate}-config.yaml \
---output {pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
---checkpoint {pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
+--output weight_sharing/{pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/output/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/ \
+--checkpoint weight_sharing/{pretrained_model_name}_norm_{normalization_all}_color_aug_None/{dataset}/{optimizer}/checkpoint/{"fine_tuning" if freeze_encoder == "True" else "deep_tuning"}/lr-{learning_rate} \
 --data {data_dir} \
 --pretrained_model {pretrained_model} \
 --freeze_encoder {freeze_encoder} \
