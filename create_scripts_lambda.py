@@ -697,10 +697,10 @@ date
     else:
         for weight_folder in weight_folders:
             with open(f"runlambda_weight_transfer_{weight_folder}.sh", "w") as outfile:
-                outlines = runscripts[weight_folder]
+                outlines = [f"bash {script}\n" for script in runscripts[weight_folder]]
 
                 outfile.write("#!/bin/bash\n")
-                outfile.write("\n".join(outlines))
+                outfile.write("".join(outlines))
 
 
 if __name__ == "__main__":
