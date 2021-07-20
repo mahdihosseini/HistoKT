@@ -1,4 +1,4 @@
-# Repository specific 
+# Repository specific
 .adas-checkpoint
 .adas-data
 .adas-output
@@ -6,6 +6,7 @@
 *xlsx*
 eval/
 random_stuff/
+checkpoints/
 ADP_post_trained
 ImageNet_post_trained
 pretraining-output
