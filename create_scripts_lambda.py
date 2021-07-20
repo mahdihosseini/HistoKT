@@ -532,8 +532,7 @@ def run_fine_tune_combined(root, CC=False, node="cedar", account="def-msh"):
             pretrained_models = os.listdir(os.path.join(root, weight_folder))
             for pretrained_model in pretrained_models:
                 normalization_all = "target_domain" if "ImageNet" not in weight_folder else "ImageNet"
-                pretrained_model = os.path.join(root, weight_folder, pretrained_model)
-                pretrained_model_name = pretrained_model.split(".")[0]
+                pretrained_model_name = os.path.basename(pretrained_model).split(".")[0]
                 for learning_rate in learning_rates:
                     os.makedirs(f"WeightSharingTrainingConfigs/{dataset}/{optimizer}", exist_ok=True)
                     with open(os.path.join(root, f"WeightSharingTrainingConfigs/{dataset}/{optimizer}/lr-{learning_rate}-config.yaml"),
