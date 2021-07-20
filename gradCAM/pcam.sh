@@ -17,3 +17,21 @@ python3 main.py --image_path=$ROOT/examples/PCam/ \
 --dataset_name=PCam_transformed \
 --output_path=output/PCam_ADPpost \
 --aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/PCam/ \
+--model_path=$ROOT/examples/pretrain_nocoloraug/PCam_transformed/best_trial_1_date_2021-07-14-05-06-15.pth.tar \
+--dataset_name=PCam_transformed \
+--output_path=output/PCam_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/PCam/ \
+--model_path=$ROOT/examples/posttrain_ADP_nocoloraug/PCam_transformed/best_trial_1_date_2021-07-16-14-34-43.pth.tar \
+--dataset_name=PCam_transformed \
+--output_path=output/PCam_ADPpost_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/PCam/ \
+--model_path=$ROOT/examples/posttrain_ADP_nocoloraug_imagenet/PCam_transformed/best_trial_1_date_2021-07-16-14-34-43.pth.tar \
+--dataset_name=PCam_transformed \
+--output_path=output/PCam_ADPpost_nocoloraug \
+--aug_smooth=True --eigen_smooth=True

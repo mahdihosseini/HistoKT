@@ -17,3 +17,21 @@ python3 main.py --image_path=$ROOT/examples/OS/ \
 --dataset_name=OSDataset_transformed \
 --output_path=output/OS_ADPpost \
 --aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/OS/ \
+--model_path=$ROOT/examples/pretrain_nocoloraug/OSDataset_transformed/best_trial_2_date_2021-07-13-19-35-33.pth.tar \
+--dataset_name=OSDataset_transformed \
+--output_path=output/OS_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/OS/ \
+--model_path=$ROOT/examples/posttrain_ADP_nocoloraug/OSDataset_transformed/best_trial_2_date_2021-07-16-13-46-19.pth.tar \
+--dataset_name=OSDataset_transformed \
+--output_path=output/OS_ADPpost_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/OS/ \
+--model_path=$ROOT/examples/posttrain_ADP_nocoloraug_imagenet/OSDataset_transformed/best_trial_2_date_2021-07-16-13-46-19.pth.tar \
+--dataset_name=OSDataset_transformed \
+--output_path=output/OS_ADPpost_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
