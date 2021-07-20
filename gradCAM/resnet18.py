@@ -196,7 +196,7 @@ class ResNet(nn.Module):
 
         x = self.avgpool(x)
         x = torch.flatten(x, 1)
-        # x = self.fc(x)  ## remove last fully connected layer
+        x = self.fc(x)  ## remove last fully connected layer
 
         return x
 
