@@ -24,6 +24,7 @@ root_path = os.path.dirname(os.path.realpath(__file__))
 
 # defined in image_transformed/custom_augmentations.py
 transformed_norm_weights = {
+    'ADP-Release1': {"mean": [0.81233799, 0.64032477, 0.81902153], "std": [0.18129702, 0.25731668, 0.16800649]},
     'AIDPATH_transformed': {'mean': [0.6032, 0.3963, 0.5897], 'std': [0.1956, 0.2365, 0.1906]},
     'AJ-Lymph_transformed': {'mean': [0.4598, 0.3748, 0.4612], 'std': [0.1406, 0.1464, 0.1176]},
     'BACH_transformed': {'mean': [0.6880, 0.5881, 0.8209], 'std': [0.1632, 0.1841, 0.1175]},
@@ -32,7 +33,10 @@ transformed_norm_weights = {
     'MHIST_transformed': {'mean': [0.7361, 0.6469, 0.7735], 'std': [0.1812, 0.2303, 0.1530]},
     'OSDataset_transformed': {'mean': [0.8414, 0.6492, 0.7377], 'std': [0.1379, 0.2508, 0.1979]},
     'PCam_transformed': {'mean': [0.6970, 0.5330, 0.6878], 'std': [0.2168, 0.2603, 0.1933]},
-    'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]}}
+    'BCSS_transformed': {'mean': [0.7107, 0.4878, 0.6726], 'std': [0.1788, 0.2152, 0.1615]},
+    'no_norm': {'mean': [0.0, 0.0, 0.0], 'std': [1.0, 1.0, 1.0]},
+    'ImageNet': {'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]}
+}
 
 # dataset number of classes
 dataset_classes = {
@@ -54,10 +58,10 @@ def img_to_tensor(img_path,dataset):
     img = (np.float32(img) / 255)
     trans = transforms.Compose([
         transforms.ToTensor(),
-        # transforms.Normalize(
-        #     mean=transformed_norm_weights[dataset]["mean"],
-        #     std=transformed_norm_weights[dataset]["std"]
-        #     )
+        transforms.Normalize(
+            mean=transformed_norm_weights[dataset]["mean"],
+            std=transformed_norm_weights[dataset]["std"]
+            )
     ])
     tensor = trans(img).unsqueeze(0)
     return img, tensor
@@ -70,6 +74,8 @@ def generate_gradCAM(args):
         num_classes = dataset_classes[args.dataset_name]
     else:
         print("Error: Dataset not in dataset_classes dict")
+
+    print("num_classes: "+str(num_classes))
 
     print("loading model...")
     # print(args.model_path)
@@ -89,7 +95,7 @@ def create_output(args,model,cam,img_file,target_category):
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-    print("generating gradCAM output")
+    print("generating gradCAM output for model "+str(args.model_path))
 
     img_name = os.path.splitext(os.path.basename(img_file))[0]
     img, input_tensor = img_to_tensor(img_file,args.dataset_name)
@@ -108,19 +114,22 @@ def create_output(args,model,cam,img_file,target_category):
     model.to(device)
     model.eval()
 
+    pred = model.forward(input_tensor.to(device))
+    print(pred)
+
     print("saving gradCAM output")
     cam_image = cv2.cvtColor(cam_image, cv2.COLOR_RGB2BGR)
 
-    gb_model = GuidedBackpropReLUModel(model=model, use_cuda=args.use_cuda)
-    gb = gb_model(input_tensor)
-
-    cam_mask = cv2.merge([grayscale_cam, grayscale_cam, grayscale_cam])
-    cam_gb = deprocess_image(cam_mask * gb)
-    gb = deprocess_image(gb)
+    # gb_model = GuidedBackpropReLUModel(model=model, use_cuda=args.use_cuda)
+    # gb = gb_model(input_tensor)
+    #
+    # cam_mask = cv2.merge([grayscale_cam, grayscale_cam, grayscale_cam])
+    # cam_gb = deprocess_image(cam_mask * gb)
+    # gb = deprocess_image(gb)
 
     cv2.imwrite(os.path.join(args.output_path,img_name+"_gradcam.jpg"),cam_image)
-    cv2.imwrite(os.path.join(args.output_path,img_name+"_gradcam_gb.jpg"),gb)
-    cv2.imwrite(os.path.join(args.output_path,img_name+"_gradcam_gbcam.jpg"),cam_gb)
+    # cv2.imwrite(os.path.join(args.output_path,img_name+"_gradcam_gb.jpg"),gb)
+    # cv2.imwrite(os.path.join(args.output_path,img_name+"_gradcam_gbcam.jpg"),cam_gb)
     print("success")
 
 if(__name__=="__main__"):
