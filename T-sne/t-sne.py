@@ -1,5 +1,5 @@
 import os
-import cv2
+#import cv2
 import torch
 import random
 import numpy as np
@@ -12,7 +12,7 @@ from resnet18 import resnet18
 # import datasets
 from datasets import TransformedDataset
 from datasets import ADPDataset
-
+from datasets import BCSSDataset
 
 # defined in image_transformed/custom_augmentations.py
 transformed_norm_weights = {
@@ -24,7 +24,9 @@ transformed_norm_weights = {
     'MHIST_transformed': {'mean': [0.7361, 0.6469, 0.7735], 'std': [0.1812, 0.2303, 0.1530]},
     'OSDataset_transformed': {'mean': [0.8414, 0.6492, 0.7377], 'std': [0.1379, 0.2508, 0.1979]},
     'PCam_transformed': {'mean': [0.6970, 0.5330, 0.6878], 'std': [0.2168, 0.2603, 0.1933]},
-    'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]}}
+    'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]},
+    'BCSS_transformed': {'mean': [0.7107, 0.4878, 0.6726], 'std': [0.1788, 0.2152, 0.1615]},
+    'ImageNet': {'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]}}
 
 
 def fix_random_seeds():
@@ -46,15 +48,28 @@ def get_features(dataset_name, split, path_to_root, path_to_pth):
     transform_train = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(
-            mean=transformed_norm_weights[dataset_name]["mean"],
-            std=transformed_norm_weights[dataset_name]["std"])])
+            mean=transformed_norm_weights["ImageNet"]["mean"],
+            std=transformed_norm_weights["ImageNet"]["std"])])
 
     if dataset_name == 'ADP':
-        train_set = ADPDataset("L3Only",
+        train_set = ADPDataset("L1",
                                transform=transform_train,
                                root=path_to_root,
                                split=split)
 
+        train_sampler = torch.utils.data.distributed.DistributedSampler(
+            train_set) if dist else None
+
+        train_loader = torch.utils.data.DataLoader(
+            train_set,
+            batch_size=mini_batch_size,
+            shuffle=(train_sampler is None),
+            pin_memory=True,
+            num_workers=num_workers,
+            sampler=train_sampler)
+    elif dataset_name == "BCSS_transformed":
+        train_set = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split=split, transform=transform_train, multi_labelled=True, class_labels=True)
+        
         train_sampler = torch.utils.data.distributed.DistributedSampler(
             train_set) if dist else None
 
@@ -103,7 +118,7 @@ def get_features(dataset_name, split, path_to_root, path_to_pth):
                 y = y.type(torch.LongTensor)
                 y = y.flatten()
                 y = y.to(device, non_blocking=True)
-            if dataset_name == "ADP":
+            if dataset_name == "ADP" or dataset_name == "BCSS_transformed":
                 y = y.type(torch.LongTensor)
                 y = y.to(device, non_blocking=True)
 
@@ -129,7 +144,7 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
     for label in text_label:
         # find the samples of the current class in the data
         # multi-labeled
-        if "ADP" in output_filename:
+        if "ADP" in output_filename or "BCSS_transformed" in output_filename:
             indices = [i for i, l in enumerate(labels) if l[text_label[label]] == 1]
         else:
             indices = [i for i, l in enumerate(labels) if l == text_label[label]]
@@ -142,8 +157,8 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
         plt.scatter(current_tx, current_ty, label=label, alpha=0.3)
 
     # build a legend using the labels we set previously
-    plt.legend(loc='best')
-
+    #plt.legend(loc='best')
+    plt.axis('off')
     # save the plot
     plt.savefig(plots_dir + "/" + output_filename + ".png", bbox_inches='tight')
     plt.clf()
@@ -153,16 +168,20 @@ def main(dataset_name_list, root, checkpoint, output=None):
     fix_random_seeds()
     for dataset_name in dataset_name_list:
         path_to_pth_list = list()
-        path_to_dataset_cp = os.path.join(checkpoint, dataset_name)
+        if dataset_name == "ADP":
+            path_to_dataset_cp = os.path.join(checkpoint, "ADP-Release1")
+        else:
+            path_to_dataset_cp = os.path.join(checkpoint, dataset_name)
+        
+        path_to_dataset_cp = os.path.join(path_to_dataset_cp, "AdamP/checkpoint/deep_tuning")
+        if dataset_name == "BACH_transformed":
+            path_to_dataset_cp = os.path.join(path_to_dataset_cp, "lr-0.00005")
+        if dataset_name == "AJ-Lymph_transformed":
+            path_to_dataset_cp = os.path.join(path_to_dataset_cp, "lr-0.0002")
+        
         for file in os.listdir(path_to_dataset_cp):
-            if "per_class" in file:
-                temp = os.path.join(path_to_dataset_cp, file)
-                for file2 in os.listdir(temp):
-                    if ".pth" in file2 and "best_" in file2:
-                        path_to_pth_list.append(os.path.join(temp, file2))
-            else:
-                if ".pth" in file and "best_" in file:
-                    path_to_pth_list.append(os.path.join(path_to_dataset_cp, file))
+            if ".pth" in file and "best_" in file:
+                path_to_pth_list.append(os.path.join(path_to_dataset_cp, file))
 
         for path_to_pth in path_to_pth_list:
             print("path_to_pth: ", path_to_pth)
@@ -184,6 +203,7 @@ def main(dataset_name_list, root, checkpoint, output=None):
             x_max = np.max([np.max(tsne_train[:, 0]), np.max(tsne_val[:, 0]), np.max(tsne_test[:, 0])])
             y_min = np.min([np.min(tsne_train[:, 1]), np.min(tsne_val[:, 1]), np.min(tsne_test[:, 1])])
             y_max = np.max([np.max(tsne_train[:, 1]), np.max(tsne_val[:, 1]), np.max(tsne_test[:, 1])])
+            print("x limits: ", (x_min, x_max), " , y limits: ", (y_min, y_max))
             # initialize matplotlib plot
             plt.figure()
             ax = plt.gca()  # get the axis handle
@@ -198,11 +218,13 @@ def main(dataset_name_list, root, checkpoint, output=None):
                 ax = plt.gca()
                 ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=output)
+                
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
                 ax = plt.gca()
                 ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=output)
+                
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
                 ax = plt.gca()
@@ -214,11 +236,13 @@ def main(dataset_name_list, root, checkpoint, output=None):
                 ax = plt.gca()
                 ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=checkpoint)
+                
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
                 ax = plt.gca()
                 ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=checkpoint)
+                
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
                 ax = plt.gca()
@@ -233,10 +257,9 @@ if __name__ == '__main__':
     mini_batch_size = 32
     num_workers = 4
 
-    checkpoint = "/home/zhujiada/projects/def-plato/zhujiada/HistoKT/.adas-checkpoint-baseline"
-    root = "/scratch/zhan8425/HistoKTdata"
-    output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
+    checkpoint = "/ssd2/HistoKT/results/post_training_without_color_aug_ImageNet_norm_ImageNet/CRC_transformed_norm_ImageNet_color_aug_None_ImageNet"#"/home/zhujiada/projects/def-plato/zhujiada/HistoKT/.adas-checkpoint-baseline"
+    root = "/ssd2/HistoKT/datasets"#"/scratch/zhan8425/HistoKTdata"
+    output = "/ssd2/HistoKT/test/Tsne/post_ImageNet_CRC"#"/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
-    #dataset_name_list = ["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed", "CRC_transformed","PCam_transformed"]
-    dataset_name_list = ["PCam_transformed"]#["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","CRC_transformed","PCam_transformed"]
+    dataset_name_list = ["BACH_transformed", "AJ-Lymph_transformed"]#, "GlaS_transformed", "OSDataset_transformed", "MHIST_transformed","CRC_transformed","PCam_transformed", "BCSS_transformed"]
     main(dataset_name_list, root, checkpoint, output)
