@@ -159,6 +159,7 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
     # /MHIST_transformed" which contains files like best_trial_0_date_2021-06-14-22-23-51.pth
 
     for dataset_name in dataset_name_list:
+        print("****************************", dataset_name, "****************************")
         transform_test = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(
@@ -166,7 +167,7 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
                 std=transformed_norm_weights[dataset_name]["std"])])
 
         if dataset_name == 'ADP':
-            dataset = ADPDataset("L3Only", root=path_to_root, split='test', transform=transform_test)
+            dataset = ADPDataset("L1", root=path_to_root, split='test', transform=transform_test)
         elif dataset_name == "BCSS_transformed":
             dataset = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split='test', transform=transform_test, multi_labelled=True, class_labels=True)
         else:
@@ -209,12 +210,11 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
 
 
 if __name__ == "__main__":
-    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion"
-    root = "/scratch/zhan8425/HistoKTdata"
-    #root = sys.argv[1]
-    output = "/home/zhujiada/projects/def-plato/zhujiada/output_test_pretrain_color-distortion"  # None if same as the checkpoint dir
+    checkpoint = "/ssd2/HistoKT/results/new-pretraining-checkpoint/None"
+    root = "/ssd2/HistoKT/datasets"
+    output = "/ssd2/HistoKT/test/new-pretraining_test_output/None"  # None if same as the checkpoint dir
 
-    dataset_name_list = ["BCSS_transformed"]
+    dataset_name_list = ["CRC_transformed"]
     #["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed", "CRC_transformed","PCam_transformed"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass

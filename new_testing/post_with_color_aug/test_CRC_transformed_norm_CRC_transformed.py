@@ -159,14 +159,15 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
     # /MHIST_transformed" which contains files like best_trial_0_date_2021-06-14-22-23-51.pth
 
     for dataset_name in dataset_name_list:
+        print("****************************", dataset_name, "****************************")
         transform_test = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(
-                mean=transformed_norm_weights[dataset_name]["mean"],
-                std=transformed_norm_weights[dataset_name]["std"])])
+                mean=transformed_norm_weights["CRC_transformed"]["mean"],
+                std=transformed_norm_weights["CRC_transformed"]["std"])])
 
         if dataset_name == 'ADP':
-            dataset = ADPDataset("L3Only", root=path_to_root, split='test', transform=transform_test)
+            dataset = ADPDataset("L1", root=path_to_root, split='test', transform=transform_test)
         elif dataset_name == "BCSS_transformed":
             dataset = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split='test', transform=transform_test, multi_labelled=True, class_labels=True)
         else:
@@ -180,41 +181,41 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
             path_to_dataset_cp = os.path.join(path_to_checkpoint, "ADP-Release1")
         else:
             path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
+        path_to_dataset_cp = os.path.join(path_to_dataset_cp, "AdamP/checkpoint")
+        # file structure: ADP_level_1_norm_ADP-Release1/PCam_transformed/AdamP/checkpoint/deep_tuning/Color-Distortion/distortion-0.5/lr-0.001/
         for file in os.listdir(path_to_dataset_cp):
-            if "per_class" in file:
-                temp = os.path.join(path_to_dataset_cp, file)
-                for file2 in os.listdir(temp):                
-                    if ".pth" in file2 and "best_" in file2:
-                        path_to_pth = os.path.join(temp, file2)
-                        print(path_to_pth)
-                        if path_to_output is not None:
-                            path_to_out_data = os.path.join(path_to_output, dataset_name)
-                            if not os.path.isdir(path_to_out_data):
-                                os.makedirs(path_to_out_data)
-                            test_results(path_to_pth, test_dataloader, dataset_name+'_'+file, path_to_out_data)
-                        else:
-                            test_results(path_to_pth, test_dataloader, dataset_name+'_'+file)
-            else:
-                if ".pth" in file and "best_" in file:
-                    path_to_pth = os.path.join(path_to_dataset_cp, file)
-                    print(path_to_pth)
-                    if path_to_output is not None:
-                        path_to_out_data = os.path.join(path_to_output, dataset_name)
-                        if not os.path.isdir(path_to_out_data):
-                            os.makedirs(path_to_out_data)
-                        test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
-                    else:
-                        test_results(path_to_pth, test_dataloader, dataset_name)
+            tune = os.path.join(path_to_dataset_cp, file)
+            for file2 in os.listdir(tune):
+                color_aug = os.path.join(tune, file2)
+                for file3 in os.listdir(color_aug):
+                    color_rate = os.path.join(color_aug, file3)
+                    for file4 in os.listdir(color_rate):
+                        tune_rate = os.path.join(color_rate, file4)
+                        for file5 in os.listdir(tune_rate):
+                            if ".pth" in file5 and "best_" in file5:
+                                path_to_pth = os.path.join(tune_rate, file5)
+                                print(path_to_pth)
+                                if path_to_output is not None:
+                                    path_to_out_data = os.path.join(path_to_output, dataset_name)
+                                    path_to_out_data = os.path.join(path_to_out_data, "AdamP")
+                                    path_to_out_data = os.path.join(path_to_out_data, file)
+                                    path_to_out_data = os.path.join(path_to_out_data, file2)
+                                    path_to_out_data = os.path.join(path_to_out_data, file3)
+                                    path_to_out_data = os.path.join(path_to_out_data, file4)
+                                    if not os.path.isdir(path_to_out_data):
+                                        os.makedirs(path_to_out_data)
+                                    test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
+                                else:
+                                    test_results(path_to_pth, test_dataloader, dataset_name)
     return
 
 
 if __name__ == "__main__":
-    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/pretraining-checkpoint/Color-Distortion"
-    root = "/scratch/zhan8425/HistoKTdata"
-    #root = sys.argv[1]
-    output = "/home/zhujiada/projects/def-plato/zhujiada/output_test_pretrain_color-distortion"  # None if same as the checkpoint dir
+    checkpoint = "/ssd2/HistoKT/results/CRC_transformed_norm_CRC_transformed"
+    root = "/ssd2/HistoKT/datasets"
+    output = "/ssd2/HistoKT/test/CRC_transformed_norm_CRC_transformed_output"  # None if same as the checkpoint dir
 
-    dataset_name_list = ["BCSS_transformed"]
+    dataset_name_list = ["AJ-Lymph_transformed","BACH_transformed","GlaS_transformed","MHIST_transformed", "PCam_transformed"]
     #["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed", "CRC_transformed","PCam_transformed"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass

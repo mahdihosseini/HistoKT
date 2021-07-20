@@ -14,8 +14,9 @@ if __name__ == "__main__":
     dataset_root = "/home/zhujiada/scratch/PAIP/PAIP_example_data"
     svs_load_dir = os.path.join(dataset_root, "svs_folder/")
     svs_fns = sorted(glob.glob(svs_load_dir + "*.svs") + glob.glob(svs_load_dir + "*.SVS"))
+    level = 2
 
-    tif_save_dir = os.path.join(dataset_root, "tif_folder/")
+    tif_save_dir = os.path.join(dataset_root, f"tif_l{level}/")
     os.makedirs(tif_save_dir, exist_ok=True)
 
     wsi_uid_pattern = "[a-zA-Z]*_PNI2021chall_train_[0-9]{4}"
@@ -25,6 +26,6 @@ if __name__ == "__main__":
         wsi_uid = wsi_regex.findall(svs_fn)[0]
 
         slide = openslide.OpenSlide(svs_load_dir + wsi_uid + ".svs")
-        img = np.array(slide.read_region((0, 0), 0, slide.dimensions)) # produce RGBA images with float64
+        img = np.array(slide.read_region((0, 0), level, slide.level_dimensions[level])) # produce RGBA images with float64
         img = img[:, :, :3]  # drop A channel
-        io.imsave(tif_save_dir + wsi_uid + ".svs", img.astype(np.uint8))
+        io.imsave(tif_save_dir + wsi_uid + ".png", img.astype(np.uint8))
