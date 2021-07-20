@@ -168,7 +168,7 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
         if dataset_name == 'ADP':
             dataset = ADPDataset("L3Only", root=path_to_root, split='test', transform=transform_test)
         elif dataset_name == "BCSS_transformed":
-            dataset = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split='test', transform=transform_test)
+            dataset = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split='test', transform=transform_test, multi_labelled=True, class_labels=True)
         else:
             dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
         ### just for fast testing ###

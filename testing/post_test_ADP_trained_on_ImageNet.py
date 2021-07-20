@@ -196,13 +196,13 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
 
 
 if __name__ == "__main__":
-    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/ADP_trained_on_ImageNet_post_trained_norm_PCam_transformed"
+    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/ADP_trained_on_ImageNet_post_trained_norm_target_domain_aug_Color-Distortion"
     root = "/scratch/zhan8425/HistoKTdata"
     #root = sys.argv[1]
     output = "/home/zhujiada/projects/def-plato/zhujiada/output_ADP_trained_on_ImageNet_post"  # None if same as the checkpoint dir
 
     # ["ADP", "GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","CRC_transformed","PCam_transformed"]
-    dataset_name_list = ["PCam_transformed"]
+    dataset_name_list = ["MHIST_transformed", "BACH_transformed"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 

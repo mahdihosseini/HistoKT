@@ -7,6 +7,7 @@ import numpy as np
 import torchvision.transforms as transforms
 from datasets import TransformedDataset
 from datasets import ADPDataset
+from datasets import BCSSDataset
 from resnet import resnet18
 from torch.utils.data import DataLoader
 from sklearn import metrics
@@ -46,7 +47,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
     model.to(device)  # moving model to compute device
     model.eval()
     
-    if dataset_name == "ADP":
+    if dataset_name == "ADP" or dataset_name == "BCSS_transformed":
         dataset_size = len(test_dataloader.dataset)
         test_class_counts = np.sum(test_dataloader.dataset.class_labels, axis=0)
         weightsBCE = dataset_size / test_class_counts
@@ -71,12 +72,12 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
                 y = y.type(torch.LongTensor)
                 y = y.flatten()
                 y = y.to(device, non_blocking=True)
-            if dataset_name == "ADP":
+            if dataset_name == "ADP" or dataset_name == "BCSS_transformed":
                 y = y.type(torch.LongTensor)
                 y = y.to(device, non_blocking=True)
             pred = model(X)
 
-            if dataset_name == 'ADP':
+            if dataset_name == 'ADP' or dataset_name == "BCSS_transformed":
                 m = nn.Sigmoid()
                 pred_temp = (m(pred) > 0.5).int()
                 targets_all = y.data.int()
@@ -128,7 +129,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             f1 = metrics.f1_score(tgts, pred_label, average='micro')
         results["f1_score"] = f1
 
-    if dataset_name == 'ADP':
+    if dataset_name == 'ADP' or dataset_name == "BCSS_transformed":
         test_loss /= size
         test_acc1 = (correct / (size * num_classes))
     else:
@@ -167,6 +168,8 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
 
         if dataset_name == 'ADP':
             dataset = ADPDataset("L3Only", root=path_to_root, split='test', transform=transform_test)
+        elif dataset_name == "BCSS_transformed":
+            dataset = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test, multi_labelled=True, class_labels=True)
         else:
             dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
         ### just for fast testing ###
