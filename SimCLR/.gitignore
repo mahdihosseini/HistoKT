@@ -1,0 +1,11 @@
+__pycache__
+runs/
+datasets/
+save/
+*.tar
+build/
+dist/
+simclr.egg-info
+lightning_logs/
+env/
+outputs/
