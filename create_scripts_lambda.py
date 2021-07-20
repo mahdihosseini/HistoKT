@@ -699,7 +699,7 @@ date
                 outlines = runscripts[weight_folder]
 
                 outfile.write("#!/bin/bash\n")
-                outfile.write("".join(outlines))
+                outfile.write("\n".join(outlines))
 
 
 if __name__ == "__main__":
