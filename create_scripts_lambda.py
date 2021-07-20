@@ -695,7 +695,7 @@ date
                 outfile.write("".join(outlines))
     else:
         for weight_folder in weight_folders:
-            with open(f"runlambda_weight_transfer_{weight_folder}.sh", "a") as outfile:
+            with open(f"runlambda_weight_transfer_{weight_folder}.sh", "w") as outfile:
                 outlines = runscripts[weight_folder]
 
                 outfile.write("#!/bin/bash\n")
