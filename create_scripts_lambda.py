@@ -689,7 +689,7 @@ date
     if CC:
         with open(f"runslurm_weight_transfer.sh", "w") as outfile:
             outlines = []
-            for _, scripts in runscripts:
+            for _, scripts in runscripts.items():
                 outlines.extend([f"sbatch {script}\n" for script in scripts])
             outfile.write("#!/bin/bash\n")
             outfile.write("".join(outlines))
