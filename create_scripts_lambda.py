@@ -687,10 +687,16 @@ date
         gpu_start += 1
 
     if CC:
+        sets_of_interest = ["ADP-Release1_CRC_OSDataset_BCSS_combined",
+                            "ADP-Release1_BCSS_combined",
+                            "ADP-Release1_AJ-Lymph_BACH_BCSS_CRC_GlaS_MHIST_OSDataset_PCam_combined"]
         with open(f"runslurm_weight_transfer.sh", "w") as outfile:
             outlines = []
             for _, scripts in runscripts.items():
-                outlines.extend([f"sbatch {script}\n" for script in scripts])
+                for script in scripts:
+                    for model in sets_of_interest:
+                        if model in script:
+                            outlines.append(f"sbatch {script}\n")
             outfile.write("#!/bin/bash\n")
             outfile.write("".join(outlines))
     else:
