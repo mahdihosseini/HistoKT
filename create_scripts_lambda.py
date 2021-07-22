@@ -1,5 +1,6 @@
 import os
 from collections import defaultdict
+from functools import partial
 
 best_lrs = {
     "ADP-Release1": 0.0001,
@@ -708,7 +709,7 @@ date
 
 
 def run_tune_combined_SVD(root, CC=False, node="cedar", account="def-msh"):
-    runscripts = defaultdict(defaultdict(list))
+    runscripts = defaultdict(partial(defaultdict, list))
     # account = "def-plato"
     # account = "def-msh"
 
