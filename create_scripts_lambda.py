@@ -500,10 +500,8 @@ def run_fine_tune_combined(root, CC=False, node="cedar", account="def-msh"):
     gpu_start = 0
 
     weight_folders = [
-        "None_1",
-        "None_2",
-        "ImageNet_1",
-        "ImageNet_2"
+        "combined_weights/None",
+        "combined_weights/ImageNet",
     ]
 
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
@@ -617,7 +615,7 @@ early_stop_patience: 10 # epoch window to consider when deciding whether to stop
                     with open(
                             f"run{dataset}-{optimizer}-lr-{learning_rate}-{pretrained_model_name}-norm-{normalization_all}-{color_aug}.sh",
                             "w") as outfile:
-                        time_taken = "11:00:00"
+                        time_taken = "2:00:00"
                         if "CRC" in dataset:
                             datafile = "CRC_transformed_2000_per_class"
                             time_taken = "23:00:00"
@@ -689,11 +687,12 @@ date
         gpu_start += 1
 
     if CC:
-        for dataset in datasets:
-            with open(f"runslurm_weight_transfer_{weight_folder}.sh", "w") as outfile:
-                outlines = runscripts[weight_folder]
-                outfile.write("#!/bin/bash\n")
-                outfile.write("".join(outlines))
+        with open(f"runslurm_weight_transfer.sh", "w") as outfile:
+            outlines = []
+            for _, scripts in runscripts:
+                outlines.extend([f"sbatch {script}\n" for script in scripts])
+            outfile.write("#!/bin/bash\n")
+            outfile.write("".join(outlines))
     else:
         for weight_folder in weight_folders:
             with open(f"runlambda_weight_transfer_{weight_folder}.sh", "w") as outfile:
