@@ -746,7 +746,7 @@ def run_tune_combined_SVD(root, CC=False, node="cedar", account="def-msh"):
         "None",
         "ImageNet",
     ]
-    root_folder = "new_combined_weights"
+
 
     learning_rates = ["0.001", "0.0005", "0.0002", "0.0001", "0.00005"]
 
@@ -778,8 +778,7 @@ def run_tune_combined_SVD(root, CC=False, node="cedar", account="def-msh"):
                     pretrained_model = os.path.join(root, dataset, weight_folder, wt_type, pretrained_model)
                     for learning_rate in learning_rates:
                         os.makedirs(f"WeightSharingTrainingConfigs/{dataset}/{optimizer}", exist_ok=True)
-                        with open(os.path.join(root,
-                                               f"WeightSharingTrainingConfigs/{dataset}/{optimizer}/lr-{learning_rate}-config.yaml"),
+                        with open(f"WeightSharingTrainingConfigs/{dataset}/{optimizer}/lr-{learning_rate}-config.yaml",
                                   "w") as write_file:
                             if "ADP" in dataset or "BCSS_transformed" in dataset:
                                 loss_fn = "MultiLabelSoftMarginLoss"
@@ -954,7 +953,7 @@ date
 
 
 if __name__ == "__main__":
-    root_dir = ""
+    root_dir = "new_combined_weights"
     # run_baselines(root_dir, CC=False, node="beluga")
     # run_fine_tune(root_dir, CC=False, node="graham", account="def-msh")
     # run_fine_tune_combined(root_dir, CC=True, node="beluga")
