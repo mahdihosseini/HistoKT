@@ -688,8 +688,7 @@ date
 
     if CC:
         sets_of_interest = ["ADP-Release1_CRC_OSDataset_BCSS_combined",
-                            "ADP-Release1_BCSS_combined",
-                            "ADP-Release1_AJ-Lymph_BACH_BCSS_CRC_GlaS_MHIST_OSDataset_PCam_combined"]
+                            "ADP-Release1_BCSS_combined"]
         with open(f"runslurm_weight_transfer.sh", "w") as outfile:
             outlines = []
             for _, scripts in runscripts.items():
