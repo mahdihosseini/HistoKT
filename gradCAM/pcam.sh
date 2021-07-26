@@ -31,7 +31,7 @@ python3 main.py --image_path=$ROOT/examples/PCam/ \
 --aug_smooth=True --eigen_smooth=True
 
 python3 main.py --image_path=$ROOT/examples/PCam/ \
---model_path=$ROOT/examples/posttrain_ADP_nocoloraug_imagenet/PCam_transformed/best_trial_1_date_2021-07-16-14-34-43.pth.tar \
+--model_path=$ROOT/examples/posttrain_CRC_nocoloraug/PCam_transformed/best_trial_0_date_2021-07-16-14-40-58.pth.tar \
 --dataset_name=PCam_transformed \
---output_path=output/PCam_ADPpost_nocoloraug \
+--output_path=output/PCam_CRCpost_nocoloraug \
 --aug_smooth=True --eigen_smooth=True

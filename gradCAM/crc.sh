@@ -29,9 +29,3 @@ python3 main.py --image_path=$ROOT/examples/CRC/ \
 --dataset_name=CRC_transformed \
 --output_path=output/CRC_ADPpost_nocoloraug \
 --aug_smooth=True --eigen_smooth=True
-
-python3 main.py --image_path=$ROOT/examples/CRC/ \
---model_path=$ROOT/examples/posttrain_ADP_nocoloraug_imagenet/CRC_transformed/best_trial_0_date_2021-07-16-13-48-03.pth.tar \
---dataset_name=CRC_transformed \
---output_path=output/CRC_ADPpost_nocoloraug \
---aug_smooth=True --eigen_smooth=True

@@ -31,7 +31,7 @@ python3 main.py --image_path=$ROOT/examples/OS/ \
 --aug_smooth=True --eigen_smooth=True
 
 python3 main.py --image_path=$ROOT/examples/OS/ \
---model_path=$ROOT/examples/posttrain_ADP_nocoloraug_imagenet/OSDataset_transformed/best_trial_2_date_2021-07-16-13-46-19.pth.tar \
+--model_path=$ROOT/examples/posttrain_CRC_nocoloraug/OSDataset_transformed/best_trial_2_date_2021-07-16-13-48-11.pth.tar \
 --dataset_name=OSDataset_transformed \
---output_path=output/OS_ADPpost_nocoloraug \
+--output_path=output/OS_CRCpost_nocoloraug \
 --aug_smooth=True --eigen_smooth=True
