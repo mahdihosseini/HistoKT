@@ -86,7 +86,7 @@ def generate_gradCAM(args):
     print("success")
 
     print("initializing gradCAM")
-    cam = GradCAM(model=model, target_layer=target_layer, use_cuda=args.use_cuda)
+    cam = GradCAM(model=model,target_layer=target_layer,use_cuda=args.use_cuda)
     print("success")
 
     return model, cam
