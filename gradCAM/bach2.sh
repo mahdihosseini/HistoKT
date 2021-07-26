@@ -24,6 +24,18 @@ python3 main.py --image_path=$ROOT/examples/BACH/ \
 --aug_smooth=True --eigen_smooth=True
 
 python3 main.py --image_path=$ROOT/examples/BACH/ \
+--model_path=/ssd2/HistoKT/results/post_training_without_color_aug/BCSS_transformed_norm_BCSS_transformed_color_aug_None/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.00005/best_trial_1_date_2021-07-16-14-03-12.pth.tar \
+--dataset_name=BACH_transformed \
+--output_path=output/BACH_BCSSpost_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/BACH/ \
+--model_path=/ssd2/HistoKT/results/post_training_without_color_aug/OSDataset_transformed_norm_OSDataset_transformed_color_aug_None/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.00005/best_trial_1_date_2021-07-16-14-05-36.pth.tar \
+--dataset_name=BACH_transformed \
+--output_path=output/BACH_OSpost_nocoloraug \
+--aug_smooth=True --eigen_smooth=True
+
+python3 main.py --image_path=$ROOT/examples/BACH/ \
 --model_path=$WEIGHT_SHARING/None/ADP-Release1_AJ-Lymph_BACH_BCSS_CRC_GlaS_MHIST_OSDataset_PCam_combined_norm_target_domain_color_aug_None/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.0002/best_trial_0_date_2021-07-21-02-01-27.pth.tar \
 --dataset_name=BACH_transformed \
 --output_path=output/BACH_ws_all_nocoloraug_none \
