@@ -1,6 +1,13 @@
 import torch
 import torch.nn as nn
-from models.resnet import resnet18
+import sys
+
+mod_name = vars(sys.modules[__name__])['__name__']
+
+if 'adas.' in mod_name:
+    from .models.resnet import resnet18
+else:
+    from models.resnet import resnet18
 
 
 class ModelLoader:

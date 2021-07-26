@@ -20,7 +20,7 @@ network: 'ResNet18' # AlexNet, DenseNet201, DenseNet169, DenseNet161, DenseNet12
 optimizer: 'Adas' # options: SGD, AdaM, AdaGrad, RMSProp, AdaDelta
 scheduler: 'None' # options: AdaS (with SGD), StepLR, CosineAnnealingWarmRestarts, OneCycleLR
 # ADP level
-level : 'L1' #L1, L2, L3, L3Only
+level : 'L3' #L1, L2, L3, L3Only
 
 ###### Augmentation Methods ######
 # ADP ONLY
@@ -28,7 +28,7 @@ color_kwargs:
     augmentation: 'None' # options: YCbCr, HSV, RGB-Jitter,
                                # Color-Distortion (Color-Jittering followed by color drop),
                                # None
-    distortion: 0.3 #options: 0.3 for Color-Distortion
+    distortion: 0.0 #options: 0.3 for Color-Distortion
                             # 0.1 for YCbCr-Light and HSV-Light
                             # 1.0 for YCbCr-Strong and HSV-Strong
                             # 1.0 for RBGJitter

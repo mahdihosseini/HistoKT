@@ -47,7 +47,7 @@ n_holes: 1
 cutout_length: 16
 
 ###### Suggested Tune ######
-init_lr: 5e-05
+init_lr: 0.00005
 early_stop_threshold: -1 # set to -1 if you wish not to use early stop, or equally, set to a high value. Set to -1 if not using AdaS
 optimizer_kwargs:
     weight_decay: 5e-4

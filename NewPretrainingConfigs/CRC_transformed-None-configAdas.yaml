@@ -28,7 +28,7 @@ color_kwargs:
     augmentation: 'None' # options: YCbCr, HSV, RGB-Jitter,
                                # Color-Distortion (Color-Jittering followed by color drop),
                                # None
-    distortion: 0.3 #options: 0.3 for Color-Distortion
+    distortion: 0.0 #options: 0.3 for Color-Distortion
                             # 0.1 for YCbCr-Light and HSV-Light
                             # 1.0 for YCbCr-Strong and HSV-Strong
                             # 1.0 for RBGJitter
