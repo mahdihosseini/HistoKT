@@ -1,4 +1,5 @@
 import os
+import itertools
 #import cv2
 import torch
 import random
@@ -57,6 +58,7 @@ def get_features(dataset_name, split, path_to_root, path_to_pth):
                                     split=split)
 
     if len(train_set.samples) > 500:
+        random.shuffle(train_set.samples)
         train_set.samples = train_set.samples[0:500]
 
     train_sampler = torch.utils.data.distributed.DistributedSampler(
@@ -111,17 +113,13 @@ def get_features(dataset_name, split, path_to_root, path_to_pth):
     return features, tgts, text_label
 
 
-def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir):
+def visualize_tsne_points_all_diff_color_class(tx, ty, labels, text_label, plots_dir):
     # for every class, we'll add a scatter plot separately
-    color = iter(cm.rainbow(np.linspace(0,1,len(text_label.keys()))))  # generate diff color 
+    color = iter(cm.rainbow(np.linspace(0, 1, len(text_label.keys()))))  # generate diff color
 
     for label in text_label:
         # find the samples of the current class in the data
-        # multi-labeled
-        if "ADP" in output_filename or "BCSS_transformed" in output_filename:
-            indices = [i for i, l in enumerate(labels) if l[text_label[label]] == 1]
-        else:
-            indices = [i for i, l in enumerate(labels) if l == text_label[label]]
+        indices = [i for i, l in enumerate(labels) if l == text_label[label]]
 
         # extract the coordinates of the points of this class only
         current_tx = np.take(tx, indices)
@@ -129,13 +127,99 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
 
         # add a scatter plot with the correponding color and label
         c = next(color)
-        plt.scatter(current_tx, current_ty, label=label, alpha=0.7, color=c)
+        plt.scatter(current_tx, current_ty, label=label, alpha=0.5, color=c)
+
+    # build a legend using the labels we set previously
+    plt.legend(bbox_to_anchor=(1.04, 1), loc="upper left")
+    #plt.axis('off')
+    # save the plot
+    plt.savefig(plots_dir + "/" + "full_7_datasets_all_diff_color_class.png", bbox_inches='tight')
+    plt.clf()
+
+
+def visualize_tsne_points_no_marker_one_color_per_dataset(tx, ty, labels, text_label, plots_dir):
+    # for every class, we'll add a scatter plot separately
+    color = iter(cm.rainbow(np.linspace(0, 1, 7)))
+
+    last_dataset = ""
+    for label in text_label:
+        # find the samples of the current class in the data
+        indices = [i for i, l in enumerate(labels) if l == text_label[label]]
+
+        # extract the coordinates of the points of this class only
+        current_tx = np.take(tx, indices)
+        current_ty = np.take(ty, indices)
+
+        # add a scatter plot with the correponding color and label
+        if label.split("_")[-2] != last_dataset:
+            c = next(color)
+            last_dataset = label.split("_")[-2]
+
+        plt.scatter(current_tx, current_ty, label=label, alpha=0.5, color=c)
+
+    # build a legend using the labels we set previously
+    plt.legend(bbox_to_anchor=(1.04, 1), loc="upper left")
+    #plt.axis('off')
+    # save the plot
+    plt.savefig(plots_dir + "/" + "full_7_datasets_no_marker_one_color_per_dataset.png", bbox_inches='tight')
+    plt.clf()
+
+
+def visualize_tsne_points_one_color_per_dataset(tx, ty, labels, text_label, plots_dir):
+    # for every class, we'll add a scatter plot separately
+    color = iter(cm.rainbow(np.linspace(0, 1, 7)))
+    markers = itertools.cycle(('o', 'v', '1', '+', '*', 'X', 'd'))
+
+    last_dataset = ""
+    for label in text_label:
+        # find the samples of the current class in the data
+        indices = [i for i, l in enumerate(labels) if l == text_label[label]]
+
+        # extract the coordinates of the points of this class only
+        current_tx = np.take(tx, indices)
+        current_ty = np.take(ty, indices)
+
+        # add a scatter plot with the correponding color and label
+        if label.split("_")[-2] != last_dataset:
+            c = next(color)
+            last_dataset = label.split("_")[-2]
+
+        plt.scatter(current_tx, current_ty, label=label, marker=next(markers), alpha=0.5, color=c)
 
     # build a legend using the labels we set previously
     plt.legend(bbox_to_anchor=(1.04,1), loc="upper left")
     #plt.axis('off')
     # save the plot
-    plt.savefig(plots_dir + "/" + output_filename + ".png", bbox_inches='tight')
+    plt.savefig(plots_dir + "/" + "full_7_datasets_one_color_per_dataset.png", bbox_inches='tight')
+    plt.clf()
+
+
+def visualize_tsne_points_one_marker_per_dataset(tx, ty, labels, text_label, plots_dir):
+    # for every class, we'll add a scatter plot separately
+    color = itertools.cycle(cm.rainbow(np.linspace(0, 1, 7)))
+    markers = itertools.cycle(('o', 'v', '1', '+', '*', 'X', 'd'))
+
+    last_dataset = ""
+    for label in text_label:
+        # find the samples of the current class in the data
+        indices = [i for i, l in enumerate(labels) if l == text_label[label]]
+
+        # extract the coordinates of the points of this class only
+        current_tx = np.take(tx, indices)
+        current_ty = np.take(ty, indices)
+
+        # add a scatter plot with the correponding color and label
+        if label.split("_")[-2] != last_dataset:
+            m = next(markers)
+            last_dataset = label.split("_")[-2]
+
+        plt.scatter(current_tx, current_ty, label=label, marker=m, alpha=0.5, color=next(color))
+
+    # build a legend using the labels we set previously
+    plt.legend(bbox_to_anchor=(1.04, 1), loc="upper left")
+    #plt.axis('off')
+    # save the plot
+    plt.savefig(plots_dir + "/" + "full_7_datasets_one_marker_per_dataset.png", bbox_inches='tight')
     plt.clf()
 
 
@@ -172,7 +256,6 @@ def main(dataset_name_list, root, checkpoint, output=None):
     tsne_full = TSNE(n_components=2).fit_transform(features_full)
     # initialize matplotlib plot
     plt.figure()
-    output_filename = "full_7_datasets"
     if output is not None:
         x_min = np.min(tsne_full[:, 0])
         x_max = np.max(tsne_full[:, 0])
@@ -182,7 +265,10 @@ def main(dataset_name_list, root, checkpoint, output=None):
         plt.ylim(y_min, y_max)
         ax = plt.gca()  # get the axis handle
         ax.set_aspect((x_max-x_min)/(y_max-y_min))
-        visualize_tsne_points(tsne_full[:, 0], tsne_full[:, 1], labels_full, text_label_full, output_filename, plots_dir=output)
+        visualize_tsne_points_all_diff_color_class(tsne_full[:, 0], tsne_full[:, 1], labels_full, text_label_full, plots_dir=output)
+        visualize_tsne_points_no_marker_one_color_per_dataset(tsne_full[:, 0], tsne_full[:, 1], labels_full, text_label_full, plots_dir=output)
+        visualize_tsne_points_one_color_per_dataset(tsne_full[:, 0], tsne_full[:, 1], labels_full, text_label_full, plots_dir=output)
+        visualize_tsne_points_one_marker_per_dataset(tsne_full[:, 0], tsne_full[:, 1], labels_full, text_label_full, plots_dir=output)
     plt.close()
 
 if __name__ == '__main__':
