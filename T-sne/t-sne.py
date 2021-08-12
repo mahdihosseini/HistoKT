@@ -52,7 +52,7 @@ def get_features(dataset_name, split, path_to_root, path_to_pth):
             std=transformed_norm_weights["ImageNet"]["std"])])
 
     if dataset_name == 'ADP':
-        train_set = ADPDataset("L1",
+        train_set = ADPDataset("L3",
                                transform=transform_train,
                                root=path_to_root,
                                split=split)
@@ -168,17 +168,18 @@ def main(dataset_name_list, root, checkpoint, output=None):
     fix_random_seeds()
     for dataset_name in dataset_name_list:
         path_to_pth_list = list()
-        if dataset_name == "ADP":
-            path_to_dataset_cp = os.path.join(checkpoint, "ADP-Release1")
-        else:
-            path_to_dataset_cp = os.path.join(checkpoint, dataset_name)
+        #if dataset_name == "ADP":
+        #    path_to_dataset_cp = os.path.join(checkpoint, "ADP-Release1")
+        #else:
+        #    path_to_dataset_cp = os.path.join(checkpoint, dataset_name)
         
-        path_to_dataset_cp = os.path.join(path_to_dataset_cp, "AdamP/checkpoint/deep_tuning")
-        if dataset_name == "BACH_transformed":
-            path_to_dataset_cp = os.path.join(path_to_dataset_cp, "lr-0.00005")
-        if dataset_name == "AJ-Lymph_transformed":
-            path_to_dataset_cp = os.path.join(path_to_dataset_cp, "lr-0.0002")
+        #path_to_dataset_cp = os.path.join(path_to_dataset_cp, "AdamP/checkpoint/deep_tuning")
+        #if dataset_name == "BACH_transformed":
+        #    path_to_dataset_cp = os.path.join(path_to_dataset_cp, "lr-0.00005")
+        #if dataset_name == "AJ-Lymph_transformed":
+        #    path_to_dataset_cp = os.path.join(path_to_dataset_cp, "lr-0.0002")
         
+        path_to_dataset_cp = checkpoint
         for file in os.listdir(path_to_dataset_cp):
             if ".pth" in file and "best_" in file:
                 path_to_pth_list.append(os.path.join(path_to_dataset_cp, file))
@@ -208,10 +209,11 @@ def main(dataset_name_list, root, checkpoint, output=None):
             plt.figure()
             ax = plt.gca()  # get the axis handle
             cp_name = os.path.splitext(os.path.basename(path_to_pth))[0]
-            if "per_class" in path_to_pth.split('/')[-2]:
-                output_filename = dataset_name + "_" + path_to_pth.split('/')[-2] + "_" + cp_name
-            else:
-                output_filename = dataset_name + "_" + cp_name
+            #if "per_class" in path_to_pth.split('/')[-2]:
+            #    output_filename = dataset_name + "_" + path_to_pth.split('/')[-2] + "_" + cp_name
+            #else:
+            #    output_filename = dataset_name + "_" + cp_name
+            output_filename = cp_name + "_" + dataset_name
             if output is not None:
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
@@ -219,11 +221,11 @@ def main(dataset_name_list, root, checkpoint, output=None):
                 ax.set_aspect((x_max-x_min)/(y_max-y_min))
                 visualize_tsne_points(tsne_train[:, 0], tsne_train[:, 1], labels_train, text_label, output_filename+"_train", plots_dir=output)
                 
-                plt.xlim(x_min, x_max)
-                plt.ylim(y_min, y_max)
-                ax = plt.gca()
-                ax.set_aspect((x_max-x_min)/(y_max-y_min))
-                visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=output)
+                #plt.xlim(x_min, x_max)
+                #plt.ylim(y_min, y_max)
+                #ax = plt.gca()
+                #ax.set_aspect((x_max-x_min)/(y_max-y_min))
+                #visualize_tsne_points(tsne_val[:, 0], tsne_val[:, 1], labels_val, text_label, output_filename+"_val", plots_dir=output)
                 
                 plt.xlim(x_min, x_max)
                 plt.ylim(y_min, y_max)
@@ -257,9 +259,9 @@ if __name__ == '__main__':
     mini_batch_size = 32
     num_workers = 4
 
-    checkpoint = "/ssd2/HistoKT/results/post_training_without_color_aug_ImageNet_norm_ImageNet/CRC_transformed_norm_ImageNet_color_aug_None_ImageNet"#"/home/zhujiada/projects/def-plato/zhujiada/HistoKT/.adas-checkpoint-baseline"
+    checkpoint = "/ssd2/HistoKT/results/ADPL3_ImageNet_norm_ImageNet/ADP-Release1_norm_ImageNet_color_aug_None_ADPL3/BACH_transformed/AdamP/checkpoint/deep_tuning/lr-0.00005" #/home/zhujiada/projects/def-plato/zhujiada/HistoKT/.adas-checkpoint-baseline"
     root = "/ssd2/HistoKT/datasets"#"/scratch/zhan8425/HistoKTdata"
-    output = "/ssd2/HistoKT/test/Tsne/post_ImageNet_CRC"#"/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
+    output = "/ssd2/HistoKT/test/Tsne/supp_material/ADPL3_ImageNet_norm_ImageNet"#"/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
 
-    dataset_name_list = ["BACH_transformed", "AJ-Lymph_transformed"]#, "GlaS_transformed", "OSDataset_transformed", "MHIST_transformed","CRC_transformed","PCam_transformed", "BCSS_transformed"]
+    dataset_name_list = ["BACH_transformed"]#, "GlaS_transformed", "OSDataset_transformed", "MHIST_transformed","CRC_transformed","PCam_transformed", "BCSS_transformed"]
     main(dataset_name_list, root, checkpoint, output)

@@ -113,8 +113,9 @@ def get_features(dataset_name, split, path_to_root, path_to_pth):
 
 def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir):
     # for every class, we'll add a scatter plot separately
-    color = iter(cm.rainbow(np.linspace(0,1,len(text_label.keys()))))  # generate diff color 
-
+    color = iter(cm.rainbow(np.linspace(0,1,7)))
+    
+    last_dataset = ""
     for label in text_label:
         # find the samples of the current class in the data
         # multi-labeled
@@ -128,8 +129,11 @@ def visualize_tsne_points(tx, ty, labels, text_label, output_filename, plots_dir
         current_ty = np.take(ty, indices)
 
         # add a scatter plot with the correponding color and label
-        c = next(color)
-        plt.scatter(current_tx, current_ty, label=label, alpha=0.7, color=c)
+        if label.split("_")[-2] != last_dataset:
+            c = next(color)
+            last_dataset = label.split("_")[-2]
+        
+        plt.scatter(current_tx, current_ty, label=label, alpha=0.3, color=c)
 
     # build a legend using the labels we set previously
     plt.legend(bbox_to_anchor=(1.04,1), loc="upper left")
@@ -172,7 +176,7 @@ def main(dataset_name_list, root, checkpoint, output=None):
     tsne_full = TSNE(n_components=2).fit_transform(features_full)
     # initialize matplotlib plot
     plt.figure()
-    output_filename = "full_7_datasets"
+    output_filename = "full_7_datasets_separate"
     if output is not None:
         x_min = np.min(tsne_full[:, 0])
         x_max = np.max(tsne_full[:, 0])
