@@ -33,9 +33,9 @@ from torchvision import transforms
 mod_name = vars(sys.modules[__name__])['__name__']
 
 if 'adas.' in mod_name:
-    from .datasets import ImageNet, TinyImageNet, ADPDataset, MHIST, TransformedDataset
+    from .datasets import ImageNet, TinyImageNet, ADPDataset, MHIST, TransformedDataset, BCSSDataset
 else:
-    from datasets import ImageNet, TinyImageNet, ADPDataset, MHIST, TransformedDataset
+    from datasets import ImageNet, TinyImageNet, ADPDataset, MHIST, TransformedDataset, BCSSDataset
 
 # from .folder2lmdb import ImageFolderLMDB
 
@@ -227,6 +227,40 @@ def get_data(
         test_set = TransformedDataset(transform=transform_train,
                                       root=os.path.join(root, name),
                                       split='valid')  # USING VALIDATION DATA
+
+        test_loader = torch.utils.data.DataLoader(
+            test_set,
+            batch_size=mini_batch_size,
+            pin_memory=True,
+            shuffle=False,
+            num_workers=num_workers)
+
+        num_classes = len(train_set.class_to_idx)
+
+    elif name == "BCSS_transformed":
+        # Uses validation data as "test" set
+        train_set = BCSSDataset(transform=transform_train,
+                                root=os.path.join(root, name),
+                                split='train',
+                                multi_labelled=True,
+                                class_labels=True)
+
+        train_sampler = torch.utils.data.distributed.DistributedSampler(
+            train_set) if dist else None
+
+        train_loader = torch.utils.data.DataLoader(
+            train_set,
+            batch_size=mini_batch_size,
+            shuffle=(train_sampler is None),
+            pin_memory=True,
+            num_workers=num_workers,
+            sampler=train_sampler)
+
+        test_set = BCSSDataset(transform=transform_train,
+                               root=os.path.join(root, name),
+                               split='valid',
+                               multi_labelled=True,
+                               class_labels=True)  # USING VALIDATION DATA
 
         test_loader = torch.utils.data.DataLoader(
             test_set,

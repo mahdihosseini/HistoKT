@@ -2,6 +2,76 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from collections import defaultdict
+
+
+def get_values(result_names, path_to_file):
+    data = pd.read_excel(path_to_file)
+    results = {result: [] for result in result_names}
+    for col in data.columns:
+        if col.split("_epoch_")[0] in result_names:
+            if not np.isnan(data[col].tolist()[0]):
+                results[col.split("_epoch_")[0]].append(data[col].tolist()[0])
+    return results
+
+
+def get_values_for_file_list(result_names, file_list):
+    output = {}
+    for file_name in file_list:
+        output[file_name] = get_values(result_names, file_name)
+    return output
+
+
+def plot_trials(result_names, transformed_dir, plots_dir):
+    file_dict = defaultdict(list)
+    for root, dirs, files in os.walk(transformed_dir):
+        for name in files:
+            if name.endswith(".xlsx"):
+                file_dict[os.path.basename(os.path.dirname(root))].append(os.path.join(root, name))
+
+    # FOR X IMAGES PER CLASS CODE:
+    results = {}
+    for dirname, file_list in file_dict.items():
+        # get a dict with keys of num_classes, and values of dict of results
+        results[int(dirname.split("_")[0])] = get_values_for_file_list(result_names, file_list)
+
+    reformatted = defaultdict(list)
+    for num, values in results.items():
+        for filename, result in values.items():
+            for name, array in result.items():
+                reformatted[name].append((num, array))
+
+    # plotting all results
+
+    for result_name, values_list in reformatted.items():
+        legend = []
+        values_list = sorted(values_list, key=lambda joe: int(joe[0]))
+        for num, data in values_list:
+            legend.append(f"{num} images per class")
+            x = range(0, len(data))
+            plt.plot(x, data)
+            plt.xlabel("epoch")
+            if result_name.split("_")[0] == "test":
+                result_name = "val_" + result_name.split("_")[1]
+            plt.ylabel(result_name)
+            plt.title(f"{os.path.basename(transformed_dir)} {result_name}")
+
+            if result_name.split("_")[1] == "loss":
+                plt.yscale("log")
+                plt.ylim([None, 7])
+
+            if result_name.split("_")[1] == "acc1":
+                plt.ylim((round(min(data), 1) - 0.1, 1))
+
+                x_max = x[np.argmax(data)]
+                y_max = max(data)
+                plt.plot([x_max], [y_max], 'o')
+                legend.append("max: ({:}, {:.3f})".format(x_max, y_max))
+
+            plt.legend(legend)
+
+        plt.savefig(plots_dir + "/" + result_name + ".png", bbox_inches='tight')
+        plt.clf()
 
 
 def plot_result(result_name, path_to_file):
@@ -76,7 +146,10 @@ def plot_results_for_dir(result_name_list, path_to_dir):
             for result_name in result_name_list:
                 plot_result(result_name, os.path.join(path_to_dir, file))
     plt.close()
-    
-#path_to_dir = "/Users/JZ/Downloads/HistoKT/BACH_transformed/lr-0.03"
-#result_name_list = ["train_acc1", "train_loss", "test_acc1", "test_loss"]
-#plot_results_for_dir(result_name_list, path_to_dir)
+
+if __name__ == "__main__":
+    path_to_dir = "C:/Users/ryanr/Desktop/Summer_Research/HistoKT/.adas-data/results/CRC_transformed"
+    save_place = "C:/Users/ryanr/Desktop/Summer_Research/HistoKT/.adas-data/results/CRC_plots"
+    result_name_list = ["train_acc1", "train_loss", "test_acc1", "test_loss"]
+    #plot_results_for_dir(result_name_list, path_to_dir)
+    plot_trials(result_name_list, path_to_dir, save_place)

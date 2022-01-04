@@ -1,4 +1,4 @@
-# Repository specific 
+# Repository specific
 .adas-checkpoint
 .adas-data
 .adas-output
@@ -7,6 +7,14 @@
 eval/
 random_stuff/
 checkpoints/
+ADP_post_trained
+ImageNet_post_trained
+pretraining-output
+pretraining-checkpoint
+new-pretraining-checkpoint
+new-pretraining-output
+*.pth
+*.tar
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -195,3 +203,5 @@ tags
 # NEVER TO BE COMMITTED TO REPO. May contain secrets, like embedded
 # username:password@ in DATABASE_URL.
 /.env
+/Plots/ADP post - Sheet2.csv
+/Plots/Learning Rate Search.png

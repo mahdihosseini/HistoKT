@@ -53,13 +53,14 @@ if 'adas.' in mod_name:
     from .early_stop import EarlyStop
     from .optim.adasls import AdaSLS
     from .models import get_network
-    from .utils import parse_config
+    from .utils import parse_config, str2bool
     from .metrics import Metrics
     from .models.vgg import VGG
     from .optim.sls import SLS
     from .optim.sps import SPS
     from .data import get_data
     from .optim.adas import Adas
+    from .loader import get_model
 else:
     from optim.lr_scheduler import CosineAnnealingWarmRestarts, StepLR, \
         OneCycleLR
@@ -69,13 +70,14 @@ else:
     from early_stop import EarlyStop
     from optim.adasls import AdaSLS
     from models import get_network
-    from utils import parse_config
+    from utils import parse_config, str2bool
     from metrics import Metrics
     from models.vgg import VGG
     from optim.sls import SLS
     from optim.sps import SPS
     from data import get_data
     from optim.adas import Adas
+    from loader import get_model
 
 
 def args(sub_parser: _SubParsersAction):
@@ -112,6 +114,14 @@ def args(sub_parser: _SubParsersAction):
         '--resume', dest='resume',
         default=None, type=str,
         help="Set checkpoint resume path: Default = None")
+    sub_parser.add_argument(
+        '--pretrained_model', dest='pretrained_model',
+        default=None, type=str,
+        help="Set checkpoint pretrained model path: Default = None")
+    sub_parser.add_argument(
+        '--freeze_encoder', dest='freeze_encoder',
+        type=str2bool, default=True,
+        help="Set if to freeze encoder for post training: Default = True")
     # sub_parser.add_argument(
     #     '-r', '--resume', action='store_true',
     #     dest='resume',
@@ -153,6 +163,15 @@ def args(sub_parser: _SubParsersAction):
     sub_parser.add_argument(
         '--rank', default=-1, type=int,
         help='Node rank for distributed training: Default = -1')
+    sub_parser.add_argument(
+        '--color_aug', default=None, type=str,
+        help='override config color augmentation, can also choose "no_aug"'
+    )
+    sub_parser.add_argument(
+        '--norm_vals', default=None, type=str,
+        help='override normalization values, use dataset string. e.g. "BACH_transformed"'
+    )
+
     # sub_parser.add_argument(
     #     '--cutout', action='store_true',
     #     default=False,
@@ -186,6 +205,8 @@ class TrainingAgent:
             data_path: Path,
             checkpoint_path: Path,
             resume: Path = None,
+            pretrained_model: Path = None,
+            freeze_encoder: bool = True,
             save_freq: int = 25,
             gpu: int = None,
             ngpus_per_node: int = 0,
@@ -194,7 +215,9 @@ class TrainingAgent:
             dist: bool = False,
             mpd: bool = False,
             dist_url: str = None,
-            dist_backend: str = None) -> None:
+            dist_backend: str = None,
+            color_aug: str = None,
+            norm_vals: str = None) -> None:
 
         self.gpu = gpu
         self.mpd = mpd
@@ -205,11 +228,15 @@ class TrainingAgent:
         self.start_trial = 0
         self.device = device
         self.resume = resume
+        self.pretrained_model = pretrained_model
+        self.freeze_encoder = freeze_encoder
         self.dist_url = dist_url
         self.save_freq = save_freq
         self.world_size = world_size
         self.dist_backend = dist_backend
         self.ngpus_per_node = ngpus_per_node
+        self.color_aug = color_aug
+        self.norm_vals = norm_vals
 
         self.data_path = data_path
         self.output_path = output_path
@@ -226,6 +253,11 @@ class TrainingAgent:
                 print(f"    {k:<20} {v:<20}")
         print("-"*45)
 
+        print("Transforms:")
+        print(self.train_transform)
+        print(self.test_transform)
+        print("-"*45)
+
     def load_config(self, config_path: Path, data_path: Path) -> None:
         with config_path.open() as f:
             self.config = config = parse_config(yaml.load(f, yaml.FullLoader))
@@ -238,6 +270,9 @@ class TrainingAgent:
                 config['num_workers'] = int(
                     (config['num_workers'] + self.ngpus_per_node - 1) /
                     self.ngpus_per_node)
+        config['color_kwargs'] = (config['color_kwargs'] if self.color_aug is None else 
+                {key: (self.color_aug if key == "augmentation" else value) 
+                    for key, value in config['color_kwargs'].items()})
         self.mini_batch_size = config['mini_batch_size']
         self.level = config['level']
         self.train_transform, self.test_transform = get_transforms(
@@ -253,7 +288,8 @@ class TrainingAgent:
             color_kwargs = config['color_kwargs'],
             cutout=config['cutout'],
             n_holes=config['n_holes'],
-            length=config['cutout_length'])
+            length=config['cutout_length'],
+            norm_vals=self.norm_vals)
         self.train_loader, self.train_sampler,\
             self.test_loader, self.num_classes = get_data(
                 name=config['dataset'], root=data_path,
@@ -269,7 +305,7 @@ class TrainingAgent:
             train_class_counts = np.sum(self.train_loader.dataset.class_labels, axis=0)
             weightsBCE = self.dataset_size / train_class_counts
             weightsBCE = torch.as_tensor(weightsBCE, dtype=torch.float32).to(self.gpu)
-            self.criterion = torch.nn.MultiLabelSoftMarginLoss(weight = weightsBCE).cuda(self.gpu)
+            self.criterion = torch.nn.MultiLabelSoftMarginLoss(weight=weightsBCE).cuda(self.gpu)
         else:
             self.criterion = None
 
@@ -303,8 +339,18 @@ class TrainingAgent:
 
     def reset(self, learning_rate: float) -> None:
         self.performance_statistics = dict()
-        self.network = get_network(name=self.config['network'],
-                                   num_classes=self.num_classes)
+        if self.pretrained_model is not None:
+            self.network = get_model(name=self.config["network"],
+                                     path=self.pretrained_model,
+                                     num_classes=self.num_classes,
+                                     freeze_encoder=self.freeze_encoder)
+            print(self.network)
+            print("grad check")
+            print([param.requires_grad for param in self.network.parameters()])
+            print("finished grad check")
+        else:
+            self.network = get_network(name=self.config['network'],
+                                       num_classes=self.num_classes)
         self.metrics = Metrics(list(self.network.parameters()),
                                p=self.config['p'])
         # TODO add other parallelisms
@@ -446,6 +492,8 @@ class TrainingAgent:
                         data, str(self.checkpoint_path / filename))
         filename = f"last_trial_{trial}_date_{self.start_time.strftime('%Y-%m-%d-%H-%M-%S')}.pth.tar"
         torch.save(data, str(self.checkpoint_path / filename))
+        # resetting best acc for each trial
+        self.best_acc1 = 0
 
     def epoch_iteration(self, trial: int, epoch: int):
         # logging.info(f"Adas: Train: Epoch: {epoch}")
@@ -507,7 +555,7 @@ class TrainingAgent:
             # _, predicted = outputs.max(1)
             # total += targets.size(0)
             # correct += predicted.eq(targets).sum().item()
-            if self.config['dataset'] == 'ADP-Release1':
+            if self.config['loss'] == 'MultiLabelSoftMarginLoss':
                 m = nn.Sigmoid()
                 preds = (m(outputs) > 0.5).int()
                 acc1, acc5 = accuracyADP(preds, targets)
@@ -526,7 +574,7 @@ class TrainingAgent:
                 top5.update(acc5[0], inputs.size(0))
             if isinstance(self.scheduler, OneCycleLR):
                 self.scheduler.step()
-        if self.config['dataset'] == 'ADP-Release1':
+        if self.config['loss'] == 'MultiLabelSoftMarginLoss':
             with torch.no_grad():
                 train_loss = train_loss / len(self.train_loader)
                 train_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.train_loader.dataset) * self.num_classes))
@@ -620,7 +668,7 @@ class TrainingAgent:
     def validate(self, epoch: int):
         self.network.eval()
         test_loss = 0
-        if self.config['dataset'] == 'ADP-Release1':
+        if self.config['loss'] == 'MultiLabelSoftMarginLoss':
             predALL_test = torch.zeros(len(self.test_loader.dataset), self.num_classes)
             labelsALL_test = torch.zeros(len(self.test_loader.dataset), self.num_classes)
         # correct = 0
@@ -639,7 +687,7 @@ class TrainingAgent:
                 if self.device == 'cuda':
                     targets = targets.cuda(self.gpu, non_blocking=True)
                 outputs = self.network(inputs)
-                if self.config['dataset'] == 'ADP-Release1':
+                if self.config['loss'] == 'MultiLabelSoftMarginLoss':
                     #Get the size of the current batch
                     sizeCurrentBatch = targets.size(0)
                     
@@ -658,7 +706,7 @@ class TrainingAgent:
                 # _, predicted = outputs.max(1)
                 # total += targets.size(0)
                 # correct += predicted.eq(targets).sum().item()
-                if self.config['dataset'] == 'ADP-Release1':
+                if self.config['loss'] == 'MultiLabelSoftMarginLoss':
                     acc1, acc5 = accuracyADP(preds, targets)
                     test_loss += loss.item()
                     top1.update(acc1.double(), inputs.size(0))
@@ -691,7 +739,7 @@ class TrainingAgent:
         #             self.metrics.historical_metrics
         #     torch.save(state, str(self.checkpoint_path / 'ckpt.pth'))
         #     self.best_acc = acc
-        if self.config['dataset'] == 'ADP-Release1':
+        if self.config['loss'] == 'MultiLabelSoftMarginLoss':
             with torch.no_grad():
                 test_loss = test_loss / len(self.test_loader)
                 test_acc1 = (top1.sum_accuracy.cpu().item() / (len(self.test_loader.dataset) * self.num_classes))
@@ -826,6 +874,8 @@ def main_worker(gpu: int, ngpus_per_node: int, args: APNamespace):
         output_path=args.output_path,
         data_path=args.data_path,
         checkpoint_path=args.checkpoint_path,
+        pretrained_model=args.pretrained_model,
+        freeze_encoder=args.freeze_encoder,
         resume=args.resume,
         save_freq=args.save_freq,
         gpu=args.gpu,
@@ -835,7 +885,9 @@ def main_worker(gpu: int, ngpus_per_node: int, args: APNamespace):
         dist=args.distributed,
         mpd=args.mpd,
         dist_url=args.dist_url,
-        dist_backend=args.dist_backend)
+        dist_backend=args.dist_backend,
+        norm_vals=args.norm_vals,
+        color_aug=args.color_aug)
     print(f"Adas: Pytorch device is set to {training_agent.device}")
     training_agent.train()
 

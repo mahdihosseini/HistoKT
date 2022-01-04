@@ -19,6 +19,7 @@ import shutil
 class PCam(Dataset):
     """
     Dataset definition for PCam
+    Retrieved from: https://github.com/basveeling/pcam
     """
 
     db_folder = "PCam"

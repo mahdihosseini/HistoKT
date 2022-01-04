@@ -103,7 +103,6 @@ class ColorDistortion:
         color_jitter = transforms.ColorJitter(0.8 * self.distortion, 0.8 * self.distortion,
                                               0.8 * self.distortion, 0.2 * self.distortion)
         rnd_color_jitter = transforms.RandomApply([color_jitter], p=1.0)
-        rnd_gray = transforms.RandomGrayscale(p=0.2)
         color_distort = transforms.Compose([
             rnd_color_jitter,
             # rnd_gray
@@ -203,6 +202,7 @@ class Cutout(object):
 
 
 transformed_norm_weights = {
+    'ADP-Release1': {"mean": [0.81233799, 0.64032477, 0.81902153], "std": [0.18129702, 0.25731668, 0.16800649]},
     'AIDPATH_transformed': {'mean': [0.6032, 0.3963, 0.5897], 'std': [0.1956, 0.2365, 0.1906]},
     'AJ-Lymph_transformed': {'mean': [0.4598, 0.3748, 0.4612], 'std': [0.1406, 0.1464, 0.1176]},
     'BACH_transformed': {'mean': [0.6880, 0.5881, 0.8209], 'std': [0.1632, 0.1841, 0.1175]},
@@ -211,5 +211,7 @@ transformed_norm_weights = {
     'MHIST_transformed': {'mean': [0.7361, 0.6469, 0.7735], 'std': [0.1812, 0.2303, 0.1530]},
     'OSDataset_transformed': {'mean': [0.8414, 0.6492, 0.7377], 'std': [0.1379, 0.2508, 0.1979]},
     'PCam_transformed': {'mean': [0.6970, 0.5330, 0.6878], 'std': [0.2168, 0.2603, 0.1933]},
-    'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]}}
-
+    'BCSS_transformed': {'mean': [0.7107, 0.4878, 0.6726], 'std': [0.1788, 0.2152, 0.1615]},
+    'no_norm': {'mean': [0.0, 0.0, 0.0], 'std': [1.0, 1.0, 1.0]},
+    'ImageNet': {'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]}
+}
