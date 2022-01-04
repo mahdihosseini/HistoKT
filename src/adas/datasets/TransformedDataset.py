@@ -11,7 +11,7 @@ class TransformedDataset(Dataset):
 
     def __init__(self, root, split="train", transform=None, loader=default_loader) -> None:
         """
-
+        Class for parsing a transformed dataset, post dataset standardizations
         Args:
             root (string):
                 Directory of the transformed dataset

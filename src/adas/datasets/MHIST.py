@@ -10,7 +10,7 @@ from torchvision.datasets.utils import verify_str_arg
 
 
 class MHIST(ImageFolder):
-    """`MHIST
+    """`MHIST Dataset, retrieved from: https://bmirds.github.io/MHIST/
     Args:
         root (string): Root directory of the MHIST Dataset.
             all files downloaded should be placed in a folder called

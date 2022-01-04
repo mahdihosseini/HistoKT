@@ -12,6 +12,8 @@ import os
 class GlaS(Dataset):
     """
     Dataset definition for GlaS
+    Retrieved from: https://warwick.ac.uk/fac/cross_fac/tia/data/glascontest/download/
+    
     """
 
     db_name = 'Warwick QU Dataset (Released 2016_07_08)'
