@@ -1,2 +1,0 @@
-source /ssd2/HistoKT/source/env/bin/activate
-python src/adas/train.py --config /ssd2/HistoKT/source/NewPretrainingConfigs/BCSS_transformed-None-configAdas.yaml --output new-pretraining-output/None/BCSS_transformed --checkpoint new-pretraining-checkpoint/None/BCSS_transformed --data /ssd2/HistoKT/datasets --save-freq 200

@@ -1,9 +1,0 @@
-transferring data
-
-Fri Jul 16 00:09:12 EDT 2021
-tar: /scratch/stephy/HistoKTdata/ADP V1.0 Release.tar: Cannot open: No such file or directory
-tar: Error is not recoverable: exiting now
-Finished transferring
-
-Fri Jul 16 00:09:12 EDT 2021
-slurmstepd: error: *** JOB 22691768 ON blg4803 CANCELLED AT 2021-07-16T04:09:27 ***
