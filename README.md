@@ -16,19 +16,14 @@ In computational pathology, the lack of well-annotated datasets obstructs the ap
     * [Dependencies](#Dependencies)
     * [Running the Code](#Running-the-Code)
       * [Downloading Datasets](#Downloading-datasets)
-    * [Training Output](#Training-Output)
+      * [Preprocessing and Training](#Preprocessing-and-Training)
+      * [Options for Training](#Options-for-Training)
+      * [Training Output](#Training-Output)
 
 - [Code Organization](#Code-Organization)
     * [Configs](#Configs)
-    * [Dependency Extraction](#Dependency-Extraction)
-    * [Metrics](#Metrics)
-    * [Models](#Models)
-    * [Optimizers](#Optimizers)
-    * [Scaling Method](#Scaling-Method)
-    * [Searching Algorithm](#Searching-Algorithm)
     * [Visualizations](#Visualizations)
-    * [Utils](#Utils)
-    * 
+
 ## Getting Started 
 
 ### Dependencies
@@ -138,7 +133,7 @@ A list of all datasets used in this paper can be found below:
 - [OS](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=52756935#52756935bcab02c187174a288dbcbf95d26179e8)
 - [BCSS](https://bcsegmentation.grand-challenge.org/)
 
-#### Running the Code
+#### Preprocessing and Training
 To prepare datasets for training, please use the functions found in `dataset_processing\standardize_datasets.py` after downloading all the datasets and placing them all in one folder.
 
 ```
