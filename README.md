@@ -112,6 +112,15 @@ All available datasets can be found on their respective websites. Some datasets,
 
 A list of all datasets used in this paper can be found below:
 
+- [ADP](https://www.dsp.utoronto.ca/projects/ADP/)
+- [MHIST](https://bmirds.github.io/MHIST/)
+- [BACH](https://iciar2018-challenge.grand-challenge.org/home/)
+- [AJ-Lymph](http://www.andrewjanowczyk.com/use-case-7-lymphoma-sub-type-classification/)
+- [PCam](https://github.com/basveeling/pcam)
+- [CRC](https://zenodo.org/record/1214456#.YLTgV6hKhhE)
+- [GlaS](https://warwick.ac.uk/fac/cross_fac/tia/data/glascontest/download/)
+- [OS](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=52756935#52756935bcab02c187174a288dbcbf95d26179e8)
+- [BCSS](https://bcsegmentation.grand-challenge.org/)
 
 #### Running the Code
 To prepare datasets for training, please use the functions found in `dataset_processing\standardize_datasets.py` after downloading all the datasets and placing them all in one folder.
@@ -180,6 +189,9 @@ All available options can be found in the config files.
 
 ### Visualization
 # TODO!!!
+
+### Dataset Classes
+
 
 ### Version History
 * 0.1 

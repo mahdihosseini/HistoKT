@@ -14,7 +14,6 @@ class ADPDataset(Dataset):
     csv_file = 'ADP_EncodedLabels_Release1_Flat.csv'
     # Classes from https://github.com/mahdihosseini/ADP/blob/5b2508e8c4c513f8a556d57fd312a1222e2dfe77/src/htt_def.py
     # Using p classes
-    # TODO add non-p classes from ADP-Release-Flat
 
     ADP_classes = {
         "L1": {

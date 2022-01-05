@@ -1,6 +1,9 @@
 """
 CRC Dataset, retrieved from:https://zenodo.org/record/1214456#.YLTgV6hKhhE
 
+Kather, Jakob Nikolas, Halama, Niels, & Marx, Alexander. (2018). 
+100,000 histological images of human colorectal cancer and healthy tissue (v0.1) [Data set]. Zenodo.
+https://doi.org/10.5281/zenodo.1214456
 """
 import os
 
