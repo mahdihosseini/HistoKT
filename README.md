@@ -12,7 +12,23 @@ In computational pathology, the lack of well-annotated datasets obstructs the ap
 ## Results
 
 ## Table of Contents
+- [Getting Started](#Getting-Started)
+    * [Dependencies](#Dependencies)
+    * [Running the Code](#Running-the-Code)
+      * [Downloading Datasets](#Downloading-datasets)
+    * [Training Output](#Training-Output)
 
+- [Code Organization](#Code-Organization)
+    * [Configs](#Configs)
+    * [Dependency Extraction](#Dependency-Extraction)
+    * [Metrics](#Metrics)
+    * [Models](#Models)
+    * [Optimizers](#Optimizers)
+    * [Scaling Method](#Scaling-Method)
+    * [Searching Algorithm](#Searching-Algorithm)
+    * [Visualizations](#Visualizations)
+    * [Utils](#Utils)
+    * 
 ## Getting Started 
 
 ### Dependencies
