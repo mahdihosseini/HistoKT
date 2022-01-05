@@ -15,6 +15,7 @@ if 'adas.' in mod_name:
     from .ImageNet import ImageNet
     from .TinyImageNet import TinyImageNet
     from .TransformedDataset import TransformedDataset
+    from .BCSSDataset import BCSSDataset
 else:
     from datasets.ADPDataset import ADPDataset
     from datasets.AIDPATH import AIDPATH
@@ -28,3 +29,4 @@ else:
     from datasets.ImageNet import ImageNet
     from datasets.TinyImageNet import TinyImageNet
     from datasets.TransformedDataset import TransformedDataset
+    from datasets.BCSSDataset import BCSSDataset

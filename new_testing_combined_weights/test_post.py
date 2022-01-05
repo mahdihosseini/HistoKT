@@ -7,6 +7,7 @@ import numpy as np
 import torchvision.transforms as transforms
 from datasets import TransformedDataset
 from datasets import ADPDataset
+from datasets import BCSSDataset
 from resnet import resnet18
 from torch.utils.data import DataLoader
 from sklearn import metrics
@@ -26,7 +27,9 @@ transformed_norm_weights = {
     'MHIST_transformed': {'mean': [0.7361, 0.6469, 0.7735], 'std': [0.1812, 0.2303, 0.1530]},
     'OSDataset_transformed': {'mean': [0.8414, 0.6492, 0.7377], 'std': [0.1379, 0.2508, 0.1979]},
     'PCam_transformed': {'mean': [0.6970, 0.5330, 0.6878], 'std': [0.2168, 0.2603, 0.1933]},
-    'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]}}
+    'ADP': {'mean': [0.81233799, 0.64032477, 0.81902153], 'std': [0.18129702, 0.25731668, 0.16800649]},
+    'BCSS_transformed': {'mean': [0.7107, 0.4878, 0.6726], 'std': [0.1788, 0.2152, 0.1615]},
+    'ImageNet': {'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225]}}
 
 
 def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=None):
@@ -39,11 +42,12 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
     model = resnet18(num_classes=num_classes)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # setting default device
     cp = torch.load(path_to_pth, map_location=device)
+    print("best epoch: ", cp['epoch'])
     model.load_state_dict(cp['state_dict_network'])
     model.to(device)  # moving model to compute device
     model.eval()
     
-    if dataset_name == "ADP":
+    if dataset_name == "ADP" or dataset_name == "BCSS_transformed":
         dataset_size = len(test_dataloader.dataset)
         test_class_counts = np.sum(test_dataloader.dataset.class_labels, axis=0)
         weightsBCE = dataset_size / test_class_counts
@@ -68,12 +72,12 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
                 y = y.type(torch.LongTensor)
                 y = y.flatten()
                 y = y.to(device, non_blocking=True)
-            if dataset_name == "ADP":
+            if dataset_name == "ADP" or dataset_name == "BCSS_transformed":
                 y = y.type(torch.LongTensor)
                 y = y.to(device, non_blocking=True)
             pred = model(X)
 
-            if dataset_name == 'ADP':
+            if dataset_name == 'ADP' or dataset_name == "BCSS_transformed":
                 m = nn.Sigmoid()
                 pred_temp = (m(pred) > 0.5).int()
                 targets_all = y.data.int()
@@ -92,9 +96,9 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             test_loss += loss_fn(pred, y).detach().cpu().item()
 
             tgts.extend(y.detach().cpu().tolist())  # int eg. 0, 1
-            if i == 0 :
-                print(tgts[:5])
-                print(pred_label[:5])
+            #if i == 0 :
+            #    print(tgts[:5])
+            #    print(pred_label[:5])
 
             if num_classes == 2:
                 preds.extend(pred[:, 1].detach().cpu().tolist())
@@ -125,7 +129,7 @@ def test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data=No
             f1 = metrics.f1_score(tgts, pred_label, average='micro')
         results["f1_score"] = f1
 
-    if dataset_name == 'ADP':
+    if dataset_name == 'ADP' or dataset_name == "BCSS_transformed":
         test_loss /= size
         test_acc1 = (correct / (size * num_classes))
     else:
@@ -155,6 +159,7 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
     # /MHIST_transformed" which contains files like best_trial_0_date_2021-06-14-22-23-51.pth
 
     for dataset_name in dataset_name_list:
+        print("****************************", dataset_name, "****************************")
         transform_test = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(
@@ -162,52 +167,49 @@ def test_main(path_to_root, path_to_checkpoint, dataset_name_list, path_to_outpu
                 std=transformed_norm_weights[dataset_name]["std"])])
 
         if dataset_name == 'ADP':
-            dataset = ADPDataset("L3Only", root=path_to_root, split='test', transform=transform_test)
+            dataset = ADPDataset("L3", root=path_to_root, split='test', transform=transform_test)
+        elif dataset_name == "BCSS_transformed":
+            dataset = BCSSDataset(root=os.path.join(path_to_root, dataset_name), split='test', transform=transform_test, multi_labelled=True, class_labels=True)
         else:
             dataset = TransformedDataset(root=os.path.join(path_to_root, dataset_name), split="test", transform=transform_test)
         ### just for fast testing ###
         #dataset.samples = dataset.samples[0:50]
         test_dataloader = DataLoader(dataset, batch_size=mini_batch_size, shuffle=False, num_workers=num_workers)
         print("load test data successfully")
+        
+        for file in os.listdir(path_to_checkpoint):
+            path_to_dataset_cp = os.path.join(path_to_checkpoint, file)
+            if dataset_name == "ADP":
+                path_to_dataset_cp = os.path.join(path_to_dataset_cp, "ADP-Release1")
+            else:
+                path_to_dataset_cp = os.path.join(path_to_dataset_cp, dataset_name)
 
-        path_to_dataset_cp = os.path.join(path_to_checkpoint, dataset_name)
-        for file in os.listdir(path_to_dataset_cp):
-            print("file/dir: ", file)
-            if "per_class" in file:
-                temp = os.path.join(path_to_dataset_cp, file)
-                print(temp)
-                for file2 in os.listdir(temp):                
-                    if ".pth" in file2 and "best_" in file2:
-                        path_to_pth = os.path.join(temp, file2)
+            path_to_dataset_cp = os.path.join(path_to_dataset_cp, "AdamP/checkpoint/deep_tuning")
+    
+            for file2 in os.listdir(path_to_dataset_cp):
+                rate = os.path.join(path_to_dataset_cp, file2)
+                for file3 in os.listdir(rate):
+                    if ".pth" in file3 and "best_" in file3:
+                        path_to_pth = os.path.join(rate, file3)
+                        print(path_to_pth)
                         if path_to_output is not None:
                             path_to_out_data = os.path.join(path_to_output, dataset_name)
+                            path_to_out_data = os.path.join(path_to_out_data, file)
+                            path_to_out_data = os.path.join(path_to_out_data, file2)
                             if not os.path.isdir(path_to_out_data):
                                 os.makedirs(path_to_out_data)
-                            test_results(path_to_pth, test_dataloader, dataset_name+'_'+file, path_to_out_data)
+                            test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
                         else:
-                            test_results(path_to_pth, test_dataloader, dataset_name+'_'+file)
-            else:
-                if ".pth" in file and "best_" in file:
-                    path_to_pth = os.path.join(path_to_dataset_cp, file)
-                    if path_to_output is not None:
-                        path_to_out_data = os.path.join(path_to_output, dataset_name)
-                        if not os.path.isdir(path_to_out_data):
-                            os.makedirs(path_to_out_data)
-                        test_results(path_to_pth, test_dataloader, dataset_name, path_to_out_data)
-                    else:
-                        test_results(path_to_pth, test_dataloader, dataset_name)
+                            test_results(path_to_pth, test_dataloader, dataset_name)
     return
 
 
 if __name__ == "__main__":
-    checkpoint = "/home/zhujiada/projects/def-plato/zhan8425/HistoKT/.Adas-checkpoint"
-    root = "/scratch/zhan8425/HistoKTdata"
-    #root = sys.argv[1]
-    output = "/home/zhujiada/projects/def-plato/zhujiada/output"  # None if same as the checkpoint dir
+    checkpoint = "/ssd2/HistoKT/results/weight_sharing_preSVD/None"
+    root = "/ssd2/HistoKT/datasets"
+    output = "/ssd2/HistoKT/test/weight_sharing_preSVD/non-ImageNet"  # None if same as the checkpoint dir
 
-    #dataset_name_list = ["CRC_transformed","PCam_transformed"]
-    #dataset_name_list = ["GlaS_transformed", "AJ-Lymph_transformed", "BACH_transformed", "OSDataset_transformed", "MHIST_transformed","AIDPATH_transformed"]
-    dataset_name_list = ["ADP"]
+    dataset_name_list = ["BACH_transformed", "MHIST_transformed"]
     test_main(root, checkpoint, dataset_name_list, output)
     pass
 
