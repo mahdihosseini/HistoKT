@@ -105,9 +105,62 @@ widgetsnbextension==3.5.1
 ```
 ### Running the Code
 
-#### Training Parameters
+This codebase was created in collaboration with the [RMSGD](https://github.com/mahdihosseini/Adas) repository. As such, much of the training pipeline is shared.
+
+#### Downloading datasets
+All available datasets can be found on their respective websites. Some datasets, such as ADP, are available by request.
+
+A list of all datasets used in this paper can be found below:
+
+
+#### Running the Code
+
+To run the code, use the `src/adas/train.py` file:
+
+```
+cd HistoKT
+python src/adas/train.py --config CONFIG --data DATA_FOLDER
+```
+
+#### Options for Training
+
+```
+--config CONFIG       Set configuration file path: Default = 'configAdas.yaml'
+--data DATA           Set data directory path: Default = '.adas-data'
+--output OUTPUT       Set output directory path: Default = '.adas-output'
+--checkpoint CHECKPOINT
+                    Set checkpoint directory path: Default = '.adas-checkpoint'
+--resume RESUME       Set checkpoint resume path: Default = None
+--pretrained_model PRETRAINED_MODEL
+                    Set checkpoint pretrained model path: Default = None
+--freeze_encoder FREEZE_ENCODER
+                    Set if to freeze encoder for post training: Default = True
+--root ROOT           Set root path of project that parents all others: Default = '.'
+--save-freq SAVE_FREQ
+                    Checkpoint epoch save frequency: Default = 25
+--cpu                 Flag: CPU bound training: Default = False
+--gpu GPU             GPU id to use: Default = 0
+--multiprocessing-distributed
+                    Use multi-processing distributed training to launch N processes per node, which has N GPUs. This is the fastest way to use PyTorch for either   
+                    single node or multi node data parallel training: Default = False
+--dist-url DIST_URL   url used to set up distributed training:Default = 'tcp://127.0.0.1:23456'
+--dist-backend DIST_BACKEND
+                    distributed backend: Default = 'nccl'
+--world-size WORLD_SIZE
+                    Number of nodes for distributed training: Default = -1
+--rank RANK           Node rank for distributed training: Default = -1
+--color_aug COLOR_AUG
+                    override config color augmentation, can also choose "no_aug"
+--norm_vals NORM_VALS
+                    override normalization values, use dataset string. e.g. "BACH_transformed"
+```
 
 #### Training Output
+All training output will be saved to the OUTPUT_PATH location. After a full experiment, results will be recorded in the following format:
+- OUTPUT
+    - Timestamped xlsx sheet with the record of train and validation (notated as test) acc, loss, and rank metrics for each layer in the network (refer to [AdaS](https://arxiv.org/abs/2006.06587))
+- CHECKPOINT
+    - checkpoint dictionaries with a snapshot of the model's parameters at a given epoch. 
 
 ## Code Organization
 
