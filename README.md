@@ -114,8 +114,16 @@ A list of all datasets used in this paper can be found below:
 
 
 #### Running the Code
+To prepare datasets for training, please use the functions found in `dataset_processing\standardize_datasets.py` after downloading all the datasets and placing them all in one folder.
 
-To run the code, use the `src/adas/train.py` file:
+```
+cd HistoKT/dataset_processing
+python standardize_datasets.py
+```
+
+A standardized version of each dataset will be created in the dataset folder.
+
+To run the code for training, use the `src/adas/train.py` file:
 
 ```
 cd HistoKT
@@ -163,12 +171,15 @@ All training output will be saved to the OUTPUT_PATH location. After a full expe
     - checkpoint dictionaries with a snapshot of the model's parameters at a given epoch. 
 
 ## Code Organization
-
 ### Configs
+We provide sample configuration files for ResNet18 over all used datasets in `configs\NewPretrainingConfigs`
 
-### Dependency Extraction
+These configs were used for training the model on each dataset from random initialization.
 
-### Metrics
+All available options can be found in the config files.
+
+### Visualization
+# TODO!!!
 
 ### Version History
 * 0.1 
