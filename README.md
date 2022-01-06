@@ -199,6 +199,12 @@ These configs were used for training the model on each dataset from random initi
 All available options can be found in the config files.
 
 ### Visualization
+We provide sample code to plot training curves in `Plots`
+
+We provide sample code on using the statistical method t-SNE to visualize the high-dimensional features in `T-sne`.
+
+We provide sample code on using the visual explanation algorithm Grad-CAM heat-maps in `gradCAM`.
+
 # TODO!!!
 
 ### Dataset Classes
