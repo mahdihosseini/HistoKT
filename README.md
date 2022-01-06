@@ -205,10 +205,6 @@ We provide sample code on using the statistical method t-SNE to visualize the hi
 
 We provide sample code on using the visual explanation algorithm Grad-CAM heat-maps in `gradCAM`.
 
-# TODO!!!
-
-### Dataset Classes
-
 
 ### Version History
 * 0.1 
