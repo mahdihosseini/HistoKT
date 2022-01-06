@@ -11,6 +11,16 @@ In computational pathology, the lack of well-annotated datasets obstructs the ap
 
 ## Results
 
+We report our transfer learning using ResNet18 results accross various datasets, with two initialization methods (random and ImageNet initialization). Each item in the matrix represents the Top-1 test accuracy of a ResNet18 model trained on the source dataset and deep-tuned on the target dataset. Items are highlighted in a colour gradient from deep red to deep green, where green represents significant accuracy improvement after tuning, and red represents accuracy decline after tuning.
+
+### No Pretraining
+
+![](figures/histokt_matrix_nopretrain.png)
+
+### ImageNet Initialization
+
+![](figures/histokt_matrix_imagenet.png)
+
 ## Table of Contents
 - [Getting Started](#Getting-Started)
     * [Dependencies](#Dependencies)
