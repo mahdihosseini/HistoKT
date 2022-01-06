@@ -35,12 +35,12 @@ Uses CUDA during generation of heatmaps
 
 
 ```
---aug_smooth
+--aug_smooth=True
 ```
 Applies test time augmentation to smooth the CAM
 
 
 ```
---eigen_smooth
+--eigen_smooth=True
 ```
 Reduces noise by taking the first principle component of cam_weights * activations
