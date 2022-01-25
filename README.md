@@ -1,7 +1,12 @@
 # HistoKT: Cross Knowledge Transfer in Computational Pathology
 
+**Exciting News! HistoKT has been accepted to ICASSP 2022.**
+
 > [**HistoKT: Cross Knowledge Transfer in Computational Pathology**](link),            
-> Ryan Zhang, Annie Zhu, Stephen Yang, Mahdi S. Hosseini, Konstantinos N. Plataniotis        
+> Ryan Zhang, Jiadai Zhu, Stephen Yang, Mahdi S. Hosseini, Angelo Genovese, Lina Chen, Corwyn Rowsell, Savvas Damaskinos, Sonal Varma, Konstantinos N. Plataniotis        
+> *Accepted in 2022 IEEE International Conference on Acourstics, Speech, and Signal Processing ([ICASSP2022](https://2022.ieeeicassp.org/))*
+> 
+
 
 ![](figures/workflow.jpg)
 
